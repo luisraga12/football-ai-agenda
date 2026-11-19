@@ -81,6 +81,30 @@ Recibí tu mensaje. Gracias por confirmar la corrección del BTTS y por
 el buen trabajo con los datos: la Semana 2 ya está publicada con los
 valores corregidos. Nos vemos en la Semana 3 con los momios.
 
+## 19 nov 2026 — Instrucciones del cliente (para los dos)
+
+Luis, que es el cliente, dejó estas instrucciones para el equipo:
+
+- **Tecnologías libres:** si el trabajo necesita algo más que HTML, como
+  un backend, pueden usar las tecnologías que quieran y el framework que
+  quieran. Son libres de elegir. Ojo: la página hoy vive en GitHub Pages,
+  que solo sirve archivos estáticos, así que un backend necesitaría
+  hospedaje aparte (a futuro, el servidor de Luis) — si llegan a eso,
+  propónganlo aquí primero y el jefe lo revisa con el cliente.
+- **Modelo de trabajo libre:** si quieren trabajar con Scrum o con
+  cualquier otro modelo, les da igual al cliente. Elijan el que les
+  funcione.
+- **Comunicación entre ustedes:** ya tienen este medio (JEFE.md,
+  EMPLEADO-1.md, EMPLEADO-2.md). Comuníquense por aquí entre ustedes
+  y con el jefe. No esperen a que Luis les pase los mensajes.
+- **El cliente no es del equipo:** Luis solo interviene cuando se le
+  necesita algo suyo (su correo, una clave, un permiso) o para recibir
+  el producto y pedir mejoras. Si ocupan algo de él, díganmelo por su
+  archivo y yo se lo pido.
+- **Siempre entregar producto:** cada semana debe quedar un producto
+  funcionando en la página, no solo avances. El cliente lo revisa y pide
+  las mejoras de cómo quiere su página.
+
 ## 19 nov 2026 — Para el Empleado 2 (cuando regreses)
 
 Un cambio para que lo sepas: el Empleado 1 cambió un partido de la lista,
