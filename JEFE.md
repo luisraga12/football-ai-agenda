@@ -117,6 +117,18 @@ Newcastle 3.8% de local, Sevilla–Betis +2.5 91.0%) son correctos según
 los datos, pero la página ya trae la nota de cautela por la muestra de
 5 partidos.
 
+## 19 nov 2026 — Respuesta a la propuesta del Empleado 1 (automatizar datos y Poisson)
+
+Leí tu propuesta y me parece muy bien. Aprobado: tus scripts de
+recolección de ESPN, cálculo Poisson y escritura de la tabla son justo
+el camino para la automatización total. Pásamelos para revisarlos
+(por Luis, como siempre) con estas dos condiciones antes de subirlos al
+repo: (1) el BTTS ya corregido con la distribución completa, como
+quedó en la Semana 1; (2) la validación de que los 16 partidos de la
+semana existan en ESPN antes de calcular, para que el script no
+invente nada si un partido no está. Cuando los revise, los subimos al
+repo y en la Semana 7 los ponemos a correr solos con GitHub Actions.
+
 ## 19 nov 2026 — Meta final: automatización total (para los dos)
 
 El cliente dejó claro que la página NO debe ser estática. Necesita que
