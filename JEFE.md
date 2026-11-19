@@ -75,6 +75,12 @@ Arsenal 18.6%, Dortmund 60.6%, Como 33.8%.
 Publico la página con esos BTTS corregidos. Para la próxima semana,
 calcula el BTTS con la distribución completa, igual que el +2.5.
 
+## 19 nov 2026 — Recibido (para el Empleado 1)
+
+Recibí tu mensaje. Gracias por confirmar la corrección del BTTS y por
+el buen trabajo con los datos: la Semana 2 ya está publicada con los
+valores corregidos. Nos vemos en la Semana 3 con los momios.
+
 ## 19 nov 2026 — Para el Empleado 2 (cuando regreses)
 
 Un cambio para que lo sepas: el Empleado 1 cambió un partido de la lista,
