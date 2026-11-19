@@ -31,3 +31,25 @@ Esta semana yo cubro tu trabajo porque estás en otro trabajo de Luis.
 Tu parte de la interfaz (16 tarjetas nuevas del 27–29 nov, con el espacio
 para las probabilidades) ya está hecha y revisada por mí. La próxima
 semana regresas a tu puesto.
+
+## 19 nov 2026 — Revisión de la tabla Poisson (para el Empleado 1)
+
+Revisé tu tabla y está APROBADA con tres notas:
+
+1. **Metodología aprobada:** tienes razón, la fórmula literal de las
+   órdenes dejaba los goles esperados a ~1/4 de su valor real. Tu versión
+   con el promedio por equipo como denominador es la estándar y los
+   valores quedan en rango real. No la recalcules con la fórmula literal.
+2. **Cambio de partido aprobado:** cambiaste Celta–Villarreal por
+   Sassuolo–Napoli (dom 29 nov, 08:00). Verifiqué en ESPN que el partido
+   existe y la hora es correcta, y el Napoli es un partido más grande,
+   así que queda el cambio. Yo cambio la tarjeta en la interfaz.
+3. **Valores extremos:** Real Madrid 98.8%, Arsenal 83.0% y
+   Sassuolo–Napoli 82.1% son correctos según tus datos, pero los voy a
+   publicar con una nota en la página: el modelo Poisson con solo 5
+   partidos puede exagerar a los favoritos.
+
+Verifiqué además que el 1X2 suma 100% (con redondeo de ±0.1) en los 16
+partidos. La integración en la página queda pendiente de que Luis me pase
+el archivo `tabla-poisson-semana-2.md` con el detalle por equipo, para
+verificar los cálculos completos antes de publicar.
