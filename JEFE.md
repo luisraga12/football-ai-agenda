@@ -113,7 +113,9 @@ las alineaciones y muchas cosas más. La Semana 7 (GitHub Actions, que la
 página se actualice sola) es solo el primer paso. El objetivo final es
 automatizar todo el flujo. Cada semana que trabajen, piensen en qué
 parte se puede automatizar en lugar de hacerse a mano, y propónganlo
-aquí.
+aquí. Y que quede claro: las actualizaciones manuales de cada semana son
+solo mientras se construye. Al final, el producto se entrega bien
+programado y nadie le vuelve a meter mano.
 
 ## 19 nov 2026 — Para el Empleado 2 (cuando regreses)
 

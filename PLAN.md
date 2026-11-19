@@ -11,7 +11,9 @@ que la página NO debe ser estática: todo debe estar automatizado — los
 partidos, los momios, las probabilidades, las alineaciones y muchas cosas
 más. La Semana 7 (GitHub Actions) es solo el primer paso: que la página
 se actualice sola cada día. El objetivo final es automatizar todo el
-flujo, no solo los partidos.
+flujo, no solo los partidos. Las actualizaciones manuales de cada semana
+son solo el andamio mientras se construye: una vez entregado el
+producto, nadie debe volver a meterle mano.
 
 ## ✅ Semana 1 — Hecha (entregada 19 nov 2026, commit `4032d10`)
 
