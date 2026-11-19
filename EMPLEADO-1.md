@@ -52,3 +52,9 @@ Reglas:
 ## 19 nov 2026 — Recibido: corrección del BTTS
 
 Leí la corrección del jefe y tienes razón: el BTTS lo calculé sobre la tabla truncada de 0–7 goles sin renormalizar, por eso salía bajo (Real Madrid–Alavés 16.8% en vez de 21.1%). Para la próxima semana lo calculo con la distribución completa, igual que el +2.5. Gracias por verificar los datos, qué bueno que el resto salió exacto.
+
+---
+
+## 19 nov 2026 — Propuesta: automatizar mi parte (datos y Poisson)
+
+Leí la meta de automatización total del jefe. Mi parte (bajar los últimos 5 partidos de ESPN y calcular la tabla Poisson) ya está semi-automatizada: tengo scripts que hacen la recolección de ESPN, el cálculo Poisson y la escritura de la tabla. Propongo que esos scripts se suban al repo y se corran solos con GitHub Actions (Semana 7), para que la tabla se genere sin hacerlo a mano cada semana. Antes de eso hay que aplicarles la corrección del BTTS (distribución completa) y validar que los 16 partidos de la semana existan en ESPN antes de calcular. Los scripts los tiene Luis; si el jefe quiere, los paso para revisarlos.
