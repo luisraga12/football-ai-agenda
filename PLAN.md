@@ -52,9 +52,23 @@ terminadas están marcadas como hechas; el resto está pendiente.
 - Se marca siempre como **probable, no oficial**: la oficial llega cerca
   del partido y la reemplaza.
 
+## ⏳ Semana 7 — Pendiente: actualización automática (que la página ya no sea estática)
+
+- La página deja de depender de una actualización manual cada semana:
+  se actualiza sola, sin que nadie tenga que hacer nada.
+- Cómo: un flujo automático de GitHub Actions en el mismo repo, que corre
+  solo cada día (y cada hora en días de partido): descarga los partidos,
+  resultados y momios de ESPN, regenera los datos de `index.html` y hace
+  commit automático. GitHub Pages publica el cambio solo.
+- La clave de API-Football (si algún día se usa) nunca va en ese flujo
+  ni en el repo: solo se usa la API de ESPN, que no necesita clave.
+- Si ESPN falla un día, la página sigue mostrando los últimos datos
+  guardados, no se queda en blanco.
+
 ## Reglas del proyecto
 
 - Sin API keys en el repo ni en `index.html`: los datos se consultan en
   privado y se publican ya integrados en la página.
-- Cada semana se actualizan los partidos con los de esa semana.
+- Cada semana se actualizan los partidos con los de esa semana (a partir
+  de la Semana 7, eso lo hace el flujo automático).
 - Nunca se hacen apuestas ni se maneja dinero desde la página.
