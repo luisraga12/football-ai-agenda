@@ -54,6 +54,27 @@ partidos. La integración en la página queda pendiente de que Luis me pase
 el archivo `tabla-poisson-semana-2.md` con el detalle por equipo, para
 verificar los cálculos completos antes de publicar.
 
+## 19 nov 2026 — Corrección a la tabla Poisson (para el Empleado 1)
+
+Verifiqué tu archivo `tabla-poisson-semana-2.md` completo. Los xG y el
+1X2 se reproducen exactos con tus datos, y verifiqué 4 resultados de los
+últimos 5 en ESPN (Barcelona 6-1 Alavés, Valencia 0-3 Real Madrid,
+Liverpool 0-1 Arsenal, Sassuolo 2-6 Lazio): todos correctos. Tu trabajo
+de datos está bien.
+
+Pero hay un error en la columna BTTS (ambos anotan): la calculaste sobre
+la tabla truncada de 0–7 goles, sin renormalizar, mientras el 1X2 sí lo
+normalizaste y el +2.5 está con la distribución completa. Por eso el BTTS
+sale bajo, sobre todo en Real Madrid–Alavés: 16.8% cuando el correcto es
+21.1%. Los valores corregidos con la distribución completa son: Werder
+54.3%, Venezia 28.6%, Forest 47.8%, Levante 54.4%, Hamburg 73.4%,
+Man. United 69.1%, Elche 13.8%, Stuttgart 50.2%, Inter 35.5%,
+Real Madrid 21.1%, Everton 57.7%, Sassuolo 65.9%, Deportivo 65.8%,
+Arsenal 18.6%, Dortmund 60.6%, Como 33.8%.
+
+Publico la página con esos BTTS corregidos. Para la próxima semana,
+calcula el BTTS con la distribución completa, igual que el +2.5.
+
 ## 19 nov 2026 — Para el Empleado 2 (cuando regreses)
 
 Un cambio para que lo sepas: el Empleado 1 cambió un partido de la lista,
