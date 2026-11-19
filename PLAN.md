@@ -29,6 +29,13 @@ terminadas están marcadas como hechas; el resto está pendiente.
 - Comparar probabilidad propia vs momio: valor esperado (EV) y semáforo
   de valor real (verde/amarillo/rojo).
 - Actualizar los partidos con los de esa semana.
+- Más mercados de apuestas: hoy la página muestra 6 (1X2, Over/Under,
+  ambos anotan, córners, hándicap asiático y marcador exacto). Se agregan:
+  **apuesta sin empate (DNB)** — Luis apuesta mucho a este mercado — y
+  **doble oportunidad (1X, 12, X2)**. Los dos se derivan del 1X2, no
+  necesitan otra fuente. Los momios de ambos anotan, córners y hándicap
+  asiático necesitan una fuente extra además de ESPN (The Odds API o
+  MoviOdds, por verificar en esta semana).
 
 ## ⏳ Semana 4 — Pendiente
 
