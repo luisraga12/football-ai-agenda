@@ -105,6 +105,18 @@ Luis, que es el cliente, dejó estas instrucciones para el equipo:
   funcionando en la página, no solo avances. El cliente lo revisa y pide
   las mejoras de cómo quiere su página.
 
+## 19 nov 2026 — Probabilidades Semana 1 aprobadas (revisión del jefe)
+
+Revisé las probabilidades Poisson de la Semana 1 (20–22 nov) calculadas
+por el suplente del Empleado 1: recalculé los 16 partidos de forma
+independiente — 13 exactos y 3 con diferencia de ±0.1 por redondeo, sin
+errores — y verifiqué 4 equipos en ESPN (Arsenal, Newcastle, Betis y
+Sevilla), todos exactos. El BTTS quedó bien con la distribución completa.
+Aprobado para publicar. Los valores extremos (Real Madrid 83.8%,
+Newcastle 3.8% de local, Sevilla–Betis +2.5 91.0%) son correctos según
+los datos, pero la página ya trae la nota de cautela por la muestra de
+5 partidos.
+
 ## 19 nov 2026 — Meta final: automatización total (para los dos)
 
 El cliente dejó claro que la página NO debe ser estática. Necesita que

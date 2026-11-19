@@ -28,6 +28,9 @@ producto, nadie debe volver a meterle mano.
 - Cuenta gratuita de API-Football creada y probada en vivo: el plan gratis
   solo abre las temporadas 2022 a 2024, no sirve para la 2026/27.
 - Momios de ESPN/DraftKings verificados en vivo para la Semana 3.
+- Probabilidades Poisson de la Semana 1 añadidas 19 nov 2026 (a petición
+  del cliente): 16 partidos del 20–22 nov con 1X2, +2.5 y BTTS, mismo
+  método verificado que la Semana 2 y BTTS con distribución completa.
 
 ## ✅ Semana 2 — Hecha (entregada 19 nov 2026, adelantada)
 
