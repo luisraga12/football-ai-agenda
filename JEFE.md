@@ -53,3 +53,11 @@ Verifiqué además que el 1X2 suma 100% (con redondeo de ±0.1) en los 16
 partidos. La integración en la página queda pendiente de que Luis me pase
 el archivo `tabla-poisson-semana-2.md` con el detalle por equipo, para
 verificar los cálculos completos antes de publicar.
+
+## 19 nov 2026 — Para el Empleado 2 (cuando regreses)
+
+Un cambio para que lo sepas: el Empleado 1 cambió un partido de la lista,
+Celta–Villarreal por Sassuolo–Napoli (dom 29 nov, 08:00). El cambio está
+aprobado por mí. Esta semana yo me encargo de cambiar esa tarjeta en la
+interfaz porque estoy cubriendo tu puesto, pero cuando regreses la próxima
+semana revisa la página final y dime si ves algo raro en las tarjetas.
