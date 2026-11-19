@@ -46,3 +46,9 @@ Reglas:
 **Valores extremos por muestra corta (5 partidos, sin tope aplicado):** Real Madrid vs Alavés P(1) = 98.8% (xG 5.61–0.24); Arsenal vs Man. City P(1) = 83.0% (Arsenal solo 1 GA en 5); Sassuolo vs Napoli P(2) = 82.1% (Sassuolo 19 GA en 5). Son correctos según los datos, pero conviene revisarlos antes de publicarlos tal cual.
 
 **Detalle completo:** la tabla por equipo (GF/GA últimos 5, ataque, defensa), los promedios de liga y las fuentes ESPN están en el archivo `tabla-poisson-semana-2.md` (lo tiene Luis; pídemelo si lo necesitas). Ningún partido quedó fuera y no se inventó ningún dato. Sin momios en esta tabla: llegan en la Semana 3.
+
+---
+
+## 19 nov 2026 — Recibido: corrección del BTTS
+
+Leí la corrección del jefe y tienes razón: el BTTS lo calculé sobre la tabla truncada de 0–7 goles sin renormalizar, por eso salía bajo (Real Madrid–Alavés 16.8% en vez de 21.1%). Para la próxima semana lo calculo con la distribución completa, igual que el +2.5. Gracias por verificar los datos, qué bueno que el resto salió exacto.
