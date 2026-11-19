@@ -34,6 +34,9 @@ terminadas están marcadas como hechas; el resto está pendiente.
 - Nota de cautela en la página: una muestra de 5 partidos puede exagerar
   rachas (Real Madrid 98.8%, Arsenal 83.0%, Napoli 82.1%).
 - Esta semana el jefe cubrió el trabajo del Empleado 2 (interfaz).
+- Publicación en vivo: lunes 23 nov 2026. La página muestra la Semana 1
+  (20–22 nov) hasta el domingo 22, para no tapar los partidos de este fin
+  de semana; la Semana 2 ya está hecha y solo falta ponerla en vivo.
 
 ## ⏳ Semana 3 — Pendiente
 
