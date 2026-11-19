@@ -242,7 +242,7 @@
   <div class="hero-in wrap">
     <div class="hero-top">
       <span class="live-dot"><i></i> MODO EN VIVO · TU ESTILO</span>
-      <span class="hero-date">Miércoles 18 de noviembre de 2026 · Ciudad Victoria, MX</span>
+      <span class="hero-date">Jueves 19 de noviembre de 2026 · Ciudad Victoria, MX</span>
     </div>
     <h1>Tu agenda de fútbol, <em>con cerebro.</em></h1>
     <p class="sub">Lo mejor de dos mundos: la <strong>agenda limpia y rápida de 365Scores</strong> y las <strong>tarjetas editoriales de OneFootball</strong>, con una capa de IA encima que compara probabilidad contra momio y solo te avisa cuando hay valor. Sin streams pirata, sin copiar a nadie: <strong>con tus ligas, tus mercados y tus reglas.</strong></p>
@@ -259,10 +259,10 @@
 <div class="toolbar">
   <div class="wrap toolbar-in">
     <div class="days" role="group" aria-label="Día">
-      <button class="day" type="button" aria-pressed="false">Ayer<small>Mar 17</small></button>
-      <button class="day" type="button" aria-pressed="true">Hoy<small>Mié 18</small></button>
-      <button class="day" type="button" aria-pressed="false">Mañana<small>Jue 19</small></button>
+      <button class="day" type="button" aria-pressed="true">Hoy<small>Jue 19</small></button>
       <button class="day" type="button" aria-pressed="false">Viernes<small>Vie 20</small></button>
+      <button class="day" type="button" aria-pressed="false">Sábado<small>Sáb 21</small></button>
+      <button class="day" type="button" aria-pressed="false">Domingo<small>Dom 22</small></button>
     </div>
     <div class="tabs" role="group" aria-label="Filtrar partidos por estado">
       <button class="tab" type="button" data-status="all" aria-pressed="true">Todos</button>
@@ -280,13 +280,12 @@
     <aside class="panel" aria-label="Tus ligas">
       <div class="panel-h"><h2>Tus ligas</h2><span>Las de Luis</span></div>
       <ul class="leagues" id="leagueList">
-        <li><button class="league-btn" type="button" data-league="all" aria-pressed="true"><span class="flag">ALL</span> Todas <span class="cnt">6</span></button></li>
-        <li><button class="league-btn" type="button" data-league="ligamx" aria-pressed="false"><span class="flag">MX</span> Liga MX <span class="cnt">1</span></button></li>
-        <li><button class="league-btn" type="button" data-league="premier" aria-pressed="false"><span class="flag">ENG</span> Premier League <span class="cnt">1</span></button></li>
-        <li><button class="league-btn" type="button" data-league="laliga" aria-pressed="false"><span class="flag">ESP</span> LaLiga <span class="cnt">1</span></button></li>
+        <li><button class="league-btn" type="button" data-league="all" aria-pressed="true"><span class="flag">ALL</span> Todas <span class="cnt">16</span></button></li>
+        <li><button class="league-btn" type="button" data-league="ligamx" aria-pressed="false"><span class="flag">MX</span> Liga MX <span class="cnt">6</span></button></li>
+        <li><button class="league-btn" type="button" data-league="premier" aria-pressed="false"><span class="flag">ENG</span> Premier League <span class="cnt">3</span></button></li>
+        <li><button class="league-btn" type="button" data-league="laliga" aria-pressed="false"><span class="flag">ESP</span> LaLiga <span class="cnt">5</span></button></li>
         <li><button class="league-btn" type="button" data-league="seriea" aria-pressed="false"><span class="flag">ITA</span> Serie A <span class="cnt">1</span></button></li>
         <li><button class="league-btn" type="button" data-league="bundes" aria-pressed="false"><span class="flag">GER</span> Bundesliga <span class="cnt">1</span></button></li>
-        <li><button class="league-btn" type="button" data-league="europa" aria-pressed="false"><span class="flag">UEL</span> Europa League <span class="cnt">1</span></button></li>
       </ul>
       <p class="rule-note">También en tu radar: Eredivisie, Süper Lig, Ligue 1, Conference League, Nations League, eliminatorias, Concachampions y Leagues Cup. Se activan en la agenda cuando hay jornada.</p>
     </aside>
@@ -294,149 +293,255 @@
     <!-- AGENDA -->
     <main>
       <div class="agenda-head">
-        <h2>Agenda de hoy</h2>
-        <span class="demo-note">Formato de ejemplo — así se verá cada partido con datos reales</span>
+        <h2>Agenda del fin de semana · 20–22 nov</h2>
+        <span class="demo-note">Datos reales verificados 19 nov 2026 · Horas de Monterrey (CST) · Sin momios: Semana 3</span>
       </div>
+      <p class="rule-note"><strong>Tablas al 18 nov 2026:</strong> Liga MX Apertura — Cruz Azul líder, 32 pts en 16 partidos, 2 puntos sobre América; Brasileirão — Flamengo 1º 76 pts, Palmeiras 2º 73, Cruzeiro 3º 60 (antes de la jornada 35).</p>
       <div id="matchList">
 
-        <article class="match" data-league="ligamx" data-status="live" data-value="1">
+
+        <article class="match" data-league="bundes" data-status="upcoming" data-value="0">
           <div class="match-top">
-            <span class="m-league">Liga MX · Jornada 17</span>
-            <span class="badge badge-live">En vivo</span>
-            <span class="badge badge-demo">Ejemplo</span>
-            <span class="m-time live num">67'</span>
+            <span class="m-league">Bundesliga</span>
+            <span class="m-time num">Vie 20 · 13:30</span>
           </div>
           <div class="teams">
-            <div class="team"><span class="crest c-a">TIG</span><b>Tigres UANL</b><span class="score num">2</span></div>
-            <div class="team"><span class="crest c-b">AME</span><b>América</b><span class="score num">1</span></div>
-          </div>
-          <div class="prob" aria-label="Probabilidad IA de resultado final">
-            <div class="prob-bar"><i class="p-h" style="width:58%"></i><i class="p-d" style="width:24%"></i><i class="p-a" style="width:18%"></i></div>
-            <div class="prob-labels"><span>IA · Local <b>58%</b></span><span>Empate <b>24%</b></span><span>Visita <b>18%</b></span></div>
+            <div class="team"><span class="crest c-a">BAY</span><b>Bayern München</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-b">COL</span><b>1. FC Köln</b><span class="score dim num">—</span></div>
           </div>
           <div class="match-foot">
-            <span class="chip">xG <strong>1.94 – 1.12</strong></span>
-            <span class="chip">Lectura en vivo: <strong>no más de 1 gol más</strong></span>
-            <span class="chip ev">Under 4.5 · EV <strong>+10.1%</strong></span>
-            <button class="add-btn" type="button" data-pick="Under 4.5 goles · Tigres vs América" data-odds="1.72" data-prob="64">Sumar al parlay</button>
+            <span class="chip">Datos reales · 20–22 nov</span>
+            <span class="chip">Probabilidades: Semana 2 · Momios: Semana 3</span>
           </div>
         </article>
 
-        <article class="match" data-league="premier" data-status="upcoming" data-value="1">
-          <div class="match-top">
-            <span class="m-league">Premier League</span>
-            <span class="badge badge-value">Valor EV+</span>
-            <span class="badge badge-demo">Ejemplo</span>
-            <span class="m-time num">Hoy 14:00</span>
-          </div>
-          <div class="teams">
-            <div class="team"><span class="crest c-c">ARS</span><b>Arsenal</b><span class="score dim num">—</span></div>
-            <div class="team"><span class="crest c-d">CHE</span><b>Chelsea</b><span class="score dim num">—</span></div>
-          </div>
-          <div class="prob" aria-label="Probabilidad IA">
-            <div class="prob-bar"><i class="p-h" style="width:52%"></i><i class="p-d" style="width:27%"></i><i class="p-a" style="width:21%"></i></div>
-            <div class="prob-labels"><span>IA · Local <b>52%</b></span><span>Empate <b>27%</b></span><span>Visita <b>21%</b></span></div>
-          </div>
-          <div class="match-foot">
-            <span class="chip">xG <strong>1.78 – 1.05</strong></span>
-            <span class="chip">Mejor mercado: <strong>Arsenal gana</strong></span>
-            <span class="chip ev">Momio 2.10 · EV <strong>+9.2%</strong></span>
-            <button class="add-btn" type="button" data-pick="Arsenal gana · vs Chelsea" data-odds="2.10" data-prob="52">Sumar al parlay</button>
-          </div>
-        </article>
-
-        <article class="match" data-league="laliga" data-status="upcoming" data-value="1">
+        <article class="match" data-league="laliga" data-status="upcoming" data-value="0">
           <div class="match-top">
             <span class="m-league">LaLiga</span>
-            <span class="badge badge-value">Valor EV+</span>
-            <span class="badge badge-demo">Ejemplo</span>
-            <span class="m-time num">Hoy 15:00</span>
+            <span class="m-time num">Vie 20 · 14:00</span>
           </div>
           <div class="teams">
-            <div class="team"><span class="crest c-e">RMA</span><b>Real Madrid</b><span class="score dim num">—</span></div>
-            <div class="team"><span class="crest c-f">VAL</span><b>Valencia</b><span class="score dim num">—</span></div>
-          </div>
-          <div class="prob" aria-label="Probabilidad IA">
-            <div class="prob-bar"><i class="p-h" style="width:71%"></i><i class="p-d" style="width:19%"></i><i class="p-a" style="width:10%"></i></div>
-            <div class="prob-labels"><span>IA · Local <b>71%</b></span><span>Empate <b>19%</b></span><span>Visita <b>10%</b></span></div>
+            <div class="team"><span class="crest c-c">ATH</span><b>Athletic Club</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-d">ESP</span><b>Espanyol</b><span class="score dim num">—</span></div>
           </div>
           <div class="match-foot">
-            <span class="chip">xG <strong>2.31 – 0.74</strong></span>
-            <span class="chip">Mejor mercado: <strong>Over 2.5 goles</strong></span>
-            <span class="chip ev">Momio 1.68 · EV <strong>+7.5%</strong></span>
-            <button class="add-btn" type="button" data-pick="Over 2.5 goles · Real Madrid vs Valencia" data-odds="1.68" data-prob="64">Sumar al parlay</button>
+            <span class="chip">Datos reales · 20–22 nov</span>
+            <span class="chip">Probabilidades: Semana 2 · Momios: Semana 3</span>
+          </div>
+        </article>
+
+        <article class="match" data-league="ligamx" data-status="upcoming" data-value="0">
+          <div class="match-top">
+            <span class="m-league">Liga MX</span>
+            <span class="m-time num">Vie 20 · 19:00</span>
+          </div>
+          <div class="teams">
+            <div class="team"><span class="crest c-e">PUE</span><b>Puebla</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-f">ASL</span><b>Atlético San Luis</b><span class="score dim num">—</span></div>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Datos reales · 20–22 nov</span>
+            <span class="chip">Probabilidades: Semana 2 · Momios: Semana 3</span>
+          </div>
+        </article>
+
+        <article class="match" data-league="ligamx" data-status="upcoming" data-value="0">
+          <div class="match-top">
+            <span class="m-league">Liga MX</span>
+            <span class="m-time num">Vie 20 · 21:00</span>
+          </div>
+          <div class="teams">
+            <div class="team"><span class="crest c-g">JUA</span><b>FC Juárez</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-h">ATL</span><b>Atlas</b><span class="score dim num">—</span></div>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Datos reales · 20–22 nov</span>
+            <span class="chip">Probabilidades: Semana 2 · Momios: Semana 3</span>
+          </div>
+        </article>
+
+        <article class="match" data-league="ligamx" data-status="upcoming" data-value="0">
+          <div class="match-top">
+            <span class="m-league">Liga MX</span>
+            <span class="m-time num">Vie 20 · 21:10</span>
+          </div>
+          <div class="teams">
+            <div class="team"><span class="crest c-a">TIJ</span><b>Tijuana</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-b">ATN</span><b>Atlante</b><span class="score dim num">—</span></div>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Datos reales · 20–22 nov</span>
+            <span class="chip">Probabilidades: Semana 2 · Momios: Semana 3</span>
+          </div>
+        </article>
+
+        <article class="match" data-league="premier" data-status="upcoming" data-value="0">
+          <div class="match-top">
+            <span class="m-league">Premier League</span>
+            <span class="m-time num">Sáb 21 · 06:30</span>
+          </div>
+          <div class="teams">
+            <div class="team"><span class="crest c-c">MCI</span><b>Man City</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-d">FUL</span><b>Fulham</b><span class="score dim num">—</span></div>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Datos reales · 20–22 nov</span>
+            <span class="chip">Probabilidades: Semana 2 · Momios: Semana 3</span>
+          </div>
+        </article>
+
+        <article class="match" data-league="premier" data-status="upcoming" data-value="0">
+          <div class="match-top">
+            <span class="m-league">Premier League</span>
+            <span class="m-time num">Sáb 21 · 11:30</span>
+          </div>
+          <div class="teams">
+            <div class="team"><span class="crest c-e">NEW</span><b>Newcastle</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-f">ARS</span><b>Arsenal</b><span class="score dim num">—</span></div>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Datos reales · 20–22 nov</span>
+            <span class="chip">Probabilidades: Semana 2 · Momios: Semana 3</span>
+          </div>
+        </article>
+
+        <article class="match" data-league="laliga" data-status="upcoming" data-value="0">
+          <div class="match-top">
+            <span class="m-league">LaLiga</span>
+            <span class="m-time num">Sáb 21 · 11:30</span>
+          </div>
+          <div class="teams">
+            <div class="team"><span class="crest c-g">SEV</span><b>Sevilla</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-h">BET</span><b>Real Betis</b><span class="score dim num">—</span></div>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Datos reales · 20–22 nov</span>
+            <span class="chip">Probabilidades: Semana 2 · Momios: Semana 3</span>
+          </div>
+        </article>
+
+        <article class="match" data-league="laliga" data-status="upcoming" data-value="0">
+          <div class="match-top">
+            <span class="m-league">LaLiga</span>
+            <span class="m-time num">Sáb 21 · 14:00</span>
+          </div>
+          <div class="teams">
+            <div class="team"><span class="crest c-a">RMA</span><b>Real Madrid</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-b">CEL</span><b>Celta Vigo</b><span class="score dim num">—</span></div>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Datos reales · 20–22 nov</span>
+            <span class="chip">Probabilidades: Semana 2 · Momios: Semana 3</span>
+          </div>
+        </article>
+
+        <article class="match" data-league="ligamx" data-status="upcoming" data-value="0">
+          <div class="match-top">
+            <span class="m-league">Liga MX</span>
+            <span class="m-time num">Sáb 21 · 16:50</span>
+          </div>
+          <div class="teams">
+            <div class="team"><span class="crest c-c">PAC</span><b>Pachuca</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-d">TOL</span><b>Toluca</b><span class="score dim num">—</span></div>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Datos reales · 20–22 nov</span>
+            <span class="chip">Probabilidades: Semana 2 · Momios: Semana 3</span>
+          </div>
+        </article>
+
+        <article class="match" data-league="ligamx" data-status="upcoming" data-value="0">
+          <div class="match-top">
+            <span class="m-league">Liga MX</span>
+            <span class="m-time num">Sáb 21 · 19:00</span>
+          </div>
+          <div class="teams">
+            <div class="team"><span class="crest c-e">PUM</span><b>Pumas</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-f">MTY</span><b>Monterrey</b><span class="score dim num">—</span></div>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Datos reales · 20–22 nov</span>
+            <span class="chip">Probabilidades: Semana 2 · Momios: Semana 3</span>
+          </div>
+        </article>
+
+        <article class="match" data-league="laliga" data-status="upcoming" data-value="0">
+          <div class="match-top">
+            <span class="m-league">LaLiga</span>
+            <span class="m-time num">Dom 22 · 07:00</span>
+          </div>
+          <div class="teams">
+            <div class="team"><span class="crest c-g">BAR</span><b>Barcelona</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-h">VIL</span><b>Villarreal</b><span class="score dim num">—</span></div>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Datos reales · 20–22 nov</span>
+            <span class="chip">Probabilidades: Semana 2 · Momios: Semana 3</span>
+          </div>
+        </article>
+
+        <article class="match" data-league="premier" data-status="upcoming" data-value="0">
+          <div class="match-top">
+            <span class="m-league">Premier League</span>
+            <span class="m-time num">Dom 22 · 10:30</span>
+          </div>
+          <div class="teams">
+            <div class="team"><span class="crest c-a">LIV</span><b>Liverpool</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-b">MUN</span><b>Man Utd</b><span class="score dim num">—</span></div>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Datos reales · 20–22 nov</span>
+            <span class="chip">Probabilidades: Semana 2 · Momios: Semana 3</span>
           </div>
         </article>
 
         <article class="match" data-league="seriea" data-status="upcoming" data-value="0">
           <div class="match-top">
             <span class="m-league">Serie A</span>
-            <span class="badge badge-demo">Ejemplo</span>
-            <span class="m-time num">Hoy 13:45</span>
+            <span class="m-time num">Dom 22 · 13:45</span>
           </div>
           <div class="teams">
-            <div class="team"><span class="crest c-g">NAP</span><b>Napoli</b><span class="score dim num">—</span></div>
-            <div class="team"><span class="crest c-h">INT</span><b>Inter</b><span class="score dim num">—</span></div>
-          </div>
-          <div class="prob" aria-label="Probabilidad IA">
-            <div class="prob-bar"><i class="p-h" style="width:38%"></i><i class="p-d" style="width:31%"></i><i class="p-a" style="width:31%"></i></div>
-            <div class="prob-labels"><span>IA · Local <b>38%</b></span><span>Empate <b>31%</b></span><span>Visita <b>31%</b></span></div>
+            <div class="team"><span class="crest c-c">ATA</span><b>Atalanta</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-d">INT</span><b>Inter</b><span class="score dim num">—</span></div>
           </div>
           <div class="match-foot">
-            <span class="chip">xG <strong>1.34 – 1.29</strong></span>
-            <span class="chip">Lectura: <strong>partido cerrado, sin valor claro</strong></span>
-            <span class="chip">Mejor esperar al en vivo</span>
+            <span class="chip">Datos reales · 20–22 nov</span>
+            <span class="chip">Probabilidades: Semana 2 · Momios: Semana 3</span>
           </div>
         </article>
 
-        <article class="match" data-league="bundes" data-status="live" data-value="0">
+        <article class="match" data-league="laliga" data-status="upcoming" data-value="0">
           <div class="match-top">
-            <span class="m-league">Bundesliga</span>
-            <span class="badge badge-live">En vivo</span>
-            <span class="badge badge-demo">Ejemplo</span>
-            <span class="m-time live num">54'</span>
+            <span class="m-league">LaLiga</span>
+            <span class="m-time num">Dom 22 · 14:00</span>
           </div>
           <div class="teams">
-            <div class="team"><span class="crest c-e">BVB</span><b>Borussia Dortmund</b><span class="score num">1</span></div>
-            <div class="team"><span class="crest c-c">B04</span><b>Bayer Leverkusen</b><span class="score num">1</span></div>
-          </div>
-          <div class="prob" aria-label="Probabilidad IA en vivo">
-            <div class="prob-bar"><i class="p-h" style="width:36%"></i><i class="p-d" style="width:34%"></i><i class="p-a" style="width:30%"></i></div>
-            <div class="prob-labels"><span>IA · Local <b>36%</b></span><span>Empate <b>34%</b></span><span>Visita <b>30%</b></span></div>
+            <div class="team"><span class="crest c-e">GET</span><b>Getafe</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-f">ATM</span><b>Atlético Madrid</b><span class="score dim num">—</span></div>
           </div>
           <div class="match-foot">
-            <span class="chip">Ritmo: <strong>alto · 9 tiros en 2T</strong></span>
-            <span class="chip">Ángulo en vivo: <strong>ambos anotan ya cayó — buscar córners</strong></span>
-            <span class="chip ev">Over 8.5 córners · EV <strong>+9.2%</strong></span>
-            <button class="add-btn" type="button" data-pick="Over 8.5 córners · Dortmund vs Leverkusen" data-odds="1.95" data-prob="56">Sumar al parlay</button>
+            <span class="chip">Datos reales · 20–22 nov</span>
+            <span class="chip">Probabilidades: Semana 2 · Momios: Semana 3</span>
           </div>
         </article>
 
-        <article class="match" data-league="europa" data-status="upcoming" data-value="1">
+        <article class="match" data-league="ligamx" data-status="upcoming" data-value="0">
           <div class="match-top">
-            <span class="m-league">Europa League</span>
-            <span class="badge badge-value">Valor EV+</span>
-            <span class="badge badge-demo">Ejemplo</span>
-            <span class="m-time num">Hoy 14:00</span>
+            <span class="m-league">Liga MX</span>
+            <span class="m-time num">Dom 22 · 17:07</span>
           </div>
           <div class="teams">
-            <div class="team"><span class="crest c-a">SEV</span><b>Sevilla</b><span class="score dim num">—</span></div>
-            <div class="team"><span class="crest c-f">POR</span><b>Porto</b><span class="score dim num">—</span></div>
-          </div>
-          <div class="prob" aria-label="Probabilidad IA">
-            <div class="prob-bar"><i class="p-h" style="width:44%"></i><i class="p-d" style="width:30%"></i><i class="p-a" style="width:26%"></i></div>
-            <div class="prob-labels"><span>IA · Local <b>44%</b></span><span>Empate <b>30%</b></span><span>Visita <b>26%</b></span></div>
+            <div class="team"><span class="crest c-g">CHI</span><b>Chivas</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-h">CRU</span><b>Cruz Azul</b><span class="score dim num">—</span></div>
           </div>
           <div class="match-foot">
-            <span class="chip">xG <strong>1.41 – 1.08</strong></span>
-            <span class="chip">Mejor mercado: <strong>Ambos anotan</strong></span>
-            <span class="chip ev">Momio 1.92 · EV <strong>+5.6%</strong></span>
-            <button class="add-btn" type="button" data-pick="Ambos anotan · Sevilla vs Porto" data-odds="1.92" data-prob="55">Sumar al parlay</button>
+            <span class="chip">Datos reales · 20–22 nov</span>
+            <span class="chip">Probabilidades: Semana 2 · Momios: Semana 3</span>
           </div>
         </article>
 
       </div>
-      <div class="empty" id="emptyState">No hay partidos de ejemplo con ese filtro. Prueba con otra liga o con “Todos”.</div>
+      <div class="empty" id="emptyState">No hay partidos con ese filtro. Prueba con otra liga o con “Todos”.</div>
     </main>
 
     <!-- RAIL IA -->
@@ -453,7 +558,7 @@
       <section class="panel" aria-label="Tu parlay">
         <div class="panel-h"><h2>Tu parlay</h2><span>Solo si es seguro</span></div>
         <div class="slip">
-          <p class="slip-empty" id="slipEmpty">Vacío. Suma picks con el botón de cada partido y aquí verás el momio combinado y la probabilidad real del combo.</p>
+          <p class="slip-empty" id="slipEmpty">Vacío en la Semana 1: todavía no hay picks con momios. Los picks con valor llegan en la Semana 3, cuando se agreguen momios y valor esperado.</p>
           <div id="slipItems"></div>
           <div class="slip-totals" id="slipTotals" hidden>
             <div><span>Momio combinado</span><b class="num" id="totOdds">—</b></div>
@@ -576,7 +681,7 @@
   </section>
 
   <footer>
-    <p><strong>Football AI Agenda · Proyecto de Luis Raga.</strong> Diseño original inspirado en la estructura de agendas como 365Scores y en las tarjetas editoriales de OneFootball; no copia su código, su diseño propietario ni sus datos. Los partidos mostrados son ejemplos del formato: al conectar una fuente real (football-data.org, API-Football) la agenda se llena con datos verdaderos.</p>
+    <p><strong>Football AI Agenda · Proyecto de Luis Raga.</strong> Diseño original inspirado en la estructura de agendas como 365Scores y en las tarjetas editoriales de OneFootball; no copia su código, su diseño propietario ni sus datos. Semana 1: partidos reales verificados el 19 nov 2026, con fuentes football-data.org (12 ligas) y API-Football (Liga MX y momios); horas de Monterrey (CST), sin momios ni probabilidades inventadas. Las probabilidades llegan en la Semana 2 y los momios y el valor en la Semana 3.</p>
     <p>Esta página es una herramienta de análisis. No realiza apuestas, no ejecuta transacciones y ningún momio mostrado es una cuota en vivo de una casa de apuestas.</p>
   </footer>
 </div>
