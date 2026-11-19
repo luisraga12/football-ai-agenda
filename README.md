@@ -4,19 +4,40 @@ La página (`index.html`) ya no muestra partidos de ejemplo: ahora muestra
 **partidos reales verificados el 19 nov 2026**, del fin de semana del **20 al 22 de
 noviembre de 2026**, con horas de Monterrey (CST).
 
+Entregada el 19 nov 2026 (un día antes), commit `4032d10` en `main`.
+
 ## Fuentes de datos
 
-- **football-data.org** — cubre sus 12 ligas (entre ellas Premier League, LaLiga,
-  Serie A y Bundesliga).
-- **API-Football** — Liga MX y momios (plan gratuito).
+- **ESPN (API pública, sin clave)** — es la fuente real de los partidos de la
+  Semana 1: `site.api.espn.com/apis/site/v2/sports/soccer/{liga}/scoreboard`.
+  No necesita registro ni token; los datos se descargan y se integran en
+  `index.html`, la página no consulta la API en vivo.
+- **API-Football** — cuenta gratuita creada el 19 nov 2026 (plan Free,
+  100 peticiones/día, vence 19 nov 2027). Verificado en vivo: el plan gratis
+  solo abre las temporadas 2022 a 2024, así que **no sirve para la temporada
+  2026/27** ni para los momios de la Semana 3.
+- **football-data.org** — cubre 12 ligas (Premier League, LaLiga, Serie A,
+  Bundesliga, entre otras). Pendiente de sacar el token gratuito; no se usó
+  en la Semana 1.
+
+## Momios para la Semana 3 (verificado 19 nov 2026)
+
+El mismo scoreboard de ESPN ya trae momios de **DraftKings** para cada partido:
+1X2 completo (local/empate/visitante), over/under 2.5 y handicap, en formato
+americano. Verificado en vivo para Premier League, LaLiga y Liga MX
+(ej. Newcastle vs Arsenal: Arsenal -175, empate +330, Newcastle +450;
+over 2.5 -140, under 2.5 +115).
+
+Es un solo bookmaker y los momios son de DraftKings, no un promedio del mercado.
+The Odds API (plan gratis, 500 créditos/mes) queda como respaldo, aún sin probar.
 
 ## Alcance de la Semana 1
 
 Solo **partidos (fixtures), resultados y tablas**. No hay momios, probabilidades
 ni valor esperado inventados en la página.
 
-- **Semana 2:** probabilidades (modelo Poisson).
-- **Semana 3:** momios y valor esperado (EV).
+- **Semana 2 (lun 23 nov):** probabilidades (modelo Poisson).
+- **Semana 3:** momios y valor esperado (EV), con los momios de ESPN/DraftKings.
 - **Semana 4:** parlay y picks guardados.
 
 ## Partidos incluidos (16)
