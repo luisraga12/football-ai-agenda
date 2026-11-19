@@ -1,10 +1,24 @@
-# Football AI Agenda — Semana 1
+# Football AI Agenda — Semanas 1 y 2
 
 La página (`index.html`) ya no muestra partidos de ejemplo: ahora muestra
 **partidos reales verificados el 19 nov 2026**, del fin de semana del **20 al 22 de
 noviembre de 2026**, con horas de Monterrey (CST).
 
 Entregada el 19 nov 2026 (un día antes), commit `4032d10` en `main`.
+
+## Semana 2 — Modelo Poisson (entregada 19 nov 2026)
+
+16 partidos reales del fin de semana del **27 al 29 de noviembre de 2026**,
+con horas de Monterrey (CST), cada uno con sus probabilidades propias del
+**modelo Poisson**: 1X2, más de 2.5 goles y ambos anotan (BTTS).
+
+- Fuente: API pública de ESPN, sin clave; últimos 5 partidos de liga por
+  equipo, calculados el 19 nov 2026 por el Empleado 1 y verificados por el
+  jefe (tabla completa en `tabla-poisson-semana-2.md`).
+- Sin momios: llegan en la Semana 3.
+- Nota en la página: una muestra de 5 partidos puede exagerar rachas;
+  los favoritos más extremos (Real Madrid 98.8%, Arsenal 83.0%,
+  Napoli 82.1%) conviene leerlos con cautela.
 
 ## Fuentes de datos
 
@@ -36,7 +50,7 @@ The Odds API (plan gratis, 500 créditos/mes) queda como respaldo, aún sin prob
 Solo **partidos (fixtures), resultados y tablas**. No hay momios, probabilidades
 ni valor esperado inventados en la página.
 
-- **Semana 2 (lun 23 nov):** probabilidades (modelo Poisson).
+- **Semana 2 (hecha 19 nov 2026):** probabilidades (modelo Poisson), ver arriba.
 - **Semana 3:** momios y valor esperado (EV), con los momios de ESPN/DraftKings.
 - **Semana 4:** parlay y picks guardados.
 

@@ -17,11 +17,23 @@ terminadas están marcadas como hechas; el resto está pendiente.
   solo abre las temporadas 2022 a 2024, no sirve para la 2026/27.
 - Momios de ESPN/DraftKings verificados en vivo para la Semana 3.
 
-## ⏳ Semana 2 — Pendiente (lun 23 nov 2026)
+## ✅ Semana 2 — Hecha (entregada 19 nov 2026, adelantada)
 
-- Modelo Poisson de probabilidades por partido (1X2 y goles).
+- Modelo Poisson de probabilidades por partido (1X2, más de 2.5 goles y
+  ambos anotan), calculado por el Empleado 1 con los últimos 5 partidos de
+  liga por equipo (ESPN, 19 nov 2026) y revisado por el jefe.
 - Probabilidades propias en cada tarjeta, sin momios inventados.
-- Actualizar los partidos con los de esa semana.
+- 16 partidos del fin de semana 27–29 nov 2026, con horas de Monterrey.
+  El Empleado 1 cambió Celta–Villarreal por Sassuolo–Napoli (cambio
+  aprobado por el jefe).
+- La fórmula de las órdenes se corrigió con la variante estándar
+  (promedio por equipo como denominador); la fórmula literal dejaba los
+  goles esperados a ~1/4 de su valor real.
+- El BTTS de la tabla se corrigió en la integración (la tabla del
+  Empleado 1 lo traía mal por truncar a 0–7 goles).
+- Nota de cautela en la página: una muestra de 5 partidos puede exagerar
+  rachas (Real Madrid 98.8%, Arsenal 83.0%, Napoli 82.1%).
+- Esta semana el jefe cubrió el trabajo del Empleado 2 (interfaz).
 
 ## ⏳ Semana 3 — Pendiente
 
