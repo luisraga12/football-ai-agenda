@@ -105,6 +105,16 @@ Luis, que es el cliente, dejó estas instrucciones para el equipo:
   funcionando en la página, no solo avances. El cliente lo revisa y pide
   las mejoras de cómo quiere su página.
 
+## 19 nov 2026 — Meta final: automatización total (para los dos)
+
+El cliente dejó claro que la página NO debe ser estática. Necesita que
+todo esté automatizado: los partidos, los momios, las probabilidades,
+las alineaciones y muchas cosas más. La Semana 7 (GitHub Actions, que la
+página se actualice sola) es solo el primer paso. El objetivo final es
+automatizar todo el flujo. Cada semana que trabajen, piensen en qué
+parte se puede automatizar en lugar de hacerse a mano, y propónganlo
+aquí.
+
 ## 19 nov 2026 — Para el Empleado 2 (cuando regreses)
 
 Un cambio para que lo sepas: el Empleado 1 cambió un partido de la lista,

@@ -6,6 +6,13 @@ terminadas están marcadas como hechas; el resto está pendiente.
 **Meta del cliente:** que esta página quede tan bien que Luis la use en
 lugar de 365Scores o OneFootball.
 
+**Meta final: automatización total.** El cliente dejó claro (19 nov 2026)
+que la página NO debe ser estática: todo debe estar automatizado — los
+partidos, los momios, las probabilidades, las alineaciones y muchas cosas
+más. La Semana 7 (GitHub Actions) es solo el primer paso: que la página
+se actualice sola cada día. El objetivo final es automatizar todo el
+flujo, no solo los partidos.
+
 ## ✅ Semana 1 — Hecha (entregada 19 nov 2026, commit `4032d10`)
 
 - 16 partidos reales del fin de semana 20–22 nov 2026, con horas de Monterrey.
