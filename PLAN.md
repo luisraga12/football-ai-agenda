@@ -3,6 +3,9 @@
 Qué se hace cada semana, en el mismo `index.html` del repo. Las semanas
 terminadas están marcadas como hechas; el resto está pendiente.
 
+**Meta del cliente:** que esta página quede tan bien que Luis la use en
+lugar de 365Scores o OneFootball.
+
 ## ✅ Semana 1 — Hecha (entregada 19 nov 2026, commit `4032d10`)
 
 - 16 partidos reales del fin de semana 20–22 nov 2026, con horas de Monterrey.
