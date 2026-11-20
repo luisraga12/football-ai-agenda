@@ -1,24 +1,24 @@
 # Actualizar datos y Poisson (Football AI Agenda)
-
-Corre la automatización de la semana actual y, si los datos cambiaron,
-hace commit de los archivos generados en `data/`.
-
-- **Diario** (13:00 UTC): recalcula la semana actual con los últimos
-  datos de ESPN (últimos 5 de cada equipo, promedios de liga).
-- **Cada hora en días de partido** (vie, sáb y dom): para que los
-  resultados y los últimos 5 se actualicen solos mientras se juega.
-- **Manual** (`workflow_dispatch`): para probar o forzar una corrida.
-
-La semana que se calcula es la de `scripts/config/semana-actual.json`.
-Para cambiar de semana, ese archivo debe apuntar a la configuración
-nueva (p. ej. copiar `semana-2.json` sobre `semana-actual.json`).
-
-NOTA: los workflows programados (`schedule`) solo corren en la rama
-por defecto (`main`). Este archivo se entrega en la rama `semana-2`
-para revisión del jefe; empieza a correr solo cuando se fusione a `main`.
-
-El workflow usa solo `GITHUB_TOKEN` (sin secretos adicionales) y no
-publica ninguna clave: los datos vienen de la API pública de ESPN.
+#
+# Corre la automatización de la semana actual y, si los datos cambiaron,
+# hace commit de los archivos generados en `data/`.
+#
+# - Diario (13:00 UTC): recalcula la semana actual con los últimos
+#   datos de ESPN (últimos 5 de cada equipo, promedios de liga).
+# - Cada hora en días de partido (vie, sáb y dom): para que los
+#   resultados y los últimos 5 se actualicen solos mientras se juega.
+# - Manual (`workflow_dispatch`): para probar o forzar una corrida.
+#
+# La semana que se calcula es la de `scripts/config/semana-actual.json`.
+# Para cambiar de semana, ese archivo debe apuntar a la configuración
+# nueva (p. ej. copiar `semana-2.json` sobre `semana-actual.json`).
+#
+# NOTA: los workflows programados (`schedule`) solo corren en la rama
+# por defecto (`main`). Este archivo se entrega en la rama `semana-2`
+# para revisión del jefe; empieza a correr solo cuando se fusione a `main`.
+#
+# El workflow usa solo `GITHUB_TOKEN` (sin secretos adicionales) y no
+# publica ninguna clave: los datos vienen de la API pública de ESPN.
 name: Actualizar datos y Poisson
 
 on:
