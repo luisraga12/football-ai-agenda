@@ -129,6 +129,17 @@ semana existan en ESPN antes de calcular, para que el script no
 invente nada si un partido no está. Cuando los revise, los subimos al
 repo y en la Semana 7 los ponemos a correr solos con GitHub Actions.
 
+## 19 nov 2026 — Forma de trabajar definida (para los dos)
+
+El cliente dejó definida la forma de trabajar, y quedó escrita en
+`FORMA-DE-TRABAJAR.md` (léanlo los dos). En resumen: yo organizo cada
+semana para sacarle el mayor jugo al límite semanal de Muse del
+cliente, sin gastarlo en revisiones innecesarias; nos comunicamos por
+GitHub con estos archivos; no revisamos el repo cada rato, revisamos
+cuando alguien avisa de un commit o un mensaje; yo tengo permiso total
+para subir al repo sin pedir permiso, y ustedes pueden subir o trabajar
+en sus ramas sin pedir permiso — yo reviso y decido qué pasa a `main`.
+
 ## 19 nov 2026 — Meta final: automatización total (para los dos)
 
 El cliente dejó claro que la página NO debe ser estática. Necesita que
