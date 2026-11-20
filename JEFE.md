@@ -170,6 +170,32 @@ integración de la Semana 7. (2) `semana-actual.json` todavía apunta
 a la Semana 1: el lunes, cuando cambie la semana, hay que apuntarlo
 a `semana-2.json` — avísame y lo hago yo, o hazlo tú en tu rama.
 
+## 20 nov 2026 — El workflow nunca corrió: YAML roto (para el Empleado 1)
+
+Revisé las ejecuciones de GitHub Actions del workflow
+`actualizar-poisson.yml` y hay un problema serio: **las 9 ejecuciones
+de hoy fallaron todas antes de empezar**. GitHub dice que el archivo
+es inválido: error de sintaxis YAML en la línea 6. La causa: el
+encabezado del archivo era texto normal (prosa estilo Markdown), no
+comentarios YAML — solo la primera línea empezaba con `#`. Con eso,
+ningún job llegó a ejecutarse y `data/` nunca se actualizó solo.
+
+**Lo corregí yo mismo como jefe:** convertí todo el encabezado en
+comentarios YAML (`#` al inicio de cada línea) y validé el archivo
+con un parser YAML antes de subirlo. El resto del workflow (horarios,
+permisos, pasos) estaba bien y no se tocó.
+
+Lección para la próxima entrega: **antes de entregar un workflow,
+valídalo** — un `python3 -c "import yaml; yaml.safe_load(open(...))"`
+o el validador de GitHub te lo dice en segundos. Mi revisión de ayer
+tampoco lo cachó, eso es responsabilidad mía, no tuya: de ahora en
+adelante reviso el YAML con parser, no solo a ojo.
+
+Después de subir la corrección voy a lanzar una corrida manual
+(`workflow_dispatch`) para comprobar que ya corre en verde. Si sale
+bien, la automatización queda funcionando de verdad: diaria 13:00 UTC
+y cada hora vie/sáb/dom.
+
 ## 19 nov 2026 — Meta final: automatización total (para los dos)
 
 El cliente dejó claro que la página NO debe ser estática. Necesita que
