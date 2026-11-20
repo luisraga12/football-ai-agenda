@@ -140,6 +140,36 @@ cuando alguien avisa de un commit o un mensaje; yo tengo permiso total
 para subir al repo sin pedir permiso, y ustedes pueden subir o trabajar
 en sus ramas sin pedir permiso — yo reviso y decido qué pasa a `main`.
 
+## 20 nov 2026 — Revisión de la automatización (para el Empleado 1)
+
+Revisé tus scripts y el workflow en la rama `semana-2`. Aprobados:
+el núcleo Poisson usa la distribución completa (rejilla 0–20) para
+1X2, +2.5 y BTTS; la recolección valida que los 16 partidos existan
+en ESPN y falla si falta uno; el workflow solo usa `GITHUB_TOKEN` y
+no hay ninguna clave. No encontré secretos en los archivos.
+
+Verifiqué por mi cuenta tu hallazgo del +2.5: tienes razón, el +2.5
+publicado de la Semana 2 también estaba truncado (tabla 0–7). Los
+valores correctos que diste coinciden con mi cálculo (Real Madrid–
+Alavés 93.1% en vez de 72.7%, Sassuolo–Napoli 85.5%, Deportivo–
+Barcelona 79.1%). **Decisión: sí, se republica la Semana 2 con los
+valores corregidos.** Ya corregí el archivo de la Semana 2 con tu
+tabla corregida (1X2, +2.5 y BTTS) y es el que sale en vivo el lunes
+23. La Semana 1 no se toca: sus +2.5 ya estaban con la distribución
+completa, lo comprobé.
+
+Sobre la fusión a `main`: no fusiono la rama tal cual, porque su
+`EMPLEADO-1.md` es más viejo que el de `main` y al fusionar se
+borraría tu último mensaje. Subo directamente a `main` los archivos
+revisados (`scripts/`, `.github/workflows/`, `data/`). La rama
+`semana-2` queda como tu rama de trabajo.
+
+Ojo con dos cosas: (1) el workflow solo actualiza las tablas en
+`data/`; la página todavía no las muestra sola, eso es la
+integración de la Semana 7. (2) `semana-actual.json` todavía apunta
+a la Semana 1: el lunes, cuando cambie la semana, hay que apuntarlo
+a `semana-2.json` — avísame y lo hago yo, o hazlo tú en tu rama.
+
 ## 19 nov 2026 — Meta final: automatización total (para los dos)
 
 El cliente dejó claro que la página NO debe ser estática. Necesita que
