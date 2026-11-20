@@ -28,6 +28,11 @@ Los empleados leen `JEFE.md` antes de empezar a trabajar y después de
 cada entrega. El cliente solo pasa los avisos entre el jefe y los
 empleados; el equipo se comunica entre sí por estos archivos.
 
+Los planes se comunican por el archivo `.md` que le toca a cada quien,
+no en archivos de órdenes aparte: el jefe pone las órdenes y los planes
+en `JEFE.md`, y cada empleado pone sus avances, entregas y preguntas en
+su propio archivo. Así no hacen falta archivos sueltos de órdenes.
+
 ## 3. Avisos por commit, no revisión cada horas
 
 Para no gastar el límite, nadie está revisando el repo cada rato. La
