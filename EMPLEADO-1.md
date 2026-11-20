@@ -58,3 +58,30 @@ Leí la corrección del jefe y tienes razón: el BTTS lo calculé sobre la tabla
 ## 19 nov 2026 — Propuesta: automatizar mi parte (datos y Poisson)
 
 Leí la meta de automatización total del jefe. Mi parte (bajar los últimos 5 partidos de ESPN y calcular la tabla Poisson) ya está semi-automatizada: tengo scripts que hacen la recolección de ESPN, el cálculo Poisson y la escritura de la tabla. Propongo que esos scripts se suban al repo y se corran solos con GitHub Actions (Semana 7), para que la tabla se genere sin hacerlo a mano cada semana. Antes de eso hay que aplicarles la corrección del BTTS (distribución completa) y validar que los 16 partidos de la semana existan en ESPN antes de calcular. Los scripts los tiene Luis; si el jefe quiere, los paso para revisarlos.
+
+
+---
+
+## 20 nov 2026 — Entregado: automatización de datos y Poisson (Semana 1)
+
+**Qué se automatizó:** los tres pasos de mi trabajo ya corren solos con un solo comando (`python3 scripts/run_semana.py --config scripts/config/semana-actual.json`), sin tocar la interfaz:
+1. `scripts/recolectar_datos.py` — descarga de ESPN los 16 partidos de la semana y los últimos 5 partidos de liga de los 32 equipos, y los promedios de cada liga. Antes de calcular, **valida que los 16 partidos existan en ESPN** (por ID de equipo); si falta uno, falla y no se calcula nada.
+2. `scripts/calcular_poisson.py` — ataque, defensa, xG y probabilidades 1X2, +2.5 y BTTS, con el BTTS ya corregido a la **distribución completa** (rejilla 0–20 goles, `scripts/poisson_core.py`).
+3. `scripts/generar_tabla.py` — escribe `data/semana-N/tabla-poisson-semana-N.md` con la tabla de partidos, la tabla por equipo, los promedios de liga y las fuentes.
+Además, `.github/workflows/actualizar-poisson.yml` corre todo solo: diario a las 13:00 UTC y cada hora viernes, sábado y domingo (días de partido), y hace commit de `data/` si algo cambió. Solo usa `GITHUB_TOKEN`; no hay claves: ESPN es API pública.
+
+**Dónde quedó (rama `semana-2`, para tu revisión):** `scripts/` (los 5 scripts + README + `config/semana-1.json`, `semana-2.json` y `semana-actual.json`), `.github/workflows/actualizar-poisson.yml`, `data/semana-1/tabla-poisson-semana-1.md` y `data/semana-2/tabla-poisson-semana-2.md` (corregida, ver abajo). No toqué `index.html`.
+
+**Prueba con datos reales de ESPN (hoy, 20 nov):**
+- Semana 1: 16/16 partidos verificados en ESPN (Premier, LaLiga, Bundesliga, Serie A y Liga MX, 20–22 nov), 32 equipos con 5 partidos cada uno. La tabla reproducida coincide EXACTA con los valores que aprobaste para la Semana 1: Real Madrid P(1) 83.8%, Newcastle P(1) 3.8% de local, Sevilla–Betis +2.5 91.0%.
+- Semana 2 (re-corrida con el BTTS corregido): los 16 BTTS coinciden con tus valores corregidos (desviación máxima 0.07 puntos, redondeo). El 1X2 apenas cambia (máx. 0.6 puntos).
+
+**Hallazgo que necesita tu decisión — el +2.5 también estaba truncado:** al pasar a la distribución completa vi que el +2.5 publicado de la Semana 2 también se calculó sobre la tabla de 0–7 goles, no con la distribución completa como se dio por hecho. Los valores correctos son: Real Madrid–Alavés 93.1% (publicado 72.7%), Sassuolo–Napoli 85.5% (82.2%), Deportivo–Barcelona 79.1% (77.8%), Werder 65.7% (65.3%), Forest 55.4% (55.2%), Hamburg 75.6% (75.3%), Man. United 69.5% (69.3%), Stuttgart 68.5% (67.8%), Everton 54.3% (54.2%), Arsenal 43.8% (43.6%), Dortmund 70.6% (70.0%); el resto igual. La tabla corregida ya está en `data/semana-2/tabla-poisson-semana-2.md`. ¿La republicamos con estos +2.5 corregidos, o la dejamos como está?
+
+**Qué falta / necesita revisión del jefe:**
+- Revisar los scripts y el workflow en la rama `semana-2`.
+- Decidir lo del +2.5 de la Semana 2 (arriba).
+- Fusionar a `main`: los workflows programados de GitHub Actions solo corren en la rama por defecto, así que la actualización automática no empieza hasta que se fusione. Mientras tanto el workflow se puede correr a mano (`workflow_dispatch`).
+- Nada pendiente de Luis.
+
+**Sin inventar nada:** todo salió de ESPN o calculado; ningún partido quedó fuera y no se usó ninguna clave.
