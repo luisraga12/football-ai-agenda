@@ -1,0 +1,1804 @@
+{
+ "teams": {
+  "Arsenal": {
+   "league": "eng.1",
+   "gf": 7.0,
+   "ga": 1.0,
+   "gf_pj": 1.4,
+   "ga_pj": 0.2,
+   "ataque": 1.2,
+   "defensa": 0.17142857142857143,
+   "matches": [
+    {
+     "date": "2026-11-07T15:00Z",
+     "opp": "Hull City",
+     "home": true,
+     "gf": 1.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-11-01T16:30Z",
+     "opp": "Liverpool",
+     "home": false,
+     "gf": 1.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-24T14:00Z",
+     "opp": "Everton",
+     "home": true,
+     "gf": 2.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-18T15:30Z",
+     "opp": "Nottingham Forest",
+     "home": false,
+     "gf": 1.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-10T11:30Z",
+     "opp": "Leeds United",
+     "home": true,
+     "gf": 2.0,
+     "ga": 1.0
+    }
+   ]
+  },
+  "Atalanta": {
+   "league": "ita.1",
+   "gf": 9.0,
+   "ga": 12.0,
+   "gf_pj": 1.8,
+   "ga_pj": 2.4,
+   "ataque": 1.0693069306930694,
+   "defensa": 1.4257425742574257,
+   "matches": [
+    {
+     "date": "2026-11-08T14:00Z",
+     "opp": "Monza",
+     "home": false,
+     "gf": 1.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-11-02T19:45Z",
+     "opp": "Parma",
+     "home": true,
+     "gf": 0.0,
+     "ga": 3.0
+    },
+    {
+     "date": "2026-10-29T19:45Z",
+     "opp": "Fiorentina",
+     "home": false,
+     "gf": 2.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-10-25T14:00Z",
+     "opp": "Frosinone",
+     "home": true,
+     "gf": 4.0,
+     "ga": 4.0
+    },
+    {
+     "date": "2026-10-18T16:00Z",
+     "opp": "AC Milan",
+     "home": false,
+     "gf": 2.0,
+     "ga": 3.0
+    }
+   ]
+  },
+  "Athletic Club": {
+   "league": "esp.1",
+   "gf": 8.0,
+   "ga": 5.0,
+   "gf_pj": 1.6,
+   "ga_pj": 1.0,
+   "ataque": 1.3793103448275863,
+   "defensa": 0.8620689655172414,
+   "matches": [
+    {
+     "date": "2026-11-07T17:30Z",
+     "opp": "Osasuna",
+     "home": false,
+     "gf": 1.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-11-01T20:00Z",
+     "opp": "Real Sociedad",
+     "home": true,
+     "gf": 2.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-25T13:00Z",
+     "opp": "Getafe",
+     "home": true,
+     "gf": 4.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-21T18:00Z",
+     "opp": "Levante",
+     "home": false,
+     "gf": 1.0,
+     "ga": 3.0
+    },
+    {
+     "date": "2026-10-17T19:00Z",
+     "opp": "Valencia",
+     "home": false,
+     "gf": 0.0,
+     "ga": 0.0
+    }
+   ]
+  },
+  "Atlante": {
+   "league": "mex.1",
+   "gf": 4.0,
+   "ga": 9.0,
+   "gf_pj": 0.8,
+   "ga_pj": 1.8,
+   "ataque": 0.48607594936708864,
+   "defensa": 1.0936708860759494,
+   "matches": [
+    {
+     "date": "2026-11-07T03:00Z",
+     "opp": "Santos",
+     "home": true,
+     "gf": 0.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-11-01T01:07Z",
+     "opp": "Guadalajara",
+     "home": false,
+     "gf": 2.0,
+     "ga": 4.0
+    },
+    {
+     "date": "2026-10-24T03:00Z",
+     "opp": "Atlético de San Luis",
+     "home": true,
+     "gf": 0.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-21T01:00Z",
+     "opp": "FC Juárez",
+     "home": false,
+     "gf": 1.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-17T03:00Z",
+     "opp": "Pumas UNAM",
+     "home": true,
+     "gf": 1.0,
+     "ga": 2.0
+    }
+   ]
+  },
+  "Atlas": {
+   "league": "mex.1",
+   "gf": 10.0,
+   "ga": 12.0,
+   "gf_pj": 2.0,
+   "ga_pj": 2.4,
+   "ataque": 1.2151898734177216,
+   "defensa": 1.4582278481012658,
+   "matches": [
+    {
+     "date": "2026-11-07T23:00Z",
+     "opp": "Pachuca",
+     "home": true,
+     "gf": 1.0,
+     "ga": 4.0
+    },
+    {
+     "date": "2026-10-31T01:00Z",
+     "opp": "Atlético de San Luis",
+     "home": false,
+     "gf": 1.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-25T23:00Z",
+     "opp": "Puebla",
+     "home": true,
+     "gf": 4.0,
+     "ga": 3.0
+    },
+    {
+     "date": "2026-10-22T01:00Z",
+     "opp": "América",
+     "home": true,
+     "gf": 2.0,
+     "ga": 5.0
+    },
+    {
+     "date": "2026-10-17T01:00Z",
+     "opp": "Necaxa",
+     "home": false,
+     "gf": 2.0,
+     "ga": 0.0
+    }
+   ]
+  },
+  "Atlético Madrid": {
+   "league": "esp.1",
+   "gf": 7.0,
+   "ga": 3.0,
+   "gf_pj": 1.4,
+   "ga_pj": 0.6,
+   "ataque": 1.206896551724138,
+   "defensa": 0.5172413793103449,
+   "matches": [
+    {
+     "date": "2026-11-08T20:00Z",
+     "opp": "Barcelona",
+     "home": true,
+     "gf": 1.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-10-31T13:00Z",
+     "opp": "Levante",
+     "home": false,
+     "gf": 2.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-24T19:00Z",
+     "opp": "Deportivo",
+     "home": true,
+     "gf": 1.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-17T12:00Z",
+     "opp": "Espanyol",
+     "home": false,
+     "gf": 1.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-10T14:15Z",
+     "opp": "Alavés",
+     "home": false,
+     "gf": 2.0,
+     "ga": 1.0
+    }
+   ]
+  },
+  "Atlético de San Luis": {
+   "league": "mex.1",
+   "gf": 4.0,
+   "ga": 4.0,
+   "gf_pj": 0.8,
+   "ga_pj": 0.8,
+   "ataque": 0.48607594936708864,
+   "defensa": 0.48607594936708864,
+   "matches": [
+    {
+     "date": "2026-11-07T01:00Z",
+     "opp": "FC Juárez",
+     "home": true,
+     "gf": 0.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-31T01:00Z",
+     "opp": "Atlas",
+     "home": true,
+     "gf": 0.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-24T03:00Z",
+     "opp": "Atlante",
+     "home": false,
+     "gf": 1.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-21T01:00Z",
+     "opp": "Querétaro",
+     "home": true,
+     "gf": 2.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-18T01:00Z",
+     "opp": "Toluca",
+     "home": false,
+     "gf": 1.0,
+     "ga": 1.0
+    }
+   ]
+  },
+  "Barcelona": {
+   "league": "esp.1",
+   "gf": 17.0,
+   "ga": 6.0,
+   "gf_pj": 3.4,
+   "ga_pj": 1.2,
+   "ataque": 2.931034482758621,
+   "defensa": 1.0344827586206897,
+   "matches": [
+    {
+     "date": "2026-11-08T20:00Z",
+     "opp": "Atlético Madrid",
+     "home": false,
+     "gf": 2.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-31T20:00Z",
+     "opp": "Alavés",
+     "home": true,
+     "gf": 6.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-25T20:00Z",
+     "opp": "Real Madrid",
+     "home": true,
+     "gf": 1.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-10-17T16:30Z",
+     "opp": "Real Betis",
+     "home": false,
+     "gf": 5.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-10-10T16:30Z",
+     "opp": "Getafe",
+     "home": true,
+     "gf": 3.0,
+     "ga": 0.0
+    }
+   ]
+  },
+  "Bayern Munich": {
+   "league": "ger.1",
+   "gf": 15.0,
+   "ga": 7.0,
+   "gf_pj": 3.0,
+   "ga_pj": 1.4,
+   "ataque": 1.9518072289156627,
+   "defensa": 0.9108433734939759,
+   "matches": [
+    {
+     "date": "2026-11-07T14:30Z",
+     "opp": "Mainz",
+     "home": false,
+     "gf": 2.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-31T17:30Z",
+     "opp": "Borussia Dortmund",
+     "home": true,
+     "gf": 2.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-10-25T16:30Z",
+     "opp": "SC Freiburg",
+     "home": false,
+     "gf": 3.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-17T16:30Z",
+     "opp": "RB Leipzig",
+     "home": true,
+     "gf": 6.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-10T13:30Z",
+     "opp": "FC Augsburg",
+     "home": false,
+     "gf": 2.0,
+     "ga": 2.0
+    }
+   ]
+  },
+  "Celta Vigo": {
+   "league": "esp.1",
+   "gf": 2.0,
+   "ga": 4.0,
+   "gf_pj": 0.4,
+   "ga_pj": 0.8,
+   "ataque": 0.3448275862068966,
+   "defensa": 0.6896551724137931,
+   "matches": [
+    {
+     "date": "2026-11-08T17:30Z",
+     "opp": "Levante",
+     "home": true,
+     "gf": 0.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-31T15:15Z",
+     "opp": "Rayo Vallecano",
+     "home": false,
+     "gf": 0.0,
+     "ga": 3.0
+    },
+    {
+     "date": "2026-10-25T15:15Z",
+     "opp": "Real Betis",
+     "home": true,
+     "gf": 0.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-18T14:15Z",
+     "opp": "Alavés",
+     "home": true,
+     "gf": 2.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-11T12:00Z",
+     "opp": "Elche",
+     "home": false,
+     "gf": 0.0,
+     "ga": 0.0
+    }
+   ]
+  },
+  "Cruz Azul": {
+   "league": "mex.1",
+   "gf": 15.0,
+   "ga": 5.0,
+   "gf_pj": 3.0,
+   "ga_pj": 1.0,
+   "ataque": 1.8227848101265824,
+   "defensa": 0.6075949367088608,
+   "matches": [
+    {
+     "date": "2026-11-08T01:00Z",
+     "opp": "Tigres UANL",
+     "home": false,
+     "gf": 3.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-11-02T01:10Z",
+     "opp": "León",
+     "home": true,
+     "gf": 2.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-26T01:00Z",
+     "opp": "Querétaro",
+     "home": false,
+     "gf": 3.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-22T03:10Z",
+     "opp": "Pachuca",
+     "home": false,
+     "gf": 2.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-18T03:10Z",
+     "opp": "FC Juárez",
+     "home": true,
+     "gf": 5.0,
+     "ga": 0.0
+    }
+   ]
+  },
+  "Espanyol": {
+   "league": "esp.1",
+   "gf": 3.0,
+   "ga": 4.0,
+   "gf_pj": 0.6,
+   "ga_pj": 0.8,
+   "ataque": 0.5172413793103449,
+   "defensa": 0.6896551724137931,
+   "matches": [
+    {
+     "date": "2026-11-07T15:15Z",
+     "opp": "Deportivo",
+     "home": true,
+     "gf": 0.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-30T20:00Z",
+     "opp": "Villarreal",
+     "home": false,
+     "gf": 1.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-24T14:15Z",
+     "opp": "Racing Santander",
+     "home": false,
+     "gf": 1.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-10-17T12:00Z",
+     "opp": "Atlético Madrid",
+     "home": true,
+     "gf": 0.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-09T19:00Z",
+     "opp": "Málaga",
+     "home": false,
+     "gf": 1.0,
+     "ga": 1.0
+    }
+   ]
+  },
+  "FC Cologne": {
+   "league": "ger.1",
+   "gf": 4.0,
+   "ga": 5.0,
+   "gf_pj": 0.8,
+   "ga_pj": 1.0,
+   "ataque": 0.5204819277108435,
+   "defensa": 0.6506024096385542,
+   "matches": [
+    {
+     "date": "2026-11-08T14:30Z",
+     "opp": "Bayer Leverkusen",
+     "home": true,
+     "gf": 1.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-11-01T14:30Z",
+     "opp": "1. FC Union Berlin",
+     "home": false,
+     "gf": 1.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-24T13:30Z",
+     "opp": "Schalke 04",
+     "home": true,
+     "gf": 0.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-16T18:30Z",
+     "opp": "Eintracht Frankfurt",
+     "home": false,
+     "gf": 0.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-11T13:30Z",
+     "opp": "Borussia Mönchengladbach",
+     "home": true,
+     "gf": 2.0,
+     "ga": 1.0
+    }
+   ]
+  },
+  "FC Juárez": {
+   "league": "mex.1",
+   "gf": 5.0,
+   "ga": 8.0,
+   "gf_pj": 1.0,
+   "ga_pj": 1.6,
+   "ataque": 0.6075949367088608,
+   "defensa": 0.9721518987341773,
+   "matches": [
+    {
+     "date": "2026-11-07T01:00Z",
+     "opp": "Atlético de San Luis",
+     "home": false,
+     "gf": 1.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-31T01:00Z",
+     "opp": "Querétaro",
+     "home": true,
+     "gf": 3.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-24T01:00Z",
+     "opp": "Necaxa",
+     "home": false,
+     "gf": 1.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-21T01:00Z",
+     "opp": "Atlante",
+     "home": true,
+     "gf": 0.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-18T03:10Z",
+     "opp": "Cruz Azul",
+     "home": false,
+     "gf": 0.0,
+     "ga": 5.0
+    }
+   ]
+  },
+  "Fulham": {
+   "league": "eng.1",
+   "gf": 5.0,
+   "ga": 4.0,
+   "gf_pj": 1.0,
+   "ga_pj": 0.8,
+   "ataque": 0.8571428571428571,
+   "defensa": 0.6857142857142857,
+   "matches": [
+    {
+     "date": "2026-11-07T15:00Z",
+     "opp": "Newcastle United",
+     "home": true,
+     "gf": 1.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-31T20:00Z",
+     "opp": "Aston Villa",
+     "home": false,
+     "gf": 1.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-24T14:00Z",
+     "opp": "Coventry City",
+     "home": false,
+     "gf": 1.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-17T14:00Z",
+     "opp": "Hull City",
+     "home": true,
+     "gf": 1.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-10T14:00Z",
+     "opp": "Ipswich Town",
+     "home": false,
+     "gf": 1.0,
+     "ga": 2.0
+    }
+   ]
+  },
+  "Getafe": {
+   "league": "esp.1",
+   "gf": 4.0,
+   "ga": 11.0,
+   "gf_pj": 0.8,
+   "ga_pj": 2.2,
+   "ataque": 0.6896551724137931,
+   "defensa": 1.8965517241379313,
+   "matches": [
+    {
+     "date": "2026-11-08T17:30Z",
+     "opp": "Villarreal",
+     "home": false,
+     "gf": 0.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-11-01T13:00Z",
+     "opp": "Sevilla",
+     "home": true,
+     "gf": 3.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-25T13:00Z",
+     "opp": "Athletic Club",
+     "home": false,
+     "gf": 0.0,
+     "ga": 4.0
+    },
+    {
+     "date": "2026-10-19T19:00Z",
+     "opp": "Rayo Vallecano",
+     "home": true,
+     "gf": 1.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-10T16:30Z",
+     "opp": "Barcelona",
+     "home": false,
+     "gf": 0.0,
+     "ga": 3.0
+    }
+   ]
+  },
+  "Guadalajara": {
+   "league": "mex.1",
+   "gf": 8.0,
+   "ga": 4.0,
+   "gf_pj": 1.6,
+   "ga_pj": 0.8,
+   "ataque": 0.9721518987341773,
+   "defensa": 0.48607594936708864,
+   "matches": [
+    {
+     "date": "2026-11-09T02:10Z",
+     "opp": "León",
+     "home": false,
+     "gf": 1.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-11-01T01:07Z",
+     "opp": "Atlante",
+     "home": true,
+     "gf": 4.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-10-25T01:00Z",
+     "opp": "Monterrey",
+     "home": false,
+     "gf": 1.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-21T00:07Z",
+     "opp": "Necaxa",
+     "home": true,
+     "gf": 1.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-17T23:07Z",
+     "opp": "Tigres UANL",
+     "home": true,
+     "gf": 1.0,
+     "ga": 1.0
+    }
+   ]
+  },
+  "Internazionale": {
+   "league": "ita.1",
+   "gf": 10.0,
+   "ga": 5.0,
+   "gf_pj": 2.0,
+   "ga_pj": 1.0,
+   "ataque": 1.188118811881188,
+   "defensa": 0.594059405940594,
+   "matches": [
+    {
+     "date": "2026-11-08T17:00Z",
+     "opp": "Como",
+     "home": true,
+     "gf": 2.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-31T19:45Z",
+     "opp": "AC Milan",
+     "home": false,
+     "gf": 1.0,
+     "ga": 3.0
+    },
+    {
+     "date": "2026-10-28T17:30Z",
+     "opp": "Venezia",
+     "home": false,
+     "gf": 2.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-25T11:30Z",
+     "opp": "Fiorentina",
+     "home": true,
+     "gf": 2.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-17T16:00Z",
+     "opp": "Bologna",
+     "home": false,
+     "gf": 3.0,
+     "ga": 1.0
+    }
+   ]
+  },
+  "Liverpool": {
+   "league": "eng.1",
+   "gf": 7.0,
+   "ga": 6.0,
+   "gf_pj": 1.4,
+   "ga_pj": 1.2,
+   "ataque": 1.2,
+   "defensa": 1.0285714285714285,
+   "matches": [
+    {
+     "date": "2026-11-08T14:00Z",
+     "opp": "Crystal Palace",
+     "home": false,
+     "gf": 3.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-11-01T16:30Z",
+     "opp": "Arsenal",
+     "home": true,
+     "gf": 0.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-25T14:00Z",
+     "opp": "Brighton & Hove Albion",
+     "home": true,
+     "gf": 2.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-17T14:00Z",
+     "opp": "Brentford",
+     "home": false,
+     "gf": 2.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-11T15:30Z",
+     "opp": "Manchester City",
+     "home": true,
+     "gf": 0.0,
+     "ga": 3.0
+    }
+   ]
+  },
+  "Manchester City": {
+   "league": "eng.1",
+   "gf": 8.0,
+   "ga": 8.0,
+   "gf_pj": 1.6,
+   "ga_pj": 1.6,
+   "ataque": 1.3714285714285714,
+   "defensa": 1.3714285714285714,
+   "matches": [
+    {
+     "date": "2026-11-07T17:30Z",
+     "opp": "Nottingham Forest",
+     "home": false,
+     "gf": 1.0,
+     "ga": 3.0
+    },
+    {
+     "date": "2026-10-31T15:00Z",
+     "opp": "Brighton & Hove Albion",
+     "home": true,
+     "gf": 0.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-24T11:30Z",
+     "opp": "Aston Villa",
+     "home": false,
+     "gf": 1.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-10-17T14:00Z",
+     "opp": "Ipswich Town",
+     "home": true,
+     "gf": 3.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-10-11T15:30Z",
+     "opp": "Liverpool",
+     "home": false,
+     "gf": 3.0,
+     "ga": 0.0
+    }
+   ]
+  },
+  "Manchester United": {
+   "league": "eng.1",
+   "gf": 6.0,
+   "ga": 11.0,
+   "gf_pj": 1.2,
+   "ga_pj": 2.2,
+   "ataque": 1.0285714285714285,
+   "defensa": 1.8857142857142857,
+   "matches": [
+    {
+     "date": "2026-11-08T16:30Z",
+     "opp": "Aston Villa",
+     "home": true,
+     "gf": 4.0,
+     "ga": 4.0
+    },
+    {
+     "date": "2026-10-31T12:30Z",
+     "opp": "Chelsea",
+     "home": false,
+     "gf": 0.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-10-25T14:00Z",
+     "opp": "AFC Bournemouth",
+     "home": true,
+     "gf": 0.0,
+     "ga": 3.0
+    },
+    {
+     "date": "2026-10-18T13:00Z",
+     "opp": "Leeds United",
+     "home": false,
+     "gf": 1.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-10T16:30Z",
+     "opp": "Tottenham Hotspur",
+     "home": true,
+     "gf": 1.0,
+     "ga": 1.0
+    }
+   ]
+  },
+  "Monterrey": {
+   "league": "mex.1",
+   "gf": 8.0,
+   "ga": 9.0,
+   "gf_pj": 1.6,
+   "ga_pj": 1.8,
+   "ataque": 0.9721518987341773,
+   "defensa": 1.0936708860759494,
+   "matches": [
+    {
+     "date": "2026-11-14T23:00Z",
+     "opp": "Querétaro",
+     "home": false,
+     "gf": 1.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-11-08T01:00Z",
+     "opp": "Toluca",
+     "home": false,
+     "gf": 0.0,
+     "ga": 4.0
+    },
+    {
+     "date": "2026-11-01T01:05Z",
+     "opp": "Tijuana",
+     "home": true,
+     "gf": 3.0,
+     "ga": 3.0
+    },
+    {
+     "date": "2026-10-25T01:00Z",
+     "opp": "Guadalajara",
+     "home": true,
+     "gf": 0.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-22T01:00Z",
+     "opp": "Puebla",
+     "home": false,
+     "gf": 4.0,
+     "ga": 1.0
+    }
+   ]
+  },
+  "Newcastle United": {
+   "league": "eng.1",
+   "gf": 4.0,
+   "ga": 7.0,
+   "gf_pj": 0.8,
+   "ga_pj": 1.4,
+   "ataque": 0.6857142857142857,
+   "defensa": 1.2,
+   "matches": [
+    {
+     "date": "2026-11-07T15:00Z",
+     "opp": "Fulham",
+     "home": false,
+     "gf": 1.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-11-02T20:00Z",
+     "opp": "Everton",
+     "home": true,
+     "gf": 0.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-25T14:00Z",
+     "opp": "Crystal Palace",
+     "home": false,
+     "gf": 2.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-17T16:30Z",
+     "opp": "Aston Villa",
+     "home": true,
+     "gf": 0.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-12T19:00Z",
+     "opp": "Coventry City",
+     "home": false,
+     "gf": 1.0,
+     "ga": 4.0
+    }
+   ]
+  },
+  "Pachuca": {
+   "league": "mex.1",
+   "gf": 11.0,
+   "ga": 6.0,
+   "gf_pj": 2.2,
+   "ga_pj": 1.2,
+   "ataque": 1.336708860759494,
+   "defensa": 0.7291139240506329,
+   "matches": [
+    {
+     "date": "2026-11-07T23:00Z",
+     "opp": "Atlas",
+     "home": false,
+     "gf": 4.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-31T23:00Z",
+     "opp": "Tigres UANL",
+     "home": true,
+     "gf": 3.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-26T01:05Z",
+     "opp": "América",
+     "home": false,
+     "gf": 2.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-22T03:10Z",
+     "opp": "Cruz Azul",
+     "home": true,
+     "gf": 1.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-10-19T01:00Z",
+     "opp": "Monterrey",
+     "home": false,
+     "gf": 1.0,
+     "ga": 2.0
+    }
+   ]
+  },
+  "Puebla": {
+   "league": "mex.1",
+   "gf": 7.0,
+   "ga": 10.0,
+   "gf_pj": 1.4,
+   "ga_pj": 2.0,
+   "ataque": 0.850632911392405,
+   "defensa": 1.2151898734177216,
+   "matches": [
+    {
+     "date": "2026-11-09T00:00Z",
+     "opp": "Querétaro",
+     "home": false,
+     "gf": 2.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-31T03:00Z",
+     "opp": "Pumas UNAM",
+     "home": true,
+     "gf": 1.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-10-25T23:00Z",
+     "opp": "Atlas",
+     "home": false,
+     "gf": 3.0,
+     "ga": 4.0
+    },
+    {
+     "date": "2026-10-22T01:00Z",
+     "opp": "Monterrey",
+     "home": true,
+     "gf": 1.0,
+     "ga": 4.0
+    },
+    {
+     "date": "2026-10-17T03:05Z",
+     "opp": "Tijuana",
+     "home": false,
+     "gf": 0.0,
+     "ga": 0.0
+    }
+   ]
+  },
+  "Pumas UNAM": {
+   "league": "mex.1",
+   "gf": 7.0,
+   "ga": 7.0,
+   "gf_pj": 1.4,
+   "ga_pj": 1.4,
+   "ataque": 0.850632911392405,
+   "defensa": 0.850632911392405,
+   "matches": [
+    {
+     "date": "2026-11-08T03:10Z",
+     "opp": "América",
+     "home": true,
+     "gf": 2.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-10-31T03:00Z",
+     "opp": "Puebla",
+     "home": false,
+     "gf": 2.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-25T03:10Z",
+     "opp": "Tigres UANL",
+     "home": true,
+     "gf": 1.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-22T03:10Z",
+     "opp": "Santos",
+     "home": false,
+     "gf": 0.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-10-17T03:00Z",
+     "opp": "Atlante",
+     "home": false,
+     "gf": 2.0,
+     "ga": 1.0
+    }
+   ]
+  },
+  "Real Betis": {
+   "league": "esp.1",
+   "gf": 11.0,
+   "ga": 8.0,
+   "gf_pj": 2.2,
+   "ga_pj": 1.6,
+   "ataque": 1.8965517241379313,
+   "defensa": 1.3793103448275863,
+   "matches": [
+    {
+     "date": "2026-11-08T13:00Z",
+     "opp": "Elche",
+     "home": false,
+     "gf": 2.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-31T17:30Z",
+     "opp": "Málaga",
+     "home": true,
+     "gf": 2.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-25T15:15Z",
+     "opp": "Celta Vigo",
+     "home": false,
+     "gf": 0.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-17T16:30Z",
+     "opp": "Barcelona",
+     "home": true,
+     "gf": 2.0,
+     "ga": 5.0
+    },
+    {
+     "date": "2026-10-11T16:30Z",
+     "opp": "Osasuna",
+     "home": true,
+     "gf": 5.0,
+     "ga": 2.0
+    }
+   ]
+  },
+  "Real Madrid": {
+   "league": "esp.1",
+   "gf": 13.0,
+   "ga": 2.0,
+   "gf_pj": 2.6,
+   "ga_pj": 0.4,
+   "ataque": 2.241379310344828,
+   "defensa": 0.3448275862068966,
+   "matches": [
+    {
+     "date": "2026-11-07T20:00Z",
+     "opp": "Valencia",
+     "home": false,
+     "gf": 3.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-11-01T15:15Z",
+     "opp": "Racing Santander",
+     "home": false,
+     "gf": 3.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-25T20:00Z",
+     "opp": "Barcelona",
+     "home": false,
+     "gf": 2.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-18T19:00Z",
+     "opp": "Sevilla",
+     "home": true,
+     "gf": 4.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-10T19:00Z",
+     "opp": "Villarreal",
+     "home": true,
+     "gf": 1.0,
+     "ga": 0.0
+    }
+   ]
+  },
+  "Sevilla": {
+   "league": "esp.1",
+   "gf": 7.0,
+   "ga": 10.0,
+   "gf_pj": 1.4,
+   "ga_pj": 2.0,
+   "ataque": 1.206896551724138,
+   "defensa": 1.7241379310344829,
+   "matches": [
+    {
+     "date": "2026-11-06T20:00Z",
+     "opp": "Alavés",
+     "home": true,
+     "gf": 0.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-11-01T13:00Z",
+     "opp": "Getafe",
+     "home": false,
+     "gf": 1.0,
+     "ga": 3.0
+    },
+    {
+     "date": "2026-10-26T20:00Z",
+     "opp": "Osasuna",
+     "home": true,
+     "gf": 2.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-18T19:00Z",
+     "opp": "Real Madrid",
+     "home": false,
+     "gf": 1.0,
+     "ga": 4.0
+    },
+    {
+     "date": "2026-10-12T19:00Z",
+     "opp": "Levante",
+     "home": false,
+     "gf": 3.0,
+     "ga": 3.0
+    }
+   ]
+  },
+  "Tijuana": {
+   "league": "mex.1",
+   "gf": 10.0,
+   "ga": 8.0,
+   "gf_pj": 2.0,
+   "ga_pj": 1.6,
+   "ataque": 1.2151898734177216,
+   "defensa": 0.9721518987341773,
+   "matches": [
+    {
+     "date": "2026-11-07T01:00Z",
+     "opp": "Necaxa",
+     "home": false,
+     "gf": 0.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-11-01T01:05Z",
+     "opp": "Monterrey",
+     "home": false,
+     "gf": 3.0,
+     "ga": 3.0
+    },
+    {
+     "date": "2026-10-29T03:00Z",
+     "opp": "América",
+     "home": false,
+     "gf": 1.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-26T03:10Z",
+     "opp": "Santos",
+     "home": true,
+     "gf": 4.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-22T01:00Z",
+     "opp": "Toluca",
+     "home": false,
+     "gf": 2.0,
+     "ga": 2.0
+    }
+   ]
+  },
+  "Toluca": {
+   "league": "mex.1",
+   "gf": 10.0,
+   "ga": 6.0,
+   "gf_pj": 2.0,
+   "ga_pj": 1.2,
+   "ataque": 1.2151898734177216,
+   "defensa": 0.7291139240506329,
+   "matches": [
+    {
+     "date": "2026-11-08T01:00Z",
+     "opp": "Monterrey",
+     "home": true,
+     "gf": 4.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-11-01T03:10Z",
+     "opp": "América",
+     "home": false,
+     "gf": 2.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-10-24T23:00Z",
+     "opp": "León",
+     "home": false,
+     "gf": 1.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-22T01:00Z",
+     "opp": "Tijuana",
+     "home": true,
+     "gf": 2.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-10-18T01:00Z",
+     "opp": "Atlético de San Luis",
+     "home": true,
+     "gf": 1.0,
+     "ga": 1.0
+    }
+   ]
+  },
+  "Villarreal": {
+   "league": "esp.1",
+   "gf": 4.0,
+   "ga": 3.0,
+   "gf_pj": 0.8,
+   "ga_pj": 0.6,
+   "ataque": 0.6896551724137931,
+   "defensa": 0.5172413793103449,
+   "matches": [
+    {
+     "date": "2026-11-08T17:30Z",
+     "opp": "Getafe",
+     "home": true,
+     "gf": 2.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-30T20:00Z",
+     "opp": "Espanyol",
+     "home": true,
+     "gf": 0.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-24T16:30Z",
+     "opp": "Valencia",
+     "home": false,
+     "gf": 2.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-17T14:15Z",
+     "opp": "Elche",
+     "home": true,
+     "gf": 0.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-10T19:00Z",
+     "opp": "Real Madrid",
+     "home": false,
+     "gf": 0.0,
+     "ga": 1.0
+    }
+   ]
+  }
+ },
+ "matches": [
+  {
+   "fecha": "Vie 20 nov",
+   "hora": "13:30",
+   "liga": "Bundesliga",
+   "home": "Bayern Munich",
+   "away": "FC Cologne",
+   "xgh": 2.3045434751052403,
+   "xga": 0.5969865002177386,
+   "p1": 75.97031389236983,
+   "px": 16.085536671403787,
+   "p2": 7.944149436217433,
+   "over25": 55.43907118115307,
+   "btts": 40.466677255391325
+  },
+  {
+   "fecha": "Vie 20 nov",
+   "hora": "14:00",
+   "liga": "LaLiga",
+   "home": "Athletic Club",
+   "away": "Espanyol",
+   "xgh": 1.2556480380499409,
+   "xga": 0.44589774078478006,
+   "p1": 56.870589627718985,
+   "px": 29.97419415885153,
+   "p2": 13.155216213429489,
+   "over25": 24.318489947858566,
+   "btts": 25.726094569723205
+  },
+  {
+   "fecha": "Vie 20 nov",
+   "hora": "19:00",
+   "liga": "Liga MX",
+   "home": "Puebla",
+   "away": "Atlético de San Luis",
+   "xgh": 0.7063483416119212,
+   "xga": 0.9352347380227528,
+   "p1": 26.31454070931289,
+   "px": 34.436014260998284,
+   "p2": 39.24944502968882,
+   "over25": 22.74413681709031,
+   "btts": 30.7736681808156
+  },
+  {
+   "fecha": "Vie 20 nov",
+   "hora": "21:00",
+   "liga": "Liga MX",
+   "home": "FC Juárez",
+   "away": "Atlas",
+   "xgh": 1.5136035891684025,
+   "xga": 1.8704694760455056,
+   "p1": 31.4273242665292,
+   "px": 22.348040491052615,
+   "p2": 46.224635242417975,
+   "over25": 65.71777722823474,
+   "btts": 65.97423960523895
+  },
+  {
+   "fecha": "Vie 20 nov",
+   "hora": "21:10",
+   "liga": "Liga MX",
+   "home": "Tijuana",
+   "away": "Atlante",
+   "xgh": 2.2704053837526037,
+   "xga": 0.7481877904182023,
+   "p1": 71.82525020654612,
+   "px": 17.454961594895355,
+   "p2": 10.719788198551743,
+   "over25": 58.09626321556481,
+   "btts": 47.237625794703376
+  },
+  {
+   "fecha": "Sáb 21 nov",
+   "hora": "06:30",
+   "liga": "Premier League",
+   "home": "Manchester City",
+   "away": "Fulham",
+   "xgh": 1.253877551020408,
+   "xga": 1.1755102040816325,
+   "p1": 38.17146146422427,
+   "px": 27.437817724079917,
+   "p2": 34.39072081169574,
+   "over25": 43.79501719123381,
+   "btts": 49.4033279047074
+  },
+  {
+   "fecha": "Sáb 21 nov",
+   "hora": "11:30",
+   "liga": "Premier League",
+   "home": "Newcastle United",
+   "away": "Arsenal",
+   "xgh": 0.156734693877551,
+   "xga": 1.44,
+   "p1": 3.829121536535079,
+   "px": 25.091866594506097,
+   "p2": 71.07901186895882,
+   "over25": 21.579801064710193,
+   "btts": 11.069824363407209
+  },
+  {
+   "fecha": "Sáb 21 nov",
+   "hora": "11:30",
+   "liga": "LaLiga",
+   "home": "Sevilla",
+   "away": "Real Betis",
+   "xgh": 2.197384066587396,
+   "xga": 3.2699167657550543,
+   "p1": 24.690288523951963,
+   "px": 15.90380768945493,
+   "p2": 59.4059037810157,
+   "over25": 90.9581201319732,
+   "btts": 85.51196321449704
+  },
+  {
+   "fecha": "Sáb 21 nov",
+   "hora": "14:00",
+   "liga": "LaLiga",
+   "home": "Real Madrid",
+   "away": "Celta Vigo",
+   "xgh": 2.040428061831154,
+   "xga": 0.11890606420927469,
+   "p1": 83.84800958614666,
+   "px": 14.514541295249247,
+   "p2": 1.6374491186031281,
+   "over25": 36.6363030383867,
+   "btts": 9.753767453711218
+  },
+  {
+   "fecha": "Sáb 21 nov",
+   "hora": "16:50",
+   "liga": "Liga MX",
+   "home": "Pachuca",
+   "away": "Toluca",
+   "xgh": 1.664963948085243,
+   "xga": 1.402852107034129,
+   "p1": 43.80433213958816,
+   "px": 23.77470673817008,
+   "p2": 32.42096112224168,
+   "over25": 59.18305926876385,
+   "btts": 61.14305230700888
+  },
+  {
+   "fecha": "Sáb 21 nov",
+   "hora": "19:00",
+   "liga": "Liga MX",
+   "home": "Pumas UNAM",
+   "away": "Monterrey",
+   "xgh": 1.5892837686268226,
+   "xga": 1.3093286332318539,
+   "p1": 43.97500662241309,
+   "px": 24.51461019032966,
+   "p2": 31.51038318725721,
+   "over25": 55.37156800837337,
+   "btts": 58.10266357712022
+  },
+  {
+   "fecha": "Dom 22 nov",
+   "hora": "07:00",
+   "liga": "LaLiga",
+   "home": "Barcelona",
+   "away": "Villarreal",
+   "xgh": 2.0011890606420932,
+   "xga": 0.7134363852556481,
+   "p1": 67.63642786145745,
+   "px": 20.03980310129563,
+   "p2": 12.32376903724628,
+   "over25": 50.99513993326185,
+   "btts": 44.10976798578382
+  },
+  {
+   "fecha": "Dom 22 nov",
+   "hora": "10:30",
+   "liga": "Premier League",
+   "home": "Liverpool",
+   "away": "Manchester United",
+   "xgh": 3.017142857142857,
+   "xga": 1.0579591836734692,
+   "p1": 76.62455573681119,
+   "px": 13.334305115020864,
+   "p2": 10.041139146860395,
+   "over25": 77.26957339467614,
+   "btts": 62.08860460869
+  },
+  {
+   "fecha": "Dom 22 nov",
+   "hora": "13:45",
+   "liga": "Serie A",
+   "home": "Atalanta",
+   "away": "Internazionale",
+   "xgh": 1.0587197333594747,
+   "xga": 2.879717674737771,
+   "p1": 11.009534033479591,
+   "px": 14.277419608672993,
+   "p2": 74.71304635728785,
+   "over25": 75.27366970135625,
+   "btts": 61.64283645846061
+  },
+  {
+   "fecha": "Dom 22 nov",
+   "hora": "14:00",
+   "liga": "LaLiga",
+   "home": "Getafe",
+   "away": "Atlético Madrid",
+   "xgh": 0.4708680142687278,
+   "xga": 2.2889417360285376,
+   "p1": 6.054253961218469,
+   "px": 15.227233588535933,
+   "p2": 78.71851245023763,
+   "over25": 52.09113997628519,
+   "btts": 33.74701327366016
+  },
+  {
+   "fecha": "Dom 22 nov",
+   "hora": "17:07",
+   "liga": "Liga MX",
+   "home": "Guadalajara",
+   "away": "Cruz Azul",
+   "xgh": 1.0090690594456018,
+   "xga": 1.4028521070341293,
+   "p1": 27.07586005227559,
+   "px": 26.91720187758807,
+   "p2": 46.00693807013626,
+   "over25": 43.34027515353747,
+   "btts": 47.91900613905019
+  }
+ ],
+ "avgs": {
+  "eng.1": {
+   "dates": [
+    "20261023",
+    "20261024",
+    "20261025",
+    "20261031",
+    "20261101",
+    "20261102",
+    "20261106",
+    "20261107",
+    "20261108"
+   ],
+   "matches": 30,
+   "home_goals": 40.0,
+   "away_goals": 30.0,
+   "avg_total": 2.3333333333333335,
+   "avg_home": 1.3333333333333333,
+   "avg_away": 1.0,
+   "avg_por_equipo": 1.1666666666666667
+  },
+  "esp.1": {
+   "dates": [
+    "20261025",
+    "20261026",
+    "20261030",
+    "20261031",
+    "20261101",
+    "20261102",
+    "20261106",
+    "20261107",
+    "20261108"
+   ],
+   "matches": 25,
+   "home_goals": 33.0,
+   "away_goals": 25.0,
+   "avg_total": 2.32,
+   "avg_home": 1.32,
+   "avg_away": 1.0,
+   "avg_por_equipo": 1.16
+  },
+  "ger.1": {
+   "dates": [
+    "20261023",
+    "20261024",
+    "20261025",
+    "20261030",
+    "20261031",
+    "20261101",
+    "20261106",
+    "20261107",
+    "20261108"
+   ],
+   "matches": 27,
+   "home_goals": 49.0,
+   "away_goals": 34.0,
+   "avg_total": 3.074074074074074,
+   "avg_home": 1.8148148148148149,
+   "avg_away": 1.2592592592592593,
+   "avg_por_equipo": 1.537037037037037
+  },
+  "ita.1": {
+   "dates": [
+    "20261027",
+    "20261028",
+    "20261029",
+    "20261031",
+    "20261101",
+    "20261102",
+    "20261106",
+    "20261107",
+    "20261108"
+   ],
+   "matches": 30,
+   "home_goals": 50.0,
+   "away_goals": 51.0,
+   "avg_total": 3.3666666666666667,
+   "avg_home": 1.6666666666666667,
+   "avg_away": 1.7,
+   "avg_por_equipo": 1.6833333333333333
+  },
+  "mex.1": {
+   "dates": [
+    "20261025",
+    "20261028",
+    "20261030",
+    "20261031",
+    "20261101",
+    "20261106",
+    "20261107",
+    "20261108",
+    "20261114"
+   ],
+   "matches": 24,
+   "home_goals": 41.0,
+   "away_goals": 38.0,
+   "avg_total": 3.2916666666666665,
+   "avg_home": 1.7083333333333333,
+   "avg_away": 1.5833333333333333,
+   "avg_por_equipo": 1.6458333333333333
+  }
+ }
+}
