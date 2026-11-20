@@ -1,0 +1,49 @@
+# Actualizar datos y Poisson (Football AI Agenda)
+
+Corre la automatización de la semana actual y, si los datos cambiaron,
+hace commit de los archivos generados en `data/`.
+
+- **Diario** (13:00 UTC): recalcula la semana actual con los últimos
+  datos de ESPN (últimos 5 de cada equipo, promedios de liga).
+- **Cada hora en días de partido** (vie, sáb y dom): para que los
+  resultados y los últimos 5 se actualicen solos mientras se juega.
+- **Manual** (`workflow_dispatch`): para probar o forzar una corrida.
+
+La semana que se calcula es la de `scripts/config/semana-actual.json`.
+Para cambiar de semana, ese archivo debe apuntar a la configuración
+nueva (p. ej. copiar `semana-2.json` sobre `semana-actual.json`).
+
+NOTA: los workflows programados (`schedule`) solo corren en la rama
+por defecto (`main`). Este archivo se entrega en la rama `semana-2`
+para revisión del jefe; empieza a correr solo cuando se fusione a `main`.
+
+El workflow usa solo `GITHUB_TOKEN` (sin secretos adicionales) y no
+publica ninguna clave: los datos vienen de la API pública de ESPN.
+name: Actualizar datos y Poisson
+
+on:
+  schedule:
+    - cron: '0 13 * * *'        # diario, 13:00 UTC (07:00 CST)
+    - cron: '0 * * * 5,6,0'     # cada hora vie/sáb/dom (días de partido)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Calcular semana actual
+        run: python3 scripts/run_semana.py --config scripts/config/semana-actual.json
+      - name: Publicar cambios si los hay
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet || git commit -m "Actualizar datos y Poisson (auto)"
+          git push
