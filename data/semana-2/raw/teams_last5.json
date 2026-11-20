@@ -1,0 +1,1410 @@
+{
+ "Alavés": {
+  "league": "esp.1",
+  "id": 96,
+  "matches": [
+   {
+    "date": "2026-11-06T20:00Z",
+    "opp": "Sevilla",
+    "home": false,
+    "gf": 0.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-31T20:00Z",
+    "opp": "Barcelona",
+    "home": false,
+    "gf": 1.0,
+    "ga": 6.0
+   },
+   {
+    "date": "2026-10-23T19:00Z",
+    "opp": "Málaga",
+    "home": true,
+    "gf": 1.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-18T14:15Z",
+    "opp": "Celta Vigo",
+    "home": false,
+    "gf": 1.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-10-10T14:15Z",
+    "opp": "Atlético Madrid",
+    "home": true,
+    "gf": 1.0,
+    "ga": 2.0
+   }
+  ],
+  "gf": 4.0,
+  "ga": 11.0,
+  "n": 5
+ },
+ "Arsenal": {
+  "league": "eng.1",
+  "id": 359,
+  "matches": [
+   {
+    "date": "2026-11-07T15:00Z",
+    "opp": "Hull City",
+    "home": true,
+    "gf": 1.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-11-01T16:30Z",
+    "opp": "Liverpool",
+    "home": false,
+    "gf": 1.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-24T14:00Z",
+    "opp": "Everton",
+    "home": true,
+    "gf": 2.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-18T15:30Z",
+    "opp": "Nottingham Forest",
+    "home": false,
+    "gf": 1.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-10T11:30Z",
+    "opp": "Leeds United",
+    "home": true,
+    "gf": 2.0,
+    "ga": 1.0
+   }
+  ],
+  "gf": 7.0,
+  "ga": 1.0,
+  "n": 5
+ },
+ "Atlético Madrid": {
+  "league": "esp.1",
+  "id": 1068,
+  "matches": [
+   {
+    "date": "2026-11-08T20:00Z",
+    "opp": "Barcelona",
+    "home": true,
+    "gf": 1.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-10-31T13:00Z",
+    "opp": "Levante",
+    "home": false,
+    "gf": 2.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-24T19:00Z",
+    "opp": "Deportivo",
+    "home": true,
+    "gf": 1.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-17T12:00Z",
+    "opp": "Espanyol",
+    "home": false,
+    "gf": 1.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-10T14:15Z",
+    "opp": "Alavés",
+    "home": false,
+    "gf": 2.0,
+    "ga": 1.0
+   }
+  ],
+  "gf": 7.0,
+  "ga": 3.0,
+  "n": 5
+ },
+ "Barcelona": {
+  "league": "esp.1",
+  "id": 83,
+  "matches": [
+   {
+    "date": "2026-11-08T20:00Z",
+    "opp": "Atlético Madrid",
+    "home": false,
+    "gf": 2.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-31T20:00Z",
+    "opp": "Alavés",
+    "home": true,
+    "gf": 6.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-25T20:00Z",
+    "opp": "Real Madrid",
+    "home": true,
+    "gf": 1.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-10-17T16:30Z",
+    "opp": "Real Betis",
+    "home": false,
+    "gf": 5.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-10-10T16:30Z",
+    "opp": "Getafe",
+    "home": true,
+    "gf": 3.0,
+    "ga": 0.0
+   }
+  ],
+  "gf": 17.0,
+  "ga": 6.0,
+  "n": 5
+ },
+ "Bayer Leverkusen": {
+  "league": "ger.1",
+  "id": 131,
+  "matches": [
+   {
+    "date": "2026-11-08T14:30Z",
+    "opp": "FC Cologne",
+    "home": false,
+    "gf": 2.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-31T14:30Z",
+    "opp": "VfB Stuttgart",
+    "home": true,
+    "gf": 2.0,
+    "ga": 4.0
+   },
+   {
+    "date": "2026-10-25T14:30Z",
+    "opp": "TSG Hoffenheim",
+    "home": false,
+    "gf": 0.0,
+    "ga": 3.0
+   },
+   {
+    "date": "2026-10-18T13:30Z",
+    "opp": "SC Freiburg",
+    "home": true,
+    "gf": 2.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-10T13:30Z",
+    "opp": "Mainz",
+    "home": false,
+    "gf": 4.0,
+    "ga": 3.0
+   }
+  ],
+  "gf": 10.0,
+  "ga": 12.0,
+  "n": 5
+ },
+ "Bayern Munich": {
+  "league": "ger.1",
+  "id": 132,
+  "matches": [
+   {
+    "date": "2026-11-07T14:30Z",
+    "opp": "Mainz",
+    "home": false,
+    "gf": 2.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-31T17:30Z",
+    "opp": "Borussia Dortmund",
+    "home": true,
+    "gf": 2.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-10-25T16:30Z",
+    "opp": "SC Freiburg",
+    "home": false,
+    "gf": 3.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-17T16:30Z",
+    "opp": "RB Leipzig",
+    "home": true,
+    "gf": 6.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-10T13:30Z",
+    "opp": "FC Augsburg",
+    "home": false,
+    "gf": 2.0,
+    "ga": 2.0
+   }
+  ],
+  "gf": 15.0,
+  "ga": 7.0,
+  "n": 5
+ },
+ "Bologna": {
+  "league": "ita.1",
+  "id": 107,
+  "matches": [
+   {
+    "date": "2026-11-07T17:00Z",
+    "opp": "Parma",
+    "home": false,
+    "gf": 2.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-31T14:00Z",
+    "opp": "Monza",
+    "home": true,
+    "gf": 2.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-28T17:30Z",
+    "opp": "AC Milan",
+    "home": false,
+    "gf": 4.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-10-24T13:00Z",
+    "opp": "Cagliari",
+    "home": false,
+    "gf": 2.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-17T16:00Z",
+    "opp": "Internazionale",
+    "home": true,
+    "gf": 1.0,
+    "ga": 3.0
+   }
+  ],
+  "gf": 11.0,
+  "ga": 7.0,
+  "n": 5
+ },
+ "Borussia Dortmund": {
+  "league": "ger.1",
+  "id": 124,
+  "matches": [
+   {
+    "date": "2026-11-07T14:30Z",
+    "opp": "SV Elversberg",
+    "home": true,
+    "gf": 2.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-31T17:30Z",
+    "opp": "Bayern Munich",
+    "home": false,
+    "gf": 2.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-10-24T16:30Z",
+    "opp": "Eintracht Frankfurt",
+    "home": true,
+    "gf": 1.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-17T13:30Z",
+    "opp": "1. FC Union Berlin",
+    "home": false,
+    "gf": 0.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-09T18:30Z",
+    "opp": "Werder Bremen",
+    "home": true,
+    "gf": 2.0,
+    "ga": 2.0
+   }
+  ],
+  "gf": 7.0,
+  "ga": 5.0,
+  "n": 5
+ },
+ "Borussia Mönchengladbach": {
+  "league": "ger.1",
+  "id": 268,
+  "matches": [
+   {
+    "date": "2026-11-06T19:30Z",
+    "opp": "Hamburg SV",
+    "home": false,
+    "gf": 1.0,
+    "ga": 3.0
+   },
+   {
+    "date": "2026-10-31T14:30Z",
+    "opp": "SC Paderborn 07",
+    "home": true,
+    "gf": 0.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-23T18:30Z",
+    "opp": "VfB Stuttgart",
+    "home": false,
+    "gf": 3.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-10-18T15:30Z",
+    "opp": "TSG Hoffenheim",
+    "home": true,
+    "gf": 1.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-10-11T13:30Z",
+    "opp": "FC Cologne",
+    "home": false,
+    "gf": 1.0,
+    "ga": 2.0
+   }
+  ],
+  "gf": 6.0,
+  "ga": 9.0,
+  "n": 5
+ },
+ "Brentford": {
+  "league": "eng.1",
+  "id": 337,
+  "matches": [
+   {
+    "date": "2026-11-08T14:00Z",
+    "opp": "Brighton & Hove Albion",
+    "home": false,
+    "gf": 0.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-10-31T15:00Z",
+    "opp": "Nottingham Forest",
+    "home": true,
+    "gf": 2.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-25T14:00Z",
+    "opp": "Hull City",
+    "home": false,
+    "gf": 1.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-17T14:00Z",
+    "opp": "Liverpool",
+    "home": true,
+    "gf": 1.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-10-10T14:00Z",
+    "opp": "Aston Villa",
+    "home": false,
+    "gf": 2.0,
+    "ga": 2.0
+   }
+  ],
+  "gf": 6.0,
+  "ga": 7.0,
+  "n": 5
+ },
+ "Chelsea": {
+  "league": "eng.1",
+  "id": 363,
+  "matches": [
+   {
+    "date": "2026-11-08T14:00Z",
+    "opp": "Sunderland",
+    "home": false,
+    "gf": 0.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-31T12:30Z",
+    "opp": "Manchester United",
+    "home": true,
+    "gf": 2.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-24T16:30Z",
+    "opp": "Tottenham Hotspur",
+    "home": true,
+    "gf": 0.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-10-17T11:30Z",
+    "opp": "Everton",
+    "home": false,
+    "gf": 2.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-10T14:00Z",
+    "opp": "AFC Bournemouth",
+    "home": true,
+    "gf": 5.0,
+    "ga": 1.0
+   }
+  ],
+  "gf": 9.0,
+  "ga": 4.0,
+  "n": 5
+ },
+ "Como": {
+  "league": "ita.1",
+  "id": 2572,
+  "matches": [
+   {
+    "date": "2026-11-08T17:00Z",
+    "opp": "Internazionale",
+    "home": false,
+    "gf": 0.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-11-01T11:30Z",
+    "opp": "Venezia",
+    "home": true,
+    "gf": 1.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-27T19:45Z",
+    "opp": "Torino",
+    "home": false,
+    "gf": 3.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-24T13:00Z",
+    "opp": "Sassuolo",
+    "home": true,
+    "gf": 2.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-18T13:00Z",
+    "opp": "Fiorentina",
+    "home": false,
+    "gf": 3.0,
+    "ga": 1.0
+   }
+  ],
+  "gf": 9.0,
+  "ga": 4.0,
+  "n": 5
+ },
+ "Deportivo": {
+  "league": "esp.1",
+  "id": 90,
+  "matches": [
+   {
+    "date": "2026-11-07T15:15Z",
+    "opp": "Espanyol",
+    "home": false,
+    "gf": 0.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-11-02T20:00Z",
+    "opp": "Osasuna",
+    "home": true,
+    "gf": 2.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-24T19:00Z",
+    "opp": "Atlético Madrid",
+    "home": false,
+    "gf": 0.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-16T19:00Z",
+    "opp": "Levante",
+    "home": true,
+    "gf": 1.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-11T14:15Z",
+    "opp": "Real Sociedad",
+    "home": false,
+    "gf": 2.0,
+    "ga": 3.0
+   }
+  ],
+  "gf": 5.0,
+  "ga": 6.0,
+  "n": 5
+ },
+ "Eintracht Frankfurt": {
+  "league": "ger.1",
+  "id": 125,
+  "matches": [
+   {
+    "date": "2026-11-07T14:30Z",
+    "opp": "SC Paderborn 07",
+    "home": false,
+    "gf": 2.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-11-01T16:30Z",
+    "opp": "Hamburg SV",
+    "home": true,
+    "gf": 3.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-24T16:30Z",
+    "opp": "Borussia Dortmund",
+    "home": false,
+    "gf": 0.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-16T18:30Z",
+    "opp": "FC Cologne",
+    "home": true,
+    "gf": 1.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-10T16:30Z",
+    "opp": "RB Leipzig",
+    "home": false,
+    "gf": 0.0,
+    "ga": 6.0
+   }
+  ],
+  "gf": 6.0,
+  "ga": 10.0,
+  "n": 5
+ },
+ "Elche": {
+  "league": "esp.1",
+  "id": 3751,
+  "matches": [
+   {
+    "date": "2026-11-08T13:00Z",
+    "opp": "Real Betis",
+    "home": true,
+    "gf": 0.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-11-01T17:30Z",
+    "opp": "Valencia",
+    "home": true,
+    "gf": 0.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-24T12:00Z",
+    "opp": "Rayo Vallecano",
+    "home": false,
+    "gf": 3.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-17T14:15Z",
+    "opp": "Villarreal",
+    "home": false,
+    "gf": 0.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-11T12:00Z",
+    "opp": "Celta Vigo",
+    "home": true,
+    "gf": 0.0,
+    "ga": 0.0
+   }
+  ],
+  "gf": 3.0,
+  "ga": 3.0,
+  "n": 5
+ },
+ "Everton": {
+  "league": "eng.1",
+  "id": 368,
+  "matches": [
+   {
+    "date": "2026-11-06T20:00Z",
+    "opp": "Coventry City",
+    "home": true,
+    "gf": 3.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-11-02T20:00Z",
+    "opp": "Newcastle United",
+    "home": false,
+    "gf": 1.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-24T14:00Z",
+    "opp": "Arsenal",
+    "home": false,
+    "gf": 0.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-10-17T11:30Z",
+    "opp": "Chelsea",
+    "home": true,
+    "gf": 0.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-10-11T13:00Z",
+    "opp": "Hull City",
+    "home": false,
+    "gf": 2.0,
+    "ga": 2.0
+   }
+  ],
+  "gf": 6.0,
+  "ga": 7.0,
+  "n": 5
+ },
+ "Genoa": {
+  "league": "ita.1",
+  "id": 3263,
+  "matches": [
+   {
+    "date": "2026-11-08T14:00Z",
+    "opp": "AC Milan",
+    "home": true,
+    "gf": 1.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-11-01T17:00Z",
+    "opp": "Lecce",
+    "home": false,
+    "gf": 2.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-28T19:45Z",
+    "opp": "Juventus",
+    "home": true,
+    "gf": 2.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-25T14:00Z",
+    "opp": "Venezia",
+    "home": true,
+    "gf": 1.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-17T18:45Z",
+    "opp": "AS Roma",
+    "home": false,
+    "gf": 0.0,
+    "ga": 2.0
+   }
+  ],
+  "gf": 6.0,
+  "ga": 5.0,
+  "n": 5
+ },
+ "Hamburg SV": {
+  "league": "ger.1",
+  "id": 127,
+  "matches": [
+   {
+    "date": "2026-11-06T19:30Z",
+    "opp": "Borussia Mönchengladbach",
+    "home": true,
+    "gf": 3.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-11-01T16:30Z",
+    "opp": "Eintracht Frankfurt",
+    "home": false,
+    "gf": 1.0,
+    "ga": 3.0
+   },
+   {
+    "date": "2026-10-24T13:30Z",
+    "opp": "SC Paderborn 07",
+    "home": false,
+    "gf": 0.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-17T13:30Z",
+    "opp": "VfB Stuttgart",
+    "home": true,
+    "gf": 1.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-10T13:30Z",
+    "opp": "TSG Hoffenheim",
+    "home": false,
+    "gf": 3.0,
+    "ga": 2.0
+   }
+  ],
+  "gf": 8.0,
+  "ga": 7.0,
+  "n": 5
+ },
+ "Internazionale": {
+  "league": "ita.1",
+  "id": 110,
+  "matches": [
+   {
+    "date": "2026-11-08T17:00Z",
+    "opp": "Como",
+    "home": true,
+    "gf": 2.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-31T19:45Z",
+    "opp": "AC Milan",
+    "home": false,
+    "gf": 1.0,
+    "ga": 3.0
+   },
+   {
+    "date": "2026-10-28T17:30Z",
+    "opp": "Venezia",
+    "home": false,
+    "gf": 2.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-25T11:30Z",
+    "opp": "Fiorentina",
+    "home": true,
+    "gf": 2.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-17T16:00Z",
+    "opp": "Bologna",
+    "home": false,
+    "gf": 3.0,
+    "ga": 1.0
+   }
+  ],
+  "gf": 10.0,
+  "ga": 5.0,
+  "n": 5
+ },
+ "Juventus": {
+  "league": "ita.1",
+  "id": 111,
+  "matches": [
+   {
+    "date": "2026-11-08T19:45Z",
+    "opp": "Fiorentina",
+    "home": false,
+    "gf": 2.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-11-01T19:45Z",
+    "opp": "Napoli",
+    "home": true,
+    "gf": 2.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-28T19:45Z",
+    "opp": "Genoa",
+    "home": false,
+    "gf": 0.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-10-25T17:00Z",
+    "opp": "Lecce",
+    "home": false,
+    "gf": 2.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-18T18:45Z",
+    "opp": "Lazio",
+    "home": true,
+    "gf": 0.0,
+    "ga": 3.0
+   }
+  ],
+  "gf": 6.0,
+  "ga": 7.0,
+  "n": 5
+ },
+ "Levante": {
+  "league": "esp.1",
+  "id": 1538,
+  "matches": [
+   {
+    "date": "2026-11-08T17:30Z",
+    "opp": "Celta Vigo",
+    "home": false,
+    "gf": 0.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-31T13:00Z",
+    "opp": "Atlético Madrid",
+    "home": true,
+    "gf": 0.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-10-25T17:30Z",
+    "opp": "Real Sociedad",
+    "home": false,
+    "gf": 1.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-10-21T18:00Z",
+    "opp": "Athletic Club",
+    "home": true,
+    "gf": 3.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-16T19:00Z",
+    "opp": "Deportivo",
+    "home": false,
+    "gf": 1.0,
+    "ga": 1.0
+   }
+  ],
+  "gf": 5.0,
+  "ga": 6.0,
+  "n": 5
+ },
+ "Liverpool": {
+  "league": "eng.1",
+  "id": 364,
+  "matches": [
+   {
+    "date": "2026-11-08T14:00Z",
+    "opp": "Crystal Palace",
+    "home": false,
+    "gf": 3.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-11-01T16:30Z",
+    "opp": "Arsenal",
+    "home": true,
+    "gf": 0.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-25T14:00Z",
+    "opp": "Brighton & Hove Albion",
+    "home": true,
+    "gf": 2.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-17T14:00Z",
+    "opp": "Brentford",
+    "home": false,
+    "gf": 2.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-11T15:30Z",
+    "opp": "Manchester City",
+    "home": true,
+    "gf": 0.0,
+    "ga": 3.0
+   }
+  ],
+  "gf": 7.0,
+  "ga": 6.0,
+  "n": 5
+ },
+ "Manchester City": {
+  "league": "eng.1",
+  "id": 382,
+  "matches": [
+   {
+    "date": "2026-11-07T17:30Z",
+    "opp": "Nottingham Forest",
+    "home": false,
+    "gf": 1.0,
+    "ga": 3.0
+   },
+   {
+    "date": "2026-10-31T15:00Z",
+    "opp": "Brighton & Hove Albion",
+    "home": true,
+    "gf": 0.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-24T11:30Z",
+    "opp": "Aston Villa",
+    "home": false,
+    "gf": 1.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-10-17T14:00Z",
+    "opp": "Ipswich Town",
+    "home": true,
+    "gf": 3.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-10-11T15:30Z",
+    "opp": "Liverpool",
+    "home": false,
+    "gf": 3.0,
+    "ga": 0.0
+   }
+  ],
+  "gf": 8.0,
+  "ga": 8.0,
+  "n": 5
+ },
+ "Manchester United": {
+  "league": "eng.1",
+  "id": 360,
+  "matches": [
+   {
+    "date": "2026-11-08T16:30Z",
+    "opp": "Aston Villa",
+    "home": true,
+    "gf": 4.0,
+    "ga": 4.0
+   },
+   {
+    "date": "2026-10-31T12:30Z",
+    "opp": "Chelsea",
+    "home": false,
+    "gf": 0.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-10-25T14:00Z",
+    "opp": "AFC Bournemouth",
+    "home": true,
+    "gf": 0.0,
+    "ga": 3.0
+   },
+   {
+    "date": "2026-10-18T13:00Z",
+    "opp": "Leeds United",
+    "home": false,
+    "gf": 1.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-10T16:30Z",
+    "opp": "Tottenham Hotspur",
+    "home": true,
+    "gf": 1.0,
+    "ga": 1.0
+   }
+  ],
+  "gf": 6.0,
+  "ga": 11.0,
+  "n": 5
+ },
+ "Napoli": {
+  "league": "ita.1",
+  "id": 114,
+  "matches": [
+   {
+    "date": "2026-11-08T11:30Z",
+    "opp": "Lazio",
+    "home": true,
+    "gf": 1.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-11-01T19:45Z",
+    "opp": "Juventus",
+    "home": false,
+    "gf": 0.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-10-28T19:45Z",
+    "opp": "Monza",
+    "home": false,
+    "gf": 4.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-24T16:00Z",
+    "opp": "AS Roma",
+    "home": true,
+    "gf": 3.0,
+    "ga": 3.0
+   },
+   {
+    "date": "2026-10-17T13:00Z",
+    "opp": "Venezia",
+    "home": false,
+    "gf": 0.0,
+    "ga": 1.0
+   }
+  ],
+  "gf": 8.0,
+  "ga": 8.0,
+  "n": 5
+ },
+ "Nottingham Forest": {
+  "league": "eng.1",
+  "id": 393,
+  "matches": [
+   {
+    "date": "2026-11-07T17:30Z",
+    "opp": "Manchester City",
+    "home": true,
+    "gf": 3.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-31T15:00Z",
+    "opp": "Brentford",
+    "home": false,
+    "gf": 0.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-10-23T19:00Z",
+    "opp": "Ipswich Town",
+    "home": false,
+    "gf": 1.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-18T15:30Z",
+    "opp": "Arsenal",
+    "home": true,
+    "gf": 0.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-11T13:00Z",
+    "opp": "Crystal Palace",
+    "home": false,
+    "gf": 1.0,
+    "ga": 3.0
+   }
+  ],
+  "gf": 5.0,
+  "ga": 8.0,
+  "n": 5
+ },
+ "Racing Santander": {
+  "league": "esp.1",
+  "id": 87,
+  "matches": [
+   {
+    "date": "2026-11-07T13:00Z",
+    "opp": "Málaga",
+    "home": false,
+    "gf": 2.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-11-01T15:15Z",
+    "opp": "Real Madrid",
+    "home": true,
+    "gf": 0.0,
+    "ga": 3.0
+   },
+   {
+    "date": "2026-10-24T14:15Z",
+    "opp": "Espanyol",
+    "home": true,
+    "gf": 2.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-18T12:00Z",
+    "opp": "Osasuna",
+    "home": false,
+    "gf": 0.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-10-11T19:00Z",
+    "opp": "Valencia",
+    "home": true,
+    "gf": 2.0,
+    "ga": 2.0
+   }
+  ],
+  "gf": 6.0,
+  "ga": 9.0,
+  "n": 5
+ },
+ "Real Madrid": {
+  "league": "esp.1",
+  "id": 86,
+  "matches": [
+   {
+    "date": "2026-11-07T20:00Z",
+    "opp": "Valencia",
+    "home": false,
+    "gf": 3.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-11-01T15:15Z",
+    "opp": "Racing Santander",
+    "home": false,
+    "gf": 3.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-25T20:00Z",
+    "opp": "Barcelona",
+    "home": false,
+    "gf": 2.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-18T19:00Z",
+    "opp": "Sevilla",
+    "home": true,
+    "gf": 4.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-10T19:00Z",
+    "opp": "Villarreal",
+    "home": true,
+    "gf": 1.0,
+    "ga": 0.0
+   }
+  ],
+  "gf": 13.0,
+  "ga": 2.0,
+  "n": 5
+ },
+ "Sassuolo": {
+  "league": "ita.1",
+  "id": 3997,
+  "matches": [
+   {
+    "date": "2026-11-07T19:45Z",
+    "opp": "AS Roma",
+    "home": false,
+    "gf": 0.0,
+    "ga": 3.0
+   },
+   {
+    "date": "2026-11-02T17:30Z",
+    "opp": "Fiorentina",
+    "home": true,
+    "gf": 2.0,
+    "ga": 4.0
+   },
+   {
+    "date": "2026-10-27T17:30Z",
+    "opp": "Lazio",
+    "home": true,
+    "gf": 2.0,
+    "ga": 6.0
+   },
+   {
+    "date": "2026-10-24T13:00Z",
+    "opp": "Como",
+    "home": false,
+    "gf": 0.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-10-16T18:45Z",
+    "opp": "Frosinone",
+    "home": false,
+    "gf": 2.0,
+    "ga": 4.0
+   }
+  ],
+  "gf": 6.0,
+  "ga": 19.0,
+  "n": 5
+ },
+ "Venezia": {
+  "league": "ita.1",
+  "id": 17530,
+  "matches": [
+   {
+    "date": "2026-11-06T19:45Z",
+    "opp": "Udinese",
+    "home": true,
+    "gf": 2.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-11-01T11:30Z",
+    "opp": "Como",
+    "home": false,
+    "gf": 0.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-28T17:30Z",
+    "opp": "Internazionale",
+    "home": true,
+    "gf": 0.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-10-25T14:00Z",
+    "opp": "Genoa",
+    "home": false,
+    "gf": 0.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-17T13:00Z",
+    "opp": "Napoli",
+    "home": true,
+    "gf": 1.0,
+    "ga": 0.0
+   }
+  ],
+  "gf": 3.0,
+  "ga": 5.0,
+  "n": 5
+ },
+ "VfB Stuttgart": {
+  "league": "ger.1",
+  "id": 134,
+  "matches": [
+   {
+    "date": "2026-11-07T17:30Z",
+    "opp": "Werder Bremen",
+    "home": true,
+    "gf": 1.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-31T14:30Z",
+    "opp": "Bayer Leverkusen",
+    "home": false,
+    "gf": 4.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-10-23T18:30Z",
+    "opp": "Borussia Mönchengladbach",
+    "home": true,
+    "gf": 2.0,
+    "ga": 3.0
+   },
+   {
+    "date": "2026-10-17T13:30Z",
+    "opp": "Hamburg SV",
+    "home": false,
+    "gf": 0.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-10T13:30Z",
+    "opp": "SC Paderborn 07",
+    "home": false,
+    "gf": 2.0,
+    "ga": 0.0
+   }
+  ],
+  "gf": 9.0,
+  "ga": 6.0,
+  "n": 5
+ },
+ "Werder Bremen": {
+  "league": "ger.1",
+  "id": 137,
+  "matches": [
+   {
+    "date": "2026-11-07T17:30Z",
+    "opp": "VfB Stuttgart",
+    "home": false,
+    "gf": 0.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-31T14:30Z",
+    "opp": "TSG Hoffenheim",
+    "home": true,
+    "gf": 2.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-24T13:30Z",
+    "opp": "Mainz",
+    "home": false,
+    "gf": 3.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-10-17T13:30Z",
+    "opp": "SC Paderborn 07",
+    "home": true,
+    "gf": 2.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-10-09T18:30Z",
+    "opp": "Borussia Dortmund",
+    "home": false,
+    "gf": 2.0,
+    "ga": 2.0
+   }
+  ],
+  "gf": 9.0,
+  "ga": 7.0,
+  "n": 5
+ }
+}
