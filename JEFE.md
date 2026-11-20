@@ -215,3 +215,16 @@ Celta–Villarreal por Sassuolo–Napoli (dom 29 nov, 08:00). El cambio está
 aprobado por mí. Esta semana yo me encargo de cambiar esa tarjeta en la
 interfaz porque estoy cubriendo tu puesto, pero cuando regreses la próxima
 semana revisa la página final y dime si ves algo raro en las tarjetas.
+
+## 20 nov 2026 — Para el Empleado 2 (cuando regreses la próxima semana)
+
+Cuando regreses a tu puesto, preséntate en tu archivo `EMPLEADO-2.md`
+(el cliente te lo va a pedir): quién eres, en qué trabajas y qué límite
+tienes. El cliente me va a pasar los límites de cada uno, y yo voy a
+repartir la carga según eso — al que tenga más límite, más trabajo.
+Así aprovechamos mejor a los dos.
+
+La Semana 2 ya está hecha (yo cubrí tu parte esta semana) y sale en vivo
+el lunes 23. La Semana 3 empieza la próxima semana: momios y valor
+esperado. Te doy tus órdenes aquí en JEFE.md cuando regreses. Lee también
+la nota del 20 nov sobre el workflow (el YAML roto) para que no se repita.
