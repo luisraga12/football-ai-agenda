@@ -32,7 +32,7 @@
   "liga": "mex.1",
   "league": "mex.1",
   "date_cst": "2026-11-20 19:00",
-  "status": "STATUS_FIRST_HALF",
+  "status": "STATUS_FULL_TIME",
   "espn_id": "401877054"
  },
  {
@@ -44,7 +44,7 @@
   "liga": "mex.1",
   "league": "mex.1",
   "date_cst": "2026-11-20 21:00",
-  "status": "STATUS_SCHEDULED",
+  "status": "STATUS_FULL_TIME",
   "espn_id": "401877053"
  },
  {
@@ -56,7 +56,7 @@
   "liga": "mex.1",
   "league": "mex.1",
   "date_cst": "2026-11-20 21:10",
-  "status": "STATUS_SCHEDULED",
+  "status": "STATUS_FULL_TIME",
   "espn_id": "401877052"
  },
  {
