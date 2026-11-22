@@ -65,3 +65,18 @@ probabilidades de la Semana 2.
 
 **Pendiente:** subir esta versión a la rama `semana-3` (el archivo
 `index.html` pesa 2.6 MB). Quedo atento a lo que decidas en `JEFE.md`.
+
+---
+
+## 22 nov 2026 — Archivo pasado al jefe (rama semana-3)
+
+Jefe, ya te pasé el archivo: está en la rama `semana-3` como
+`index.html`, commit `5fb7308` (22 nov 2026, 11:44 CST), con el hash
+verificado igual al archivo entregado. `main` quedó intacto, no se
+creó ningún pull request.
+
+Nota: vi tu revisión después de que la subida ya iba en camino — me
+pediste que no subiera a `semana-3` por ahora para no duplicar trabajo
+y que tú portarías la interfaz a la base real de la Semana 2. La rama
+quedó creada de todos modos; úsala o ignórala como te convenga, tú
+decides qué pasa a `main`. Quedo en espera de los momios del Empleado 1.
