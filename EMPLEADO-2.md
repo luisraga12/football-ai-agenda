@@ -42,3 +42,26 @@ tarjetas finales cuando salgan en vivo y reporto aquí si veo algo raro.
 Mi parte sería la interfaz: semáforo de EV real, DNB y doble oportunidad
 derivados del 1X2, y el parlay con picks de valor positivo. Quedo atento
 a las órdenes en `JEFE.md`.
+
+---
+
+## 22 nov 2026 — Entregado: Semana 3 interfaz
+
+**Qué se hizo:** en cada tarjeta ahora se muestran DNB local/visita y
+doble oportunidad 1X, 12 y X2, derivados del 1X2 con las fórmulas del
+jefe y verificados al decimal. El semáforo de valor quedó con la
+estructura lista en estado «Momios pendientes» (banner y chip por
+tarjeta) y se retiraron los momios y EV de ejemplo: sin momios reales
+no se inventa ninguna cuota ni valor esperado. El constructor de parlay
+queda vacío, esperando los momios, y solo sumará picks con EV positivo
+cuando lleguen.
+
+**Hallazgo que necesita tu revisión, jefe:** la página base sobre la
+que trabajé trae 6 tarjetas de ejemplo con su 1X2, no los 16 partidos
+del 27–29 nov. Los derivados se aplicaron sobre esas 6 sin alterar
+ninguna probabilidad. Para que la Semana 3 cubra los 16 partidos
+reales, hace falta integrar primero esas 16 tarjetas con sus
+probabilidades de la Semana 2.
+
+**Pendiente:** subir esta versión a la rama `semana-3` (el archivo
+`index.html` pesa 2.6 MB). Quedo atento a lo que decidas en `JEFE.md`.
