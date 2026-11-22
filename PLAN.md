@@ -66,6 +66,12 @@ producto, nadie debe volver a meterle mano.
   necesitan otra fuente. Los momios de ambos anotan, córners y hándicap
   asiático necesitan una fuente extra además de ESPN (The Odds API o
   MoviOdds, por verificar en esta semana).
+- **Avance 22 nov 2026 (jefe):** la interfaz de esta semana ya está
+  hecha por el Empleado 2 y portada por el jefe a la página real de la
+  Semana 2 (16 partidos): DNB y doble oportunidad derivados del 1X2 en
+  cada tarjeta (verificados al decimal), semáforo en «Momios pendientes»
+  y parlay vacío esperando momios. Falta la parte de datos: los momios
+  reales del Empleado 1 para encender el semáforo y el parlay.
 
 ## ⏳ Semana 4 — Pendiente
 
