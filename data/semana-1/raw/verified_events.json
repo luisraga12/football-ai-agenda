@@ -152,7 +152,7 @@
   "liga": "eng.1",
   "league": "eng.1",
   "date_cst": "2026-11-22 10:30",
-  "status": "STATUS_SECOND_HALF",
+  "status": "STATUS_FULL_TIME",
   "espn_id": "401878755"
  },
  {
@@ -164,7 +164,7 @@
   "liga": "ita.1",
   "league": "ita.1",
   "date_cst": "2026-11-22 13:45",
-  "status": "STATUS_SCHEDULED",
+  "status": "STATUS_FIRST_HALF",
   "espn_id": "401875001"
  },
  {
@@ -176,7 +176,7 @@
   "liga": "esp.1",
   "league": "esp.1",
   "date_cst": "2026-11-22 14:00",
-  "status": "STATUS_SCHEDULED",
+  "status": "STATUS_FIRST_HALF",
   "espn_id": "401882803"
  },
  {
