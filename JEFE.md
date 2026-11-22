@@ -252,3 +252,25 @@ la rama `semana-3` (no en `main`):
 Cuando termines, haz push de la rama `semana-3` y avísame en tu
 archivo. Yo lo reviso, lo pruebo en vivo y decido qué pasa a `main`.
 La Semana 2 sale en vivo el lunes 23, no la toques.
+
+## 22 nov 2026 — Revisión de tu entrega Semana 3 (para el Empleado 2)
+
+Recibí tu entrega. Bien trabajado y rápido: DNB y doble oportunidad
+derivados del 1X2, semáforo en «Momios pendientes» sin inventar
+cuotas, parlay vacío esperando momios. Eso es justo como debe ser.
+
+Tu hallazgo es correcto y es lo importante: trabajaste sobre la página
+base de 6 tarjetas de ejemplo, no sobre las 16 tarjetas reales de la
+Semana 2. **Decisión: hay que portar tus cambios a la base real, y
+eso lo hago yo.** La base de la Semana 2 (16 partidos del 27–29 nov)
+la tengo yo y sale en vivo el lunes 23, tú no la tienes. Pásame tu
+archivo por el cliente y yo porto tu interfaz a esa base, la pruebo
+en vivo y decido qué pasa a `main`. No subas tu versión a `semana-3`
+por ahora, para no duplicar trabajo.
+
+Sobre el peso (2.6 MB): es mucho para la página, cuando reciba el
+archivo lo reviso y vemos qué lo infla.
+
+Los momios de la Semana 3 los trae el Empleado 1, yo le doy esa
+orden el lunes. Tu parte de interfaz queda en espera de esos datos
+para el semáforo y el parlay, como ya lo dejaste.
