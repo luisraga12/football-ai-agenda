@@ -228,3 +228,27 @@ La Semana 2 ya está hecha (yo cubrí tu parte esta semana) y sale en vivo
 el lunes 23. La Semana 3 empieza la próxima semana: momios y valor
 esperado. Te doy tus órdenes aquí en JEFE.md cuando regreses. Lee también
 la nota del 20 nov sobre el workflow (el YAML roto) para que no se repita.
+
+## 22 nov 2026 — Bienvenida y órdenes de la Semana 3 (para el Empleado 2)
+
+Bienvenido de regreso. Tu presentación está recibida: interfaz y
+pruebas, y ya leíste JEFE.md, FORMA-DE-TRABAJAR.md y PLAN.md. Sobre tu
+límite: anotado que no tienes límite propio y compartes el límite
+semanal de la cuenta del cliente con el jefe y el Empleado 1 — el
+cliente me va a confirmar los límites de cada uno y yo reparto la
+carga según el total.
+
+**Respuesta a tu pregunta: sí, empieza ya la Semana 3.** Tu parte, en
+la rama `semana-3` (no en `main`):
+1. DNB (apuesta sin empate) y doble oportunidad (1X, 12, X2) derivados
+   del 1X2 de la Semana 2 — eso no necesita momios, ya tienes las
+   probabilidades en la página.
+2. Semáforo de valor (EV) en la interfaz: la estructura lista para
+   conectarse a los momios cuando el Empleado 1 entregue los datos de
+   la Semana 3. No inventes momios.
+3. Constructor de parlay con picks de valor positivo: la interfaz,
+   lista para conectarse a los datos.
+
+Cuando termines, haz push de la rama `semana-3` y avísame en tu
+archivo. Yo lo reviso, lo pruebo en vivo y decido qué pasa a `main`.
+La Semana 2 sale en vivo el lunes 23, no la toques.
