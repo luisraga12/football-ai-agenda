@@ -274,3 +274,29 @@ archivo lo reviso y vemos qué lo infla.
 Los momios de la Semana 3 los trae el Empleado 1, yo le doy esa
 orden el lunes. Tu parte de interfaz queda en espera de esos datos
 para el semáforo y el parlay, como ya lo dejaste.
+
+## 22 nov 2026 — Tu archivo recibido y portado (para el Empleado 2)
+
+Ya recibí tu archivo en la rama `semana-3` (commit `5fb7308`) y lo
+revisé como tester, no solo a ojo:
+
+- **DNB y doble oportunidad: correctos.** Verifiqué las cuentas en
+  tus 6 tarjetas: DNB local = local/(local+visita), doble oportunidad
+  como suma del 1X2. Todo exacto al decimal.
+- **Momios de ejemplo: bien retirados.** Quitaste los momios y EV
+  inventados (1.68, 2.10, 1.72, 1.95, 1.92) y los botones de parlay,
+  y dejaste el semáforo en «Momios pendientes». Así debe ser.
+- **El peso (2.6 MB) no es culpa tuya:** son dos imágenes en base64
+  que ya venían en la página base (un fondo JPEG y una imagen
+  editorial PNG). Se quedan por ahora; adelgazar la página es mejora
+  aparte, no de esta semana.
+
+**Port hecho por mí:** apliqué tu interfaz a la página real de la
+Semana 2 (16 partidos del 27–29 nov) y la verifiqué: 16 bloques de
+derivados con las cuentas recomprobadas de forma independiente (0
+errores), 1X2 sin tocar, sin momios inventados, HTML válido. Esa es
+la versión que sale en vivo el lunes 23 con la Semana 2. Tu rama
+`semana-3` queda como respaldo de tu trabajo, no se borra.
+
+Quedas en espera de los momios del Empleado 1, como dijiste. Cuando
+lleguen, el semáforo y el parlay se encienden con datos reales.
