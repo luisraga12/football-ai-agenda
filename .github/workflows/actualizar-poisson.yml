@@ -15,6 +15,10 @@
 # La semana que se calcula es la de `scripts/config/semana-actual.json`.
 # Para cambiar de semana, ese archivo debe apuntar a la configuración
 # nueva (p. ej. copiar `semana-2.json` sobre `semana-actual.json`).
+# Si existe el config de entre semana de esa semana
+# (`scripts/config/semana-<N>-entresemana.json`), se calcula también
+# en la misma corrida; si no existe, la corrida sigue solo con el fin
+# de semana (así los momios/EV entre semana no se quedan congelados).
 #
 # NOTA: los workflows programados (`schedule`) solo corren en la rama
 # por defecto (`main`). Este archivo se entrega en la rama `semana-3`
@@ -50,6 +54,15 @@ jobs:
           python-version: '3.12'
       - name: Calcular semana actual
         run: python3 scripts/run_semana.py --config scripts/config/semana-actual.json
+      - name: Calcular entre semana (si hay config)
+        run: |
+          SEMANA=$(python3 -c "import json; print(json.load(open('scripts/config/semana-actual.json'))['semana'])")
+          CFG="scripts/config/semana-${SEMANA}-entresemana.json"
+          if [ -f "$CFG" ]; then
+            python3 scripts/run_semana.py --config "$CFG"
+          else
+            echo "Sin config entre semana para semana ${SEMANA}; solo fin de semana."
+          fi
       - name: Publicar cambios si los hay
         run: |
           git config user.name "github-actions[bot]"
