@@ -1,10 +1,12 @@
-# Actualizar datos y Poisson (Football AI Agenda)
+# Actualizar datos, Poisson, momios y EV (Football AI Agenda)
 #
-# Corre la automatización de la semana actual y, si los datos cambiaron,
+# Corre la automatizacion de la semana actual y, si los datos cambiaron,
 # hace commit de los archivos generados en `data/`.
 #
 # - Diario (13:00 UTC): recalcula la semana actual con los últimos
-#   datos de ESPN (últimos 5 de cada equipo, promedios de liga).
+#   datos de ESPN (últimos 5 de cada equipo, promedios de liga, momios
+#   y EV). Los momios del fin de semana siguiente aparecen solos cuando
+#   DraftKings/Bet 365 los publican en ESPN.
 # - Cada hora en días de partido (vie, sáb y dom): para que los
 #   resultados y los últimos 5 se actualicen solos mientras se juega.
 # - Manual (`workflow_dispatch`): para probar o forzar una corrida.
@@ -14,12 +16,16 @@
 # nueva (p. ej. copiar `semana-2.json` sobre `semana-actual.json`).
 #
 # NOTA: los workflows programados (`schedule`) solo corren en la rama
-# por defecto (`main`). Este archivo se entrega en la rama `semana-2`
+# por defecto (`main`). Este archivo se entrega en la rama `semana-3`
 # para revisión del jefe; empieza a correr solo cuando se fusione a `main`.
+#
+# Los pasos (datos, Poisson, tabla, momios, EV) los corre
+# `scripts/run_semana.py`; el workflow no repite la lista para no
+# desincronizarse con el orquestador.
 #
 # El workflow usa solo `GITHUB_TOKEN` (sin secretos adicionales) y no
 # publica ninguna clave: los datos vienen de la API pública de ESPN.
-name: Actualizar datos y Poisson
+name: Actualizar datos, Poisson, momios y EV
 
 on:
   schedule:
