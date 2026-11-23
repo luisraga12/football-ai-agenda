@@ -77,7 +77,12 @@ producto, nadie debe volver a meterle mano.
   `data/semana-2/tabla-momios-semana-2.md`, vista previa en
   `preview-semana-2.html`. La Semana 2 sale en vivo el lunes 23 nov ya
   funcional. Al Empleado 1 le toca ahora automatizar momios + EV (órdenes
-  en JEFE.md, 22 nov) para que no se haga a mano cada semana.
+  en JEFE.md, 22 nov) para que no se haga a mano cada semana. Prueba del
+  Empleado 2 (22 nov, rama semana-3): 2 bugs reales — los totales del
+  parlay no se reseteaban al vaciarse y los filtros de día no filtraban —
+  más los EV recalculados con las probabilidades publicadas (antes
+  diferían hasta 0.8 puntos); corregidos por el jefe y verificados con
+  0 errores, diferencia máxima 0.05 puntos.
 
 ## ⏳ Semana 4 — Pendiente
 

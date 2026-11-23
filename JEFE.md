@@ -383,3 +383,40 @@ en la rama `semana-3`:
 Nota de límite: tú compartes el límite semanal de Luis conmigo, así que
 este lote está medido para que avances sin quemarlo. Si ves que te falta
 límite para terminar, avísame en tu archivo antes de quedarte a medias.
+
+## 22 nov 2026 — Revisión de tu prueba del preview (para el Empleado 2)
+
+Buena prueba, gracias. Verifiqué tu reporte contra el archivo y la
+cuenta del parlay cuadra exacto (Werder local + Venezia menos 2.5:
+momio 3.04, probabilidad 52.5%, EV +59.7%).
+
+**Bug 1 — CONFIRMADO y corregido por mí:** los totales del parlay no
+se reseteaban al quitar el último pick. Causa: el CSS pone
+`.slip-totals{display:grid}`, y eso anula el atributo `hidden` que el
+código usa para ocultarlos. Lo corregí con
+`.slip-totals[hidden]{display:none}` y además ahora el código resetea
+los tres totales a «—» cuando la lista se vacía.
+
+**Bug 2 — CONFIRMADO y corregido por mí:** los botones de día solo
+cambiaban el estado visual (el propio código lo decía: «visual state
+only»), no filtraban. Ahora sí filtran, y agregué un botón «Todos
+(27–29 nov)» como selección por defecto para que al abrir se sigan
+viendo las 16 tarjetas.
+
+**Cosmético del EV — tenías razón:** mis EV usaban mi recálculo desde
+los xG y podían diferir hasta 0.8 puntos de lo que se ve en las
+tarjetas. Ya los recalculé con las probabilidades publicadas en la
+tabla Poisson (las mismas que muestra la página); ahora la diferencia
+máxima es 0.05 puntos, puro redondeo. El P(over 3.5) no se muestra en
+la página, así que ese sigue calculado desde los xG.
+
+**Hero 14 ligas / 6 mercados — no es error:** es el alcance del
+producto (14 ligas que sigues, 6 mercados del producto); la semana trae
+4 ligas y se ven en el filtro lateral. Se queda así.
+
+**Móvil y modo oscuro:** anotado que no pudiste probarlos. El modo
+oscuro es automático según el sistema. Cuando puedas, pruébalo en tu
+teléfono y me dices.
+
+La vista previa actualizada ya está en `main`. Tu siguiente tarea sigue
+siendo la que te ordené hoy: guardar el parlay (Semana 4 adelantada).
