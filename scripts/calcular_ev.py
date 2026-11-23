@@ -150,6 +150,39 @@ def main():
         mejor_nombre, mejor_ev = max(candidatos, key=lambda c: c[1])
         fila['mejor_pick'] = mejor_nombre
         fila['mejor_ev'] = mejor_ev
+        # Decimal y probabilidad del mejor pick (para el boton de parlay
+        # del fragmento: data-odds / data-prob). Se resuelven desde los
+        # mercados ya calculados, no se inventan.
+        if mejor_nombre == 'Local':
+            fila['mejor_decimal'] = ml['home'] if ml is not None else None
+            fila['mejor_prob'] = r['p1']
+        elif mejor_nombre == 'Empate':
+            fila['mejor_decimal'] = ml['draw'] if ml is not None else None
+            fila['mejor_prob'] = r['px']
+        elif mejor_nombre == 'Visita':
+            fila['mejor_decimal'] = ml['away'] if ml is not None else None
+            fila['mejor_prob'] = r['p2']
+        elif mejor_nombre.startswith('Más '):
+            # Aqui tot es el total crudo {linea, over, under}, sin 'momios'.
+            fila['mejor_decimal'] = tot['over'] if tot else None
+            fila['mejor_prob'] = (fila['mercados']['total']['p_over']
+                                  if tot else None)
+        elif mejor_nombre.startswith('Menos '):
+            fila['mejor_decimal'] = tot['under'] if tot else None
+            fila['mejor_prob'] = (100 - fila['mercados']['total']['p_over']
+                                  if tot else None)
+        elif mejor_nombre.startswith('Spread local '):
+            # Aqui spr es el spread crudo {home_linea, home, ...}.
+            fila['mejor_decimal'] = spr['home'] if spr else None
+            fila['mejor_prob'] = (fila['mercados']['spread']['p_cubre_local']
+                                  if spr else None)
+        elif mejor_nombre.startswith('Spread visitante '):
+            fila['mejor_decimal'] = spr['away'] if spr else None
+            fila['mejor_prob'] = (100 - fila['mercados']['spread']
+                                  ['p_cubre_local'] if spr else None)
+        else:
+            fila['mejor_decimal'] = None
+            fila['mejor_prob'] = None
         fila['semaforo'] = semaforo(mejor_ev)
         icono = {'verde': '🟢', 'amarillo': '🟡', 'rojo': '🔴'}[fila['semaforo']]
         print(f"{icono} {home} vs {away}: mejor pick {mejor_nombre} "
@@ -159,12 +192,18 @@ def main():
     json.dump({'semana': semana, 'partidos': filas},
               open(os.path.join(rawdir, 'ev_result.json'), 'w'),
               indent=1, ensure_ascii=False)
-    # ev.json compacto para la pagina (ver integrar_pagina.py)
+    # ev.json compacto para la pagina (ver integrar_pagina.py). Desde la
+    # revision del lunes 23 nov incluye 'mercados' (EV por mercado) y el
+    # decimal/probabilidad del mejor pick, para que el fragmento de
+    # integracion no tenga que leer raw/ev_result.json.
     compacto = {'semana': semana, 'partidos': [
         {'home': f['home'], 'away': f['away'], 'fecha': f['fecha'],
+         'hora': f['hora'], 'liga': f['liga'],
          'proveedor': f['proveedor'], 'estado': f['estado'],
          'mejor_pick': f['mejor_pick'], 'mejor_ev': f['mejor_ev'],
-         'semaforo': f['semaforo'],
+         'mejor_decimal': f.get('mejor_decimal'),
+         'mejor_prob': f.get('mejor_prob'),
+         'semaforo': f['semaforo'], 'mercados': f['mercados'],
          'momios': (momios['partidos'][i]['momios']
                     if filas[i]['estado'] == 'con_momio' else None)}
         for i, f in enumerate(filas)]}
