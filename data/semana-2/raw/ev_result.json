@@ -53,7 +53,9 @@
    },
    "mejor_pick": "Local",
    "mejor_ev": 0.21918341036805633,
-   "semaforo": "verde"
+   "semaforo": "verde",
+   "mejor_decimal": 1.6896551724137931,
+   "mejor_prob": 72.15575285851762
   },
   {
    "fecha": "2026-11-27",
@@ -107,7 +109,9 @@
    },
    "mejor_pick": "Menos 2.5",
    "mejor_ev": 0.30839373297672124,
-   "semaforo": "verde"
+   "semaforo": "verde",
+   "mejor_decimal": 1.8,
+   "mejor_prob": 72.68854072092896
   },
   {
    "fecha": "2026-11-27",
@@ -161,7 +165,9 @@
    },
    "mejor_pick": "Visita",
    "mejor_ev": 0.7376564683214804,
-   "semaforo": "verde"
+   "semaforo": "verde",
+   "mejor_decimal": 2.55,
+   "mejor_prob": 68.14339091456786
   },
   {
    "fecha": "2026-11-27",
@@ -215,7 +221,9 @@
    },
    "mejor_pick": "Menos 3.5",
    "mejor_ev": 0.11140009870031453,
-   "semaforo": "verde"
+   "semaforo": "verde",
+   "mejor_decimal": 1.625,
+   "mejor_prob": 68.39385222771166
   },
   {
    "fecha": "2026-11-28",
@@ -242,7 +250,9 @@
    },
    "mejor_pick": "Local",
    "mejor_ev": 1.5450056470164717,
-   "semaforo": "verde"
+   "semaforo": "verde",
+   "mejor_decimal": 8.5,
+   "mejor_prob": 29.941242906076138
   },
   {
    "fecha": "2026-11-28",
@@ -296,7 +306,9 @@
    },
    "mejor_pick": "Visita",
    "mejor_ev": 0.5321407939819611,
-   "semaforo": "verde"
+   "semaforo": "verde",
+   "mejor_decimal": 3.4,
+   "mejor_prob": 45.06296452888121
   },
   {
    "fecha": "2026-11-28",
@@ -350,7 +362,9 @@
    },
    "mejor_pick": "Empate",
    "mejor_ev": 1.0412719503224932,
-   "semaforo": "verde"
+   "semaforo": "verde",
+   "mejor_decimal": 4.4,
+   "mejor_prob": 46.39254432551121
   },
   {
    "fecha": "2026-11-28",
@@ -404,7 +418,9 @@
    },
    "mejor_pick": "Local",
    "mejor_ev": 0.33434383525094225,
-   "semaforo": "verde"
+   "semaforo": "verde",
+   "mejor_decimal": 1.6896551724137931,
+   "mejor_prob": 78.97136984138228
   },
   {
    "fecha": "2026-11-28",
@@ -458,7 +474,9 @@
    },
    "mejor_pick": "Visita",
    "mejor_ev": 0.8055073678972138,
-   "semaforo": "verde"
+   "semaforo": "verde",
+   "mejor_decimal": 8.0,
+   "mejor_prob": 22.568842098715173
   },
   {
    "fecha": "2026-11-28",
@@ -512,7 +530,9 @@
    },
    "mejor_pick": "Spread local -2.5",
    "mejor_ev": 0.8721097244593417,
-   "semaforo": "verde"
+   "semaforo": "verde",
+   "mejor_decimal": 2.1,
+   "mejor_prob": 89.1480821171115
   },
   {
    "fecha": "2026-11-29",
@@ -566,7 +586,9 @@
    },
    "mejor_pick": "Local",
    "mejor_ev": 0.30745862817042724,
-   "semaforo": "verde"
+   "semaforo": "verde",
+   "mejor_decimal": 3.55,
+   "mejor_prob": 36.82982051184302
   },
   {
    "fecha": "2026-11-29",
@@ -620,7 +642,9 @@
    },
    "mejor_pick": "Más 3.5",
    "mejor_ev": 0.6503051111359295,
-   "semaforo": "verde"
+   "semaforo": "verde",
+   "mejor_decimal": 2.35,
+   "mejor_prob": 70.22574941003955
   },
   {
    "fecha": "2026-11-29",
@@ -674,7 +698,9 @@
    },
    "mejor_pick": "Más 3.5",
    "mejor_ev": -0.0025194593373714103,
-   "semaforo": "rojo"
+   "semaforo": "rojo",
+   "mejor_decimal": 1.6451612903225805,
+   "mejor_prob": 60.6311701187088
   },
   {
    "fecha": "2026-11-29",
@@ -728,7 +754,9 @@
    },
    "mejor_pick": "Local",
    "mejor_ev": 0.6216753117506366,
-   "semaforo": "verde"
+   "semaforo": "verde",
+   "mejor_decimal": 1.9523809523809523,
+   "mejor_prob": 83.06141840673993
   },
   {
    "fecha": "2026-11-29",
@@ -782,7 +810,9 @@
    },
    "mejor_pick": "Local",
    "mejor_ev": 0.43438618836946885,
-   "semaforo": "verde"
+   "semaforo": "verde",
+   "mejor_decimal": 2.05,
+   "mejor_prob": 69.97005796924239
   },
   {
    "fecha": "2026-11-29",
@@ -836,7 +866,9 @@
    },
    "mejor_pick": "Menos 2.5",
    "mejor_ev": 0.29040857858101665,
-   "semaforo": "verde"
+   "semaforo": "verde",
+   "mejor_decimal": 1.9523809523809523,
+   "mejor_prob": 66.09409792732038
   }
  ]
 }

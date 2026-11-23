@@ -1,0 +1,677 @@
+{
+ "337|368|2026-11-23": {
+  "home": "Brentford",
+  "home_id": "337",
+  "away": "Everton",
+  "away_id": "368",
+  "fecha": "2026-11-23",
+  "liga": "eng.1",
+  "liga_nombre": "Premier League"
+ },
+ "393|363|2026-11-27": {
+  "home": "Nottingham Forest",
+  "home_id": "393",
+  "away": "Chelsea",
+  "away_id": "363",
+  "fecha": "2026-11-27",
+  "liga": "eng.1",
+  "liga_nombre": "Premier League"
+ },
+ "357|388|2026-11-28": {
+  "home": "Leeds United",
+  "home_id": "357",
+  "away": "Coventry City",
+  "away_id": "388",
+  "fecha": "2026-11-28",
+  "liga": "eng.1",
+  "liga_nombre": "Premier League"
+ },
+ "360|337|2026-11-28": {
+  "home": "Manchester United",
+  "home_id": "360",
+  "away": "Brentford",
+  "away_id": "337",
+  "fecha": "2026-11-28",
+  "liga": "eng.1",
+  "liga_nombre": "Premier League"
+ },
+ "373|362|2026-11-28": {
+  "home": "Ipswich Town",
+  "home_id": "373",
+  "away": "Aston Villa",
+  "away_id": "362",
+  "fecha": "2026-11-28",
+  "liga": "eng.1",
+  "liga_nombre": "Premier League"
+ },
+ "368|364|2026-11-29": {
+  "home": "Everton",
+  "home_id": "368",
+  "away": "Liverpool",
+  "away_id": "364",
+  "fecha": "2026-11-29",
+  "liga": "eng.1",
+  "liga_nombre": "Premier League"
+ },
+ "331|361|2026-11-29": {
+  "home": "Brighton & Hove Albion",
+  "home_id": "331",
+  "away": "Newcastle United",
+  "away_id": "361",
+  "fecha": "2026-11-29",
+  "liga": "eng.1",
+  "liga_nombre": "Premier League"
+ },
+ "384|306|2026-11-29": {
+  "home": "Crystal Palace",
+  "home_id": "384",
+  "away": "Hull City",
+  "away_id": "306",
+  "fecha": "2026-11-29",
+  "liga": "eng.1",
+  "liga_nombre": "Premier League"
+ },
+ "370|349|2026-11-29": {
+  "home": "Fulham",
+  "home_id": "370",
+  "away": "AFC Bournemouth",
+  "away_id": "349",
+  "fecha": "2026-11-29",
+  "liga": "eng.1",
+  "liga_nombre": "Premier League"
+ },
+ "366|367|2026-11-29": {
+  "home": "Sunderland",
+  "home_id": "366",
+  "away": "Tottenham Hotspur",
+  "away_id": "367",
+  "fecha": "2026-11-29",
+  "liga": "eng.1",
+  "liga_nombre": "Premier League"
+ },
+ "359|382|2026-11-29": {
+  "home": "Arsenal",
+  "home_id": "359",
+  "away": "Manchester City",
+  "away_id": "382",
+  "fecha": "2026-11-29",
+  "liga": "eng.1",
+  "liga_nombre": "Premier League"
+ },
+ "1538|3751|2026-11-23": {
+  "home": "Levante",
+  "home_id": "1538",
+  "away": "Elche",
+  "away_id": "3751",
+  "fecha": "2026-11-23",
+  "liga": "esp.1",
+  "liga_nombre": "LaLiga"
+ },
+ "1538|87|2026-11-27": {
+  "home": "Levante",
+  "home_id": "1538",
+  "away": "Racing Santander",
+  "away_id": "87",
+  "fecha": "2026-11-27",
+  "liga": "esp.1",
+  "liga_nombre": "LaLiga"
+ },
+ "244|101|2026-11-28": {
+  "home": "Real Betis",
+  "home_id": "244",
+  "away": "Rayo Vallecano",
+  "away_id": "101",
+  "fecha": "2026-11-28",
+  "liga": "esp.1",
+  "liga_nombre": "LaLiga"
+ },
+ "99|93|2026-11-28": {
+  "home": "Málaga",
+  "home_id": "99",
+  "away": "Athletic Club",
+  "away_id": "93",
+  "fecha": "2026-11-28",
+  "liga": "esp.1",
+  "liga_nombre": "LaLiga"
+ },
+ "3751|1068|2026-11-28": {
+  "home": "Elche",
+  "home_id": "3751",
+  "away": "Atlético Madrid",
+  "away_id": "1068",
+  "fecha": "2026-11-28",
+  "liga": "esp.1",
+  "liga_nombre": "LaLiga"
+ },
+ "86|96|2026-11-28": {
+  "home": "Real Madrid",
+  "home_id": "86",
+  "away": "Alavés",
+  "away_id": "96",
+  "fecha": "2026-11-28",
+  "liga": "esp.1",
+  "liga_nombre": "LaLiga"
+ },
+ "94|97|2026-11-29": {
+  "home": "Valencia",
+  "home_id": "94",
+  "away": "Osasuna",
+  "away_id": "97",
+  "fecha": "2026-11-29",
+  "liga": "esp.1",
+  "liga_nombre": "LaLiga"
+ },
+ "90|83|2026-11-29": {
+  "home": "Deportivo",
+  "home_id": "90",
+  "away": "Barcelona",
+  "away_id": "83",
+  "fecha": "2026-11-29",
+  "liga": "esp.1",
+  "liga_nombre": "LaLiga"
+ },
+ "85|102|2026-11-29": {
+  "home": "Celta Vigo",
+  "home_id": "85",
+  "away": "Villarreal",
+  "away_id": "102",
+  "fecha": "2026-11-29",
+  "liga": "esp.1",
+  "liga_nombre": "LaLiga"
+ },
+ "89|243|2026-11-29": {
+  "home": "Real Sociedad",
+  "home_id": "89",
+  "away": "Sevilla",
+  "away_id": "243",
+  "fecha": "2026-11-29",
+  "liga": "esp.1",
+  "liga_nombre": "LaLiga"
+ },
+ "137|268|2026-11-27": {
+  "home": "Werder Bremen",
+  "home_id": "137",
+  "away": "Borussia Mönchengladbach",
+  "away_id": "268",
+  "fecha": "2026-11-27",
+  "liga": "ger.1",
+  "liga_nombre": "Bundesliga"
+ },
+ "122|10388|2026-11-28": {
+  "home": "FC Cologne",
+  "home_id": "122",
+  "away": "SV Elversberg",
+  "away_id": "10388",
+  "fecha": "2026-11-28",
+  "liga": "ger.1",
+  "liga_nombre": "Bundesliga"
+ },
+ "127|132|2026-11-28": {
+  "home": "Hamburg SV",
+  "home_id": "127",
+  "away": "Bayern Munich",
+  "away_id": "132",
+  "fecha": "2026-11-28",
+  "liga": "ger.1",
+  "liga_nombre": "Bundesliga"
+ },
+ "2950|598|2026-11-28": {
+  "home": "Mainz",
+  "home_id": "2950",
+  "away": "1. FC Union Berlin",
+  "away_id": "598",
+  "fecha": "2026-11-28",
+  "liga": "ger.1",
+  "liga_nombre": "Bundesliga"
+ },
+ "3307|133|2026-11-28": {
+  "home": "SC Paderborn 07",
+  "home_id": "3307",
+  "away": "Schalke 04",
+  "away_id": "133",
+  "fecha": "2026-11-28",
+  "liga": "ger.1",
+  "liga_nombre": "Bundesliga"
+ },
+ "134|125|2026-11-28": {
+  "home": "VfB Stuttgart",
+  "home_id": "134",
+  "away": "Eintracht Frankfurt",
+  "away_id": "125",
+  "fecha": "2026-11-28",
+  "liga": "ger.1",
+  "liga_nombre": "Bundesliga"
+ },
+ "126|11420|2026-11-29": {
+  "home": "SC Freiburg",
+  "home_id": "126",
+  "away": "RB Leipzig",
+  "away_id": "11420",
+  "fecha": "2026-11-29",
+  "liga": "ger.1",
+  "liga_nombre": "Bundesliga"
+ },
+ "7911|3841|2026-11-29": {
+  "home": "TSG Hoffenheim",
+  "home_id": "7911",
+  "away": "FC Augsburg",
+  "away_id": "3841",
+  "fecha": "2026-11-29",
+  "liga": "ger.1",
+  "liga_nombre": "Bundesliga"
+ },
+ "124|131|2026-11-29": {
+  "home": "Borussia Dortmund",
+  "home_id": "124",
+  "away": "Bayer Leverkusen",
+  "away_id": "131",
+  "fecha": "2026-11-29",
+  "liga": "ger.1",
+  "liga_nombre": "Bundesliga"
+ },
+ "4007|109|2026-11-23": {
+  "home": "Monza",
+  "home_id": "4007",
+  "away": "Fiorentina",
+  "away_id": "109",
+  "fecha": "2026-11-23",
+  "liga": "ita.1",
+  "liga_nombre": "Serie A"
+ },
+ "17530|107|2026-11-27": {
+  "home": "Venezia",
+  "home_id": "17530",
+  "away": "Bologna",
+  "away_id": "107",
+  "fecha": "2026-11-27",
+  "liga": "ita.1",
+  "liga_nombre": "Serie A"
+ },
+ "4057|115|2026-11-28": {
+  "home": "Frosinone",
+  "home_id": "4057",
+  "away": "Parma",
+  "away_id": "115",
+  "fecha": "2026-11-28",
+  "liga": "ita.1",
+  "liga_nombre": "Serie A"
+ },
+ "239|112|2026-11-28": {
+  "home": "Torino",
+  "home_id": "239",
+  "away": "Lazio",
+  "away_id": "112",
+  "fecha": "2026-11-28",
+  "liga": "ita.1",
+  "liga_nombre": "Serie A"
+ },
+ "110|3263|2026-11-28": {
+  "home": "Internazionale",
+  "home_id": "110",
+  "away": "Genoa",
+  "away_id": "3263",
+  "fecha": "2026-11-28",
+  "liga": "ita.1",
+  "liga_nombre": "Serie A"
+ },
+ "118|109|2026-11-29": {
+  "home": "Udinese",
+  "home_id": "118",
+  "away": "Fiorentina",
+  "away_id": "109",
+  "fecha": "2026-11-29",
+  "liga": "ita.1",
+  "liga_nombre": "Serie A"
+ },
+ "3997|114|2026-11-29": {
+  "home": "Sassuolo",
+  "home_id": "3997",
+  "away": "Napoli",
+  "away_id": "114",
+  "fecha": "2026-11-29",
+  "liga": "ita.1",
+  "liga_nombre": "Serie A"
+ },
+ "104|4007|2026-11-29": {
+  "home": "AS Roma",
+  "home_id": "104",
+  "away": "Monza",
+  "away_id": "4007",
+  "fecha": "2026-11-29",
+  "liga": "ita.1",
+  "liga_nombre": "Serie A"
+ },
+ "2572|111|2026-11-29": {
+  "home": "Como",
+  "home_id": "2572",
+  "away": "Juventus",
+  "away_id": "111",
+  "fecha": "2026-11-29",
+  "liga": "ita.1",
+  "liga_nombre": "Serie A"
+ },
+ "2980|4411|2026-11-24": {
+  "home": "Bodo/Glimt",
+  "home_id": "2980",
+  "away": "LASK Linz",
+  "away_id": "4411",
+  "fecha": "2026-11-24",
+  "liga": "uefa.champions",
+  "liga_nombre": "Champions League"
+ },
+ "432|362|2026-11-24": {
+  "home": "Galatasaray",
+  "home_id": "432",
+  "away": "Aston Villa",
+  "away_id": "362",
+  "fecha": "2026-11-24",
+  "liga": "uefa.champions",
+  "liga_nombre": "Champions League"
+ },
+ "359|124|2026-11-24": {
+  "home": "Arsenal",
+  "home_id": "359",
+  "away": "Borussia Dortmund",
+  "away_id": "124",
+  "fecha": "2026-11-24",
+  "liga": "uefa.champions",
+  "liga_nombre": "Champions League"
+ },
+ "2572|887|2026-11-24": {
+  "home": "Como",
+  "home_id": "2572",
+  "away": "AEK Athens",
+  "away_id": "887",
+  "fecha": "2026-11-24",
+  "liga": "uefa.champions",
+  "liga_nombre": "Champions League"
+ },
+ "142|437|2026-11-24": {
+  "home": "Feyenoord Rotterdam",
+  "home_id": "142",
+  "away": "FC Porto",
+  "away_id": "437",
+  "fecha": "2026-11-24",
+  "liga": "uefa.champions",
+  "liga_nombre": "Champions League"
+ },
+ "382|114|2026-11-24": {
+  "home": "Manchester City",
+  "home_id": "382",
+  "away": "Napoli",
+  "away_id": "114",
+  "fecha": "2026-11-24",
+  "liga": "uefa.champions",
+  "liga_nombre": "Champions League"
+ },
+ "11420|175|2026-11-24": {
+  "home": "RB Leipzig",
+  "home_id": "11420",
+  "away": "Lens",
+  "away_id": "175",
+  "fecha": "2026-11-24",
+  "liga": "uefa.champions",
+  "liga_nombre": "Champions League"
+ },
+ "86|148|2026-11-24": {
+  "home": "Real Madrid",
+  "home_id": "86",
+  "away": "PSV Eindhoven",
+  "away_id": "148",
+  "fecha": "2026-11-24",
+  "liga": "uefa.champions",
+  "liga_nombre": "Champions League"
+ },
+ "521|244|2026-11-24": {
+  "home": "Slovan Bratislava",
+  "home_id": "521",
+  "away": "Real Betis",
+  "away_id": "244",
+  "fecha": "2026-11-24",
+  "liga": "uefa.champions",
+  "liga_nombre": "Champions League"
+ },
+ "21922|83|2026-11-25": {
+  "home": "Sabah FK",
+  "home_id": "21922",
+  "away": "Barcelona",
+  "away_id": "83",
+  "fecha": "2026-11-25",
+  "liga": "uefa.champions",
+  "liga_nombre": "Champions League"
+ },
+ "494|102|2026-11-25": {
+  "home": "Slavia Prague",
+  "home_id": "494",
+  "away": "Villarreal",
+  "away_id": "102",
+  "fecha": "2026-11-25",
+  "liga": "uefa.champions",
+  "liga_nombre": "Champions League"
+ },
+ "1068|510|2026-11-25": {
+  "home": "Atlético Madrid",
+  "home_id": "1068",
+  "away": "Viking FK",
+  "away_id": "510",
+  "fecha": "2026-11-25",
+  "liga": "uefa.champions",
+  "liga_nombre": "Champions League"
+ },
+ "570|364|2026-11-25": {
+  "home": "Club Brugge",
+  "home_id": "570",
+  "away": "Liverpool",
+  "away_id": "364",
+  "fecha": "2026-11-25",
+  "liga": "uefa.champions",
+  "liga_nombre": "Champions League"
+ },
+ "110|134|2026-11-25": {
+  "home": "Internazionale",
+  "home_id": "110",
+  "away": "VfB Stuttgart",
+  "away_id": "134",
+  "fecha": "2026-11-25",
+  "liga": "uefa.champions",
+  "liga_nombre": "Champions League"
+ },
+ "166|132|2026-11-25": {
+  "home": "Lille",
+  "home_id": "166",
+  "away": "Bayern Munich",
+  "away_id": "132",
+  "fecha": "2026-11-25",
+  "liga": "uefa.champions",
+  "liga_nombre": "Champions League"
+ },
+ "160|104|2026-11-25": {
+  "home": "Paris Saint-Germain",
+  "home_id": "160",
+  "away": "AS Roma",
+  "away_id": "104",
+  "fecha": "2026-11-25",
+  "liga": "uefa.champions",
+  "liga_nombre": "Champions League"
+ },
+ "493|436|2026-11-25": {
+  "home": "Shakhtar Donetsk",
+  "home_id": "493",
+  "away": "Fenerbahce",
+  "away_id": "436",
+  "fecha": "2026-11-25",
+  "liga": "uefa.champions",
+  "liga_nombre": "Champions League"
+ },
+ "2250|360|2026-11-25": {
+  "home": "Sporting CP",
+  "home_id": "2250",
+  "away": "Manchester United",
+  "away_id": "360",
+  "fecha": "2026-11-25",
+  "liga": "uefa.champions",
+  "liga_nombre": "Champions League"
+ },
+ "1895|13083|2026-11-26": {
+  "home": "Besiktas",
+  "home_id": "1895",
+  "away": "Hapoel Be'er",
+  "away_id": "13083",
+  "fecha": "2026-11-26",
+  "liga": "uefa.europa",
+  "liga_nombre": "Europa League"
+ },
+ "85|349|2026-11-26": {
+  "home": "Celta Vigo",
+  "home_id": "85",
+  "away": "AFC Bournemouth",
+  "away_id": "349",
+  "fecha": "2026-11-26",
+  "liga": "uefa.europa",
+  "liga_nombre": "Europa League"
+ },
+ "597|131|2026-11-26": {
+  "home": "Dinamo Zagreb",
+  "home_id": "597",
+  "away": "Bayer Leverkusen",
+  "away_id": "131",
+  "fecha": "2026-11-26",
+  "liga": "uefa.europa",
+  "liga_nombre": "Europa League"
+ },
+ "176|490|2026-11-26": {
+  "home": "Marseille",
+  "home_id": "176",
+  "away": "Levski Sofia",
+  "away_id": "490",
+  "fecha": "2026-11-26",
+  "liga": "uefa.europa",
+  "liga_nombre": "Europa League"
+ },
+ "435|103|2026-11-26": {
+  "home": "Olympiacos",
+  "home_id": "435",
+  "away": "AC Milan",
+  "away_id": "103",
+  "fecha": "2026-11-26",
+  "liga": "uefa.europa",
+  "liga_nombre": "Europa League"
+ },
+ "2790|20024|2026-11-26": {
+  "home": "RB Salzburg",
+  "home_id": "2790",
+  "away": "Ararat-Armenia",
+  "away_id": "20024",
+  "fecha": "2026-11-26",
+  "liga": "uefa.europa",
+  "liga_nombre": "Europa League"
+ },
+ "5807|2990|2026-11-26": {
+  "home": "Union St.-Gilloise",
+  "home_id": "5807",
+  "away": "Lech Poznan",
+  "away_id": "2990",
+  "fecha": "2026-11-26",
+  "liga": "uefa.europa",
+  "liga_nombre": "Europa League"
+ },
+ "11706|1929|2026-11-26": {
+  "home": "Viktoria Plzen",
+  "home_id": "11706",
+  "away": "Benfica",
+  "away_id": "1929",
+  "fecha": "2026-11-26",
+  "liga": "uefa.europa",
+  "liga_nombre": "Europa League"
+ },
+ "384|89|2026-11-26": {
+  "home": "Crystal Palace",
+  "home_id": "384",
+  "away": "Real Sociedad",
+  "away_id": "89",
+  "fecha": "2026-11-26",
+  "liga": "uefa.europa",
+  "liga_nombre": "Europa League"
+ },
+ "622|3362|2026-11-26": {
+  "home": "Ferencvaros",
+  "home_id": "622",
+  "away": "NK Celje",
+  "away_id": "3362",
+  "fecha": "2026-11-26",
+  "liga": "uefa.europa",
+  "liga_nombre": "Europa League"
+ },
+ "111|617|2026-11-26": {
+  "home": "Juventus",
+  "home_id": "111",
+  "away": "Omonia Nicosia",
+  "away_id": "617",
+  "fecha": "2026-11-26",
+  "liga": "uefa.europa",
+  "liga_nombre": "Europa League"
+ },
+ "167|987|2026-11-26": {
+  "home": "Lyon",
+  "home_id": "167",
+  "away": "Lillestrom",
+  "away_id": "987",
+  "fecha": "2026-11-26",
+  "liga": "uefa.europa",
+  "liga_nombre": "Europa League"
+ },
+ "147|169|2026-11-26": {
+  "home": "NEC Nijmegen",
+  "home_id": "147",
+  "away": "Stade Rennais",
+  "away_id": "169",
+  "fecha": "2026-11-26",
+  "liga": "uefa.europa",
+  "liga_nombre": "Europa League"
+ },
+ "1010|441|2026-11-26": {
+  "home": "OFI Crete",
+  "home_id": "1010",
+  "away": "Anderlecht",
+  "away_id": "441",
+  "fecha": "2026-11-26",
+  "liga": "uefa.europa",
+  "liga_nombre": "Europa League"
+ },
+ "433|140|2026-11-26": {
+  "home": "Sparta Prague",
+  "home_id": "433",
+  "away": "AZ Alkmaar",
+  "away_id": "140",
+  "fecha": "2026-11-26",
+  "liga": "uefa.europa",
+  "liga_nombre": "Europa League"
+ },
+ "366|11505|2026-11-26": {
+  "home": "Sunderland",
+  "home_id": "366",
+  "away": "Jagiellonia Bialystok",
+  "away_id": "11505",
+  "fecha": "2026-11-26",
+  "liga": "uefa.europa",
+  "liga_nombre": "Europa League"
+ },
+ "21615|256|2026-11-26": {
+  "home": "Torreense",
+  "home_id": "21615",
+  "away": "Celtic",
+  "away_id": "256",
+  "fecha": "2026-11-26",
+  "liga": "uefa.europa",
+  "liga_nombre": "Europa League"
+ },
+ "7911|3746|2026-11-26": {
+  "home": "TSG Hoffenheim",
+  "home_id": "7911",
+  "away": "SK Sturm Graz",
+  "away_id": "3746",
+  "fecha": "2026-11-26",
+  "liga": "uefa.europa",
+  "liga_nombre": "Europa League"
+ }
+}

@@ -1,0 +1,1182 @@
+{
+ "teams": {
+  "AC Milan": {
+   "league": "uefa.europa",
+   "gf": 4.0,
+   "ga": 7.0,
+   "gf_pj": 1.0,
+   "ga_pj": 1.75,
+   "n": 4,
+   "ataque": 0.6728971962616822,
+   "defensa": 1.1775700934579438,
+   "matches": [
+    {
+     "date": "2026-11-05T17:45Z",
+     "opp": "Ferencvaros",
+     "home": true,
+     "gf": 0.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-10-22T19:00Z",
+     "opp": "AFC Bournemouth",
+     "home": false,
+     "gf": 0.0,
+     "ga": 3.0
+    },
+    {
+     "date": "2026-10-15T16:45Z",
+     "opp": "RB Salzburg",
+     "home": false,
+     "gf": 4.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-09-16T19:00Z",
+     "opp": "Benfica",
+     "home": true,
+     "gf": 0.0,
+     "ga": 2.0
+    }
+   ]
+  },
+  "AFC Bournemouth": {
+   "league": "uefa.europa",
+   "gf": 11.0,
+   "ga": 2.0,
+   "gf_pj": 2.75,
+   "ga_pj": 0.5,
+   "n": 4,
+   "ataque": 1.8504672897196262,
+   "defensa": 0.3364485981308411,
+   "matches": [
+    {
+     "date": "2026-11-05T17:45Z",
+     "opp": "Sparta Prague",
+     "home": false,
+     "gf": 3.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-22T19:00Z",
+     "opp": "AC Milan",
+     "home": true,
+     "gf": 3.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-15T19:00Z",
+     "opp": "SK Sturm Graz",
+     "home": true,
+     "gf": 3.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-09-17T19:00Z",
+     "opp": "Real Sociedad",
+     "home": false,
+     "gf": 2.0,
+     "ga": 1.0
+    }
+   ]
+  },
+  "AS Roma": {
+   "league": "uefa.champions",
+   "gf": 10.0,
+   "ga": 8.0,
+   "gf_pj": 2.5,
+   "ga_pj": 2.0,
+   "n": 4,
+   "ataque": 1.2162162162162162,
+   "defensa": 0.972972972972973,
+   "matches": [
+    {
+     "date": "2026-11-03T20:00Z",
+     "opp": "Manchester United",
+     "home": false,
+     "gf": 2.0,
+     "ga": 3.0
+    },
+    {
+     "date": "2026-10-20T19:00Z",
+     "opp": "Slovan Bratislava",
+     "home": true,
+     "gf": 4.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-14T19:00Z",
+     "opp": "Real Madrid",
+     "home": true,
+     "gf": 3.0,
+     "ga": 4.0
+    },
+    {
+     "date": "2026-09-10T16:45Z",
+     "opp": "Fenerbahce",
+     "home": false,
+     "gf": 1.0,
+     "ga": 1.0
+    }
+   ]
+  },
+  "Arsenal": {
+   "league": "uefa.champions",
+   "gf": 8.0,
+   "ga": 3.0,
+   "gf_pj": 2.0,
+   "ga_pj": 0.75,
+   "n": 4,
+   "ataque": 0.972972972972973,
+   "defensa": 0.3648648648648649,
+   "matches": [
+    {
+     "date": "2026-11-04T20:00Z",
+     "opp": "Slavia Prague",
+     "home": false,
+     "gf": 2.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-21T19:00Z",
+     "opp": "Bayern Munich",
+     "home": false,
+     "gf": 2.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-10-13T19:00Z",
+     "opp": "Lille",
+     "home": true,
+     "gf": 3.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-09-09T19:00Z",
+     "opp": "Napoli",
+     "home": false,
+     "gf": 1.0,
+     "ga": 0.0
+    }
+   ]
+  },
+  "Aston Villa": {
+   "league": "uefa.champions",
+   "gf": 12.0,
+   "ga": 6.0,
+   "gf_pj": 3.0,
+   "ga_pj": 1.5,
+   "n": 4,
+   "ataque": 1.4594594594594597,
+   "defensa": 0.7297297297297298,
+   "matches": [
+    {
+     "date": "2026-11-03T20:00Z",
+     "opp": "Barcelona",
+     "home": false,
+     "gf": 0.0,
+     "ga": 3.0
+    },
+    {
+     "date": "2026-10-21T19:00Z",
+     "opp": "Viking FK",
+     "home": true,
+     "gf": 3.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-14T19:00Z",
+     "opp": "Fenerbahce",
+     "home": true,
+     "gf": 6.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-09-08T16:45Z",
+     "opp": "Club Brugge",
+     "home": false,
+     "gf": 3.0,
+     "ga": 2.0
+    }
+   ]
+  },
+  "Bayer Leverkusen": {
+   "league": "uefa.europa",
+   "gf": 8.0,
+   "ga": 1.0,
+   "gf_pj": 2.0,
+   "ga_pj": 0.25,
+   "n": 4,
+   "ataque": 1.3457943925233644,
+   "defensa": 0.16822429906542055,
+   "matches": [
+    {
+     "date": "2026-11-05T20:00Z",
+     "opp": "Marseille",
+     "home": true,
+     "gf": 0.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-22T16:45Z",
+     "opp": "OFI Crete",
+     "home": false,
+     "gf": 2.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-15T16:45Z",
+     "opp": "Lech Poznan",
+     "home": false,
+     "gf": 4.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-09-16T19:00Z",
+     "opp": "NK Celje",
+     "home": true,
+     "gf": 2.0,
+     "ga": 0.0
+    }
+   ]
+  },
+  "Bayern Munich": {
+   "league": "uefa.champions",
+   "gf": 12.0,
+   "ga": 5.0,
+   "gf_pj": 3.0,
+   "ga_pj": 1.25,
+   "n": 4,
+   "ataque": 1.4594594594594597,
+   "defensa": 0.6081081081081081,
+   "matches": [
+    {
+     "date": "2026-11-03T20:00Z",
+     "opp": "Atlético Madrid",
+     "home": false,
+     "gf": 2.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-21T19:00Z",
+     "opp": "Arsenal",
+     "home": true,
+     "gf": 2.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-10-13T19:00Z",
+     "opp": "Viking FK",
+     "home": false,
+     "gf": 3.0,
+     "ga": 3.0
+    },
+    {
+     "date": "2026-09-10T19:00Z",
+     "opp": "Bodo/Glimt",
+     "home": true,
+     "gf": 5.0,
+     "ga": 0.0
+    }
+   ]
+  },
+  "Borussia Dortmund": {
+   "league": "uefa.champions",
+   "gf": 7.0,
+   "ga": 5.0,
+   "gf_pj": 1.75,
+   "ga_pj": 1.25,
+   "n": 4,
+   "ataque": 0.8513513513513514,
+   "defensa": 0.6081081081081081,
+   "matches": [
+    {
+     "date": "2026-11-04T20:00Z",
+     "opp": "Real Betis",
+     "home": true,
+     "gf": 2.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-20T16:45Z",
+     "opp": "Sabah FK",
+     "home": false,
+     "gf": 2.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-14T19:00Z",
+     "opp": "Bodo/Glimt",
+     "home": false,
+     "gf": 0.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-09-08T19:00Z",
+     "opp": "Villarreal",
+     "home": true,
+     "gf": 3.0,
+     "ga": 2.0
+    }
+   ]
+  },
+  "Celta Vigo": {
+   "league": "uefa.europa",
+   "gf": 4.0,
+   "ga": 6.0,
+   "gf_pj": 1.0,
+   "ga_pj": 1.5,
+   "n": 4,
+   "ataque": 0.6728971962616822,
+   "defensa": 1.0093457943925233,
+   "matches": [
+    {
+     "date": "2026-11-05T20:00Z",
+     "opp": "Union St.-Gilloise",
+     "home": true,
+     "gf": 1.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-10-22T19:00Z",
+     "opp": "Celtic",
+     "home": false,
+     "gf": 2.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-15T19:00Z",
+     "opp": "Juventus",
+     "home": true,
+     "gf": 1.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-09-16T16:45Z",
+     "opp": "Omonia Nicosia",
+     "home": false,
+     "gf": 0.0,
+     "ga": 1.0
+    }
+   ]
+  },
+  "Club Brugge": {
+   "league": "uefa.champions",
+   "gf": 11.0,
+   "ga": 7.0,
+   "gf_pj": 2.75,
+   "ga_pj": 1.75,
+   "n": 4,
+   "ataque": 1.337837837837838,
+   "defensa": 0.8513513513513514,
+   "matches": [
+    {
+     "date": "2026-11-04T20:00Z",
+     "opp": "PSV Eindhoven",
+     "home": false,
+     "gf": 2.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-21T19:00Z",
+     "opp": "Lens",
+     "home": true,
+     "gf": 3.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-13T19:00Z",
+     "opp": "Internazionale",
+     "home": false,
+     "gf": 4.0,
+     "ga": 3.0
+    },
+    {
+     "date": "2026-09-08T16:45Z",
+     "opp": "Aston Villa",
+     "home": true,
+     "gf": 2.0,
+     "ga": 3.0
+    }
+   ]
+  },
+  "Dinamo Zagreb": {
+   "league": "uefa.europa",
+   "gf": 5.0,
+   "ga": 4.0,
+   "gf_pj": 1.25,
+   "ga_pj": 1.0,
+   "n": 4,
+   "ataque": 0.8411214953271028,
+   "defensa": 0.6728971962616822,
+   "matches": [
+    {
+     "date": "2026-11-05T20:00Z",
+     "opp": "Sunderland",
+     "home": false,
+     "gf": 2.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-22T16:45Z",
+     "opp": "NEC Nijmegen",
+     "home": true,
+     "gf": 2.0,
+     "ga": 4.0
+    },
+    {
+     "date": "2026-10-15T19:00Z",
+     "opp": "Anderlecht",
+     "home": true,
+     "gf": 1.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-09-16T19:00Z",
+     "opp": "Hapoel Be'er",
+     "home": false,
+     "gf": 0.0,
+     "ga": 0.0
+    }
+   ]
+  },
+  "Galatasaray": {
+   "league": "uefa.champions",
+   "gf": 8.0,
+   "ga": 9.0,
+   "gf_pj": 2.0,
+   "ga_pj": 2.25,
+   "n": 4,
+   "ataque": 0.972972972972973,
+   "defensa": 1.0945945945945947,
+   "matches": [
+    {
+     "date": "2026-11-03T17:45Z",
+     "opp": "VfB Stuttgart",
+     "home": true,
+     "gf": 2.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-21T16:45Z",
+     "opp": "Lille",
+     "home": false,
+     "gf": 4.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-10-13T19:00Z",
+     "opp": "Barcelona",
+     "home": true,
+     "gf": 1.0,
+     "ga": 4.0
+    },
+    {
+     "date": "2026-09-09T19:00Z",
+     "opp": "Sporting CP",
+     "home": false,
+     "gf": 1.0,
+     "ga": 3.0
+    }
+   ]
+  },
+  "Internazionale": {
+   "league": "uefa.champions",
+   "gf": 8.0,
+   "ga": 6.0,
+   "gf_pj": 2.0,
+   "ga_pj": 1.5,
+   "n": 4,
+   "ataque": 0.972972972972973,
+   "defensa": 0.7297297297297298,
+   "matches": [
+    {
+     "date": "2026-11-03T20:00Z",
+     "opp": "Feyenoord Rotterdam",
+     "home": false,
+     "gf": 3.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-21T19:00Z",
+     "opp": "Shakhtar Donetsk",
+     "home": true,
+     "gf": 1.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-13T19:00Z",
+     "opp": "Club Brugge",
+     "home": true,
+     "gf": 3.0,
+     "ga": 4.0
+    },
+    {
+     "date": "2026-09-08T19:00Z",
+     "opp": "Real Madrid",
+     "home": false,
+     "gf": 1.0,
+     "ga": 2.0
+    }
+   ]
+  },
+  "Lille": {
+   "league": "uefa.champions",
+   "gf": 4.0,
+   "ga": 10.0,
+   "gf_pj": 1.0,
+   "ga_pj": 2.5,
+   "n": 4,
+   "ataque": 0.4864864864864865,
+   "defensa": 1.2162162162162162,
+   "matches": [
+    {
+     "date": "2026-11-03T20:00Z",
+     "opp": "Bodo/Glimt",
+     "home": false,
+     "gf": 0.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-21T16:45Z",
+     "opp": "Galatasaray",
+     "home": true,
+     "gf": 2.0,
+     "ga": 4.0
+    },
+    {
+     "date": "2026-10-13T19:00Z",
+     "opp": "Arsenal",
+     "home": false,
+     "gf": 0.0,
+     "ga": 3.0
+    },
+    {
+     "date": "2026-09-08T19:00Z",
+     "opp": "Real Betis",
+     "home": true,
+     "gf": 2.0,
+     "ga": 3.0
+    }
+   ]
+  },
+  "Liverpool": {
+   "league": "uefa.champions",
+   "gf": 14.0,
+   "ga": 10.0,
+   "gf_pj": 3.5,
+   "ga_pj": 2.5,
+   "n": 4,
+   "ataque": 1.7027027027027029,
+   "defensa": 1.2162162162162162,
+   "matches": [
+    {
+     "date": "2026-11-04T17:45Z",
+     "opp": "Fenerbahce",
+     "home": false,
+     "gf": 2.0,
+     "ga": 3.0
+    },
+    {
+     "date": "2026-10-20T19:00Z",
+     "opp": "Villarreal",
+     "home": true,
+     "gf": 4.0,
+     "ga": 3.0
+    },
+    {
+     "date": "2026-10-14T16:45Z",
+     "opp": "LASK Linz",
+     "home": false,
+     "gf": 6.0,
+     "ga": 3.0
+    },
+    {
+     "date": "2026-09-09T19:00Z",
+     "opp": "Atlético Madrid",
+     "home": true,
+     "gf": 2.0,
+     "ga": 1.0
+    }
+   ]
+  },
+  "Manchester City": {
+   "league": "uefa.champions",
+   "gf": 12.0,
+   "ga": 7.0,
+   "gf_pj": 3.0,
+   "ga_pj": 1.75,
+   "n": 4,
+   "ataque": 1.4594594594594597,
+   "defensa": 0.8513513513513514,
+   "matches": [
+    {
+     "date": "2026-11-04T20:00Z",
+     "opp": "RB Leipzig",
+     "home": false,
+     "gf": 3.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-10-20T19:00Z",
+     "opp": "AEK Athens",
+     "home": true,
+     "gf": 5.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-14T19:00Z",
+     "opp": "Paris Saint-Germain",
+     "home": true,
+     "gf": 2.0,
+     "ga": 4.0
+    },
+    {
+     "date": "2026-09-08T19:00Z",
+     "opp": "FC Porto",
+     "home": false,
+     "gf": 2.0,
+     "ga": 0.0
+    }
+   ]
+  },
+  "Manchester United": {
+   "league": "uefa.champions",
+   "gf": 8.0,
+   "ga": 8.0,
+   "gf_pj": 2.0,
+   "ga_pj": 2.0,
+   "n": 4,
+   "ataque": 0.972972972972973,
+   "defensa": 0.972972972972973,
+   "matches": [
+    {
+     "date": "2026-11-03T20:00Z",
+     "opp": "AS Roma",
+     "home": true,
+     "gf": 3.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-10-21T16:45Z",
+     "opp": "Como",
+     "home": false,
+     "gf": 1.0,
+     "ga": 4.0
+    },
+    {
+     "date": "2026-10-13T19:00Z",
+     "opp": "Atlético Madrid",
+     "home": false,
+     "gf": 0.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-09-10T19:00Z",
+     "opp": "Sabah FK",
+     "home": true,
+     "gf": 4.0,
+     "ga": 0.0
+    }
+   ]
+  },
+  "Napoli": {
+   "league": "uefa.champions",
+   "gf": 6.0,
+   "ga": 11.0,
+   "gf_pj": 1.5,
+   "ga_pj": 2.75,
+   "n": 4,
+   "ataque": 0.7297297297297298,
+   "defensa": 1.337837837837838,
+   "matches": [
+    {
+     "date": "2026-11-04T20:00Z",
+     "opp": "FC Porto",
+     "home": false,
+     "gf": 1.0,
+     "ga": 4.0
+    },
+    {
+     "date": "2026-10-20T19:00Z",
+     "opp": "Bodo/Glimt",
+     "home": true,
+     "gf": 4.0,
+     "ga": 3.0
+    },
+    {
+     "date": "2026-10-13T19:00Z",
+     "opp": "Villarreal",
+     "home": false,
+     "gf": 1.0,
+     "ga": 3.0
+    },
+    {
+     "date": "2026-09-09T19:00Z",
+     "opp": "Arsenal",
+     "home": true,
+     "gf": 0.0,
+     "ga": 1.0
+    }
+   ]
+  },
+  "Olympiacos": {
+   "league": "uefa.europa",
+   "gf": 4.0,
+   "ga": 1.0,
+   "gf_pj": 1.0,
+   "ga_pj": 0.25,
+   "n": 4,
+   "ataque": 0.6728971962616822,
+   "defensa": 0.16822429906542055,
+   "matches": [
+    {
+     "date": "2026-11-04T15:30Z",
+     "opp": "Stade Rennais",
+     "home": false,
+     "gf": 0.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-22T19:00Z",
+     "opp": "Sparta Prague",
+     "home": true,
+     "gf": 1.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-15T19:00Z",
+     "opp": "Marseille",
+     "home": false,
+     "gf": 1.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-09-16T19:00Z",
+     "opp": "Jagiellonia Bialystok",
+     "home": true,
+     "gf": 2.0,
+     "ga": 1.0
+    }
+   ]
+  },
+  "PSV Eindhoven": {
+   "league": "uefa.champions",
+   "gf": 3.0,
+   "ga": 4.0,
+   "gf_pj": 0.75,
+   "ga_pj": 1.0,
+   "n": 4,
+   "ataque": 0.3648648648648649,
+   "defensa": 0.4864864864864865,
+   "matches": [
+    {
+     "date": "2026-11-04T20:00Z",
+     "opp": "Club Brugge",
+     "home": true,
+     "gf": 1.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-10-20T19:00Z",
+     "opp": "FC Porto",
+     "home": false,
+     "gf": 1.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-13T19:00Z",
+     "opp": "RB Leipzig",
+     "home": false,
+     "gf": 0.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-09-10T16:45Z",
+     "opp": "Shakhtar Donetsk",
+     "home": true,
+     "gf": 1.0,
+     "ga": 1.0
+    }
+   ]
+  },
+  "Paris Saint-Germain": {
+   "league": "uefa.champions",
+   "gf": 20.0,
+   "ga": 5.0,
+   "gf_pj": 5.0,
+   "ga_pj": 1.25,
+   "n": 4,
+   "ataque": 2.4324324324324325,
+   "defensa": 0.6081081081081081,
+   "matches": [
+    {
+     "date": "2026-11-03T20:00Z",
+     "opp": "Villarreal",
+     "home": false,
+     "gf": 6.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-20T19:00Z",
+     "opp": "Barcelona",
+     "home": true,
+     "gf": 4.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-10-14T19:00Z",
+     "opp": "Manchester City",
+     "home": false,
+     "gf": 4.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-09-09T19:00Z",
+     "opp": "Slovan Bratislava",
+     "home": true,
+     "gf": 6.0,
+     "ga": 1.0
+    }
+   ]
+  },
+  "Real Madrid": {
+   "league": "uefa.champions",
+   "gf": 13.0,
+   "ga": 7.0,
+   "gf_pj": 3.25,
+   "ga_pj": 1.75,
+   "n": 4,
+   "ataque": 1.5810810810810811,
+   "defensa": 0.8513513513513514,
+   "matches": [
+    {
+     "date": "2026-11-04T17:45Z",
+     "opp": "AEK Athens",
+     "home": false,
+     "gf": 3.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-10-21T19:00Z",
+     "opp": "RB Leipzig",
+     "home": true,
+     "gf": 4.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-14T19:00Z",
+     "opp": "AS Roma",
+     "home": false,
+     "gf": 4.0,
+     "ga": 3.0
+    },
+    {
+     "date": "2026-09-08T19:00Z",
+     "opp": "Internazionale",
+     "home": true,
+     "gf": 2.0,
+     "ga": 1.0
+    }
+   ]
+  },
+  "Sporting CP": {
+   "league": "uefa.champions",
+   "gf": 8.0,
+   "ga": 4.0,
+   "gf_pj": 2.0,
+   "ga_pj": 1.0,
+   "n": 4,
+   "ataque": 0.972972972972973,
+   "defensa": 0.4864864864864865,
+   "matches": [
+    {
+     "date": "2026-11-03T17:45Z",
+     "opp": "Shakhtar Donetsk",
+     "home": false,
+     "gf": 1.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-10-21T19:00Z",
+     "opp": "LASK Linz",
+     "home": true,
+     "gf": 2.0,
+     "ga": 3.0
+    },
+    {
+     "date": "2026-10-13T16:45Z",
+     "opp": "Lens",
+     "home": false,
+     "gf": 2.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-09-09T19:00Z",
+     "opp": "Galatasaray",
+     "home": true,
+     "gf": 3.0,
+     "ga": 1.0
+    }
+   ]
+  },
+  "VfB Stuttgart": {
+   "league": "uefa.champions",
+   "gf": 7.0,
+   "ga": 4.0,
+   "gf_pj": 1.75,
+   "ga_pj": 1.0,
+   "n": 4,
+   "ataque": 0.8513513513513514,
+   "defensa": 0.4864864864864865,
+   "matches": [
+    {
+     "date": "2026-11-03T17:45Z",
+     "opp": "Galatasaray",
+     "home": false,
+     "gf": 0.0,
+     "ga": 2.0
+    },
+    {
+     "date": "2026-10-20T19:00Z",
+     "opp": "Atlético Madrid",
+     "home": true,
+     "gf": 1.0,
+     "ga": 1.0
+    },
+    {
+     "date": "2026-10-14T19:00Z",
+     "opp": "Slovan Bratislava",
+     "home": false,
+     "gf": 3.0,
+     "ga": 0.0
+    },
+    {
+     "date": "2026-09-09T16:45Z",
+     "opp": "Viking FK",
+     "home": true,
+     "gf": 3.0,
+     "ga": 1.0
+    }
+   ]
+  }
+ },
+ "matches": [
+  {
+   "fecha": "Mar 24 nov",
+   "fecha_iso": "2026-11-24",
+   "hora": "11:45",
+   "liga": "Champions League",
+   "home": "Galatasaray",
+   "away": "Aston Villa",
+   "xgh": 1.5909422936449968,
+   "xga": 2.987947406866327,
+   "p1": 18.133451942534123,
+   "px": 15.878349744122227,
+   "p2": 65.98819831224769,
+   "over25": 83.51028192590184,
+   "btts": 75.61419818073277
+  },
+  {
+   "fecha": "Mar 24 nov",
+   "fecha_iso": "2026-11-24",
+   "hora": "14:00",
+   "liga": "Champions League",
+   "home": "Arsenal",
+   "away": "Borussia Dortmund",
+   "xgh": 1.3257852447041638,
+   "xga": 0.5809897735573413,
+   "p1": 54.99386293682236,
+   "px": 28.70036734342377,
+   "p2": 16.3057697197538,
+   "over25": 29.81090258375548,
+   "btts": 32.36199252427044
+  },
+  {
+   "fecha": "Mar 24 nov",
+   "fecha_iso": "2026-11-24",
+   "hora": "14:00",
+   "liga": "Champions League",
+   "home": "Manchester City",
+   "away": "Napoli",
+   "xgh": 4.375091307523741,
+   "xga": 1.1619795471146825,
+   "p1": 88.36587176790076,
+   "px": 6.941633129508537,
+   "p2": 4.692494216472801,
+   "over25": 91.38881471085888,
+   "btts": 67.84848120484091
+  },
+  {
+   "fecha": "Mar 24 nov",
+   "fecha_iso": "2026-11-24",
+   "hora": "14:00",
+   "liga": "Champions League",
+   "home": "Real Madrid",
+   "away": "PSV Eindhoven",
+   "xgh": 1.723520818115413,
+   "xga": 0.5809897735573413,
+   "p1": 65.1941067487273,
+   "px": 22.77340817725659,
+   "p2": 12.032485074016071,
+   "over25": 40.51569603747752,
+   "btts": 36.20263701218571
+  },
+  {
+   "fecha": "Mié 25 nov",
+   "fecha_iso": "2026-11-25",
+   "hora": "14:00",
+   "liga": "Champions League",
+   "home": "Club Brugge",
+   "away": "Liverpool",
+   "xgh": 3.6459094229364504,
+   "xga": 2.7112856099342593,
+   "p1": 56.6225919971259,
+   "px": 15.175001398628375,
+   "p2": 28.20240656567635,
+   "over25": 95.21975635628345,
+   "btts": 90.91852374372722
+  },
+  {
+   "fecha": "Mié 25 nov",
+   "fecha_iso": "2026-11-25",
+   "hora": "14:00",
+   "liga": "Champions League",
+   "home": "Internazionale",
+   "away": "VfB Stuttgart",
+   "xgh": 1.0606281957633312,
+   "xga": 1.1619795471146825,
+   "p1": 33.00850548030801,
+   "px": 28.90529216645251,
+   "p2": 38.08620235323949,
+   "over25": 38.33419352572454,
+   "btts": 44.92217825310217
+  },
+  {
+   "fecha": "Mié 25 nov",
+   "fecha_iso": "2026-11-25",
+   "hora": "14:00",
+   "liga": "Champions League",
+   "home": "Lille",
+   "away": "Bayern Munich",
+   "xgh": 0.6628926223520819,
+   "xga": 3.3199415631848073,
+   "p1": 4.179452710771699,
+   "px": 8.85471971492155,
+   "p2": 86.96582756699488,
+   "over25": 75.93706621656739,
+   "btts": 46.711937223653734
+  },
+  {
+   "fecha": "Mié 25 nov",
+   "fecha_iso": "2026-11-25",
+   "hora": "14:00",
+   "liga": "Champions League",
+   "home": "Paris Saint-Germain",
+   "away": "AS Roma",
+   "xgh": 5.303140978816655,
+   "xga": 1.3833089846603361,
+   "p1": 91.55894879425041,
+   "px": 4.94220915638776,
+   "p2": 3.4988210734676137,
+   "over25": 96.25178086778229,
+   "btts": 74.55241478567174
+  },
+  {
+   "fecha": "Mié 25 nov",
+   "fecha_iso": "2026-11-25",
+   "hora": "14:00",
+   "liga": "Champions League",
+   "home": "Sporting CP",
+   "away": "Manchester United",
+   "xgh": 2.1212563915266625,
+   "xga": 0.8853177501826153,
+   "p1": 65.79042458652096,
+   "px": 19.621015210925385,
+   "p2": 14.588560202551667,
+   "over25": 57.82811864692897,
+   "btts": 51.699686405867354
+  },
+  {
+   "fecha": "Jue 26 nov",
+   "fecha_iso": "2026-11-26",
+   "hora": "11:45",
+   "liga": "Europa League",
+   "home": "Celta Vigo",
+   "away": "AFC Bournemouth",
+   "xgh": 0.3238710804437069,
+   "xga": 2.8794654554982966,
+   "p1": 2.3512329562856653,
+   "px": 8.831749189348832,
+   "p2": 88.81701785380682,
+   "over25": 62.07921665532442,
+   "btts": 26.111815918304544
+  },
+  {
+   "fecha": "Jue 26 nov",
+   "fecha_iso": "2026-11-26",
+   "hora": "11:45",
+   "liga": "Europa League",
+   "home": "Dinamo Zagreb",
+   "away": "Bayer Leverkusen",
+   "xgh": 0.2024194252773168,
+   "xga": 1.3961044632719013,
+   "p1": 5.185212669328573,
+   "px": 26.350067137926843,
+   "p2": 68.4647201927445,
+   "over25": 21.626011281099135,
+   "btts": 13.788300530197764
+  },
+  {
+   "fecha": "Jue 26 nov",
+   "fecha_iso": "2026-11-26",
+   "hora": "11:45",
+   "liga": "Europa League",
+   "home": "Olympiacos",
+   "away": "AC Milan",
+   "xgh": 1.133548781552974,
+   "xga": 0.17451305790898766,
+   "p1": 61.68147553184215,
+   "px": 32.65262730963979,
+   "p2": 5.665897158517994,
+   "over25": 14.47480784792195,
+   "btts": 10.858871714453532
+  }
+ ],
+ "avgs": {
+  "uefa.champions": {
+   "dates": [
+    "20261013",
+    "20261014",
+    "20261020",
+    "20261021",
+    "20261103",
+    "20261104"
+   ],
+   "matches": 54,
+   "home_goals": 121.0,
+   "away_goals": 101.0,
+   "avg_total": 4.111111111111111,
+   "avg_home": 2.240740740740741,
+   "avg_away": 1.8703703703703705,
+   "avg_por_equipo": 2.0555555555555554
+  },
+  "uefa.europa": {
+   "dates": [
+    "20260916",
+    "20260917",
+    "20261015",
+    "20261022",
+    "20261104",
+    "20261105"
+   ],
+   "matches": 72,
+   "home_goals": 103.0,
+   "away_goals": 111.0,
+   "avg_total": 2.9722222222222223,
+   "avg_home": 1.4305555555555556,
+   "avg_away": 1.5416666666666667,
+   "avg_por_equipo": 1.4861111111111112
+  }
+ }
+}
