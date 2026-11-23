@@ -87,6 +87,10 @@ producto, nadie debe volver a meterle mano.
   exacta, byte a byte): recolectar_momios.py + calcular_ev.py,
   workflow actualizado, Poisson Semana 3 (4–6 dic) listo, momios S3
   4/16 (el resto pendiente de DraftKings).
+- **Semana 4** — parlay guardado en localStorage + vista «Mis picks
+  guardados» (Empleado 2, 22 nov, adelantada): revisado por el jefe y
+  portado a la base real de la Semana 2 — la página del lunes ya lo
+  trae.
 
 ## ⏳ Semana 4 — Pendiente
 

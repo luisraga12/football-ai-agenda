@@ -175,6 +175,8 @@
   .slip-item button{margin-left:auto;background:var(--surface-2);border:0;border-radius:8px;width:36px;height:36px;min-height:36px;font-weight:900;color:var(--ink-2);flex:0 0 36px}
   .slip-totals{margin-top:12px;background:var(--surface-2);border-radius:12px;padding:13px 14px;display:grid;gap:7px}
   .slip-totals[hidden]{display:none}
+  .clear-btn{border:1px solid var(--line);background:var(--surface);color:var(--ink-2);border-radius:999px;padding:10px 16px;font-weight:800;font-size:.86rem}
+  .clear-btn:hover{background:var(--live-soft);color:var(--live);border-color:var(--live)}
   .slip-totals div{display:flex;justify-content:space-between;font-size:.86rem;font-weight:700;color:var(--ink-2)}
   .slip-totals div b{color:var(--ink);font-family:"Archivo",sans-serif}
   .slip-verdict{margin-top:10px;font-size:.86rem;font-weight:800;padding:11px 13px;border-radius:12px;background:var(--accent-soft);color:var(--accent-strong)}
@@ -865,8 +867,22 @@
             <div><span>Valor esperado</span><b class="num" id="totEv">—</b></div>
           </div>
           <p class="slip-verdict" id="slipVerdict" hidden></p>
+          <p style="margin-top:12px"><button class="clear-btn" id="clearParlay" type="button">Limpiar parlay</button></p>
         </div>
         <p class="rule-note">Tu regla: el parlay es la excepción, no la norma. Solo con equipos que conoces perfecto y picks que ya traen valor por separado.</p>
+      </section>
+
+      <section class="panel" aria-label="Mis picks guardados">
+        <div class="panel-h"><h2>Mis picks guardados</h2><span id="savedCount">Guardados: 0</span></div>
+        <div class="slip">
+          <p class="slip-empty" id="savedEmpty">Sin picks guardados todavía. Se guardan en este navegador y sobreviven al recargar la página.</p>
+          <div id="savedItems"></div>
+          <div class="slip-totals" id="savedTotals" hidden>
+            <div><span>Momio combinado</span><b class="num" id="savedTotOdds">—</b></div>
+            <div><span>Probabilidad combinada</span><b class="num" id="savedTotProb">—</b></div>
+            <div><span>Valor esperado</span><b class="num" id="savedTotEv">—</b></div>
+          </div>
+        </div>
       </section>
     </div>
   </div>
@@ -980,7 +996,7 @@
   </section>
 
   <footer>
-    <p><strong>Football AI Agenda · Proyecto de Luis Raga.</strong> Diseño original inspirado en la estructura de agendas como 365Scores y en las tarjetas editoriales de OneFootball; no copia su código, su diseño propietario ni sus datos. Semana 2: partidos reales del 27–29 nov 2026, verificados el 19 nov 2026 con la API pública de ESPN (sin clave); horas de Monterrey (CST), sin momios ni probabilidades inventadas. Las probabilidades Poisson (modelo propio, Semana 2), los momios DraftKings (22 nov 2026) y el valor esperado ya están integrados.</p>
+    <p><strong>Football AI Agenda · Proyecto de Luis Raga.</strong> Diseño original inspirado en la estructura de agendas como 365Scores y en las tarjetas editoriales de OneFootball; no copia su código, su diseño propietario ni sus datos. Semana 2: partidos reales del 27–29 nov 2026, verificados el 19 nov 2026 con la API pública de ESPN (sin clave); horas de Monterrey (CST), sin momios ni probabilidades inventadas. Las probabilidades Poisson (modelo propio, Semana 2), los momios DraftKings (22 nov 2026) y el valor esperado ya están integrados. El parlay se guarda en este navegador y sobrevive al recargar (Semana 4).</p>
     <p>Esta página es una herramienta de análisis. No realiza apuestas, no ejecuta transacciones y ningún momio mostrado es una cuota en vivo de una casa de apuestas.</p>
   </footer>
 </div>
@@ -1079,6 +1095,7 @@
       document.getElementById("totOdds").textContent = "—";
       document.getElementById("totProb").textContent = "—";
       document.getElementById("totEv").textContent = "—";
+      saveSlip(); renderSaved();
       return;
     }
     slipEmpty.style.display = "none";
@@ -1103,6 +1120,7 @@
       slipVerdict.className = "slip-verdict warn";
       slipVerdict.textContent = "El combo perdió el valor (EV " + fmt(ev*100,1) + "%). Mejor quédate con el pick simple más fuerte.";
     }
+    saveSlip(); renderSaved();
   }
 
   document.querySelectorAll(".add-btn").forEach(function(btn){
@@ -1120,6 +1138,91 @@
       }
     });
   });
+  /* ---------- Semana 4: parlay persistente (Empleado 2, portado por el jefe) ----------
+     Los picks se guardan en localStorage (clave faa-parlay-semana-2-v1) y
+     sobreviven al recargar. Al restaurar, cada pick se reconstruye desde
+     el botón de su tarjeta (data-pick/data-odds/data-prob): nunca se
+     confía en los números guardados, y un pick que ya no exista o no
+     tenga EV+ se ignora. Misma lista en el parlay y en guardados. */
+  var STORAGE_KEY = "faa-parlay-semana-2-v1";
+  function findAddBtn(name){
+    var found = null;
+    document.querySelectorAll(".add-btn").forEach(function(ab){
+      if (ab.getAttribute("data-pick") === name) found = ab;
+    });
+    return found;
+  }
+  function loadSavedSlip(){
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return [];
+      var parsed = JSON.parse(raw);
+      if (!Array.isArray(parsed)) return [];
+      var seen = {}, out = [];
+      parsed.forEach(function(name){
+        if (typeof name !== "string" || seen[name]) return;
+        var btn = findAddBtn(name);
+        if (!btn) return;
+        seen[name] = true;
+        out.push({ name: name, odds: parseFloat(btn.getAttribute("data-odds")), prob: parseFloat(btn.getAttribute("data-prob")) });
+      });
+      return out;
+    } catch (e) { return []; }
+  }
+  function saveSlip(){
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(slip.map(function(i){ return i.name; }))); } catch (e) {}
+  }
+  function removePickByName(name){
+    slip = slip.filter(function(i){ return i.name !== name; });
+    var btn = findAddBtn(name);
+    if (btn){ btn.disabled = false; btn.textContent = "Sumar al parlay"; }
+    renderSlip(); renderSaved();
+  }
+  function renderSaved(){
+    var items = document.getElementById("savedItems");
+    var totals = document.getElementById("savedTotals");
+    document.getElementById("savedCount").textContent = "Guardados: " + slip.length;
+    document.getElementById("savedEmpty").style.display = slip.length ? "none" : "block";
+    items.innerHTML = "";
+    slip.forEach(function(item){
+      var row = document.createElement("div");
+      row.className = "slip-item";
+      var txt = document.createElement("div");
+      var b = document.createElement("b"); b.textContent = item.name;
+      var s = document.createElement("span"); s.textContent = "Momio " + fmt(item.odds,2) + " · Prob. IA " + item.prob + "%";
+      txt.appendChild(b); txt.appendChild(s);
+      var btn = document.createElement("button");
+      btn.type = "button"; btn.textContent = "×"; btn.setAttribute("aria-label","Quitar " + item.name);
+      btn.addEventListener("click", function(){ removePickByName(item.name); });
+      row.appendChild(txt); row.appendChild(btn);
+      items.appendChild(row);
+    });
+    if (slip.length === 0){
+      document.getElementById("savedTotOdds").textContent = "—";
+      document.getElementById("savedTotProb").textContent = "—";
+      document.getElementById("savedTotEv").textContent = "—";
+      totals.hidden = true;
+      return;
+    }
+    var odds = 1, prob = 1;
+    slip.forEach(function(i){ odds *= i.odds; prob *= (i.prob/100); });
+    var ev = prob * odds - 1;
+    document.getElementById("savedTotOdds").textContent = fmt(odds,2);
+    document.getElementById("savedTotProb").textContent = fmt(prob*100,1) + "%";
+    document.getElementById("savedTotEv").textContent = (ev >= 0 ? "+" : "") + fmt(ev*100,1) + "%";
+    totals.hidden = false;
+  }
+  slip = loadSavedSlip();
+  slip.forEach(function(item){
+    var btn = findAddBtn(item.name);
+    if (btn){ btn.disabled = true; btn.textContent = "En tu parlay ✓"; }
+  });
+  document.getElementById("clearParlay").addEventListener("click", function(){
+    slip = [];
+    document.querySelectorAll(".add-btn").forEach(function(ab){ ab.disabled = false; ab.textContent = "Sumar al parlay"; });
+    renderSlip(); renderSaved();
+  });
+
   renderSlip();
 
   /* ---------- EV Calculator ---------- */

@@ -479,3 +479,35 @@ Qué pasa a `main`: tus scripts, el workflow, la config de la Semana 3,
 las tablas y `ev.json` de la S2 y la S3, y tu mensaje. La tabla de
 momios de la S2 en `main` ahora es la tuya (con spread). Gracias por la
 entrega.
+
+## 22 nov 2026 — Revisión de la entrega del Empleado 2 (Semana 4: parlay guardado)
+
+Aprobado y portado. Revisé tu `preview-semana-4.html` (rama semana-3,
+commit e86131b) y la lógica está bien: localStorage con clave
+`faa-parlay-semana-2-v1`, al cargar se restauran solo picks que existen
+en la semana y con EV+, sin confiar en los números guardados, botón
+para limpiar y vista «Mis picks guardados» con momio, probabilidad y EV
+por pick. Mi corrección de los totales
+(`.slip-totals[hidden]{display:none}` + reseteo a «—») está conservada.
+Verifiqué tus datos contra la base: los 16 partidos, 1X2, +2.5, momios
+y EV cuadran con la vista previa; DNB y doble oportunidad verificados
+en dos tarjetas.
+
+Dos notas menores:
+- BTTS de Werder 54.2% y Levante 54.5% en tu copia contra 54.3% y
+  54.4% publicados: 0.1 puntos de redondeo. Usa los valores publicados
+  la próxima vez.
+- Tu copia trae un chip «Momios: Semana 3» que la página real ya no
+  tiene (los momios ya están integrados): no lo porté. Tampoco porté tu
+  página recortada (sin barra de ligas, sin editorial, sin
+  calculadora): el port toma la función, no la página.
+
+Lo que hice yo: porté la función a la base real de la Semana 2
+(`index-semana2-final.html`): panel «Mis picks guardados», botón
+«Limpiar parlay», guardado y restauración desde los botones de cada
+tarjeta. La página del lunes ya sale con el parlay guardado. Verifiqué
+la lógica simulada (Werder + Venezia: 3.04, 52.5%, +59.7%) y la vista
+previa se prueba en vivo antes del lunes.
+
+Por ahora no empieces la Semana 5, como quedamos. Quedas atento a mis
+órdenes.
