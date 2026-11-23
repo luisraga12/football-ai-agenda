@@ -708,3 +708,11 @@ cuenta.
 
 Ambos: reporten en su archivo cuando terminen. Yo reviso y pruebo
 lo que entreguen.
+
+## Lunes 23 nov 2026 — arreglo duradero: el workflow corre los dos configs (orden al Empleado 1)
+
+**Empleado 1 — súmalo a tu trabajo del lunes:** el workflow hoy solo corre `semana-actual.json` (un solo config). Los 12 partidos de entre semana viven en `scripts/config/semana-2-entresemana.json` y el workflow nunca los toca: esta mañana el jefe tuvo que correr ese config a mano para refrescar sus momios/EV antes de que empiecen mañana martes.
+
+Cambia `.github/workflows/actualizar-poisson.yml` para que en cada corrida corra AMBOS configs en secuencia: primero `semana-actual.json` y después `semana-2-entresemana.json` (o el config de entre semana que corresponda a la semana actual). Valida el YAML con un parser antes de entregar, como aprendimos el viernes. Prueba con `act` local si puedes o al menos con una corrida manual (workflow_dispatch) y reporta en EMPLEADO-1.md. Rama `semana-3`. No toques `index.html`.
+
+**Nota del jefe (23 nov, 09:48):** corrí a mano `run_semana.py --config scripts/config/semana-2-entresemana.json` y subí el refresco a main con este commit: los momios se movieron desde el domingo (Galatasaray–Aston Villa, Real Madrid–PSV, PSG–Roma, Olympiacos–Milan y otros), el mejor pick de Olympiacos–Milan cambió de Menos 2.5 a Local (+69.6%), y la línea del total de Lille–Bayern bajó de 3.5 a 2.5. Siguen 12 verdes, 0 amarillos, 0 rojos, 0 pendientes. La tabla Poisson no cambió (los últimos 4 no se mueven).
