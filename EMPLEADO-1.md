@@ -151,3 +151,84 @@ Momios Semana 3 (hoy, 22 nov): solo 4 con momio, los de Serie A con Bet 365 (Bol
 **Pendiente de ti, jefe:** (a) ¿el mejor pick puede ser spread? (b) mecanismo de integración: marcadores `MOMIOS-INICIO`/`FIN` o `fetch()` de `ev.json`. (c) ¿Cuándo apunto `semana-actual.json` a la Semana 2? Sigue apuntando a la Semana 1, no lo toqué; tú decides.
 
 **Sin inventar nada:** todo salió de ESPN o calculado; ningún partido quedó fuera, ningún momio inventado (12 pendientes en la Semana 3) y no se usó ninguna clave.
+
+---
+
+## 22 nov 2026 — Entregado: datos entre semana 24–26 nov (Champions + Europa League)
+
+Jefe, leí tus órdenes entre semana y el añadido del descubrimiento automático en `JEFE.md`, y ya está hecho, en la rama `semana-3` (sin tocar `index.html` ni `semana-actual.json`).
+
+**0. Sincronización:** la rama local estaba en `e1418ce` con mi trabajo anterior sin confirmar; lo comparé byte a byte con el remoto y era idéntico a lo subido, así que hice reset a `origin/semana-3` (`67c4825`) y fusioné `main` (`1d6a2ea`, tus órdenes entre semana + descubrimiento). Hubo un conflicto en `EMPLEADO-2.md` (tu versión de main traía la sección "Archivo pasado al jefe" y la rama las dos secciones nuevas del Empleado 2): conservé las tres secciones en orden cronológico, no se perdió ningún mensaje.
+
+**1. Los 12 partidos elegidos (de 36, Champions 9+9 y Europa League 18):**
+
+| Fecha | Hora (CST) | Partido |
+|---|---|---|
+| Mar 24 nov | 11:45 | Galatasaray vs Aston Villa |
+| Mar 24 nov | 14:00 | Arsenal vs Borussia Dortmund |
+| Mar 24 nov | 14:00 | Manchester City vs Napoli |
+| Mar 24 nov | 14:00 | Real Madrid vs PSV Eindhoven |
+| Mié 25 nov | 14:00 | Club Brugge vs Liverpool |
+| Mié 25 nov | 14:00 | Internazionale vs VfB Stuttgart |
+| Mié 25 nov | 14:00 | Lille vs Bayern Munich |
+| Mié 25 nov | 14:00 | Paris Saint-Germain vs AS Roma |
+| Mié 25 nov | 14:00 | Sporting CP vs Manchester United |
+| Jue 26 nov | 11:45 | Celta Vigo vs AFC Bournemouth |
+| Jue 26 nov | 11:45 | Dinamo Zagreb vs Bayer Leverkusen |
+| Jue 26 nov | 11:45 | Olympiacos vs AC Milan |
+
+**Por qué estos 12:** equipos grandes que Luis sigue (Arsenal, Real Madrid, Man City, Liverpool, Bayern, PSG, Inter, Man Utd, Milan, Juventus era el 13º) y partidos parejos. Dejé fuera los más desparejos (Sabah–Barcelona, Juventus–Omonia) y los de equipos chicos (Bodo/Glimt–LASK, Slovan–Betis, Como–AEK, Slavia–Villarreal, Atlético–Viking, Shakhtar–Fenerbahce, Besiktas, Marseille, Salzburg, Union SG, Plzen–Benfica, Ferencvaros, Lyon, NEC–Rennes, OFI–Anderlecht, Sparta–AZ, Sunderland–Jagiellonia, Torreense–Celtic, Hoffenheim–Sturm, Feyenoord–Porto, Leipzig–Lens).
+
+**2. Método — un cambio obligado que te reporto:** en Champions y Europa League solo se han jugado **4 jornadas** antes del cutoff (22 nov), así que no hay últimos 5: usé los **últimos 4** de cada equipo, con promedios por partido (GF/4, GA/4) en vez de GF/5. Los promedios son de LA COMPETICIÓN, como ordenaste: Champions 4.11 goles/partido (54 partidos, últimas 3 jornadas: 13-14 oct, 20-21 oct, 3-4 nov) y Europa League 2.97 (72 partidos, 16-17 sep, 15 oct, 22 oct, 4-5 nov). Tuve que arreglar `recolectar_datos.py`: el calendario de ESPN para competiciones UEFA no trae fechas sino fases (dicts), así que las jornadas pasadas ahora se sacan de los schedules ya descargados. La validación acepta n>=4 (avisa) y falla si n<4. Todo corrido de verdad con `python3 scripts/run_semana.py`: `OK — Semana 2-entresemana completa y validada: 12 partidos, 24 equipos (12 verdes, 0 amarillos, 0 rojos, 0 pendientes)`.
+
+**Tabla Poisson (xG, 1X2, +2.5, BTTS):**
+
+| Fecha | Partido | xG | P(1) / P(X) / P(2) | P(+2.5) | P(BTTS) |
+|---|---|---|---|---|---|
+| Mar 24 nov 11:45 | Galatasaray vs Aston Villa | 1.59–2.99 | 18.1 / 15.9 / 66.0% | 83.5% | 75.6% |
+| Mar 24 nov 14:00 | Arsenal vs Borussia Dortmund | 1.33–0.58 | 55.0 / 28.7 / 16.3% | 29.8% | 32.4% |
+| Mar 24 nov 14:00 | Manchester City vs Napoli | 4.38–1.16 | 88.4 / 6.9 / 4.7% | 91.4% | 67.8% |
+| Mar 24 nov 14:00 | Real Madrid vs PSV Eindhoven | 1.72–0.58 | 65.2 / 22.8 / 12.0% | 40.5% | 36.2% |
+| Mié 25 nov 14:00 | Club Brugge vs Liverpool | 3.65–2.71 | 56.6 / 15.2 / 28.2% | 95.2% | 90.9% |
+| Mié 25 nov 14:00 | Internazionale vs VfB Stuttgart | 1.06–1.16 | 33.0 / 28.9 / 38.1% | 38.3% | 44.9% |
+| Mié 25 nov 14:00 | Lille vs Bayern Munich | 0.66–3.32 | 4.2 / 8.9 / 87.0% | 75.9% | 46.7% |
+| Mié 25 nov 14:00 | Paris Saint-Germain vs AS Roma | 5.30–1.38 | 91.6 / 4.9 / 3.5% | 96.3% | 74.6% |
+| Mié 25 nov 14:00 | Sporting CP vs Manchester United | 2.12–0.89 | 65.8 / 19.6 / 14.6% | 57.8% | 51.7% |
+| Jue 26 nov 11:45 | Celta Vigo vs AFC Bournemouth | 0.32–2.88 | 2.4 / 8.8 / 88.8% | 62.1% | 26.1% |
+| Jue 26 nov 11:45 | Dinamo Zagreb vs Bayer Leverkusen | 0.20–1.40 | 5.2 / 26.4 / 68.5% | 21.6% | 13.8% |
+| Jue 26 nov 11:45 | Olympiacos vs AC Milan | 1.13–0.17 | 61.7 / 32.7 / 5.7% | 14.5% | 10.9% |
+
+**Valores extremos (muestra de 4, sin tope):** PSG xG 5.30 (20 GF en 4), Man City 4.38, Club Brugge–Liverpool xG 3.65–2.71 con P(+2.5) 95.2%, y por el otro lado Celta 0.32 y Dinamo Zagreb 0.20. Son correctos según los datos, pero con solo 4 partidos la muestra exagera más que con 5: conviene la nota de cautela en la página, como en la Semana 2.
+
+**3. Momios + EV (DraftKings, los 12 con momio, 0 pendientes):** 12 verdes, 0 amarillos, 0 rojos. Verifiqué el EV 1X2 local de los 12 a mano y el 1X2 suma 100% en los 12.
+
+| Partido | Mejor pick | EV |
+|---|---|---|
+| Galatasaray vs Aston Villa | Visita | +55.1% 🟢 |
+| Arsenal vs Borussia Dortmund | Menos 2.5 | +57.9% 🟢 |
+| Manchester City vs Napoli | Más 3.5 | +53.2% 🟢 |
+| Real Madrid vs PSV Eindhoven | Empate | +93.6% 🟢 |
+| Club Brugge vs Liverpool | Local | +149.1% 🟢 |
+| Internazionale vs VfB Stuttgart | Visita | +128.5% 🟢 |
+| Lille vs Bayern Munich | Visita | +39.7% 🟢 |
+| Paris Saint-Germain vs AS Roma | Más 3.5 | +65.1% 🟢 |
+| Sporting CP vs Manchester United | Local | +64.5% 🟢 |
+| Celta Vigo vs AFC Bournemouth | Visita | +73.4% 🟢 |
+| Dinamo Zagreb vs Bayer Leverkusen | Menos 3.5 | +53.6% 🟢 |
+| Olympiacos vs AC Milan | Menos 2.5 | +67.0% 🟢 |
+
+Los EV tan altos (Brugge +149.1%, Inter–Stuttgart visita +128.5%) salen de que el modelo con 4 partidos discrepa fuerte del mercado: el mercado da a Liverpool favorito (1.65) y a Stuttgart casi parejo, mientras el modelo ve a Brugge con xG 3.65 y a Stuttgart con P(2) 38.1%. No es certeza, es desacuerdo modelo–mercado con muestra corta. Ojo: Real Madrid–PSV trae línea de total 4.5 (no 2.5/3.5); el P(over) se calculó para 4.5 con la distribución completa, como ordenaste.
+
+**4. Conference League — ESPN no la trae:** probé 7 slugs (`uefa.europa-conference`, `uefa.conference-league`, `uefa.conference`, `uefa.uecl`, `uefa.conf`, `uefa.europa_conf`, `uefa.europa-conference-league`): todos HTTP 400, con y sin fecha. Por eso los 12 son solo Champions + Europa League. Si ESPN la publica con otro slug, el descubrimiento la intentará en cada corrida.
+
+**5. Liga MX entre semana — no hay partidos:** revisé `mex.1` 24, 25 y 26 nov (0 eventos) y la línea base del descubrimiento cubre toda la semana 23–29 nov: tampoco hay ningún partido de Liga MX esa semana en ESPN. Por eso no se agregó nada por descubrimiento.
+
+**6. Descubrimiento automático (`scripts/descubrir_partidos.py`, nuevo, paso 0 de `run_semana.py`):** consulta los scoreboards de las ligas del alcance (mex.1, eng.1, esp.1, ger.1, ita.1, uefa.champions, uefa.europa; Conference League se intenta pero no responde) para la semana corriente (lun–dom) y compara con la línea base en `data/semana-N/raw/descubrimiento_vistos.json`. Primera corrida: solo establece la línea base (75 partidos vistos esta semana: Champions 18, Europa League 18, Premier 11, LaLiga 10, Bundesliga 9, Serie A 9, Liga MX 0) y NO agrega nada, para no llenar una config curada con partidos que ya existían. En corridas posteriores, un partido nuevo se agrega al config y el pipeline completo corre para él; queda en el log del workflow. Solo ligas del alcance, Liguilla/playoffs incluidos cuando ESPN los publique, validación por team ID, nunca se inventa nada. No se guardan los ~56 scoreboards del descubrimiento, solo la línea base compacta. El workflow no cambia de horario (la corrida diaria de las 13:00 UTC alcanza) y sigue usando solo `GITHUB_TOKEN`.
+
+**7. Pendientes de tu revisión, hechos:** (a) orden por fecha+hora en `generar_tabla.py` (y en `calcular_poisson.py`: los partidos se calculan ya ordenados) — la tabla entre semana sale Mar 24 11:45, luego 14:00, Mié 25, Jue 26; (b) `calcular_ev.py` blindado: si un partido trae total/spread pero no moneyline, el 1X2 queda sin EV en vez de romper en `ml['home']` (también blindado el print de `recolectar_momios.py`); (c) `raw/` incluido en esta entrega (3.6 MB en `data/semana-2-entresemana/raw/`, con scoreboards, schedules, `teams_last5.json`, `league_avgs.json`, `poisson_result.json`, `momios.json`, `ev_result.json` y `descubrimiento_vistos.json`). Los `raw/` de Semana 2 y Semana 3 también están en local por si los quieres subir.
+
+**8. Pendiente, no hecho:** la vuelta al fragmento de integración (bloque completo de momios por tarjeta, marcadores por tarjeta y su CSS) — queda para la siguiente entrega, como dijiste que tú pones los marcadores cuando esté listo. No toqué `index.html`.
+
+**Archivos en la rama semana-3:** `scripts/config/semana-2-entresemana.json`, `data/semana-2-entresemana/` (tabla-poisson, tabla-momios, `ev.json`, `raw/`), `scripts/descubrir_partidos.py` (nuevo), cambios en `poisson_core.py` (ataque/defensa con n), `calcular_poisson.py` (días 24–26 nov, orden fecha+hora, n), `recolectar_datos.py` (conteos generalizados, promedios UEFA desde schedules), `generar_tabla.py` (orden, conteos, ámbito, n), `calcular_ev.py` (días, blindaje moneyline), `recolectar_momios.py` (blindaje del print), `run_semana.py` (paso 0 descubrimiento, validación n>=4), `scripts/README.md`, `.github/workflows/actualizar-poisson.yml` (solo comentarios: paso 0 y n=4 en europeas; YAML validado con parser).
+
+**Sin inventar nada:** todo salió de ESPN o calculado; ningún partido quedó fuera de los 12 curados (los otros 24 se excluyeron por curaduría, listados arriba) y ningún momio inventado (12/12 con momio DraftKings).

@@ -103,6 +103,10 @@ producto, nadie debe volver a meterle mano.
 - **Entre semana** — sección lista en la página (Empleado 2, 22 nov,
   portada por el jefe) en estado pendiente: se llena con los 12
   partidos cuando el Empleado 1 entregue su tabla.
+- **Entre semana lleno** (Empleado 1, 22 nov): 12 partidos Champions
+  + Europa League con Poisson (últimos 4), momios DraftKings + EV (12
+  verdes) y descubrimiento automático de partidos nuevos; integrados
+  por el jefe en la página — el lunes sale con entre semana completo.
 
 ## ⏳ Semana 4 — Pendiente
 
