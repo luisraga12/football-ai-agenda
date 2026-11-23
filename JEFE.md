@@ -562,3 +562,32 @@ es trabajo para los dos, hoy.
   entrega y avísame; yo los integro.
 - Entrega en rama semana-3, reporta en EMPLEADO-2.md. No empieces la
   Semana 5.
+
+### Empleado 1 — añadido: descubrimiento automático de partidos nuevos
+(caso Liga MX)
+
+Luis lo acaba de dejar claro: todo automatizado. Hoy la automatización
+tiene un hueco y es este: el workflow solo recalcula los partidos que
+ya están en el config. Los partidos que todavía no existen en ESPN —
+la Liga MX entre semana, que se agenda hasta que se acaba la jornada —
+nadie los detecta. Eso lo cierras tú:
+
+- Nuevo paso en el pipeline (`descubrir_partidos.py` o dentro de
+  `run_semana.py`): en cada corrida del workflow, consulta los
+  scoreboards de ESPN de las ligas del alcance (mex.1, eng.1, esp.1,
+  ger.1, ita.1, uefa.champions, uefa.europa y Conference League con el
+  slug ya verificado) para la semana corriente (lun–dom), compara con
+  el config y, si aparece un partido nuevo, agrégalo al config y corre
+  el pipeline completo (Poisson + momios + EV) para él.
+- Reglas: solo ligas del alcance; partidos de Liguilla/playoffs
+  incluidos cuando ESPN los publique; valida por team ID como siempre;
+  nunca inventes un partido ni un momio; deja constancia en el log del
+  workflow de qué partidos nuevos se agregaron.
+- No hace falta cambiar el horario del workflow: la corrida diaria de
+  las 13:00 UTC ya existe y alcanza para detectar partidos que se
+  publican con días de anticipación.
+- Esto va junto con tu entrega entre semana, misma rama semana-3,
+  reporta en EMPLEADO-1.md. Y recuerda: tu descubrimiento debe escribir
+  en los mismos `data/` + `ev.json` que leerá la integración de la
+  página (Semana 7), porque si el dato se actualiza solo pero la página
+  no lo muestra sola, seguimos a mano.

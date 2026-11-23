@@ -95,6 +95,11 @@ producto, nadie debe volver a meterle mano.
   Luis): la agenda ya no es solo de fin de semana — cubre también entre
   semana (Champions, Europa League, Conference League). Semana 2: entre
   semana mar 24 – jue 26 nov + fin de semana vie 27 – dom 29 nov.
+  Incluye los partidos que se publican tarde: la Liga MX entre semana
+  se agenda hasta que se acaba la jornada, así que el workflow debe
+  detectar esos partidos solo cuando ESPN los publique y agregarlos sin
+  que nadie edite el config a mano (descubrimiento automático, orden
+  al Empleado 1 del 22 nov).
 
 ## ⏳ Semana 4 — Pendiente
 
