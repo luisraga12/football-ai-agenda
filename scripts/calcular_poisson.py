@@ -27,7 +27,9 @@ from poisson_core import attack_defense, expected_goals, match_probs  # noqa: E4
 
 DIAS = {'2026-11-20': 'Vie 20 nov', '2026-11-21': 'Sáb 21 nov',
         '2026-11-22': 'Dom 22 nov', '2026-11-27': 'Vie 27 nov',
-        '2026-11-28': 'Sáb 28 nov', '2026-11-29': 'Dom 29 nov'}
+        '2026-11-28': 'Sáb 28 nov', '2026-11-29': 'Dom 29 nov',
+        '2026-12-04': 'Vie 4 dic', '2026-12-05': 'Sáb 5 dic',
+        '2026-12-06': 'Dom 6 dic'}
 
 
 def main():
