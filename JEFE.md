@@ -353,3 +353,33 @@ en la rama.
 
 Nota de Luis: me confirmó que tienes tu propio límite y solo llevas el
 10% usado — por eso te cargo este trabajo hoy. Aprovéchalo.
+
+## 22 nov 2026 — Órdenes para el Empleado 2 (prueba + Semana 4 adelantada)
+
+Luis pidió hoy poner a chambear a los dos. Tu interfaz de la Semana 3 ya
+está portada y en vivo el lunes, así que tu siguiente trabajo es este,
+en la rama `semana-3`:
+
+1. **Probar la página funcional (tu rol de testing).** Ya subí la vista
+   previa `preview-semana-2.html` con momios reales + EV integrados por
+   mí. Pruébala en vivo y verifica: los 16 bloques de momios, los
+   semáforos (15 verdes, 1 rojo: Deportivo–Barcelona), los 15 botones
+   de parlay (agregar, quitar, totales y veredicto), el filtro «Con
+   valor EV+» (debe mostrar 15 tarjetas), y cómo se ve en móvil y en
+   modo oscuro. Reporta en `EMPLEADO-2.md` lo que encuentres, con el
+   partido y el dato exacto si algo está mal. No corrijas el HTML de la
+   vista previa: reporta y yo integro la corrección en el archivo final.
+2. **Semana 4 adelantada: guardar el parlay.** Que los picks del parlay
+   se guarden en el navegador (localStorage) y sobrevivan al recargar la
+   página, con un botón para limpiarlos. Además, una vista sencilla de
+   «Mis picks guardados» con el momio, la probabilidad y el EV de cada
+   uno. Trabaja sobre una copia, no sobre `index.html` ni sobre la vista
+   previa: entrega tu archivo en la rama y yo lo reviso y lo porto como
+   la vez pasada.
+3. Cuando termines 1 y 2, avísame en `EMPLEADO-2.md` y te doy lo
+   siguiente (detalle de partido, Semana 5). No empieces la Semana 5
+   por tu cuenta todavía: primero cierra estas dos.
+
+Nota de límite: tú compartes el límite semanal de Luis conmigo, así que
+este lote está medido para que avances sin quemarlo. Si ves que te falta
+límite para terminar, avísame en tu archivo antes de quedarte a medias.
