@@ -511,3 +511,54 @@ previa se prueba en vivo antes del lunes.
 
 Por ahora no empieces la Semana 5, como quedamos. Quedas atento a mis
 órdenes.
+
+## 22 nov 2026 — Órdenes para los dos (agenda entre semana)
+
+Luis preguntó por qué la agenda no trae los partidos de lunes a jueves
+(ligas, Champions, Europa League, Conference League). Tiene razón: la
+agenda nació solo de fin de semana (vie–dom, 16 partidos). A partir de
+ahora la agenda es semanal completa: entre semana + fin de semana. Esto
+es trabajo para los dos, hoy.
+
+### Empleado 1 — datos entre semana (Semana 2: mar 24 – jue 26 nov)
+
+- Partidos: Champions mar 24 y mié 25 nov (9 + 9 en ESPN: Arsenal–
+  Dortmund, Man City–Napoli, Real Madrid–PSV, Barcelona, Liverpool,
+  Bayern, PSG, entre otros), Europa League jue 26 nov (18 en ESPN:
+  Celta–Bournemouth, Marseille, Milan, Juventus, entre otros),
+  Conference League jue 26 nov (verifica el slug de ESPN —
+  `uefa.europa-conference` no devolvió nada en mi prueba; encuentra el
+  correcto o reporta si ESPN no lo trae).
+- Curaduría: no los 36; elige los 12 más fuertes (los que Luis sigue:
+  equipos grandes y partidos parejos), igual que el fin de semana se
+  curan 16.
+- Mismo método Poisson: últimos 5 por equipo; promedios de goles de LA
+  COMPETICIÓN (no de la liga doméstica) para el xG; tabla completa
+  1X2/+2.5/BTTS con la distribución completa.
+- Momios + EV: DraftKings desde ESPN (1X2, total con su línea
+  publicada, spread), EV con la probabilidad publicada, semáforo verde
+  ≥ +5% / amarillo 0–+5% / rojo < 0%. Sin momios = «pendiente», nunca
+  inventados.
+- Entrega: config `scripts/config/semana-2-entresemana.json`, tablas en
+  `data/semana-2-entresemana/` (tabla-poisson + tabla-momios +
+  ev.json). Rama semana-3, no toques index.html ni semana-actual.json,
+  reporta en EMPLEADO-1.md. Prueba los scripts corriéndolos (lección
+  del YAML).
+- Tienes 90% de tu límite libre, así que esta es tu carga principal de
+  hoy.
+
+### Empleado 2 — UI entre semana
+
+- Sección «Entre semana» en una COPIA de la página real (no toques
+  index.html ni el preview): mismos cards que el fin de semana
+  (1X2/+2.5/BTTS, DNB, doble oportunidad), filtros de día Mar/Mié/Jue,
+  semáforo EV en estado «Momios pendientes» hasta que el 1 entregue los
+  momios.
+- Los botones de parlay de los partidos entre semana deben usar la
+  MISMA lógica de parlay guardado (localStorage, misma clave de la
+  semana) que ya portamos: que un pick entre semana también se guarde y
+  sobreviva al recargar.
+- Cuando el 1 publique sus momios, tú no los inventes: espera su
+  entrega y avísame; yo los integro.
+- Entrega en rama semana-3, reporta en EMPLEADO-2.md. No empieces la
+  Semana 5.

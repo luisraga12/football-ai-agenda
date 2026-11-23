@@ -91,6 +91,10 @@ producto, nadie debe volver a meterle mano.
   guardados» (Empleado 2, 22 nov, adelantada): revisado por el jefe y
   portado a la base real de la Semana 2 — la página del lunes ya lo
   trae.
+- **Alcance semanal completo** (decidido 22 nov 2026, a petición de
+  Luis): la agenda ya no es solo de fin de semana — cubre también entre
+  semana (Champions, Europa League, Conference League). Semana 2: entre
+  semana mar 24 – jue 26 nov + fin de semana vie 27 – dom 29 nov.
 
 ## ⏳ Semana 4 — Pendiente
 
