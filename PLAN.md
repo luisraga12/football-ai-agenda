@@ -126,6 +126,16 @@ de trabajar está en `FORMA-DE-TRABAJAR.md`.
   de main. El workflow ya corre ambos configs (fin de semana + entre
   semana) en cada corrida — arreglo hecho por el jefe el 23 nov. El
   jefe pone los marcadores en la página cuando toque integrarlo.
+- **Semana 8** — Fuerza del XI (como 365Scores, pedida por el cliente
+  el lunes 23 nov con fotos): puntaje 0–100 por alineación, contra el
+  mejor XI de la temporada del mismo equipo: goles aportados, minutos
+  jugados y puntos con esos jugadores en cancha. Necesita la Semana 6
+  (alineación probable) + estadísticas de jugadores de ESPN (el
+  Empleado 1 verifica la fuente y propone la fórmula exacta).
+- **Marcador en vivo** — pendiente de decidir tras el prototipo del
+  Empleado 1 (23 nov): el scoreboard de ESPN da marcador y minuto; la
+  página hoy se actualiza por horario (diario + cada hora en días de
+  partido), no en vivo.
 
 ## ⏳ Semana 4 — Pendiente
 
@@ -161,6 +171,18 @@ de trabajar está en `FORMA-DE-TRABAJAR.md`.
   ni en el repo: solo se usa la API de ESPN, que no necesita clave.
 - Si ESPN falla un día, la página sigue mostrando los últimos datos
   guardados, no se queda en blanco.
+
+## ⏳ Semana 8 — Pendiente: Fuerza del XI
+
+- Puntaje 0–100 por alineación (oficial cuando esté publicada, probable
+  de la Semana 6 cuando no), como en 365Scores: mide qué tan fuerte es
+  el XI de hoy contra el mejor XI de la temporada del mismo equipo.
+- Tres componentes, cada uno en % contra el mejor XI: goles aportados
+  por los jugadores del XI, minutos jugados del XI y puntos obtenidos
+  con esos jugadores en cancha.
+- Primero se verifica la fuente (estadísticas de jugadores de ESPN) y
+  la fórmula exacta; después se programa y se muestra en el detalle
+  del partido.
 
 ## Reglas del proyecto
 
