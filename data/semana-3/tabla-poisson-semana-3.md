@@ -13,17 +13,17 @@
 | Sáb 5 dic | 06:30 | Premier League | Chelsea | Liverpool | 0.56 | 2.18 | 8.1% | 17.1% | 74.8% | 51.5% | 37.9% |
 | Sáb 5 dic | 08:30 | Bundesliga | Bayer Leverkusen | Borussia Mönchengladbach | 2.43 | 1.06 | 67.5% | 17.7% | 14.9% | 67.8% | 59.7% |
 | Sáb 5 dic | 11:30 | LaLiga | Villarreal | Real Sociedad | 1.77 | 1.83 | 37.9% | 21.9% | 40.2% | 69.7% | 69.7% |
+| Sáb 5 dic | 11:30 | Bundesliga | Eintracht Frankfurt | Werder Bremen | 1.06 | 1.04 | 35.6% | 29.9% | 34.4% | 35.1% | 42.3% |
 | Sáb 5 dic | 13:45 | Serie A | Napoli | Lecce | 3.22 | 0.52 | 88.4% | 8.4% | 3.2% | 72.0% | 38.9% |
 | Sáb 5 dic | 14:00 | Premier League | Brentford | Manchester City | 2.01 | 1.19 | 56.4% | 21.5% | 22.1% | 61.9% | 60.2% |
 | Sáb 5 dic | 14:00 | LaLiga | Barcelona | Celta Vigo | 3.77 | 0.80 | 88.6% | 7.5% | 3.9% | 83.4% | 53.7% |
-| Sáb 5 dic | 11:30 | Bundesliga | Eintracht Frankfurt | Werder Bremen | 1.06 | 1.04 | 35.6% | 29.9% | 34.4% | 35.1% | 42.3% |
-| Dom 6 dic | 14:00 | LaLiga | Atlético Madrid | Real Betis | 2.07 | 0.47 | 75.2% | 17.6% | 7.1% | 46.5% | 32.5% |
-| Dom 6 dic | 08:30 | Bundesliga | Schalke 04 | Borussia Dortmund | 0.09 | 0.71 | 4.4% | 47.9% | 47.7% | 4.7% | 4.4% |
 | Dom 6 dic | 08:00 | Premier League | Newcastle United | Sunderland | 0.93 | 0.28 | 50.9% | 38.1% | 11.0% | 12.3% | 14.9% |
+| Dom 6 dic | 08:30 | Bundesliga | Schalke 04 | Borussia Dortmund | 0.09 | 0.71 | 4.4% | 47.9% | 47.7% | 4.7% | 4.4% |
+| Dom 6 dic | 09:15 | LaLiga | Athletic Club | Real Madrid | 0.89 | 2.79 | 9.2% | 13.9% | 76.9% | 71.1% | 55.2% |
 | Dom 6 dic | 10:30 | Premier League | Tottenham Hotspur | Arsenal | 0.67 | 0.40 | 36.9% | 44.2% | 18.9% | 9.3% | 15.9% |
 | Dom 6 dic | 11:00 | Serie A | Juventus | Udinese | 2.75 | 0.40 | 86.2% | 10.4% | 3.4% | 60.8% | 30.6% |
-| Dom 6 dic | 09:15 | LaLiga | Athletic Club | Real Madrid | 0.89 | 2.79 | 9.2% | 13.9% | 76.9% | 71.1% | 55.2% |
 | Dom 6 dic | 13:45 | Serie A | AC Milan | Parma | 3.46 | 1.04 | 82.3% | 10.5% | 7.3% | 82.7% | 62.6% |
+| Dom 6 dic | 14:00 | LaLiga | Atlético Madrid | Real Betis | 2.07 | 0.47 | 75.2% | 17.6% | 7.1% | 46.5% | 32.5% |
 
 Promedios de la tabla: xG local 1.97, xG visitante 1.12; P(1) media 53.4%, P(X) media 20.9%, P(2) media 25.7%.
 
@@ -86,8 +86,8 @@ Los promedios se calcularon desde los scoreboards de las últimas ~3 jornadas co
 
 ## (d) Fuentes ESPN consultadas (API pública, sin clave)
 
-- Scoreboard por liga y día, 2026-12-04 al 2026-12-06: `site.api.espn.com/apis/site/v2/sports/soccer/{{liga}}/scoreboard?dates={{AAAAMMDD}}` — los 16 partidos aparecen como STATUS_SCHEDULED con la fecha y hora exactas de la configuración (horas convertidas de UTC a CST, UTC-6).
-- Schedule por equipo (últimos 5 completados): `site.api.espn.com/apis/site/v2/sports/soccer/{liga}/teams/{id}/schedule` — 32 equipos, 5 partidos completados cada uno, todos de liga, hasta el cutoff.
+- Scoreboard por liga y día, 2026-12-04 al 2026-12-06: `site.api.espn.com/apis/site/v2/sports/soccer/{{liga}}/scoreboard?dates={{AAAAMMDD}}` — los {n_partidos} partidos aparecen como STATUS_SCHEDULED con la fecha y hora exactas de la configuración (horas convertidas de UTC a CST, UTC-6).
+- Schedule por equipo (últimos partidos completados): `site.api.espn.com/apis/site/v2/sports/soccer/{liga}/teams/{id}/schedule` — 32 equipos, 5 partidos completados cada uno, todos de liga, hasta el cutoff.
 - Scoreboards de jornadas pasadas para promedios de liga: 9 fechas por liga (ver tabla c).
 - Los archivos JSON crudos de todas estas consultas están en `raw/` dentro de esta misma carpeta.
 
@@ -95,5 +95,5 @@ Los promedios se calcularon desde los scoreboards de las últimas ~3 jornadas co
 
 - **Ningún partido quedó fuera:** los 16 partidos de la lista se verificaron en el scoreboard de ESPN con fecha, hora y equipos exactos antes de calcular.
 - **Valores extremos por muestra corta (5 partidos, sin tope aplicado):** son correctos según los datos, pero una muestra de 5 partidos exagera rachas; conviene leer los favoritos más extremos con cautela.
-- **Últimos 5 = solo liga:** el schedule de ESPN por liga devuelve partidos de esa liga; no se mezclaron copas ni Champions.
-- **Sin momios ni cuotas en esta tabla:** solo probabilidades propias (Poisson). Los momios llegan en la Semana 3.
+- **Últimos 5 = solo liga:** el schedule de ESPN por liga devuelve partidos de esa liga; no se mezclaron otras competiciones.
+- **Sin momios ni cuotas en esta tabla:** solo probabilidades propias (Poisson). Los momios y el EV están en la tabla de momios de la misma semana.

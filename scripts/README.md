@@ -41,12 +41,26 @@ interfaz (`index.html` no se toca en este trabajo).
    `poisson_core.py`); el spread usa `p_spread_cover`. Semáforo por
    mejor pick: verde EV ≥ +5%, amarillo 0–+5%, rojo < 0%. Escribe
    `data/semana-N/raw/ev_result.json`, `data/semana-N/ev.json` y
+   `data/semana-N/tabla-momios-semana-N.md`. Desde el 23 nov el
+   `ev.json` incluye `mercados` (EV por mercado) y el decimal y la
+   probabilidad del mejor pick, para que `integrar_pagina.py` no tenga
+   que leer `raw/ev_result.json`.
    `data/semana-N/tabla-momios-semana-N.md`.
-6. **`integrar_pagina.py`** — propuesta de mecanismo para que la página
-   muestre momios + EV sin editar el HTML a mano: inyecta un fragmento
-   entre los marcadores `<!-- MOMIOS-INICIO -->` / `<!-- MOMIOS-FIN -->`.
-   Por defecto es dry-run; si el HTML no tiene los marcadores, falla
-   sin tocar nada. No se usa hasta que el jefe decida el mecanismo.
+6. **`integrar_pagina.py`** — fragmento de integración revisado
+   (lunes 23 nov 2026, orden del jefe): inyecta el bloque COMPLETO de
+   momios por tarjeta (decimales + EV por mercado: 1X2, total con su
+   línea, spread) entre un par de marcadores POR TARJETA
+   `<!-- MOMIOS-INICIO:<slug> -->` / `<!-- MOMIOS-FIN:<slug> -->`,
+   donde `<slug>` es `local-vs-visita` en minúsculas sin acentos
+   (p. ej. `werder-bremen-vs-borussia-monchengladbach`). Trae su CSS
+   (`--css-out`), que reusa las variables y clases de la página
+   (`.odds`, `.derived-h`, `.dcell`, `.add-btn`). Por defecto es
+   dry-run; si a un partido le falta su par de marcadores, falla sin
+   tocar nada. Lee `data/semana-N/ev.json` (con `mercados`, ver punto
+   5). No se usa en `index.html` hasta que el jefe ponga los
+   marcadores; la prueba se hace en una copia con marcadores.
+   También escribe el fragmento y el CSS sueltos con
+   `--fragment-out` / `--css-out` para que el jefe los pegue.
 7. **`run_semana.py`** — corre los seis pasos (0–5) en orden y valida
    el resultado (partidos verificados, 5 partidos por equipo — 4 en
    competiciones europeas, donde solo se han jugado 4 jornadas —, 1X2
