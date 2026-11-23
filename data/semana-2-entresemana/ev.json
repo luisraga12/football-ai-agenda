@@ -1,0 +1,353 @@
+{
+ "semana": "2-entresemana",
+ "partidos": [
+  {
+   "home": "Galatasaray",
+   "away": "Aston Villa",
+   "fecha": "2026-11-24",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "mejor_pick": "Visita",
+   "mejor_ev": 0.5507226603378208,
+   "semaforo": "verde",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 2.65,
+     "draw": 4.0,
+     "away": 2.35
+    },
+    "total": {
+     "linea": 3.5,
+     "over": 1.9090909090909092,
+     "under": 1.8695652173913042
+    },
+    "spread": {
+     "home_linea": 0.5,
+     "home": 1.5882352941176472,
+     "away_linea": -0.5,
+     "away": 2.2
+    }
+   }
+  },
+  {
+   "home": "Arsenal",
+   "away": "Borussia Dortmund",
+   "fecha": "2026-11-24",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "mejor_pick": "Menos 2.5",
+   "mejor_ev": 0.5792546918655017,
+   "semaforo": "verde",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 1.3846153846153846,
+     "draw": 5.0,
+     "away": 8.0
+    },
+    "total": {
+     "linea": 2.5,
+     "over": 1.6451612903225805,
+     "under": 2.25
+    },
+    "spread": {
+     "home_linea": -1.5,
+     "home": 2.0,
+     "away_linea": 1.5,
+     "away": 1.7142857142857144
+    }
+   }
+  },
+  {
+   "home": "Manchester City",
+   "away": "Napoli",
+   "fecha": "2026-11-24",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "mejor_pick": "Más 3.5",
+   "mejor_ev": 0.5319814509152341,
+   "semaforo": "verde",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 1.263157894736842,
+     "draw": 6.5,
+     "away": 10.0
+    },
+    "total": {
+     "linea": 3.5,
+     "over": 1.9090909090909092,
+     "under": 1.9090909090909092
+    },
+    "spread": {
+     "home_linea": -1.5,
+     "home": 1.6666666666666665,
+     "away_linea": 1.5,
+     "away": 2.1
+    }
+   }
+  },
+  {
+   "home": "Real Madrid",
+   "away": "PSV Eindhoven",
+   "fecha": "2026-11-24",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "mejor_pick": "Empate",
+   "mejor_ev": 0.9357396950668102,
+   "semaforo": "verde",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 1.1904761904761905,
+     "draw": 8.5,
+     "away": 11.0
+    },
+    "total": {
+     "linea": 4.5,
+     "over": 2.0,
+     "under": 1.8
+    },
+    "spread": {
+     "home_linea": -2.5,
+     "home": 1.9523809523809523,
+     "away_linea": 2.5,
+     "away": 1.7407407407407407
+    }
+   }
+  },
+  {
+   "home": "Club Brugge",
+   "away": "Liverpool",
+   "fecha": "2026-11-25",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "mejor_pick": "Local",
+   "mejor_ev": 1.49139404787354,
+   "semaforo": "verde",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 4.4,
+     "draw": 4.7,
+     "away": 1.6451612903225805
+    },
+    "total": {
+     "linea": 3.5,
+     "over": 1.7692307692307692,
+     "under": 2.05
+    },
+    "spread": {
+     "home_linea": 0.5,
+     "home": 2.2,
+     "away_linea": -0.5,
+     "away": 1.5882352941176472
+    }
+   }
+  },
+  {
+   "home": "Internazionale",
+   "away": "VfB Stuttgart",
+   "fecha": "2026-11-25",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "mejor_pick": "Visita",
+   "mejor_ev": 1.2851721411943697,
+   "semaforo": "verde",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 1.425531914893617,
+     "draw": 5.5,
+     "away": 6.0
+    },
+    "total": {
+     "linea": 3.5,
+     "over": 1.625,
+     "under": 2.3
+    },
+    "spread": {
+     "home_linea": -1.5,
+     "home": 1.9090909090909092,
+     "away_linea": 1.5,
+     "away": 1.8
+    }
+   }
+  },
+  {
+   "home": "Lille",
+   "away": "Bayern Munich",
+   "fecha": "2026-11-25",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "mejor_pick": "Visita",
+   "mejor_ev": 0.39672389728809954,
+   "semaforo": "verde",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 5.0,
+     "draw": 4.5,
+     "away": 1.606060606060606
+    },
+    "total": {
+     "linea": 3.5,
+     "over": 2.4,
+     "under": 1.5714285714285714
+    },
+    "spread": {
+     "home_linea": 0.5,
+     "home": 2.3,
+     "away_linea": -0.5,
+     "away": 1.5555555555555556
+    }
+   }
+  },
+  {
+   "home": "Paris Saint-Germain",
+   "away": "AS Roma",
+   "fecha": "2026-11-25",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "mejor_pick": "Más 3.5",
+   "mejor_ev": 0.6506464784310182,
+   "semaforo": "verde",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 1.3846153846153846,
+     "draw": 5.5,
+     "away": 7.0
+    },
+    "total": {
+     "linea": 3.5,
+     "over": 1.8333333333333335,
+     "under": 1.9523809523809523
+    },
+    "spread": {
+     "home_linea": -1.5,
+     "home": 1.9090909090909092,
+     "away_linea": 1.5,
+     "away": 1.8
+    }
+   }
+  },
+  {
+   "home": "Sporting CP",
+   "away": "Manchester United",
+   "fecha": "2026-11-25",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "mejor_pick": "Local",
+   "mejor_ev": 0.6447606146630238,
+   "semaforo": "verde",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 2.5,
+     "draw": 3.75,
+     "away": 2.65
+    },
+    "total": {
+     "linea": 3.5,
+     "over": 2.35,
+     "under": 1.5882352941176472
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "home": 2.35,
+     "away_linea": 0.5,
+     "away": 1.526315789473684
+    }
+   }
+  },
+  {
+   "home": "Celta Vigo",
+   "away": "AFC Bournemouth",
+   "fecha": "2026-11-26",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "mejor_pick": "Visita",
+   "mejor_ev": 0.734046539050514,
+   "semaforo": "verde",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 3.75,
+     "draw": 3.6,
+     "away": 1.9523809523809523
+    },
+    "total": {
+     "linea": 2.5,
+     "over": 1.8695652173913042,
+     "under": 1.9090909090909092
+    },
+    "spread": {
+     "home_linea": 0.5,
+     "home": 1.8,
+     "away_linea": -0.5,
+     "away": 1.8695652173913042
+    }
+   }
+  },
+  {
+   "home": "Dinamo Zagreb",
+   "away": "Bayer Leverkusen",
+   "fecha": "2026-11-26",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "mejor_pick": "Menos 3.5",
+   "mejor_ev": 0.5356497181262649,
+   "semaforo": "verde",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 4.3,
+     "draw": 4.2,
+     "away": 1.6896551724137931
+    },
+    "total": {
+     "linea": 3.5,
+     "over": 2.15,
+     "under": 1.6666666666666665
+    },
+    "spread": {
+     "home_linea": 0.5,
+     "home": 2.1,
+     "away_linea": -0.5,
+     "away": 1.625
+    }
+   }
+  },
+  {
+   "home": "Olympiacos",
+   "away": "AC Milan",
+   "fecha": "2026-11-26",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "mejor_pick": "Menos 2.5",
+   "mejor_ev": 0.6697775610643808,
+   "semaforo": "verde",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 2.7,
+     "draw": 3.4,
+     "away": 2.55
+    },
+    "total": {
+     "linea": 2.5,
+     "over": 1.8,
+     "under": 1.9523809523809523
+    },
+    "spread": {
+     "home_linea": 0.5,
+     "home": 1.4878048780487805,
+     "away_linea": -0.5,
+     "away": 2.4
+    }
+   }
+  }
+ ]
+}

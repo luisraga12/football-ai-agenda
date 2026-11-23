@@ -26,7 +26,9 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from poisson_core import attack_defense, expected_goals, match_probs  # noqa: E402
 
 DIAS = {'2026-11-20': 'Vie 20 nov', '2026-11-21': 'Sáb 21 nov',
-        '2026-11-22': 'Dom 22 nov', '2026-11-27': 'Vie 27 nov',
+        '2026-11-22': 'Dom 22 nov', '2026-11-24': 'Mar 24 nov',
+        '2026-11-25': 'Mié 25 nov', '2026-11-26': 'Jue 26 nov',
+        '2026-11-27': 'Vie 27 nov',
         '2026-11-28': 'Sáb 28 nov', '2026-11-29': 'Dom 29 nov',
         '2026-12-04': 'Vie 4 dic', '2026-12-05': 'Sáb 5 dic',
         '2026-12-06': 'Dom 6 dic'}
@@ -56,14 +58,22 @@ def main():
     for name, t in teams.items():
         lg = t['league']
         den = avgs[lg]['avg_por_equipo']
-        ataque, defensa = attack_defense(t['gf'], t['ga'], den)
+        # n = partidos usados (5 en ligas; 4 en competiciones europeas,
+        # donde solo se han jugado 4 jornadas antes del cutoff).
+        ataque, defensa = attack_defense(t['gf'], t['ga'], den, t['n'])
         calc[name] = {'league': lg, 'gf': t['gf'], 'ga': t['ga'],
-                      'gf_pj': t['gf'] / 5, 'ga_pj': t['ga'] / 5,
+                      'gf_pj': t['gf'] / t['n'], 'ga_pj': t['ga'] / t['n'],
+                      'n': t['n'],
                       'ataque': ataque, 'defensa': defensa,
                       'matches': t['matches']}
 
+    # Orden por fecha+hora (pendiente del jefe, 22 nov: la Semana 3
+    # salia desordenada porque la config se ordeno por fecha, no por hora).
+    partidos_ordenados = sorted(
+        cfg['partidos'],
+        key=lambda p: (p['fecha'], hora_por_partido[(p['home'], p['away'])]))
     rows = []
-    for p in cfg['partidos']:
+    for p in partidos_ordenados:
         lg = p['liga']
         ah, av = avgs[lg]['avg_home'], avgs[lg]['avg_away']
         xgh, xga = expected_goals(ah, av, calc[p['home']]['ataque'],
@@ -74,6 +84,7 @@ def main():
         s = p1 = pr['p1'] + pr['px'] + pr['p2']
         assert abs(s - 100) < 0.05, f"1X2 no suma 100% en {p['home']}: {s}"
         rows.append({'fecha': DIAS.get(p['fecha'], p['fecha']),
+                     'fecha_iso': p['fecha'],
                      'hora': hora_por_partido[(p['home'], p['away'])],
                      'liga': cfg['ligas'][lg], 'home': p['home'],
                      'away': p['away'], 'xgh': xgh, 'xga': xga, **pr})

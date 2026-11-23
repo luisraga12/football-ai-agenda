@@ -8,14 +8,18 @@ interfaz (`index.html` no se toca en este trabajo).
 
 1. **`recolectar_datos.py`** — descarga de la API pública de ESPN (sin
    clave):
-   - los scoreboards de cada liga y fecha, y **valida que los 16 partidos
+   - los scoreboards de cada liga y fecha, y **valida que los partidos
      de la semana existan en ESPN** (por ID de equipo). Si falta uno, el
      script falla y no se calcula nada: no se inventa ningún dato.
-   - el schedule de cada equipo: sus últimos 5 partidos de liga
-     completados hasta el cutoff de la configuración.
-   - los promedios de cada liga desde los scoreboards de las últimas ~3
-     jornadas completadas antes del cutoff (el endpoint de standings de
-     ESPN devuelve 404).
+   - el schedule de cada equipo: sus últimos 5 partidos de liga o
+     competición completados hasta el cutoff de la configuración (en
+     competiciones europeas solo hay 4 jornadas jugadas: se usan los 4
+     disponibles, con promedios por partido).
+   - los promedios de cada liga o competición desde los scoreboards de
+     las últimas ~3 jornadas completadas antes del cutoff (el endpoint
+     de standings de ESPN devuelve 404; en competiciones UEFA el
+     calendario no trae fechas, así que las jornadas se sacan de los
+     schedules ya descargados).
 2. **`calcular_poisson.py`** — ataque, defensa, goles esperados (xG) y
    probabilidades 1X2, +2.5 y BTTS con la **distribución Poisson
    completa** (rejilla 0–20 goles, ver `poisson_core.py`).
@@ -26,9 +30,11 @@ interfaz (`index.html` no se toca en este trabajo).
    momios por partido (proveedor preferente DraftKings: 1X2 moneyline,
    total y spread; si no hay DraftKings, se usa el único proveedor
    disponible, p. ej. Bet 365, solo para ese partido y etiquetado).
-   Valida que los 16 partidos existan por ID de equipo antes de
+   Valida que los partidos existan por ID de equipo antes de
    calcular; si un partido no tiene momio, queda "pendiente", no se
    inventa ninguna cuota. Escribe `data/semana-N/raw/momios.json`.
+   Si un partido trae total/spread pero no moneyline, el 1X2 queda sin
+   EV (blindaje, jefe 22 nov 2026) en vez de romper el cálculo.
 5. **`calcular_ev.py`** — EV = probabilidad × momio decimal − 1 por
    mercado. El P(over) se calcula para LA línea publicada (2.5 o 3.5)
    desde los xG con la distribución completa (`p_over` en
@@ -41,11 +47,24 @@ interfaz (`index.html` no se toca en este trabajo).
    entre los marcadores `<!-- MOMIOS-INICIO -->` / `<!-- MOMIOS-FIN -->`.
    Por defecto es dry-run; si el HTML no tiene los marcadores, falla
    sin tocar nada. No se usa hasta que el jefe decida el mecanismo.
-7. **`run_semana.py`** — corre los cinco pasos (1–5) en orden y valida
-   el resultado (16 partidos verificados, 5 partidos por equipo, 1X2
+7. **`run_semana.py`** — corre los seis pasos (0–5) en orden y valida
+   el resultado (partidos verificados, 5 partidos por equipo — 4 en
+   competiciones europeas, donde solo se han jugado 4 jornadas —, 1X2
    suma 100%, cada partido con momio tiene EV y semáforo, ningún
    partido pendiente tiene EV inventado). Si algo falla, no se publica
    nada.
+8. **`descubrir_partidos.py`** — descubrimiento automático de partidos
+   nuevos publicados tarde en ESPN (orden del jefe, 22 nov 2026, caso
+   Liga MX): en cada corrida consulta los scoreboards de las ligas del
+   alcance (mex.1, eng.1, esp.1, ger.1, ita.1, uefa.champions,
+   uefa.europa; Conference League sin acceso en ESPN con los slugs
+   probados) para la semana corriente (lun–dom) y compara con una línea
+   base guardada en `raw/descubrimiento_vistos.json`. La primera
+   corrida solo establece la línea base y no agrega nada (así una
+   config curada no se llena de partidos que ya existían); en corridas
+   posteriores, un partido que aparece nuevo se agrega al config y el
+   pipeline completo corre para él. Nunca inventa partidos ni momios.
+   Es el paso 0 de `run_semana.py`.
 
 ## Corrección obligatoria aplicada (jefe, 19 nov 2026)
 
@@ -85,9 +104,12 @@ ESPN (`scoreboard_*`, `odds_*`, `schedule_*`), `teams_last5.json`,
 
 1. Copiar la configuración de la semana nueva sobre
    `scripts/config/semana-actual.json` (o crear `semana-N.json` con sus
-   16 partidos: fecha, liga, equipos y sus IDs de ESPN).
+   partidos: fecha, liga, equipos y sus IDs de ESPN).
 2. Correr `run_semana.py`. Los IDs de equipo se sacan del scoreboard de
-   ESPN de la fecha del partido; no se adivinan.
+   ESPN de la fecha del partido; no se adivinan. Para entre semana hay
+   una config aparte (`semana-2-entresemana.json`, 12 partidos de
+   Champions y Europa League, 24–26 nov) que no es la semana actual del
+   workflow.
 
 ## GitHub Actions (Semana 7)
 
@@ -108,7 +130,8 @@ del jefe; empieza a correr solo cuando se fusione a `main`.
 ## Metodología (aprobada por el jefe, 19 nov 2026)
 
 - Prom. por equipo = prom. total de goles por partido / 2.
-- Ataque = (GF/5) / prom. por equipo; defensa = (GA/5) / prom. por equipo.
+- Ataque = (GF/n) / prom. por equipo; defensa = (GA/n) / prom. por equipo
+  (n = partidos usados: 5 en ligas, 4 en competiciones europeas).
 - xG local = prom. local × ataque local × defensa visitante;
   xG visitante = prom. visitante × ataque visitante × defensa local.
 - Poisson P(k;λ) = e^-λ × λ^k / k!, k = 0..20 por equipo.

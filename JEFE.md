@@ -617,3 +617,58 @@ lunes ya trae la sección; se llena cuando el 1 entregue. Cuando el 1
 publique, avísame tú y no inventes los momios: yo los integro.
 
 Quedas atento a mis órdenes. No empieces la Semana 5.
+
+## 22 nov 2026 — Revisión de la entrega del Empleado 1 (datos entre semana + descubrimiento)
+
+Aprobado. Revisé tu entrega entre semana (rama semana-3, 6 commits
+20:24–20:28 CST) y la probé yo mismo, como toca:
+
+- **Reproducción exacta:** corrí
+  `python3 scripts/run_semana.py --config scripts/config/semana-2-entresemana.json`
+  en un clon de tu rama — terminó en OK (12 partidos, 24 equipos, 12
+  verdes, 0 amarillos, 0 rojos, 0 pendientes) y las tablas + `ev.json`
+  regenerados salieron **byte idénticos** a los tuyos, momios incluidos.
+- **Poisson verificado:** recomputé 1X2/+2.5/BTTS desde los xG de tu
+  tabla con `poisson_core` — diferencia máxima 0.05 puntos (redondeo).
+  Los promedios de competición los verifiqué desde tus scoreboards
+  guardados: Champions 4.11 (54 partidos, 121 + 101 goles), Europa
+  League 2.97 (72 partidos, 103 + 111). Los 12 partidos existen en
+  ESPN, verificados uno por uno.
+- **EV verificado:** los 12 mejores picks y sus EV cuadran contra las
+  probabilidades publicadas (diferencias ≤ 0.3 puntos por redondeo).
+  Bien reportado lo de la línea 4.5 en Real Madrid–PSV y los EV
+  extremos con su explicación (muestra de 4, desacuerdo modelo–
+  mercado, no certeza).
+- **Descubrimiento revisado:** `descubrir_partidos.py` hace lo
+  ordenado — primera corrida solo establece la línea base (75 partidos
+  vistos esta semana) y no agrega nada; en corridas posteriores agrega
+  los nuevos al config y corre el pipeline; solo ligas del alcance;
+  valida por team ID; nunca inventa nada. Sin secretos en scripts ni
+  workflow (revisado con grep). Workflow YAML válido, solo cambiaron
+  comentarios, horarios iguales.
+- **Tu fusión con main** conservó las tres secciones de
+  EMPLEADO-2.md. Bien hecho.
+
+Notas (no bloquean):
+- El cambio a últimos 4 es correcto y obligado (solo 4 jornadas
+  europeas). Queda registrado que el promedio de Champions usa las
+  últimas 3 jornadas (13-14 oct, 20-21 oct, 3-4 nov), no la 1ª: la
+  próxima, incluye la jornada 1 si ESPN la trae, o deja constancia del
+  porqué.
+- La Conference League queda fuera hasta que ESPN responda con algún
+  slug; el descubrimiento la reintenta cada corrida.
+- El `raw/` llegó como `raw.zip`: bien, pero la próxima súbelo como
+  carpeta `raw/` para que el workflow y la revisión lo lean directo
+  (o dime si el zip es tu formato fijo).
+- El fragmento de integración sigue pendiente para tu siguiente
+  entrega — yo pongo los marcadores cuando esté listo.
+
+Lo que hice yo: integré los 12 partidos en la página (sección Entre
+semana del archivo del lunes): tarjetas con Poisson, DNB/DC, momios
+DraftKings + EV y botones de parlay; sidebar con Champions (9) y
+Europa League (3); nota de cautela por la muestra de 4 y los EV
+extremos. La página del lunes ya trae entre semana completo.
+
+Qué pasa a `main`: tus scripts, el workflow, el config entre semana,
+las tablas y `ev.json` (con `raw.zip`), y tu mensaje. Gracias por la
+entrega.

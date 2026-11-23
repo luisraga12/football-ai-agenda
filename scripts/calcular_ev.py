@@ -76,7 +76,9 @@ def main():
     res = json.load(open(os.path.join(rawdir, 'poisson_result.json')))
     momios = json.load(open(os.path.join(rawdir, 'momios.json')))
     xg_por_partido = {(r['home'], r['away']): r for r in res['matches']}
-    DIAS = {'2026-11-27': '11/27 nov', '2026-11-28': '11/28 nov',
+    DIAS = {'2026-11-24': '11/24 nov', '2026-11-25': '11/25 nov',
+            '2026-11-26': '11/26 nov', '2026-11-27': '11/27 nov',
+            '2026-11-28': '11/28 nov',
             '2026-11-29': '11/29 nov', '2026-12-04': '12/04 dic',
             '2026-12-05': '12/05 dic', '2026-12-06': '12/06 dic'}
 
@@ -95,14 +97,19 @@ def main():
             continue
         mm = m['momios']
         candidatos = []  # (nombre, ev)
-        # 1X2
+        # 1X2 (blindaje, jefe 22 nov: un partido puede traer total/spread
+        # pero no moneyline; en ese caso no se calcula 1X2, no se rompe).
         ml = mm['moneyline']
-        evs_1x2 = {'1': ev(r['p1'], ml['home']),
-                   'X': ev(r['px'], ml['draw']),
-                   '2': ev(r['p2'], ml['away'])}
-        fila['mercados']['1X2'] = {'momios': ml, 'ev': evs_1x2}
-        candidatos += [('Local', evs_1x2['1']), ('Empate', evs_1x2['X']),
-                       ('Visita', evs_1x2['2'])]
+        if ml is not None:
+            evs_1x2 = {'1': ev(r['p1'], ml['home']),
+                       'X': ev(r['px'], ml['draw']),
+                       '2': ev(r['p2'], ml['away'])}
+            fila['mercados']['1X2'] = {'momios': ml, 'ev': evs_1x2}
+            candidatos += [('Local', evs_1x2['1']), ('Empate', evs_1x2['X']),
+                           ('Visita', evs_1x2['2'])]
+        else:
+            print(f"AVISO {home} vs {away}: trae total/spread pero no "
+                  "moneyline; el 1X2 no lleva EV.")
         # Total: P(over) para la linea publicada
         tot = mm['total']
         if tot:
@@ -131,6 +138,15 @@ def main():
                             ev_spr_local),
                            (f"Spread visitante {spr['away_linea']:+.1f}",
                             ev_spr_away)]
+        if not candidatos:
+            # No hay ningun mercado con EV (no deberia pasar: el momio
+            # solo es "con_momio" si trae al menos un mercado). Se deja
+            # sin mejor pick ni semaforo para que la validacion lo marque,
+            # en vez de inventar un EV.
+            print(f"AVISO {home} vs {away}: con momio pero sin ningun "
+                  "mercado con EV; queda sin semaforo.")
+            filas.append(fila)
+            continue
         mejor_nombre, mejor_ev = max(candidatos, key=lambda c: c[1])
         fila['mejor_pick'] = mejor_nombre
         fila['mejor_ev'] = mejor_ev
@@ -169,8 +185,8 @@ def main():
     L.append("**Método:** EV = probabilidad Poisson "
              f"(tabla-poisson-semana-{semana}.md) × momio decimal − 1. "
              "Semáforo: verde EV ≥ +5%, amarillo 0–+5%, rojo < 0%. La línea "
-             "del total varía por partido (2.5 o 3.5, la publicada por "
-             "DraftKings); el P(over) se calculó para esa línea desde los "
+             "del total varía por partido (la publicada por DraftKings: "
+             "2.5, 3.5 o 4.5); el P(over) se calculó para esa línea desde los "
              "xG. BTTS no tiene momio en esta fuente, por eso no lleva EV.")
     L.append("")
     L.append("| Fecha | Partido | 1X2 (decimal) | EV 1 / X / 2 | Total (línea) | "
@@ -182,8 +198,17 @@ def main():
             L.append(f"| {f['fecha_txt']} | {f['home']} vs {f['away']} | "
                      "pendiente | — | — | — | — | — | — | — | ⏳ Pendiente |")
             continue
-        ml = f['mercados']['1X2']['momios']
-        evs = f['mercados']['1X2']['ev']
+        m1x2 = f['mercados'].get('1X2')
+        if m1x2 is not None:
+            ml = m1x2['momios']
+            evs = m1x2['ev']
+            ml_txt = (f"{fmt_dec(ml['home'])} / {fmt_dec(ml['draw'])} / "
+                      f"{fmt_dec(ml['away'])}")
+            ml_ev = (f"{fmt_pct(evs['1'])} / {fmt_pct(evs['X'])} / "
+                     f"{fmt_pct(evs['2'])}")
+        else:
+            ml_txt = '—'
+            ml_ev = '—'
         tot = f['mercados'].get('total')
         spr = f['mercados'].get('spread')
         prov = f" ({f['proveedor']})" if f['proveedor'] != 'DraftKings' \
@@ -200,9 +225,7 @@ def main():
         icono = {'verde': '🟢 Verde', 'amarillo': '🟡 Amarillo',
                  'rojo': '🔴 Rojo'}[f['semaforo']]
         L.append(f"| {f['fecha_txt']} | {f['home']} vs {f['away']}{prov} | "
-                 f"{fmt_dec(ml['home'])} / {fmt_dec(ml['draw'])} / "
-                 f"{fmt_dec(ml['away'])} | {fmt_pct(evs['1'])} / "
-                 f"{fmt_pct(evs['X'])} / {fmt_pct(evs['2'])} | {tot_txt} | "
+                 f"{ml_txt} | {ml_ev} | {tot_txt} | "
                  f"{tot_ev} | {spr_txt} | {spr_ev} | {f['mejor_pick']} | "
                  f"{fmt_pct(f['mejor_ev'])} | {icono} |")
     n_verde = sum(1 for f in filas if f['semaforo'] == 'verde')
@@ -219,7 +242,7 @@ def main():
             f"{fmt_pct(f['mejor_ev'])}, {f['mejor_pick']})" for f in peores)
             + ".")
     L.append("")
-    L.append("**Advertencia:** el modelo Poisson usa solo los últimos 5 "
+    L.append("**Advertencia:** el modelo Poisson usa solo los últimos "
              "partidos por equipo y puede exagerar rachas; los EV extremos "
              "reflejan desacuerdo fuerte entre el modelo y el mercado, "
              "no una certeza.")
