@@ -1,12 +1,14 @@
 """Descarga los datos de ESPN para una semana (Football AI Agenda).
 
 Lee la configuracion de la semana (scripts/config/semana-N.json) y:
-  1. Descarga los scoreboards de cada liga y fecha, y VALIDA que los 16
+  1. Descarga los scoreboards de cada liga y fecha, y VALIDA que los
      partidos de la configuracion existan en ESPN (por ID de equipo).
      Si falta alguno, el script FALLA y no se calcula nada: no se inventa
      ningun dato (condicion 2 del jefe, 19 nov 2026).
   2. Descarga el schedule de cada equipo y toma sus ultimos 5 partidos de
-     liga completados hasta el cutoff de la configuracion.
+     liga o competicion completados hasta el cutoff de la configuracion
+     (en competiciones europeas solo hay 4 jornadas jugadas: se usan los
+     4 disponibles, con promedios por partido).
   3. Calcula los promedios de cada liga desde los scoreboards de las
      ultimas ~3 jornadas completadas antes del cutoff.
 
@@ -71,7 +73,7 @@ def main():
     rawdir = os.path.join(outdir, 'raw')
     os.makedirs(rawdir, exist_ok=True)
 
-    # ---- 1. Scoreboards: validar que los 16 partidos existan en ESPN ----
+    # ---- 1. Scoreboards: validar que los partidos existan en ESPN ----
     found = {}
     for lg in ligas:
         for d in fechas:
@@ -115,7 +117,8 @@ def main():
         sys.exit(1)
     with open(os.path.join(rawdir, 'verified_events.json'), 'w') as f:
         json.dump(verificados, f, indent=1, ensure_ascii=False)
-    print(f"\n16/16 partidos verificados en ESPN.")
+    print(f"\n{len(verificados)}/{len(partidos)} partidos verificados "
+          "en ESPN.")
 
     # ---- 2. Ultimos 5 partidos de liga por equipo ----
     equipos = {}
@@ -168,8 +171,30 @@ def main():
         cal = json.load(open(os.path.join(
             rawdir, f"scoreboard_{lg}_{fechas[0].replace('-', '')}.json"))
         )['leagues'][0]['calendar']
-        past = sorted([c for c in cal if c[:10] < cutoff_date])
-        use_dates = past[-9:]  # ultimas ~3 jornadas
+        # En ligas domesticas el calendario es una lista de fechas
+        # ("2026-11-08"); en competiciones UEFA es una lista de fases
+        # (dicts con startDate/endDate). En ese caso las jornadas pasadas
+        # se sacan de los schedules ya descargados: las fechas distintas
+        # de partidos completados antes del cutoff (ultimas 6 fechas =
+        # ~3 jornadas, cada jornada abarca 2 dias).
+        if cal and isinstance(cal[0], str):
+            past = sorted([c for c in cal if c[:10] < cutoff_date])
+            use_dates = past[-9:]  # ultimas ~3 jornadas
+        else:
+            fechas_pasadas = set()
+            for tid, (tlg, _name) in equipos.items():
+                if tlg != lg:
+                    continue
+                sched = json.load(open(os.path.join(
+                    rawdir, f"schedule_{tlg}_{tid}.json")))
+                for e in sched.get('events', []):
+                    comp = e['competitions'][0]
+                    st = comp.get('status', {}).get('type', {}).get('name')
+                    dt = datetime.fromisoformat(
+                        e['date'].replace('Z', '+00:00'))
+                    if st == 'STATUS_FULL_TIME' and dt <= cutoff:
+                        fechas_pasadas.add(dt.strftime('%Y-%m-%d'))
+            use_dates = sorted(fechas_pasadas)[-6:]
         tot_m = tot_h = tot_a = 0
         per_date = []
         for c in use_dates:

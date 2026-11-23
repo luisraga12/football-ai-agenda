@@ -1,17 +1,22 @@
 """Orquestador de la automatizacion semanal (Football AI Agenda).
 
-Corre los cinco pasos en orden y valida el resultado:
-  1. recolectar_datos.py  (descarga ESPN + valida los 16 partidos)
+Corre los pasos en orden y valida el resultado:
+  0. descubrir_partidos.py (partidos nuevos publicados tarde en ESPN:
+     primera corrida solo establece la linea base; en corridas
+     posteriores agrega al config los partidos que aparecen nuevos)
+  1. recolectar_datos.py  (descarga ESPN + valida los partidos)
   2. calcular_poisson.py   (Poisson con distribucion completa)
   3. generar_tabla.py      (escribe la tabla .md)
   4. recolectar_momios.py  (momios DraftKings/Bet 365 de ESPN)
   5. calcular_ev.py        (EV por mercado, semaforo y mejor pick)
 
 Validaciones al final (no se publica nada si fallan):
-  - los 16 partidos existen en ESPN (lo garantiza el paso 1: si falta
+  - los partidos existen en ESPN (lo garantiza el paso 1: si falta
     uno, el paso 1 falla y este script no sigue)
-  - cada equipo tiene 5 partidos en su ultimo-5
-  - el 1X2 suma 100% (+-0.05) en los 16 partidos
+  - cada equipo tiene 5 partidos en su ultimo-5 (4 en competiciones
+    europeas, donde solo se han jugado 4 jornadas: se acepta n>=4 y se
+    avisa; menos de 4 es error)
+  - el 1X2 suma 100% (+-0.05) en los partidos
   - no hay valores nulos en la tabla
   - cada partido con momio tiene EV y semaforo; ningun partido sin
     momio ("pendiente") tiene EV inventado
@@ -48,6 +53,10 @@ def main():
     semana = cfg['semana']
     outdir = f"data/semana-{semana}"
 
+    run([sys.executable, 'scripts/descubrir_partidos.py',
+         '--config', args.config, '--out', outdir])
+    # El descubrimiento pudo agregar partidos al config: los pasos
+    # siguientes leen el config de disco, asi que lo ven actualizado.
     run([sys.executable, 'scripts/recolectar_datos.py',
          '--config', args.config, '--out', outdir])
     run([sys.executable, 'scripts/calcular_poisson.py',
@@ -66,8 +75,13 @@ def main():
     evr = json.load(open(os.path.join(rawdir, 'ev_result.json')))
     problemas = []
     for name, t in teams.items():
-        if t['n'] != 5:
-            problemas.append(f"{name}: ultimo-5 con {t['n']} partidos, no 5")
+        if t['n'] < 4:
+            problemas.append(f"{name}: ultimo-5 con {t['n']} partidos, "
+                             "menos de 4")
+        elif t['n'] < 5:
+            print(f"AVISO: {name}: ultimo-5 con {t['n']} partidos "
+                  "(competicion con solo 4 jornadas jugadas; se usan "
+                  "promedios por partido).")
     for r in res['matches']:
         s = r['p1'] + r['px'] + r['p2']
         if abs(s - 100) > 0.05:

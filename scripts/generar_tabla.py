@@ -2,7 +2,7 @@
 
 Lee data/semana-N/raw/poisson_result.json y escribe
 data/semana-N/tabla-poisson-semana-N.md con:
-  (a) tabla de los 16 partidos, (b) tabla de calculo por equipo,
+  (a) tabla de los partidos, (b) tabla de calculo por equipo,
   (c) promedios de liga usados, (d) fuentes ESPN consultadas,
   (e) datos no verificados y partidos excluidos.
 
@@ -31,6 +31,18 @@ def main():
     LN = cfg['ligas']
     fechas_txt = f"{cfg['fechas'][0]} al {cfg['fechas'][-1]}"
     cutoff = cfg['cutoff'][:10]
+    n_partidos = len(rows)
+    n_equipos = len(teams)
+    # n de partidos por equipo usados (5 en ligas; 4 en competiciones
+    # europeas, donde solo se han jugado 4 jornadas).
+    n_usados = min(t['n'] for t in teams.values())
+    # Ambito: "liga" en domesticas, "competicion" en europeas.
+    ambito = ('competición' if all(lg.startswith('uefa.')
+                                   for lg in avgs) else 'liga')
+    # Orden por fecha+hora (pendiente del jefe, 22 nov 2026).
+    orden_fecha = {f: i for i, f in enumerate(cfg['fechas'])}
+    rows = sorted(rows, key=lambda r: (
+        orden_fecha.get(r.get('fecha_iso', ''), 99), r['hora']))
 
     def last5_str(name):
         ms = teams[name]['matches']
@@ -48,10 +60,11 @@ def main():
              "**Fuente de datos:** ESPN, API pública sin clave.")
     L.append("**Método:** modelo Poisson con goles esperados (xG) por equipo, "
              "distribución completa (0–20 goles), P(1)/P(X)/P(2) suman 100%.")
-    L.append(f"**Fecha de cálculo:** {cutoff}. Últimos 5 partidos por equipo: "
-             f"partidos de liga completados hasta el {cutoff}.")
+    L.append(f"**Fecha de cálculo:** {cutoff}. Últimos {n_usados} partidos "
+             f"por equipo: partidos de {ambito} completados hasta el "
+             f"{cutoff}.")
     L.append("")
-    L.append("## (a) Tabla de los 16 partidos")
+    L.append(f"## (a) Tabla de los {n_partidos} partidos")
     L.append("")
     L.append("| Fecha | Hora (CST) | Liga | Local | Visitante | xG local | xG visit. | "
              "P(1) | P(X) | P(2) | P(+2.5) | P(ambos anotan) |")
@@ -69,14 +82,18 @@ def main():
              f"{statistics.mean(r['px'] for r in rows):.1f}%, P(2) media "
              f"{statistics.mean(r['p2'] for r in rows):.1f}%.")
     L.append("")
-    L.append("## (b) Tabla de cálculo por equipo (últimos 5 partidos de liga)")
+    L.append(f"## (b) Tabla de cálculo por equipo (últimos {n_usados} "
+             f"partidos de {ambito})")
     L.append("")
-    L.append("GF = goles a favor, GA = goles en contra en los últimos 5. "
-             "Ataque = (GF/5) / prom. por equipo de la liga; "
-             "defensa = (GA/5) / prom. por equipo de la liga.")
+    L.append(f"GF = goles a favor, GA = goles en contra en los últimos "
+             f"{n_usados}. Ataque = (GF/{n_usados}) / prom. por equipo de "
+             f"la {ambito}; defensa = (GA/{n_usados}) / prom. por equipo "
+             f"de la {ambito}.")
     L.append("")
-    L.append("| Liga | Equipo | GF (5) | GA (5) | GF/partido | GA/partido | Ataque | "
-             "Defensa | Últimos 5 (fecha, H/A, rival, marcador desde el equipo) |")
+    L.append(f"| Liga | Equipo | GF ({n_usados}) | GA ({n_usados}) | "
+             "GF/partido | GA/partido | Ataque | "
+             f"Defensa | Últimos {n_usados} (fecha, H/A, rival, marcador "
+             "desde el equipo) |")
     L.append("|---|---|---|---|---|---|---|---|---|")
     for name in sorted(teams, key=lambda n: (teams[n]['league'], n)):
         c = teams[name]
@@ -106,8 +123,8 @@ def main():
     L.append("")
     L.append("- Prom. por equipo = prom. goles/partido / 2 (cada partido "
              "reparte sus goles entre dos equipos).")
-    L.append("- Ataque = (GF/5) / prom. por equipo; "
-             "defensa = (GA/5) / prom. por equipo.")
+    L.append(f"- Ataque = (GF/{n_usados}) / prom. por equipo; "
+             f"defensa = (GA/{n_usados}) / prom. por equipo.")
     L.append("- xG local = prom. local de la liga × ataque local × defensa "
              "visitante; xG visitante = prom. visitante de la liga × ataque "
              "visitante × defensa local.")
@@ -120,13 +137,14 @@ def main():
     L.append("")
     L.append(f"- Scoreboard por liga y día, {fechas_txt}: "
              "`site.api.espn.com/apis/site/v2/sports/soccer/{{liga}}/scoreboard"
-             "?dates={{AAAAMMDD}}` — los 16 partidos aparecen como "
+             "?dates={{AAAAMMDD}}` — los {n_partidos} partidos aparecen como "
              "STATUS_SCHEDULED con la fecha y hora exactas de la configuración "
              "(horas convertidas de UTC a CST, UTC-6).")
-    L.append("- Schedule por equipo (últimos 5 completados): "
+    L.append("- Schedule por equipo (últimos partidos completados): "
              "`site.api.espn.com/apis/site/v2/sports/soccer/{liga}/teams/{id}"
-             "/schedule` — 32 equipos, 5 partidos completados cada uno, todos "
-             "de liga, hasta el cutoff.")
+             "/schedule` — "
+             f"{n_equipos} equipos, {n_usados} partidos completados cada uno, "
+             f"todos de {ambito}, hasta el cutoff.")
     L.append("- Scoreboards de jornadas pasadas para promedios de liga: "
              "9 fechas por liga (ver tabla c).")
     L.append("- Los archivos JSON crudos de todas estas consultas están en "
@@ -134,17 +152,19 @@ def main():
     L.append("")
     L.append("## (e) Datos no verificados y partidos excluidos")
     L.append("")
-    L.append("- **Ningún partido quedó fuera:** los 16 partidos de la lista se "
-             "verificaron en el scoreboard de ESPN con fecha, hora y equipos "
-             "exactos antes de calcular.")
-    L.append("- **Valores extremos por muestra corta (5 partidos, sin tope "
-             "aplicado):** son correctos según los datos, pero una muestra de "
-             "5 partidos exagera rachas; conviene leer los favoritos más "
-             "extremos con cautela.")
-    L.append("- **Últimos 5 = solo liga:** el schedule de ESPN por liga "
-             "devuelve partidos de esa liga; no se mezclaron copas ni Champions.")
+    L.append(f"- **Ningún partido quedó fuera:** los {n_partidos} partidos "
+             "de la lista se verificaron en el scoreboard de ESPN con fecha, "
+             "hora y equipos exactos antes de calcular.")
+    L.append(f"- **Valores extremos por muestra corta ({n_usados} partidos, "
+             "sin tope aplicado):** son correctos según los datos, pero una "
+             f"muestra de {n_usados} partidos exagera rachas; conviene leer "
+             "los favoritos más extremos con cautela.")
+    L.append(f"- **Últimos {n_usados} = solo {ambito}:** el schedule de ESPN "
+             f"por {ambito} devuelve partidos de esa {ambito}; no se "
+             "mezclaron otras competiciones.")
     L.append("- **Sin momios ni cuotas en esta tabla:** solo probabilidades "
-             "propias (Poisson). Los momios llegan en la Semana 3.")
+             "propias (Poisson). Los momios y el EV están en la tabla de "
+             "momios de la misma semana.")
     L.append("")
 
     out = os.path.join(outdir, f"tabla-poisson-semana-{semana}.md")

@@ -99,11 +99,13 @@ def expected_goals(avg_home, avg_away, ataque_home, defensa_away,
             avg_away * ataque_away * defensa_home)
 
 
-def attack_defense(gf5, ga5, avg_por_equipo):
-    """Ataque y defensa desde los ultimos 5 partidos de liga.
+def attack_defense(gf, ga, avg_por_equipo, n=5):
+    """Ataque y defensa desde los ultimos n partidos de la competicion.
 
-    Denominador = promedio de goles POR EQUIPO de la liga (prom. total / 2).
-    Usar el promedio total como denominador dejaria los xG a ~1/4 de su
-    valor real (metodologia aprobada por el jefe, 19 nov 2026).
+    Denominador = promedio de goles POR EQUIPO de la competicion (prom.
+    total / 2). Usar el promedio total como denominador dejaria los xG
+    a ~1/4 de su valor real (metodologia aprobada por el jefe, 19 nov
+    2026). n es el numero de partidos usados (5 en ligas domesticas;
+    4 en competiciones europeas, donde solo se han jugado 4 jornadas).
     """
-    return (gf5 / 5) / avg_por_equipo, (ga5 / 5) / avg_por_equipo
+    return (gf / n) / avg_por_equipo, (ga / n) / avg_por_equipo

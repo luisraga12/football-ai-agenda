@@ -207,9 +207,10 @@ def main():
             ml = momios['moneyline']
             tot = momios['total']
             spr = momios['spread']
+            ml_txt = (f"{ml['home']:.2f}/{ml['draw']:.2f}/{ml['away']:.2f}"
+                      if ml else 'sin 1X2')
             print(f"OK   {v['date_cst']} CST | {v['home']} vs {v['away']} | "
-                  f"{proveedor} | 1X2 "
-                  f"{ml['home']:.2f}/{ml['draw']:.2f}/{ml['away']:.2f} | "
+                  f"{proveedor} | 1X2 {ml_txt} | "
                   f"total {tot['linea'] if tot else '—'} | "
                   f"spread {spr['home_linea'] if spr else '—'}")
             resultados.append({**p, 'fecha_cst': v['date_cst'],
