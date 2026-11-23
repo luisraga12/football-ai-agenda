@@ -129,9 +129,33 @@
   .chip strong{color:var(--ink)}
   .chip.ev{background:var(--accent-soft);color:var(--accent-strong)}
   .chip.ev strong{color:var(--accent-strong)}
+  .chip.ev-mid{background:var(--amber-soft);color:var(--amber)}
+  .chip.ev-mid strong{color:var(--amber)}
+  .chip.ev-bad{background:var(--live-soft);color:var(--live)}
+  .chip.ev-bad strong{color:var(--live)}
+  .odds{margin-top:14px;background:var(--surface-2);border-radius:14px;padding:12px 14px}
+  .odds-add{display:flex;justify-content:flex-end;margin-top:10px}
+  .sema-status.ok{background:var(--accent-soft)}
+  .sema-status.ok b{color:var(--accent-strong)}
   .add-btn{margin-left:auto;border:0;border-radius:999px;background:var(--ink);color:var(--bg);font-weight:800;font-size:.84rem;padding:10px 16px;min-height:44px}
   .add-btn[disabled]{background:var(--accent);color:var(--on-accent);cursor:default}
   .empty{display:none;background:var(--surface);border:1px dashed var(--line);border-radius:var(--radius);padding:26px;text-align:center;color:var(--muted);font-weight:700}
+
+  /* Derived markets: DNB + doble oportunidad (del 1X2, sin momio) */
+  .derived{margin-top:14px;background:var(--surface-2);border-radius:14px;padding:12px 14px}
+  .derived-h{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:.72rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .derived-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+  @media (max-width:560px){.derived-grid{grid-template-columns:repeat(3,1fr)}}
+  .dcell{background:var(--surface);border-radius:10px;padding:8px 6px;text-align:center}
+  .dcell span{display:block;font-size:.66rem;font-weight:800;letter-spacing:.04em;color:var(--muted);text-transform:uppercase}
+  .dcell b{display:block;font-family:"Archivo",sans-serif;font-size:1.02rem;font-weight:900;margin-top:2px}
+  .chip.pending{background:var(--amber-soft);color:var(--amber)}
+  .chip.pending strong{color:var(--amber)}
+  .badge-pending{background:var(--amber-soft);color:var(--amber)}
+  .dot.pending{background:#9AA78E}
+  .sema-status{display:flex;gap:10px;background:var(--amber-soft);border-radius:12px;padding:12px 13px;margin-bottom:8px}
+  .sema-status b{font-size:.9rem;color:var(--amber)}
+  .sema-status p{font-size:.82rem;color:var(--ink-2)}
 
   /* Rail / IA panel */
   .rail{display:flex;flex-direction:column;gap:18px}
@@ -150,6 +174,9 @@
   .slip-item span{font-size:.78rem;color:var(--muted);font-weight:700}
   .slip-item button{margin-left:auto;background:var(--surface-2);border:0;border-radius:8px;width:36px;height:36px;min-height:36px;font-weight:900;color:var(--ink-2);flex:0 0 36px}
   .slip-totals{margin-top:12px;background:var(--surface-2);border-radius:12px;padding:13px 14px;display:grid;gap:7px}
+  .slip-totals[hidden]{display:none}
+  .clear-btn{border:1px solid var(--line);background:var(--surface);color:var(--ink-2);border-radius:999px;padding:10px 16px;font-weight:800;font-size:.86rem}
+  .clear-btn:hover{background:var(--live-soft);color:var(--live);border-color:var(--live)}
   .slip-totals div{display:flex;justify-content:space-between;font-size:.86rem;font-weight:700;color:var(--ink-2)}
   .slip-totals div b{color:var(--ink);font-family:"Archivo",sans-serif}
   .slip-verdict{margin-top:10px;font-size:.86rem;font-weight:800;padding:11px 13px;border-radius:12px;background:var(--accent-soft);color:var(--accent-strong)}
@@ -242,7 +269,7 @@
   <div class="hero-in wrap">
     <div class="hero-top">
       <span class="live-dot"><i></i> MODO EN VIVO · TU ESTILO</span>
-      <span class="hero-date">Jueves 19 de noviembre de 2026 · Ciudad Victoria, MX</span>
+      <span class="hero-date">27–29 de noviembre de 2026 · Ciudad Victoria, MX</span>
     </div>
     <h1>Tu agenda de fútbol, <em>con cerebro.</em></h1>
     <p class="sub">Lo mejor de dos mundos: la <strong>agenda limpia y rápida de 365Scores</strong> y las <strong>tarjetas editoriales de OneFootball</strong>, con una capa de IA encima que compara probabilidad contra momio y solo te avisa cuando hay valor. Sin streams pirata, sin copiar a nadie: <strong>con tus ligas, tus mercados y tus reglas.</strong></p>
@@ -259,10 +286,10 @@
 <div class="toolbar">
   <div class="wrap toolbar-in">
     <div class="days" role="group" aria-label="Día">
-      <button class="day" type="button" aria-pressed="true">Hoy<small>Jue 19</small></button>
-      <button class="day" type="button" aria-pressed="false">Viernes<small>Vie 20</small></button>
-      <button class="day" type="button" aria-pressed="false">Sábado<small>Sáb 21</small></button>
-      <button class="day" type="button" aria-pressed="false">Domingo<small>Dom 22</small></button>
+      <button class="day" type="button" data-day="all" aria-pressed="true">Todos<small>27–29 nov</small></button>
+      <button class="day" type="button" data-day="vie" aria-pressed="false">Viernes<small>Vie 27</small></button>
+      <button class="day" type="button" data-day="sab" aria-pressed="false">Sábado<small>Sáb 28</small></button>
+      <button class="day" type="button" data-day="dom" aria-pressed="false">Domingo<small>Dom 29</small></button>
     </div>
     <div class="tabs" role="group" aria-label="Filtrar partidos por estado">
       <button class="tab" type="button" data-status="all" aria-pressed="true">Todos</button>
@@ -280,362 +307,950 @@
     <aside class="panel" aria-label="Tus ligas">
       <div class="panel-h"><h2>Tus ligas</h2><span>Las de Luis</span></div>
       <ul class="leagues" id="leagueList">
-        <li><button class="league-btn" type="button" data-league="all" aria-pressed="true"><span class="flag">ALL</span> Todas <span class="cnt">16</span></button></li>
-        <li><button class="league-btn" type="button" data-league="ligamx" aria-pressed="false"><span class="flag">MX</span> Liga MX <span class="cnt">6</span></button></li>
-        <li><button class="league-btn" type="button" data-league="premier" aria-pressed="false"><span class="flag">ENG</span> Premier League <span class="cnt">3</span></button></li>
-        <li><button class="league-btn" type="button" data-league="laliga" aria-pressed="false"><span class="flag">ESP</span> LaLiga <span class="cnt">5</span></button></li>
-        <li><button class="league-btn" type="button" data-league="seriea" aria-pressed="false"><span class="flag">ITA</span> Serie A <span class="cnt">1</span></button></li>
-        <li><button class="league-btn" type="button" data-league="bundes" aria-pressed="false"><span class="flag">GER</span> Bundesliga <span class="cnt">1</span></button></li>
+        <li><button class="league-btn" type="button" data-league="all" aria-pressed="true"><span class="flag">ALL</span> Todas <span class="cnt">28</span></button></li>
+        <li><button class="league-btn" type="button" data-league="premier" aria-pressed="false"><span class="flag">ENG</span> Premier League <span class="cnt">4</span></button></li>
+        <li><button class="league-btn" type="button" data-league="laliga" aria-pressed="false"><span class="flag">ESP</span> LaLiga <span class="cnt">4</span></button></li>
+        <li><button class="league-btn" type="button" data-league="seriea" aria-pressed="false"><span class="flag">ITA</span> Serie A <span class="cnt">4</span></button></li>
+        <li><button class="league-btn" type="button" data-league="bundes" aria-pressed="false"><span class="flag">GER</span> Bundesliga <span class="cnt">4</span></button></li>
+        <li><button class="league-btn" type="button" data-league="ucl" aria-pressed="false"><span class="flag">UCL</span> Champions League <span class="cnt">9</span></button></li>
+        <li><button class="league-btn" type="button" data-league="uel" aria-pressed="false"><span class="flag">UEL</span> Europa League <span class="cnt">3</span></button></li>
       </ul>
       <p class="rule-note">También en tu radar: Eredivisie, Süper Lig, Ligue 1, Conference League, Nations League, eliminatorias, Concachampions y Leagues Cup. Se activan en la agenda cuando hay jornada.</p>
     </aside>
 
     <!-- AGENDA -->
     <main>
+      <!-- ENTRE SEMANA (Semana 2: mar 24 – jue 26 nov; sección del Empleado 2, portada por el jefe) -->
       <div class="agenda-head">
-        <h2>Agenda del fin de semana · 20–22 nov</h2>
-        <span class="demo-note">Probabilidades Poisson verificadas por el jefe 19 nov 2026 · Partidos del 20–22 nov · Horas de Monterrey (CST)</span>
+        <h2>Entre semana · 24–26 nov</h2>
+        <span class="demo-note">Champions y Europa League · Horas de Monterrey (CST)</span>
       </div>
-      <p class="rule-note"><strong>Tablas al 18 nov 2026:</strong> Liga MX Apertura — Cruz Azul líder, 32 pts en 16 partidos, 2 puntos sobre América; Brasileirão — Flamengo 1º 76 pts, Palmeiras 2º 73, Cruzeiro 3º 60 (antes de la jornada 35).</p>
-      <p class="rule-note"><strong>Modelo Poisson · Semana 1:</strong> Probabilidades Poisson con los últimos 5 partidos de liga por equipo (ESPN, 19 nov 2026). Una muestra de 5 partidos puede exagerar rachas: los favoritos más extremos (Real Madrid 83.8%, Atlético Madrid 78.7%, Liverpool 76.3%) y el caso de Newcastle, con solo 3.8% de local (xG 0.16), conviene leerlos con cautela. Sin momios: llegan en la Semana 3.</p>
-      <div id="matchList">
+      <div class="days" role="group" aria-label="Día entre semana" style="margin-bottom:14px">
+        <button class="day" type="button" data-day="all" aria-pressed="false">Todos<small>24–26 nov</small></button>
+        <button class="day" type="button" data-day="mar" aria-pressed="false">Martes<small>Mar 24</small></button>
+        <button class="day" type="button" data-day="mie" aria-pressed="false">Miércoles<small>Mié 25</small></button>
+        <button class="day" type="button" data-day="jue" aria-pressed="false">Jueves<small>Jue 26</small></button>
+      </div>
+      <p class="rule-note"><strong>Modelo Poisson · Semana 2 entre semana:</strong> probabilidades con los últimos 4 partidos de cada equipo en su competición (solo 4 jornadas europeas jugadas antes del 22 nov 2026; promedios de la competición: Champions 4.11 goles/partido, Europa League 2.97). Una muestra de 4 partidos puede exagerar rachas: los EV más extremos (Club Brugge Local +149.1%, Inter–Stuttgart Visita +128.5%) son desacuerdo entre el modelo y el mercado, no certeza. Momios DraftKings del 22 nov 2026 (ESPN) con EV contra el modelo Poisson. <strong>Estado entre semana: 12 de 12 partidos con valor (EV+).</strong></p>
+      <div id="mwList">
 
-
-        <article class="match" data-league="bundes" data-status="upcoming" data-value="0">
+        <article class="match" data-day="mar" data-league="ucl" data-status="upcoming" data-value="1">
           <div class="match-top">
-            <span class="m-league">Bundesliga</span>
-            <span class="m-time num">Vie 20 · 13:30</span>
+            <span class="m-league">Champions League</span>
+            <span class="m-time num">Mar 24 · 11:45</span>
           </div>
           <div class="teams">
-            <div class="team"><span class="crest c-a">BAY</span><b>Bayern München</b><span class="score dim num">—</span></div>
-            <div class="team"><span class="crest c-b">COL</span><b>1. FC Köln</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-a">GAL</span><b>Galatasaray</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-b">AVL</span><b>Aston Villa</b><span class="score dim num">—</span></div>
           </div>
           <div class="match-foot">
-            <span class="chip">Datos reales · 20–22 nov</span>
-            <span class="chip">Momios: Semana 3</span>
+            <span class="chip">Datos reales · 24–26 nov</span>
+            <span class="chip">Momios DraftKings · 22 nov</span>
           </div>
           <div class="match-foot">
-            <span class="chip">Modelo Poisson · Semana 1</span>
-            <span class="chip">1X2: 75.9% · 16.1% · 8.0%</span>
-            <span class="chip">+2.5 goles: 55.4%</span>
-            <span class="chip">BTTS: 40.5%</span>
+            <span class="chip">Modelo Poisson · Semana 2 entre semana</span>
+            <span class="chip">1X2: 18.1% · 15.9% · 66.0%</span>
+            <span class="chip">+2.5 goles: 83.5%</span>
+            <span class="chip">BTTS: 75.6%</span>
+            <span class="chip ev">Semáforo EV · <strong>Verde · Visita +55.1%</strong></span>
           </div>
+          <div class="derived" aria-label="Mercados derivados del 1X2: apuesta sin empate y doble oportunidad">
+            <div class="derived-h"><span>Derivados del 1X2</span><span>DNB · Doble oportunidad</span></div>
+            <div class="derived-grid">
+              <div class="dcell"><span>DNB Local</span><b class="num">21.5%</b></div>
+              <div class="dcell"><span>DNB Visita</span><b class="num">78.5%</b></div>
+              <div class="dcell"><span>1X</span><b class="num">34.0%</b></div>
+              <div class="dcell"><span>12</span><b class="num">84.1%</b></div>
+              <div class="dcell"><span>X2</span><b class="num">81.9%</b></div>
+            </div>
+          </div>
+<div class="odds" aria-label="Momios reales y valor esperado"><div class="derived-h"><span>Momios DraftKings · 22 nov 2026</span><span>EV = prob. × momio − 1</span></div><div class="derived-grid"><div class="dcell"><span>Local 2.65</span><b class="num" style="color:var(--live)">-51.9%</b></div><div class="dcell"><span>Empate 4.00</span><b class="num" style="color:var(--live)">-36.5%</b></div><div class="dcell"><span>Visita 2.35</span><b class="num" style="color:var(--accent-strong)">+55.1%</b></div><div class="dcell"><span>Más 3.5 1.91</span><b class="num" style="color:var(--accent-strong)">+28.1%</b></div><div class="dcell"><span>Menos 3.5 1.87</span><b class="num" style="color:var(--live)">-38.5%</b></div></div><div class="odds-add"><button class="add-btn" type="button" data-pick="Galatasaray vs Aston Villa · Visita" data-odds="2.35" data-prob="66.0">Sumar al parlay</button></div></div>
         </article>
 
-        <article class="match" data-league="laliga" data-status="upcoming" data-value="0">
+        <article class="match" data-day="mar" data-league="ucl" data-status="upcoming" data-value="1">
           <div class="match-top">
-            <span class="m-league">LaLiga</span>
-            <span class="m-time num">Vie 20 · 14:00</span>
+            <span class="m-league">Champions League</span>
+            <span class="m-time num">Mar 24 · 14:00</span>
           </div>
           <div class="teams">
-            <div class="team"><span class="crest c-c">ATH</span><b>Athletic Club</b><span class="score dim num">—</span></div>
-            <div class="team"><span class="crest c-d">ESP</span><b>Espanyol</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-a">ARS</span><b>Arsenal</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-b">BVB</span><b>Borussia Dortmund</b><span class="score dim num">—</span></div>
           </div>
           <div class="match-foot">
-            <span class="chip">Datos reales · 20–22 nov</span>
-            <span class="chip">Momios: Semana 3</span>
+            <span class="chip">Datos reales · 24–26 nov</span>
+            <span class="chip">Momios DraftKings · 22 nov</span>
           </div>
           <div class="match-foot">
-            <span class="chip">Modelo Poisson · Semana 1</span>
-            <span class="chip">1X2: 56.9% · 30.0% · 13.2%</span>
-            <span class="chip">+2.5 goles: 24.3%</span>
-            <span class="chip">BTTS: 25.7%</span>
+            <span class="chip">Modelo Poisson · Semana 2 entre semana</span>
+            <span class="chip">1X2: 55.0% · 28.7% · 16.3%</span>
+            <span class="chip">+2.5 goles: 29.8%</span>
+            <span class="chip">BTTS: 32.4%</span>
+            <span class="chip ev">Semáforo EV · <strong>Verde · Menos 2.5 +57.9%</strong></span>
           </div>
+          <div class="derived" aria-label="Mercados derivados del 1X2: apuesta sin empate y doble oportunidad">
+            <div class="derived-h"><span>Derivados del 1X2</span><span>DNB · Doble oportunidad</span></div>
+            <div class="derived-grid">
+              <div class="dcell"><span>DNB Local</span><b class="num">77.1%</b></div>
+              <div class="dcell"><span>DNB Visita</span><b class="num">22.9%</b></div>
+              <div class="dcell"><span>1X</span><b class="num">83.7%</b></div>
+              <div class="dcell"><span>12</span><b class="num">71.3%</b></div>
+              <div class="dcell"><span>X2</span><b class="num">45.0%</b></div>
+            </div>
+          </div>
+<div class="odds" aria-label="Momios reales y valor esperado"><div class="derived-h"><span>Momios DraftKings · 22 nov 2026</span><span>EV = prob. × momio − 1</span></div><div class="derived-grid"><div class="dcell"><span>Local 1.38</span><b class="num" style="color:var(--live)">-23.9%</b></div><div class="dcell"><span>Empate 5.00</span><b class="num" style="color:var(--accent-strong)">+43.5%</b></div><div class="dcell"><span>Visita 8.00</span><b class="num" style="color:var(--accent-strong)">+30.4%</b></div><div class="dcell"><span>Más 2.5 1.65</span><b class="num" style="color:var(--live)">-51.0%</b></div><div class="dcell"><span>Menos 2.5 2.25</span><b class="num" style="color:var(--accent-strong)">+57.9%</b></div></div><div class="odds-add"><button class="add-btn" type="button" data-pick="Arsenal vs Borussia Dortmund · Menos 2.5" data-odds="2.25" data-prob="70.1">Sumar al parlay</button></div></div>
         </article>
 
-        <article class="match" data-league="ligamx" data-status="upcoming" data-value="0">
+        <article class="match" data-day="mar" data-league="ucl" data-status="upcoming" data-value="1">
           <div class="match-top">
-            <span class="m-league">Liga MX</span>
-            <span class="m-time num">Vie 20 · 19:00</span>
+            <span class="m-league">Champions League</span>
+            <span class="m-time num">Mar 24 · 14:00</span>
           </div>
           <div class="teams">
-            <div class="team"><span class="crest c-e">PUE</span><b>Puebla</b><span class="score dim num">—</span></div>
-            <div class="team"><span class="crest c-f">ASL</span><b>Atlético San Luis</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-a">MCI</span><b>Manchester City</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-b">NAP</span><b>Napoli</b><span class="score dim num">—</span></div>
           </div>
           <div class="match-foot">
-            <span class="chip">Datos reales · 20–22 nov</span>
-            <span class="chip">Momios: Semana 3</span>
+            <span class="chip">Datos reales · 24–26 nov</span>
+            <span class="chip">Momios DraftKings · 22 nov</span>
           </div>
           <div class="match-foot">
-            <span class="chip">Modelo Poisson · Semana 1</span>
-            <span class="chip">1X2: 26.1% · 33.1% · 40.8%</span>
-            <span class="chip">+2.5 goles: 25.4%</span>
-            <span class="chip">BTTS: 33.0%</span>
+            <span class="chip">Modelo Poisson · Semana 2 entre semana</span>
+            <span class="chip">1X2: 88.4% · 6.9% · 4.7%</span>
+            <span class="chip">+2.5 goles: 91.4%</span>
+            <span class="chip">BTTS: 67.8%</span>
+            <span class="chip ev">Semáforo EV · <strong>Verde · Más 3.5 +53.2%</strong></span>
           </div>
+          <div class="derived" aria-label="Mercados derivados del 1X2: apuesta sin empate y doble oportunidad">
+            <div class="derived-h"><span>Derivados del 1X2</span><span>DNB · Doble oportunidad</span></div>
+            <div class="derived-grid">
+              <div class="dcell"><span>DNB Local</span><b class="num">95.0%</b></div>
+              <div class="dcell"><span>DNB Visita</span><b class="num">5.0%</b></div>
+              <div class="dcell"><span>1X</span><b class="num">95.3%</b></div>
+              <div class="dcell"><span>12</span><b class="num">93.1%</b></div>
+              <div class="dcell"><span>X2</span><b class="num">11.6%</b></div>
+            </div>
+          </div>
+<div class="odds" aria-label="Momios reales y valor esperado"><div class="derived-h"><span>Momios DraftKings · 22 nov 2026</span><span>EV = prob. × momio − 1</span></div><div class="derived-grid"><div class="dcell"><span>Local 1.26</span><b class="num" style="color:var(--accent-strong)">+11.6%</b></div><div class="dcell"><span>Empate 6.50</span><b class="num" style="color:var(--live)">-54.9%</b></div><div class="dcell"><span>Visita 10.00</span><b class="num" style="color:var(--live)">-53.1%</b></div><div class="dcell"><span>Más 3.5 1.91</span><b class="num" style="color:var(--accent-strong)">+53.2%</b></div><div class="dcell"><span>Menos 3.5 1.91</span><b class="num" style="color:var(--live)">-62.3%</b></div></div><div class="odds-add"><button class="add-btn" type="button" data-pick="Manchester City vs Napoli · Más 3.5" data-odds="1.91" data-prob="80.3">Sumar al parlay</button></div></div>
         </article>
 
-        <article class="match" data-league="ligamx" data-status="upcoming" data-value="0">
+        <article class="match" data-day="mar" data-league="ucl" data-status="upcoming" data-value="1">
           <div class="match-top">
-            <span class="m-league">Liga MX</span>
-            <span class="m-time num">Vie 20 · 21:00</span>
-          </div>
-          <div class="teams">
-            <div class="team"><span class="crest c-g">JUA</span><b>FC Juárez</b><span class="score dim num">—</span></div>
-            <div class="team"><span class="crest c-h">ATL</span><b>Atlas</b><span class="score dim num">—</span></div>
-          </div>
-          <div class="match-foot">
-            <span class="chip">Datos reales · 20–22 nov</span>
-            <span class="chip">Momios: Semana 3</span>
-          </div>
-          <div class="match-foot">
-            <span class="chip">Modelo Poisson · Semana 1</span>
-            <span class="chip">1X2: 30.6% · 21.5% · 47.8%</span>
-            <span class="chip">+2.5 goles: 69.5%</span>
-            <span class="chip">BTTS: 68.7%</span>
-          </div>
-        </article>
-
-        <article class="match" data-league="ligamx" data-status="upcoming" data-value="0">
-          <div class="match-top">
-            <span class="m-league">Liga MX</span>
-            <span class="m-time num">Vie 20 · 21:10</span>
-          </div>
-          <div class="teams">
-            <div class="team"><span class="crest c-a">TIJ</span><b>Tijuana</b><span class="score dim num">—</span></div>
-            <div class="team"><span class="crest c-b">ATN</span><b>Atlante</b><span class="score dim num">—</span></div>
-          </div>
-          <div class="match-foot">
-            <span class="chip">Datos reales · 20–22 nov</span>
-            <span class="chip">Momios: Semana 3</span>
-          </div>
-          <div class="match-foot">
-            <span class="chip">Modelo Poisson · Semana 1</span>
-            <span class="chip">1X2: 72.2% · 16.9% · 10.9%</span>
-            <span class="chip">+2.5 goles: 61.4%</span>
-            <span class="chip">BTTS: 50.0%</span>
-          </div>
-        </article>
-
-        <article class="match" data-league="premier" data-status="upcoming" data-value="0">
-          <div class="match-top">
-            <span class="m-league">Premier League</span>
-            <span class="m-time num">Sáb 21 · 06:30</span>
-          </div>
-          <div class="teams">
-            <div class="team"><span class="crest c-c">MCI</span><b>Man City</b><span class="score dim num">—</span></div>
-            <div class="team"><span class="crest c-d">FUL</span><b>Fulham</b><span class="score dim num">—</span></div>
-          </div>
-          <div class="match-foot">
-            <span class="chip">Datos reales · 20–22 nov</span>
-            <span class="chip">Momios: Semana 3</span>
-          </div>
-          <div class="match-foot">
-            <span class="chip">Modelo Poisson · Semana 1</span>
-            <span class="chip">1X2: 38.2% · 27.4% · 34.4%</span>
-            <span class="chip">+2.5 goles: 43.8%</span>
-            <span class="chip">BTTS: 49.4%</span>
-          </div>
-        </article>
-
-        <article class="match" data-league="premier" data-status="upcoming" data-value="0">
-          <div class="match-top">
-            <span class="m-league">Premier League</span>
-            <span class="m-time num">Sáb 21 · 11:30</span>
-          </div>
-          <div class="teams">
-            <div class="team"><span class="crest c-e">NEW</span><b>Newcastle</b><span class="score dim num">—</span></div>
-            <div class="team"><span class="crest c-f">ARS</span><b>Arsenal</b><span class="score dim num">—</span></div>
-          </div>
-          <div class="match-foot">
-            <span class="chip">Datos reales · 20–22 nov</span>
-            <span class="chip">Momios: Semana 3</span>
-          </div>
-          <div class="match-foot">
-            <span class="chip">Modelo Poisson · Semana 1</span>
-            <span class="chip">1X2: 3.8% · 25.1% · 71.1%</span>
-            <span class="chip">+2.5 goles: 21.6%</span>
-            <span class="chip">BTTS: 11.1%</span>
-          </div>
-        </article>
-
-        <article class="match" data-league="laliga" data-status="upcoming" data-value="0">
-          <div class="match-top">
-            <span class="m-league">LaLiga</span>
-            <span class="m-time num">Sáb 21 · 11:30</span>
-          </div>
-          <div class="teams">
-            <div class="team"><span class="crest c-g">SEV</span><b>Sevilla</b><span class="score dim num">—</span></div>
-            <div class="team"><span class="crest c-h">BET</span><b>Real Betis</b><span class="score dim num">—</span></div>
-          </div>
-          <div class="match-foot">
-            <span class="chip">Datos reales · 20–22 nov</span>
-            <span class="chip">Momios: Semana 3</span>
-          </div>
-          <div class="match-foot">
-            <span class="chip">Modelo Poisson · Semana 1</span>
-            <span class="chip">1X2: 25.0% · 16.2% · 58.7%</span>
-            <span class="chip">+2.5 goles: 91.0%</span>
-            <span class="chip">BTTS: 85.5%</span>
-          </div>
-        </article>
-
-        <article class="match" data-league="laliga" data-status="upcoming" data-value="0">
-          <div class="match-top">
-            <span class="m-league">LaLiga</span>
-            <span class="m-time num">Sáb 21 · 14:00</span>
+            <span class="m-league">Champions League</span>
+            <span class="m-time num">Mar 24 · 14:00</span>
           </div>
           <div class="teams">
             <div class="team"><span class="crest c-a">RMA</span><b>Real Madrid</b><span class="score dim num">—</span></div>
-            <div class="team"><span class="crest c-b">CEL</span><b>Celta Vigo</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-b">PSV</span><b>PSV Eindhoven</b><span class="score dim num">—</span></div>
           </div>
           <div class="match-foot">
-            <span class="chip">Datos reales · 20–22 nov</span>
-            <span class="chip">Momios: Semana 3</span>
+            <span class="chip">Datos reales · 24–26 nov</span>
+            <span class="chip">Momios DraftKings · 22 nov</span>
           </div>
           <div class="match-foot">
-            <span class="chip">Modelo Poisson · Semana 1</span>
-            <span class="chip">1X2: 83.8% · 14.5% · 1.6%</span>
-            <span class="chip">+2.5 goles: 36.6%</span>
-            <span class="chip">BTTS: 9.8%</span>
+            <span class="chip">Modelo Poisson · Semana 2 entre semana</span>
+            <span class="chip">1X2: 65.2% · 22.8% · 12.0%</span>
+            <span class="chip">+2.5 goles: 40.5%</span>
+            <span class="chip">BTTS: 36.2%</span>
+            <span class="chip ev">Semáforo EV · <strong>Verde · Empate +93.6%</strong></span>
           </div>
+          <div class="derived" aria-label="Mercados derivados del 1X2: apuesta sin empate y doble oportunidad">
+            <div class="derived-h"><span>Derivados del 1X2</span><span>DNB · Doble oportunidad</span></div>
+            <div class="derived-grid">
+              <div class="dcell"><span>DNB Local</span><b class="num">84.5%</b></div>
+              <div class="dcell"><span>DNB Visita</span><b class="num">15.5%</b></div>
+              <div class="dcell"><span>1X</span><b class="num">88.0%</b></div>
+              <div class="dcell"><span>12</span><b class="num">77.2%</b></div>
+              <div class="dcell"><span>X2</span><b class="num">34.8%</b></div>
+            </div>
+          </div>
+<div class="odds" aria-label="Momios reales y valor esperado"><div class="derived-h"><span>Momios DraftKings · 22 nov 2026</span><span>EV = prob. × momio − 1</span></div><div class="derived-grid"><div class="dcell"><span>Local 1.19</span><b class="num" style="color:var(--live)">-22.4%</b></div><div class="dcell"><span>Empate 8.50</span><b class="num" style="color:var(--accent-strong)">+93.6%</b></div><div class="dcell"><span>Visita 11.00</span><b class="num" style="color:var(--accent-strong)">+32.4%</b></div><div class="dcell"><span>Más 4.5 2.00</span><b class="num" style="color:var(--live)">-83.1%</b></div><div class="dcell"><span>Menos 4.5 1.80</span><b class="num" style="color:var(--accent-strong)">+64.8%</b></div></div><div class="odds-add"><button class="add-btn" type="button" data-pick="Real Madrid vs PSV Eindhoven · Empate" data-odds="8.50" data-prob="22.8">Sumar al parlay</button></div></div>
         </article>
 
-        <article class="match" data-league="ligamx" data-status="upcoming" data-value="0">
+        <article class="match" data-day="mie" data-league="ucl" data-status="upcoming" data-value="1">
           <div class="match-top">
-            <span class="m-league">Liga MX</span>
-            <span class="m-time num">Sáb 21 · 16:50</span>
+            <span class="m-league">Champions League</span>
+            <span class="m-time num">Mié 25 · 14:00</span>
           </div>
           <div class="teams">
-            <div class="team"><span class="crest c-c">PAC</span><b>Pachuca</b><span class="score dim num">—</span></div>
-            <div class="team"><span class="crest c-d">TOL</span><b>Toluca</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-a">BRU</span><b>Club Brugge</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-b">LIV</span><b>Liverpool</b><span class="score dim num">—</span></div>
           </div>
           <div class="match-foot">
-            <span class="chip">Datos reales · 20–22 nov</span>
-            <span class="chip">Momios: Semana 3</span>
+            <span class="chip">Datos reales · 24–26 nov</span>
+            <span class="chip">Momios DraftKings · 22 nov</span>
           </div>
           <div class="match-foot">
-            <span class="chip">Modelo Poisson · Semana 1</span>
-            <span class="chip">1X2: 43.3% · 23.1% · 33.6%</span>
-            <span class="chip">+2.5 goles: 62.9%</span>
-            <span class="chip">BTTS: 64.1%</span>
+            <span class="chip">Modelo Poisson · Semana 2 entre semana</span>
+            <span class="chip">1X2: 56.6% · 15.2% · 28.2%</span>
+            <span class="chip">+2.5 goles: 95.2%</span>
+            <span class="chip">BTTS: 90.9%</span>
+            <span class="chip ev">Semáforo EV · <strong>Verde · Local +149.1%</strong></span>
           </div>
+          <div class="derived" aria-label="Mercados derivados del 1X2: apuesta sin empate y doble oportunidad">
+            <div class="derived-h"><span>Derivados del 1X2</span><span>DNB · Doble oportunidad</span></div>
+            <div class="derived-grid">
+              <div class="dcell"><span>DNB Local</span><b class="num">66.7%</b></div>
+              <div class="dcell"><span>DNB Visita</span><b class="num">33.3%</b></div>
+              <div class="dcell"><span>1X</span><b class="num">71.8%</b></div>
+              <div class="dcell"><span>12</span><b class="num">84.8%</b></div>
+              <div class="dcell"><span>X2</span><b class="num">43.4%</b></div>
+            </div>
+          </div>
+<div class="odds" aria-label="Momios reales y valor esperado"><div class="derived-h"><span>Momios DraftKings · 22 nov 2026</span><span>EV = prob. × momio − 1</span></div><div class="derived-grid"><div class="dcell"><span>Local 4.40</span><b class="num" style="color:var(--accent-strong)">+149.1%</b></div><div class="dcell"><span>Empate 4.70</span><b class="num" style="color:var(--live)">-28.7%</b></div><div class="dcell"><span>Visita 1.65</span><b class="num" style="color:var(--live)">-53.6%</b></div><div class="dcell"><span>Más 3.5 1.77</span><b class="num" style="color:var(--accent-strong)">+55.3%</b></div><div class="dcell"><span>Menos 3.5 2.05</span><b class="num" style="color:var(--live)">-75.0%</b></div></div><div class="odds-add"><button class="add-btn" type="button" data-pick="Club Brugge vs Liverpool · Local" data-odds="4.40" data-prob="56.6">Sumar al parlay</button></div></div>
         </article>
 
-        <article class="match" data-league="ligamx" data-status="upcoming" data-value="0">
+        <article class="match" data-day="mie" data-league="ucl" data-status="upcoming" data-value="1">
           <div class="match-top">
-            <span class="m-league">Liga MX</span>
-            <span class="m-time num">Sáb 21 · 19:00</span>
+            <span class="m-league">Champions League</span>
+            <span class="m-time num">Mié 25 · 14:00</span>
           </div>
           <div class="teams">
-            <div class="team"><span class="crest c-e">PUM</span><b>Pumas</b><span class="score dim num">—</span></div>
-            <div class="team"><span class="crest c-f">MTY</span><b>Monterrey</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-a">INT</span><b>Internazionale</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-b">VFB</span><b>VfB Stuttgart</b><span class="score dim num">—</span></div>
           </div>
           <div class="match-foot">
-            <span class="chip">Datos reales · 20–22 nov</span>
-            <span class="chip">Momios: Semana 3</span>
+            <span class="chip">Datos reales · 24–26 nov</span>
+            <span class="chip">Momios DraftKings · 22 nov</span>
           </div>
           <div class="match-foot">
-            <span class="chip">Modelo Poisson · Semana 1</span>
-            <span class="chip">1X2: 43.6% · 23.8% · 32.6%</span>
-            <span class="chip">+2.5 goles: 59.1%</span>
-            <span class="chip">BTTS: 61.1%</span>
+            <span class="chip">Modelo Poisson · Semana 2 entre semana</span>
+            <span class="chip">1X2: 33.0% · 28.9% · 38.1%</span>
+            <span class="chip">+2.5 goles: 38.3%</span>
+            <span class="chip">BTTS: 44.9%</span>
+            <span class="chip ev">Semáforo EV · <strong>Verde · Visita +128.5%</strong></span>
           </div>
+          <div class="derived" aria-label="Mercados derivados del 1X2: apuesta sin empate y doble oportunidad">
+            <div class="derived-h"><span>Derivados del 1X2</span><span>DNB · Doble oportunidad</span></div>
+            <div class="derived-grid">
+              <div class="dcell"><span>DNB Local</span><b class="num">46.4%</b></div>
+              <div class="dcell"><span>DNB Visita</span><b class="num">53.6%</b></div>
+              <div class="dcell"><span>1X</span><b class="num">61.9%</b></div>
+              <div class="dcell"><span>12</span><b class="num">71.1%</b></div>
+              <div class="dcell"><span>X2</span><b class="num">67.0%</b></div>
+            </div>
+          </div>
+<div class="odds" aria-label="Momios reales y valor esperado"><div class="derived-h"><span>Momios DraftKings · 22 nov 2026</span><span>EV = prob. × momio − 1</span></div><div class="derived-grid"><div class="dcell"><span>Local 1.43</span><b class="num" style="color:var(--live)">-52.9%</b></div><div class="dcell"><span>Empate 5.50</span><b class="num" style="color:var(--accent-strong)">+59.0%</b></div><div class="dcell"><span>Visita 6.00</span><b class="num" style="color:var(--accent-strong)">+128.5%</b></div><div class="dcell"><span>Más 3.5 1.62</span><b class="num" style="color:var(--live)">-69.9%</b></div><div class="dcell"><span>Menos 3.5 2.30</span><b class="num" style="color:var(--accent-strong)">+87.4%</b></div></div><div class="odds-add"><button class="add-btn" type="button" data-pick="Internazionale vs VfB Stuttgart · Visita" data-odds="6.00" data-prob="38.1">Sumar al parlay</button></div></div>
         </article>
 
-        <article class="match" data-league="laliga" data-status="upcoming" data-value="0">
+        <article class="match" data-day="mie" data-league="ucl" data-status="upcoming" data-value="1">
           <div class="match-top">
-            <span class="m-league">LaLiga</span>
-            <span class="m-time num">Dom 22 · 07:00</span>
+            <span class="m-league">Champions League</span>
+            <span class="m-time num">Mié 25 · 14:00</span>
           </div>
           <div class="teams">
-            <div class="team"><span class="crest c-g">BAR</span><b>Barcelona</b><span class="score dim num">—</span></div>
-            <div class="team"><span class="crest c-h">VIL</span><b>Villarreal</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-a">LIL</span><b>Lille</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-b">BAY</span><b>Bayern Munich</b><span class="score dim num">—</span></div>
           </div>
           <div class="match-foot">
-            <span class="chip">Datos reales · 20–22 nov</span>
-            <span class="chip">Momios: Semana 3</span>
+            <span class="chip">Datos reales · 24–26 nov</span>
+            <span class="chip">Momios DraftKings · 22 nov</span>
           </div>
           <div class="match-foot">
-            <span class="chip">Modelo Poisson · Semana 1</span>
-            <span class="chip">1X2: 67.6% · 20.1% · 12.3%</span>
-            <span class="chip">+2.5 goles: 51.0%</span>
-            <span class="chip">BTTS: 44.1%</span>
+            <span class="chip">Modelo Poisson · Semana 2 entre semana</span>
+            <span class="chip">1X2: 4.2% · 8.9% · 87.0%</span>
+            <span class="chip">+2.5 goles: 75.9%</span>
+            <span class="chip">BTTS: 46.7%</span>
+            <span class="chip ev">Semáforo EV · <strong>Verde · Visita +39.7%</strong></span>
           </div>
+          <div class="derived" aria-label="Mercados derivados del 1X2: apuesta sin empate y doble oportunidad">
+            <div class="derived-h"><span>Derivados del 1X2</span><span>DNB · Doble oportunidad</span></div>
+            <div class="derived-grid">
+              <div class="dcell"><span>DNB Local</span><b class="num">4.6%</b></div>
+              <div class="dcell"><span>DNB Visita</span><b class="num">95.4%</b></div>
+              <div class="dcell"><span>1X</span><b class="num">13.1%</b></div>
+              <div class="dcell"><span>12</span><b class="num">91.2%</b></div>
+              <div class="dcell"><span>X2</span><b class="num">95.9%</b></div>
+            </div>
+          </div>
+<div class="odds" aria-label="Momios reales y valor esperado"><div class="derived-h"><span>Momios DraftKings · 22 nov 2026</span><span>EV = prob. × momio − 1</span></div><div class="derived-grid"><div class="dcell"><span>Local 5.00</span><b class="num" style="color:var(--live)">-79.1%</b></div><div class="dcell"><span>Empate 4.50</span><b class="num" style="color:var(--live)">-60.2%</b></div><div class="dcell"><span>Visita 1.61</span><b class="num" style="color:var(--accent-strong)">+39.7%</b></div><div class="dcell"><span>Más 3.5 2.40</span><b class="num" style="color:var(--accent-strong)">+35.2%</b></div><div class="dcell"><span>Menos 3.5 1.57</span><b class="num" style="color:var(--live)">-31.4%</b></div></div><div class="odds-add"><button class="add-btn" type="button" data-pick="Lille vs Bayern Munich · Visita" data-odds="1.61" data-prob="87.0">Sumar al parlay</button></div></div>
         </article>
 
-        <article class="match" data-league="premier" data-status="upcoming" data-value="0">
+        <article class="match" data-day="mie" data-league="ucl" data-status="upcoming" data-value="1">
           <div class="match-top">
-            <span class="m-league">Premier League</span>
-            <span class="m-time num">Dom 22 · 10:30</span>
+            <span class="m-league">Champions League</span>
+            <span class="m-time num">Mié 25 · 14:00</span>
           </div>
           <div class="teams">
-            <div class="team"><span class="crest c-a">LIV</span><b>Liverpool</b><span class="score dim num">—</span></div>
-            <div class="team"><span class="crest c-b">MUN</span><b>Man Utd</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-a">PSG</span><b>Paris Saint-Germain</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-b">ROM</span><b>AS Roma</b><span class="score dim num">—</span></div>
           </div>
           <div class="match-foot">
-            <span class="chip">Datos reales · 20–22 nov</span>
-            <span class="chip">Momios: Semana 3</span>
+            <span class="chip">Datos reales · 24–26 nov</span>
+            <span class="chip">Momios DraftKings · 22 nov</span>
           </div>
           <div class="match-foot">
-            <span class="chip">Modelo Poisson · Semana 1</span>
-            <span class="chip">1X2: 76.3% · 13.5% · 10.2%</span>
-            <span class="chip">+2.5 goles: 77.3%</span>
-            <span class="chip">BTTS: 62.1%</span>
+            <span class="chip">Modelo Poisson · Semana 2 entre semana</span>
+            <span class="chip">1X2: 91.6% · 4.9% · 3.5%</span>
+            <span class="chip">+2.5 goles: 96.3%</span>
+            <span class="chip">BTTS: 74.6%</span>
+            <span class="chip ev">Semáforo EV · <strong>Verde · Más 3.5 +65.1%</strong></span>
           </div>
+          <div class="derived" aria-label="Mercados derivados del 1X2: apuesta sin empate y doble oportunidad">
+            <div class="derived-h"><span>Derivados del 1X2</span><span>DNB · Doble oportunidad</span></div>
+            <div class="derived-grid">
+              <div class="dcell"><span>DNB Local</span><b class="num">96.3%</b></div>
+              <div class="dcell"><span>DNB Visita</span><b class="num">3.7%</b></div>
+              <div class="dcell"><span>1X</span><b class="num">96.5%</b></div>
+              <div class="dcell"><span>12</span><b class="num">95.1%</b></div>
+              <div class="dcell"><span>X2</span><b class="num">8.4%</b></div>
+            </div>
+          </div>
+<div class="odds" aria-label="Momios reales y valor esperado"><div class="derived-h"><span>Momios DraftKings · 22 nov 2026</span><span>EV = prob. × momio − 1</span></div><div class="derived-grid"><div class="dcell"><span>Local 1.38</span><b class="num" style="color:var(--accent-strong)">+26.8%</b></div><div class="dcell"><span>Empate 5.50</span><b class="num" style="color:var(--live)">-72.8%</b></div><div class="dcell"><span>Visita 7.00</span><b class="num" style="color:var(--live)">-75.5%</b></div><div class="dcell"><span>Más 3.5 1.83</span><b class="num" style="color:var(--accent-strong)">+65.1%</b></div><div class="dcell"><span>Menos 3.5 1.95</span><b class="num" style="color:var(--live)">-80.5%</b></div></div><div class="odds-add"><button class="add-btn" type="button" data-pick="Paris Saint-Germain vs AS Roma · Más 3.5" data-odds="1.83" data-prob="90.0">Sumar al parlay</button></div></div>
         </article>
 
-        <article class="match" data-league="seriea" data-status="upcoming" data-value="0">
+        <article class="match" data-day="mie" data-league="ucl" data-status="upcoming" data-value="1">
+          <div class="match-top">
+            <span class="m-league">Champions League</span>
+            <span class="m-time num">Mié 25 · 14:00</span>
+          </div>
+          <div class="teams">
+            <div class="team"><span class="crest c-a">SCP</span><b>Sporting CP</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-b">MUN</span><b>Manchester United</b><span class="score dim num">—</span></div>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Datos reales · 24–26 nov</span>
+            <span class="chip">Momios DraftKings · 22 nov</span>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Modelo Poisson · Semana 2 entre semana</span>
+            <span class="chip">1X2: 65.8% · 19.6% · 14.6%</span>
+            <span class="chip">+2.5 goles: 57.8%</span>
+            <span class="chip">BTTS: 51.7%</span>
+            <span class="chip ev">Semáforo EV · <strong>Verde · Local +64.5%</strong></span>
+          </div>
+          <div class="derived" aria-label="Mercados derivados del 1X2: apuesta sin empate y doble oportunidad">
+            <div class="derived-h"><span>Derivados del 1X2</span><span>DNB · Doble oportunidad</span></div>
+            <div class="derived-grid">
+              <div class="dcell"><span>DNB Local</span><b class="num">81.8%</b></div>
+              <div class="dcell"><span>DNB Visita</span><b class="num">18.2%</b></div>
+              <div class="dcell"><span>1X</span><b class="num">85.4%</b></div>
+              <div class="dcell"><span>12</span><b class="num">80.4%</b></div>
+              <div class="dcell"><span>X2</span><b class="num">34.2%</b></div>
+            </div>
+          </div>
+<div class="odds" aria-label="Momios reales y valor esperado"><div class="derived-h"><span>Momios DraftKings · 22 nov 2026</span><span>EV = prob. × momio − 1</span></div><div class="derived-grid"><div class="dcell"><span>Local 2.50</span><b class="num" style="color:var(--accent-strong)">+64.5%</b></div><div class="dcell"><span>Empate 3.75</span><b class="num" style="color:var(--live)">-26.4%</b></div><div class="dcell"><span>Visita 2.65</span><b class="num" style="color:var(--live)">-61.3%</b></div><div class="dcell"><span>Más 3.5 2.35</span><b class="num" style="color:var(--live)">-16.8%</b></div><div class="dcell"><span>Menos 3.5 1.59</span><b class="num" style="color:var(--accent-strong)">+2.6%</b></div></div><div class="odds-add"><button class="add-btn" type="button" data-pick="Sporting CP vs Manchester United · Local" data-odds="2.50" data-prob="65.8">Sumar al parlay</button></div></div>
+        </article>
+
+        <article class="match" data-day="jue" data-league="uel" data-status="upcoming" data-value="1">
+          <div class="match-top">
+            <span class="m-league">Europa League</span>
+            <span class="m-time num">Jue 26 · 11:45</span>
+          </div>
+          <div class="teams">
+            <div class="team"><span class="crest c-a">CEL</span><b>Celta Vigo</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-b">BOU</span><b>AFC Bournemouth</b><span class="score dim num">—</span></div>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Datos reales · 24–26 nov</span>
+            <span class="chip">Momios DraftKings · 22 nov</span>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Modelo Poisson · Semana 2 entre semana</span>
+            <span class="chip">1X2: 2.4% · 8.8% · 88.8%</span>
+            <span class="chip">+2.5 goles: 62.1%</span>
+            <span class="chip">BTTS: 26.1%</span>
+            <span class="chip ev">Semáforo EV · <strong>Verde · Visita +73.4%</strong></span>
+          </div>
+          <div class="derived" aria-label="Mercados derivados del 1X2: apuesta sin empate y doble oportunidad">
+            <div class="derived-h"><span>Derivados del 1X2</span><span>DNB · Doble oportunidad</span></div>
+            <div class="derived-grid">
+              <div class="dcell"><span>DNB Local</span><b class="num">2.6%</b></div>
+              <div class="dcell"><span>DNB Visita</span><b class="num">97.4%</b></div>
+              <div class="dcell"><span>1X</span><b class="num">11.2%</b></div>
+              <div class="dcell"><span>12</span><b class="num">91.2%</b></div>
+              <div class="dcell"><span>X2</span><b class="num">97.6%</b></div>
+            </div>
+          </div>
+<div class="odds" aria-label="Momios reales y valor esperado"><div class="derived-h"><span>Momios DraftKings · 22 nov 2026</span><span>EV = prob. × momio − 1</span></div><div class="derived-grid"><div class="dcell"><span>Local 3.75</span><b class="num" style="color:var(--live)">-91.2%</b></div><div class="dcell"><span>Empate 3.60</span><b class="num" style="color:var(--live)">-68.2%</b></div><div class="dcell"><span>Visita 1.95</span><b class="num" style="color:var(--accent-strong)">+73.4%</b></div><div class="dcell"><span>Más 2.5 1.87</span><b class="num" style="color:var(--accent-strong)">+16.1%</b></div><div class="dcell"><span>Menos 2.5 1.91</span><b class="num" style="color:var(--live)">-27.6%</b></div></div><div class="odds-add"><button class="add-btn" type="button" data-pick="Celta Vigo vs AFC Bournemouth · Visita" data-odds="1.95" data-prob="88.8">Sumar al parlay</button></div></div>
+        </article>
+
+        <article class="match" data-day="jue" data-league="uel" data-status="upcoming" data-value="1">
+          <div class="match-top">
+            <span class="m-league">Europa League</span>
+            <span class="m-time num">Jue 26 · 11:45</span>
+          </div>
+          <div class="teams">
+            <div class="team"><span class="crest c-a">DIN</span><b>Dinamo Zagreb</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-b">LEV</span><b>Bayer Leverkusen</b><span class="score dim num">—</span></div>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Datos reales · 24–26 nov</span>
+            <span class="chip">Momios DraftKings · 22 nov</span>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Modelo Poisson · Semana 2 entre semana</span>
+            <span class="chip">1X2: 5.2% · 26.4% · 68.5%</span>
+            <span class="chip">+2.5 goles: 21.6%</span>
+            <span class="chip">BTTS: 13.8%</span>
+            <span class="chip ev">Semáforo EV · <strong>Verde · Menos 3.5 +53.6%</strong></span>
+          </div>
+          <div class="derived" aria-label="Mercados derivados del 1X2: apuesta sin empate y doble oportunidad">
+            <div class="derived-h"><span>Derivados del 1X2</span><span>DNB · Doble oportunidad</span></div>
+            <div class="derived-grid">
+              <div class="dcell"><span>DNB Local</span><b class="num">7.1%</b></div>
+              <div class="dcell"><span>DNB Visita</span><b class="num">92.9%</b></div>
+              <div class="dcell"><span>1X</span><b class="num">31.6%</b></div>
+              <div class="dcell"><span>12</span><b class="num">73.7%</b></div>
+              <div class="dcell"><span>X2</span><b class="num">94.9%</b></div>
+            </div>
+          </div>
+<div class="odds" aria-label="Momios reales y valor esperado"><div class="derived-h"><span>Momios DraftKings · 22 nov 2026</span><span>EV = prob. × momio − 1</span></div><div class="derived-grid"><div class="dcell"><span>Local 4.30</span><b class="num" style="color:var(--live)">-77.7%</b></div><div class="dcell"><span>Empate 4.20</span><b class="num" style="color:var(--accent-strong)">+10.7%</b></div><div class="dcell"><span>Visita 1.69</span><b class="num" style="color:var(--accent-strong)">+15.7%</b></div><div class="dcell"><span>Más 3.5 2.15</span><b class="num" style="color:var(--live)">-83.1%</b></div><div class="dcell"><span>Menos 3.5 1.67</span><b class="num" style="color:var(--accent-strong)">+53.6%</b></div></div><div class="odds-add"><button class="add-btn" type="button" data-pick="Dinamo Zagreb vs Bayer Leverkusen · Menos 3.5" data-odds="1.67" data-prob="92.1">Sumar al parlay</button></div></div>
+        </article>
+
+        <article class="match" data-day="jue" data-league="uel" data-status="upcoming" data-value="1">
+          <div class="match-top">
+            <span class="m-league">Europa League</span>
+            <span class="m-time num">Jue 26 · 11:45</span>
+          </div>
+          <div class="teams">
+            <div class="team"><span class="crest c-a">OLY</span><b>Olympiacos</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-b">MIL</span><b>AC Milan</b><span class="score dim num">—</span></div>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Datos reales · 24–26 nov</span>
+            <span class="chip">Momios DraftKings · 22 nov</span>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Modelo Poisson · Semana 2 entre semana</span>
+            <span class="chip">1X2: 61.7% · 32.7% · 5.7%</span>
+            <span class="chip">+2.5 goles: 14.5%</span>
+            <span class="chip">BTTS: 10.9%</span>
+            <span class="chip ev">Semáforo EV · <strong>Verde · Menos 2.5 +67.0%</strong></span>
+          </div>
+          <div class="derived" aria-label="Mercados derivados del 1X2: apuesta sin empate y doble oportunidad">
+            <div class="derived-h"><span>Derivados del 1X2</span><span>DNB · Doble oportunidad</span></div>
+            <div class="derived-grid">
+              <div class="dcell"><span>DNB Local</span><b class="num">91.5%</b></div>
+              <div class="dcell"><span>DNB Visita</span><b class="num">8.5%</b></div>
+              <div class="dcell"><span>1X</span><b class="num">94.4%</b></div>
+              <div class="dcell"><span>12</span><b class="num">67.4%</b></div>
+              <div class="dcell"><span>X2</span><b class="num">38.4%</b></div>
+            </div>
+          </div>
+<div class="odds" aria-label="Momios reales y valor esperado"><div class="derived-h"><span>Momios DraftKings · 22 nov 2026</span><span>EV = prob. × momio − 1</span></div><div class="derived-grid"><div class="dcell"><span>Local 2.70</span><b class="num" style="color:var(--accent-strong)">+66.5%</b></div><div class="dcell"><span>Empate 3.40</span><b class="num" style="color:var(--accent-strong)">+11.0%</b></div><div class="dcell"><span>Visita 2.55</span><b class="num" style="color:var(--live)">-85.6%</b></div><div class="dcell"><span>Más 2.5 1.80</span><b class="num" style="color:var(--live)">-73.9%</b></div><div class="dcell"><span>Menos 2.5 1.95</span><b class="num" style="color:var(--accent-strong)">+67.0%</b></div></div><div class="odds-add"><button class="add-btn" type="button" data-pick="Olympiacos vs AC Milan · Menos 2.5" data-odds="1.95" data-prob="85.7">Sumar al parlay</button></div></div>
+        </article>
+      </div>
+      <div class="agenda-head">
+        <h2>Agenda del fin de semana · 27–29 nov</h2>
+        <span class="demo-note">Probabilidades Poisson verificadas por el jefe 19 nov 2026 · Partidos del 27–29 nov · Horas de Monterrey (CST)</span>
+      </div>
+      <p class="rule-note"><strong>Modelo Poisson · Semana 2:</strong> Probabilidades Poisson con los últimos 5 partidos de liga por equipo (ESPN, 19 nov 2026). Una muestra de 5 partidos puede exagerar rachas: los favoritos más extremos (Real Madrid 99.0%, Arsenal 83.1%, Napoli 82.7%) conviene leerlos con cautela. Momios DraftKings del 22 nov 2026 (ESPN) con EV calculado contra el modelo Poisson. Hamburg–Bayern trae momios Bet365 porque DraftKings no publicó ese partido en ESPN; su EV 1X2 sí está calculado.</p>
+      <p class="rule-note"><strong>Tablas al 18 nov 2026:</strong> Liga MX Apertura — Cruz Azul líder, 32 pts en 16 partidos, 2 puntos sobre América; Brasileirão — Flamengo 1º 76 pts, Palmeiras 2º 73, Cruzeiro 3º 60 (antes de la jornada 35).</p>
+      <div id="matchList">
+
+
+        <article class="match" data-day="vie" data-league="bundes" data-status="upcoming" data-value="1">
+          <div class="match-top">
+            <span class="m-league">Bundesliga</span>
+            <span class="m-time num">Vie 27 · 13:30</span>
+          </div>
+          <div class="teams">
+            <div class="team"><span class="crest c-a">WER</span><b>Werder Bremen</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-b">BMG</span><b>Borussia Mönchengladbach</b><span class="score dim num">—</span></div>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Datos reales · 27–29 nov</span>
+            <span class="chip">Momios DraftKings · 22 nov</span>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Modelo Poisson · Semana 2</span>
+            <span class="chip">1X2: 72.2% · 16.4% · 11.5%</span>
+            <span class="chip">+2.5 goles: 65.7%</span>
+            <span class="chip">BTTS: 54.2%</span>
+                      <span class="chip ev">Semáforo EV · <strong>Verde · Local +22.0%</strong></span>
+</div>
+                  <div class="derived" aria-label="Mercados derivados del 1X2: apuesta sin empate y doble oportunidad">
+            <div class="derived-h"><span>Derivados del 1X2</span><span>DNB · Doble oportunidad</span></div>
+            <div class="derived-grid">
+              <div class="dcell"><span>DNB Local</span><b class="num">86.3%</b></div>
+              <div class="dcell"><span>DNB Visita</span><b class="num">13.7%</b></div>
+              <div class="dcell"><span>1X</span><b class="num">88.6%</b></div>
+              <div class="dcell"><span>12</span><b class="num">83.7%</b></div>
+              <div class="dcell"><span>X2</span><b class="num">27.9%</b></div>
+            </div>
+          </div>
+<div class="odds" aria-label="Momios reales y valor esperado"><div class="derived-h"><span>Momios DraftKings · 22 nov 2026</span><span>EV = prob. × momio − 1</span></div><div class="derived-grid"><div class="dcell"><span>Local 1.69</span><b class="num" style="color:var(--accent-strong)">+22.0%</b></div><div class="dcell"><span>Empate 4.10</span><b class="num" style="color:var(--live)">-32.8%</b></div><div class="dcell"><span>Visita 3.85</span><b class="num" style="color:var(--live)">-55.7%</b></div><div class="dcell"><span>Más 3.5 2.15</span><b class="num" style="color:var(--live)">-5.6%</b></div><div class="dcell"><span>Menos 3.5 1.65</span><b class="num" style="color:var(--live)">-7.7%</b></div></div><div class="odds-add"><button class="add-btn" type="button" data-pick="Werder Bremen vs Borussia Mönchengladbach · Local" data-odds="1.69" data-prob="72.2">Sumar al parlay</button></div></div></article>
+
+        <article class="match" data-day="vie" data-league="seriea" data-status="upcoming" data-value="1">
           <div class="match-top">
             <span class="m-league">Serie A</span>
-            <span class="m-time num">Dom 22 · 13:45</span>
+            <span class="m-time num">Vie 27 · 13:45</span>
           </div>
           <div class="teams">
-            <div class="team"><span class="crest c-c">ATA</span><b>Atalanta</b><span class="score dim num">—</span></div>
-            <div class="team"><span class="crest c-d">INT</span><b>Inter</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-a">VEN</span><b>Venezia</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-b">BOL</span><b>Bologna</b><span class="score dim num">—</span></div>
           </div>
           <div class="match-foot">
-            <span class="chip">Datos reales · 20–22 nov</span>
-            <span class="chip">Momios: Semana 3</span>
+            <span class="chip">Datos reales · 27–29 nov</span>
+            <span class="chip">Momios DraftKings · 22 nov</span>
           </div>
           <div class="match-foot">
-            <span class="chip">Modelo Poisson · Semana 1</span>
-            <span class="chip">1X2: 11.1% · 14.4% · 74.5%</span>
-            <span class="chip">+2.5 goles: 75.3%</span>
-            <span class="chip">BTTS: 61.6%</span>
+            <span class="chip">Modelo Poisson · Semana 2</span>
+            <span class="chip">1X2: 13.9% · 28.8% · 57.3%</span>
+            <span class="chip">+2.5 goles: 27.3%</span>
+            <span class="chip">BTTS: 28.6%</span>
+                      <span class="chip ev">Semáforo EV · <strong>Verde · Menos 2.5 +30.9%</strong></span>
+</div>
+                  <div class="derived" aria-label="Mercados derivados del 1X2: apuesta sin empate y doble oportunidad">
+            <div class="derived-h"><span>Derivados del 1X2</span><span>DNB · Doble oportunidad</span></div>
+            <div class="derived-grid">
+              <div class="dcell"><span>DNB Local</span><b class="num">19.5%</b></div>
+              <div class="dcell"><span>DNB Visita</span><b class="num">80.5%</b></div>
+              <div class="dcell"><span>1X</span><b class="num">42.7%</b></div>
+              <div class="dcell"><span>12</span><b class="num">71.2%</b></div>
+              <div class="dcell"><span>X2</span><b class="num">86.1%</b></div>
+            </div>
           </div>
-        </article>
+<div class="odds" aria-label="Momios reales y valor esperado"><div class="derived-h"><span>Momios DraftKings · 22 nov 2026</span><span>EV = prob. × momio − 1</span></div><div class="derived-grid"><div class="dcell"><span>Local 3.35</span><b class="num" style="color:var(--live)">-53.4%</b></div><div class="dcell"><span>Empate 3.20</span><b class="num" style="color:var(--live)">-7.8%</b></div><div class="dcell"><span>Visita 2.05</span><b class="num" style="color:var(--accent-strong)">+17.5%</b></div><div class="dcell"><span>Más 2.5 1.95</span><b class="num" style="color:var(--live)">-46.7%</b></div><div class="dcell"><span>Menos 2.5 1.80</span><b class="num" style="color:var(--accent-strong)">+30.9%</b></div></div><div class="odds-add"><button class="add-btn" type="button" data-pick="Venezia vs Bologna · Menos 2.5" data-odds="1.80" data-prob="72.7">Sumar al parlay</button></div></div></article>
 
-        <article class="match" data-league="laliga" data-status="upcoming" data-value="0">
+        <article class="match" data-day="vie" data-league="premier" data-status="upcoming" data-value="1">
+          <div class="match-top">
+            <span class="m-league">Premier League</span>
+            <span class="m-time num">Vie 27 · 14:00</span>
+          </div>
+          <div class="teams">
+            <div class="team"><span class="crest c-a">NFO</span><b>Nottingham Forest</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-b">CHE</span><b>Chelsea</b><span class="score dim num">—</span></div>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Datos reales · 27–29 nov</span>
+            <span class="chip">Momios DraftKings · 22 nov</span>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Modelo Poisson · Semana 2</span>
+            <span class="chip">1X2: 12.7% · 19.2% · 68.1%</span>
+            <span class="chip">+2.5 goles: 55.4%</span>
+            <span class="chip">BTTS: 47.8%</span>
+                      <span class="chip ev">Semáforo EV · <strong>Verde · Visita +66.8%</strong></span>
+</div>
+                  <div class="derived" aria-label="Mercados derivados del 1X2: apuesta sin empate y doble oportunidad">
+            <div class="derived-h"><span>Derivados del 1X2</span><span>DNB · Doble oportunidad</span></div>
+            <div class="derived-grid">
+              <div class="dcell"><span>DNB Local</span><b class="num">15.7%</b></div>
+              <div class="dcell"><span>DNB Visita</span><b class="num">84.3%</b></div>
+              <div class="dcell"><span>1X</span><b class="num">31.9%</b></div>
+              <div class="dcell"><span>12</span><b class="num">80.8%</b></div>
+              <div class="dcell"><span>X2</span><b class="num">87.3%</b></div>
+            </div>
+          </div>
+<div class="odds" aria-label="Momios reales y valor esperado"><div class="derived-h"><span>Momios DraftKings · 22 nov 2026</span><span>EV = prob. × momio − 1</span></div><div class="derived-grid"><div class="dcell"><span>Local 2.75</span><b class="num" style="color:var(--live)">-65.1%</b></div><div class="dcell"><span>Empate 3.50</span><b class="num" style="color:var(--live)">-32.8%</b></div><div class="dcell"><span>Visita 2.45</span><b class="num" style="color:var(--accent-strong)">+66.8%</b></div><div class="dcell"><span>Más 2.5 1.71</span><b class="num" style="color:var(--live)">-5.0%</b></div><div class="dcell"><span>Menos 2.5 2.10</span><b class="num" style="color:var(--live)">-6.3%</b></div></div><div class="odds-add"><button class="add-btn" type="button" data-pick="Nottingham Forest vs Chelsea · Visita" data-odds="2.45" data-prob="68.1">Sumar al parlay</button></div></div></article>
+
+        <article class="match" data-day="vie" data-league="laliga" data-status="upcoming" data-value="1">
           <div class="match-top">
             <span class="m-league">LaLiga</span>
-            <span class="m-time num">Dom 22 · 14:00</span>
+            <span class="m-time num">Vie 27 · 14:00</span>
           </div>
           <div class="teams">
-            <div class="team"><span class="crest c-e">GET</span><b>Getafe</b><span class="score dim num">—</span></div>
-            <div class="team"><span class="crest c-f">ATM</span><b>Atlético Madrid</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-a">LEV</span><b>Levante</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-b">RAC</span><b>Racing Santander</b><span class="score dim num">—</span></div>
           </div>
           <div class="match-foot">
-            <span class="chip">Datos reales · 20–22 nov</span>
-            <span class="chip">Momios: Semana 3</span>
+            <span class="chip">Datos reales · 27–29 nov</span>
+            <span class="chip">Momios DraftKings · 22 nov</span>
           </div>
           <div class="match-foot">
-            <span class="chip">Modelo Poisson · Semana 1</span>
-            <span class="chip">1X2: 6.1% · 15.3% · 78.7%</span>
-            <span class="chip">+2.5 goles: 52.1%</span>
-            <span class="chip">BTTS: 33.7%</span>
+            <span class="chip">Modelo Poisson · Semana 2</span>
+            <span class="chip">1X2: 53.7% · 23.4% · 22.9%</span>
+            <span class="chip">+2.5 goles: 53.9%</span>
+            <span class="chip">BTTS: 54.5%</span>
+                      <span class="chip ev">Semáforo EV · <strong>Verde · Menos 3.5 +11.0%</strong></span>
+</div>
+                  <div class="derived" aria-label="Mercados derivados del 1X2: apuesta sin empate y doble oportunidad">
+            <div class="derived-h"><span>Derivados del 1X2</span><span>DNB · Doble oportunidad</span></div>
+            <div class="derived-grid">
+              <div class="dcell"><span>DNB Local</span><b class="num">70.1%</b></div>
+              <div class="dcell"><span>DNB Visita</span><b class="num">29.9%</b></div>
+              <div class="dcell"><span>1X</span><b class="num">77.1%</b></div>
+              <div class="dcell"><span>12</span><b class="num">76.6%</b></div>
+              <div class="dcell"><span>X2</span><b class="num">46.3%</b></div>
+            </div>
           </div>
-        </article>
+<div class="odds" aria-label="Momios reales y valor esperado"><div class="derived-h"><span>Momios DraftKings · 22 nov 2026</span><span>EV = prob. × momio − 1</span></div><div class="derived-grid"><div class="dcell"><span>Local 2.05</span><b class="num" style="color:var(--accent-strong)">+10.1%</b></div><div class="dcell"><span>Empate 3.85</span><b class="num" style="color:var(--live)">-9.9%</b></div><div class="dcell"><span>Visita 3.15</span><b class="num" style="color:var(--live)">-27.9%</b></div><div class="dcell"><span>Más 3.5 2.25</span><b class="num" style="color:var(--live)">-28.7%</b></div><div class="dcell"><span>Menos 3.5 1.62</span><b class="num" style="color:var(--accent-strong)">+11.0%</b></div></div><div class="odds-add"><button class="add-btn" type="button" data-pick="Levante vs Racing Santander · Menos 3.5" data-odds="1.62" data-prob="68.3">Sumar al parlay</button></div></div></article>
 
-        <article class="match" data-league="ligamx" data-status="upcoming" data-value="0">
+        <article class="match" data-day="sab" data-league="bundes" data-status="upcoming" data-value="1">
           <div class="match-top">
-            <span class="m-league">Liga MX</span>
-            <span class="m-time num">Dom 22 · 17:07</span>
+            <span class="m-league">Bundesliga</span>
+            <span class="m-time num">Sáb 28 · 08:30</span>
           </div>
           <div class="teams">
-            <div class="team"><span class="crest c-g">CHI</span><b>Chivas</b><span class="score dim num">—</span></div>
-            <div class="team"><span class="crest c-h">CRU</span><b>Cruz Azul</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-a">HAM</span><b>Hamburg SV</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-b">BAY</span><b>Bayern Munich</b><span class="score dim num">—</span></div>
           </div>
           <div class="match-foot">
-            <span class="chip">Datos reales · 20–22 nov</span>
-            <span class="chip">Momios: Semana 3</span>
+            <span class="chip">Datos reales · 27–29 nov</span>
+            <span class="chip">Momios Bet365 · 22 nov</span>
           </div>
           <div class="match-foot">
-            <span class="chip">Modelo Poisson · Semana 1</span>
-            <span class="chip">1X2: 26.5% · 25.8% · 47.7%</span>
-            <span class="chip">+2.5 goles: 47.1%</span>
-            <span class="chip">BTTS: 50.7%</span>
+            <span class="chip">Modelo Poisson · Semana 2</span>
+            <span class="chip">1X2: 29.9% · 20.2% · 49.8%</span>
+            <span class="chip">+2.5 goles: 75.6%</span>
+            <span class="chip">BTTS: 73.4%</span>
+                      <span class="chip ev">Semáforo EV · <strong>Verde · Local +154.2%</strong></span>
+</div>
+                  <div class="derived" aria-label="Mercados derivados del 1X2: apuesta sin empate y doble oportunidad">
+            <div class="derived-h"><span>Derivados del 1X2</span><span>DNB · Doble oportunidad</span></div>
+            <div class="derived-grid">
+              <div class="dcell"><span>DNB Local</span><b class="num">37.5%</b></div>
+              <div class="dcell"><span>DNB Visita</span><b class="num">62.5%</b></div>
+              <div class="dcell"><span>1X</span><b class="num">50.1%</b></div>
+              <div class="dcell"><span>12</span><b class="num">79.7%</b></div>
+              <div class="dcell"><span>X2</span><b class="num">70%</b></div>
+            </div>
           </div>
-        </article>
+<div class="odds" aria-label="Momios reales y valor esperado"><div class="derived-h"><span>Momios Bet365 · 22 nov 2026</span><span>EV = prob. × momio − 1</span></div><div class="derived-grid"><div class="dcell"><span>Local 8.50</span><b class="num" style="color:var(--accent-strong)">+154.2%</b></div><div class="dcell"><span>Empate 6.00</span><b class="num" style="color:var(--accent-strong)">+21.2%</b></div><div class="dcell"><span>Visita 1.25</span><b class="num" style="color:var(--live)">-37.8%</b></div></div><div class="odds-add"><button class="add-btn" type="button" data-pick="Hamburg SV vs Bayern Munich · Local" data-odds="8.50" data-prob="29.9">Sumar al parlay</button></div></div></article>
+
+        <article class="match" data-day="sab" data-league="premier" data-status="upcoming" data-value="1">
+          <div class="match-top">
+            <span class="m-league">Premier League</span>
+            <span class="m-time num">Sáb 28 · 09:00</span>
+          </div>
+          <div class="teams">
+            <div class="team"><span class="crest c-a">MUN</span><b>Manchester United</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-b">BRE</span><b>Brentford</b><span class="score dim num">—</span></div>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Datos reales · 27–29 nov</span>
+            <span class="chip">Momios DraftKings · 22 nov</span>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Modelo Poisson · Semana 2</span>
+            <span class="chip">1X2: 33.2% · 21.8% · 45.1%</span>
+            <span class="chip">+2.5 goles: 69.5%</span>
+            <span class="chip">BTTS: 69.1%</span>
+                      <span class="chip ev">Semáforo EV · <strong>Verde · Visita +53.3%</strong></span>
+</div>
+                  <div class="derived" aria-label="Mercados derivados del 1X2: apuesta sin empate y doble oportunidad">
+            <div class="derived-h"><span>Derivados del 1X2</span><span>DNB · Doble oportunidad</span></div>
+            <div class="derived-grid">
+              <div class="dcell"><span>DNB Local</span><b class="num">42.4%</b></div>
+              <div class="dcell"><span>DNB Visita</span><b class="num">57.6%</b></div>
+              <div class="dcell"><span>1X</span><b class="num">55%</b></div>
+              <div class="dcell"><span>12</span><b class="num">78.3%</b></div>
+              <div class="dcell"><span>X2</span><b class="num">66.9%</b></div>
+            </div>
+          </div>
+<div class="odds" aria-label="Momios reales y valor esperado"><div class="derived-h"><span>Momios DraftKings · 22 nov 2026</span><span>EV = prob. × momio − 1</span></div><div class="derived-grid"><div class="dcell"><span>Local 2.00</span><b class="num" style="color:var(--live)">-33.6%</b></div><div class="dcell"><span>Empate 3.75</span><b class="num" style="color:var(--live)">-18.2%</b></div><div class="dcell"><span>Visita 3.40</span><b class="num" style="color:var(--accent-strong)">+53.3%</b></div><div class="dcell"><span>Más 3.5 2.35</span><b class="num" style="color:var(--accent-strong)">+13.5%</b></div><div class="dcell"><span>Menos 3.5 1.56</span><b class="num" style="color:var(--live)">-19.6%</b></div></div><div class="odds-add"><button class="add-btn" type="button" data-pick="Manchester United vs Brentford · Visita" data-odds="3.40" data-prob="45.1">Sumar al parlay</button></div></div></article>
+
+        <article class="match" data-day="sab" data-league="laliga" data-status="upcoming" data-value="1">
+          <div class="match-top">
+            <span class="m-league">LaLiga</span>
+            <span class="m-time num">Sáb 28 · 11:30</span>
+          </div>
+          <div class="teams">
+            <div class="team"><span class="crest c-a">ELC</span><b>Elche</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-b">ATM</span><b>Atlético Madrid</b><span class="score dim num">—</span></div>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Datos reales · 27–29 nov</span>
+            <span class="chip">Momios DraftKings · 22 nov</span>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Modelo Poisson · Semana 2</span>
+            <span class="chip">1X2: 17.7% · 46.4% · 36.0%</span>
+            <span class="chip">+2.5 goles: 7.6%</span>
+            <span class="chip">BTTS: 13.8%</span>
+                      <span class="chip ev">Semáforo EV · <strong>Verde · Empate +104.2%</strong></span>
+</div>
+                  <div class="derived" aria-label="Mercados derivados del 1X2: apuesta sin empate y doble oportunidad">
+            <div class="derived-h"><span>Derivados del 1X2</span><span>DNB · Doble oportunidad</span></div>
+            <div class="derived-grid">
+              <div class="dcell"><span>DNB Local</span><b class="num">33.0%</b></div>
+              <div class="dcell"><span>DNB Visita</span><b class="num">67.0%</b></div>
+              <div class="dcell"><span>1X</span><b class="num">64.1%</b></div>
+              <div class="dcell"><span>12</span><b class="num">53.7%</b></div>
+              <div class="dcell"><span>X2</span><b class="num">82.4%</b></div>
+            </div>
+          </div>
+<div class="odds" aria-label="Momios reales y valor esperado"><div class="derived-h"><span>Momios DraftKings · 22 nov 2026</span><span>EV = prob. × momio − 1</span></div><div class="derived-grid"><div class="dcell"><span>Local 5.25</span><b class="num" style="color:var(--live)">-7.1%</b></div><div class="dcell"><span>Empate 4.40</span><b class="num" style="color:var(--accent-strong)">+104.2%</b></div><div class="dcell"><span>Visita 1.56</span><b class="num" style="color:var(--live)">-44.0%</b></div><div class="dcell"><span>Más 3.5 2.35</span><b class="num" style="color:var(--live)">-96.0%</b></div><div class="dcell"><span>Menos 3.5 1.57</span><b class="num" style="color:var(--accent-strong)">+54.5%</b></div></div><div class="odds-add"><button class="add-btn" type="button" data-pick="Elche vs Atlético Madrid · Empate" data-odds="4.40" data-prob="46.4">Sumar al parlay</button></div></div></article>
+
+        <article class="match" data-day="sab" data-league="bundes" data-status="upcoming" data-value="1">
+          <div class="match-top">
+            <span class="m-league">Bundesliga</span>
+            <span class="m-time num">Sáb 28 · 11:30</span>
+          </div>
+          <div class="teams">
+            <div class="team"><span class="crest c-a">STU</span><b>VfB Stuttgart</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-b">EIN</span><b>Eintracht Frankfurt</b><span class="score dim num">—</span></div>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Datos reales · 27–29 nov</span>
+            <span class="chip">Momios DraftKings · 22 nov</span>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Modelo Poisson · Semana 2</span>
+            <span class="chip">1X2: 79.0% · 13.3% · 7.7%</span>
+            <span class="chip">+2.5 goles: 68.5%</span>
+            <span class="chip">BTTS: 50.2%</span>
+                      <span class="chip ev">Semáforo EV · <strong>Verde · Local +33.5%</strong></span>
+</div>
+                  <div class="derived" aria-label="Mercados derivados del 1X2: apuesta sin empate y doble oportunidad">
+            <div class="derived-h"><span>Derivados del 1X2</span><span>DNB · Doble oportunidad</span></div>
+            <div class="derived-grid">
+              <div class="dcell"><span>DNB Local</span><b class="num">91.1%</b></div>
+              <div class="dcell"><span>DNB Visita</span><b class="num">8.9%</b></div>
+              <div class="dcell"><span>1X</span><b class="num">92.3%</b></div>
+              <div class="dcell"><span>12</span><b class="num">86.7%</b></div>
+              <div class="dcell"><span>X2</span><b class="num">21%</b></div>
+            </div>
+          </div>
+<div class="odds" aria-label="Momios reales y valor esperado"><div class="derived-h"><span>Momios DraftKings · 22 nov 2026</span><span>EV = prob. × momio − 1</span></div><div class="derived-grid"><div class="dcell"><span>Local 1.69</span><b class="num" style="color:var(--accent-strong)">+33.5%</b></div><div class="dcell"><span>Empate 4.40</span><b class="num" style="color:var(--live)">-41.5%</b></div><div class="dcell"><span>Visita 3.70</span><b class="num" style="color:var(--live)">-71.5%</b></div><div class="dcell"><span>Más 3.5 1.69</span><b class="num" style="color:var(--live)">-20.2%</b></div><div class="dcell"><span>Menos 3.5 2.10</span><b class="num" style="color:var(--accent-strong)">+10.9%</b></div></div><div class="odds-add"><button class="add-btn" type="button" data-pick="VfB Stuttgart vs Eintracht Frankfurt · Local" data-odds="1.69" data-prob="79.0">Sumar al parlay</button></div></div></article>
+
+        <article class="match" data-day="sab" data-league="seriea" data-status="upcoming" data-value="1">
+          <div class="match-top">
+            <span class="m-league">Serie A</span>
+            <span class="m-time num">Sáb 28 · 13:45</span>
+          </div>
+          <div class="teams">
+            <div class="team"><span class="crest c-a">INT</span><b>Internazionale</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-b">GEN</span><b>Genoa</b><span class="score dim num">—</span></div>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Datos reales · 27–29 nov</span>
+            <span class="chip">Momios DraftKings · 22 nov</span>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Modelo Poisson · Semana 2</span>
+            <span class="chip">1X2: 46.7% · 30.7% · 22.6%</span>
+            <span class="chip">+2.5 goles: 29.5%</span>
+            <span class="chip">BTTS: 35.5%</span>
+                      <span class="chip ev">Semáforo EV · <strong>Verde · Visita +80.8%</strong></span>
+</div>
+                  <div class="derived" aria-label="Mercados derivados del 1X2: apuesta sin empate y doble oportunidad">
+            <div class="derived-h"><span>Derivados del 1X2</span><span>DNB · Doble oportunidad</span></div>
+            <div class="derived-grid">
+              <div class="dcell"><span>DNB Local</span><b class="num">67.4%</b></div>
+              <div class="dcell"><span>DNB Visita</span><b class="num">32.6%</b></div>
+              <div class="dcell"><span>1X</span><b class="num">77.4%</b></div>
+              <div class="dcell"><span>12</span><b class="num">69.3%</b></div>
+              <div class="dcell"><span>X2</span><b class="num">53.3%</b></div>
+            </div>
+          </div>
+<div class="odds" aria-label="Momios reales y valor esperado"><div class="derived-h"><span>Momios DraftKings · 22 nov 2026</span><span>EV = prob. × momio − 1</span></div><div class="derived-grid"><div class="dcell"><span>Local 1.29</span><b class="num" style="color:var(--live)">-39.6%</b></div><div class="dcell"><span>Empate 5.00</span><b class="num" style="color:var(--accent-strong)">+53.5%</b></div><div class="dcell"><span>Visita 8.00</span><b class="num" style="color:var(--accent-strong)">+80.8%</b></div><div class="dcell"><span>Más 2.5 1.57</span><b class="num" style="color:var(--live)">-53.6%</b></div><div class="dcell"><span>Menos 2.5 2.30</span><b class="num" style="color:var(--accent-strong)">+62.2%</b></div></div><div class="odds-add"><button class="add-btn" type="button" data-pick="Internazionale vs Genoa · Visita" data-odds="8.00" data-prob="22.6">Sumar al parlay</button></div></div></article>
+
+        <article class="match" data-day="sab" data-league="laliga" data-status="upcoming" data-value="1">
+          <div class="match-top">
+            <span class="m-league">LaLiga</span>
+            <span class="m-time num">Sáb 28 · 14:00</span>
+          </div>
+          <div class="teams">
+            <div class="team"><span class="crest c-a">RMA</span><b>Real Madrid</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-b">ALA</span><b>Alavés</b><span class="score dim num">—</span></div>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Datos reales · 27–29 nov</span>
+            <span class="chip">Momios DraftKings · 22 nov</span>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Modelo Poisson · Semana 2</span>
+            <span class="chip">1X2: 99.0% · 0.8% · 0.1%</span>
+            <span class="chip">+2.5 goles: 93.1%</span>
+            <span class="chip">BTTS: 21.1%</span>
+                      <span class="chip ev">Semáforo EV · <strong>Verde · Más 3.5 +53.1%</strong></span>
+</div>
+                  <div class="derived" aria-label="Mercados derivados del 1X2: apuesta sin empate y doble oportunidad">
+            <div class="derived-h"><span>Derivados del 1X2</span><span>DNB · Doble oportunidad</span></div>
+            <div class="derived-grid">
+              <div class="dcell"><span>DNB Local</span><b class="num">99.9%</b></div>
+              <div class="dcell"><span>DNB Visita</span><b class="num">0.1%</b></div>
+              <div class="dcell"><span>1X</span><b class="num">99.8%</b></div>
+              <div class="dcell"><span>12</span><b class="num">99.1%</b></div>
+              <div class="dcell"><span>X2</span><b class="num">0.9%</b></div>
+            </div>
+          </div>
+<div class="odds" aria-label="Momios reales y valor esperado"><div class="derived-h"><span>Momios DraftKings · 22 nov 2026</span><span>EV = prob. × momio − 1</span></div><div class="derived-grid"><div class="dcell"><span>Local 1.15</span><b class="num" style="color:var(--accent-strong)">+14.2%</b></div><div class="dcell"><span>Empate 8.50</span><b class="num" style="color:var(--live)">-93.2%</b></div><div class="dcell"><span>Visita 14.00</span><b class="num" style="color:var(--live)">-98.6%</b></div><div class="dcell"><span>Más 3.5 1.83</span><b class="num" style="color:var(--accent-strong)">+53.1%</b></div><div class="dcell"><span>Menos 3.5 1.91</span><b class="num" style="color:var(--live)">-68.5%</b></div></div><div class="odds-add"><button class="add-btn" type="button" data-pick="Real Madrid vs Alavés · Más 3.5" data-odds="1.83" data-prob="83.5">Sumar al parlay</button></div></div></article>
+
+        <article class="match" data-day="dom" data-league="premier" data-status="upcoming" data-value="1">
+          <div class="match-top">
+            <span class="m-league">Premier League</span>
+            <span class="m-time num">Dom 29 · 06:00</span>
+          </div>
+          <div class="teams">
+            <div class="team"><span class="crest c-a">EVE</span><b>Everton</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-b">LIV</span><b>Liverpool</b><span class="score dim num">—</span></div>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Datos reales · 27–29 nov</span>
+            <span class="chip">Momios DraftKings · 22 nov</span>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Modelo Poisson · Semana 2</span>
+            <span class="chip">1X2: 36.8% · 25.0% · 38.2%</span>
+            <span class="chip">+2.5 goles: 54.3%</span>
+            <span class="chip">BTTS: 57.7%</span>
+                      <span class="chip ev">Semáforo EV · <strong>Verde · Local +27.0%</strong></span>
+</div>
+                  <div class="derived" aria-label="Mercados derivados del 1X2: apuesta sin empate y doble oportunidad">
+            <div class="derived-h"><span>Derivados del 1X2</span><span>DNB · Doble oportunidad</span></div>
+            <div class="derived-grid">
+              <div class="dcell"><span>DNB Local</span><b class="num">49.1%</b></div>
+              <div class="dcell"><span>DNB Visita</span><b class="num">50.9%</b></div>
+              <div class="dcell"><span>1X</span><b class="num">61.8%</b></div>
+              <div class="dcell"><span>12</span><b class="num">75%</b></div>
+              <div class="dcell"><span>X2</span><b class="num">63.2%</b></div>
+            </div>
+          </div>
+<div class="odds" aria-label="Momios reales y valor esperado"><div class="derived-h"><span>Momios DraftKings · 22 nov 2026</span><span>EV = prob. × momio − 1</span></div><div class="derived-grid"><div class="dcell"><span>Local 3.45</span><b class="num" style="color:var(--accent-strong)">+27.0%</b></div><div class="dcell"><span>Empate 3.60</span><b class="num" style="color:var(--live)">-10.0%</b></div><div class="dcell"><span>Visita 2.05</span><b class="num" style="color:var(--live)">-21.7%</b></div><div class="dcell"><span>Más 2.5 1.69</span><b class="num" style="color:var(--live)">-8.2%</b></div><div class="dcell"><span>Menos 2.5 2.15</span><b class="num" style="color:var(--live)">-1.7%</b></div></div><div class="odds-add"><button class="add-btn" type="button" data-pick="Everton vs Liverpool · Local" data-odds="3.45" data-prob="36.8">Sumar al parlay</button></div></div></article>
+
+        <article class="match" data-day="dom" data-league="seriea" data-status="upcoming" data-value="1">
+          <div class="match-top">
+            <span class="m-league">Serie A</span>
+            <span class="m-time num">Dom 29 · 08:00</span>
+          </div>
+          <div class="teams">
+            <div class="team"><span class="crest c-a">SAS</span><b>Sassuolo</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-b">NAP</span><b>Napoli</b><span class="score dim num">—</span></div>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Datos reales · 27–29 nov</span>
+            <span class="chip">Momios DraftKings · 22 nov</span>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Modelo Poisson · Semana 2</span>
+            <span class="chip">1X2: 7.3% · 10.0% · 82.7%</span>
+            <span class="chip">+2.5 goles: 85.5%</span>
+            <span class="chip">BTTS: 65.9%</span>
+                      <span class="chip ev">Semáforo EV · <strong>Verde · Más 3.5 +61.7%</strong></span>
+</div>
+                  <div class="derived" aria-label="Mercados derivados del 1X2: apuesta sin empate y doble oportunidad">
+            <div class="derived-h"><span>Derivados del 1X2</span><span>DNB · Doble oportunidad</span></div>
+            <div class="derived-grid">
+              <div class="dcell"><span>DNB Local</span><b class="num">8.1%</b></div>
+              <div class="dcell"><span>DNB Visita</span><b class="num">91.9%</b></div>
+              <div class="dcell"><span>1X</span><b class="num">17.3%</b></div>
+              <div class="dcell"><span>12</span><b class="num">90%</b></div>
+              <div class="dcell"><span>X2</span><b class="num">92.7%</b></div>
+            </div>
+          </div>
+<div class="odds" aria-label="Momios reales y valor esperado"><div class="derived-h"><span>Momios DraftKings · 22 nov 2026</span><span>EV = prob. × momio − 1</span></div><div class="derived-grid"><div class="dcell"><span>Local 4.30</span><b class="num" style="color:var(--live)">-68.6%</b></div><div class="dcell"><span>Empate 4.10</span><b class="num" style="color:var(--live)">-59.0%</b></div><div class="dcell"><span>Visita 1.62</span><b class="num" style="color:var(--accent-strong)">+34.4%</b></div><div class="dcell"><span>Más 3.5 2.30</span><b class="num" style="color:var(--accent-strong)">+61.7%</b></div><div class="dcell"><span>Menos 3.5 1.57</span><b class="num" style="color:var(--live)">-53.3%</b></div></div><div class="odds-add"><button class="add-btn" type="button" data-pick="Sassuolo vs Napoli · Más 3.5" data-odds="2.30" data-prob="70.3">Sumar al parlay</button></div></div></article>
+
+        <article class="match" data-day="dom" data-league="laliga" data-status="upcoming" data-value="0">
+          <div class="match-top">
+            <span class="m-league">LaLiga</span>
+            <span class="m-time num">Dom 29 · 09:15</span>
+          </div>
+          <div class="teams">
+            <div class="team"><span class="crest c-a">DEP</span><b>Deportivo</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-b">BAR</span><b>Barcelona</b><span class="score dim num">—</span></div>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Datos reales · 27–29 nov</span>
+            <span class="chip">Momios DraftKings · 22 nov</span>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Modelo Poisson · Semana 2</span>
+            <span class="chip">1X2: 11.6% · 13.9% · 74.6%</span>
+            <span class="chip">+2.5 goles: 79.1%</span>
+            <span class="chip">BTTS: 65.8%</span>
+                      <span class="chip ev-bad">Semáforo EV · <strong>Rojo · Más 3.5 -0.3%</strong></span>
+</div>
+                  <div class="derived" aria-label="Mercados derivados del 1X2: apuesta sin empate y doble oportunidad">
+            <div class="derived-h"><span>Derivados del 1X2</span><span>DNB · Doble oportunidad</span></div>
+            <div class="derived-grid">
+              <div class="dcell"><span>DNB Local</span><b class="num">13.5%</b></div>
+              <div class="dcell"><span>DNB Visita</span><b class="num">86.5%</b></div>
+              <div class="dcell"><span>1X</span><b class="num">25.5%</b></div>
+              <div class="dcell"><span>12</span><b class="num">86.2%</b></div>
+              <div class="dcell"><span>X2</span><b class="num">88.5%</b></div>
+            </div>
+          </div>
+<div class="odds" aria-label="Momios reales y valor esperado"><div class="derived-h"><span>Momios DraftKings · 22 nov 2026</span><span>EV = prob. × momio − 1</span></div><div class="derived-grid"><div class="dcell"><span>Local 8.50</span><b class="num" style="color:var(--live)">-1.4%</b></div><div class="dcell"><span>Empate 7.00</span><b class="num" style="color:var(--live)">-2.7%</b></div><div class="dcell"><span>Visita 1.25</span><b class="num" style="color:var(--live)">-6.8%</b></div><div class="dcell"><span>Más 3.5 1.65</span><b class="num" style="color:var(--live)">-0.3%</b></div><div class="dcell"><span>Menos 3.5 2.20</span><b class="num" style="color:var(--live)">-13.3%</b></div></div></div></article>
+
+        <article class="match" data-day="dom" data-league="premier" data-status="upcoming" data-value="1">
+          <div class="match-top">
+            <span class="m-league">Premier League</span>
+            <span class="m-time num">Dom 29 · 10:30</span>
+          </div>
+          <div class="teams">
+            <div class="team"><span class="crest c-a">ARS</span><b>Arsenal</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-b">MCI</span><b>Manchester City</b><span class="score dim num">—</span></div>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Datos reales · 27–29 nov</span>
+            <span class="chip">Momios DraftKings · 22 nov</span>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Modelo Poisson · Semana 2</span>
+            <span class="chip">1X2: 83.1% · 14.0% · 3.0%</span>
+            <span class="chip">+2.5 goles: 43.8%</span>
+            <span class="chip">BTTS: 18.6%</span>
+                      <span class="chip ev">Semáforo EV · <strong>Verde · Local +62.2%</strong></span>
+</div>
+                  <div class="derived" aria-label="Mercados derivados del 1X2: apuesta sin empate y doble oportunidad">
+            <div class="derived-h"><span>Derivados del 1X2</span><span>DNB · Doble oportunidad</span></div>
+            <div class="derived-grid">
+              <div class="dcell"><span>DNB Local</span><b class="num">96.5%</b></div>
+              <div class="dcell"><span>DNB Visita</span><b class="num">3.5%</b></div>
+              <div class="dcell"><span>1X</span><b class="num">97.1%</b></div>
+              <div class="dcell"><span>12</span><b class="num">86.1%</b></div>
+              <div class="dcell"><span>X2</span><b class="num">17%</b></div>
+            </div>
+          </div>
+<div class="odds" aria-label="Momios reales y valor esperado"><div class="derived-h"><span>Momios DraftKings · 22 nov 2026</span><span>EV = prob. × momio − 1</span></div><div class="derived-grid"><div class="dcell"><span>Local 1.95</span><b class="num" style="color:var(--accent-strong)">+62.2%</b></div><div class="dcell"><span>Empate 3.75</span><b class="num" style="color:var(--live)">-47.5%</b></div><div class="dcell"><span>Visita 3.60</span><b class="num" style="color:var(--live)">-89.2%</b></div><div class="dcell"><span>Más 2.5 1.71</span><b class="num" style="color:var(--live)">-24.9%</b></div><div class="dcell"><span>Menos 2.5 2.10</span><b class="num" style="color:var(--accent-strong)">+18.0%</b></div></div><div class="odds-add"><button class="add-btn" type="button" data-pick="Arsenal vs Manchester City · Local" data-odds="1.95" data-prob="83.1">Sumar al parlay</button></div></div></article>
+
+
+        <article class="match" data-day="dom" data-league="bundes" data-status="upcoming" data-value="1">
+          <div class="match-top">
+            <span class="m-league">Bundesliga</span>
+            <span class="m-time num">Dom 29 · 12:30</span>
+          </div>
+          <div class="teams">
+            <div class="team"><span class="crest c-a">DOR</span><b>Borussia Dortmund</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-b">B04</span><b>Bayer Leverkusen</b><span class="score dim num">—</span></div>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Datos reales · 27–29 nov</span>
+            <span class="chip">Momios DraftKings · 22 nov</span>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Modelo Poisson · Semana 2</span>
+            <span class="chip">1X2: 70.0% · 16.5% · 13.5%</span>
+            <span class="chip">+2.5 goles: 70.6%</span>
+            <span class="chip">BTTS: 60.6%</span>
+                      <span class="chip ev">Semáforo EV · <strong>Verde · Local +43.5%</strong></span>
+</div>
+                  <div class="derived" aria-label="Mercados derivados del 1X2: apuesta sin empate y doble oportunidad">
+            <div class="derived-h"><span>Derivados del 1X2</span><span>DNB · Doble oportunidad</span></div>
+            <div class="derived-grid">
+              <div class="dcell"><span>DNB Local</span><b class="num">83.8%</b></div>
+              <div class="dcell"><span>DNB Visita</span><b class="num">16.2%</b></div>
+              <div class="dcell"><span>1X</span><b class="num">86.5%</b></div>
+              <div class="dcell"><span>12</span><b class="num">83.5%</b></div>
+              <div class="dcell"><span>X2</span><b class="num">30%</b></div>
+            </div>
+          </div>
+<div class="odds" aria-label="Momios reales y valor esperado"><div class="derived-h"><span>Momios DraftKings · 22 nov 2026</span><span>EV = prob. × momio − 1</span></div><div class="derived-grid"><div class="dcell"><span>Local 2.05</span><b class="num" style="color:var(--accent-strong)">+43.5%</b></div><div class="dcell"><span>Empate 3.80</span><b class="num" style="color:var(--live)">-37.3%</b></div><div class="dcell"><span>Visita 2.95</span><b class="num" style="color:var(--live)">-60.2%</b></div><div class="dcell"><span>Más 3.5 2.15</span><b class="num" style="color:var(--accent-strong)">+6.4%</b></div><div class="dcell"><span>Menos 3.5 1.65</span><b class="num" style="color:var(--live)">-16.9%</b></div></div><div class="odds-add"><button class="add-btn" type="button" data-pick="Borussia Dortmund vs Bayer Leverkusen · Local" data-odds="2.05" data-prob="70.0">Sumar al parlay</button></div></div></article>
+
+        <article class="match" data-day="dom" data-league="seriea" data-status="upcoming" data-value="1">
+          <div class="match-top">
+            <span class="m-league">Serie A</span>
+            <span class="m-time num">Dom 29 · 13:45</span>
+          </div>
+          <div class="teams">
+            <div class="team"><span class="crest c-a">COM</span><b>Como</b><span class="score dim num">—</span></div>
+            <div class="team"><span class="crest c-b">JUV</span><b>Juventus</b><span class="score dim num">—</span></div>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Datos reales · 27–29 nov</span>
+            <span class="chip">Momios DraftKings · 22 nov</span>
+          </div>
+          <div class="match-foot">
+            <span class="chip">Modelo Poisson · Semana 2</span>
+            <span class="chip">1X2: 59.4% · 26.2% · 14.3%</span>
+            <span class="chip">+2.5 goles: 33.9%</span>
+            <span class="chip">BTTS: 33.8%</span>
+                      <span class="chip ev">Semáforo EV · <strong>Verde · Menos 2.5 +29.0%</strong></span>
+</div>
+                  <div class="derived" aria-label="Mercados derivados del 1X2: apuesta sin empate y doble oportunidad">
+            <div class="derived-h"><span>Derivados del 1X2</span><span>DNB · Doble oportunidad</span></div>
+            <div class="derived-grid">
+              <div class="dcell"><span>DNB Local</span><b class="num">80.6%</b></div>
+              <div class="dcell"><span>DNB Visita</span><b class="num">19.4%</b></div>
+              <div class="dcell"><span>1X</span><b class="num">85.6%</b></div>
+              <div class="dcell"><span>12</span><b class="num">73.7%</b></div>
+              <div class="dcell"><span>X2</span><b class="num">40.5%</b></div>
+            </div>
+          </div>
+<div class="odds" aria-label="Momios reales y valor esperado"><div class="derived-h"><span>Momios DraftKings · 22 nov 2026</span><span>EV = prob. × momio − 1</span></div><div class="derived-grid"><div class="dcell"><span>Local 2.05</span><b class="num" style="color:var(--accent-strong)">+21.8%</b></div><div class="dcell"><span>Empate 3.40</span><b class="num" style="color:var(--live)">-10.9%</b></div><div class="dcell"><span>Visita 3.20</span><b class="num" style="color:var(--live)">-54.2%</b></div><div class="dcell"><span>Más 2.5 1.80</span><b class="num" style="color:var(--live)">-39.0%</b></div><div class="dcell"><span>Menos 2.5 1.95</span><b class="num" style="color:var(--accent-strong)">+29.0%</b></div></div><div class="odds-add"><button class="add-btn" type="button" data-pick="Como vs Juventus · Menos 2.5" data-odds="1.95" data-prob="66.1">Sumar al parlay</button></div></div></article>
 
       </div>
       <div class="empty" id="emptyState">No hay partidos con ese filtro. Prueba con otra liga o con “Todos”.</div>
@@ -646,6 +1261,7 @@
       <section class="panel" aria-label="Semáforo de valor">
         <div class="panel-h"><h2>Semáforo de la IA</h2><span>Prob. vs momio</span></div>
         <div class="verdict">
+          <div class="sema-status ok"><span class="dot g"></span><div><b>Estado: 27 de 28 partidos con valor (EV+)</b><p>Semáforo encendido con momios DraftKings del 22 nov 2026 (ESPN). Cada tarjeta muestra su mejor pick y su EV; el filtro «Con valor EV+» ya filtra las 27 tarjetas verdes (12 de 12 entre semana y 15 de 16 el fin de semana). Hamburg–Bayern usa momios Bet365 porque DraftKings no publicó ese partido en ESPN.</p></div></div>
           <div class="sema"><span class="dot g"></span><div><b>Verde · Hay valor</b><p>El valor esperado (probabilidad × momio − 1) es de +5% o más. Es la única señal de entrada.</p></div></div>
           <div class="sema"><span class="dot y"></span><div><b>Amarillo · Justo</b><p>EV positivo pero menor a +5%. Se observa, sobre todo en vivo, esperando un mejor precio.</p></div></div>
           <div class="sema"><span class="dot r"></span><div><b>Rojo · Sin valor</b><p>El momio paga menos de lo que tu probabilidad exige. Aunque “se vea seguro”, no se entra.</p></div></div>
@@ -655,7 +1271,7 @@
       <section class="panel" aria-label="Tu parlay">
         <div class="panel-h"><h2>Tu parlay</h2><span>Solo si es seguro</span></div>
         <div class="slip">
-          <p class="slip-empty" id="slipEmpty">Vacío en la Semana 1: todavía no hay picks con momios. Los picks con valor llegan en la Semana 3, cuando se agreguen momios y valor esperado.</p>
+          <p class="slip-empty" id="slipEmpty">Ya hay momios reales. Suma únicamente los picks con valor esperado positivo (EV+) con el botón de cada tarjeta; el constructor muestra el momio combinado y la probabilidad real del combo.</p>
           <div id="slipItems"></div>
           <div class="slip-totals" id="slipTotals" hidden>
             <div><span>Momio combinado</span><b class="num" id="totOdds">—</b></div>
@@ -663,8 +1279,22 @@
             <div><span>Valor esperado</span><b class="num" id="totEv">—</b></div>
           </div>
           <p class="slip-verdict" id="slipVerdict" hidden></p>
+          <p style="margin-top:12px"><button class="clear-btn" id="clearParlay" type="button">Limpiar parlay</button></p>
         </div>
         <p class="rule-note">Tu regla: el parlay es la excepción, no la norma. Solo con equipos que conoces perfecto y picks que ya traen valor por separado.</p>
+      </section>
+
+      <section class="panel" aria-label="Mis picks guardados">
+        <div class="panel-h"><h2>Mis picks guardados</h2><span id="savedCount">Guardados: 0</span></div>
+        <div class="slip">
+          <p class="slip-empty" id="savedEmpty">Sin picks guardados todavía. Se guardan en este navegador y sobreviven al recargar la página.</p>
+          <div id="savedItems"></div>
+          <div class="slip-totals" id="savedTotals" hidden>
+            <div><span>Momio combinado</span><b class="num" id="savedTotOdds">—</b></div>
+            <div><span>Probabilidad combinada</span><b class="num" id="savedTotProb">—</b></div>
+            <div><span>Valor esperado</span><b class="num" id="savedTotEv">—</b></div>
+          </div>
+        </div>
       </section>
     </div>
   </div>
@@ -768,7 +1398,7 @@
       <article class="card">
         <h3>Cómo decide la IA (versión simplificada)</h3>
         <ul class="steps">
-          <li><b>Datos reales</b><p>Resultados, xG y cuotas de fuentes legales como football-data.org o API-Football. Nada de datos inventados ni señales pirata.</p></li>
+          <li><b>Datos reales</b><p>Resultados y xG de ESPN (API pública sin clave); momios DraftKings vía ESPN. Nada de datos inventados ni señales pirata.</p></li>
           <li><b>Modelo de goles</b><p>Poisson / Dixon-Coles estima los goles esperados de cada equipo y construye la matriz de marcadores.</p></li>
           <li><b>Probabilidades propias</b><p>De la matriz salen 1X2, Over/Under, BTTS y marcadores exactos, sin mirar todavía el momio.</p></li>
           <li><b>Comparación y semáforo</b><p>Se cruza tu probabilidad con la implícita de la casa, se calcula el EV y el semáforo marca si hay valor o no.</p></li>
@@ -778,7 +1408,7 @@
   </section>
 
   <footer>
-    <p><strong>Football AI Agenda · Proyecto de Luis Raga.</strong> Diseño original inspirado en la estructura de agendas como 365Scores y en las tarjetas editoriales de OneFootball; no copia su código, su diseño propietario ni sus datos. Semana 1: partidos reales verificados el 19 nov 2026, con fuentes football-data.org (12 ligas) y API-Football (Liga MX y momios); horas de Monterrey (CST), sin momios ni probabilidades inventadas. Las probabilidades llegan en la Semana 2 y los momios y el valor en la Semana 3.</p>
+    <p><strong>Football AI Agenda · Proyecto de Luis Raga.</strong> Diseño original inspirado en la estructura de agendas como 365Scores y en las tarjetas editoriales de OneFootball; no copia su código, su diseño propietario ni sus datos. Semana 2: partidos reales del 27–29 nov 2026, verificados el 19 nov 2026 con la API pública de ESPN (sin clave); horas de Monterrey (CST), sin momios ni probabilidades inventadas. Las probabilidades Poisson (modelo propio, Semana 2), los momios DraftKings (22 nov 2026) y el valor esperado ya están integrados. El parlay se guarda en este navegador y sobrevive al recargar (Semana 4). La sección Entre semana (24–26 nov) trae los 12 partidos de Champions y Europa League con Poisson, momios DraftKings y EV (Empleado 1, 22 nov 2026).</p>
     <p>Esta página es una herramienta de análisis. No realiza apuestas, no ejecuta transacciones y ningún momio mostrado es una cuota en vivo de una casa de apuestas.</p>
   </footer>
 </div>
@@ -787,12 +1417,15 @@
 (function(){
   "use strict";
 
-  /* ---------- Day chips (visual state only) ---------- */
+  /* ---------- Day filter ---------- */
+  var currentDay = "all";
   var days = document.querySelectorAll(".day");
   days.forEach(function(d){
     d.addEventListener("click", function(){
       days.forEach(function(x){ x.setAttribute("aria-pressed","false"); });
       d.setAttribute("aria-pressed","true");
+      currentDay = d.getAttribute("data-day");
+      applyFilters();
     });
   });
 
@@ -806,11 +1439,12 @@
     var visible = 0;
     matches.forEach(function(m){
       var okLeague = (currentLeague === "all" || m.getAttribute("data-league") === currentLeague);
+      var okDay = (currentDay === "all" || m.getAttribute("data-day") === currentDay);
       var okStatus = true;
       if (currentStatus === "live") okStatus = m.getAttribute("data-status") === "live";
       else if (currentStatus === "upcoming") okStatus = m.getAttribute("data-status") === "upcoming";
       else if (currentStatus === "value") okStatus = m.getAttribute("data-value") === "1";
-      var show = okLeague && okStatus;
+      var show = okLeague && okStatus && okDay;
       m.style.display = show ? "" : "none";
       if (show) visible++;
     });
@@ -870,6 +1504,10 @@
       slipEmpty.style.display = "";
       slipTotals.hidden = true;
       slipVerdict.hidden = true;
+      document.getElementById("totOdds").textContent = "—";
+      document.getElementById("totProb").textContent = "—";
+      document.getElementById("totEv").textContent = "—";
+      saveSlip(); renderSaved();
       return;
     }
     slipEmpty.style.display = "none";
@@ -894,6 +1532,7 @@
       slipVerdict.className = "slip-verdict warn";
       slipVerdict.textContent = "El combo perdió el valor (EV " + fmt(ev*100,1) + "%). Mejor quédate con el pick simple más fuerte.";
     }
+    saveSlip(); renderSaved();
   }
 
   document.querySelectorAll(".add-btn").forEach(function(btn){
@@ -911,6 +1550,91 @@
       }
     });
   });
+  /* ---------- Semana 4: parlay persistente (Empleado 2, portado por el jefe) ----------
+     Los picks se guardan en localStorage (clave faa-parlay-semana-2-v1) y
+     sobreviven al recargar. Al restaurar, cada pick se reconstruye desde
+     el botón de su tarjeta (data-pick/data-odds/data-prob): nunca se
+     confía en los números guardados, y un pick que ya no exista o no
+     tenga EV+ se ignora. Misma lista en el parlay y en guardados. */
+  var STORAGE_KEY = "faa-parlay-semana-2-v1";
+  function findAddBtn(name){
+    var found = null;
+    document.querySelectorAll(".add-btn").forEach(function(ab){
+      if (ab.getAttribute("data-pick") === name) found = ab;
+    });
+    return found;
+  }
+  function loadSavedSlip(){
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return [];
+      var parsed = JSON.parse(raw);
+      if (!Array.isArray(parsed)) return [];
+      var seen = {}, out = [];
+      parsed.forEach(function(name){
+        if (typeof name !== "string" || seen[name]) return;
+        var btn = findAddBtn(name);
+        if (!btn) return;
+        seen[name] = true;
+        out.push({ name: name, odds: parseFloat(btn.getAttribute("data-odds")), prob: parseFloat(btn.getAttribute("data-prob")) });
+      });
+      return out;
+    } catch (e) { return []; }
+  }
+  function saveSlip(){
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(slip.map(function(i){ return i.name; }))); } catch (e) {}
+  }
+  function removePickByName(name){
+    slip = slip.filter(function(i){ return i.name !== name; });
+    var btn = findAddBtn(name);
+    if (btn){ btn.disabled = false; btn.textContent = "Sumar al parlay"; }
+    renderSlip(); renderSaved();
+  }
+  function renderSaved(){
+    var items = document.getElementById("savedItems");
+    var totals = document.getElementById("savedTotals");
+    document.getElementById("savedCount").textContent = "Guardados: " + slip.length;
+    document.getElementById("savedEmpty").style.display = slip.length ? "none" : "block";
+    items.innerHTML = "";
+    slip.forEach(function(item){
+      var row = document.createElement("div");
+      row.className = "slip-item";
+      var txt = document.createElement("div");
+      var b = document.createElement("b"); b.textContent = item.name;
+      var s = document.createElement("span"); s.textContent = "Momio " + fmt(item.odds,2) + " · Prob. IA " + item.prob + "%";
+      txt.appendChild(b); txt.appendChild(s);
+      var btn = document.createElement("button");
+      btn.type = "button"; btn.textContent = "×"; btn.setAttribute("aria-label","Quitar " + item.name);
+      btn.addEventListener("click", function(){ removePickByName(item.name); });
+      row.appendChild(txt); row.appendChild(btn);
+      items.appendChild(row);
+    });
+    if (slip.length === 0){
+      document.getElementById("savedTotOdds").textContent = "—";
+      document.getElementById("savedTotProb").textContent = "—";
+      document.getElementById("savedTotEv").textContent = "—";
+      totals.hidden = true;
+      return;
+    }
+    var odds = 1, prob = 1;
+    slip.forEach(function(i){ odds *= i.odds; prob *= (i.prob/100); });
+    var ev = prob * odds - 1;
+    document.getElementById("savedTotOdds").textContent = fmt(odds,2);
+    document.getElementById("savedTotProb").textContent = fmt(prob*100,1) + "%";
+    document.getElementById("savedTotEv").textContent = (ev >= 0 ? "+" : "") + fmt(ev*100,1) + "%";
+    totals.hidden = false;
+  }
+  slip = loadSavedSlip();
+  slip.forEach(function(item){
+    var btn = findAddBtn(item.name);
+    if (btn){ btn.disabled = true; btn.textContent = "En tu parlay ✓"; }
+  });
+  document.getElementById("clearParlay").addEventListener("click", function(){
+    slip = [];
+    document.querySelectorAll(".add-btn").forEach(function(ab){ ab.disabled = false; ab.textContent = "Sumar al parlay"; });
+    renderSlip(); renderSaved();
+  });
+
   renderSlip();
 
   /* ---------- EV Calculator ---------- */
