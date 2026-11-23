@@ -107,6 +107,12 @@ producto, nadie debe volver a meterle mano.
   + Europa League con Poisson (últimos 4), momios DraftKings + EV (12
   verdes) y descubrimiento automático de partidos nuevos; integrados
   por el jefe en la página — el lunes sale con entre semana completo.
+- **Semana 5** — detalle del partido (últimos 5, H2H, tabla, momios,
+  alineación oficial cuando se publique): ordenada al Empleado 2 para
+  el lunes 23 nov (adelanto, en copia).
+- **Semana 7** — fragmento de integración revisado (bloque completo
+  por tarjeta + marcadores por partido + CSS): ordenado al Empleado 1
+  para el lunes 23 nov; el jefe pone los marcadores cuando esté listo.
 
 ## ⏳ Semana 4 — Pendiente
 

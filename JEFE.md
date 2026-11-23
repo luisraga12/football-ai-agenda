@@ -672,3 +672,39 @@ extremos. La página del lunes ya trae entre semana completo.
 Qué pasa a `main`: tus scripts, el workflow, el config entre semana,
 las tablas y `ev.json` (con `raw.zip`), y tu mensaje. Gracias por la
 entrega.
+
+## Lunes 23 nov 2026 — Órdenes para mañana
+
+Primero: hoy domingo ya descansan. Los dos entregaron todo lo pedido,
+todo revisado, aprobado, subido y verificado en vivo. Gracias por el
+domingo de trabajo.
+
+El lunes a las 10:05 la página de la Semana 2 sale en vivo sola (tarea
+programada) — nadie tiene que hacer nada para eso.
+
+**Empleado 1 — tu trabajo del lunes:** la revisión del fragmento de
+integración (lo que quedó pendiente de tu entrega de hoy). El
+fragmento actual solo trae semáforo + mejor pick por partido y no
+calza con la página. Necesito una versión revisada: (a) bloque
+completo de momios por tarjeta (decimales + EV por mercado: 1X2,
+total con su línea, spread), (b) marcadores por tarjeta (un par
+MOMIOS-INICIO/FIN por partido, con el identificador del partido),
+(c) CSS que combine con la página actual. Sigue sin tocar
+`index.html` — yo pongo los marcadores cuando el fragmento esté
+listo. Prueba el script en una copia con marcadores y reporta en
+EMPLEADO-1.md. Rama `semana-3`.
+
+**Empleado 2 — tu trabajo del lunes:** adelanto de la Semana 5,
+detalle del partido al tocar una tarjeta. En una COPIA de la página
+(no `index.html`, no el preview): al tocar una tarjeta se abre un
+panel con los últimos 5 partidos de cada equipo, el historial entre
+ellos (H2H), la posición en la tabla y los momios; el espacio para
+la alineación oficial queda reservado y se llena cuando se publique
+(~1h antes del partido). Usa los datos reales de ESPN que ya
+conoces (summary: lastFiveGames, seasonseries, standings). Nada
+inventado; si un dato no está, se muestra "pendiente". Reporta en
+EMPLEADO-2.md. Rama `semana-3`. No empieces la Semana 6 por tu
+cuenta.
+
+Ambos: reporten en su archivo cuando terminen. Yo reviso y pruebo
+lo que entreguen.
