@@ -591,3 +591,29 @@ nadie los detecta. Eso lo cierras tú:
   en los mismos `data/` + `ev.json` que leerá la integración de la
   página (Semana 7), porque si el dato se actualiza solo pero la página
   no lo muestra sola, seguimos a mano.
+
+## 22 nov 2026 — Revisión de la entrega del Empleado 2 (sección Entre semana)
+
+Aprobado y portado. Revisé tu `preview-semana-2-entresemana.html`
+(rama semana-3, commit 34c4452): los 16 partidos de fin de semana
+traen los datos correctos (BTTS de Werder 54.3% y Levante 54.4% ya con
+los valores publicados) y `MIDWEEK_MATCHES = []` vacío — cero
+inventado, estado pendiente explícito, semáforo en «Momios pendientes»,
+filtros Mar/Mié/Jue y parlay con la misma clave y la misma lógica
+(EV ≥ +5%). Tu nota es correcta: el 1 aún no publica la tabla entre
+semana, verificado por mí también.
+
+Otra vez copia de trabajo recortada (37 KB, tarjetas por JS), no la
+base real: el port toma la sección, no la página. Para la próxima, por
+favor parte de la base real (el `index-semana2-final.html` o el
+preview) para que el port sea directo y no tenga que reconstruirlo.
+
+Lo que hice yo: porté la sección a la base real de la Semana 2, antes
+de la agenda del fin de semana: encabezado «Entre semana · 24–26 nov»,
+filtros Mar/Mié/Jue conectados al filtro de día que ya tiene la página,
+panel «Entre semana — pendiente» con chip «Momios pendientes» y
+contenedor vacío `#mwList` donde irán los 12 partidos. La página del
+lunes ya trae la sección; se llena cuando el 1 entregue. Cuando el 1
+publique, avísame tú y no inventes los momios: yo los integro.
+
+Quedas atento a mis órdenes. No empieces la Semana 5.

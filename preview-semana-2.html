@@ -318,6 +318,22 @@
 
     <!-- AGENDA -->
     <main>
+      <!-- ENTRE SEMANA (Semana 2: mar 24 – jue 26 nov; sección del Empleado 2, portada por el jefe) -->
+      <div class="agenda-head">
+        <h2>Entre semana · 24–26 nov</h2>
+        <span class="demo-note">Champions, Europa League y Conference League · Horas de Monterrey (CST)</span>
+      </div>
+      <div class="days" role="group" aria-label="Día entre semana" style="margin-bottom:14px">
+        <button class="day" type="button" data-day="all" aria-pressed="false">Todos<small>24–26 nov</small></button>
+        <button class="day" type="button" data-day="mar" aria-pressed="false">Martes<small>Mar 24</small></button>
+        <button class="day" type="button" data-day="mie" aria-pressed="false">Miércoles<small>Mié 25</small></button>
+        <button class="day" type="button" data-day="jue" aria-pressed="false">Jueves<small>Jue 26</small></button>
+      </div>
+      <div class="panel" id="mwPending" aria-label="Entre semana pendiente">
+        <div class="panel-h"><h2>Entre semana — pendiente</h2><span class="chip pending">Momios pendientes</span></div>
+        <p class="rule-note">Los 12 partidos entre semana (Champions, Europa League y Conference League) se publican cuando el Empleado 1 entregue su tabla con Poisson, momios y EV. Cero partidos inventados: ni probabilidades, ni momios, ni EV hasta que lleguen sus datos.</p>
+      </div>
+      <div id="mwList"></div>
       <div class="agenda-head">
         <h2>Agenda del fin de semana · 27–29 nov</h2>
         <span class="demo-note">Probabilidades Poisson verificadas por el jefe 19 nov 2026 · Partidos del 27–29 nov · Horas de Monterrey (CST)</span>
@@ -996,7 +1012,7 @@
   </section>
 
   <footer>
-    <p><strong>Football AI Agenda · Proyecto de Luis Raga.</strong> Diseño original inspirado en la estructura de agendas como 365Scores y en las tarjetas editoriales de OneFootball; no copia su código, su diseño propietario ni sus datos. Semana 2: partidos reales del 27–29 nov 2026, verificados el 19 nov 2026 con la API pública de ESPN (sin clave); horas de Monterrey (CST), sin momios ni probabilidades inventadas. Las probabilidades Poisson (modelo propio, Semana 2), los momios DraftKings (22 nov 2026) y el valor esperado ya están integrados. El parlay se guarda en este navegador y sobrevive al recargar (Semana 4).</p>
+    <p><strong>Football AI Agenda · Proyecto de Luis Raga.</strong> Diseño original inspirado en la estructura de agendas como 365Scores y en las tarjetas editoriales de OneFootball; no copia su código, su diseño propietario ni sus datos. Semana 2: partidos reales del 27–29 nov 2026, verificados el 19 nov 2026 con la API pública de ESPN (sin clave); horas de Monterrey (CST), sin momios ni probabilidades inventadas. Las probabilidades Poisson (modelo propio, Semana 2), los momios DraftKings (22 nov 2026) y el valor esperado ya están integrados. El parlay se guarda en este navegador y sobrevive al recargar (Semana 4). La sección Entre semana (24–26 nov) está lista y se llena cuando lleguen los datos del Empleado 1.</p>
     <p>Esta página es una herramienta de análisis. No realiza apuestas, no ejecuta transacciones y ningún momio mostrado es una cuota en vivo de una casa de apuestas.</p>
   </footer>
 </div>

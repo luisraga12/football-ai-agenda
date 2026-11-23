@@ -100,6 +100,9 @@ producto, nadie debe volver a meterle mano.
   detectar esos partidos solo cuando ESPN los publique y agregarlos sin
   que nadie edite el config a mano (descubrimiento automático, orden
   al Empleado 1 del 22 nov).
+- **Entre semana** — sección lista en la página (Empleado 2, 22 nov,
+  portada por el jefe) en estado pendiente: se llena con los 12
+  partidos cuando el Empleado 1 entregue su tabla.
 
 ## ⏳ Semana 4 — Pendiente
 
