@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Prototipo: marcador en vivo — Semana 2 (copia de prueba)</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 640px; margin: 2em auto; padding: 0 1em; }
+  .partido { padding: .5em .8em; border: 1px solid #ccc; border-radius: 8px; margin: .4em 0; }
+  .vivo { border-color: #1a7f37; background: #e6f4ea; font-weight: bold; }
+  .programado { background: #f6f6f6; }
+  .pendiente { background: #fff4e5; }
+  #nota { color: #666; font-size: .9em; }
+</style>
+</head>
+<body>
+<h1>Prototipo: marcador en vivo — Semana 2</h1>
+<p id="nota">Copia de prueba, no es index.html. Lee el scoreboard público de ESPN
+y refresca cada 60 segundos. Los 28 partidos (16 fin de semana + 12 entre
+semana) se buscan por liga + fecha + ID de equipo.</p>
+<div id="marcador">Cargando…</div>
+<script src="scripts/marcador_en_vivo.js"></script>
+<script>
+  // Los 28 partidos salen de scripts/config/semana-2.json y
+  // scripts/config/semana-2-entresemana.json (mismos IDs que usa
+  // recolectar_datos.py para validar). Aquí van los 4 primeros como
+  // ejemplo; el módulo acepta la lista completa.
+  const PARTIDOS_EJEMPLO = [
+    { liga: 'ger.1', fecha: '2026-11-27', home_id: 137, away_id: 268, home: 'Werder Bremen', away: 'Borussia Mönchengladbach' },
+    { liga: 'ita.1', fecha: '2026-11-27', home_id: 17530, away_id: 107, home: 'Venezia', away: 'Bologna' },
+    { liga: 'eng.1', fecha: '2026-11-27', home_id: 393, away_id: 363, home: 'Nottingham Forest', away: 'Chelsea' },
+    { liga: 'esp.1', fecha: '2026-11-27', home_id: 1538, away_id: 87, home: 'Levante', away: 'Racing Santander' },
+  ];
+  MarcadorEnVivo.init(PARTIDOS_EJEMPLO, document.getElementById('marcador'));
+</script>
+</body>
+</html>
