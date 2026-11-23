@@ -108,11 +108,19 @@ producto, nadie debe volver a meterle mano.
   verdes) y descubrimiento automático de partidos nuevos; integrados
   por el jefe en la página — el lunes sale con entre semana completo.
 - **Semana 5** — detalle del partido (últimos 5, H2H, tabla, momios,
-  alineación oficial cuando se publique): ordenada al Empleado 2 para
-  el lunes 23 nov (adelanto, en copia).
+  alineación oficial cuando se publique): adelanto entregado por el
+  Empleado 2 el lunes 23 nov y verificado por el jefe contra ESPN en
+  vivo (últimos 5 y tabla exactos en los partidos revisados); preview
+  en `preview-semana-5-detalle.html`. El port a la página real se hace
+  en la Semana 5.
 - **Semana 7** — fragmento de integración revisado (bloque completo
-  por tarjeta + marcadores por partido + CSS): ordenado al Empleado 1
-  para el lunes 23 nov; el jefe pone los marcadores cuando esté listo.
+  por tarjeta + marcadores por partido + CSS): entregado por el
+  Empleado 1 el lunes 23 nov, revisado y aprobado por el jefe
+  (reproducción byte a byte, idempotente, falla seguro); sus `ev.json`
+  traían momios del domingo, el jefe los regeneró con datos frescos
+  de main. El workflow ya corre ambos configs (fin de semana + entre
+  semana) en cada corrida — arreglo hecho por el jefe el 23 nov. El
+  jefe pone los marcadores en la página cuando toque integrarlo.
 
 ## ⏳ Semana 4 — Pendiente
 
