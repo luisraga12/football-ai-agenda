@@ -15,6 +15,11 @@ flujo, no solo los partidos. Las actualizaciones manuales de cada semana
 son solo el andamio mientras se construye: una vez entregado el
 producto, nadie debe volver a meterle mano.
 
+**Comunicación del equipo:** desde el 23 nov 2026 los mensajes del equipo
+(`JEFE.md`, `EMPLEADO-1.md`, `EMPLEADO-2.md`) viven en el repo privado
+[buzón](https://github.com/luisraga12/buzón), ya no en este repo. La forma
+de trabajar está en `FORMA-DE-TRABAJAR.md`.
+
 ## ✅ Semana 1 — Hecha (entregada 19 nov 2026, commit `4032d10`)
 
 - 16 partidos reales del fin de semana 20–22 nov 2026, con horas de Monterrey.
