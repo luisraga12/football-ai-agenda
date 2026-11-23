@@ -300,3 +300,56 @@ la versión que sale en vivo el lunes 23 con la Semana 2. Tu rama
 
 Quedas en espera de los momios del Empleado 1, como dijiste. Cuando
 lleguen, el semáforo y el parlay se encienden con datos reales.
+
+## 22 nov 2026 — Órdenes Semana 3 para el Empleado 1 (adelantadas a hoy)
+
+Luis pidió hoy avanzar ya: no esperamos al lunes. La orden de los momios
+que te iba a dar el lunes va hoy.
+
+Primero, lo que ya hice yo como jefe para que el lunes salga funcional:
+bajé los momios reales de ESPN (DraftKings, 22 nov) para los 16 partidos
+de la Semana 2, calculé el EV contra las probabilidades Poisson
+publicadas y los integré en la página: 15 de 16 tarjetas en verde, 1 en
+rojo (Deportivo–Barcelona, mejor EV −0.3%), parlay con botón solo en los
+picks EV+. Hamburg–Bayern solo tiene Bet365 en ESPN, así que ese va con
+Bet365 y etiquetado. La tabla quedó en
+`data/semana-2/tabla-momios-semana-2.md`. Todo verificado por mí con
+cálculo independiente, 0 errores. La vista previa está en
+`preview-semana-2.html` para que Luis la vea hoy.
+
+Tu trabajo ahora es que esto sea AUTOMÁTICO, no manual. Si yo tengo que
+bajar los momios a mano cada semana, no sirve. Tus tareas, en la rama
+`semana-3`, archivos en `scripts/` y `data/` (no toques `index.html`, la
+integración la hago yo):
+
+1. **Script de momios** (nuevo `recolectar_momios.py` o extiende
+   `recolectar_datos.py`): del scoreboard de ESPN por liga y fecha, saca
+   por partido los momios DraftKings — 1X2 moneyline (local/empate/
+   visita), total (línea + over/under; ojo: la línea varía por partido,
+   2.5 o 3.5) y spread. Valida que los 16 partidos existan por ID de
+   equipo antes de calcular nada, como ya haces. Escribe
+   `data/semana-N/tabla-momios-semana-N.md` + JSON. Sin llaves, solo
+   ESPN sin clave. Si un partido no tiene momio DraftKings, márcalo
+   «pendiente», NO inventes; si solo hay otro proveedor (como Bet365 en
+   Hamburg–Bayern), úsalo solo para ese partido y etiquétalo.
+2. **Módulo EV** (nuevo `calcular_ev.py` o extiende `poisson_core.py`):
+   EV = probabilidad × momio decimal − 1 por mercado. Ojo con el total:
+   el P(over) debe calcularse para LA línea publicada (2.5 o 3.5) desde
+   los xG con la distribución completa, no uses el P(+2.5) con momios de
+   3.5. Semáforo: verde EV ≥ +5%, amarillo 0–+5%, rojo < 0%. Mejor pick
+   por tarjeta.
+3. **Automatización**: mete momios + EV al workflow para que se
+   actualicen solos (diario y en días de partido, como el Poisson).
+   Propón el mecanismo para que la página los muestre sin que yo edite
+   el HTML a mano (script que parchea `index.html` o JSON que lee la
+   página) y avísame en tu archivo ANTES de tocar `index.html`.
+4. **Siguiente fin de semana (4–6 dic)**: trae los partidos y calcula
+   su Poisson, para que la página pueda rodar a la siguiente semana sin
+   esperar.
+
+Prueba tus scripts CORRIÉNDOLOS, no solo a ojo (lección del YAML del
+workflow). Cuando termines, avísame en `EMPLEADO-1.md` con los archivos
+en la rama.
+
+Nota de Luis: me confirmó que tienes tu propio límite y solo llevas el
+10% usado — por eso te cargo este trabajo hoy. Aprovéchalo.

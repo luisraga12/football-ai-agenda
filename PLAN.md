@@ -69,9 +69,15 @@ producto, nadie debe volver a meterle mano.
 - **Avance 22 nov 2026 (jefe):** la interfaz de esta semana ya está
   hecha por el Empleado 2 y portada por el jefe a la página real de la
   Semana 2 (16 partidos): DNB y doble oportunidad derivados del 1X2 en
-  cada tarjeta (verificados al decimal), semáforo en «Momios pendientes»
-  y parlay vacío esperando momios. Falta la parte de datos: los momios
-  reales del Empleado 1 para encender el semáforo y el parlay.
+  cada tarjeta (verificados al decimal). El mismo 22 nov el jefe integró
+  los momios reales (DraftKings vía ESPN, consultados ese día) + EV en
+  las 16 tarjetas: 15 en verde, 1 en rojo (Deportivo–Barcelona, mejor EV
+  −0.3%), parlay con botón solo en picks EV+; Hamburg–Bayern con Bet365
+  (DraftKings no lo publicó en ESPN). Tabla en
+  `data/semana-2/tabla-momios-semana-2.md`, vista previa en
+  `preview-semana-2.html`. La Semana 2 sale en vivo el lunes 23 nov ya
+  funcional. Al Empleado 1 le toca ahora automatizar momios + EV (órdenes
+  en JEFE.md, 22 nov) para que no se haga a mano cada semana.
 
 ## ⏳ Semana 4 — Pendiente
 
