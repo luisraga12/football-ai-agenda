@@ -82,7 +82,11 @@ producto, nadie debe volver a meterle mano.
   parlay no se reseteaban al vaciarse y los filtros de día no filtraban —
   más los EV recalculados con las probabilidades publicadas (antes
   diferían hasta 0.8 puntos); corregidos por el jefe y verificados con
-  0 errores, diferencia máxima 0.05 puntos.
+  0 errores, diferencia máxima 0.05 puntos. Automatización del
+  Empleado 1 entregada 22 nov y verificada por el jefe (reproducción
+  exacta, byte a byte): recolectar_momios.py + calcular_ev.py,
+  workflow actualizado, Poisson Semana 3 (4–6 dic) listo, momios S3
+  4/16 (el resto pendiente de DraftKings).
 
 ## ⏳ Semana 4 — Pendiente
 

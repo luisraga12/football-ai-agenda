@@ -1,0 +1,217 @@
+{
+ "semana": 3,
+ "partidos": [
+  {
+   "home": "Bayern Munich",
+   "away": "SC Paderborn 07",
+   "fecha": "2026-12-04",
+   "proveedor": null,
+   "estado": "pendiente",
+   "mejor_pick": null,
+   "mejor_ev": null,
+   "semaforo": null,
+   "momios": null
+  },
+  {
+   "home": "Bologna",
+   "away": "AS Roma",
+   "fecha": "2026-12-04",
+   "proveedor": "Bet 365",
+   "estado": "con_momio",
+   "mejor_pick": "Local",
+   "mejor_ev": 0.5105927928897418,
+   "semaforo": "verde",
+   "momios": {
+    "proveedor": "Bet 365",
+    "moneyline": {
+     "home": 3.8,
+     "draw": 3.6,
+     "away": 1.85
+    },
+    "total": null,
+    "spread": null
+   }
+  },
+  {
+   "home": "Chelsea",
+   "away": "Liverpool",
+   "fecha": "2026-12-05",
+   "proveedor": null,
+   "estado": "pendiente",
+   "mejor_pick": null,
+   "mejor_ev": null,
+   "semaforo": null,
+   "momios": null
+  },
+  {
+   "home": "Bayer Leverkusen",
+   "away": "Borussia Mönchengladbach",
+   "fecha": "2026-12-05",
+   "proveedor": null,
+   "estado": "pendiente",
+   "mejor_pick": null,
+   "mejor_ev": null,
+   "semaforo": null,
+   "momios": null
+  },
+  {
+   "home": "Villarreal",
+   "away": "Real Sociedad",
+   "fecha": "2026-12-05",
+   "proveedor": null,
+   "estado": "pendiente",
+   "mejor_pick": null,
+   "mejor_ev": null,
+   "semaforo": null,
+   "momios": null
+  },
+  {
+   "home": "Napoli",
+   "away": "Lecce",
+   "fecha": "2026-12-05",
+   "proveedor": "Bet 365",
+   "estado": "con_momio",
+   "mejor_pick": "Local",
+   "mejor_ev": 0.17795034492055772,
+   "semaforo": "verde",
+   "momios": {
+    "proveedor": "Bet 365",
+    "moneyline": {
+     "home": 1.333,
+     "draw": 4.5,
+     "away": 8.5
+    },
+    "total": null,
+    "spread": null
+   }
+  },
+  {
+   "home": "Brentford",
+   "away": "Manchester City",
+   "fecha": "2026-12-05",
+   "proveedor": null,
+   "estado": "pendiente",
+   "mejor_pick": null,
+   "mejor_ev": null,
+   "semaforo": null,
+   "momios": null
+  },
+  {
+   "home": "Barcelona",
+   "away": "Celta Vigo",
+   "fecha": "2026-12-05",
+   "proveedor": null,
+   "estado": "pendiente",
+   "mejor_pick": null,
+   "mejor_ev": null,
+   "semaforo": null,
+   "momios": null
+  },
+  {
+   "home": "Eintracht Frankfurt",
+   "away": "Werder Bremen",
+   "fecha": "2026-12-05",
+   "proveedor": null,
+   "estado": "pendiente",
+   "mejor_pick": null,
+   "mejor_ev": null,
+   "semaforo": null,
+   "momios": null
+  },
+  {
+   "home": "Atlético Madrid",
+   "away": "Real Betis",
+   "fecha": "2026-12-06",
+   "proveedor": null,
+   "estado": "pendiente",
+   "mejor_pick": null,
+   "mejor_ev": null,
+   "semaforo": null,
+   "momios": null
+  },
+  {
+   "home": "Schalke 04",
+   "away": "Borussia Dortmund",
+   "fecha": "2026-12-06",
+   "proveedor": null,
+   "estado": "pendiente",
+   "mejor_pick": null,
+   "mejor_ev": null,
+   "semaforo": null,
+   "momios": null
+  },
+  {
+   "home": "Newcastle United",
+   "away": "Sunderland",
+   "fecha": "2026-12-06",
+   "proveedor": null,
+   "estado": "pendiente",
+   "mejor_pick": null,
+   "mejor_ev": null,
+   "semaforo": null,
+   "momios": null
+  },
+  {
+   "home": "Tottenham Hotspur",
+   "away": "Arsenal",
+   "fecha": "2026-12-06",
+   "proveedor": null,
+   "estado": "pendiente",
+   "mejor_pick": null,
+   "mejor_ev": null,
+   "semaforo": null,
+   "momios": null
+  },
+  {
+   "home": "Juventus",
+   "away": "Udinese",
+   "fecha": "2026-12-06",
+   "proveedor": "Bet 365",
+   "estado": "con_momio",
+   "mejor_pick": "Local",
+   "mejor_ev": 0.18953160790479573,
+   "semaforo": "verde",
+   "momios": {
+    "proveedor": "Bet 365",
+    "moneyline": {
+     "home": 1.38,
+     "draw": 4.75,
+     "away": 8.0
+    },
+    "total": null,
+    "spread": null
+   }
+  },
+  {
+   "home": "Athletic Club",
+   "away": "Real Madrid",
+   "fecha": "2026-12-06",
+   "proveedor": null,
+   "estado": "pendiente",
+   "mejor_pick": null,
+   "mejor_ev": null,
+   "semaforo": null,
+   "momios": null
+  },
+  {
+   "home": "AC Milan",
+   "away": "Parma",
+   "fecha": "2026-12-06",
+   "proveedor": "Bet 365",
+   "estado": "con_momio",
+   "mejor_pick": "Local",
+   "mejor_ev": 0.04461139977479478,
+   "semaforo": "amarillo",
+   "momios": {
+    "proveedor": "Bet 365",
+    "moneyline": {
+     "home": 1.27,
+     "draw": 5.25,
+     "away": 9.0
+    },
+    "total": null,
+    "spread": null
+   }
+  }
+ ]
+}

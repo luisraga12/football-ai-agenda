@@ -420,3 +420,62 @@ teléfono y me dices.
 
 La vista previa actualizada ya está en `main`. Tu siguiente tarea sigue
 siendo la que te ordené hoy: guardar el parlay (Semana 4 adelantada).
+
+## 22 nov 2026 — Revisión de la entrega del Empleado 1 (momios + EV automáticos y Poisson 4–6 dic)
+
+Aprobado. Lo probé yo mismo, no solo a ojo: corrí
+`python3 scripts/run_semana.py --config scripts/config/semana-2.json` en
+una copia limpia de tu rama y reprodujo tus tablas EXACTAS, byte a byte
+(Poisson y momios de la Semana 2). Sin secretos en el código, YAML del
+workflow válido con parser, y las validaciones (16 partidos, 5 por
+equipo, 1X2 suma 100%, con momio tiene EV, pendiente sin EV inventado)
+están en su lugar.
+
+Lo que verifiqué además:
+- El moneyline de DraftKings sí trae `draw` (lo confirmé en el JSON
+  crudo de ESPN); tu parseo está bien.
+- `p_over` usa la línea publicada y `p_spread_cover` cuadra: Real
+  Madrid −2.5, P(cubre) ~89% → EV +87.2%.
+- Venezia se movió en vivo (3.30/3.15/2.10 en vez de 3.35/3.20/2.05):
+  eso explica tu +28.6% contra mi +30.9%. El resto de los EV difiere
+  ≤0.3 puntos porque tú usas las probabilidades con toda la precisión
+  y yo usé las publicadas a 1 decimal. La página del lunes se queda con
+  mis valores ya verificados; tu tabla es la fuente de ahora en
+  adelante.
+- Semana 3: recomputé las probabilidades desde los xG de tu tabla
+  (diferencia máx. 0.27 puntos, puro redondeo de los xG publicados) y
+  verifiqué en ESPN que existen Bayern–Paderborn, Schalke–Dortmund,
+  Chelsea–Liverpool, Tottenham–Arsenal y Newcastle–Sunderland. Los 16
+  partidos son reales; sin Liga MX porque no hay partidos esos días,
+  como dices.
+
+Respuestas a tus tres preguntas:
+(a) SÍ, el mejor pick puede ser spread. Es un mercado de la página
+(hándicap asiático) y la orden incluía spread. La página de la Semana 2
+queda como está (congelada para el lunes); desde la página de la
+Semana 3, cuando el spread sea el mejor pick se muestra en la tarjeta
+con su línea y su momio.
+(b) Marcadores, no fetch(). La página sigue con los datos integrados.
+PERO el fragmento necesita una vuelta más antes de poner marcadores:
+debe llevar el bloque completo de momios por tarjeta (decimales y EV
+por mercado, no solo mejor pick y semáforo), ir por tarjeta (un par de
+marcadores por tarjeta) y traer su CSS. Cuando esté listo, yo mismo
+pongo los marcadores en la página. No toques index.html hasta
+entonces; el workflow NO toca la página.
+(c) `semana-actual.json` NO lo toques: el lunes 23 nov 10:05 la
+publicación programada lo cambia a Semana 2 en el mismo commit que la
+página. Después de eso apunta a Semana 2.
+
+Pendientes para tu próxima entrega (no bloquean esta):
+- Ordena los partidos por fecha+hora en `generar_tabla.py`: el domingo
+  6 dic sale desordenado (14:00 primero, luego 08:30, 08:00...) y la
+  página muestra en el orden de la tabla.
+- Blinda `calcular_ev.py` si un partido trae total/spread pero no
+  moneyline: hoy rompería en `ml['home']`.
+- En la próxima entrega sube también los `raw/` para poder reproducir
+  sin volver a bajar ESPN.
+
+Qué pasa a `main`: tus scripts, el workflow, la config de la Semana 3,
+las tablas y `ev.json` de la S2 y la S3, y tu mensaje. La tabla de
+momios de la S2 en `main` ahora es la tuya (con spread). Gracias por la
+entrega.

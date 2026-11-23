@@ -22,9 +22,30 @@ interfaz (`index.html` no se toca en este trabajo).
 3. **`generar_tabla.py`** — escribe `data/semana-N/tabla-poisson-semana-N.md`
    con la tabla de partidos, la tabla por equipo, los promedios de liga,
    las fuentes y los datos no verificados.
-4. **`run_semana.py`** — corre los tres pasos en orden y valida el
-   resultado (16 partidos verificados, 5 partidos por equipo, 1X2 suma
-   100%). Si algo falla, no se publica nada.
+4. **`recolectar_momios.py`** — descarga del scoreboard de ESPN los
+   momios por partido (proveedor preferente DraftKings: 1X2 moneyline,
+   total y spread; si no hay DraftKings, se usa el único proveedor
+   disponible, p. ej. Bet 365, solo para ese partido y etiquetado).
+   Valida que los 16 partidos existan por ID de equipo antes de
+   calcular; si un partido no tiene momio, queda "pendiente", no se
+   inventa ninguna cuota. Escribe `data/semana-N/raw/momios.json`.
+5. **`calcular_ev.py`** — EV = probabilidad × momio decimal − 1 por
+   mercado. El P(over) se calcula para LA línea publicada (2.5 o 3.5)
+   desde los xG con la distribución completa (`p_over` en
+   `poisson_core.py`); el spread usa `p_spread_cover`. Semáforo por
+   mejor pick: verde EV ≥ +5%, amarillo 0–+5%, rojo < 0%. Escribe
+   `data/semana-N/raw/ev_result.json`, `data/semana-N/ev.json` y
+   `data/semana-N/tabla-momios-semana-N.md`.
+6. **`integrar_pagina.py`** — propuesta de mecanismo para que la página
+   muestre momios + EV sin editar el HTML a mano: inyecta un fragmento
+   entre los marcadores `<!-- MOMIOS-INICIO -->` / `<!-- MOMIOS-FIN -->`.
+   Por defecto es dry-run; si el HTML no tiene los marcadores, falla
+   sin tocar nada. No se usa hasta que el jefe decida el mecanismo.
+7. **`run_semana.py`** — corre los cinco pasos (1–5) en orden y valida
+   el resultado (16 partidos verificados, 5 partidos por equipo, 1X2
+   suma 100%, cada partido con momio tiene EV y semáforo, ningún
+   partido pendiente tiene EV inventado). Si algo falla, no se publica
+   nada.
 
 ## Corrección obligatoria aplicada (jefe, 19 nov 2026)
 
@@ -54,10 +75,11 @@ python3 scripts/calcular_poisson.py --config scripts/config/semana-1.json
 python3 scripts/generar_tabla.py   --config scripts/config/semana-1.json
 ```
 
-Salidas en `data/semana-N/`: `tabla-poisson-semana-N.md` y
-`raw/` con los JSON crudos de ESPN (`scoreboard_*`, `schedule_*`),
-`teams_last5.json`, `league_avgs.json`, `verified_events.json` y
-`poisson_result.json`.
+Salidas en `data/semana-N/`: `tabla-poisson-semana-N.md`,
+`tabla-momios-semana-N.md`, `ev.json` y `raw/` con los JSON crudos de
+ESPN (`scoreboard_*`, `odds_*`, `schedule_*`), `teams_last5.json`,
+`league_avgs.json`, `verified_events.json`, `poisson_result.json`,
+`momios.json` y `ev_result.json`.
 
 ## Cambiar de semana
 
@@ -80,7 +102,7 @@ Si los datos cambiaron, hace commit de `data/` en la rama. Solo usa
 `GITHUB_TOKEN`; no hay secretos ni claves: ESPN es API pública.
 
 **Nota:** los workflows programados solo corren en la rama por defecto
-(`main`). Este workflow se entrega en la rama `semana-2` para revisión
+(`main`). Este workflow se entrega en la rama `semana-3` para revisión
 del jefe; empieza a correr solo cuando se fusione a `main`.
 
 ## Metodología (aprobada por el jefe, 19 nov 2026)

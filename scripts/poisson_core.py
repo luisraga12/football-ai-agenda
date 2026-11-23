@@ -52,6 +52,42 @@ def match_probs(xg_home, xg_away):
     }
 
 
+def p_over(xg_home, xg_away, linea):
+    """P(total de goles > linea) con la distribucion Poisson completa.
+
+    La linea es la PUBLICADA por el proveedor de momios (2.5 o 3.5).
+    No usar el P(+2.5) de match_probs() con momios de linea 3.5:
+    para linea 3.5 hay que recalcular con esta funcion.
+    """
+    ph = [pois(k, xg_home) for k in range(K_MAX + 1)]
+    pa = [pois(k, xg_away) for k in range(K_MAX + 1)]
+    p = 0.0
+    for i in range(K_MAX + 1):
+        for j in range(K_MAX + 1):
+            if i + j > linea:
+                p += ph[i] * pa[j]
+    return p * 100
+
+
+def p_spread_cover(xg_home, xg_away, linea_local):
+    """P(el local cubre el spread) con la distribucion Poisson completa.
+
+    linea_local es la linea del spread del LOCAL (p. ej. -2.5: el local
+    cubre si gana por mas de 2.5 goles; +0.5: cubre si no pierde por
+    mas de 0 goles, es decir, si gana o empata). En general el local
+    cubre si (goles local - goles visitante) > -linea_local.
+    P(visitante cubre) = 1 - P(local cubre) (las lineas son .5, sin push).
+    """
+    ph = [pois(k, xg_home) for k in range(K_MAX + 1)]
+    pa = [pois(k, xg_away) for k in range(K_MAX + 1)]
+    p = 0.0
+    for i in range(K_MAX + 1):
+        for j in range(K_MAX + 1):
+            if i - j > -linea_local:
+                p += ph[i] * pa[j]
+    return p * 100
+
+
 def expected_goals(avg_home, avg_away, ataque_home, defensa_away,
                    ataque_away, defensa_home):
     """xG local y visitante con la metodologia aprobada por el jefe.
