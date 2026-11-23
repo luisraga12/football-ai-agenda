@@ -1,0 +1,493 @@
+{
+ "semana": 2,
+ "fecha_consulta": "2026-11-23",
+ "partidos": [
+  {
+   "away": "Borussia Mönchengladbach",
+   "away_id": 268,
+   "fecha": "2026-11-27",
+   "home": "Werder Bremen",
+   "home_id": 137,
+   "liga": "ger.1",
+   "fecha_cst": "2026-11-27 13:30",
+   "liga_nombre": "Bundesliga",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 1.6896551724137931,
+     "draw": 4.1,
+     "away": 3.95
+    },
+    "total": {
+     "linea": 3.5,
+     "over": 2.2,
+     "under": 1.625
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "home": 1.6451612903225805,
+     "away_linea": 0.5,
+     "away": 2.05
+    }
+   }
+  },
+  {
+   "away": "Bologna",
+   "away_id": 107,
+   "fecha": "2026-11-27",
+   "home": "Venezia",
+   "home_id": 17530,
+   "liga": "ita.1",
+   "fecha_cst": "2026-11-27 13:45",
+   "liga_nombre": "Serie A",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 3.3,
+     "draw": 3.15,
+     "away": 2.1
+    },
+    "total": {
+     "linea": 2.5,
+     "over": 1.9523809523809523,
+     "under": 1.8
+    },
+    "spread": {
+     "home_linea": 0.5,
+     "home": 1.6451612903225805,
+     "away_linea": -0.5,
+     "away": 2.05
+    }
+   }
+  },
+  {
+   "away": "Chelsea",
+   "away_id": 363,
+   "fecha": "2026-11-27",
+   "home": "Nottingham Forest",
+   "home_id": 393,
+   "liga": "eng.1",
+   "fecha_cst": "2026-11-27 14:00",
+   "liga_nombre": "Premier League",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 2.7,
+     "draw": 3.4,
+     "away": 2.55
+    },
+    "total": {
+     "linea": 2.5,
+     "over": 1.7407407407407407,
+     "under": 2.05
+    },
+    "spread": {
+     "home_linea": 0.5,
+     "home": 1.5,
+     "away_linea": -0.5,
+     "away": 2.35
+    }
+   }
+  },
+  {
+   "away": "Racing Santander",
+   "away_id": 87,
+   "fecha": "2026-11-27",
+   "home": "Levante",
+   "home_id": 1538,
+   "liga": "esp.1",
+   "fecha_cst": "2026-11-27 14:00",
+   "liga_nombre": "LaLiga",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 2.05,
+     "draw": 3.85,
+     "away": 3.15
+    },
+    "total": {
+     "linea": 3.5,
+     "over": 2.25,
+     "under": 1.625
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "home": 1.9523809523809523,
+     "away_linea": 0.5,
+     "away": 1.7142857142857144
+    }
+   }
+  },
+  {
+   "away": "Bayern Munich",
+   "away_id": 132,
+   "fecha": "2026-11-28",
+   "home": "Hamburg SV",
+   "home_id": 127,
+   "liga": "ger.1",
+   "fecha_cst": "2026-11-28 08:30",
+   "liga_nombre": "Bundesliga",
+   "proveedor": "Bet 365",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "Bet 365",
+    "moneyline": {
+     "home": 8.5,
+     "draw": 6.0,
+     "away": 1.25
+    },
+    "total": null,
+    "spread": null
+   }
+  },
+  {
+   "away": "Brentford",
+   "away_id": 337,
+   "fecha": "2026-11-28",
+   "home": "Manchester United",
+   "home_id": 360,
+   "liga": "eng.1",
+   "fecha_cst": "2026-11-28 09:00",
+   "liga_nombre": "Premier League",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 2.0,
+     "draw": 3.75,
+     "away": 3.4
+    },
+    "total": {
+     "linea": 3.5,
+     "over": 2.35,
+     "under": 1.5555555555555556
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "home": 1.9090909090909092,
+     "away_linea": 0.5,
+     "away": 1.7407407407407407
+    }
+   }
+  },
+  {
+   "away": "Atlético Madrid",
+   "away_id": 1068,
+   "fecha": "2026-11-28",
+   "home": "Elche",
+   "home_id": 3751,
+   "liga": "esp.1",
+   "fecha_cst": "2026-11-28 11:30",
+   "liga_nombre": "LaLiga",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 5.25,
+     "draw": 4.4,
+     "away": 1.5555555555555556
+    },
+    "total": {
+     "linea": 3.5,
+     "over": 2.35,
+     "under": 1.5714285714285714
+    },
+    "spread": {
+     "home_linea": 0.5,
+     "home": 2.35,
+     "away_linea": -0.5,
+     "away": 1.5128205128205128
+    }
+   }
+  },
+  {
+   "away": "Eintracht Frankfurt",
+   "away_id": 125,
+   "fecha": "2026-11-28",
+   "home": "VfB Stuttgart",
+   "home_id": 134,
+   "liga": "ger.1",
+   "fecha_cst": "2026-11-28 11:30",
+   "liga_nombre": "Bundesliga",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 1.6896551724137931,
+     "draw": 4.4,
+     "away": 3.7
+    },
+    "total": {
+     "linea": 3.5,
+     "over": 1.6896551724137931,
+     "under": 2.1
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "home": 1.6451612903225805,
+     "away_linea": 0.5,
+     "away": 2.05
+    }
+   }
+  },
+  {
+   "away": "Genoa",
+   "away_id": 3263,
+   "fecha": "2026-11-28",
+   "home": "Internazionale",
+   "home_id": 110,
+   "liga": "ita.1",
+   "fecha_cst": "2026-11-28 13:45",
+   "liga_nombre": "Serie A",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 1.2941176470588236,
+     "draw": 5.0,
+     "away": 8.0
+    },
+    "total": {
+     "linea": 2.5,
+     "over": 1.5714285714285714,
+     "under": 2.3
+    },
+    "spread": {
+     "home_linea": -1.5,
+     "home": 1.8333333333333335,
+     "away_linea": 1.5,
+     "away": 1.8
+    }
+   }
+  },
+  {
+   "away": "Alavés",
+   "away_id": 96,
+   "fecha": "2026-11-28",
+   "home": "Real Madrid",
+   "home_id": 86,
+   "liga": "esp.1",
+   "fecha_cst": "2026-11-28 14:00",
+   "liga_nombre": "LaLiga",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 1.1538461538461537,
+     "draw": 8.5,
+     "away": 14.0
+    },
+    "total": {
+     "linea": 3.5,
+     "over": 1.8333333333333335,
+     "under": 1.9090909090909092
+    },
+    "spread": {
+     "home_linea": -2.5,
+     "home": 2.1,
+     "away_linea": 2.5,
+     "away": 1.625
+    }
+   }
+  },
+  {
+   "away": "Liverpool",
+   "away_id": 364,
+   "fecha": "2026-11-29",
+   "home": "Everton",
+   "home_id": 368,
+   "liga": "eng.1",
+   "fecha_cst": "2026-11-29 06:00",
+   "liga_nombre": "Premier League",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 3.55,
+     "draw": 3.6,
+     "away": 2.0
+    },
+    "total": {
+     "linea": 2.5,
+     "over": 1.6666666666666665,
+     "under": 2.15
+    },
+    "spread": {
+     "home_linea": 0.5,
+     "home": 1.7692307692307692,
+     "away_linea": -0.5,
+     "away": 1.9090909090909092
+    }
+   }
+  },
+  {
+   "away": "Napoli",
+   "away_id": 114,
+   "fecha": "2026-11-29",
+   "home": "Sassuolo",
+   "home_id": 3997,
+   "liga": "ita.1",
+   "fecha_cst": "2026-11-29 08:00",
+   "liga_nombre": "Serie A",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 4.3,
+     "draw": 4.1,
+     "away": 1.625
+    },
+    "total": {
+     "linea": 3.5,
+     "over": 2.35,
+     "under": 1.5555555555555556
+    },
+    "spread": {
+     "home_linea": 0.5,
+     "home": 2.15,
+     "away_linea": -0.5,
+     "away": 1.5882352941176472
+    }
+   }
+  },
+  {
+   "away": "Barcelona",
+   "away_id": 83,
+   "fecha": "2026-11-29",
+   "home": "Deportivo",
+   "home_id": 90,
+   "liga": "esp.1",
+   "fecha_cst": "2026-11-29 09:15",
+   "liga_nombre": "LaLiga",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 8.5,
+     "draw": 7.0,
+     "away": 1.25
+    },
+    "total": {
+     "linea": 3.5,
+     "over": 1.6451612903225805,
+     "under": 2.2
+    },
+    "spread": {
+     "home_linea": 1.5,
+     "home": 2.15,
+     "away_linea": -1.5,
+     "away": 1.606060606060606
+    }
+   }
+  },
+  {
+   "away": "Manchester City",
+   "away_id": 382,
+   "fecha": "2026-11-29",
+   "home": "Arsenal",
+   "home_id": 359,
+   "liga": "eng.1",
+   "fecha_cst": "2026-11-29 10:30",
+   "liga_nombre": "Premier League",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 1.9523809523809523,
+     "draw": 3.75,
+     "away": 3.6
+    },
+    "total": {
+     "linea": 2.5,
+     "over": 1.7142857142857144,
+     "under": 2.1
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "home": 1.8333333333333335,
+     "away_linea": 0.5,
+     "away": 1.8
+    }
+   }
+  },
+  {
+   "away": "Bayer Leverkusen",
+   "away_id": 131,
+   "fecha": "2026-11-29",
+   "home": "Borussia Dortmund",
+   "home_id": 124,
+   "liga": "ger.1",
+   "fecha_cst": "2026-11-29 12:30",
+   "liga_nombre": "Bundesliga",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 2.05,
+     "draw": 3.8,
+     "away": 2.95
+    },
+    "total": {
+     "linea": 3.5,
+     "over": 2.15,
+     "under": 1.6451612903225805
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "home": 2.0,
+     "away_linea": 0.5,
+     "away": 1.6896551724137931
+    }
+   }
+  },
+  {
+   "away": "Juventus",
+   "away_id": 111,
+   "fecha": "2026-11-29",
+   "home": "Como",
+   "home_id": 2572,
+   "liga": "ita.1",
+   "fecha_cst": "2026-11-29 13:45",
+   "liga_nombre": "Serie A",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 2.0,
+     "draw": 3.4,
+     "away": 3.3
+    },
+    "total": {
+     "linea": 2.5,
+     "over": 1.8,
+     "under": 1.9523809523809523
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "home": 1.9523809523809523,
+     "away_linea": 0.5,
+     "away": 1.7142857142857144
+    }
+   }
+  }
+ ]
+}

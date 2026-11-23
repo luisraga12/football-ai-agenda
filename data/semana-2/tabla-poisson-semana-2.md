@@ -86,8 +86,8 @@ Los promedios se calcularon desde los scoreboards de las últimas ~3 jornadas co
 
 ## (d) Fuentes ESPN consultadas (API pública, sin clave)
 
-- Scoreboard por liga y día, 2026-11-27 al 2026-11-29: `site.api.espn.com/apis/site/v2/sports/soccer/{{liga}}/scoreboard?dates={{AAAAMMDD}}` — los 16 partidos aparecen como STATUS_SCHEDULED con la fecha y hora exactas de la configuración (horas convertidas de UTC a CST, UTC-6).
-- Schedule por equipo (últimos 5 completados): `site.api.espn.com/apis/site/v2/sports/soccer/{liga}/teams/{id}/schedule` — 32 equipos, 5 partidos completados cada uno, todos de liga, hasta el cutoff.
+- Scoreboard por liga y día, 2026-11-27 al 2026-11-29: `site.api.espn.com/apis/site/v2/sports/soccer/{{liga}}/scoreboard?dates={{AAAAMMDD}}` — los {n_partidos} partidos aparecen como STATUS_SCHEDULED con la fecha y hora exactas de la configuración (horas convertidas de UTC a CST, UTC-6).
+- Schedule por equipo (últimos partidos completados): `site.api.espn.com/apis/site/v2/sports/soccer/{liga}/teams/{id}/schedule` — 32 equipos, 5 partidos completados cada uno, todos de liga, hasta el cutoff.
 - Scoreboards de jornadas pasadas para promedios de liga: 9 fechas por liga (ver tabla c).
 - Los archivos JSON crudos de todas estas consultas están en `raw/` dentro de esta misma carpeta.
 
@@ -95,5 +95,5 @@ Los promedios se calcularon desde los scoreboards de las últimas ~3 jornadas co
 
 - **Ningún partido quedó fuera:** los 16 partidos de la lista se verificaron en el scoreboard de ESPN con fecha, hora y equipos exactos antes de calcular.
 - **Valores extremos por muestra corta (5 partidos, sin tope aplicado):** son correctos según los datos, pero una muestra de 5 partidos exagera rachas; conviene leer los favoritos más extremos con cautela.
-- **Últimos 5 = solo liga:** el schedule de ESPN por liga devuelve partidos de esa liga; no se mezclaron copas ni Champions.
-- **Sin momios ni cuotas en esta tabla:** solo probabilidades propias (Poisson). Los momios llegan en la Semana 3.
+- **Últimos 5 = solo liga:** el schedule de ESPN por liga devuelve partidos de esa liga; no se mezclaron otras competiciones.
+- **Sin momios ni cuotas en esta tabla:** solo probabilidades propias (Poisson). Los momios y el EV están en la tabla de momios de la misma semana.
