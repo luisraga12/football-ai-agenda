@@ -17,8 +17,9 @@ producto, nadie debe volver a meterle mano.
 
 **Comunicación del equipo:** desde el 23 nov 2026 los mensajes del equipo
 (`JEFE.md`, `EMPLEADO-1.md`, `EMPLEADO-2.md`) viven en el repo privado
-[buzón](https://github.com/luisraga12/buzón), ya no en este repo. La forma
-de trabajar está en `FORMA-DE-TRABAJAR.md`.
+[buzón](https://github.com/luisraga12/buzon), ya no en este repo. La forma
+de trabajar está en
+[`FORMA-DE-TRABAJAR.md` del buzón](https://github.com/luisraga12/buzon/blob/main/FORMA-DE-TRABAJAR.md).
 
 ## ✅ Semana 1 — Hecha (entregada 19 nov 2026, commit `4032d10`)
 
