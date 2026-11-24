@@ -48,7 +48,16 @@ import argparse
 import json
 import os
 import sys
-from datetime import date
+from datetime import date, datetime
+from zoneinfo import ZoneInfo
+
+
+def fecha_mexico():
+    """Fecha de hoy en México, no la de la VM (UTC).
+
+    La VM va en UTC y la fecha_calculo salió un día adelante (el
+    jefe lo señaló en la revisión de Tendencias, 23 nov)."""
+    return datetime.now(ZoneInfo("America/Mexico_City")).date().isoformat()
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -204,7 +213,7 @@ def main():
     out = {
         'semana': semana,
         'ventana': ventana,
-        'fecha_calculo': args.fecha or date.today().isoformat(),
+        'fecha_calculo': args.fecha or fecha_mexico(),
         'partidos': out_partidos,
     }
     with open(args.salida, 'w') as f:
