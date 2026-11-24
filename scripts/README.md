@@ -121,6 +121,53 @@ interfaz (`index.html` no se toca en este trabajo).
    (las 3 semanas) o `python3 scripts/run_tendencias.py --semanas
    semana-2`.
 
+11. **`calcular_historial.py` + `run_historial.py`** — historial de
+    aciertos del modelo (orden del jefe, 23 nov 2026, tercera de las
+    6 propuestas; rutina fija de cada lunes). Compara lo que el
+    modelo pronosticó en `data/semana-N/tabla-poisson-semana-N.md`
+    con los resultados reales de los scoreboards en
+    `data/semana-N/raw/` (solo partidos con status completed) y
+    escribe `data/semana-N/historial.json` +
+    `data/semana-N/historial.html` (sección "Cómo le fue al modelo",
+    con marcadores `HISTORIAL-INICIO/FIN:<semana>`; la coloca el
+    jefe, no toca index.html). Definiciones: favorito 1X2 (el 1/X/2
+    con mayor P; se publica el número tal cual, sin esconderlo:
+    Semana 1, 6/16); Más 2.5 solo cuando P(+2.5) > 50% y Menos 2.5
+    cuando <= 50%; BTTS / No-BTTS como conteos de resultados (NO
+    momios). Si un partido no trae resultado final en el raw, se
+    usa `data/semana-N/resultados_verificados.json` (cada entrada
+    con su fuente y fecha de verificación; queda registrada por
+    partido en `fuente_resultado`); sin raw ni verificado, el
+    partido queda "sin resultado" y no entra en los denominadores.
+    **Se corre a mano el lunes, cuando la semana ya se jugó: NO va
+    en el flujo diario de `run_semana.py`** (ahí los partidos aún
+    no se juegan). Cada lunes se corre `python3
+    scripts/run_historial.py --semanas semana-N` con la semana
+    recién jugada y el historial crece con sus resultados. Uso:
+    `python3 scripts/run_historial.py` (por defecto solo semana-1).
+
+12. **`generar_vivo.py`** — marcador en vivo con caché (propuesta del
+    jefe en JEFE.md, commit e0016b3, 24 nov 2026; diseño detallado en
+    `propuesta-vivo-cache.md`). Lee la semana actual + entre semana,
+    pide los scoreboards de ESPN de hoy (site.api, con respaldo
+    site.web.api) y escribe `data/vivo.json` con marcador, minuto y
+    estado de los 28 partidos de la semana. Mezcla con el último dato
+    conocido (cada entrada con su `actualizado_en`); si TODAS las
+    consultas fallan, no toca el archivo anterior y sale con código 1;
+    los fallos quedan en `data/vivo-log.json` (últimas 50). Lo corre el
+    workflow `.github/workflows/actualizar-vivo.yml` cada 5 min solo en
+    ventanas de partido (ver el archivo: 3 crons en UTC + la estimación
+    de minutos de Actions). Uso: `python3 scripts/generar_vivo.py`
+    (solo hoy) o `--todas` (toda la semana, para probar).
+
+**Fecha de cálculo en México:** todos los JSON que generan fecha
+(`fecha_calculo`, `fecha_hoy`) usan hora de México
+(`America/Mexico_City`, `ZoneInfo`), no la de la VM, que va en UTC
+y sacaba la fecha un día adelante (el jefe lo señaló en la
+revisión de Tendencias, 23 nov). Si un script nuevo genera una
+fecha, que use `fecha_mexico()` como en `calcular_historial.py` y
+`calcular_tendencias.py`.
+
 ## Corrección obligatoria aplicada (jefe, 19 nov 2026)
 
 El BTTS (ambos anotan) y el +2.5 se calculan con la distribución

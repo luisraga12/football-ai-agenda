@@ -12,7 +12,15 @@
 | Puntos con el jugador en cancha | Derivado: 3/1/0 por partido para cada titular del summary | Sí, calculado. Ej.: Arsenal 13 pts en sus últimos 5 (4V 1E); Real Madrid 15 pts (5V). |
 | Alineación probable (antes del partido) | — | **NO.** ESPN solo publica el XI cuando sale (~1 h antes). La Semana 6 (alineación probable) tendrá que estimarla o esperar al XI oficial. |
 
-Verificación de cordura: los XI de los summaries incluyen fichajes de verano 2026 (Konsa, Guimarães y Tzolis en el Arsenal; Konaté, Bernardo Silva, Diomande y Trent en el Real Madrid) y coinciden con el roster actual de cada equipo. No es un error de lectura.
+Verificación de cordura (corregida 24 nov 2026, orden del jefe): los
+XI de los summaries SÍ traen jugadores de otros clubes — Konsa,
+Guimarães y Tzolis en el Arsenal; Konaté, Bernardo Silva, Diomande y
+Cucurella en el Real Madrid — y coinciden con el roster de temporada
+de ESPN, que los lista en esos equipos. No fue un error de lectura
+del script (filtra bien por equipo y usa los event_id correctos):
+ESPN trae los datos así. El cliente los corrigió por las plantillas
+reales: ver "Corrección 24 nov 2026" abajo. Los agregados y la Fuerza
+no cambiaron: solo los nombres.
 
 ## Fórmula exacta propuesta
 
@@ -39,10 +47,46 @@ resultado; minutos y puntos pesan igual. El jefe decide los pesos.
 
 | Equipo | XI del 21 nov | A | B | C | Fuerza |
 |---|---|---|---|---|---|
-| Arsenal (Newcastle 2–2 Arsenal) | Raya, Gabriel, Konsa, Calafiori, Timber, Ødegaard, Rice, Guimarães, Havertz, Eze, Madueke | 100 | 100 | 100 | **100.0** |
+| Arsenal (Newcastle 2–2 Arsenal) | Raya, Gabriel, Saliba, Calafiori, Timber, Ødegaard, Rice, Saka, Havertz, Eze, Madueke | 100 | 100 | 100 | **100.0** |
 | Arsenal sin Ødegaard (suplente: Ben White) | mismo XI menos Ødegaard | 90.0 | 95.7 | 97.4 | **93.9** |
-| Real Madrid (Madrid 2–1 Celta) | Courtois, Huijsen, Konaté, Camavinga, Carreras, Trent, Bellingham, Bernardo Silva, Diomande, Güler, Mbappé | 89.5 | 83.5 | 85.7 | **86.5** |
-| Real Madrid sin Mbappé (suplente: Cucurella) | mismo XI menos Mbappé | 52.6 | 81.5 | 83.7 | **70.6** |
+| Real Madrid (Madrid 2–1 Celta) | Courtois, Huijsen, Rüdiger, Camavinga, Carreras, Trent, Bellingham, Brahim, Vinícius, Güler, Mbappé | 89.5 | 83.5 | 85.7 | **86.5** |
+| Real Madrid sin Mbappé (suplente: Militão) | mismo XI menos Mbappé | 52.6 | 81.5 | 83.7 | **70.6** |
+
+## Corrección 24 nov 2026 — nombres del XI (orden del jefe)
+
+Los 4 ejemplos traían jugadores de otros clubes porque ESPN los
+lista así (ver "Verificación de cordura" arriba). Se corrigieron
+solo los nombres en `fuerza_xi_prueba.json` (script
+`scripts/corregir_nombres_xi.py`, reproducible): Konsa → Saliba,
+Guimarães → Martín Zubimendi, Tzolis → Martinelli; Konaté → Rüdiger, Bernardo
+Silva → Brahim Díaz, Diomande → Vinícius Júnior, Cucurella →
+Militão. (La primera versión mapeaba Guimarães → Saka y dejaba a
+Saka dos veces en el XI del 18 oct — 66' y 90' —; se corrigió a
+Zubimendi: único mediocentro senior de la plantilla de ESPN no
+presente en ese XI y distinto del suplente que entró al 66',
+Merino. Aviso honesto: los datos no confirman que Zubimendi fuera
+titular ese día — el summary lo lista como suplente y el titular
+según ESPN era Bruno Guimarães, que salió al 66' por Merino. Es un
+reemplazo con el mismo criterio que los demás nombres corregidos,
+no un titular confirmado.) Posición y minutos del hueco se quedan; los agregados
+(goles, minutos, puntos), las fracciones y la Fuerza quedan
+idénticos (verificado: números byte-idénticos antes/después).
+Cada reemplazo se verificó contra la plantilla de temporada de ESPN
+(`data/investigacion-xi/raw/roster_eng.1_359.json` y
+`roster_esp.1_86.json`), SALVO Martinelli: no está en ningún dato de
+ESPN (ni plantilla ni summaries) y ningún candidato de los datos
+encaja (Eze figura como suplente que entra al 69' en el Hull y como
+suplente en el Liverpool, así que no puede ser el titular de esos
+dos partidos). El jefe confirma el nombre de Martinelli o da otro.
+El dict `jugadores` del JSON conserva los nombres que devolvió ESPN
+como libro de registro (no se fusionan: Saka ya tiene registro propio
+en Forest y fusionarlo cambiaría los totales aprobados); la
+correspondencia está en `correccion_nombres` dentro del JSON.
+Nota: busqué a Ødegaard y Raphinha en los XI del Madrid (JSON, .md,
+preview, index.html) y no están en ninguno; los nombres de otros
+clubes que sí estaban en los XI del Madrid son Konaté, Bernardo
+Silva, Diomande y Cucurella. Si se vieron en otro lado, dime la
+línea exacta.
 
 Lectura: el Arsenal salió con el XI completo (100). El Madrid rotó
 (Camavinga, Carreras, Trent en vez de los habituales) y quedó en 86.5.

@@ -1,0 +1,57 @@
+# Marcador en vivo: cache en data/vivo.json (Football AI Agenda)
+#
+# Propuesta del Empleado 1 (propuesta-vivo-cache.md, 24 nov 2026) a partir
+# de la propuesta del jefe en el buzon (JEFE.md, commit e0016b3).
+#
+# Cada 5 minutos SOLO en ventanas de partido (horas UTC; America/Mexico_City
+# es UTC-6 en noviembre):
+#   - mar/mie/jue 17:00-23:55 UTC (11:00-17:55 CST): entre semana
+#     (Champions/Europa League, 11:45 y 14:00 CST).
+#   - vie/sab/dom 12:00-23:55 UTC (06:00-17:55 CST): fin de semana
+#     (ligas europeas, manana y tarde).
+#   - sab/dom 00:00-04:55 UTC (vie/sab 18:00-22:55 CST): extension
+#     nocturna para Liga MX (viernes noche); en semanas sin Liga MX el
+#     script sale temprano sin escribir nada.
+# El minimo del cron de GitHub Actions es 5 minutos; las corridas
+# programadas pueden retrasarse unos minutos cuando GitHub va cargado:
+# por eso la pagina muestra la antiguedad del cache y no confia en el
+# horario. Los workflows programados solo corren en `main`.
+#
+# El script (scripts/generar_vivo.py) pide los scoreboards de ESPN de
+# hoy (site.api, con respaldo site.web.api), mezcla con el ultimo dato
+# conocido y SOLO reemplaza data/vivo.json si la consulta salio bien y
+# el JSON es valido. Si ESPN falla, se conserva el ultimo archivo bueno
+# y el fallo queda en data/vivo-log.json. Nunca se escribe un archivo
+# vacio o roto. Solo se hace commit si algo cambio.
+name: Marcador en vivo (cache)
+
+on:
+  schedule:
+    - cron: '*/5 17-23 * * 2,3,4'  # mar-jue 17:00-23:55 UTC (entre semana)
+    - cron: '*/5 12-23 * * 5,6,0'  # vie-dom 12:00-23:55 UTC (fin de semana)
+    - cron: '*/5 0-4 * * 6,0'      # sab-dom 00:00-04:55 UTC (Liga MX noche)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  vivo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generar data/vivo.json
+        run: python3 scripts/generar_vivo.py
+      - name: Publicar cambios si los hay
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/vivo.json
+          # vivo-log.json solo existe cuando el script registra fallos;
+          # si no existe, git add fallaba (exit 128) y no se publicaba nada.
+          [ -f data/vivo-log.json ] && git add data/vivo-log.json
+          git diff --cached --quiet || git commit -m "Actualizar marcador en vivo (auto)"
+          git push
