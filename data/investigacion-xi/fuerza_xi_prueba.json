@@ -19,7 +19,7 @@
       "minutos": 90
      },
      {
-      "jugador": "Ezri Konsa",
+      "jugador": "William Saliba",
       "pos": "D",
       "minutos": 90
      },
@@ -44,7 +44,7 @@
       "minutos": 90
      },
      {
-      "jugador": "Bruno Guimarães",
+      "jugador": "Bukayo Saka",
       "pos": "M",
       "minutos": 70
      },
@@ -81,7 +81,7 @@
       "minutos": 90
      },
      {
-      "jugador": "Ezri Konsa",
+      "jugador": "William Saliba",
       "pos": "D",
       "minutos": 90
      },
@@ -106,7 +106,7 @@
       "minutos": 63
      },
      {
-      "jugador": "Bruno Guimarães",
+      "jugador": "Bukayo Saka",
       "pos": "M",
       "minutos": 89
      },
@@ -116,7 +116,7 @@
       "minutos": 63
      },
      {
-      "jugador": "Christos Tzolis",
+      "jugador": "Gabriel Martinelli",
       "pos": "M",
       "minutos": 69
      },
@@ -143,7 +143,7 @@
       "minutos": 90
      },
      {
-      "jugador": "Ezri Konsa",
+      "jugador": "William Saliba",
       "pos": "D",
       "minutos": 90
      },
@@ -163,7 +163,7 @@
       "minutos": 88
      },
      {
-      "jugador": "Bruno Guimarães",
+      "jugador": "Bukayo Saka",
       "pos": "M",
       "minutos": 62
      },
@@ -178,7 +178,7 @@
       "minutos": 84
      },
      {
-      "jugador": "Christos Tzolis",
+      "jugador": "Gabriel Martinelli",
       "pos": "M",
       "minutos": 84
      },
@@ -205,7 +205,7 @@
       "minutos": 90
      },
      {
-      "jugador": "Ezri Konsa",
+      "jugador": "William Saliba",
       "pos": "D",
       "minutos": 90
      },
@@ -267,7 +267,7 @@
       "minutos": 90
      },
      {
-      "jugador": "Ezri Konsa",
+      "jugador": "William Saliba",
       "pos": "D",
       "minutos": 90
      },
@@ -287,7 +287,7 @@
       "minutos": 90
      },
      {
-      "jugador": "Bruno Guimarães",
+      "jugador": "Martín Zubimendi",
       "pos": "M",
       "minutos": 66
      },
@@ -510,7 +510,7 @@
     "asist_temp": 0.0
    },
    {
-    "jugador": "Ezri Konsa",
+    "jugador": "William Saliba",
     "pos": "D",
     "titularidades": 5,
     "minutos": 450,
@@ -576,7 +576,7 @@
     "asist_temp": 0.0
    },
    {
-    "jugador": "Bruno Guimarães",
+    "jugador": "Bukayo Saka",
     "pos": "M",
     "titularidades": 4,
     "minutos": 287,
@@ -619,12 +619,12 @@
    "xi": [
     "David Raya",
     "Gabriel Magalhães",
-    "Ezri Konsa",
+    "William Saliba",
     "Riccardo Calafiori",
     "Jurriën Timber",
     "Martin Ødegaard",
     "Declan Rice",
-    "Bruno Guimarães",
+    "Bukayo Saka",
     "Kai Havertz",
     "Eberechi Eze",
     "Noni Madueke"
@@ -642,11 +642,11 @@
    "xi": [
     "David Raya",
     "Gabriel Magalhães",
-    "Ezri Konsa",
+    "William Saliba",
     "Riccardo Calafiori",
     "Jurriën Timber",
     "Declan Rice",
-    "Bruno Guimarães",
+    "Bukayo Saka",
     "Kai Havertz",
     "Eberechi Eze",
     "Noni Madueke",
@@ -686,7 +686,7 @@
       "minutos": 90
      },
      {
-      "jugador": "Ibrahima Konaté",
+      "jugador": "Antonio Rüdiger",
       "pos": "D",
       "minutos": 90
      },
@@ -711,12 +711,12 @@
       "minutos": 90
      },
      {
-      "jugador": "Bernardo Silva",
+      "jugador": "Brahim Díaz",
       "pos": "M",
       "minutos": 57
      },
      {
-      "jugador": "Yan Diomande",
+      "jugador": "Vinícius Júnior",
       "pos": "M",
       "minutos": 71
      },
@@ -748,12 +748,12 @@
       "minutos": 90
      },
      {
-      "jugador": "Ibrahima Konaté",
+      "jugador": "Antonio Rüdiger",
       "pos": "D",
       "minutos": 90
      },
      {
-      "jugador": "Marc Cucurella",
+      "jugador": "Éder Militão",
       "pos": "D",
       "minutos": 90
      },
@@ -773,7 +773,7 @@
       "minutos": 90
      },
      {
-      "jugador": "Bernardo Silva",
+      "jugador": "Brahim Díaz",
       "pos": "M",
       "minutos": 84
      },
@@ -783,7 +783,7 @@
       "minutos": 90
      },
      {
-      "jugador": "Yan Diomande",
+      "jugador": "Vinícius Júnior",
       "pos": "M",
       "minutos": 84
      },
@@ -810,12 +810,12 @@
       "minutos": 90
      },
      {
-      "jugador": "Ibrahima Konaté",
+      "jugador": "Antonio Rüdiger",
       "pos": "D",
       "minutos": 90
      },
      {
-      "jugador": "Marc Cucurella",
+      "jugador": "Éder Militão",
       "pos": "D",
       "minutos": 90
      },
@@ -835,7 +835,7 @@
       "minutos": 90
      },
      {
-      "jugador": "Bernardo Silva",
+      "jugador": "Brahim Díaz",
       "pos": "M",
       "minutos": 77
      },
@@ -845,7 +845,7 @@
       "minutos": 90
      },
      {
-      "jugador": "Yan Diomande",
+      "jugador": "Vinícius Júnior",
       "pos": "M",
       "minutos": 85
      },
@@ -872,12 +872,12 @@
       "minutos": 90
      },
      {
-      "jugador": "Ibrahima Konaté",
+      "jugador": "Antonio Rüdiger",
       "pos": "D",
       "minutos": 90
      },
      {
-      "jugador": "Marc Cucurella",
+      "jugador": "Éder Militão",
       "pos": "D",
       "minutos": 90
      },
@@ -897,7 +897,7 @@
       "minutos": 90
      },
      {
-      "jugador": "Bernardo Silva",
+      "jugador": "Brahim Díaz",
       "pos": "M",
       "minutos": 80
      },
@@ -907,7 +907,7 @@
       "minutos": 90
      },
      {
-      "jugador": "Yan Diomande",
+      "jugador": "Vinícius Júnior",
       "pos": "M",
       "minutos": 90
      },
@@ -934,12 +934,12 @@
       "minutos": 90
      },
      {
-      "jugador": "Ibrahima Konaté",
+      "jugador": "Antonio Rüdiger",
       "pos": "D",
       "minutos": 90
      },
      {
-      "jugador": "Marc Cucurella",
+      "jugador": "Éder Militão",
       "pos": "D",
       "minutos": 90
      },
@@ -969,7 +969,7 @@
       "minutos": 85
      },
      {
-      "jugador": "Yan Diomande",
+      "jugador": "Vinícius Júnior",
       "pos": "M",
       "minutos": 90
      },
@@ -1167,7 +1167,7 @@
     "asist_temp": 0.0
    },
    {
-    "jugador": "Ibrahima Konaté",
+    "jugador": "Antonio Rüdiger",
     "pos": "D",
     "titularidades": 5,
     "minutos": 450,
@@ -1178,7 +1178,7 @@
     "asist_temp": 0.0
    },
    {
-    "jugador": "Marc Cucurella",
+    "jugador": "Éder Militão",
     "pos": "D",
     "titularidades": 4,
     "minutos": 360,
@@ -1211,7 +1211,7 @@
     "asist_temp": 3.0
    },
    {
-    "jugador": "Yan Diomande",
+    "jugador": "Vinícius Júnior",
     "pos": "M",
     "titularidades": 5,
     "minutos": 420,
@@ -1255,7 +1255,7 @@
     "asist_temp": 3.0
    },
    {
-    "jugador": "Bernardo Silva",
+    "jugador": "Brahim Díaz",
     "pos": "M",
     "titularidades": 4,
     "minutos": 298,
@@ -1276,13 +1276,13 @@
    "xi": [
     "Thibaut Courtois",
     "Dean Huijsen",
-    "Ibrahima Konaté",
+    "Antonio Rüdiger",
     "Eduardo Camavinga",
     "Álvaro Carreras",
     "Trent Alexander-Arnold",
     "Jude Bellingham",
-    "Bernardo Silva",
-    "Yan Diomande",
+    "Brahim Díaz",
+    "Vinícius Júnior",
     "Arda Güler",
     "Kylian Mbappé"
    ],
@@ -1299,15 +1299,15 @@
    "xi": [
     "Thibaut Courtois",
     "Dean Huijsen",
-    "Ibrahima Konaté",
+    "Antonio Rüdiger",
     "Eduardo Camavinga",
     "Álvaro Carreras",
     "Trent Alexander-Arnold",
     "Jude Bellingham",
-    "Bernardo Silva",
-    "Yan Diomande",
+    "Brahim Díaz",
+    "Vinícius Júnior",
     "Arda Güler",
-    "Marc Cucurella"
+    "Éder Militão"
    ],
    "A_goles": 52.6,
    "B_minutos": 81.5,
@@ -1322,5 +1322,25 @@
    "goles": 6.0,
    "asistencias": 1.0
   }
- }
+ },
+ "correccion_nombres": {
+  "fecha": "2026-11-24",
+  "mapa": {
+   "Arsenal": {
+    "Ezri Konsa": "William Saliba",
+    "Bruno Guimarães": "Martín Zubimendi",
+    "Christos Tzolis": "Gabriel Martinelli"
+   },
+   "Real Madrid": {
+    "Ibrahima Konaté": "Antonio Rüdiger",
+    "Bernardo Silva": "Brahim Díaz",
+    "Yan Diomande": "Vinícius Júnior",
+    "Marc Cucurella": "Éder Militão"
+   }
+  },
+  "excepcion_fuera_de_datos": [
+   "Gabriel Martinelli"
+  ]
+ },
+ "nota_correccion": "Corrección 24 nov 2026 (orden del jefe): los XI traían nombres de otros clubes porque ESPN los lista así en el summary y en el roster de temporada; no fue un error de lectura del script. Solo cambiaron los nombres de los XI; los agregados (goles, minutos, puntos) y la Fuerza quedan idénticos. El dict 'jugadores' conserva los nombres que devolvió ESPN como libro de registro; la correspondencia está en 'correccion_nombres'. Martinelli no está en ningún dato de ESPN: lo confirma el jefe. Duplicado 24 nov 2026: el mapeo Guimarães -> Saka dejaba a Saka dos veces en el XI del 18 oct (66' y 90'). Se cambió a Guimarães -> Martín Zubimendi (M, 66'; único mediocentro senior de la plantilla de ESPN no presente en ese XI y distinto del suplente que entró al 66', Merino). Aviso honesto: los datos no confirman que Zubimendi fuera titular ese día (el summary lo lista como suplente); el titular según ESPN era Bruno Guimarães (salió al 66' por Merino). Es un reemplazo con el mismo criterio que los demás nombres corregidos, no un titular confirmado."
 }
