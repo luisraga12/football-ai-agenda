@@ -194,6 +194,13 @@ de trabajar está en
   la fórmula exacta; después se programa y se muestra en el detalle
   del partido.
 
+## Nota mar 24 nov 2026 — Historial, barra fija y Radiografía (revisión del jefe)
+
+- Historial de aciertos de la Semana 1 entregado por E1 y aprobado (reproducido byte-idéntico por el jefe): 1X2 6/16, Más 2.5 5/10, BTTS 3/6. Queda como rutina manual de cada lunes, no en el flujo diario. La sección "Cómo le fue al modelo" va en la página principal.
+- Nombres del XI corregidos por E1 y aprobados (agregados idénticos, verificados contra el roster de ESPN en vivo): la causa es que ESPN lista a esos jugadores en esos equipos; el cliente los corrigió por las plantillas reales.
+- Barra fija arreglada por E2 y aprobada (la barra deja de ser fija para que nada se tape al bajar); Radiografía enfrentada ("Así llegan") aprobada con una corrección (Alavés Más 2.5: 3/5, no 1/5).
+- Port a la página en vivo en curso (barra + Radiografía + nombres XI corregidos + sección de historial).
+
 ## Reglas del proyecto
 
 - Sin API keys en el repo ni en `index.html`: los datos se consultan en
