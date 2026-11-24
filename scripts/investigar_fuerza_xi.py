@@ -28,6 +28,11 @@ Uso:
 Guarda:
     data/investigacion-xi/fuerza_xi_prueba.json
     data/investigacion-xi/fuerza_xi_prueba.md
+
+AVISO (corrección 24 nov 2026): ESPN lista en estos XI a jugadores
+de otros clubes (Konsa, Guimarães, Tzolis; Konaté, Bernardo Silva,
+Diomande, Cucurella). Si vuelves a correr este script, hay que
+correr DESPUÉS scripts/corregir_nombres_xi.py --escribir.
 """
 
 import json
