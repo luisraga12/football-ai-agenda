@@ -149,12 +149,16 @@ de trabajar está en
 - Guardar los picks elegidos.
 - Actualizar los partidos con los de esa semana.
 
-## ⏳ Semana 5 — Pendiente: detalle del partido
+## ✅ Semana 5 — Hecha (adelanto en vivo 23 nov 2026)
 
 - Al tocar un partido, abrir su detalle estilo 365Scores / OneFootball:
   últimos 5 partidos de cada equipo, historial entre ambos (H2H),
   posición en la tabla y momios.
 - Alineación oficial cuando ya esté publicada (cerca de la hora del partido).
+- Adelanto del Empleado 2 (23 nov, verificado por el jefe contra ESPN en
+  vivo y probado en el preview): el detalle quedó en vivo en `index.html`
+  la misma noche, junto con el bloque Fuerza del XI (Semana 8) con sus
+  fracciones (Goles/Minutos/Puntos contra el mejor XI).
 
 ## ⏳ Semana 6 — Pendiente: alineación probable
 
