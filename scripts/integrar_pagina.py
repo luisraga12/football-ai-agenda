@@ -39,6 +39,8 @@ Uso:
     python3 scripts/integrar_pagina.py --ev data/semana-2/ev.json --movimientos data/semana-2/movimientos.json --fragment-out data/semana-2/fragmento-momios.html
       (con --movimientos anade la flecha ↑↓ por tarjeta: cambio de EV
       en pp vs ayer, cambio de mejor pick y cambio de linea de total)
+    python3 scripts/integrar_pagina.py --ev data/semana-2/ev.json --movimientos data/semana-2/movimientos.json --tendencias data/semana-2/tendencias.json --fragment-out data/semana-2/fragmento-momios.html
+      (con --tendencias anade la racha por mercado por tarjeta)
 """
 
 import argparse
@@ -123,7 +125,7 @@ def linea_mov(m):
     return texto
 
 
-def bloque(p, mov=None):
+def bloque(p, mov=None, tend=None):
     """Bloque completo de momios de UNA tarjeta."""
     ident = id_partido(p)
     titulo = f"{p['home']} vs {p['away']}"
@@ -131,13 +133,19 @@ def bloque(p, mov=None):
         prov = p.get('proveedor')
         prov_txt = (f"{html.escape(prov)} aún no publica"
                     if prov else "aún no publicados")
-        return (
+        partes_pend = [
             f'<div class="odds momios" data-partido="{ident}" '
-            f'aria-label="Momios de {html.escape(titulo)}">'
+            f'aria-label="Momios de {html.escape(titulo)}">',
             f'<div class="derived-h"><span>Momios pendientes</span>'
             f'<span>{prov_txt}</span>'
             f'</div><p class="momios-pendiente">Momios pendientes — '
-            f'sin EV inventado.</p></div>')
+            f'sin EV inventado.</p>']
+        if tend and tend.get('linea_tarjeta'):
+            partes_pend.append(
+                f'<p class="momios-tend">'
+                f'{html.escape(tend["linea_tarjeta"])}</p>')
+        partes_pend.append('</div>')
+        return ''.join(partes_pend)
     mercados = p.get('mercados')
     if not mercados:
         raise ValueError(
@@ -189,6 +197,10 @@ def bloque(p, mov=None):
     if mov_txt:
         partes.append(
             f'<p class="momios-mov">{html.escape(mov_txt)}</p>')
+    if tend and tend.get('linea_tarjeta'):
+        partes.append(
+            f'<p class="momios-tend">'
+            f'{html.escape(tend["linea_tarjeta"])}</p>')
     for nota in notas:
         partes.append(f'<p class="momios-nota">{html.escape(nota)} '
                       f'({html.escape(p["proveedor"])}).</p>')
@@ -218,6 +230,7 @@ CSS = """/* Fragmento momios — Empleado 1, lunes 23 nov 2026.
 .momios-pendiente{margin:10px 0 0;font-size:.86rem;font-weight:700;color:var(--amber)}
 .momios-nota{margin-top:10px;font-size:.78rem;font-weight:700;color:var(--muted)}
 .momios-mov{margin:10px 0 0;font-size:.82rem;font-weight:700;color:var(--muted)}
+.momios-tend{margin:10px 0 0;font-size:.82rem;color:var(--muted)}
 """
 
 
@@ -260,6 +273,9 @@ def main():
     ap.add_argument('--movimientos', default=None,
                     help='movimientos.json de calcular_movimientos.py: '
                          'anade la flecha ↑↓ por tarjeta')
+    ap.add_argument('--tendencias', default=None,
+                    help='tendencias.json de calcular_tendencias.py: '
+                         'anade la racha por mercado por tarjeta')
     args = ap.parse_args()
 
     ev = json.load(open(args.ev))
@@ -271,9 +287,17 @@ def main():
               f"({len(movs)} partidos, "
               f"{mov_data.get('fecha_ayer')} -> "
               f"{mov_data.get('fecha_hoy')}).")
+    tends = {}
+    if args.tendencias:
+        tend_data = json.load(open(args.tendencias))
+        tends = {m['slug']: m for m in tend_data['partidos']}
+        print(f"Tendencias leidas de {args.tendencias} "
+              f"({len(tends)} partidos, "
+              f"{tend_data.get('ventana')}).")
     bloques = {}
     for p in ev['partidos']:
-        bloques[id_partido(p)] = bloque(p, movs.get(id_partido(p)))
+        bloques[id_partido(p)] = bloque(
+            p, movs.get(id_partido(p)), tends.get(id_partido(p)))
     if args.fragment_out:
         open(args.fragment_out, 'w').write("\n\n".join(
             f"<!-- MOMIOS-INICIO:{k} -->\n{v}\n<!-- MOMIOS-FIN:{k} -->"
