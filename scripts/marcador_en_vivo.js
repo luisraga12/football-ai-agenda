@@ -21,10 +21,34 @@ const MarcadorEnVivo = (() => {
   const BASE = 'https://site.api.espn.com/apis/site/v2/sports/soccer';
   let timer = null;
 
-  async function scoreboard(liga, fecha) {
-    const r = await fetch(`${BASE}/${liga}/scoreboard?dates=${fecha}`);
-    if (!r.ok) throw new Error(`ESPN ${r.status} (${liga} ${fecha})`);
+  const ALT_BASE = 'https://site.web.api.espn.com/apis/site/v2/sports/soccer';
+
+  async function pedirScoreboard(base, liga, fecha) {
+    const r = await fetch(`${base}/${liga}/scoreboard?dates=${fecha}`);
+    if (!r.ok) {
+      // Diagnóstico 24 nov 2026: el navegador de la nube recibe 400 de ESPN
+      // en el fetch (la misma URL carga bien por navegación y por curl).
+      // Se incluye el cuerpo del error para saber por qué.
+      let cuerpo = '';
+      try { cuerpo = (await r.text()).slice(0, 200); } catch (e) { /* sin cuerpo */ }
+      throw new Error(`ESPN ${r.status} (${liga} ${fecha}) ${cuerpo}`);
+    }
     return r.json();
+  }
+
+  async function scoreboard(liga, fecha) {
+    // Respaldo 24 nov 2026: site.api.espn.com devolvió 400 intermitente
+    // ("Failed to get events endpoint") en el navegador; si falla, se
+    // reintenta una vez contra site.web.api.espn.com (mismos datos).
+    try {
+      return await pedirScoreboard(BASE, liga, fecha);
+    } catch (err1) {
+      try {
+        return await pedirScoreboard(ALT_BASE, liga, fecha);
+      } catch (err2) {
+        throw new Error(String(err1.message || err1) + ' | respaldo: ' + String(err2.message || err2));
+      }
+    }
   }
 
   function estadoDe(comp) {
