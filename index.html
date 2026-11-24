@@ -314,6 +314,11 @@
   .fxi-lines b{font-weight:800}
   .fxi-xi{color:var(--muted);font-size:.78rem;margin:10px 0 0}
   .detail-body .odds{margin-top:6px}
+  /* ---------- Ordenar por valor + solo con valor (Empleado 2, 23 nov 2026) ---------- */
+  .sort-ctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .sort-label{font-weight:800;font-size:.86rem;color:var(--ink-2)}
+  /* ---------- Veredicto en claro (Empleado 2, 23 nov 2026) ---------- */
+  .card-verdict{margin:8px 0 0;font-size:.88rem;line-height:1.45;color:var(--ink-2);border-left:3px solid var(--accent);padding-left:9px}
 </style>
 </head>
 <body>
@@ -351,6 +356,12 @@
       <button class="tab" type="button" data-status="live" aria-pressed="false">En vivo</button>
       <button class="tab" type="button" data-status="upcoming" aria-pressed="false">Próximos</button>
       <button class="tab" type="button" data-status="value" aria-pressed="false">Con valor EV+</button>
+    </div>
+    <div class="sort-ctl" role="group" aria-label="Ordenar tarjetas por valor">
+      <span class="sort-label">Ordenar:</span>
+      <button class="tab sort-btn" type="button" data-sort="fecha" aria-pressed="true">Por fecha</button>
+      <button class="tab sort-btn" type="button" data-sort="ev" aria-pressed="false">Por EV</button>
+      <button class="tab value-btn" type="button" id="onlyValueBtn" aria-pressed="false">Solo con valor (EV+)</button>
     </div>
   </div>
 </div>
@@ -1510,16 +1521,17 @@
       if (currentStatus === "live") okStatus = m.getAttribute("data-status") === "live";
       else if (currentStatus === "upcoming") okStatus = m.getAttribute("data-status") === "upcoming";
       else if (currentStatus === "value") okStatus = m.getAttribute("data-value") === "1";
-      var show = okLeague && okStatus && okDay;
+      var okValue = (!onlyValue || bestEv(m) >= 0);
+      var show = okLeague && okStatus && okDay && okValue;
       m.style.display = show ? "" : "none";
       if (show) visible++;
     });
     emptyState.style.display = visible === 0 ? "block" : "none";
   }
 
-  document.querySelectorAll(".tab").forEach(function(t){
+  document.querySelectorAll(".tab[data-status]").forEach(function(t){
     t.addEventListener("click", function(){
-      document.querySelectorAll(".tab").forEach(function(x){ x.setAttribute("aria-pressed","false"); });
+      document.querySelectorAll(".tab[data-status]").forEach(function(x){ x.setAttribute("aria-pressed","false"); });
       t.setAttribute("aria-pressed","true");
       currentStatus = t.getAttribute("data-status");
       applyFilters();
@@ -1533,6 +1545,160 @@
       currentLeague = b.getAttribute("data-league");
       applyFilters();
     });
+  });
+
+  /* ---------- Ordenar por valor + solo con valor (Empleado 2, 23 nov 2026) ----------
+     Un solo control GLOBAL en la barra superior (la misma barra de los filtros
+     de día y estado, que también son globales): ordena las dos listas
+     (#mwList entre semana y #matchList fin de semana) y el interruptor
+     "Solo con valor" se combina con día, liga y estado en applyFilters.
+     El EV del mejor pick se lee de la tarjeta misma (chip del semáforo:
+     .chip.ev o .chip.ev-bad, el último "+X.X%" del texto). Sin datos nuevos.
+     "Por fecha" restaura el orden original de cada lista. */
+  var sortMode = "fecha";
+  var onlyValue = false;
+  var sortLists = [document.getElementById("mwList"), document.getElementById("matchList")];
+  sortLists.forEach(function(list){
+    if (!list) return;
+    Array.prototype.slice.call(list.querySelectorAll(".match")).forEach(function(m, i){
+      m.setAttribute("data-orig", String(i));
+    });
+  });
+  function bestEv(article){
+    var chip = article.querySelector(".chip.ev strong, .chip.ev-bad strong");
+    if (!chip) return -Infinity;
+    var nums = chip.textContent.match(/[+−\-]?\d+(?:[.,]\d+)?\s*%/g);
+    if (!nums) return -Infinity;
+    return parseFloat(nums[nums.length - 1].replace("−", "-").replace(",", "."));
+  }
+  function applySort(){
+    sortLists.forEach(function(list){
+      if (!list) return;
+      var cards = Array.prototype.slice.call(list.querySelectorAll(".match"));
+      cards.sort(function(a, b){
+        if (sortMode === "ev"){
+          var d = bestEv(b) - bestEv(a);
+          if (d !== 0) return d;
+        }
+        return parseInt(a.getAttribute("data-orig"), 10) - parseInt(b.getAttribute("data-orig"), 10);
+      });
+      cards.forEach(function(c){ list.appendChild(c); });
+    });
+  }
+  document.querySelectorAll(".sort-btn").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      document.querySelectorAll(".sort-btn").forEach(function(x){ x.setAttribute("aria-pressed", "false"); });
+      btn.setAttribute("aria-pressed", "true");
+      sortMode = btn.getAttribute("data-sort");
+      applySort();
+    });
+  });
+  document.getElementById("onlyValueBtn").addEventListener("click", function(){
+    onlyValue = !onlyValue;
+    this.setAttribute("aria-pressed", String(onlyValue));
+    applyFilters();
+  });
+
+  /* ---------- Veredicto en claro (Empleado 2, 23 nov 2026) ----------
+     Una línea en palabras simples debajo del semáforo de cada tarjeta.
+     Plantillas fijas y deterministas según los datos de la propia tarjeta:
+     el 1X2 del chip, el mercado y el EV del mejor pick del chip del
+     semáforo, el momio del empate del bloque de momios y la prob. del pick
+     del botón de parlay. Nada inventado: cada frase corresponde a un rango
+     verificable. Las 28 frases se listan en el reporte de EMPLEADO-2.md
+     para que el jefe las valide antes de publicar. */
+  function vInt(x){ return String(Math.round(x)); }
+  function vDec(x){ return x.toFixed(1).replace(".", ","); }
+  function vEv(e){ return (e >= 0 ? "+" : "") + String(Math.round(e)) + "%"; }
+  function vCalif(ev){ return ev >= 50 ? "hay valor claro" : (ev >= 20 ? "hay valor" : "hay valor, pero moderado"); }
+  function vOddsDe(article, mercado){
+    var out = null;
+    article.querySelectorAll(".odds .dcell").forEach(function(dc){
+      var sp = dc.querySelector("span");
+      if (!sp) return;
+      var t = sp.textContent.trim();
+      if (t.indexOf(mercado + " ") === 0){
+        out = { odds: parseFloat(t.slice(mercado.length + 1)) };
+      }
+    });
+    return out;
+  }
+  function veredicto(article){
+    var chip1x2 = null;
+    article.querySelectorAll(".chip").forEach(function(c){
+      if (c.textContent.indexOf("1X2:") === 0) chip1x2 = c.textContent;
+    });
+    var chipEv = article.querySelector(".chip.ev strong, .chip.ev-bad strong");
+    if (!chip1x2 || !chipEv) return null;
+    var p = chip1x2.match(/([\d.]+)% · ([\d.]+)% · ([\d.]+)%/);
+    if (!p) return null;
+    var p1 = parseFloat(p[1]), px = parseFloat(p[2]), p2 = parseFloat(p[3]);
+    var m = chipEv.textContent.match(/^(\S+) · (.+) ([+−\-][\d.,]+)%$/);
+    if (!m) return null;
+    var mercado = m[2].trim();
+    var ev = parseFloat(m[3].replace("−", "-").replace(",", "."));
+    var evT = vEv(ev);
+    var probs = [{n:"local", v:p1}, {n:"empate", v:px}, {n:"visita", v:p2}];
+    probs.sort(function(a, b){ return b.v - a.v; });
+    var fav = probs[0], seg = probs[1];
+    var elArt = function(n){ return n === "visita" ? "la visita" : "el local"; };
+    var aArt = function(n){ return n === "visita" ? "a la visita" : "al local"; };
+    var deArt = function(n){ return n === "visita" ? "de la visita" : "del local"; };
+    // 0. Sin valor (tarjeta en rojo, EV < 0)
+    if (ev < 0){
+      return "El modelo no encuentra valor en ningún mercado: el mejor pick (" + mercado + ") pierde un " + vDec(Math.abs(ev)) + "%.";
+    }
+    // 1. Valor en empate
+    if (mercado === "Empate"){
+      var otro = (fav.n === "empate") ? seg : fav;
+      if (px >= otro.v - 12){
+        return "El modelo ve el empate casi tan probable como " + elArt(otro.n) + " (" + vInt(px) + "% vs " + vInt(otro.v) + "%): partido trampa, el valor está en el empate (" + evT + ").";
+      }
+      var od = vOddsDe(article, "Empate");
+      return "El empate paga " + (od ? od.odds.toFixed(2) : "?") + " y el modelo le da un " + vDec(px) + "%: el valor está en el empate (" + evT + ").";
+    }
+    // 2. Valor en goles (totales)
+    if (mercado.indexOf("Más ") === 0 || mercado.indexOf("Menos ") === 0){
+      if (fav.v >= 80){
+        return (fav.n === "visita" ? "La visita es favorita casi segura (" : "El local es favorito casi seguro (") + vInt(fav.v) + "%), pero el momio no paga: el valor está en los goles (" + mercado + ", " + evT + ").";
+      }
+      var btn = article.querySelector(".add-btn");
+      var prob = btn ? parseFloat(btn.getAttribute("data-prob")) : NaN;
+      if (isNaN(prob)){
+        var od2 = vOddsDe(article, mercado);
+        if (od2 && od2.odds > 1) prob = (ev / 100 + 1) / od2.odds * 100;
+      }
+      return "El modelo le da un " + (isNaN(prob) ? "?" : vDec(prob)) + "% al " + mercado + " y el momio paga: " + vCalif(ev) + " (" + evT + ").";
+    }
+    // 3. 1X2 (Local / Visita)
+    var pickN = (mercado === "Local") ? "local" : "visita";
+    var pickP = (mercado === "Local") ? p1 : p2;
+    // 3d. Partido parejo (los dos primeros a 5 puntos o menos)
+    if (fav.v - seg.v <= 5){
+      if (fav.n === pickN){
+        return "Partido parejo: el modelo apenas separa a los dos (" + vInt(fav.v) + "% vs " + vInt(seg.v) + "%), y el valor está en " + elArt(pickN) + " (" + evT + ").";
+      }
+      return "Partido parejo: el modelo apenas separa " + aArt(fav.n) + " " + deArt(pickN) + " (" + vInt(fav.v) + "% vs " + vInt(pickP) + "%), y el valor está en " + elArt(pickN) + " (" + evT + ").";
+    }
+    // 3c. Valor en el no favorito
+    if (pickN !== fav.n){
+      return "El mercado da por muerto " + aArt(pickN) + ", pero el modelo le da un " + vInt(pickP) + "%: " + vCalif(ev) + " (" + evT + ").";
+    }
+    // 3a/3b. Favorito con valor
+    if (ev >= 50){
+      return "El modelo ve " + aArt(fav.n) + " favorit" + (fav.n === "visita" ? "a" : "o") + " (" + vInt(fav.v) + "%) y el momio paga de más: hay valor claro (" + evT + ").";
+    }
+    return "El modelo ve " + aArt(fav.n) + " favorit" + (fav.n === "visita" ? "a" : "o") + " (" + vInt(fav.v) + "%) y el momio todavía paga: hay valor, pero moderado (" + evT + ").";
+  }
+  matches.forEach(function(m){
+    var v = veredicto(m);
+    if (!v) return;
+    var foots = m.querySelectorAll(".match-foot");
+    var anchor = foots[foots.length - 1];
+    var pEl = document.createElement("p");
+    pEl.className = "card-verdict";
+    pEl.textContent = v;
+    anchor.insertAdjacentElement("afterend", pEl);
   });
 
   /* ---------- Parlay slip ---------- */
@@ -1808,14 +1974,17 @@
 
 
   /* Fuerza del XI (Empleado 2, 23 nov 2026): números de prueba reales del
-     Empleado 1 (buzon/EMPLEADO-1.md, 23 nov 14:34). Fórmula PENDIENTE de
-     validar por el jefe. Los minutos son estimados de las sustituciones:
-     ESPN no publica minutos por jugador. */
+     Empleado 1 (buzon/EMPLEADO-1.md, 23 nov 14:34). Fórmula APROBADA por el
+     jefe el 23 nov (pesos 0.40/0.30/0.30). Los minutos son estimados de las
+     sustituciones: ESPN no publica minutos por jugador. Las fracciones
+     (fa/fb/fc) son las sumas del XI contra el mejor XI, del JSON del
+     Empleado 1 (data/investigacion-xi/fuerza_xi_prueba.json, en main).
+     Los % publicados NO se cambian: están topados en 100. */
   var FXI_EJEMPLOS = [
-    {equipo:"Arsenal", etiqueta:"XI completo", partido:"Newcastle 2–2 Arsenal", fecha:"21 nov 2026", xi:"Raya, Gabriel, Konsa, Calafiori, Timber, Ødegaard, Rice, Guimarães, Havertz, Eze, Madueke", a:"100", b:"100", c:"100", fuerza:"100.0", fa:"10/10", fb:"3965/3838", fc:"119/115"},
-    {equipo:"Arsenal", etiqueta:"sin Ødegaard (entra Ben White)", partido:"Newcastle 2–2 Arsenal", fecha:"21 nov 2026", xi:"Mismo XI, con Ben White por Ødegaard.", a:"90.0", b:"95.7", c:"97.4", fuerza:"93.9", fa:"9/10", fb:"3673/3838", fc:"112/115"},
-    {equipo:"Real Madrid", etiqueta:"XI rotado", partido:"Real Madrid 2–1 Celta", fecha:"últimos 5 de liga al 21 nov 2026", xi:"Courtois, Huijsen, Konaté, Camavinga, Carreras, Trent, Bellingham, Bernardo Silva, Diomande, Güler, Mbappé", a:"89.5", b:"83.5", c:"85.7", fuerza:"86.5", fa:"17/19", fb:"3545/4247", fc:"126/147"},
-    {equipo:"Real Madrid", etiqueta:"sin Mbappé (entra Cucurella)", partido:"Real Madrid 2–1 Celta", fecha:"últimos 5 de liga al 21 nov 2026", xi:"Mismo XI, con Cucurella por Mbappé.", a:"52.6", b:"81.5", c:"83.7", fuerza:"70.6", fa:"10/19", fb:"3460/4247", fc:"123/147"}
+    {equipo:"Arsenal", etiqueta:"XI completo", partido:"Newcastle 2–2 Arsenal", fecha:"21 nov 2026", xi:"Raya, Gabriel, Konsa, Calafiori, Timber, Ødegaard, Rice, Guimarães, Havertz, Eze, Madueke", a:"100", b:"100", c:"100", fa:"10.0/10.0", fb:"3965/3838", fc:"119/115", fuerza:"100.0"},
+    {equipo:"Arsenal", etiqueta:"sin Ødegaard (entra Ben White)", partido:"Newcastle 2–2 Arsenal", fecha:"21 nov 2026", xi:"Mismo XI, con Ben White por Ødegaard.", a:"90.0", b:"95.7", c:"97.4", fa:"9.0/10.0", fb:"3673/3838", fc:"112/115", fuerza:"93.9"},
+    {equipo:"Real Madrid", etiqueta:"XI rotado", partido:"Real Madrid 2–1 Celta", fecha:"últimos 5 de liga al 21 nov 2026", xi:"Courtois, Huijsen, Konaté, Camavinga, Carreras, Trent, Bellingham, Bernardo Silva, Diomande, Güler, Mbappé", a:"89.5", b:"83.5", c:"85.7", fa:"17.0/19.0", fb:"3545/4247", fc:"126/147", fuerza:"86.5"},
+    {equipo:"Real Madrid", etiqueta:"sin Mbappé (entra Cucurella)", partido:"Real Madrid 2–1 Celta", fecha:"últimos 5 de liga al 21 nov 2026", xi:"Mismo XI, con Cucurella por Mbappé.", a:"52.6", b:"81.5", c:"83.7", fa:"10.0/19.0", fb:"3460/4247", fc:"123/147", fuerza:"70.6"}
   ];
   function fxiColor(v){
     var n = parseFloat(v);
@@ -1825,7 +1994,7 @@
   }
   function fuerzaXIBlock(){
     var h = "";
-    h += "<h4>Fuerza del XI <span class=\"fxi-badge\">Fórmula pendiente de validar por el jefe</span></h4>";
+    h += "<h4>Fuerza del XI <span class=\"fxi-badge\">Fórmula aprobada por el jefe</span></h4>";
     h += "<div class=\"detail-pending\">pendiente — el XI oficial de este partido aún no se publica (sale ~1 h antes). Sin el XI no se puede calcular la fuerza de este partido.</div>";
     h += "<p class=\"fxi-formula\">Fórmula propuesta por el Empleado 1: Fuerza = 0.40·Goles + 0.30·Minutos + 0.30·Puntos. Cada componente en % contra el mejor XI de la temporada del mismo equipo (1 portero + 4 defensas + 4 medios + 2 delanteros con más minutos jugados en los últimos 5 partidos de liga). Los minutos son estimados a partir de las sustituciones: ESPN no publica minutos por jugador.</p>";
     h += "<h4>Ejemplos reales — números de prueba del Empleado 1</h4>";
@@ -1837,14 +2006,14 @@
         "<div class=\"fxi-num\">" + esc(ej.fuerza) + "<small> / 100</small></div>" +
         "<div class=\"fxi-bar\"><div class=\"fxi-fill " + fxiColor(ej.fuerza) + "\" style=\"width:" + esc(ej.fuerza) + "%\"></div></div>" +
         "<ul class=\"fxi-lines\">" +
-        "<li><span>Goles</span><b>" + esc(ej.a) + "% (" + esc(ej.fa) + ")</b></li>" +
-        "<li><span>Minutos</span><b>" + esc(ej.b) + "% (" + esc(ej.fb) + ")</b></li>" +
-        "<li><span>Puntos</span><b>" + esc(ej.c) + "% (" + esc(ej.fc) + ")</b></li>" +
+        "<li><span>Goles</span><b>" + esc(ej.a) + "% (" + esc(ej.fa) + " del mejor XI)</b></li>" +
+        "<li><span>Minutos</span><b>" + esc(ej.b) + "% (" + esc(ej.fb) + " del mejor XI)</b></li>" +
+        "<li><span>Puntos</span><b>" + esc(ej.c) + "% (" + esc(ej.fc) + " del mejor XI)</b></li>" +
         "</ul>" +
         "<p class=\"fxi-xi\">XI: " + esc(ej.xi) + "</p></div>";
     });
     h += "</div>";
-    h += "<p class=\"detail-note\">Fracciones: sumas del XI contra las del mejor XI del mismo equipo.</p>";
+    h += "<p class=\"detail-note\">Fracciones del JSON del Empleado 1 (data/investigacion-xi/fuerza_xi_prueba.json, en main): sumas del XI contra el mejor XI. Los % están topados en 100: en el Arsenal completo los minutos (3965/3838) y los puntos (119/115) pasan de 100 porque el XI reciente suma más que el mejor XI en totales.</p>";
     return h;
   }
   function openDetail(article){
