@@ -14,6 +14,10 @@ Corre los pasos en orden y valida el resultado:
      Antes del paso 4 se guarda el ev.json vigente en ev-ayer.json,
      solo en la primera corrida del dia, para que el "ayer" sea el
      ultimo ev.json del dia anterior y no el de hace una hora.)
+  7. calcular_tendencias.py (racha por mercado de los ultimos 5
+     partidos por equipo, o 4 en competiciones europeas; escribe
+     tendencias.json. Si falta raw/teams_last5.json, se avisa y se
+     sigue sin tendencias para esa semana.)
 
 Validaciones al final (no se publica nada si fallan):
   - los partidos existen en ESPN (lo garantiza el paso 1: si falta
@@ -41,6 +45,25 @@ from datetime import date
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
+def fecha_snapshot(outdir):
+    """Fecha del snapshot guardado en ev-ayer.json. Se lee del archivo
+    ev-ayer-fecha.txt que se escribe junto al snapshot (parche del
+    jefe, 23 nov 2026): en CI el checkout pone mtime de hoy a todos
+    los archivos, asi que decidir por mtime congelaria el "ayer" en
+    el primer dia. Sin archivo de fecha (primer uso local), la mtime."""
+    fecha_path = os.path.join(ROOT, outdir, 'ev-ayer-fecha.txt')
+    if os.path.exists(fecha_path):
+        try:
+            with open(fecha_path) as f:
+                return date.fromisoformat(f.read().strip())
+        except ValueError:
+            pass
+    ayer = os.path.join(ROOT, outdir, 'ev-ayer.json')
+    if os.path.exists(ayer):
+        return date.fromtimestamp(os.path.getmtime(ayer))
+    return None
+
+
 def guardar_ayer(outdir):
     """Guarda el ev.json vigente como ev-ayer.json, solo en la primera
     corrida del dia. Las corridas de la misma tarde (p. ej. cada hora
@@ -51,12 +74,13 @@ def guardar_ayer(outdir):
     if not os.path.exists(ev):
         return None
     hoy = date.today()
-    if os.path.exists(ayer):
-        fecha_ayer = date.fromtimestamp(os.path.getmtime(ayer))
-        if fecha_ayer >= hoy:
-            print(f"{ayer} ya es de hoy ({fecha_ayer}); no se pisa.")
-            return ayer
+    fecha_ayer = fecha_snapshot(outdir)
+    if fecha_ayer is not None and fecha_ayer >= hoy:
+        print(f"{ayer} ya es de hoy ({fecha_ayer}); no se pisa.")
+        return ayer
     shutil.copy2(ev, ayer)
+    with open(os.path.join(ROOT, outdir, 'ev-ayer-fecha.txt'), 'w') as f:
+        f.write(hoy.isoformat() + "\n")
     print(f"Snapshot de ayer guardado en {ayer} (ev.json anterior).")
     return ayer
 
@@ -98,8 +122,7 @@ def main():
     run([sys.executable, 'scripts/calcular_ev.py',
          '--config', args.config, '--out', outdir])
     if ayer_path:
-        fecha_ayer = date.fromtimestamp(
-            os.path.getmtime(ayer_path)).isoformat()
+        fecha_ayer = fecha_snapshot(outdir).isoformat()
         run([sys.executable, 'scripts/calcular_movimientos.py',
              '--hoy', os.path.join(outdir, 'ev.json'),
              '--ayer', ayer_path,
@@ -109,6 +132,11 @@ def main():
     else:
         print("Sin ev.json anterior: primera corrida, no hay "
               "movimientos vs ayer.")
+    # Paso 7: tendencias por mercado (racha de los ultimos 5 por
+    # equipo). run_tendencias.py avisa y sigue si falta el
+    # teams_last5.json de la semana.
+    run([sys.executable, 'scripts/run_tendencias.py',
+         '--semanas', f'semana-{semana}'])
 
     # ---- validaciones finales ----
     rawdir = os.path.join(ROOT, outdir, 'raw')

@@ -76,9 +76,10 @@ interfaz (`index.html` no se toca en este trabajo).
    0.1 pp) / ↓ (baja más de 0.1 pp) / → (sin cambio), cambio de línea
    de total, y el EV de hoy del pick de ayer. También marca partidos
    nuevos, momios publicados hoy y partidos que siguen pendientes (sin
-   EV inventado). Escribe `data/semana-N/movimientos.json`, que la
-   página lee para la flecha por tarjeta. El "ayer" es
-   `data/semana-N/ev-ayer.json` (lo guarda `run_semana.py`, ver punto
+   EV inventado). Escribe `data/semana-N/movimientos.json`, que
+   `integrar_pagina.py` lee para poner la flecha por tarjeta en el
+   fragmento (la página en vivo aún no lo lee sola; eso es Semana 7).
+   El "ayer" es `data/semana-N/ev-ayer.json` (lo guarda `run_semana.py`, ver punto
    7); a mano se puede usar cualquier ev.json anterior, p. ej. del
    historial git (`git show <commit>:data/semana-N/ev.json`), y el
    script acepta los ev.json viejos sin `mercados` (la línea se lee
@@ -100,6 +101,25 @@ interfaz (`index.html` no se toca en este trabajo).
    posteriores, un partido que aparece nuevo se agrega al config y el
    pipeline completo corre para él. Nunca inventa partidos ni momios.
    Es el paso 0 de `run_semana.py`.
+10. **`calcular_tendencias.py` + `run_tendencias.py`** — tendencias por
+   mercado (orden del jefe, 23 nov 2026, segunda de las 6 propuestas).
+   Por partido, la racha de cada equipo en sus últimos 5 partidos de
+   liga (4 en competiciones europeas: entre semana), la misma ventana
+   que el Poisson, sacada de `raw/teams_last5.json`:
+   1X2 (G/E/P), total contra la línea publicada del partido (si el
+   partido sigue pendiente sin línea, referencia 2.5, marcada en el
+   JSON), BTTS sí/no como conteo de resultados (NO son momios: ESPN
+   no da momios de BTTS), y spread aplicando la línea publicada del
+   partido a los últimos 5 del equipo (sin distinguir si en esos
+   partidos fue local o visita; si no hay línea de spread, no hay
+   tendencia de spread). Escribe `data/semana-N/tendencias.json`
+   con una `linea_tarjeta` por partido; `integrar_pagina.py` con
+   `--tendencias data/semana-N/tendencias.json` la añade a cada
+   tarjeta del fragmento (CSS `.momios-tend`), también a las
+   pendientes, porque las tendencias no necesitan momios. Es el paso
+   7 de `run_semana.py`. Uso: `python3 scripts/run_tendencias.py`
+   (las 3 semanas) o `python3 scripts/run_tendencias.py --semanas
+   semana-2`.
 
 ## Corrección obligatoria aplicada (jefe, 19 nov 2026)
 
