@@ -64,8 +64,12 @@
   .hstat span{display:block;margin-top:6px;font-size:.8rem;font-weight:700;color:#BCCBA6;letter-spacing:.02em}
   @media (max-width:640px){.hero-stats{grid-template-columns:1fr 1fr}.hero-in{padding:38px 0 26px}}
 
-  /* ---------- TOOLBAR ---------- */
-  .toolbar{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);padding:12px 0}
+  /* ---------- TOOLBAR ----------
+     Empleado 2, 24 nov 2026 — la barra ya NO es fija: con position:sticky
+     tapaba el borde superior del contenido al bajar (la etiqueta "Momio
+     decimal de la casa" de la calculadora y la parte alta de una tarjeta).
+     Ahora va en flujo normal y se va con la página; nada queda tapado. */
+  .toolbar{background:var(--bg);border-bottom:1px solid var(--line);padding:12px 0}
   .toolbar-in{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
   .days{display:flex;flex-wrap:wrap;gap:8px}
   .day{border:1px solid var(--line);background:var(--surface);color:var(--ink-2);border-radius:12px;padding:8px 14px;font-weight:800;font-size:.86rem;min-height:44px}
@@ -256,7 +260,7 @@
   .mini p{font-size:.88rem;color:var(--muted)}
 
   footer{margin-top:52px;border-top:1px solid var(--line);padding:26px 0 40px}
-  footer p{font-size:.84rem;color:var(--muted);max-width:72ch}
+  footer p{font-size:.84rem;color:var(--muted)}
   footer p+p{margin-top:8px}
   footer strong{color:var(--ink-2)}
 
@@ -308,6 +312,30 @@
   .fxi-green{background:var(--accent)}
   .fxi-amber{background:var(--amber)}
   .fxi-red{background:var(--live)}
+
+  /* ---------- Historial del modelo (E1, 24 nov 2026) ---------- */
+  .historial h2{font-size:1.25rem;margin:0 0 8px}
+  .historial p{color:var(--muted);margin:0 0 12px}
+  .historial-fecha{font-size:.82rem}
+  .historial-tabla{width:100%;border-collapse:collapse;font-size:.86rem}
+  .historial-tabla th,.historial-tabla td{border-bottom:1px solid var(--line);padding:7px 8px;text-align:left}
+  .historial-tabla th{color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}
+  /* ---------- Radiografía enfrentada (Empleado 2, 24 nov 2026) ---------- */
+  .radio-head{display:flex;justify-content:space-between;gap:8px;font-weight:900;font-size:.9rem;margin:2px 0 12px}
+  .radio-head .radio-vs{color:var(--muted);font-weight:800}
+  .radio-metric{margin-bottom:12px}
+  .radio-row{display:grid;grid-template-columns:44px 1fr 1fr 44px;gap:8px;align-items:center}
+  .radio-num{text-align:center}
+  .radio-track{height:10px;border-radius:999px;background:var(--surface-3);overflow:hidden}
+  .radio-fill{height:100%;border-radius:999px}
+  .radio-home{background:var(--accent-strong)}
+  .radio-track-r{display:flex;justify-content:flex-end}
+  .radio-away{background:var(--amber)}
+  .radio-cap{text-align:center;color:var(--muted);font-size:.78rem;font-weight:700;margin-top:4px}
+  .radio-dots-row{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center}
+  .radio-dots{display:flex;gap:4px}
+  .radio-dots-row .radio-dots:last-child{justify-self:end}
+  .radio-cap-inline{color:var(--muted);font-size:.78rem;font-weight:700;text-align:center}
   .fxi-lines{list-style:none;margin:0;padding:0}
   .fxi-lines li{display:flex;justify-content:space-between;gap:8px;padding:5px 0;border-top:1px solid var(--line);font-size:.88rem}
   .fxi-lines li:first-child{border-top:0}
@@ -1365,6 +1393,41 @@
     </div>
   </div>
 
+  <!-- HISTORIAL DEL MODELO -->
+  <section class="block" aria-label="Cómo le fue al modelo">
+<!-- HISTORIAL-INICIO:semana-1 -->
+<section class="historial">
+<h2>Cómo le fue al modelo — semana-1</h2>
+<p>Favorito 1X2: <strong>6/16 (37.5%)</strong>
+· Más 2.5: 5/10
+· Menos 2.5: 4/6
+· BTTS: 3/6
+· No-BTTS: 4/10
+· Empates: 7 de 16</p>
+<p class="historial-fecha">Revisión del lunes, fecha de cálculo 2026-11-24 (México).</p>
+<table class="historial-tabla">
+<tr><th>Fecha</th><th>Liga</th><th>Partido</th><th>Resultado</th><th>1X2</th><th>Total</th><th>BTTS</th></tr>
+<tr><td>Vie 20 nov</td><td>Bundesliga</td><td>Bayern Munich vs FC Cologne</td><td>1-1 (X)</td><td>✗</td><td>fallo</td><td>fallo</td></tr>
+<tr><td>Vie 20 nov</td><td>LaLiga</td><td>Athletic Club vs Espanyol</td><td>0-1 (2)</td><td>✗</td><td>acierto</td><td>acierto</td></tr>
+<tr><td>Vie 20 nov</td><td>Liga MX</td><td>Puebla vs Atlético de San Luis</td><td>1-1 (X)</td><td>✗</td><td>acierto</td><td>fallo</td></tr>
+<tr><td>Vie 20 nov</td><td>Liga MX</td><td>FC Juárez vs Atlas</td><td>3-3 (X)</td><td>✗</td><td>acierto</td><td>acierto</td></tr>
+<tr><td>Vie 20 nov</td><td>Liga MX</td><td>Tijuana vs Atlante</td><td>1-0 (1)</td><td>✓</td><td>fallo</td><td>acierto</td></tr>
+<tr><td>Sáb 21 nov</td><td>Premier League</td><td>Manchester City vs Fulham</td><td>1-1 (X)</td><td>✗</td><td>acierto</td><td>fallo</td></tr>
+<tr><td>Sáb 21 nov</td><td>Premier League</td><td>Newcastle United vs Arsenal</td><td>2-2 (X)</td><td>✗</td><td>fallo</td><td>fallo</td></tr>
+<tr><td>Sáb 21 nov</td><td>LaLiga</td><td>Sevilla vs Real Betis</td><td>1-1 (X)</td><td>✗</td><td>fallo</td><td>acierto</td></tr>
+<tr><td>Sáb 21 nov</td><td>LaLiga</td><td>Real Madrid vs Celta Vigo</td><td>2-1 (1)</td><td>✓</td><td>fallo</td><td>fallo</td></tr>
+<tr><td>Sáb 21 nov</td><td>Liga MX</td><td>Pachuca vs Toluca</td><td>2-0 (1)</td><td>✓</td><td>fallo</td><td>fallo</td></tr>
+<tr><td>Sáb 21 nov</td><td>Liga MX</td><td>Pumas UNAM vs Monterrey</td><td>0-2 (2)</td><td>✗</td><td>fallo</td><td>fallo</td></tr>
+<tr><td>Dom 22 nov</td><td>LaLiga</td><td>Barcelona vs Villarreal</td><td>3-2 (1)</td><td>✓</td><td>acierto</td><td>fallo</td></tr>
+<tr><td>Dom 22 nov</td><td>Premier League</td><td>Liverpool vs Manchester United</td><td>4-0 (1)</td><td>✓</td><td>acierto</td><td>fallo</td></tr>
+<tr><td>Dom 22 nov</td><td>Serie A</td><td>Atalanta vs Internazionale</td><td>4-4 (X)</td><td>✗</td><td>acierto</td><td>acierto</td></tr>
+<tr><td>Dom 22 nov</td><td>LaLiga</td><td>Getafe vs Atlético Madrid</td><td>0-3 (2)</td><td>✓</td><td>acierto</td><td>acierto</td></tr>
+<tr><td>Dom 22 nov</td><td>Liga MX</td><td>Guadalajara vs Cruz Azul</td><td>1-0 (1)</td><td>✗</td><td>acierto</td><td>acierto</td></tr>
+</table>
+</section>
+<!-- HISTORIAL-FIN:semana-1 -->
+  </section>
+
   <!-- EDITORIAL -->
   <section class="block" aria-label="Lecturas del día">
     <div class="sec-head">
@@ -1529,6 +1592,9 @@
     emptyState.style.display = visible === 0 ? "block" : "none";
   }
 
+  /* F1 (port del jefe, PR #17): el handler de pestañas de estado solo toca
+     .tab[data-status]; antes usaba .tab y se tragaba los botones de ordenar
+     (Por fecha / Por EV / Solo con valor), desincronizando el estado. */
   document.querySelectorAll(".tab[data-status]").forEach(function(t){
     t.addEventListener("click", function(){
       document.querySelectorAll(".tab[data-status]").forEach(function(x){ x.setAttribute("aria-pressed","false"); });
@@ -1675,10 +1741,7 @@
     var pickP = (mercado === "Local") ? p1 : p2;
     // 3d. Partido parejo (los dos primeros a 5 puntos o menos)
     if (fav.v - seg.v <= 5){
-      if (fav.n === pickN){
-        return "Partido parejo: el modelo apenas separa a los dos (" + vInt(fav.v) + "% vs " + vInt(seg.v) + "%), y el valor está en " + elArt(pickN) + " (" + evT + ").";
-      }
-      return "Partido parejo: el modelo apenas separa " + aArt(fav.n) + " " + deArt(pickN) + " (" + vInt(fav.v) + "% vs " + vInt(pickP) + "%), y el valor está en " + elArt(pickN) + " (" + evT + ").";
+      return "Partido parejo: el modelo apenas separa a los dos (" + vInt(fav.v) + "% vs " + vInt(pickP) + "%), y el valor está en " + elArt(pickN) + " (" + evT + ").";
     }
     // 3c. Valor en el no favorito
     if (pickN !== fav.n){
@@ -1981,10 +2044,10 @@
      Empleado 1 (data/investigacion-xi/fuerza_xi_prueba.json, en main).
      Los % publicados NO se cambian: están topados en 100. */
   var FXI_EJEMPLOS = [
-    {equipo:"Arsenal", etiqueta:"XI completo", partido:"Newcastle 2–2 Arsenal", fecha:"21 nov 2026", xi:"Raya, Gabriel, Konsa, Calafiori, Timber, Ødegaard, Rice, Guimarães, Havertz, Eze, Madueke", a:"100", b:"100", c:"100", fa:"10.0/10.0", fb:"3965/3838", fc:"119/115", fuerza:"100.0"},
+    {equipo:"Arsenal", etiqueta:"XI completo", partido:"Newcastle 2–2 Arsenal", fecha:"21 nov 2026", xi:"Raya, Gabriel, Saliba, Calafiori, Timber, Ødegaard, Rice, Saka, Havertz, Eze, Madueke", a:"100", b:"100", c:"100", fa:"10.0/10.0", fb:"3965/3838", fc:"119/115", fuerza:"100.0"},
     {equipo:"Arsenal", etiqueta:"sin Ødegaard (entra Ben White)", partido:"Newcastle 2–2 Arsenal", fecha:"21 nov 2026", xi:"Mismo XI, con Ben White por Ødegaard.", a:"90.0", b:"95.7", c:"97.4", fa:"9.0/10.0", fb:"3673/3838", fc:"112/115", fuerza:"93.9"},
-    {equipo:"Real Madrid", etiqueta:"XI rotado", partido:"Real Madrid 2–1 Celta", fecha:"últimos 5 de liga al 21 nov 2026", xi:"Courtois, Huijsen, Konaté, Camavinga, Carreras, Trent, Bellingham, Bernardo Silva, Diomande, Güler, Mbappé", a:"89.5", b:"83.5", c:"85.7", fa:"17.0/19.0", fb:"3545/4247", fc:"126/147", fuerza:"86.5"},
-    {equipo:"Real Madrid", etiqueta:"sin Mbappé (entra Cucurella)", partido:"Real Madrid 2–1 Celta", fecha:"últimos 5 de liga al 21 nov 2026", xi:"Mismo XI, con Cucurella por Mbappé.", a:"52.6", b:"81.5", c:"83.7", fa:"10.0/19.0", fb:"3460/4247", fc:"123/147", fuerza:"70.6"}
+    {equipo:"Real Madrid", etiqueta:"XI rotado", partido:"Real Madrid 2–1 Celta", fecha:"últimos 5 de liga al 21 nov 2026", xi:"Courtois, Huijsen, Rüdiger, Camavinga, Carreras, Trent, Bellingham, Brahim, Vinícius, Güler, Mbappé", a:"89.5", b:"83.5", c:"85.7", fa:"17.0/19.0", fb:"3545/4247", fc:"126/147", fuerza:"86.5"},
+    {equipo:"Real Madrid", etiqueta:"sin Mbappé (entra Militão)", partido:"Real Madrid 2–1 Celta", fecha:"últimos 5 de liga al 21 nov 2026", xi:"Mismo XI, con Militão por Mbappé.", a:"52.6", b:"81.5", c:"83.7", fa:"10.0/19.0", fb:"3460/4247", fc:"123/147", fuerza:"70.6"}
   ];
   function fxiColor(v){
     var n = parseFloat(v);
@@ -2016,6 +2079,89 @@
     h += "<p class=\"detail-note\">Fracciones del JSON del Empleado 1 (data/investigacion-xi/fuerza_xi_prueba.json, en main): sumas del XI contra el mejor XI. Los % están topados en 100: en el Arsenal completo los minutos (3965/3838) y los puntos (119/115) pasan de 100 porque el XI reciente suma más que el mejor XI en totales.</p>";
     return h;
   }
+  /* Radiografía enfrentada (Empleado 2, 24 nov 2026), realimentada con los
+     agregados del Empleado 1 leídos en main: data/semana-2/raw/teams_last5.json
+     (fin de semana: últimos 5 de liga, n=5) y
+     data/semana-2-entresemana/raw/teams_last5.json (entre semana: últimos 4
+     de la competición europea, n=4). Tabla por partido: los equipos que
+     juegan en los dos archivos llevan agregados distintos por partido
+     (p. ej. Arsenal liga 1.4/0.2, BTTS 1/5 vs Champions 2.0/0.8, BTTS 2/4).
+     Racha: V/E/D del partido más reciente al más antiguo. */
+var RADIO = {
+  "galatasaray-vs-aston-villa": {n:4, comp:"Champions", h:{gf:2.0,ga:2.3,btts:"3/4",bttsN:3,over:"3/4",overN:3,racha:"WWLL"}, a:{gf:3.0,ga:1.5,btts:"2/4",bttsN:2,over:"4/4",overN:4,racha:"LWWW"}},
+  "arsenal-vs-borussia-dortmund": {n:4, comp:"Champions", h:{gf:2.0,ga:0.8,btts:"2/4",bttsN:2,over:"3/4",overN:3,racha:"WDWW"}, a:{gf:1.8,ga:1.3,btts:"3/4",bttsN:3,over:"3/4",overN:3,racha:"WWLW"}},
+  "manchester-city-vs-napoli": {n:4, comp:"Champions", h:{gf:3.0,ga:1.8,btts:"3/4",bttsN:3,over:"3/4",overN:3,racha:"WWLW"}, a:{gf:1.5,ga:2.8,btts:"3/4",bttsN:3,over:"3/4",overN:3,racha:"LWLL"}},
+  "real-madrid-vs-psv-eindhoven": {n:4, comp:"Champions", h:{gf:3.3,ga:1.8,btts:"4/4",bttsN:4,over:"4/4",overN:4,racha:"WWWW"}, a:{gf:0.8,ga:1.0,btts:"2/4",bttsN:2,over:"1/4",overN:1,racha:"LWLD"}},
+  "club-brugge-vs-liverpool": {n:4, comp:"Champions", h:{gf:2.8,ga:1.8,btts:"3/4",bttsN:3,over:"4/4",overN:4,racha:"WWWL"}, a:{gf:3.5,ga:2.5,btts:"4/4",bttsN:4,over:"4/4",overN:4,racha:"LWWW"}},
+  "internazionale-vs-vfb-stuttgart": {n:4, comp:"Champions", h:{gf:2.0,ga:1.5,btts:"2/4",bttsN:2,over:"3/4",overN:3,racha:"WWLL"}, a:{gf:1.8,ga:1.0,btts:"2/4",bttsN:2,over:"2/4",overN:2,racha:"LDWW"}},
+  "lille-vs-bayern-munich": {n:4, comp:"Champions", h:{gf:1.0,ga:2.5,btts:"2/4",bttsN:2,over:"3/4",overN:3,racha:"DLLL"}, a:{gf:3.0,ga:1.3,btts:"2/4",bttsN:2,over:"3/4",overN:3,racha:"WDDW"}},
+  "paris-saint-germain-vs-as-roma": {n:4, comp:"Champions", h:{gf:5.0,ga:1.3,btts:"3/4",bttsN:3,over:"4/4",overN:4,racha:"WWWW"}, a:{gf:2.5,ga:2.0,btts:"3/4",bttsN:3,over:"3/4",overN:3,racha:"LWLD"}},
+  "sporting-cp-vs-manchester-united": {n:4, comp:"Champions", h:{gf:2.0,ga:1.0,btts:"2/4",bttsN:2,over:"2/4",overN:2,racha:"WLWW"}, a:{gf:2.0,ga:2.0,btts:"2/4",bttsN:2,over:"3/4",overN:3,racha:"WLLW"}},
+  "celta-vigo-vs-afc-bournemouth": {n:4, comp:"Europa League", h:{gf:1.0,ga:1.5,btts:"3/4",bttsN:3,over:"3/4",overN:3,racha:"LWLL"}, a:{gf:2.8,ga:0.5,btts:"2/4",bttsN:2,over:"4/4",overN:4,racha:"WWWW"}},
+  "dinamo-zagreb-vs-bayer-leverkusen": {n:4, comp:"Europa League", h:{gf:1.3,ga:1.0,btts:"1/4",bttsN:1,over:"1/4",overN:1,racha:"WLWD"}, a:{gf:2.0,ga:0.3,btts:"0/4",bttsN:0,over:"1/4",overN:1,racha:"LWWW"}},
+  "olympiacos-vs-ac-milan": {n:4, comp:"Europa League", h:{gf:1.0,ga:0.3,btts:"1/4",bttsN:1,over:"1/4",overN:1,racha:"DWWW"}, a:{gf:1.0,ga:1.8,btts:"0/4",bttsN:0,over:"2/4",overN:2,racha:"LLWL"}},
+  "werder-bremen-vs-borussia-monchengladbach": {n:5, comp:"liga", h:{gf:1.8,ga:1.4,btts:"3/5",bttsN:3,over:"3/5",overN:3,racha:"LWWDD"}, a:{gf:1.2,ga:1.8,btts:"4/5",bttsN:4,over:"4/5",overN:4,racha:"LDWLL"}},
+  "venezia-vs-bologna": {n:5, comp:"liga", h:{gf:0.6,ga:1.0,btts:"1/5",bttsN:1,over:"1/5",overN:1,racha:"WLLLW"}, a:{gf:2.2,ga:1.4,btts:"4/5",bttsN:4,over:"4/5",overN:4,racha:"WWWWL"}},
+  "nottingham-forest-vs-chelsea": {n:5, comp:"liga", h:{gf:1.0,ga:1.6,btts:"3/5",bttsN:3,over:"2/5",overN:2,racha:"WLDLL"}, a:{gf:1.8,ga:0.8,btts:"1/5",bttsN:1,over:"1/5",overN:1,racha:"LWLWW"}},
+  "levante-vs-racing-santander": {n:5, comp:"liga", h:{gf:1.0,ga:1.2,btts:"3/5",bttsN:3,over:"2/5",overN:2,racha:"DLLWD"}, a:{gf:1.2,ga:1.8,btts:"3/5",bttsN:3,over:"4/5",overN:4,racha:"WLWLD"}},
+  "hamburg-sv-vs-bayern-munich": {n:5, comp:"liga", h:{gf:1.6,ga:1.4,btts:"3/5",bttsN:3,over:"3/5",overN:3,racha:"WLLWW"}, a:{gf:3.0,ga:1.4,btts:"5/5",bttsN:5,over:"5/5",overN:5,racha:"WDWWD"}},
+  "manchester-united-vs-brentford": {n:5, comp:"liga", h:{gf:1.2,ga:2.2,btts:"3/5",bttsN:3,over:"2/5",overN:2,racha:"DLLDD"}, a:{gf:1.2,ga:1.4,btts:"3/5",bttsN:3,over:"2/5",overN:2,racha:"LWDLD"}},
+  "elche-vs-atletico-madrid": {n:5, comp:"liga", h:{gf:0.6,ga:0.6,btts:"0/5",bttsN:0,over:"1/5",overN:1,racha:"LLWDD"}, a:{gf:1.4,ga:0.6,btts:"2/5",bttsN:2,over:"2/5",overN:2,racha:"LWWWW"}},
+  "vfb-stuttgart-vs-eintracht-frankfurt": {n:5, comp:"liga", h:{gf:1.8,ga:1.2,btts:"2/5",bttsN:2,over:"2/5",overN:2,racha:"WWLLW"}, a:{gf:1.2,ga:2.0,btts:"2/5",bttsN:2,over:"3/5",overN:3,racha:"DWLWL"}},
+  "internazionale-vs-genoa": {n:5, comp:"liga", h:{gf:2.0,ga:1.0,btts:"3/5",bttsN:3,over:"3/5",overN:3,racha:"WLWWW"}, a:{gf:1.2,ga:1.0,btts:"2/5",bttsN:2,over:"2/5",overN:2,racha:"LWWWL"}},
+  "real-madrid-vs-alaves": {n:5, comp:"liga", h:{gf:2.6,ga:0.4,btts:"2/5",bttsN:2,over:"4/5",overN:4,racha:"WWWWW"}, a:{gf:0.8,ga:2.2,btts:"4/5",bttsN:4,over:"3/5",overN:3,racha:"DLDLL"}},
+  "everton-vs-liverpool": {n:5, comp:"liga", h:{gf:1.2,ga:1.4,btts:"2/5",bttsN:2,over:"2/5",overN:2,racha:"WWLLD"}, a:{gf:1.4,ga:1.2,btts:"2/5",bttsN:2,over:"3/5",overN:3,racha:"WLWWL"}},
+  "sassuolo-vs-napoli": {n:5, comp:"liga", h:{gf:1.2,ga:3.8,btts:"3/5",bttsN:3,over:"4/5",overN:4,racha:"LLLLL"}, a:{gf:1.6,ga:1.6,btts:"3/5",bttsN:3,over:"2/5",overN:2,racha:"DLWDL"}},
+  "deportivo-vs-barcelona": {n:5, comp:"liga", h:{gf:1.0,ga:1.2,btts:"3/5",bttsN:3,over:"2/5",overN:2,racha:"DWLDL"}, a:{gf:3.4,ga:1.2,btts:"4/5",bttsN:4,over:"5/5",overN:5,racha:"WWLWW"}},
+  "arsenal-vs-manchester-city": {n:5, comp:"liga", h:{gf:1.4,ga:0.2,btts:"1/5",bttsN:1,over:"1/5",overN:1,racha:"WWWWW"}, a:{gf:1.6,ga:1.6,btts:"3/5",bttsN:3,over:"4/5",overN:4,racha:"LLLWW"}},
+  "borussia-dortmund-vs-bayer-leverkusen": {n:5, comp:"liga", h:{gf:1.4,ga:1.0,btts:"3/5",bttsN:3,over:"3/5",overN:3,racha:"WDWDD"}, a:{gf:2.0,ga:2.4,btts:"4/5",bttsN:4,over:"5/5",overN:5,racha:"WLLWW"}},
+  "como-vs-juventus": {n:5, comp:"liga", h:{gf:1.8,ga:0.8,btts:"2/5",bttsN:2,over:"2/5",overN:2,racha:"LWWWW"}, a:{gf:1.2,ga:1.4,btts:"1/5",bttsN:1,over:"2/5",overN:2,racha:"DWLWL"}},
+};
+  function radioRow(label, hVal, aVal, hW, aW){
+    return '<div class="radio-metric">' +
+      '<div class="radio-row">' +
+      '<b class="radio-num">' + esc(hVal) + '</b>' +
+      '<div class="radio-track"><div class="radio-fill radio-home" style="width:' + hW + '%"></div></div>' +
+      '<div class="radio-track radio-track-r"><div class="radio-fill radio-away" style="width:' + aW + '%"></div></div>' +
+      '<b class="radio-num">' + esc(aVal) + '</b>' +
+      '</div>' +
+      '<div class="radio-cap">' + esc(label) + '</div>' +
+      '</div>';
+  }
+  function radioDots(racha){
+    /* racha es un string V/E/D del más reciente al más antiguo: se muestra tal cual. */
+    return racha.split("").map(function(r){
+      return '<span class="res-badge res-' + esc(r) + '">' + esc(r) + '</span>';
+    }).join("");
+  }
+  function radiografiaBlock(home, away, key){
+    var h = "<h4>Así llegan</h4>";
+    var r = RADIO[key];
+    if (!r){
+      return h + '<div class="detail-pending">pendiente — sin datos de los últimos partidos en ESPN.</div>';
+    }
+    var ah = r.h, aa = r.a, n = r.n;
+    h += '<div class="radio-head"><span>' + esc(home) + '</span><span class="radio-vs">vs</span><span>' + esc(away) + '</span></div>';
+    var maxGf = Math.max(ah.gf, aa.gf), maxGa = Math.max(ah.ga, aa.ga);
+    h += radioRow("Goles por partido", ah.gf.toFixed(1), aa.gf.toFixed(1),
+      maxGf ? Math.round(ah.gf / maxGf * 100) : 0,
+      maxGf ? Math.round(aa.gf / maxGf * 100) : 0);
+    h += radioRow("Goles encajados por partido", ah.ga.toFixed(1), aa.ga.toFixed(1),
+      maxGa ? Math.round(ah.ga / maxGa * 100) : 0,
+      maxGa ? Math.round(aa.ga / maxGa * 100) : 0);
+    h += radioRow("BTTS", ah.btts, aa.btts,
+      Math.round(ah.bttsN / n * 100), Math.round(aa.bttsN / n * 100));
+    h += radioRow("Más 2.5", ah.over, aa.over,
+      Math.round(ah.overN / n * 100), Math.round(aa.overN / n * 100));
+    h += '<div class="radio-metric"><div class="radio-dots-row">' +
+      '<span class="radio-dots">' + radioDots(ah.racha) + '</span>' +
+      '<span class="radio-cap-inline">Racha</span>' +
+      '<span class="radio-dots">' + radioDots(aa.racha) + '</span></div></div>';
+    var ventana = r.comp === "liga" ? "Últimos 5 partidos de liga" :
+      "Últimos 4 partidos de " + r.comp;
+    h += '<p class="detail-note">' + esc(ventana) + ' según ESPN (23 nov 2026). Racha: ' + n + ' puntos V/E/D, del partido más reciente al más antiguo.</p>';
+    return h;
+  }
   function openDetail(article){
     var names = article.querySelectorAll(".team b");
     if (names.length < 2) return;
@@ -2041,6 +2187,7 @@
       h += lastFiveList(home, null) + lastFiveList(away, null);
     }
     h += "</div>";
+    h += radiografiaBlock(home, away, key);
     h += "<h4>Historial directo (H2H)</h4>";
     if (d && d.h2h && d.h2h.partidos && d.h2h.partidos.length){
       h += "<p><b>" + esc(d.h2h.resumen) + "</b> · " + esc(d.h2h.etiqueta) + "</p><div class=\"detail-list\"><ul>";
