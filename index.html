@@ -64,8 +64,12 @@
   .hstat span{display:block;margin-top:6px;font-size:.8rem;font-weight:700;color:#BCCBA6;letter-spacing:.02em}
   @media (max-width:640px){.hero-stats{grid-template-columns:1fr 1fr}.hero-in{padding:38px 0 26px}}
 
-  /* ---------- TOOLBAR ---------- */
-  .toolbar{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);padding:12px 0}
+  /* ---------- TOOLBAR ----------
+     Empleado 2, 24 nov 2026 — la barra ya NO es fija: con position:sticky
+     tapaba el borde superior del contenido al bajar (la etiqueta "Momio
+     decimal de la casa" de la calculadora y la parte alta de una tarjeta).
+     Ahora va en flujo normal y se va con la página; nada queda tapado. */
+  .toolbar{background:var(--bg);border-bottom:1px solid var(--line);padding:12px 0}
   .toolbar-in{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
   .days{display:flex;flex-wrap:wrap;gap:8px}
   .day{border:1px solid var(--line);background:var(--surface);color:var(--ink-2);border-radius:12px;padding:8px 14px;font-weight:800;font-size:.86rem;min-height:44px}
@@ -256,9 +260,97 @@
   .mini p{font-size:.88rem;color:var(--muted)}
 
   footer{margin-top:52px;border-top:1px solid var(--line);padding:26px 0 40px}
-  footer p{font-size:.84rem;color:var(--muted);max-width:72ch}
+  footer p{font-size:.84rem;color:var(--muted)}
   footer p+p{margin-top:8px}
   footer strong{color:var(--ink-2)}
+
+  /* ---------- Semana 5: detalle del partido (Empleado 2) ---------- */
+  .detail-btn{display:block;width:100%;margin-top:12px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);border-radius:12px;font-weight:800;font-size:.86rem;padding:10px 14px;min-height:44px}
+  .detail-btn:hover{background:var(--surface-3)}
+  .match .teams{cursor:pointer}
+  .detail-overlay{position:fixed;inset:0;z-index:100;display:none;align-items:flex-start;justify-content:center;background:rgba(5,8,4,.6);padding:20px 14px;overflow-y:auto}
+  .detail-overlay.open{display:flex}
+  .detail-modal{background:var(--surface);color:var(--ink);border-radius:var(--radius);box-shadow:var(--shadow);width:100%;max-width:720px;margin:auto}
+  .detail-head{position:sticky;top:0;display:flex;gap:12px;align-items:flex-start;justify-content:space-between;background:var(--surface);border-bottom:1px solid var(--line);padding:16px 18px;border-radius:var(--radius) var(--radius) 0 0}
+  .detail-head h3{font-size:1.15rem}
+  .detail-head p{color:var(--muted);font-size:.85rem;font-weight:700}
+  .detail-close{flex:0 0 auto;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);border-radius:999px;width:44px;height:44px;font-size:1.2rem;font-weight:900;line-height:1}
+  .detail-body{padding:6px 18px 18px}
+  .detail-body h4{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:18px 0 8px}
+  .detail-two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media (max-width:560px){.detail-two{grid-template-columns:1fr}}
+  .detail-team{background:var(--surface-2);border-radius:12px;padding:10px 12px}
+  .detail-team b{display:block;margin-bottom:6px}
+  .detail-team ul,.detail-list ul{list-style:none;margin:0;padding:0}
+  .detail-team li,.detail-list li{display:flex;gap:8px;align-items:baseline;padding:6px 0;border-top:1px solid var(--line);font-size:.88rem}
+  .detail-team li:first-child,.detail-list li:first-child{border-top:0}
+  .detail-team .d-date,.detail-list .d-date{color:var(--muted);font-size:.78rem;white-space:nowrap}
+  .detail-team .d-comp{color:var(--muted);font-size:.76rem;display:block}
+  .res-badge{flex:0 0 auto;width:22px;height:22px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-weight:900;font-size:.75rem;color:#fff}
+  .res-V{background:var(--accent-strong)}
+  .res-E{background:var(--amber)}
+  .res-D{background:var(--live)}
+  .detail-pos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media (max-width:560px){.detail-pos{grid-template-columns:1fr}}
+  .detail-pos .pos-box{background:var(--surface-2);border-radius:12px;padding:12px}
+  .detail-pos .pos-num{font-size:1.5rem;font-weight:900}
+  .detail-pos p{color:var(--muted);font-size:.85rem;font-weight:700}
+  #vivoLine .partido{padding:.5em .8em;border:1px solid #ccc;border-radius:8px;margin:.2em 0}
+#vivoLine .vivo{border-color:#1a7f37;background:#e6f4ea;font-weight:700}
+#vivoLine .programado{background:#f6f6f6}
+#vivoLine .pendiente{background:#fff4e5}
+.detail-pending{background:var(--amber-soft);border:1px dashed var(--amber);border-radius:12px;padding:12px;font-weight:700;font-size:.9rem}
+  .detail-note{color:var(--muted);font-size:.78rem;margin-top:16px}
+  /* ---------- Fuerza del XI (Empleado 2, 23 nov 2026) ---------- */
+  .fxi-badge{display:inline-block;font-size:.68rem;font-weight:800;color:var(--amber);background:var(--amber-soft);border-radius:999px;padding:4px 10px;margin-left:8px;vertical-align:middle;letter-spacing:0;text-transform:none}
+  .fxi-formula{color:var(--muted);font-size:.82rem;margin:10px 0 0}
+  .fxi-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
+  @media (max-width:560px){.fxi-grid{grid-template-columns:1fr}}
+  .fxi-card{background:var(--surface-2);border-radius:12px;padding:12px}
+  .fxi-card b{display:block}
+  .fxi-match{color:var(--muted);font-size:.8rem;font-weight:700}
+  .fxi-num{font-size:2rem;font-weight:900;line-height:1.1;margin-top:8px}
+  .fxi-num small{font-size:1rem;font-weight:800;color:var(--muted)}
+  .fxi-bar{height:10px;border-radius:999px;background:var(--surface-3);margin:8px 0 10px;overflow:hidden}
+  .fxi-fill{height:100%;border-radius:999px}
+  .fxi-green{background:var(--accent)}
+  .fxi-amber{background:var(--amber)}
+  .fxi-red{background:var(--live)}
+
+  /* ---------- Historial del modelo (E1, 24 nov 2026) ---------- */
+  .historial h2{font-size:1.25rem;margin:0 0 8px}
+  .historial p{color:var(--muted);margin:0 0 12px}
+  .historial-fecha{font-size:.82rem}
+  .historial-tabla{width:100%;border-collapse:collapse;font-size:.86rem}
+  .historial-tabla th,.historial-tabla td{border-bottom:1px solid var(--line);padding:7px 8px;text-align:left}
+  .historial-tabla th{color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}
+  /* ---------- Radiografía enfrentada (Empleado 2, 24 nov 2026) ---------- */
+  .radio-head{display:flex;justify-content:space-between;gap:8px;font-weight:900;font-size:.9rem;margin:2px 0 12px}
+  .radio-head .radio-vs{color:var(--muted);font-weight:800}
+  .radio-metric{margin-bottom:12px}
+  .radio-row{display:grid;grid-template-columns:44px 1fr 1fr 44px;gap:8px;align-items:center}
+  .radio-num{text-align:center}
+  .radio-track{height:10px;border-radius:999px;background:var(--surface-3);overflow:hidden}
+  .radio-fill{height:100%;border-radius:999px}
+  .radio-home{background:var(--accent-strong)}
+  .radio-track-r{display:flex;justify-content:flex-end}
+  .radio-away{background:var(--amber)}
+  .radio-cap{text-align:center;color:var(--muted);font-size:.78rem;font-weight:700;margin-top:4px}
+  .radio-dots-row{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center}
+  .radio-dots{display:flex;gap:4px}
+  .radio-dots-row .radio-dots:last-child{justify-self:end}
+  .radio-cap-inline{color:var(--muted);font-size:.78rem;font-weight:700;text-align:center}
+  .fxi-lines{list-style:none;margin:0;padding:0}
+  .fxi-lines li{display:flex;justify-content:space-between;gap:8px;padding:5px 0;border-top:1px solid var(--line);font-size:.88rem}
+  .fxi-lines li:first-child{border-top:0}
+  .fxi-lines b{font-weight:800}
+  .fxi-xi{color:var(--muted);font-size:.78rem;margin:10px 0 0}
+  .detail-body .odds{margin-top:6px}
+  /* ---------- Ordenar por valor + solo con valor (Empleado 2, 23 nov 2026) ---------- */
+  .sort-ctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .sort-label{font-weight:800;font-size:.86rem;color:var(--ink-2)}
+  /* ---------- Veredicto en claro (Empleado 2, 23 nov 2026) ---------- */
+  .card-verdict{margin:8px 0 0;font-size:.88rem;line-height:1.45;color:var(--ink-2);border-left:3px solid var(--accent);padding-left:9px}
 </style>
 </head>
 <body>
@@ -296,6 +388,12 @@
       <button class="tab" type="button" data-status="live" aria-pressed="false">En vivo</button>
       <button class="tab" type="button" data-status="upcoming" aria-pressed="false">Próximos</button>
       <button class="tab" type="button" data-status="value" aria-pressed="false">Con valor EV+</button>
+    </div>
+    <div class="sort-ctl" role="group" aria-label="Ordenar tarjetas por valor">
+      <span class="sort-label">Ordenar:</span>
+      <button class="tab sort-btn" type="button" data-sort="fecha" aria-pressed="true">Por fecha</button>
+      <button class="tab sort-btn" type="button" data-sort="ev" aria-pressed="false">Por EV</button>
+      <button class="tab value-btn" type="button" id="onlyValueBtn" aria-pressed="false">Solo con valor (EV+)</button>
     </div>
   </div>
 </div>
@@ -1299,6 +1397,41 @@
     </div>
   </div>
 
+  <!-- HISTORIAL DEL MODELO -->
+  <section class="block" aria-label="Cómo le fue al modelo">
+<!-- HISTORIAL-INICIO:semana-1 -->
+<section class="historial">
+<h2>Cómo le fue al modelo — semana-1</h2>
+<p>Favorito 1X2: <strong>6/16 (37.5%)</strong>
+· Más 2.5: 5/10
+· Menos 2.5: 4/6
+· BTTS: 3/6
+· No-BTTS: 4/10
+· Empates: 7 de 16</p>
+<p class="historial-fecha">Revisión del lunes, fecha de cálculo 2026-11-24 (México).</p>
+<table class="historial-tabla">
+<tr><th>Fecha</th><th>Liga</th><th>Partido</th><th>Resultado</th><th>1X2</th><th>Total</th><th>BTTS</th></tr>
+<tr><td>Vie 20 nov</td><td>Bundesliga</td><td>Bayern Munich vs FC Cologne</td><td>1-1 (X)</td><td>✗</td><td>fallo</td><td>fallo</td></tr>
+<tr><td>Vie 20 nov</td><td>LaLiga</td><td>Athletic Club vs Espanyol</td><td>0-1 (2)</td><td>✗</td><td>acierto</td><td>acierto</td></tr>
+<tr><td>Vie 20 nov</td><td>Liga MX</td><td>Puebla vs Atlético de San Luis</td><td>1-1 (X)</td><td>✗</td><td>acierto</td><td>fallo</td></tr>
+<tr><td>Vie 20 nov</td><td>Liga MX</td><td>FC Juárez vs Atlas</td><td>3-3 (X)</td><td>✗</td><td>acierto</td><td>acierto</td></tr>
+<tr><td>Vie 20 nov</td><td>Liga MX</td><td>Tijuana vs Atlante</td><td>1-0 (1)</td><td>✓</td><td>fallo</td><td>acierto</td></tr>
+<tr><td>Sáb 21 nov</td><td>Premier League</td><td>Manchester City vs Fulham</td><td>1-1 (X)</td><td>✗</td><td>acierto</td><td>fallo</td></tr>
+<tr><td>Sáb 21 nov</td><td>Premier League</td><td>Newcastle United vs Arsenal</td><td>2-2 (X)</td><td>✗</td><td>fallo</td><td>fallo</td></tr>
+<tr><td>Sáb 21 nov</td><td>LaLiga</td><td>Sevilla vs Real Betis</td><td>1-1 (X)</td><td>✗</td><td>fallo</td><td>acierto</td></tr>
+<tr><td>Sáb 21 nov</td><td>LaLiga</td><td>Real Madrid vs Celta Vigo</td><td>2-1 (1)</td><td>✓</td><td>fallo</td><td>fallo</td></tr>
+<tr><td>Sáb 21 nov</td><td>Liga MX</td><td>Pachuca vs Toluca</td><td>2-0 (1)</td><td>✓</td><td>fallo</td><td>fallo</td></tr>
+<tr><td>Sáb 21 nov</td><td>Liga MX</td><td>Pumas UNAM vs Monterrey</td><td>0-2 (2)</td><td>✗</td><td>fallo</td><td>fallo</td></tr>
+<tr><td>Dom 22 nov</td><td>LaLiga</td><td>Barcelona vs Villarreal</td><td>3-2 (1)</td><td>✓</td><td>acierto</td><td>fallo</td></tr>
+<tr><td>Dom 22 nov</td><td>Premier League</td><td>Liverpool vs Manchester United</td><td>4-0 (1)</td><td>✓</td><td>acierto</td><td>fallo</td></tr>
+<tr><td>Dom 22 nov</td><td>Serie A</td><td>Atalanta vs Internazionale</td><td>4-4 (X)</td><td>✗</td><td>acierto</td><td>acierto</td></tr>
+<tr><td>Dom 22 nov</td><td>LaLiga</td><td>Getafe vs Atlético Madrid</td><td>0-3 (2)</td><td>✓</td><td>acierto</td><td>acierto</td></tr>
+<tr><td>Dom 22 nov</td><td>Liga MX</td><td>Guadalajara vs Cruz Azul</td><td>1-0 (1)</td><td>✗</td><td>acierto</td><td>acierto</td></tr>
+</table>
+</section>
+<!-- HISTORIAL-FIN:semana-1 -->
+  </section>
+
   <!-- EDITORIAL -->
   <section class="block" aria-label="Lecturas del día">
     <div class="sec-head">
@@ -1413,6 +1546,17 @@
   </footer>
 </div>
 
+
+  <!-- Semana 5: modal de detalle del partido (Empleado 2) -->
+  <div class="detail-overlay" id="detailOverlay" role="dialog" aria-modal="true" aria-labelledby="detailTitle" hidden>
+    <div class="detail-modal">
+      <div class="detail-head">
+        <div><h3 id="detailTitle"></h3><p id="detailSub"></p></div>
+        <button class="detail-close" id="detailClose" type="button" aria-label="Cerrar detalle">×</button>
+      </div>
+      <div class="detail-body" id="detailBody"></div>
+    </div>
+  </div>
 <script>
 (function(){
   "use strict";
@@ -1444,16 +1588,20 @@
       if (currentStatus === "live") okStatus = m.getAttribute("data-status") === "live";
       else if (currentStatus === "upcoming") okStatus = m.getAttribute("data-status") === "upcoming";
       else if (currentStatus === "value") okStatus = m.getAttribute("data-value") === "1";
-      var show = okLeague && okStatus && okDay;
+      var okValue = (!onlyValue || bestEv(m) >= 0);
+      var show = okLeague && okStatus && okDay && okValue;
       m.style.display = show ? "" : "none";
       if (show) visible++;
     });
     emptyState.style.display = visible === 0 ? "block" : "none";
   }
 
-  document.querySelectorAll(".tab").forEach(function(t){
+  /* F1 (port del jefe, PR #17): el handler de pestañas de estado solo toca
+     .tab[data-status]; antes usaba .tab y se tragaba los botones de ordenar
+     (Por fecha / Por EV / Solo con valor), desincronizando el estado. */
+  document.querySelectorAll(".tab[data-status]").forEach(function(t){
     t.addEventListener("click", function(){
-      document.querySelectorAll(".tab").forEach(function(x){ x.setAttribute("aria-pressed","false"); });
+      document.querySelectorAll(".tab[data-status]").forEach(function(x){ x.setAttribute("aria-pressed","false"); });
       t.setAttribute("aria-pressed","true");
       currentStatus = t.getAttribute("data-status");
       applyFilters();
@@ -1467,6 +1615,157 @@
       currentLeague = b.getAttribute("data-league");
       applyFilters();
     });
+  });
+
+  /* ---------- Ordenar por valor + solo con valor (Empleado 2, 23 nov 2026) ----------
+     Un solo control GLOBAL en la barra superior (la misma barra de los filtros
+     de día y estado, que también son globales): ordena las dos listas
+     (#mwList entre semana y #matchList fin de semana) y el interruptor
+     "Solo con valor" se combina con día, liga y estado en applyFilters.
+     El EV del mejor pick se lee de la tarjeta misma (chip del semáforo:
+     .chip.ev o .chip.ev-bad, el último "+X.X%" del texto). Sin datos nuevos.
+     "Por fecha" restaura el orden original de cada lista. */
+  var sortMode = "fecha";
+  var onlyValue = false;
+  var sortLists = [document.getElementById("mwList"), document.getElementById("matchList")];
+  sortLists.forEach(function(list){
+    if (!list) return;
+    Array.prototype.slice.call(list.querySelectorAll(".match")).forEach(function(m, i){
+      m.setAttribute("data-orig", String(i));
+    });
+  });
+  function bestEv(article){
+    var chip = article.querySelector(".chip.ev strong, .chip.ev-bad strong");
+    if (!chip) return -Infinity;
+    var nums = chip.textContent.match(/[+−\-]?\d+(?:[.,]\d+)?\s*%/g);
+    if (!nums) return -Infinity;
+    return parseFloat(nums[nums.length - 1].replace("−", "-").replace(",", "."));
+  }
+  function applySort(){
+    sortLists.forEach(function(list){
+      if (!list) return;
+      var cards = Array.prototype.slice.call(list.querySelectorAll(".match"));
+      cards.sort(function(a, b){
+        if (sortMode === "ev"){
+          var d = bestEv(b) - bestEv(a);
+          if (d !== 0) return d;
+        }
+        return parseInt(a.getAttribute("data-orig"), 10) - parseInt(b.getAttribute("data-orig"), 10);
+      });
+      cards.forEach(function(c){ list.appendChild(c); });
+    });
+  }
+  document.querySelectorAll(".sort-btn").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      document.querySelectorAll(".sort-btn").forEach(function(x){ x.setAttribute("aria-pressed", "false"); });
+      btn.setAttribute("aria-pressed", "true");
+      sortMode = btn.getAttribute("data-sort");
+      applySort();
+    });
+  });
+  document.getElementById("onlyValueBtn").addEventListener("click", function(){
+    onlyValue = !onlyValue;
+    this.setAttribute("aria-pressed", String(onlyValue));
+    applyFilters();
+  });
+
+  /* ---------- Veredicto en claro (Empleado 2, 23 nov 2026) ----------
+     Una línea en palabras simples debajo del semáforo de cada tarjeta.
+     Plantillas fijas y deterministas según los datos de la propia tarjeta:
+     el 1X2 del chip, el mercado y el EV del mejor pick del chip del
+     semáforo, el momio del empate del bloque de momios y la prob. del pick
+     del botón de parlay. Nada inventado: cada frase corresponde a un rango
+     verificable. Las 28 frases se listan en el reporte de EMPLEADO-2.md
+     para que el jefe las valide antes de publicar. */
+  function vInt(x){ return String(Math.round(x)); }
+  function vDec(x){ return x.toFixed(1).replace(".", ","); }
+  function vEv(e){ return (e >= 0 ? "+" : "") + String(Math.round(e)) + "%"; }
+  function vCalif(ev){ return ev >= 50 ? "hay valor claro" : (ev >= 20 ? "hay valor" : "hay valor, pero moderado"); }
+  function vOddsDe(article, mercado){
+    var out = null;
+    article.querySelectorAll(".odds .dcell").forEach(function(dc){
+      var sp = dc.querySelector("span");
+      if (!sp) return;
+      var t = sp.textContent.trim();
+      if (t.indexOf(mercado + " ") === 0){
+        out = { odds: parseFloat(t.slice(mercado.length + 1)) };
+      }
+    });
+    return out;
+  }
+  function veredicto(article){
+    var chip1x2 = null;
+    article.querySelectorAll(".chip").forEach(function(c){
+      if (c.textContent.indexOf("1X2:") === 0) chip1x2 = c.textContent;
+    });
+    var chipEv = article.querySelector(".chip.ev strong, .chip.ev-bad strong");
+    if (!chip1x2 || !chipEv) return null;
+    var p = chip1x2.match(/([\d.]+)% · ([\d.]+)% · ([\d.]+)%/);
+    if (!p) return null;
+    var p1 = parseFloat(p[1]), px = parseFloat(p[2]), p2 = parseFloat(p[3]);
+    var m = chipEv.textContent.match(/^(\S+) · (.+) ([+−\-][\d.,]+)%$/);
+    if (!m) return null;
+    var mercado = m[2].trim();
+    var ev = parseFloat(m[3].replace("−", "-").replace(",", "."));
+    var evT = vEv(ev);
+    var probs = [{n:"local", v:p1}, {n:"empate", v:px}, {n:"visita", v:p2}];
+    probs.sort(function(a, b){ return b.v - a.v; });
+    var fav = probs[0], seg = probs[1];
+    var elArt = function(n){ return n === "visita" ? "la visita" : "el local"; };
+    var aArt = function(n){ return n === "visita" ? "a la visita" : "al local"; };
+    var deArt = function(n){ return n === "visita" ? "de la visita" : "del local"; };
+    // 0. Sin valor (tarjeta en rojo, EV < 0)
+    if (ev < 0){
+      return "El modelo no encuentra valor en ningún mercado: el mejor pick (" + mercado + ") pierde un " + vDec(Math.abs(ev)) + "%.";
+    }
+    // 1. Valor en empate
+    if (mercado === "Empate"){
+      var otro = (fav.n === "empate") ? seg : fav;
+      if (px >= otro.v - 12){
+        return "El modelo ve el empate casi tan probable como " + elArt(otro.n) + " (" + vInt(px) + "% vs " + vInt(otro.v) + "%): partido trampa, el valor está en el empate (" + evT + ").";
+      }
+      var od = vOddsDe(article, "Empate");
+      return "El empate paga " + (od ? od.odds.toFixed(2) : "?") + " y el modelo le da un " + vDec(px) + "%: el valor está en el empate (" + evT + ").";
+    }
+    // 2. Valor en goles (totales)
+    if (mercado.indexOf("Más ") === 0 || mercado.indexOf("Menos ") === 0){
+      if (fav.v >= 80){
+        return (fav.n === "visita" ? "La visita es favorita casi segura (" : "El local es favorito casi seguro (") + vInt(fav.v) + "%), pero el momio no paga: el valor está en los goles (" + mercado + ", " + evT + ").";
+      }
+      var btn = article.querySelector(".add-btn");
+      var prob = btn ? parseFloat(btn.getAttribute("data-prob")) : NaN;
+      if (isNaN(prob)){
+        var od2 = vOddsDe(article, mercado);
+        if (od2 && od2.odds > 1) prob = (ev / 100 + 1) / od2.odds * 100;
+      }
+      return "El modelo le da un " + (isNaN(prob) ? "?" : vDec(prob)) + "% al " + mercado + " y el momio paga: " + vCalif(ev) + " (" + evT + ").";
+    }
+    // 3. 1X2 (Local / Visita)
+    var pickN = (mercado === "Local") ? "local" : "visita";
+    var pickP = (mercado === "Local") ? p1 : p2;
+    // 3d. Partido parejo (los dos primeros a 5 puntos o menos)
+    if (fav.v - seg.v <= 5){
+      return "Partido parejo: el modelo apenas separa a los dos (" + vInt(fav.v) + "% vs " + vInt(pickP) + "%), y el valor está en " + elArt(pickN) + " (" + evT + ").";
+    }
+    // 3c. Valor en el no favorito
+    if (pickN !== fav.n){
+      return "El mercado da por muerto " + aArt(pickN) + ", pero el modelo le da un " + vInt(pickP) + "%: " + vCalif(ev) + " (" + evT + ").";
+    }
+    // 3a/3b. Favorito con valor
+    if (ev >= 50){
+      return "El modelo ve " + aArt(fav.n) + " favorit" + (fav.n === "visita" ? "a" : "o") + " (" + vInt(fav.v) + "%) y el momio paga de más: hay valor claro (" + evT + ").";
+    }
+    return "El modelo ve " + aArt(fav.n) + " favorit" + (fav.n === "visita" ? "a" : "o") + " (" + vInt(fav.v) + "%) y el momio todavía paga: hay valor, pero moderado (" + evT + ").";
+  }
+  matches.forEach(function(m){
+    var v = veredicto(m);
+    if (!v) return;
+    var foots = m.querySelectorAll(".match-foot");
+    var anchor = foots[foots.length - 1];
+    var pEl = document.createElement("p");
+    pEl.className = "card-verdict";
+    pEl.textContent = v;
+    anchor.insertAdjacentElement("afterend", pEl);
   });
 
   /* ---------- Parlay slip ---------- */
@@ -1685,5 +1984,445 @@
   calc();
 })();
 </script>
+
+<script>
+/* ---------- Marcador en vivo (Empleado 1, prototipo) ----------
+ * Port del jefe 24 nov 2026: el módulo se integra al detalle del partido.
+ * Retraso ESPN medido < 1 min (Galatasaray–Aston Villa, 24 nov), refresco 60 s.
+ * Fuente: scripts/marcador_en_vivo.js en main (esta copia es la misma).
+ */
+/**
+ * Marcador en vivo — prototipo (Semana 8, orden del jefe 23 nov 2026).
+ *
+ * Lee el scoreboard público de ESPN para los 28 partidos de la Semana 2
+ * (16 de fin de semana + 12 entre semana) y muestra marcador y minuto,
+ * refrescando cada 60 segundos. NO toca index.html: esto es un módulo
+ * aparte para probar en una copia (preview-marcador-en-vivo.html).
+ *
+ * Sin API key: https://site.api.espn.com/apis/site/v2/sports/soccer
+ * Los partidos se identifican por liga + fecha + IDs de equipo (como
+ * valida recolectar_datos.py), nunca por nombre: no se inventa nada.
+ *
+ * En el navegador: MarcadorEnVivo.init(PARTIDOS, elemento).
+ *   PARTIDOS: [{liga, fecha, home_id, away_id, home, away}]
+ *   Cada 60 s vuelve a pedir el scoreboard del día y actualiza solo
+ *   marcador, minuto y estado. Si ESPN falla, deja lo último que tenía
+ *   y marca "sin actualizar".
+ */
+
+const MarcadorEnVivo = (() => {
+  const BASE = 'https://site.api.espn.com/apis/site/v2/sports/soccer';
+  let timer = null;
+
+  const ALT_BASE = 'https://site.web.api.espn.com/apis/site/v2/sports/soccer';
+
+  async function pedirScoreboard(base, liga, fecha) {
+    const r = await fetch(`${base}/${liga}/scoreboard?dates=${fecha}`);
+    if (!r.ok) {
+      // Diagnóstico 24 nov 2026: el navegador de la nube recibe 400 de ESPN
+      // en el fetch (la misma URL carga bien por navegación y por curl).
+      // Se incluye el cuerpo del error para saber por qué.
+      let cuerpo = '';
+      try { cuerpo = (await r.text()).slice(0, 200); } catch (e) { /* sin cuerpo */ }
+      throw new Error(`ESPN ${r.status} (${liga} ${fecha}) ${cuerpo}`);
+    }
+    return r.json();
+  }
+
+  async function scoreboard(liga, fecha) {
+    // Respaldo 24 nov 2026: site.api.espn.com devolvió 400 intermitente
+    // ("Failed to get events endpoint") en el navegador; si falla, se
+    // reintenta una vez contra site.web.api.espn.com (mismos datos).
+    try {
+      return await pedirScoreboard(BASE, liga, fecha);
+    } catch (err1) {
+      try {
+        return await pedirScoreboard(ALT_BASE, liga, fecha);
+      } catch (err2) {
+        throw new Error(String(err1.message || err1) + ' | respaldo: ' + String(err2.message || err2));
+      }
+    }
+  }
+
+  function estadoDe(comp) {
+    const st = comp.status || {};
+    const tipo = st.type || {};
+    // En el scoreboard, st.clock es un número (segundos) y el minuto
+    // viene en st.displayClock ("67'"); en el summary, clock es un
+    // objeto con displayValue. Se aceptan las dos formas.
+    let minuto = st.displayClock || '';
+    if (!minuto && st.clock && typeof st.clock === 'object') {
+      minuto = st.clock.displayValue || '';
+    }
+    if (!minuto && typeof st.clock === 'number' && st.clock > 0) {
+      minuto = `${Math.floor(st.clock / 60)}'`;
+    }
+    return {
+      estado: tipo.state || 'pre', // pre | in | post
+      detalle: tipo.detail || tipo.shortDetail || '',
+      minuto,
+    };
+  }
+
+  function marcadorDe(comp) {
+    const out = { scoreHome: null, scoreAway: null };
+    for (const c of comp.competitors || []) {
+      const v = c.score;
+      const n = v === undefined || v === null ? null : Number(v);
+      if (c.homeAway === 'home') out.scoreHome = n;
+      if (c.homeAway === 'away') out.scoreAway = n;
+    }
+    return out;
+  }
+
+  async function actualizar(partidos, el) {
+    const porDia = {};
+    for (const p of partidos) {
+      (porDia[`${p.liga}|${p.fecha}`] ||= []).push(p);
+    }
+    const filas = [];
+    for (const key of Object.keys(porDia)) {
+      const [liga, fecha] = key.split('|');
+      try {
+        const sb = await scoreboard(liga, fecha);
+        const eventos = sb.events || [];
+        for (const p of porDia[key]) {
+          const ev = eventos.find((e) => {
+            const comp = (e.competitions || [])[0];
+            if (!comp) return false;
+            const ids = (comp.competitors || []).map(
+              (c) => String(c.team.id));
+            return ids.includes(String(p.home_id))
+              && ids.includes(String(p.away_id));
+          });
+          if (!ev) {
+            filas.push({ ...p, falta: true });
+            continue;
+          }
+          const comp = ev.competitions[0];
+          filas.push({
+            ...p,
+            ...marcadorDe(comp),
+            ...estadoDe(comp),
+            actualizado: new Date().toLocaleTimeString('es-MX'),
+          });
+        }
+      } catch (err) {
+        for (const p of porDia[key]) filas.push({ ...p, error: String(err) });
+      }
+    }
+    render(filas, el);
+    return filas;
+  }
+
+  function textoFila(f) {
+    if (f.error) return `${f.home} vs ${f.away} — error: ${f.error}`;
+    if (f.falta) return `${f.home} vs ${f.away} — no aparece en ESPN todavía`;
+    const m = (f.scoreHome === null || f.scoreAway === null)
+      ? 'vs'
+      : `${f.scoreHome} - ${f.scoreAway}`;
+    const cuando = f.estado === 'in'
+      ? (f.minuto || 'en juego')
+      : (f.detalle || 'por jugar');
+    return `${f.home} ${m} ${f.away} · ${cuando}`;
+  }
+
+  function render(filas, el) {
+    el.innerHTML = filas.map((f) => {
+      const cls = f.error || f.falta ? 'pendiente'
+        : f.estado === 'in' ? 'vivo' : 'programado';
+      return `<div class="partido ${cls}">${textoFila(f)}</div>`;
+    }).join('');
+  }
+
+  function init(partidos, el, ms = 60000) {
+    stop();
+    const correr = () => actualizar(partidos, el);
+    correr();
+    timer = setInterval(correr, ms);
+    return { stop };
+  }
+
+  function stop() {
+    if (timer) { clearInterval(timer); timer = null; }
+  }
+
+  return { init, stop, actualizar, textoFila };
+})();
+
+if (typeof module !== 'undefined') module.exports = MarcadorEnVivo;
+
+var PARTIDOS_VIVO = {"werder-bremen-vs-borussia-monchengladbach":{"liga":"ger.1","fecha":"2026-11-27","home_id":137,"away_id":268,"home":"Werder Bremen","away":"Borussia Mönchengladbach"},"venezia-vs-bologna":{"liga":"ita.1","fecha":"2026-11-27","home_id":17530,"away_id":107,"home":"Venezia","away":"Bologna"},"nottingham-forest-vs-chelsea":{"liga":"eng.1","fecha":"2026-11-27","home_id":393,"away_id":363,"home":"Nottingham Forest","away":"Chelsea"},"levante-vs-racing-santander":{"liga":"esp.1","fecha":"2026-11-27","home_id":1538,"away_id":87,"home":"Levante","away":"Racing Santander"},"hamburg-sv-vs-bayern-munich":{"liga":"ger.1","fecha":"2026-11-28","home_id":127,"away_id":132,"home":"Hamburg SV","away":"Bayern Munich"},"manchester-united-vs-brentford":{"liga":"eng.1","fecha":"2026-11-28","home_id":360,"away_id":337,"home":"Manchester United","away":"Brentford"},"elche-vs-atletico-madrid":{"liga":"esp.1","fecha":"2026-11-28","home_id":3751,"away_id":1068,"home":"Elche","away":"Atlético Madrid"},"vfb-stuttgart-vs-eintracht-frankfurt":{"liga":"ger.1","fecha":"2026-11-28","home_id":134,"away_id":125,"home":"VfB Stuttgart","away":"Eintracht Frankfurt"},"internazionale-vs-genoa":{"liga":"ita.1","fecha":"2026-11-28","home_id":110,"away_id":3263,"home":"Internazionale","away":"Genoa"},"real-madrid-vs-alaves":{"liga":"esp.1","fecha":"2026-11-28","home_id":86,"away_id":96,"home":"Real Madrid","away":"Alavés"},"everton-vs-liverpool":{"liga":"eng.1","fecha":"2026-11-29","home_id":368,"away_id":364,"home":"Everton","away":"Liverpool"},"sassuolo-vs-napoli":{"liga":"ita.1","fecha":"2026-11-29","home_id":3997,"away_id":114,"home":"Sassuolo","away":"Napoli"},"deportivo-vs-barcelona":{"liga":"esp.1","fecha":"2026-11-29","home_id":90,"away_id":83,"home":"Deportivo","away":"Barcelona"},"arsenal-vs-manchester-city":{"liga":"eng.1","fecha":"2026-11-29","home_id":359,"away_id":382,"home":"Arsenal","away":"Manchester City"},"borussia-dortmund-vs-bayer-leverkusen":{"liga":"ger.1","fecha":"2026-11-29","home_id":124,"away_id":131,"home":"Borussia Dortmund","away":"Bayer Leverkusen"},"como-vs-juventus":{"liga":"ita.1","fecha":"2026-11-29","home_id":2572,"away_id":111,"home":"Como","away":"Juventus"},"galatasaray-vs-aston-villa":{"liga":"uefa.champions","fecha":"2026-11-24","home_id":432,"away_id":362,"home":"Galatasaray","away":"Aston Villa"},"arsenal-vs-borussia-dortmund":{"liga":"uefa.champions","fecha":"2026-11-24","home_id":359,"away_id":124,"home":"Arsenal","away":"Borussia Dortmund"},"manchester-city-vs-napoli":{"liga":"uefa.champions","fecha":"2026-11-24","home_id":382,"away_id":114,"home":"Manchester City","away":"Napoli"},"real-madrid-vs-psv-eindhoven":{"liga":"uefa.champions","fecha":"2026-11-24","home_id":86,"away_id":148,"home":"Real Madrid","away":"PSV Eindhoven"},"club-brugge-vs-liverpool":{"liga":"uefa.champions","fecha":"2026-11-25","home_id":570,"away_id":364,"home":"Club Brugge","away":"Liverpool"},"internazionale-vs-vfb-stuttgart":{"liga":"uefa.champions","fecha":"2026-11-25","home_id":110,"away_id":134,"home":"Internazionale","away":"VfB Stuttgart"},"lille-vs-bayern-munich":{"liga":"uefa.champions","fecha":"2026-11-25","home_id":166,"away_id":132,"home":"Lille","away":"Bayern Munich"},"paris-saint-germain-vs-as-roma":{"liga":"uefa.champions","fecha":"2026-11-25","home_id":160,"away_id":104,"home":"Paris Saint-Germain","away":"AS Roma"},"sporting-cp-vs-manchester-united":{"liga":"uefa.champions","fecha":"2026-11-25","home_id":2250,"away_id":360,"home":"Sporting CP","away":"Manchester United"},"celta-vigo-vs-afc-bournemouth":{"liga":"uefa.europa","fecha":"2026-11-26","home_id":85,"away_id":349,"home":"Celta Vigo","away":"AFC Bournemouth"},"dinamo-zagreb-vs-bayer-leverkusen":{"liga":"uefa.europa","fecha":"2026-11-26","home_id":597,"away_id":131,"home":"Dinamo Zagreb","away":"Bayer Leverkusen"},"olympiacos-vs-ac-milan":{"liga":"uefa.europa","fecha":"2026-11-26","home_id":435,"away_id":103,"home":"Olympiacos","away":"AC Milan"}};
+</script>
+
+<script>
+/* ---------- Semana 5: detalle del partido (Empleado 2) ----------
+   Datos reales de ESPN (summary: lastFiveGames, seasonseries, standings),
+   consultados el 23 nov 2026. La alineación oficial no está publicada para
+   ningún partido (ESPN no trae titulares hasta ~1 h antes): por eso todos
+   muestran "pendiente". Nada inventado: lo que no se pudo verificar es
+   "pendiente" o "sin enfrentamientos previos registrados".
+   Fuerza del XI (23 nov 2026): fórmula propuesta por el Empleado 1
+   (pendiente de validar por el jefe) y sus 4 casos de prueba reales;
+   el XI del partido es "pendiente" y los ejemplos van etiquetados como ejemplos. */
+(function(){
+  "use strict";
+  var DETAIL = {"galatasaray-vs-aston-villa": {"home": "Galatasaray", "away": "Aston Villa", "league": "Champions League", "day": "mar", "time": "Mar 24 · 11:45", "espn_event_id": "401915300", "lastFive": {"home": [{"fecha": "26 oct 2026", "rival": "Fenerbahce", "local": true, "goles_local": "2", "goles_visitante": "1", "resultado": "V", "penaltis": false, "competicion": "Turkish Super Lig"}, {"fecha": "30 oct 2026", "rival": "Konyaspor", "local": false, "goles_local": "0", "goles_visitante": "4", "resultado": "V", "penaltis": false, "competicion": "Turkish Super Lig"}, {"fecha": "3 nov 2026", "rival": "VfB Stuttgart", "local": true, "goles_local": "2", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "UEFA Champions League"}, {"fecha": "7 nov 2026", "rival": "Amed SFK", "local": true, "goles_local": "4", "goles_visitante": "3", "resultado": "V", "penaltis": false, "competicion": "Turkish Super Lig"}, {"fecha": "21 nov 2026", "rival": "Samsunspor", "local": true, "goles_local": "2", "goles_visitante": "1", "resultado": "V", "penaltis": false, "competicion": "Turkish Super Lig"}], "away": [{"fecha": "28 oct 2026", "rival": "AFC Bournemouth", "local": false, "goles_local": "3", "goles_visitante": "0", "resultado": "D", "penaltis": false, "competicion": "English Carabao Cup"}, {"fecha": "31 oct 2026", "rival": "Fulham", "local": true, "goles_local": "1", "goles_visitante": "1", "resultado": "E", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "3 nov 2026", "rival": "Barcelona", "local": false, "goles_local": "3", "goles_visitante": "0", "resultado": "D", "penaltis": false, "competicion": "UEFA Champions League"}, {"fecha": "8 nov 2026", "rival": "Manchester United", "local": false, "goles_local": "4", "goles_visitante": "4", "resultado": "E", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "21 nov 2026", "rival": "Sunderland", "local": true, "goles_local": "0", "goles_visitante": "0", "resultado": "E", "penaltis": false, "competicion": "English Premier League"}]}, "h2h": null, "standings": {"home": {"pos": "18", "pts": "6", "pj": "4", "g": "2", "e": "0", "p": "2", "dg": "-1", "récord": "2-0-2"}, "away": {"pos": "6", "pts": "9", "pj": "4", "g": "3", "e": "0", "p": "1", "dg": "+6", "récord": "3-0-1"}}, "lineup": {"alineacion_publicada": false, "jugadores_en_roster": 0}, "sources": {"standings_header": "UEFA Champions League Standings"}}, "arsenal-vs-borussia-dortmund": {"home": "Arsenal", "away": "Borussia Dortmund", "league": "Champions League", "day": "mar", "time": "Mar 24 · 14:00", "espn_event_id": "401915295", "lastFive": {"home": [{"fecha": "27 oct 2026", "rival": "Fleetwood Town", "local": false, "goles_local": "1", "goles_visitante": "1", "resultado": "D", "penaltis": true, "competicion": "English Carabao Cup"}, {"fecha": "1 nov 2026", "rival": "Liverpool", "local": false, "goles_local": "0", "goles_visitante": "1", "resultado": "V", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "4 nov 2026", "rival": "Slavia Prague", "local": false, "goles_local": "1", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "UEFA Champions League"}, {"fecha": "7 nov 2026", "rival": "Hull City", "local": true, "goles_local": "1", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "21 nov 2026", "rival": "Newcastle United", "local": false, "goles_local": "2", "goles_visitante": "2", "resultado": "E", "penaltis": false, "competicion": "English Premier League"}], "away": [{"fecha": "27 oct 2026", "rival": "Werder Bremen", "local": true, "goles_local": "3", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "German Cup"}, {"fecha": "31 oct 2026", "rival": "Bayern Munich", "local": false, "goles_local": "2", "goles_visitante": "2", "resultado": "E", "penaltis": false, "competicion": "German Bundesliga"}, {"fecha": "4 nov 2026", "rival": "Real Betis", "local": true, "goles_local": "2", "goles_visitante": "1", "resultado": "V", "penaltis": false, "competicion": "UEFA Champions League"}, {"fecha": "7 nov 2026", "rival": "SV Elversberg", "local": true, "goles_local": "2", "goles_visitante": "1", "resultado": "V", "penaltis": false, "competicion": "German Bundesliga"}, {"fecha": "21 nov 2026", "rival": "Borussia Mönchengladbach", "local": false, "goles_local": "0", "goles_visitante": "1", "resultado": "V", "penaltis": false, "competicion": "German Bundesliga"}]}, "h2h": {"resumen": "ARS lidera la serie 3-2", "etiqueta": "Last 5 Matchups", "partidos": [{"fecha": "9 ago 2026", "local": "Arsenal", "visitante": "Borussia Dortmund", "goles_local": "2", "goles_visitante": "3"}, {"fecha": "26 nov 2014", "local": "Arsenal", "visitante": "Borussia Dortmund", "goles_local": "2", "goles_visitante": "0"}, {"fecha": "16 sep 2014", "local": "Borussia Dortmund", "visitante": "Arsenal", "goles_local": "2", "goles_visitante": "0"}, {"fecha": "6 nov 2013", "local": "Borussia Dortmund", "visitante": "Arsenal", "goles_local": "0", "goles_visitante": "1"}, {"fecha": "22 oct 2013", "local": "Arsenal", "visitante": "Borussia Dortmund", "goles_local": "1", "goles_visitante": "2"}]}, "standings": {"home": {"pos": "3", "pts": "10", "pj": "4", "g": "3", "e": "1", "p": "0", "dg": "+5", "récord": "3-1-0"}, "away": {"pos": "12", "pts": "9", "pj": "4", "g": "3", "e": "0", "p": "1", "dg": "+2", "récord": "3-0-1"}}, "lineup": {"alineacion_publicada": false, "jugadores_en_roster": 0}, "sources": {"standings_header": "UEFA Champions League Standings"}}, "manchester-city-vs-napoli": {"home": "Manchester City", "away": "Napoli", "league": "Champions League", "day": "mar", "time": "Mar 24 · 14:00", "espn_event_id": "401915379", "lastFive": {"home": [{"fecha": "28 oct 2026", "rival": "Brighton & Hove Albion", "local": true, "goles_local": "2", "goles_visitante": "2", "resultado": "V", "penaltis": true, "competicion": "English Carabao Cup"}, {"fecha": "31 oct 2026", "rival": "Brighton & Hove Albion", "local": true, "goles_local": "0", "goles_visitante": "1", "resultado": "D", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "4 nov 2026", "rival": "RB Leipzig", "local": false, "goles_local": "2", "goles_visitante": "3", "resultado": "V", "penaltis": false, "competicion": "UEFA Champions League"}, {"fecha": "7 nov 2026", "rival": "Nottingham Forest", "local": false, "goles_local": "3", "goles_visitante": "1", "resultado": "D", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "21 nov 2026", "rival": "Fulham", "local": true, "goles_local": "1", "goles_visitante": "1", "resultado": "E", "penaltis": false, "competicion": "English Premier League"}], "away": [{"fecha": "28 oct 2026", "rival": "Monza", "local": false, "goles_local": "1", "goles_visitante": "4", "resultado": "V", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "1 nov 2026", "rival": "Juventus", "local": false, "goles_local": "2", "goles_visitante": "0", "resultado": "D", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "4 nov 2026", "rival": "FC Porto", "local": false, "goles_local": "4", "goles_visitante": "1", "resultado": "D", "penaltis": false, "competicion": "UEFA Champions League"}, {"fecha": "8 nov 2026", "rival": "Lazio", "local": true, "goles_local": "1", "goles_visitante": "1", "resultado": "E", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "21 nov 2026", "rival": "Torino", "local": true, "goles_local": "1", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "Italian Serie A"}]}, "h2h": {"resumen": "MNC lidera la serie 3-1-1", "etiqueta": "Last 5 Matchups", "partidos": [{"fecha": "18 sep 2025", "local": "Manchester City", "visitante": "Napoli", "goles_local": "2", "goles_visitante": "0"}, {"fecha": "1 nov 2017", "local": "Napoli", "visitante": "Manchester City", "goles_local": "2", "goles_visitante": "4"}, {"fecha": "17 oct 2017", "local": "Manchester City", "visitante": "Napoli", "goles_local": "2", "goles_visitante": "1"}, {"fecha": "22 nov 2011", "local": "Napoli", "visitante": "Manchester City", "goles_local": "2", "goles_visitante": "1"}, {"fecha": "14 sep 2011", "local": "Manchester City", "visitante": "Napoli", "goles_local": "1", "goles_visitante": "1"}]}, "standings": {"home": {"pos": "7", "pts": "9", "pj": "4", "g": "3", "e": "0", "p": "1", "dg": "+5", "récord": "3-0-1"}, "away": {"pos": "27", "pts": "3", "pj": "4", "g": "1", "e": "0", "p": "3", "dg": "-5", "récord": "1-0-3"}}, "lineup": {"alineacion_publicada": false, "jugadores_en_roster": 0}, "sources": {"standings_header": "UEFA Champions League Standings"}}, "real-madrid-vs-psv-eindhoven": {"home": "Real Madrid", "away": "PSV Eindhoven", "league": "Champions League", "day": "mar", "time": "Mar 24 · 14:00", "espn_event_id": "401915298", "lastFive": {"home": [{"fecha": "25 oct 2026", "rival": "Barcelona", "local": false, "goles_local": "1", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "Spanish LALIGA"}, {"fecha": "1 nov 2026", "rival": "Racing Santander", "local": false, "goles_local": "0", "goles_visitante": "3", "resultado": "V", "penaltis": false, "competicion": "Spanish LALIGA"}, {"fecha": "4 nov 2026", "rival": "AEK Athens", "local": false, "goles_local": "2", "goles_visitante": "3", "resultado": "V", "penaltis": false, "competicion": "UEFA Champions League"}, {"fecha": "7 nov 2026", "rival": "Valencia", "local": false, "goles_local": "0", "goles_visitante": "3", "resultado": "V", "penaltis": false, "competicion": "Spanish LALIGA"}, {"fecha": "21 nov 2026", "rival": "Celta Vigo", "local": true, "goles_local": "2", "goles_visitante": "1", "resultado": "V", "penaltis": false, "competicion": "Spanish LALIGA"}], "away": [{"fecha": "25 oct 2026", "rival": "Feyenoord Rotterdam", "local": true, "goles_local": "1", "goles_visitante": "1", "resultado": "E", "penaltis": false, "competicion": "Dutch Eredivisie"}, {"fecha": "31 oct 2026", "rival": "Willem II", "local": true, "goles_local": "7", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "Dutch Eredivisie"}, {"fecha": "4 nov 2026", "rival": "Club Brugge", "local": true, "goles_local": "1", "goles_visitante": "2", "resultado": "D", "penaltis": false, "competicion": "UEFA Champions League"}, {"fecha": "8 nov 2026", "rival": "SC Cambuur", "local": false, "goles_local": "2", "goles_visitante": "5", "resultado": "V", "penaltis": false, "competicion": "Dutch Eredivisie"}, {"fecha": "21 nov 2026", "rival": "NEC Nijmegen", "local": false, "goles_local": "1", "goles_visitante": "4", "resultado": "V", "penaltis": false, "competicion": "Dutch Eredivisie"}]}, "h2h": null, "standings": {"home": {"pos": "2", "pts": "12", "pj": "4", "g": "4", "e": "0", "p": "0", "dg": "+6", "récord": "4-0-0"}, "away": {"pos": "24", "pts": "4", "pj": "4", "g": "1", "e": "1", "p": "2", "dg": "-1", "récord": "1-1-2"}}, "lineup": {"alineacion_publicada": false, "jugadores_en_roster": 0}, "sources": {"standings_header": "UEFA Champions League Standings"}}, "club-brugge-vs-liverpool": {"home": "Club Brugge", "away": "Liverpool", "league": "Champions League", "day": "mie", "time": "Mié 25 · 14:00", "espn_event_id": "401915292", "lastFive": {"home": [{"fecha": "25 oct 2026", "rival": "Sint-Truidense", "local": true, "goles_local": "3", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "Belgian Pro League"}, {"fecha": "30 oct 2026", "rival": "Zulte-Waregem", "local": false, "goles_local": "2", "goles_visitante": "4", "resultado": "V", "penaltis": false, "competicion": "Belgian Pro League"}, {"fecha": "4 nov 2026", "rival": "PSV Eindhoven", "local": false, "goles_local": "1", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "UEFA Champions League"}, {"fecha": "8 nov 2026", "rival": "Anderlecht", "local": true, "goles_local": "1", "goles_visitante": "1", "resultado": "E", "penaltis": false, "competicion": "Belgian Pro League"}, {"fecha": "21 nov 2026", "rival": "KV Mechelen", "local": false, "goles_local": "1", "goles_visitante": "5", "resultado": "V", "penaltis": false, "competicion": "Belgian Pro League"}], "away": [{"fecha": "28 oct 2026", "rival": "Chelsea", "local": true, "goles_local": "1", "goles_visitante": "1", "resultado": "V", "penaltis": true, "competicion": "English Carabao Cup"}, {"fecha": "1 nov 2026", "rival": "Arsenal", "local": true, "goles_local": "0", "goles_visitante": "1", "resultado": "D", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "4 nov 2026", "rival": "Fenerbahce", "local": false, "goles_local": "3", "goles_visitante": "2", "resultado": "D", "penaltis": false, "competicion": "UEFA Champions League"}, {"fecha": "8 nov 2026", "rival": "Crystal Palace", "local": false, "goles_local": "1", "goles_visitante": "3", "resultado": "V", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "22 nov 2026", "rival": "Manchester United", "local": true, "goles_local": "4", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "English Premier League"}]}, "h2h": null, "standings": {"home": {"pos": "9", "pts": "9", "pj": "4", "g": "3", "e": "0", "p": "1", "dg": "+4", "récord": "3-0-1"}, "away": {"pos": "8", "pts": "9", "pj": "4", "g": "3", "e": "0", "p": "1", "dg": "+4", "récord": "3-0-1"}}, "lineup": {"alineacion_publicada": false, "jugadores_en_roster": 0}, "sources": {"standings_header": "UEFA Champions League Standings"}}, "internazionale-vs-vfb-stuttgart": {"home": "Internazionale", "away": "VfB Stuttgart", "league": "Champions League", "day": "mie", "time": "Mié 25 · 14:00", "espn_event_id": "401915376", "lastFive": {"home": [{"fecha": "28 oct 2026", "rival": "Venezia", "local": false, "goles_local": "0", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "31 oct 2026", "rival": "AC Milan", "local": false, "goles_local": "3", "goles_visitante": "1", "resultado": "D", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "3 nov 2026", "rival": "Feyenoord Rotterdam", "local": false, "goles_local": "0", "goles_visitante": "3", "resultado": "V", "penaltis": false, "competicion": "UEFA Champions League"}, {"fecha": "8 nov 2026", "rival": "Como", "local": true, "goles_local": "2", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "22 nov 2026", "rival": "Atalanta", "local": false, "goles_local": "4", "goles_visitante": "4", "resultado": "E", "penaltis": false, "competicion": "Italian Serie A"}], "away": [{"fecha": "28 oct 2026", "rival": "SC Paderborn 07", "local": false, "goles_local": "0", "goles_visitante": "1", "resultado": "V", "penaltis": false, "competicion": "German Cup"}, {"fecha": "31 oct 2026", "rival": "Bayer Leverkusen", "local": false, "goles_local": "2", "goles_visitante": "4", "resultado": "V", "penaltis": false, "competicion": "German Bundesliga"}, {"fecha": "3 nov 2026", "rival": "Galatasaray", "local": false, "goles_local": "2", "goles_visitante": "0", "resultado": "D", "penaltis": false, "competicion": "UEFA Champions League"}, {"fecha": "7 nov 2026", "rival": "Werder Bremen", "local": true, "goles_local": "1", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "German Bundesliga"}, {"fecha": "21 nov 2026", "rival": "Schalke 04", "local": false, "goles_local": "0", "goles_visitante": "0", "resultado": "E", "penaltis": false, "competicion": "German Bundesliga"}]}, "h2h": null, "standings": {"home": {"pos": "15", "pts": "6", "pj": "4", "g": "2", "e": "0", "p": "2", "dg": "+2", "récord": "2-0-2"}, "away": {"pos": "14", "pts": "7", "pj": "4", "g": "2", "e": "1", "p": "1", "dg": "+3", "récord": "2-1-1"}}, "lineup": {"alineacion_publicada": false, "jugadores_en_roster": 0}, "sources": {"standings_header": "UEFA Champions League Standings"}}, "lille-vs-bayern-munich": {"home": "Lille", "away": "Bayern Munich", "league": "Champions League", "day": "mie", "time": "Mié 25 · 14:00", "espn_event_id": "401915377", "lastFive": {"home": [{"fecha": "25 oct 2026", "rival": "AS Monaco", "local": false, "goles_local": "1", "goles_visitante": "1", "resultado": "E", "penaltis": false, "competicion": "French Ligue 1"}, {"fecha": "30 oct 2026", "rival": "Lens", "local": true, "goles_local": "1", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "French Ligue 1"}, {"fecha": "3 nov 2026", "rival": "Bodo/Glimt", "local": false, "goles_local": "0", "goles_visitante": "0", "resultado": "E", "penaltis": false, "competicion": "UEFA Champions League"}, {"fecha": "8 nov 2026", "rival": "Stade Rennais", "local": false, "goles_local": "1", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "French Ligue 1"}, {"fecha": "21 nov 2026", "rival": "Lyon", "local": true, "goles_local": "0", "goles_visitante": "1", "resultado": "D", "penaltis": false, "competicion": "French Ligue 1"}], "away": [{"fecha": "28 oct 2026", "rival": "1. FC Magdeburg", "local": true, "goles_local": "6", "goles_visitante": "1", "resultado": "V", "penaltis": false, "competicion": "German Cup"}, {"fecha": "31 oct 2026", "rival": "Borussia Dortmund", "local": true, "goles_local": "2", "goles_visitante": "2", "resultado": "E", "penaltis": false, "competicion": "German Bundesliga"}, {"fecha": "3 nov 2026", "rival": "Atlético Madrid", "local": false, "goles_local": "0", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "UEFA Champions League"}, {"fecha": "7 nov 2026", "rival": "Mainz", "local": false, "goles_local": "1", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "German Bundesliga"}, {"fecha": "20 nov 2026", "rival": "FC Cologne", "local": true, "goles_local": "1", "goles_visitante": "1", "resultado": "E", "penaltis": false, "competicion": "German Bundesliga"}]}, "h2h": {"resumen": "MUN lidera la serie 2-0", "etiqueta": "Last 2 Matchups", "partidos": [{"fecha": "7 nov 2012", "local": "Bayern Munich", "visitante": "Lille", "goles_local": "6", "goles_visitante": "1"}, {"fecha": "23 oct 2012", "local": "Lille", "visitante": "Bayern Munich", "goles_local": "0", "goles_visitante": "1"}]}, "standings": {"home": {"pos": "35", "pts": "1", "pj": "4", "g": "0", "e": "1", "p": "3", "dg": "-6", "récord": "0-1-3"}, "away": {"pos": "13", "pts": "8", "pj": "4", "g": "2", "e": "2", "p": "0", "dg": "+7", "récord": "2-2-0"}}, "lineup": {"alineacion_publicada": false, "jugadores_en_roster": 0}, "sources": {"standings_header": "UEFA Champions League Standings"}}, "paris-saint-germain-vs-as-roma": {"home": "Paris Saint-Germain", "away": "AS Roma", "league": "Champions League", "day": "mie", "time": "Mié 25 · 14:00", "espn_event_id": "401915374", "lastFive": {"home": [{"fecha": "26 oct 2026", "rival": "Lyon", "local": true, "goles_local": "2", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "French Ligue 1"}, {"fecha": "30 oct 2026", "rival": "Le Havre AC", "local": false, "goles_local": "1", "goles_visitante": "5", "resultado": "V", "penaltis": false, "competicion": "French Ligue 1"}, {"fecha": "3 nov 2026", "rival": "Villarreal", "local": false, "goles_local": "0", "goles_visitante": "6", "resultado": "V", "penaltis": false, "competicion": "UEFA Champions League"}, {"fecha": "7 nov 2026", "rival": "Troyes", "local": true, "goles_local": "1", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "French Ligue 1"}, {"fecha": "21 nov 2026", "rival": "Nice", "local": false, "goles_local": "2", "goles_visitante": "3", "resultado": "V", "penaltis": false, "competicion": "French Ligue 1"}], "away": [{"fecha": "27 oct 2026", "rival": "Cagliari", "local": true, "goles_local": "4", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "31 oct 2026", "rival": "Udinese", "local": false, "goles_local": "2", "goles_visitante": "5", "resultado": "V", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "3 nov 2026", "rival": "Manchester United", "local": false, "goles_local": "3", "goles_visitante": "2", "resultado": "D", "penaltis": false, "competicion": "UEFA Champions League"}, {"fecha": "7 nov 2026", "rival": "Sassuolo", "local": true, "goles_local": "3", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "21 nov 2026", "rival": "Parma", "local": false, "goles_local": "1", "goles_visitante": "5", "resultado": "V", "penaltis": false, "competicion": "Italian Serie A"}]}, "h2h": {"resumen": "PSG lidera la serie 1-0", "etiqueta": "Last Matchup", "partidos": [{"fecha": "20 jul 2017", "local": "AS Roma", "visitante": "Paris Saint-Germain", "goles_local": "1", "goles_visitante": "1"}]}, "standings": {"home": {"pos": "1", "pts": "12", "pj": "4", "g": "4", "e": "0", "p": "0", "dg": "+15", "récord": "4-0-0"}, "away": {"pos": "20", "pts": "4", "pj": "4", "g": "1", "e": "1", "p": "2", "dg": "+2", "récord": "1-1-2"}}, "lineup": {"alineacion_publicada": false, "jugadores_en_roster": 0}, "sources": {"standings_header": "UEFA Champions League Standings"}}, "sporting-cp-vs-manchester-united": {"home": "Sporting CP", "away": "Manchester United", "league": "Champions League", "day": "mie", "time": "Mié 25 · 14:00", "espn_event_id": "401915373", "lastFive": {"home": [{"fecha": "25 oct 2026", "rival": "Académico de Viseu", "local": true, "goles_local": "1", "goles_visitante": "2", "resultado": "D", "penaltis": false, "competicion": "Portuguese Primeira Liga"}, {"fecha": "30 oct 2026", "rival": "Casa Pia", "local": false, "goles_local": "0", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "Portuguese Primeira Liga"}, {"fecha": "3 nov 2026", "rival": "Shakhtar Donetsk", "local": false, "goles_local": "0", "goles_visitante": "1", "resultado": "V", "penaltis": false, "competicion": "UEFA Champions League"}, {"fecha": "7 nov 2026", "rival": "Moreirense", "local": true, "goles_local": "1", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "Portuguese Primeira Liga"}, {"fecha": "21 nov 2026", "rival": "Uniao da Serra", "local": true, "goles_local": "4", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "Taca de Portugal"}], "away": [{"fecha": "25 oct 2026", "rival": "AFC Bournemouth", "local": true, "goles_local": "0", "goles_visitante": "3", "resultado": "D", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "31 oct 2026", "rival": "Chelsea", "local": false, "goles_local": "2", "goles_visitante": "0", "resultado": "D", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "3 nov 2026", "rival": "AS Roma", "local": true, "goles_local": "3", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "UEFA Champions League"}, {"fecha": "8 nov 2026", "rival": "Aston Villa", "local": true, "goles_local": "4", "goles_visitante": "4", "resultado": "E", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "22 nov 2026", "rival": "Liverpool", "local": false, "goles_local": "4", "goles_visitante": "0", "resultado": "D", "penaltis": false, "competicion": "English Premier League"}]}, "h2h": {"resumen": "MAN lidera la serie 2-0", "etiqueta": "Last 2 Matchups", "partidos": [{"fecha": "27 nov 2007", "local": "Manchester United", "visitante": "Sporting CP", "goles_local": "2", "goles_visitante": "1"}, {"fecha": "19 sep 2007", "local": "Sporting CP", "visitante": "Manchester United", "goles_local": "0", "goles_visitante": "1"}]}, "standings": {"home": {"pos": "10", "pts": "9", "pj": "4", "g": "3", "e": "0", "p": "1", "dg": "+4", "récord": "3-0-1"}, "away": {"pos": "17", "pts": "6", "pj": "4", "g": "2", "e": "0", "p": "2", "dg": "0", "récord": "2-0-2"}}, "lineup": {"alineacion_publicada": false, "jugadores_en_roster": 0}, "sources": {"standings_header": "UEFA Champions League Standings"}}, "celta-vigo-vs-afc-bournemouth": {"home": "Celta Vigo", "away": "AFC Bournemouth", "league": "Europa League", "day": "jue", "time": "Jue 26 · 11:45", "espn_event_id": "401915519", "lastFive": {"home": [{"fecha": "31 oct 2026", "rival": "Rayo Vallecano", "local": false, "goles_local": "3", "goles_visitante": "0", "resultado": "D", "penaltis": false, "competicion": "Spanish LALIGA"}, {"fecha": "5 nov 2026", "rival": "Union St.-Gilloise", "local": true, "goles_local": "1", "goles_visitante": "2", "resultado": "D", "penaltis": false, "competicion": "UEFA Europa League"}, {"fecha": "8 nov 2026", "rival": "Levante", "local": true, "goles_local": "0", "goles_visitante": "0", "resultado": "E", "penaltis": false, "competicion": "Spanish LALIGA"}, {"fecha": "13 nov 2026", "rival": "Salamanca UDS", "local": false, "goles_local": "0", "goles_visitante": "5", "resultado": "V", "penaltis": false, "competicion": "Spanish Copa del Rey"}, {"fecha": "21 nov 2026", "rival": "Real Madrid", "local": false, "goles_local": "2", "goles_visitante": "1", "resultado": "D", "penaltis": false, "competicion": "Spanish LALIGA"}], "away": [{"fecha": "28 oct 2026", "rival": "Aston Villa", "local": true, "goles_local": "3", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "English Carabao Cup"}, {"fecha": "31 oct 2026", "rival": "Leeds United", "local": true, "goles_local": "2", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "5 nov 2026", "rival": "Sparta Prague", "local": false, "goles_local": "1", "goles_visitante": "3", "resultado": "V", "penaltis": false, "competicion": "UEFA Europa League"}, {"fecha": "8 nov 2026", "rival": "Ipswich Town", "local": false, "goles_local": "1", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "21 nov 2026", "rival": "Nottingham Forest", "local": true, "goles_local": "2", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "English Premier League"}]}, "h2h": null, "standings": {"home": {"pos": "27", "pts": "3", "pj": "4", "g": "1", "e": "0", "p": "3", "dg": "-2", "récord": "1-0-3"}, "away": {"pos": "2", "pts": "12", "pj": "4", "g": "4", "e": "0", "p": "0", "dg": "+9", "récord": "4-0-0"}}, "lineup": {"alineacion_publicada": false, "jugadores_en_roster": 0}, "sources": {"standings_header": "UEFA Europa League Standings"}}, "dinamo-zagreb-vs-bayer-leverkusen": {"home": "Dinamo Zagreb", "away": "Bayer Leverkusen", "league": "Europa League", "day": "jue", "time": "Jue 26 · 11:45", "espn_event_id": "401915517", "lastFive": {"home": [{"fecha": "26 ago 2026", "rival": "Viking FK", "local": false, "goles_local": "3", "goles_visitante": "1", "resultado": "D", "penaltis": false, "competicion": "UEFA Champions League Qualifying"}, {"fecha": "16 sep 2026", "rival": "Hapoel Be'er", "local": false, "goles_local": "0", "goles_visitante": "0", "resultado": "E", "penaltis": false, "competicion": "UEFA Europa League"}, {"fecha": "15 oct 2026", "rival": "Anderlecht", "local": true, "goles_local": "1", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "UEFA Europa League"}, {"fecha": "22 oct 2026", "rival": "NEC Nijmegen", "local": true, "goles_local": "2", "goles_visitante": "4", "resultado": "D", "penaltis": false, "competicion": "UEFA Europa League"}, {"fecha": "5 nov 2026", "rival": "Sunderland", "local": false, "goles_local": "0", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "UEFA Europa League"}], "away": [{"fecha": "28 oct 2026", "rival": "1. FC Nürnberg", "local": true, "goles_local": "5", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "German Cup"}, {"fecha": "31 oct 2026", "rival": "VfB Stuttgart", "local": true, "goles_local": "2", "goles_visitante": "4", "resultado": "D", "penaltis": false, "competicion": "German Bundesliga"}, {"fecha": "5 nov 2026", "rival": "Marseille", "local": true, "goles_local": "0", "goles_visitante": "1", "resultado": "D", "penaltis": false, "competicion": "UEFA Europa League"}, {"fecha": "8 nov 2026", "rival": "FC Cologne", "local": false, "goles_local": "1", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "German Bundesliga"}, {"fecha": "21 nov 2026", "rival": "SC Paderborn 07", "local": true, "goles_local": "4", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "German Bundesliga"}]}, "h2h": null, "standings": {"home": {"pos": "9", "pts": "7", "pj": "4", "g": "2", "e": "1", "p": "1", "dg": "+1", "récord": "2-1-1"}, "away": {"pos": "7", "pts": "9", "pj": "4", "g": "3", "e": "0", "p": "1", "dg": "+7", "récord": "3-0-1"}}, "lineup": {"alineacion_publicada": false, "jugadores_en_roster": 0}, "sources": {"standings_header": "UEFA Europa League Standings"}}, "olympiacos-vs-ac-milan": {"home": "Olympiacos", "away": "AC Milan", "league": "Europa League", "day": "jue", "time": "Jue 26 · 11:45", "espn_event_id": "401915521", "lastFive": {"home": [{"fecha": "25 oct 2026", "rival": "Kalamata", "local": true, "goles_local": "5", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "Greek Super League"}, {"fecha": "31 oct 2026", "rival": "Kifisia", "local": false, "goles_local": "2", "goles_visitante": "3", "resultado": "V", "penaltis": false, "competicion": "Greek Super League"}, {"fecha": "4 nov 2026", "rival": "Stade Rennais", "local": false, "goles_local": "0", "goles_visitante": "0", "resultado": "E", "penaltis": false, "competicion": "UEFA Europa League"}, {"fecha": "8 nov 2026", "rival": "PAOK", "local": true, "goles_local": "1", "goles_visitante": "1", "resultado": "E", "penaltis": false, "competicion": "Greek Super League"}, {"fecha": "22 nov 2026", "rival": "Iraklis", "local": true, "goles_local": "6", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "Greek Super League"}], "away": [{"fecha": "28 oct 2026", "rival": "Bologna", "local": true, "goles_local": "2", "goles_visitante": "4", "resultado": "D", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "31 oct 2026", "rival": "Internazionale", "local": true, "goles_local": "3", "goles_visitante": "1", "resultado": "V", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "5 nov 2026", "rival": "Ferencvaros", "local": true, "goles_local": "0", "goles_visitante": "2", "resultado": "D", "penaltis": false, "competicion": "UEFA Europa League"}, {"fecha": "8 nov 2026", "rival": "Genoa", "local": false, "goles_local": "1", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "22 nov 2026", "rival": "Frosinone", "local": true, "goles_local": "5", "goles_visitante": "1", "resultado": "V", "penaltis": false, "competicion": "Italian Serie A"}]}, "h2h": {"resumen": "OLY lidera la serie 3-1", "etiqueta": "Last 4 Matchups", "partidos": [{"fecha": "13 dic 2018", "local": "Olympiacos", "visitante": "AC Milan", "goles_local": "3", "goles_visitante": "1"}, {"fecha": "4 oct 2018", "local": "AC Milan", "visitante": "Olympiacos", "goles_local": "3", "goles_visitante": "1"}, {"fecha": "25 jul 2014", "local": "Olympiacos", "visitante": "AC Milan", "goles_local": "3", "goles_visitante": "0"}, {"fecha": "25 jul 2014", "local": "AC Milan", "visitante": "Olympiacos", "goles_local": "0", "goles_visitante": "3"}]}, "standings": {"home": {"pos": "6", "pts": "10", "pj": "4", "g": "3", "e": "1", "p": "0", "dg": "+3", "récord": "3-1-0"}, "away": {"pos": "28", "pts": "3", "pj": "4", "g": "1", "e": "0", "p": "3", "dg": "-3", "récord": "1-0-3"}}, "lineup": {"alineacion_publicada": false, "jugadores_en_roster": 0}, "sources": {"standings_header": "UEFA Europa League Standings"}}, "werder-bremen-vs-borussia-monchengladbach": {"home": "Werder Bremen", "away": "Borussia Mönchengladbach", "league": "Bundesliga", "day": "vie", "time": "Vie 27 · 13:30", "espn_event_id": "401884720", "lastFive": {"home": [{"fecha": "24 oct 2026", "rival": "Mainz", "local": false, "goles_local": "2", "goles_visitante": "3", "resultado": "V", "penaltis": false, "competicion": "German Bundesliga"}, {"fecha": "27 oct 2026", "rival": "Borussia Dortmund", "local": false, "goles_local": "3", "goles_visitante": "2", "resultado": "D", "penaltis": false, "competicion": "German Cup"}, {"fecha": "31 oct 2026", "rival": "TSG Hoffenheim", "local": true, "goles_local": "2", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "German Bundesliga"}, {"fecha": "7 nov 2026", "rival": "VfB Stuttgart", "local": false, "goles_local": "1", "goles_visitante": "0", "resultado": "D", "penaltis": false, "competicion": "German Bundesliga"}, {"fecha": "22 nov 2026", "rival": "Hamburg SV", "local": true, "goles_local": "4", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "German Bundesliga"}], "away": [{"fecha": "27 oct 2026", "rival": "Karlsruher SC", "local": true, "goles_local": "2", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "German Cup"}, {"fecha": "31 oct 2026", "rival": "SC Paderborn 07", "local": true, "goles_local": "0", "goles_visitante": "0", "resultado": "E", "penaltis": false, "competicion": "German Bundesliga"}, {"fecha": "6 nov 2026", "rival": "Hamburg SV", "local": false, "goles_local": "3", "goles_visitante": "1", "resultado": "D", "penaltis": false, "competicion": "German Bundesliga"}, {"fecha": "12 nov 2026", "rival": "Standard Liege", "local": true, "goles_local": "1", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "Club Friendly"}, {"fecha": "21 nov 2026", "rival": "Borussia Dortmund", "local": true, "goles_local": "0", "goles_visitante": "1", "resultado": "D", "penaltis": false, "competicion": "German Bundesliga"}]}, "h2h": {"resumen": "BMG lidera la serie 2-1-2", "etiqueta": "Last 5 Matchups", "partidos": [{"fecha": "31 ene 2026", "local": "Werder Bremen", "visitante": "Borussia Mönchengladbach", "goles_local": "1", "goles_visitante": "1"}, {"fecha": "14 sep 2025", "local": "Borussia Mönchengladbach", "visitante": "Werder Bremen", "goles_local": "0", "goles_visitante": "4"}, {"fecha": "15 mar 2025", "local": "Werder Bremen", "visitante": "Borussia Mönchengladbach", "goles_local": "2", "goles_visitante": "4"}, {"fecha": "3 nov 2024", "local": "Borussia Mönchengladbach", "visitante": "Werder Bremen", "goles_local": "4", "goles_visitante": "1"}, {"fecha": "4 may 2024", "local": "Werder Bremen", "visitante": "Borussia Mönchengladbach", "goles_local": "2", "goles_visitante": "2"}]}, "standings": {"home": {"pos": "6", "pts": "18", "pj": "10", "g": "5", "e": "3", "p": "2", "dg": "+6", "récord": "5-3-2"}, "away": {"pos": "18", "pts": "4", "pj": "10", "g": "1", "e": "1", "p": "8", "dg": "-14", "récord": "1-1-8"}}, "lineup": {"alineacion_publicada": false, "jugadores_en_roster": 0}, "sources": {"standings_header": "German Bundesliga Standings"}}, "venezia-vs-bologna": {"home": "Venezia", "away": "Bologna", "league": "Serie A", "day": "vie", "time": "Vie 27 · 13:45", "espn_event_id": "401875004", "lastFive": {"home": [{"fecha": "25 oct 2026", "rival": "Genoa", "local": false, "goles_local": "1", "goles_visitante": "0", "resultado": "D", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "28 oct 2026", "rival": "Internazionale", "local": true, "goles_local": "0", "goles_visitante": "2", "resultado": "D", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "1 nov 2026", "rival": "Como", "local": false, "goles_local": "1", "goles_visitante": "0", "resultado": "D", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "6 nov 2026", "rival": "Udinese", "local": true, "goles_local": "2", "goles_visitante": "1", "resultado": "V", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "22 nov 2026", "rival": "Juventus", "local": false, "goles_local": "4", "goles_visitante": "0", "resultado": "D", "penaltis": false, "competicion": "Italian Serie A"}], "away": [{"fecha": "24 oct 2026", "rival": "Cagliari", "local": false, "goles_local": "0", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "28 oct 2026", "rival": "AC Milan", "local": false, "goles_local": "2", "goles_visitante": "4", "resultado": "V", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "31 oct 2026", "rival": "Monza", "local": true, "goles_local": "2", "goles_visitante": "1", "resultado": "V", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "7 nov 2026", "rival": "Parma", "local": false, "goles_local": "1", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "22 nov 2026", "rival": "Udinese", "local": true, "goles_local": "1", "goles_visitante": "1", "resultado": "E", "penaltis": false, "competicion": "Italian Serie A"}]}, "h2h": {"resumen": "Serie empatada 2-2", "etiqueta": "Last 4 Matchups", "partidos": [{"fecha": "29 mar 2025", "local": "Venezia", "visitante": "Bologna", "goles_local": "0", "goles_visitante": "1"}, {"fecha": "30 nov 2024", "local": "Bologna", "visitante": "Venezia", "goles_local": "3", "goles_visitante": "0"}, {"fecha": "8 may 2022", "local": "Venezia", "visitante": "Bologna", "goles_local": "4", "goles_visitante": "3"}, {"fecha": "21 nov 2021", "local": "Bologna", "visitante": "Venezia", "goles_local": "0", "goles_visitante": "1"}]}, "standings": {"home": {"pos": "20", "pts": "6", "pj": "12", "g": "2", "e": "0", "p": "10", "dg": "-17", "récord": "2-0-10"}, "away": {"pos": "9", "pts": "18", "pj": "12", "g": "5", "e": "3", "p": "4", "dg": "+2", "récord": "5-3-4"}}, "lineup": {"alineacion_publicada": false, "jugadores_en_roster": 0}, "sources": {"standings_header": "Italian Serie A Standings"}}, "nottingham-forest-vs-chelsea": {"home": "Nottingham Forest", "away": "Chelsea", "league": "Premier League", "day": "vie", "time": "Vie 27 · 14:00", "espn_event_id": "401879225", "lastFive": {"home": [{"fecha": "18 oct 2026", "rival": "Arsenal", "local": true, "goles_local": "0", "goles_visitante": "1", "resultado": "D", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "23 oct 2026", "rival": "Ipswich Town", "local": false, "goles_local": "1", "goles_visitante": "1", "resultado": "E", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "31 oct 2026", "rival": "Brentford", "local": false, "goles_local": "2", "goles_visitante": "0", "resultado": "D", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "7 nov 2026", "rival": "Manchester City", "local": true, "goles_local": "3", "goles_visitante": "1", "resultado": "V", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "21 nov 2026", "rival": "AFC Bournemouth", "local": false, "goles_local": "2", "goles_visitante": "0", "resultado": "D", "penaltis": false, "competicion": "English Premier League"}], "away": [{"fecha": "24 oct 2026", "rival": "Tottenham Hotspur", "local": true, "goles_local": "0", "goles_visitante": "2", "resultado": "D", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "28 oct 2026", "rival": "Liverpool", "local": false, "goles_local": "1", "goles_visitante": "1", "resultado": "D", "penaltis": true, "competicion": "English Carabao Cup"}, {"fecha": "31 oct 2026", "rival": "Manchester United", "local": true, "goles_local": "2", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "8 nov 2026", "rival": "Sunderland", "local": false, "goles_local": "1", "goles_visitante": "0", "resultado": "D", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "21 nov 2026", "rival": "Leeds United", "local": true, "goles_local": "1", "goles_visitante": "4", "resultado": "D", "penaltis": false, "competicion": "English Premier League"}]}, "h2h": {"resumen": "CHE lidera la serie 3-1-1", "etiqueta": "Last 5 Matchups", "partidos": [{"fecha": "4 may 2026", "local": "Chelsea", "visitante": "Nottingham Forest", "goles_local": "1", "goles_visitante": "3"}, {"fecha": "18 oct 2025", "local": "Nottingham Forest", "visitante": "Chelsea", "goles_local": "0", "goles_visitante": "3"}, {"fecha": "25 may 2025", "local": "Nottingham Forest", "visitante": "Chelsea", "goles_local": "0", "goles_visitante": "1"}, {"fecha": "6 oct 2024", "local": "Chelsea", "visitante": "Nottingham Forest", "goles_local": "1", "goles_visitante": "1"}, {"fecha": "11 may 2024", "local": "Nottingham Forest", "visitante": "Chelsea", "goles_local": "2", "goles_visitante": "3"}]}, "standings": {"home": {"pos": "17", "pts": "9", "pj": "11", "g": "2", "e": "3", "p": "6", "dg": "-6", "récord": "2-3-6"}, "away": {"pos": "8", "pts": "16", "pj": "11", "g": "5", "e": "1", "p": "5", "dg": "0", "récord": "5-1-5"}}, "lineup": {"alineacion_publicada": false, "jugadores_en_roster": 0}, "sources": {"standings_header": "English Premier League Standings"}}, "levante-vs-racing-santander": {"home": "Levante", "away": "Racing Santander", "league": "LaLiga", "day": "vie", "time": "Vie 27 · 14:00", "espn_event_id": "401882791", "lastFive": {"home": [{"fecha": "21 oct 2026", "rival": "Athletic Club", "local": true, "goles_local": "3", "goles_visitante": "1", "resultado": "V", "penaltis": false, "competicion": "Spanish LALIGA"}, {"fecha": "25 oct 2026", "rival": "Real Sociedad", "local": false, "goles_local": "2", "goles_visitante": "1", "resultado": "D", "penaltis": false, "competicion": "Spanish LALIGA"}, {"fecha": "31 oct 2026", "rival": "Atlético Madrid", "local": true, "goles_local": "0", "goles_visitante": "2", "resultado": "D", "penaltis": false, "competicion": "Spanish LALIGA"}, {"fecha": "8 nov 2026", "rival": "Celta Vigo", "local": false, "goles_local": "0", "goles_visitante": "0", "resultado": "E", "penaltis": false, "competicion": "Spanish LALIGA"}, {"fecha": "12 nov 2026", "rival": "CD Tarancon", "local": false, "goles_local": "1", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "Spanish Copa del Rey"}], "away": [{"fecha": "24 oct 2026", "rival": "Espanyol", "local": true, "goles_local": "2", "goles_visitante": "1", "resultado": "V", "penaltis": false, "competicion": "Spanish LALIGA"}, {"fecha": "29 oct 2026", "rival": "Ribadesella", "local": false, "goles_local": "0", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "Spanish Copa del Rey"}, {"fecha": "1 nov 2026", "rival": "Real Madrid", "local": true, "goles_local": "0", "goles_visitante": "3", "resultado": "D", "penaltis": false, "competicion": "Spanish LALIGA"}, {"fecha": "7 nov 2026", "rival": "Málaga", "local": false, "goles_local": "1", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "Spanish LALIGA"}, {"fecha": "22 nov 2026", "rival": "Real Sociedad", "local": true, "goles_local": "3", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "Spanish LALIGA"}]}, "h2h": {"resumen": "Serie empatada 2-2-1", "etiqueta": "Last 5 Matchups", "partidos": [{"fecha": "6 abr 2025", "local": "Levante", "visitante": "Racing Santander", "goles_local": "3", "goles_visitante": "1"}, {"fecha": "13 oct 2024", "local": "Racing Santander", "visitante": "Levante", "goles_local": "1", "goles_visitante": "0"}, {"fecha": "20 abr 2024", "local": "Racing Santander", "visitante": "Levante", "goles_local": "0", "goles_visitante": "0"}, {"fecha": "20 nov 2023", "local": "Levante", "visitante": "Racing Santander", "goles_local": "2", "goles_visitante": "4"}, {"fecha": "25 mar 2023", "local": "Racing Santander", "visitante": "Levante", "goles_local": "0", "goles_visitante": "1"}]}, "standings": {"home": {"pos": "18", "pts": "11", "pj": "12", "g": "2", "e": "5", "p": "5", "dg": "-5", "récord": "2-5-5"}, "away": {"pos": "7", "pts": "17", "pj": "13", "g": "5", "e": "2", "p": "6", "dg": "-12", "récord": "5-2-6"}}, "lineup": {"alineacion_publicada": false, "jugadores_en_roster": 0}, "sources": {"standings_header": "Spanish LALIGA Standings"}}, "hamburg-sv-vs-bayern-munich": {"home": "Hamburg SV", "away": "Bayern Munich", "league": "Bundesliga", "day": "sab", "time": "Sáb 28 · 08:30", "espn_event_id": "401884722", "lastFive": {"home": [{"fecha": "27 oct 2026", "rival": "Eintracht Frankfurt", "local": true, "goles_local": "1", "goles_visitante": "3", "resultado": "D", "penaltis": false, "competicion": "German Cup"}, {"fecha": "1 nov 2026", "rival": "Eintracht Frankfurt", "local": false, "goles_local": "3", "goles_visitante": "1", "resultado": "D", "penaltis": false, "competicion": "German Bundesliga"}, {"fecha": "6 nov 2026", "rival": "Borussia Mönchengladbach", "local": true, "goles_local": "3", "goles_visitante": "1", "resultado": "V", "penaltis": false, "competicion": "German Bundesliga"}, {"fecha": "15 nov 2026", "rival": "Hajduk Split", "local": true, "goles_local": "1", "goles_visitante": "1", "resultado": "E", "penaltis": false, "competicion": "Club Friendly"}, {"fecha": "22 nov 2026", "rival": "Werder Bremen", "local": false, "goles_local": "4", "goles_visitante": "0", "resultado": "D", "penaltis": false, "competicion": "German Bundesliga"}], "away": [{"fecha": "28 oct 2026", "rival": "1. FC Magdeburg", "local": true, "goles_local": "6", "goles_visitante": "1", "resultado": "V", "penaltis": false, "competicion": "German Cup"}, {"fecha": "31 oct 2026", "rival": "Borussia Dortmund", "local": true, "goles_local": "2", "goles_visitante": "2", "resultado": "E", "penaltis": false, "competicion": "German Bundesliga"}, {"fecha": "3 nov 2026", "rival": "Atlético Madrid", "local": false, "goles_local": "0", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "UEFA Champions League"}, {"fecha": "7 nov 2026", "rival": "Mainz", "local": false, "goles_local": "1", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "German Bundesliga"}, {"fecha": "20 nov 2026", "rival": "FC Cologne", "local": true, "goles_local": "1", "goles_visitante": "1", "resultado": "E", "penaltis": false, "competicion": "German Bundesliga"}]}, "h2h": {"resumen": "MUN lidera la serie 4-0-1", "etiqueta": "Last 5 Matchups", "partidos": [{"fecha": "31 ene 2026", "local": "Hamburg SV", "visitante": "Bayern Munich", "goles_local": "2", "goles_visitante": "2"}, {"fecha": "13 sep 2025", "local": "Bayern Munich", "visitante": "Hamburg SV", "goles_local": "5", "goles_visitante": "0"}, {"fecha": "15 ago 2018", "local": "Hamburg SV", "visitante": "Bayern Munich", "goles_local": "1", "goles_visitante": "4"}, {"fecha": "10 mar 2018", "local": "Bayern Munich", "visitante": "Hamburg SV", "goles_local": "6", "goles_visitante": "0"}, {"fecha": "21 oct 2017", "local": "Hamburg SV", "visitante": "Bayern Munich", "goles_local": "0", "goles_visitante": "1"}]}, "standings": {"home": {"pos": "12", "pts": "12", "pj": "10", "g": "4", "e": "0", "p": "6", "dg": "-14", "récord": "4-0-6"}, "away": {"pos": "2", "pts": "22", "pj": "10", "g": "6", "e": "4", "p": "0", "dg": "+20", "récord": "6-4-0"}}, "lineup": {"alineacion_publicada": false, "jugadores_en_roster": 0}, "sources": {"standings_header": "German Bundesliga Standings"}}, "manchester-united-vs-brentford": {"home": "Manchester United", "away": "Brentford", "league": "Premier League", "day": "sab", "time": "Sáb 28 · 09:00", "espn_event_id": "401879226", "lastFive": {"home": [{"fecha": "25 oct 2026", "rival": "AFC Bournemouth", "local": true, "goles_local": "0", "goles_visitante": "3", "resultado": "D", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "31 oct 2026", "rival": "Chelsea", "local": false, "goles_local": "2", "goles_visitante": "0", "resultado": "D", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "3 nov 2026", "rival": "AS Roma", "local": true, "goles_local": "3", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "UEFA Champions League"}, {"fecha": "8 nov 2026", "rival": "Aston Villa", "local": true, "goles_local": "4", "goles_visitante": "4", "resultado": "E", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "22 nov 2026", "rival": "Liverpool", "local": false, "goles_local": "4", "goles_visitante": "0", "resultado": "D", "penaltis": false, "competicion": "English Premier League"}], "away": [{"fecha": "17 oct 2026", "rival": "Liverpool", "local": true, "goles_local": "1", "goles_visitante": "2", "resultado": "D", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "25 oct 2026", "rival": "Hull City", "local": false, "goles_local": "1", "goles_visitante": "1", "resultado": "E", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "28 oct 2026", "rival": "Sunderland", "local": false, "goles_local": "3", "goles_visitante": "2", "resultado": "D", "penaltis": false, "competicion": "English Carabao Cup"}, {"fecha": "31 oct 2026", "rival": "Nottingham Forest", "local": true, "goles_local": "2", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "8 nov 2026", "rival": "Brighton & Hove Albion", "local": false, "goles_local": "2", "goles_visitante": "0", "resultado": "D", "penaltis": false, "competicion": "English Premier League"}]}, "h2h": {"resumen": "Serie empatada 2-2-1", "etiqueta": "Last 5 Matchups", "partidos": [{"fecha": "27 abr 2026", "local": "Manchester United", "visitante": "Brentford", "goles_local": "2", "goles_visitante": "1"}, {"fecha": "27 sep 2025", "local": "Brentford", "visitante": "Manchester United", "goles_local": "3", "goles_visitante": "1"}, {"fecha": "4 may 2025", "local": "Brentford", "visitante": "Manchester United", "goles_local": "4", "goles_visitante": "3"}, {"fecha": "19 oct 2024", "local": "Manchester United", "visitante": "Brentford", "goles_local": "2", "goles_visitante": "1"}, {"fecha": "30 mar 2024", "local": "Brentford", "visitante": "Manchester United", "goles_local": "1", "goles_visitante": "1"}]}, "standings": {"home": {"pos": "19", "pts": "8", "pj": "11", "g": "1", "e": "5", "p": "5", "dg": "-9", "récord": "1-5-5"}, "away": {"pos": "10", "pts": "14", "pj": "10", "g": "3", "e": "5", "p": "2", "dg": "+5", "récord": "3-5-2"}}, "lineup": {"alineacion_publicada": false, "jugadores_en_roster": 0}, "sources": {"standings_header": "English Premier League Standings"}}, "elche-vs-atletico-madrid": {"home": "Elche", "away": "Atlético Madrid", "league": "LaLiga", "day": "sab", "time": "Sáb 28 · 11:30", "espn_event_id": "401882793", "lastFive": {"home": [{"fecha": "17 oct 2026", "rival": "Villarreal", "local": false, "goles_local": "0", "goles_visitante": "0", "resultado": "E", "penaltis": false, "competicion": "Spanish LALIGA"}, {"fecha": "24 oct 2026", "rival": "Rayo Vallecano", "local": false, "goles_local": "0", "goles_visitante": "3", "resultado": "V", "penaltis": false, "competicion": "Spanish LALIGA"}, {"fecha": "27 oct 2026", "rival": "Atlético Pinatarense", "local": false, "goles_local": "1", "goles_visitante": "3", "resultado": "V", "penaltis": false, "competicion": "Spanish Copa del Rey"}, {"fecha": "1 nov 2026", "rival": "Valencia", "local": true, "goles_local": "0", "goles_visitante": "1", "resultado": "D", "penaltis": false, "competicion": "Spanish LALIGA"}, {"fecha": "8 nov 2026", "rival": "Real Betis", "local": true, "goles_local": "0", "goles_visitante": "2", "resultado": "D", "penaltis": false, "competicion": "Spanish LALIGA"}], "away": [{"fecha": "24 oct 2026", "rival": "Deportivo", "local": true, "goles_local": "1", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "Spanish LALIGA"}, {"fecha": "31 oct 2026", "rival": "Levante", "local": false, "goles_local": "0", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "Spanish LALIGA"}, {"fecha": "3 nov 2026", "rival": "Bayern Munich", "local": true, "goles_local": "0", "goles_visitante": "2", "resultado": "D", "penaltis": false, "competicion": "UEFA Champions League"}, {"fecha": "8 nov 2026", "rival": "Barcelona", "local": true, "goles_local": "1", "goles_visitante": "2", "resultado": "D", "penaltis": false, "competicion": "Spanish LALIGA"}, {"fecha": "22 nov 2026", "rival": "Getafe", "local": false, "goles_local": "0", "goles_visitante": "3", "resultado": "V", "penaltis": false, "competicion": "Spanish LALIGA"}]}, "h2h": {"resumen": "Serie empatada 2-2-1", "etiqueta": "Last 5 Matchups", "partidos": [{"fecha": "22 abr 2026", "local": "Elche", "visitante": "Atlético Madrid", "goles_local": "3", "goles_visitante": "2"}, {"fecha": "23 ago 2025", "local": "Atlético Madrid", "visitante": "Elche", "goles_local": "1", "goles_visitante": "1"}, {"fecha": "15 ene 2025", "local": "Elche", "visitante": "Atlético Madrid", "goles_local": "0", "goles_visitante": "4"}, {"fecha": "14 may 2023", "local": "Elche", "visitante": "Atlético Madrid", "goles_local": "1", "goles_visitante": "0"}, {"fecha": "29 dic 2022", "local": "Atlético Madrid", "visitante": "Elche", "goles_local": "2", "goles_visitante": "0"}]}, "standings": {"home": {"pos": "19", "pts": "10", "pj": "12", "g": "2", "e": "4", "p": "6", "dg": "-6", "récord": "2-4-6"}, "away": {"pos": "3", "pts": "31", "pj": "13", "g": "10", "e": "1", "p": "2", "dg": "+16", "récord": "10-1-2"}}, "lineup": {"alineacion_publicada": false, "jugadores_en_roster": 0}, "sources": {"standings_header": "Spanish LALIGA Standings"}}, "vfb-stuttgart-vs-eintracht-frankfurt": {"home": "VfB Stuttgart", "away": "Eintracht Frankfurt", "league": "Bundesliga", "day": "sab", "time": "Sáb 28 · 11:30", "espn_event_id": "401884726", "lastFive": {"home": [{"fecha": "28 oct 2026", "rival": "SC Paderborn 07", "local": false, "goles_local": "0", "goles_visitante": "1", "resultado": "V", "penaltis": false, "competicion": "German Cup"}, {"fecha": "31 oct 2026", "rival": "Bayer Leverkusen", "local": false, "goles_local": "2", "goles_visitante": "4", "resultado": "V", "penaltis": false, "competicion": "German Bundesliga"}, {"fecha": "3 nov 2026", "rival": "Galatasaray", "local": false, "goles_local": "2", "goles_visitante": "0", "resultado": "D", "penaltis": false, "competicion": "UEFA Champions League"}, {"fecha": "7 nov 2026", "rival": "Werder Bremen", "local": true, "goles_local": "1", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "German Bundesliga"}, {"fecha": "21 nov 2026", "rival": "Schalke 04", "local": false, "goles_local": "0", "goles_visitante": "0", "resultado": "E", "penaltis": false, "competicion": "German Bundesliga"}], "away": [{"fecha": "24 oct 2026", "rival": "Borussia Dortmund", "local": false, "goles_local": "1", "goles_visitante": "0", "resultado": "D", "penaltis": false, "competicion": "German Bundesliga"}, {"fecha": "27 oct 2026", "rival": "Hamburg SV", "local": false, "goles_local": "1", "goles_visitante": "3", "resultado": "V", "penaltis": false, "competicion": "German Cup"}, {"fecha": "1 nov 2026", "rival": "Hamburg SV", "local": true, "goles_local": "3", "goles_visitante": "1", "resultado": "V", "penaltis": false, "competicion": "German Bundesliga"}, {"fecha": "7 nov 2026", "rival": "SC Paderborn 07", "local": false, "goles_local": "2", "goles_visitante": "2", "resultado": "E", "penaltis": false, "competicion": "German Bundesliga"}, {"fecha": "21 nov 2026", "rival": "TSG Hoffenheim", "local": true, "goles_local": "1", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "German Bundesliga"}]}, "h2h": {"resumen": "Serie empatada 2-2-1", "etiqueta": "Last 5 Matchups", "partidos": [{"fecha": "16 may 2026", "local": "Eintracht Frankfurt", "visitante": "VfB Stuttgart", "goles_local": "2", "goles_visitante": "2"}, {"fecha": "13 ene 2026", "local": "VfB Stuttgart", "visitante": "Eintracht Frankfurt", "goles_local": "3", "goles_visitante": "2"}, {"fecha": "29 mar 2025", "local": "Eintracht Frankfurt", "visitante": "VfB Stuttgart", "goles_local": "1", "goles_visitante": "0"}, {"fecha": "10 nov 2024", "local": "VfB Stuttgart", "visitante": "Eintracht Frankfurt", "goles_local": "2", "goles_visitante": "3"}, {"fecha": "13 abr 2024", "local": "VfB Stuttgart", "visitante": "Eintracht Frankfurt", "goles_local": "3", "goles_visitante": "0"}]}, "standings": {"home": {"pos": "8", "pts": "13", "pj": "10", "g": "4", "e": "1", "p": "5", "dg": "0", "récord": "4-1-5"}, "away": {"pos": "7", "pts": "15", "pj": "10", "g": "4", "e": "3", "p": "3", "dg": "-4", "récord": "4-3-3"}}, "lineup": {"alineacion_publicada": false, "jugadores_en_roster": 0}, "sources": {"standings_header": "German Bundesliga Standings"}}, "internazionale-vs-genoa": {"home": "Internazionale", "away": "Genoa", "league": "Serie A", "day": "sab", "time": "Sáb 28 · 13:45", "espn_event_id": "401874977", "lastFive": {"home": [{"fecha": "28 oct 2026", "rival": "Venezia", "local": false, "goles_local": "0", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "31 oct 2026", "rival": "AC Milan", "local": false, "goles_local": "3", "goles_visitante": "1", "resultado": "D", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "3 nov 2026", "rival": "Feyenoord Rotterdam", "local": false, "goles_local": "0", "goles_visitante": "3", "resultado": "V", "penaltis": false, "competicion": "UEFA Champions League"}, {"fecha": "8 nov 2026", "rival": "Como", "local": true, "goles_local": "2", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "22 nov 2026", "rival": "Atalanta", "local": false, "goles_local": "4", "goles_visitante": "4", "resultado": "E", "penaltis": false, "competicion": "Italian Serie A"}], "away": [{"fecha": "25 oct 2026", "rival": "Venezia", "local": true, "goles_local": "1", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "28 oct 2026", "rival": "Juventus", "local": true, "goles_local": "2", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "1 nov 2026", "rival": "Lecce", "local": false, "goles_local": "1", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "8 nov 2026", "rival": "AC Milan", "local": true, "goles_local": "1", "goles_visitante": "2", "resultado": "D", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "22 nov 2026", "rival": "Sassuolo", "local": false, "goles_local": "0", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "Italian Serie A"}]}, "h2h": {"resumen": "INT lidera la serie 4-0-1", "etiqueta": "Last 5 Matchups", "partidos": [{"fecha": "28 feb 2026", "local": "Internazionale", "visitante": "Genoa", "goles_local": "2", "goles_visitante": "0"}, {"fecha": "14 dic 2025", "local": "Genoa", "visitante": "Internazionale", "goles_local": "1", "goles_visitante": "2"}, {"fecha": "22 feb 2025", "local": "Internazionale", "visitante": "Genoa", "goles_local": "1", "goles_visitante": "0"}, {"fecha": "17 ago 2024", "local": "Genoa", "visitante": "Internazionale", "goles_local": "2", "goles_visitante": "2"}, {"fecha": "4 mar 2024", "local": "Internazionale", "visitante": "Genoa", "goles_local": "2", "goles_visitante": "1"}]}, "standings": {"home": {"pos": "3", "pts": "29", "pj": "12", "g": "9", "e": "2", "p": "1", "dg": "+15", "récord": "9-2-1"}, "away": {"pos": "10", "pts": "16", "pj": "12", "g": "5", "e": "1", "p": "6", "dg": "-3", "récord": "5-1-6"}}, "lineup": {"alineacion_publicada": false, "jugadores_en_roster": 0}, "sources": {"standings_header": "Italian Serie A Standings"}}, "real-madrid-vs-alaves": {"home": "Real Madrid", "away": "Alavés", "league": "LaLiga", "day": "sab", "time": "Sáb 28 · 14:00", "espn_event_id": "401882789", "lastFive": {"home": [{"fecha": "25 oct 2026", "rival": "Barcelona", "local": false, "goles_local": "1", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "Spanish LALIGA"}, {"fecha": "1 nov 2026", "rival": "Racing Santander", "local": false, "goles_local": "0", "goles_visitante": "3", "resultado": "V", "penaltis": false, "competicion": "Spanish LALIGA"}, {"fecha": "4 nov 2026", "rival": "AEK Athens", "local": false, "goles_local": "2", "goles_visitante": "3", "resultado": "V", "penaltis": false, "competicion": "UEFA Champions League"}, {"fecha": "7 nov 2026", "rival": "Valencia", "local": false, "goles_local": "0", "goles_visitante": "3", "resultado": "V", "penaltis": false, "competicion": "Spanish LALIGA"}, {"fecha": "21 nov 2026", "rival": "Celta Vigo", "local": true, "goles_local": "2", "goles_visitante": "1", "resultado": "V", "penaltis": false, "competicion": "Spanish LALIGA"}], "away": [{"fecha": "23 oct 2026", "rival": "Málaga", "local": true, "goles_local": "1", "goles_visitante": "1", "resultado": "E", "penaltis": false, "competicion": "Spanish LALIGA"}, {"fecha": "31 oct 2026", "rival": "Barcelona", "local": false, "goles_local": "6", "goles_visitante": "1", "resultado": "D", "penaltis": false, "competicion": "Spanish LALIGA"}, {"fecha": "6 nov 2026", "rival": "Sevilla", "local": false, "goles_local": "0", "goles_visitante": "0", "resultado": "E", "penaltis": false, "competicion": "Spanish LALIGA"}, {"fecha": "10 nov 2026", "rival": "Anaitasuna", "local": false, "goles_local": "1", "goles_visitante": "6", "resultado": "V", "penaltis": false, "competicion": "Spanish Copa del Rey"}, {"fecha": "21 nov 2026", "rival": "Deportivo", "local": true, "goles_local": "3", "goles_visitante": "1", "resultado": "V", "penaltis": false, "competicion": "Spanish LALIGA"}]}, "h2h": {"resumen": "RMA lidera la serie 5-0", "etiqueta": "Last 5 Matchups", "partidos": [{"fecha": "21 abr 2026", "local": "Real Madrid", "visitante": "Alavés", "goles_local": "2", "goles_visitante": "1"}, {"fecha": "14 dic 2025", "local": "Alavés", "visitante": "Real Madrid", "goles_local": "1", "goles_visitante": "2"}, {"fecha": "13 abr 2025", "local": "Alavés", "visitante": "Real Madrid", "goles_local": "0", "goles_visitante": "1"}, {"fecha": "24 sep 2024", "local": "Real Madrid", "visitante": "Alavés", "goles_local": "3", "goles_visitante": "2"}, {"fecha": "14 may 2024", "local": "Real Madrid", "visitante": "Alavés", "goles_local": "5", "goles_visitante": "0"}]}, "standings": {"home": {"pos": "2", "pts": "33", "pj": "13", "g": "11", "e": "0", "p": "2", "dg": "+22", "récord": "11-0-2"}, "away": {"pos": "9", "pts": "16", "pj": "13", "g": "4", "e": "4", "p": "5", "dg": "0", "récord": "4-4-5"}}, "lineup": {"alineacion_publicada": false, "jugadores_en_roster": 0}, "sources": {"standings_header": "Spanish LALIGA Standings"}}, "everton-vs-liverpool": {"home": "Everton", "away": "Liverpool", "league": "Premier League", "day": "dom", "time": "Dom 29 · 06:00", "espn_event_id": "401879229", "lastFive": {"home": [{"fecha": "17 oct 2026", "rival": "Chelsea", "local": true, "goles_local": "0", "goles_visitante": "2", "resultado": "D", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "24 oct 2026", "rival": "Arsenal", "local": false, "goles_local": "2", "goles_visitante": "0", "resultado": "D", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "29 oct 2026", "rival": "Newcastle United", "local": true, "goles_local": "3", "goles_visitante": "1", "resultado": "V", "penaltis": false, "competicion": "English Carabao Cup"}, {"fecha": "2 nov 2026", "rival": "Newcastle United", "local": false, "goles_local": "0", "goles_visitante": "1", "resultado": "V", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "6 nov 2026", "rival": "Coventry City", "local": true, "goles_local": "3", "goles_visitante": "1", "resultado": "V", "penaltis": false, "competicion": "English Premier League"}], "away": [{"fecha": "28 oct 2026", "rival": "Chelsea", "local": true, "goles_local": "1", "goles_visitante": "1", "resultado": "V", "penaltis": true, "competicion": "English Carabao Cup"}, {"fecha": "1 nov 2026", "rival": "Arsenal", "local": true, "goles_local": "0", "goles_visitante": "1", "resultado": "D", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "4 nov 2026", "rival": "Fenerbahce", "local": false, "goles_local": "3", "goles_visitante": "2", "resultado": "D", "penaltis": false, "competicion": "UEFA Champions League"}, {"fecha": "8 nov 2026", "rival": "Crystal Palace", "local": false, "goles_local": "1", "goles_visitante": "3", "resultado": "V", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "22 nov 2026", "rival": "Manchester United", "local": true, "goles_local": "4", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "English Premier League"}]}, "h2h": {"resumen": "LIV lidera la serie 3-1-1", "etiqueta": "Last 5 Matchups", "partidos": [{"fecha": "19 abr 2026", "local": "Everton", "visitante": "Liverpool", "goles_local": "1", "goles_visitante": "2"}, {"fecha": "20 sep 2025", "local": "Liverpool", "visitante": "Everton", "goles_local": "2", "goles_visitante": "1"}, {"fecha": "2 abr 2025", "local": "Liverpool", "visitante": "Everton", "goles_local": "1", "goles_visitante": "0"}, {"fecha": "12 feb 2025", "local": "Everton", "visitante": "Liverpool", "goles_local": "2", "goles_visitante": "2"}, {"fecha": "24 abr 2024", "local": "Everton", "visitante": "Liverpool", "goles_local": "2", "goles_visitante": "0"}]}, "standings": {"home": {"pos": "7", "pts": "16", "pj": "10", "g": "4", "e": "4", "p": "2", "dg": "+2", "récord": "4-4-2"}, "away": {"pos": "4", "pts": "21", "pj": "11", "g": "6", "e": "3", "p": "2", "dg": "+8", "récord": "6-3-2"}}, "lineup": {"alineacion_publicada": false, "jugadores_en_roster": 0}, "sources": {"standings_header": "English Premier League Standings"}}, "sassuolo-vs-napoli": {"home": "Sassuolo", "away": "Napoli", "league": "Serie A", "day": "dom", "time": "Dom 29 · 08:00", "espn_event_id": "401874992", "lastFive": {"home": [{"fecha": "24 oct 2026", "rival": "Como", "local": false, "goles_local": "2", "goles_visitante": "0", "resultado": "D", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "27 oct 2026", "rival": "Lazio", "local": true, "goles_local": "2", "goles_visitante": "6", "resultado": "D", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "2 nov 2026", "rival": "Fiorentina", "local": true, "goles_local": "2", "goles_visitante": "4", "resultado": "D", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "7 nov 2026", "rival": "AS Roma", "local": false, "goles_local": "3", "goles_visitante": "0", "resultado": "D", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "22 nov 2026", "rival": "Genoa", "local": true, "goles_local": "0", "goles_visitante": "2", "resultado": "D", "penaltis": false, "competicion": "Italian Serie A"}], "away": [{"fecha": "28 oct 2026", "rival": "Monza", "local": false, "goles_local": "1", "goles_visitante": "4", "resultado": "V", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "1 nov 2026", "rival": "Juventus", "local": false, "goles_local": "2", "goles_visitante": "0", "resultado": "D", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "4 nov 2026", "rival": "FC Porto", "local": false, "goles_local": "4", "goles_visitante": "1", "resultado": "D", "penaltis": false, "competicion": "UEFA Champions League"}, {"fecha": "8 nov 2026", "rival": "Lazio", "local": true, "goles_local": "1", "goles_visitante": "1", "resultado": "E", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "21 nov 2026", "rival": "Torino", "local": true, "goles_local": "1", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "Italian Serie A"}]}, "h2h": {"resumen": "NAP lidera la serie 5-0", "etiqueta": "Last 5 Matchups", "partidos": [{"fecha": "17 ene 2026", "local": "Napoli", "visitante": "Sassuolo", "goles_local": "1", "goles_visitante": "0"}, {"fecha": "23 ago 2025", "local": "Sassuolo", "visitante": "Napoli", "goles_local": "0", "goles_visitante": "2"}, {"fecha": "28 feb 2024", "local": "Sassuolo", "visitante": "Napoli", "goles_local": "1", "goles_visitante": "6"}, {"fecha": "27 ago 2023", "local": "Napoli", "visitante": "Sassuolo", "goles_local": "2", "goles_visitante": "0"}, {"fecha": "17 feb 2023", "local": "Sassuolo", "visitante": "Napoli", "goles_local": "0", "goles_visitante": "2"}]}, "standings": {"home": {"pos": "17", "pts": "8", "pj": "12", "g": "2", "e": "2", "p": "8", "dg": "-15", "récord": "2-2-8"}, "away": {"pos": "8", "pts": "18", "pj": "12", "g": "5", "e": "3", "p": "4", "dg": "+5", "récord": "5-3-4"}}, "lineup": {"alineacion_publicada": false, "jugadores_en_roster": 0}, "sources": {"standings_header": "Italian Serie A Standings"}}, "deportivo-vs-barcelona": {"home": "Deportivo", "away": "Barcelona", "league": "LaLiga", "day": "dom", "time": "Dom 29 · 09:15", "espn_event_id": "401882794", "lastFive": {"home": [{"fecha": "24 oct 2026", "rival": "Atlético Madrid", "local": false, "goles_local": "1", "goles_visitante": "0", "resultado": "D", "penaltis": false, "competicion": "Spanish LALIGA"}, {"fecha": "29 oct 2026", "rival": "Auriense Cented Academy", "local": false, "goles_local": "0", "goles_visitante": "3", "resultado": "V", "penaltis": false, "competicion": "Spanish Copa del Rey"}, {"fecha": "2 nov 2026", "rival": "Osasuna", "local": true, "goles_local": "2", "goles_visitante": "1", "resultado": "V", "penaltis": false, "competicion": "Spanish LALIGA"}, {"fecha": "7 nov 2026", "rival": "Espanyol", "local": false, "goles_local": "0", "goles_visitante": "0", "resultado": "E", "penaltis": false, "competicion": "Spanish LALIGA"}, {"fecha": "21 nov 2026", "rival": "Alavés", "local": false, "goles_local": "3", "goles_visitante": "1", "resultado": "D", "penaltis": false, "competicion": "Spanish LALIGA"}], "away": [{"fecha": "25 oct 2026", "rival": "Real Madrid", "local": true, "goles_local": "1", "goles_visitante": "2", "resultado": "D", "penaltis": false, "competicion": "Spanish LALIGA"}, {"fecha": "31 oct 2026", "rival": "Alavés", "local": true, "goles_local": "6", "goles_visitante": "1", "resultado": "V", "penaltis": false, "competicion": "Spanish LALIGA"}, {"fecha": "3 nov 2026", "rival": "Aston Villa", "local": true, "goles_local": "3", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "UEFA Champions League"}, {"fecha": "8 nov 2026", "rival": "Atlético Madrid", "local": false, "goles_local": "1", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "Spanish LALIGA"}, {"fecha": "22 nov 2026", "rival": "Villarreal", "local": true, "goles_local": "3", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "Spanish LALIGA"}]}, "h2h": {"resumen": "BAR lidera la serie 4-1", "etiqueta": "Last 5 Matchups", "partidos": [{"fecha": "29 abr 2018", "local": "Deportivo", "visitante": "Barcelona", "goles_local": "2", "goles_visitante": "4"}, {"fecha": "17 dic 2017", "local": "Barcelona", "visitante": "Deportivo", "goles_local": "4", "goles_visitante": "0"}, {"fecha": "12 mar 2017", "local": "Deportivo", "visitante": "Barcelona", "goles_local": "2", "goles_visitante": "1"}, {"fecha": "15 oct 2016", "local": "Barcelona", "visitante": "Deportivo", "goles_local": "4", "goles_visitante": "0"}, {"fecha": "20 abr 2016", "local": "Deportivo", "visitante": "Barcelona", "goles_local": "0", "goles_visitante": "8"}]}, "standings": {"home": {"pos": "12", "pts": "15", "pj": "13", "g": "3", "e": "6", "p": "4", "dg": "-1", "récord": "3-6-4"}, "away": {"pos": "1", "pts": "36", "pj": "13", "g": "12", "e": "0", "p": "1", "dg": "+36", "récord": "12-0-1"}}, "lineup": {"alineacion_publicada": false, "jugadores_en_roster": 0}, "sources": {"standings_header": "Spanish LALIGA Standings"}}, "arsenal-vs-manchester-city": {"home": "Arsenal", "away": "Manchester City", "league": "Premier League", "day": "dom", "time": "Dom 29 · 10:30", "espn_event_id": "401878753", "lastFive": {"home": [{"fecha": "27 oct 2026", "rival": "Fleetwood Town", "local": false, "goles_local": "1", "goles_visitante": "1", "resultado": "D", "penaltis": true, "competicion": "English Carabao Cup"}, {"fecha": "1 nov 2026", "rival": "Liverpool", "local": false, "goles_local": "0", "goles_visitante": "1", "resultado": "V", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "4 nov 2026", "rival": "Slavia Prague", "local": false, "goles_local": "1", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "UEFA Champions League"}, {"fecha": "7 nov 2026", "rival": "Hull City", "local": true, "goles_local": "1", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "21 nov 2026", "rival": "Newcastle United", "local": false, "goles_local": "2", "goles_visitante": "2", "resultado": "E", "penaltis": false, "competicion": "English Premier League"}], "away": [{"fecha": "28 oct 2026", "rival": "Brighton & Hove Albion", "local": true, "goles_local": "2", "goles_visitante": "2", "resultado": "V", "penaltis": true, "competicion": "English Carabao Cup"}, {"fecha": "31 oct 2026", "rival": "Brighton & Hove Albion", "local": true, "goles_local": "0", "goles_visitante": "1", "resultado": "D", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "4 nov 2026", "rival": "RB Leipzig", "local": false, "goles_local": "2", "goles_visitante": "3", "resultado": "V", "penaltis": false, "competicion": "UEFA Champions League"}, {"fecha": "7 nov 2026", "rival": "Nottingham Forest", "local": false, "goles_local": "3", "goles_visitante": "1", "resultado": "D", "penaltis": false, "competicion": "English Premier League"}, {"fecha": "21 nov 2026", "rival": "Fulham", "local": true, "goles_local": "1", "goles_visitante": "1", "resultado": "E", "penaltis": false, "competicion": "English Premier League"}]}, "h2h": {"resumen": "Serie empatada 2-2-1", "etiqueta": "Last 5 Matchups", "partidos": [{"fecha": "16 ago 2026", "local": "Arsenal", "visitante": "Manchester City", "goles_local": "3", "goles_visitante": "0"}, {"fecha": "19 abr 2026", "local": "Manchester City", "visitante": "Arsenal", "goles_local": "2", "goles_visitante": "1"}, {"fecha": "22 mar 2026", "local": "Arsenal", "visitante": "Manchester City", "goles_local": "0", "goles_visitante": "2"}, {"fecha": "21 sep 2025", "local": "Arsenal", "visitante": "Manchester City", "goles_local": "1", "goles_visitante": "1"}, {"fecha": "2 feb 2025", "local": "Arsenal", "visitante": "Manchester City", "goles_local": "5", "goles_visitante": "1"}]}, "standings": {"home": {"pos": "1", "pts": "28", "pj": "11", "g": "9", "e": "1", "p": "1", "dg": "+10", "récord": "9-1-1"}, "away": {"pos": "3", "pts": "22", "pj": "11", "g": "7", "e": "1", "p": "3", "dg": "+8", "récord": "7-1-3"}}, "lineup": {"alineacion_publicada": false, "jugadores_en_roster": 0}, "sources": {"standings_header": "English Premier League Standings"}}, "borussia-dortmund-vs-bayer-leverkusen": {"home": "Borussia Dortmund", "away": "Bayer Leverkusen", "league": "Bundesliga", "day": "dom", "time": "Dom 29 · 12:30", "espn_event_id": "401884727", "lastFive": {"home": [{"fecha": "27 oct 2026", "rival": "Werder Bremen", "local": true, "goles_local": "3", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "German Cup"}, {"fecha": "31 oct 2026", "rival": "Bayern Munich", "local": false, "goles_local": "2", "goles_visitante": "2", "resultado": "E", "penaltis": false, "competicion": "German Bundesliga"}, {"fecha": "4 nov 2026", "rival": "Real Betis", "local": true, "goles_local": "2", "goles_visitante": "1", "resultado": "V", "penaltis": false, "competicion": "UEFA Champions League"}, {"fecha": "7 nov 2026", "rival": "SV Elversberg", "local": true, "goles_local": "2", "goles_visitante": "1", "resultado": "V", "penaltis": false, "competicion": "German Bundesliga"}, {"fecha": "21 nov 2026", "rival": "Borussia Mönchengladbach", "local": false, "goles_local": "0", "goles_visitante": "1", "resultado": "V", "penaltis": false, "competicion": "German Bundesliga"}], "away": [{"fecha": "28 oct 2026", "rival": "1. FC Nürnberg", "local": true, "goles_local": "5", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "German Cup"}, {"fecha": "31 oct 2026", "rival": "VfB Stuttgart", "local": true, "goles_local": "2", "goles_visitante": "4", "resultado": "D", "penaltis": false, "competicion": "German Bundesliga"}, {"fecha": "5 nov 2026", "rival": "Marseille", "local": true, "goles_local": "0", "goles_visitante": "1", "resultado": "D", "penaltis": false, "competicion": "UEFA Europa League"}, {"fecha": "8 nov 2026", "rival": "FC Cologne", "local": false, "goles_local": "1", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "German Bundesliga"}, {"fecha": "21 nov 2026", "rival": "SC Paderborn 07", "local": true, "goles_local": "4", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "German Bundesliga"}]}, "h2h": {"resumen": "B04 lidera la serie 3-2", "etiqueta": "Last 5 Matchups", "partidos": [{"fecha": "11 abr 2026", "local": "Borussia Dortmund", "visitante": "Bayer Leverkusen", "goles_local": "0", "goles_visitante": "1"}, {"fecha": "2 dic 2025", "local": "Borussia Dortmund", "visitante": "Bayer Leverkusen", "goles_local": "0", "goles_visitante": "1"}, {"fecha": "29 nov 2025", "local": "Bayer Leverkusen", "visitante": "Borussia Dortmund", "goles_local": "1", "goles_visitante": "2"}, {"fecha": "11 may 2025", "local": "Bayer Leverkusen", "visitante": "Borussia Dortmund", "goles_local": "2", "goles_visitante": "4"}, {"fecha": "10 ene 2025", "local": "Borussia Dortmund", "visitante": "Bayer Leverkusen", "goles_local": "2", "goles_visitante": "3"}]}, "standings": {"home": {"pos": "1", "pts": "24", "pj": "10", "g": "7", "e": "3", "p": "0", "dg": "+10", "récord": "7-3-0"}, "away": {"pos": "5", "pts": "19", "pj": "10", "g": "6", "e": "1", "p": "3", "dg": "+7", "récord": "6-1-3"}}, "lineup": {"alineacion_publicada": false, "jugadores_en_roster": 0}, "sources": {"standings_header": "German Bundesliga Standings"}}, "como-vs-juventus": {"home": "Como", "away": "Juventus", "league": "Serie A", "day": "dom", "time": "Dom 29 · 13:45", "espn_event_id": "401874994", "lastFive": {"home": [{"fecha": "27 oct 2026", "rival": "Torino", "local": false, "goles_local": "1", "goles_visitante": "3", "resultado": "V", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "1 nov 2026", "rival": "Venezia", "local": true, "goles_local": "1", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "4 nov 2026", "rival": "Lens", "local": false, "goles_local": "1", "goles_visitante": "9", "resultado": "V", "penaltis": false, "competicion": "UEFA Champions League"}, {"fecha": "8 nov 2026", "rival": "Internazionale", "local": false, "goles_local": "2", "goles_visitante": "0", "resultado": "D", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "21 nov 2026", "rival": "Cagliari", "local": true, "goles_local": "2", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "Italian Serie A"}], "away": [{"fecha": "28 oct 2026", "rival": "Genoa", "local": false, "goles_local": "2", "goles_visitante": "0", "resultado": "D", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "1 nov 2026", "rival": "Napoli", "local": true, "goles_local": "2", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "5 nov 2026", "rival": "AZ Alkmaar", "local": false, "goles_local": "1", "goles_visitante": "2", "resultado": "V", "penaltis": false, "competicion": "UEFA Europa League"}, {"fecha": "8 nov 2026", "rival": "Fiorentina", "local": false, "goles_local": "2", "goles_visitante": "2", "resultado": "E", "penaltis": false, "competicion": "Italian Serie A"}, {"fecha": "22 nov 2026", "rival": "Venezia", "local": true, "goles_local": "4", "goles_visitante": "0", "resultado": "V", "penaltis": false, "competicion": "Italian Serie A"}]}, "h2h": {"resumen": "JUV lidera la serie 3-2", "etiqueta": "Last 5 Matchups", "partidos": [{"fecha": "21 feb 2026", "local": "Juventus", "visitante": "Como", "goles_local": "0", "goles_visitante": "2"}, {"fecha": "19 oct 2025", "local": "Como", "visitante": "Juventus", "goles_local": "2", "goles_visitante": "0"}, {"fecha": "7 feb 2025", "local": "Como", "visitante": "Juventus", "goles_local": "1", "goles_visitante": "2"}, {"fecha": "19 ago 2024", "local": "Juventus", "visitante": "Como", "goles_local": "3", "goles_visitante": "0"}, {"fecha": "22 feb 2003", "local": "Como", "visitante": "Juventus", "goles_local": "1", "goles_visitante": "3"}]}, "standings": {"home": {"pos": "5", "pts": "26", "pj": "12", "g": "8", "e": "2", "p": "2", "dg": "+10", "récord": "8-2-2"}, "away": {"pos": "6", "pts": "21", "pj": "12", "g": "6", "e": "3", "p": "3", "dg": "+7", "récord": "6-3-3"}}, "lineup": {"alineacion_publicada": false, "jugadores_en_roster": 0}, "sources": {"standings_header": "Italian Serie A Standings"}}};
+
+  function norm(s){
+    return (s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  }
+  function esc(s){
+    return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+  function lastFiveList(teamName, games){
+    if (!games || !games.length){
+      return '<div class="detail-team"><b>' + esc(teamName) + '</b><p>pendiente</p></div>';
+    }
+    var items = games.slice().reverse().map(function(g){
+      var score = g.local
+        ? esc(teamName) + " " + esc(g.goles_local) + "–" + esc(g.goles_visitante) + " " + esc(g.rival)
+        : esc(g.rival) + " " + esc(g.goles_local) + "–" + esc(g.goles_visitante) + " " + esc(teamName);
+      var pen = g.penaltis ? " (pen.)" : "";
+      var donde = g.local ? "Casa" : "Fuera";
+      return '<li><span class="res-badge res-' + esc(g.resultado) + '">' + esc(g.resultado) +
+        '</span><span><b>' + score + pen + '</b> · ' + donde +
+        '<span class="d-comp">' + esc(g.fecha) + ' · ' + esc(g.competicion) + '</span></span></li>';
+    }).join("");
+    return '<div class="detail-team"><b>' + esc(teamName) + '</b><ul>' + items + '</ul></div>';
+  }
+  function posBox(teamName, league, st){
+    if (!st){
+      return '<div class="pos-box"><b>' + esc(teamName) + '</b><p>pendiente</p></div>';
+    }
+    return '<div class="pos-box"><b>' + esc(teamName) + '</b>' +
+      '<div class="pos-num num">' + esc(st.pos) + '.º</div>' +
+      '<p>' + esc(league) + ' · ' + esc(st.pts) + ' pts · ' + esc(st.pj) + ' PJ · ' +
+      esc(st["récord"]) + ' · DG ' + esc(st.dg) + '</p></div>';
+  }
+
+  var overlay = document.getElementById("detailOverlay");
+  var titleEl = document.getElementById("detailTitle");
+  var subEl = document.getElementById("detailSub");
+  var bodyEl = document.getElementById("detailBody");
+  var lastOpener = null;
+
+
+  /* Fuerza del XI (Empleado 2, 23 nov 2026): números de prueba reales del
+     Empleado 1 (buzon/EMPLEADO-1.md, 23 nov 14:34). Fórmula APROBADA por el
+     jefe el 23 nov (pesos 0.40/0.30/0.30). Los minutos son estimados de las
+     sustituciones: ESPN no publica minutos por jugador. Las fracciones
+     (fa/fb/fc) son las sumas del XI contra el mejor XI, del JSON del
+     Empleado 1 (data/investigacion-xi/fuerza_xi_prueba.json, en main).
+     Los % publicados NO se cambian: están topados en 100. */
+  var FXI_EJEMPLOS = [
+    {equipo:"Arsenal", etiqueta:"XI completo", partido:"Newcastle 2–2 Arsenal", fecha:"21 nov 2026", xi:"Raya, Gabriel, Saliba, Calafiori, Timber, Ødegaard, Rice, Saka, Havertz, Eze, Madueke", a:"100", b:"100", c:"100", fa:"10.0/10.0", fb:"3965/3838", fc:"119/115", fuerza:"100.0"},
+    {equipo:"Arsenal", etiqueta:"sin Ødegaard (entra Ben White)", partido:"Newcastle 2–2 Arsenal", fecha:"21 nov 2026", xi:"Mismo XI, con Ben White por Ødegaard.", a:"90.0", b:"95.7", c:"97.4", fa:"9.0/10.0", fb:"3673/3838", fc:"112/115", fuerza:"93.9"},
+    {equipo:"Real Madrid", etiqueta:"XI rotado", partido:"Real Madrid 2–1 Celta", fecha:"últimos 5 de liga al 21 nov 2026", xi:"Courtois, Huijsen, Rüdiger, Camavinga, Carreras, Trent, Bellingham, Brahim, Vinícius, Güler, Mbappé", a:"89.5", b:"83.5", c:"85.7", fa:"17.0/19.0", fb:"3545/4247", fc:"126/147", fuerza:"86.5"},
+    {equipo:"Real Madrid", etiqueta:"sin Mbappé (entra Militão)", partido:"Real Madrid 2–1 Celta", fecha:"últimos 5 de liga al 21 nov 2026", xi:"Mismo XI, con Militão por Mbappé.", a:"52.6", b:"81.5", c:"83.7", fa:"10.0/19.0", fb:"3460/4247", fc:"123/147", fuerza:"70.6"}
+  ];
+  function fxiColor(v){
+    var n = parseFloat(v);
+    if (n >= 90) return "fxi-green";
+    if (n >= 75) return "fxi-amber";
+    return "fxi-red";
+  }
+  function fuerzaXIBlock(){
+    var h = "";
+    h += "<h4>Fuerza del XI <span class=\"fxi-badge\">Fórmula aprobada por el jefe</span></h4>";
+    h += "<div class=\"detail-pending\">pendiente — el XI oficial de este partido aún no se publica (sale ~1 h antes). Sin el XI no se puede calcular la fuerza de este partido.</div>";
+    h += "<p class=\"fxi-formula\">Fórmula propuesta por el Empleado 1: Fuerza = 0.40·Goles + 0.30·Minutos + 0.30·Puntos. Cada componente en % contra el mejor XI de la temporada del mismo equipo (1 portero + 4 defensas + 4 medios + 2 delanteros con más minutos jugados en los últimos 5 partidos de liga). Los minutos son estimados a partir de las sustituciones: ESPN no publica minutos por jugador.</p>";
+    h += "<h4>Ejemplos reales — números de prueba del Empleado 1</h4>";
+    h += "<p class=\"fxi-formula\">Últimos 5 partidos de liga al 21 nov 2026. Son ejemplos con números reales, NO el XI de este partido.</p>";
+    h += "<div class=\"fxi-grid\">";
+    FXI_EJEMPLOS.forEach(function(ej){
+      h += "<div class=\"fxi-card\"><b>" + esc(ej.equipo) + " — " + esc(ej.etiqueta) + "</b>" +
+        "<span class=\"fxi-match\">" + esc(ej.partido) + " · " + esc(ej.fecha) + "</span>" +
+        "<div class=\"fxi-num\">" + esc(ej.fuerza) + "<small> / 100</small></div>" +
+        "<div class=\"fxi-bar\"><div class=\"fxi-fill " + fxiColor(ej.fuerza) + "\" style=\"width:" + esc(ej.fuerza) + "%\"></div></div>" +
+        "<ul class=\"fxi-lines\">" +
+        "<li><span>Goles</span><b>" + esc(ej.a) + "% (" + esc(ej.fa) + " del mejor XI)</b></li>" +
+        "<li><span>Minutos</span><b>" + esc(ej.b) + "% (" + esc(ej.fb) + " del mejor XI)</b></li>" +
+        "<li><span>Puntos</span><b>" + esc(ej.c) + "% (" + esc(ej.fc) + " del mejor XI)</b></li>" +
+        "</ul>" +
+        "<p class=\"fxi-xi\">XI: " + esc(ej.xi) + "</p></div>";
+    });
+    h += "</div>";
+    h += "<p class=\"detail-note\">Fracciones del JSON del Empleado 1 (data/investigacion-xi/fuerza_xi_prueba.json, en main): sumas del XI contra el mejor XI. Los % están topados en 100: en el Arsenal completo los minutos (3965/3838) y los puntos (119/115) pasan de 100 porque el XI reciente suma más que el mejor XI en totales.</p>";
+    return h;
+  }
+  /* Radiografía enfrentada (Empleado 2, 24 nov 2026), realimentada con los
+     agregados del Empleado 1 leídos en main: data/semana-2/raw/teams_last5.json
+     (fin de semana: últimos 5 de liga, n=5) y
+     data/semana-2-entresemana/raw/teams_last5.json (entre semana: últimos 4
+     de la competición europea, n=4). Tabla por partido: los equipos que
+     juegan en los dos archivos llevan agregados distintos por partido
+     (p. ej. Arsenal liga 1.4/0.2, BTTS 1/5 vs Champions 2.0/0.8, BTTS 2/4).
+     Racha: V/E/D del partido más reciente al más antiguo. */
+var RADIO = {
+  "galatasaray-vs-aston-villa": {n:4, comp:"Champions", h:{gf:2.0,ga:2.3,btts:"3/4",bttsN:3,over:"3/4",overN:3,racha:"WWLL"}, a:{gf:3.0,ga:1.5,btts:"2/4",bttsN:2,over:"4/4",overN:4,racha:"LWWW"}},
+  "arsenal-vs-borussia-dortmund": {n:4, comp:"Champions", h:{gf:2.0,ga:0.8,btts:"2/4",bttsN:2,over:"3/4",overN:3,racha:"WDWW"}, a:{gf:1.8,ga:1.3,btts:"3/4",bttsN:3,over:"3/4",overN:3,racha:"WWLW"}},
+  "manchester-city-vs-napoli": {n:4, comp:"Champions", h:{gf:3.0,ga:1.8,btts:"3/4",bttsN:3,over:"3/4",overN:3,racha:"WWLW"}, a:{gf:1.5,ga:2.8,btts:"3/4",bttsN:3,over:"3/4",overN:3,racha:"LWLL"}},
+  "real-madrid-vs-psv-eindhoven": {n:4, comp:"Champions", h:{gf:3.3,ga:1.8,btts:"4/4",bttsN:4,over:"4/4",overN:4,racha:"WWWW"}, a:{gf:0.8,ga:1.0,btts:"2/4",bttsN:2,over:"1/4",overN:1,racha:"LWLD"}},
+  "club-brugge-vs-liverpool": {n:4, comp:"Champions", h:{gf:2.8,ga:1.8,btts:"3/4",bttsN:3,over:"4/4",overN:4,racha:"WWWL"}, a:{gf:3.5,ga:2.5,btts:"4/4",bttsN:4,over:"4/4",overN:4,racha:"LWWW"}},
+  "internazionale-vs-vfb-stuttgart": {n:4, comp:"Champions", h:{gf:2.0,ga:1.5,btts:"2/4",bttsN:2,over:"3/4",overN:3,racha:"WWLL"}, a:{gf:1.8,ga:1.0,btts:"2/4",bttsN:2,over:"2/4",overN:2,racha:"LDWW"}},
+  "lille-vs-bayern-munich": {n:4, comp:"Champions", h:{gf:1.0,ga:2.5,btts:"2/4",bttsN:2,over:"3/4",overN:3,racha:"DLLL"}, a:{gf:3.0,ga:1.3,btts:"2/4",bttsN:2,over:"3/4",overN:3,racha:"WDDW"}},
+  "paris-saint-germain-vs-as-roma": {n:4, comp:"Champions", h:{gf:5.0,ga:1.3,btts:"3/4",bttsN:3,over:"4/4",overN:4,racha:"WWWW"}, a:{gf:2.5,ga:2.0,btts:"3/4",bttsN:3,over:"3/4",overN:3,racha:"LWLD"}},
+  "sporting-cp-vs-manchester-united": {n:4, comp:"Champions", h:{gf:2.0,ga:1.0,btts:"2/4",bttsN:2,over:"2/4",overN:2,racha:"WLWW"}, a:{gf:2.0,ga:2.0,btts:"2/4",bttsN:2,over:"3/4",overN:3,racha:"WLLW"}},
+  "celta-vigo-vs-afc-bournemouth": {n:4, comp:"Europa League", h:{gf:1.0,ga:1.5,btts:"3/4",bttsN:3,over:"3/4",overN:3,racha:"LWLL"}, a:{gf:2.8,ga:0.5,btts:"2/4",bttsN:2,over:"4/4",overN:4,racha:"WWWW"}},
+  "dinamo-zagreb-vs-bayer-leverkusen": {n:4, comp:"Europa League", h:{gf:1.3,ga:1.0,btts:"1/4",bttsN:1,over:"1/4",overN:1,racha:"WLWD"}, a:{gf:2.0,ga:0.3,btts:"0/4",bttsN:0,over:"1/4",overN:1,racha:"LWWW"}},
+  "olympiacos-vs-ac-milan": {n:4, comp:"Europa League", h:{gf:1.0,ga:0.3,btts:"1/4",bttsN:1,over:"1/4",overN:1,racha:"DWWW"}, a:{gf:1.0,ga:1.8,btts:"0/4",bttsN:0,over:"2/4",overN:2,racha:"LLWL"}},
+  "werder-bremen-vs-borussia-monchengladbach": {n:5, comp:"liga", h:{gf:1.8,ga:1.4,btts:"3/5",bttsN:3,over:"3/5",overN:3,racha:"LWWDD"}, a:{gf:1.2,ga:1.8,btts:"4/5",bttsN:4,over:"4/5",overN:4,racha:"LDWLL"}},
+  "venezia-vs-bologna": {n:5, comp:"liga", h:{gf:0.6,ga:1.0,btts:"1/5",bttsN:1,over:"1/5",overN:1,racha:"WLLLW"}, a:{gf:2.2,ga:1.4,btts:"4/5",bttsN:4,over:"4/5",overN:4,racha:"WWWWL"}},
+  "nottingham-forest-vs-chelsea": {n:5, comp:"liga", h:{gf:1.0,ga:1.6,btts:"3/5",bttsN:3,over:"2/5",overN:2,racha:"WLDLL"}, a:{gf:1.8,ga:0.8,btts:"1/5",bttsN:1,over:"1/5",overN:1,racha:"LWLWW"}},
+  "levante-vs-racing-santander": {n:5, comp:"liga", h:{gf:1.0,ga:1.2,btts:"3/5",bttsN:3,over:"2/5",overN:2,racha:"DLLWD"}, a:{gf:1.2,ga:1.8,btts:"3/5",bttsN:3,over:"4/5",overN:4,racha:"WLWLD"}},
+  "hamburg-sv-vs-bayern-munich": {n:5, comp:"liga", h:{gf:1.6,ga:1.4,btts:"3/5",bttsN:3,over:"3/5",overN:3,racha:"WLLWW"}, a:{gf:3.0,ga:1.4,btts:"5/5",bttsN:5,over:"5/5",overN:5,racha:"WDWWD"}},
+  "manchester-united-vs-brentford": {n:5, comp:"liga", h:{gf:1.2,ga:2.2,btts:"3/5",bttsN:3,over:"2/5",overN:2,racha:"DLLDD"}, a:{gf:1.2,ga:1.4,btts:"3/5",bttsN:3,over:"2/5",overN:2,racha:"LWDLD"}},
+  "elche-vs-atletico-madrid": {n:5, comp:"liga", h:{gf:0.6,ga:0.6,btts:"0/5",bttsN:0,over:"1/5",overN:1,racha:"LLWDD"}, a:{gf:1.4,ga:0.6,btts:"2/5",bttsN:2,over:"2/5",overN:2,racha:"LWWWW"}},
+  "vfb-stuttgart-vs-eintracht-frankfurt": {n:5, comp:"liga", h:{gf:1.8,ga:1.2,btts:"2/5",bttsN:2,over:"2/5",overN:2,racha:"WWLLW"}, a:{gf:1.2,ga:2.0,btts:"2/5",bttsN:2,over:"3/5",overN:3,racha:"DWLWL"}},
+  "internazionale-vs-genoa": {n:5, comp:"liga", h:{gf:2.0,ga:1.0,btts:"3/5",bttsN:3,over:"3/5",overN:3,racha:"WLWWW"}, a:{gf:1.2,ga:1.0,btts:"2/5",bttsN:2,over:"2/5",overN:2,racha:"LWWWL"}},
+  "real-madrid-vs-alaves": {n:5, comp:"liga", h:{gf:2.6,ga:0.4,btts:"2/5",bttsN:2,over:"4/5",overN:4,racha:"WWWWW"}, a:{gf:0.8,ga:2.2,btts:"4/5",bttsN:4,over:"3/5",overN:3,racha:"DLDLL"}},
+  "everton-vs-liverpool": {n:5, comp:"liga", h:{gf:1.2,ga:1.4,btts:"2/5",bttsN:2,over:"2/5",overN:2,racha:"WWLLD"}, a:{gf:1.4,ga:1.2,btts:"2/5",bttsN:2,over:"3/5",overN:3,racha:"WLWWL"}},
+  "sassuolo-vs-napoli": {n:5, comp:"liga", h:{gf:1.2,ga:3.8,btts:"3/5",bttsN:3,over:"4/5",overN:4,racha:"LLLLL"}, a:{gf:1.6,ga:1.6,btts:"3/5",bttsN:3,over:"2/5",overN:2,racha:"DLWDL"}},
+  "deportivo-vs-barcelona": {n:5, comp:"liga", h:{gf:1.0,ga:1.2,btts:"3/5",bttsN:3,over:"2/5",overN:2,racha:"DWLDL"}, a:{gf:3.4,ga:1.2,btts:"4/5",bttsN:4,over:"5/5",overN:5,racha:"WWLWW"}},
+  "arsenal-vs-manchester-city": {n:5, comp:"liga", h:{gf:1.4,ga:0.2,btts:"1/5",bttsN:1,over:"1/5",overN:1,racha:"WWWWW"}, a:{gf:1.6,ga:1.6,btts:"3/5",bttsN:3,over:"4/5",overN:4,racha:"LLLWW"}},
+  "borussia-dortmund-vs-bayer-leverkusen": {n:5, comp:"liga", h:{gf:1.4,ga:1.0,btts:"3/5",bttsN:3,over:"3/5",overN:3,racha:"WDWDD"}, a:{gf:2.0,ga:2.4,btts:"4/5",bttsN:4,over:"5/5",overN:5,racha:"WLLWW"}},
+  "como-vs-juventus": {n:5, comp:"liga", h:{gf:1.8,ga:0.8,btts:"2/5",bttsN:2,over:"2/5",overN:2,racha:"LWWWW"}, a:{gf:1.2,ga:1.4,btts:"1/5",bttsN:1,over:"2/5",overN:2,racha:"DWLWL"}},
+};
+  function radioRow(label, hVal, aVal, hW, aW){
+    return '<div class="radio-metric">' +
+      '<div class="radio-row">' +
+      '<b class="radio-num">' + esc(hVal) + '</b>' +
+      '<div class="radio-track"><div class="radio-fill radio-home" style="width:' + hW + '%"></div></div>' +
+      '<div class="radio-track radio-track-r"><div class="radio-fill radio-away" style="width:' + aW + '%"></div></div>' +
+      '<b class="radio-num">' + esc(aVal) + '</b>' +
+      '</div>' +
+      '<div class="radio-cap">' + esc(label) + '</div>' +
+      '</div>';
+  }
+  function radioDots(racha){
+    /* racha es un string V/E/D del más reciente al más antiguo: se muestra tal cual. */
+    return racha.split("").map(function(r){
+      return '<span class="res-badge res-' + esc(r) + '">' + esc(r) + '</span>';
+    }).join("");
+  }
+  function radiografiaBlock(home, away, key){
+    var h = "<h4>Así llegan</h4>";
+    var r = RADIO[key];
+    if (!r){
+      return h + '<div class="detail-pending">pendiente — sin datos de los últimos partidos en ESPN.</div>';
+    }
+    var ah = r.h, aa = r.a, n = r.n;
+    h += '<div class="radio-head"><span>' + esc(home) + '</span><span class="radio-vs">vs</span><span>' + esc(away) + '</span></div>';
+    var maxGf = Math.max(ah.gf, aa.gf), maxGa = Math.max(ah.ga, aa.ga);
+    h += radioRow("Goles por partido", ah.gf.toFixed(1), aa.gf.toFixed(1),
+      maxGf ? Math.round(ah.gf / maxGf * 100) : 0,
+      maxGf ? Math.round(aa.gf / maxGf * 100) : 0);
+    h += radioRow("Goles encajados por partido", ah.ga.toFixed(1), aa.ga.toFixed(1),
+      maxGa ? Math.round(ah.ga / maxGa * 100) : 0,
+      maxGa ? Math.round(aa.ga / maxGa * 100) : 0);
+    h += radioRow("BTTS", ah.btts, aa.btts,
+      Math.round(ah.bttsN / n * 100), Math.round(aa.bttsN / n * 100));
+    h += radioRow("Más 2.5", ah.over, aa.over,
+      Math.round(ah.overN / n * 100), Math.round(aa.overN / n * 100));
+    h += '<div class="radio-metric"><div class="radio-dots-row">' +
+      '<span class="radio-dots">' + radioDots(ah.racha) + '</span>' +
+      '<span class="radio-cap-inline">Racha</span>' +
+      '<span class="radio-dots">' + radioDots(aa.racha) + '</span></div></div>';
+    var ventana = r.comp === "liga" ? "Últimos 5 partidos de liga" :
+      "Últimos 4 partidos de " + r.comp;
+    h += '<p class="detail-note">' + esc(ventana) + ' según ESPN (23 nov 2026). Racha: ' + n + ' puntos V/E/D, del partido más reciente al más antiguo.</p>';
+    return h;
+  }
+  function openDetail(article){
+    var names = article.querySelectorAll(".team b");
+    if (names.length < 2) return;
+    var home = names[0].textContent.trim(), away = names[1].textContent.trim();
+    var key = norm(home) + "-vs-" + norm(away);
+    var d = DETAIL[key] || null;
+    var leagueEl = article.querySelector(".m-league");
+    var timeEl = article.querySelector(".m-time");
+    titleEl.textContent = home + " vs " + away;
+    subEl.textContent = (leagueEl ? leagueEl.textContent : "") +
+      (timeEl ? " · " + timeEl.textContent.trim() : "");
+    var h = "";
+    h += "<h4>Marcador en vivo</h4><div id=\"vivoLine\" class=\"detail-pending\">Consultando ESPN…</div>";
+    var odds = article.querySelector(".odds");
+    if (odds){
+      h += "<h4>Momios y valor esperado</h4>" + odds.outerHTML;
+    } else {
+      h += "<h4>Momios y valor esperado</h4><p>pendiente</p>";
+    }
+    h += "<h4>Últimos 5 partidos</h4><div class=\"detail-two\">";
+    if (d){
+      h += lastFiveList(home, d.lastFive.home) + lastFiveList(away, d.lastFive.away);
+    } else {
+      h += lastFiveList(home, null) + lastFiveList(away, null);
+    }
+    h += "</div>";
+    h += radiografiaBlock(home, away, key);
+    h += "<h4>Historial directo (H2H)</h4>";
+    if (d && d.h2h && d.h2h.partidos && d.h2h.partidos.length){
+      h += "<p><b>" + esc(d.h2h.resumen) + "</b> · " + esc(d.h2h.etiqueta) + "</p><div class=\"detail-list\"><ul>";
+      d.h2h.partidos.forEach(function(m){
+        h += "<li><span class=\"d-date\">" + esc(m.fecha) + "</span><span><b>" + esc(m.local) +
+          " " + esc(m.goles_local) + "–" + esc(m.goles_visitante) + " " + esc(m.visitante) +
+          "</b></span></li>";
+      });
+      h += "</ul></div>";
+    } else {
+      h += "<p>Sin enfrentamientos previos registrados en ESPN.</p>";
+    }
+    h += "<h4>Posición en la tabla</h4><div class=\"detail-pos\">";
+    if (d){
+      h += posBox(home, d.league, d.standings.home) + posBox(away, d.league, d.standings.away);
+    } else {
+      h += posBox(home, "", null) + posBox(away, "", null);
+    }
+    h += "</div>";
+    h += "<h4>Alineación oficial</h4>";
+    h += "<div class=\"detail-pending\">pendiente — la alineación oficial se publica ~1 h antes del partido.</div>";
+    h += fuerzaXIBlock();
+    h += "<p class=\"detail-note\">Datos: ESPN (consultado 23 nov 2026). Últimos 5, historial y tabla son datos reales; lo no verificado se muestra como pendiente.</p>";
+    bodyEl.innerHTML = h;
+    var vivoEl = document.getElementById("vivoLine");
+    if (vivoEl && typeof MarcadorEnVivo !== "undefined" && PARTIDOS_VIVO[key]){
+      MarcadorEnVivo.init([PARTIDOS_VIVO[key]], vivoEl);
+    }
+    overlay.hidden = false;
+    overlay.classList.add("open");
+    document.body.style.overflow = "hidden";
+    document.getElementById("detailClose").focus();
+  }
+  function closeDetail(){
+    if (typeof MarcadorEnVivo !== "undefined") MarcadorEnVivo.stop();
+    overlay.classList.remove("open");
+    overlay.hidden = true;
+    document.body.style.overflow = "";
+    if (lastOpener) lastOpener.focus();
+  }
+  document.getElementById("detailClose").addEventListener("click", closeDetail);
+  overlay.addEventListener("click", function(e){ if (e.target === overlay) closeDetail(); });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "Escape" && overlay.classList.contains("open")) closeDetail();
+  });
+
+  document.querySelectorAll(".match").forEach(function(article){
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "detail-btn";
+    btn.textContent = "Ver detalle del partido";
+    btn.addEventListener("click", function(){ lastOpener = btn; openDetail(article); });
+    article.appendChild(btn);
+    var teams = article.querySelector(".teams");
+    if (teams){
+      teams.addEventListener("click", function(){ lastOpener = btn; openDetail(article); });
+    }
+  });
+})();
+</script>
+
 </body>
 </html>

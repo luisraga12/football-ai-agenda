@@ -17,8 +17,9 @@ producto, nadie debe volver a meterle mano.
 
 **Comunicación del equipo:** desde el 23 nov 2026 los mensajes del equipo
 (`JEFE.md`, `EMPLEADO-1.md`, `EMPLEADO-2.md`) viven en el repo privado
-[buzón](https://github.com/luisraga12/buzón), ya no en este repo. La forma
-de trabajar está en `FORMA-DE-TRABAJAR.md`.
+[buzón](https://github.com/luisraga12/buzon), ya no en este repo. La forma
+de trabajar está en
+[`FORMA-DE-TRABAJAR.md` del buzón](https://github.com/luisraga12/buzon/blob/main/FORMA-DE-TRABAJAR.md).
 
 ## ✅ Semana 1 — Hecha (entregada 19 nov 2026, commit `4032d10`)
 
@@ -32,6 +33,11 @@ de trabajar está en `FORMA-DE-TRABAJAR.md`.
   https://luisraga12.github.io/football-ai-agenda/
 - Cuenta gratuita de API-Football creada y probada en vivo: el plan gratis
   solo abre las temporadas 2022 a 2024, no sirve para la 2026/27.
+- Revisión de la Semana 1 (23 nov 2026, por el Empleado 1, verificada por
+  el jefe contra ESPN en vivo): favorito 1X2 6/16, Más 2.5 5/10 cuando el
+  modelo daba >50%, BTTS 3/6. Semana con 7 empates de 16; el modelo casi
+  no caza el empate (talón del Poisson con solo 5 partidos). El EV del 1X2
+  se lee con más cautela que el de totales.
 - Momios de ESPN/DraftKings verificados en vivo para la Semana 3.
 - Probabilidades Poisson de la Semana 1 añadidas 19 nov 2026 (a petición
   del cliente): 16 partidos del 20–22 nov con 1X2, +2.5 y BTTS, mismo
@@ -143,12 +149,16 @@ de trabajar está en `FORMA-DE-TRABAJAR.md`.
 - Guardar los picks elegidos.
 - Actualizar los partidos con los de esa semana.
 
-## ⏳ Semana 5 — Pendiente: detalle del partido
+## ✅ Semana 5 — Hecha (adelanto en vivo 23 nov 2026)
 
 - Al tocar un partido, abrir su detalle estilo 365Scores / OneFootball:
   últimos 5 partidos de cada equipo, historial entre ambos (H2H),
   posición en la tabla y momios.
 - Alineación oficial cuando ya esté publicada (cerca de la hora del partido).
+- Adelanto del Empleado 2 (23 nov, verificado por el jefe contra ESPN en
+  vivo y probado en el preview): el detalle quedó en vivo en `index.html`
+  la misma noche, junto con el bloque Fuerza del XI (Semana 8) con sus
+  fracciones (Goles/Minutos/Puntos contra el mejor XI).
 
 ## ⏳ Semana 6 — Pendiente: alineación probable
 
@@ -183,6 +193,13 @@ de trabajar está en `FORMA-DE-TRABAJAR.md`.
 - Primero se verifica la fuente (estadísticas de jugadores de ESPN) y
   la fórmula exacta; después se programa y se muestra en el detalle
   del partido.
+
+## Nota mar 24 nov 2026 — Historial, barra fija y Radiografía (revisión del jefe)
+
+- Historial de aciertos de la Semana 1 entregado por E1 y aprobado (reproducido byte-idéntico por el jefe): 1X2 6/16, Más 2.5 5/10, BTTS 3/6. Queda como rutina manual de cada lunes, no en el flujo diario. La sección "Cómo le fue al modelo" va en la página principal.
+- Nombres del XI corregidos por E1 y aprobados (agregados idénticos, verificados contra el roster de ESPN en vivo): la causa es que ESPN lista a esos jugadores en esos equipos; el cliente los corrigió por las plantillas reales.
+- Barra fija arreglada por E2 y aprobada (la barra deja de ser fija para que nada se tape al bajar); Radiografía enfrentada ("Así llegan") aprobada con una corrección (Alavés Más 2.5: 3/5, no 1/5).
+- Port a la página en vivo en curso (barra + Radiografía + nombres XI corregidos + sección de historial).
 
 ## Reglas del proyecto
 
