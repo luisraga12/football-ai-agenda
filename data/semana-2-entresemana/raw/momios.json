@@ -11,27 +11,9 @@
    "liga": "uefa.champions",
    "fecha_cst": "2026-11-24 11:45",
    "liga_nombre": "Champions League",
-   "proveedor": "DraftKings",
-   "estado": "con_momio",
-   "momios": {
-    "proveedor": "DraftKings",
-    "moneyline": {
-     "home": 2.85,
-     "draw": 4.0,
-     "away": 2.25
-    },
-    "total": {
-     "linea": 3.5,
-     "over": 1.9523809523809523,
-     "under": 1.8695652173913042
-    },
-    "spread": {
-     "home_linea": 0.5,
-     "home": 1.625,
-     "away_linea": -0.5,
-     "away": 2.15
-    }
-   }
+   "proveedor": null,
+   "estado": "pendiente",
+   "momios": null
   },
   {
    "away": "Borussia Dortmund",
@@ -42,27 +24,9 @@
    "liga": "uefa.champions",
    "fecha_cst": "2026-11-24 14:00",
    "liga_nombre": "Champions League",
-   "proveedor": "DraftKings",
-   "estado": "con_momio",
-   "momios": {
-    "proveedor": "DraftKings",
-    "moneyline": {
-     "home": 1.4166666666666667,
-     "draw": 4.9,
-     "away": 7.5
-    },
-    "total": {
-     "linea": 2.5,
-     "over": 1.606060606060606,
-     "under": 2.35
-    },
-    "spread": {
-     "home_linea": -1.5,
-     "home": 2.05,
-     "away_linea": 1.5,
-     "away": 1.6666666666666665
-    }
-   }
+   "proveedor": null,
+   "estado": "pendiente",
+   "momios": null
   },
   {
    "away": "Napoli",
@@ -73,27 +37,9 @@
    "liga": "uefa.champions",
    "fecha_cst": "2026-11-24 14:00",
    "liga_nombre": "Champions League",
-   "proveedor": "DraftKings",
-   "estado": "con_momio",
-   "momios": {
-    "proveedor": "DraftKings",
-    "moneyline": {
-     "home": 1.2857142857142856,
-     "draw": 6.5,
-     "away": 9.0
-    },
-    "total": {
-     "linea": 3.5,
-     "over": 1.8,
-     "under": 2.0
-    },
-    "spread": {
-     "home_linea": -1.5,
-     "home": 1.6666666666666665,
-     "away_linea": 1.5,
-     "away": 2.05
-    }
-   }
+   "proveedor": null,
+   "estado": "pendiente",
+   "momios": null
   },
   {
    "away": "PSV Eindhoven",
@@ -104,27 +50,9 @@
    "liga": "uefa.champions",
    "fecha_cst": "2026-11-24 14:00",
    "liga_nombre": "Champions League",
-   "proveedor": "DraftKings",
-   "estado": "con_momio",
-   "momios": {
-    "proveedor": "DraftKings",
-    "moneyline": {
-     "home": 1.1666666666666667,
-     "draw": 9.0,
-     "away": 12.0
-    },
-    "total": {
-     "linea": 4.5,
-     "over": 2.0,
-     "under": 1.8
-    },
-    "spread": {
-     "home_linea": -2.5,
-     "home": 1.9090909090909092,
-     "away_linea": 2.5,
-     "away": 1.7692307692307692
-    }
-   }
+   "proveedor": null,
+   "estado": "pendiente",
+   "momios": null
   },
   {
    "away": "Liverpool",
@@ -151,7 +79,7 @@
     },
     "spread": {
      "home_linea": 0.5,
-     "home": 2.2,
+     "home": 2.25,
      "away_linea": -0.5,
      "away": 1.5882352941176472
     }
@@ -171,7 +99,7 @@
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 1.425531914893617,
+     "home": 1.4166666666666667,
      "draw": 5.5,
      "away": 6.0
     },
@@ -202,20 +130,20 @@
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 5.0,
-     "draw": 4.4,
-     "away": 1.606060606060606
+     "home": 4.7,
+     "draw": 4.1,
+     "away": 1.6896551724137931
     },
     "total": {
      "linea": 2.5,
-     "over": 1.5714285714285714,
-     "under": 2.4
+     "over": 1.625,
+     "under": 2.3
     },
     "spread": {
      "home_linea": 0.5,
-     "home": 2.3,
+     "home": 2.15,
      "away_linea": -0.5,
-     "away": 1.5555555555555556
+     "away": 1.625
     }
    }
   },
@@ -233,14 +161,14 @@
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 1.425531914893617,
+     "home": 1.4444444444444444,
      "draw": 5.0,
      "away": 6.5
     },
     "total": {
      "linea": 3.5,
-     "over": 1.8695652173913042,
-     "under": 1.9523809523809523
+     "over": 1.8333333333333335,
+     "under": 2.0
     },
     "spread": {
      "home_linea": -1.5,
@@ -264,20 +192,20 @@
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 2.4,
+     "home": 2.55,
      "draw": 3.75,
-     "away": 2.7
+     "away": 2.6
     },
     "total": {
      "linea": 3.5,
-     "over": 2.35,
-     "under": 1.606060606060606
+     "over": 2.3,
+     "under": 1.625
     },
     "spread": {
      "home_linea": -0.5,
-     "home": 2.3,
+     "home": 2.4,
      "away_linea": 0.5,
-     "away": 1.5555555555555556
+     "away": 1.5128205128205128
     }
    }
   },
@@ -295,9 +223,9 @@
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 3.8,
-     "draw": 3.65,
-     "away": 1.9523809523809523
+     "home": 3.6,
+     "draw": 3.55,
+     "away": 2.05
     },
     "total": {
      "linea": 2.5,
@@ -306,9 +234,9 @@
     },
     "spread": {
      "home_linea": 0.5,
-     "home": 1.8,
+     "home": 1.7692307692307692,
      "away_linea": -0.5,
-     "away": 1.9090909090909092
+     "away": 1.9523809523809523
     }
    }
   },
@@ -357,9 +285,9 @@
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 2.75,
+     "home": 2.9,
      "draw": 3.45,
-     "away": 2.55
+     "away": 2.45
     },
     "total": {
      "linea": 2.5,
@@ -368,11 +296,169 @@
     },
     "spread": {
      "home_linea": 0.5,
-     "home": 1.5128205128205128,
+     "home": 1.5555555555555556,
      "away_linea": -0.5,
-     "away": 2.35
+     "away": 2.3
     }
    }
+  },
+  {
+   "home": "Toluca",
+   "home_id": "223",
+   "away": "Atlas",
+   "away_id": "216",
+   "fecha": "2026-11-25",
+   "liga": "mex.1",
+   "fecha_cst": "2026-11-25 19:00",
+   "liga_nombre": "Liga MX",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 1.434782608695652,
+     "draw": 4.8,
+     "away": 6.0
+    },
+    "total": {
+     "linea": 3.5,
+     "over": 2.15,
+     "under": 1.606060606060606
+    },
+    "spread": {
+     "home_linea": -1.5,
+     "home": 2.1,
+     "away_linea": 1.5,
+     "away": 1.625
+    }
+   }
+  },
+  {
+   "home": "Monterrey",
+   "home_id": "220",
+   "away": "América",
+   "away_id": "227",
+   "fecha": "2026-11-25",
+   "liga": "mex.1",
+   "fecha_cst": "2026-11-25 21:10",
+   "liga_nombre": "Liga MX",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 2.35,
+     "draw": 3.25,
+     "away": 3.0
+    },
+    "total": {
+     "linea": 2.5,
+     "over": 1.8333333333333335,
+     "under": 1.8695652173913042
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "home": 2.2,
+     "away_linea": 0.5,
+     "away": 1.5555555555555556
+    }
+   }
+  },
+  {
+   "home": "Pachuca",
+   "home_id": "234",
+   "away": "Guadalajara",
+   "away_id": "219",
+   "fecha": "2026-11-26",
+   "liga": "mex.1",
+   "fecha_cst": "2026-11-26 19:00",
+   "liga_nombre": "Liga MX",
+   "proveedor": null,
+   "estado": "pendiente",
+   "momios": null
+  },
+  {
+   "home": "León",
+   "home_id": "228",
+   "away": "Cruz Azul",
+   "away_id": "218",
+   "fecha": "2026-11-26",
+   "liga": "mex.1",
+   "fecha_cst": "2026-11-26 21:10",
+   "liga_nombre": "Liga MX",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 3.1,
+     "draw": 3.45,
+     "away": 2.2
+    },
+    "total": {
+     "linea": 2.5,
+     "over": 1.6896551724137931,
+     "under": 2.05
+    },
+    "spread": {
+     "home_linea": 0.5,
+     "home": 1.6451612903225805,
+     "away_linea": -0.5,
+     "away": 2.05
+    }
+   }
+  },
+  {
+   "home": "Atlas",
+   "home_id": "216",
+   "away": "Toluca",
+   "away_id": "223",
+   "fecha": "2026-11-28",
+   "liga": "mex.1",
+   "fecha_cst": "2026-11-28 19:00",
+   "liga_nombre": "Liga MX",
+   "proveedor": null,
+   "estado": "pendiente",
+   "momios": null
+  },
+  {
+   "home": "América",
+   "home_id": "227",
+   "away": "Monterrey",
+   "away_id": "220",
+   "fecha": "2026-11-28",
+   "liga": "mex.1",
+   "fecha_cst": "2026-11-28 21:10",
+   "liga_nombre": "Liga MX",
+   "proveedor": null,
+   "estado": "pendiente",
+   "momios": null
+  },
+  {
+   "home": "Guadalajara",
+   "home_id": "219",
+   "away": "Pachuca",
+   "away_id": "234",
+   "fecha": "2026-11-29",
+   "liga": "mex.1",
+   "fecha_cst": "2026-11-29 19:07",
+   "liga_nombre": "Liga MX",
+   "proveedor": null,
+   "estado": "pendiente",
+   "momios": null
+  },
+  {
+   "home": "Cruz Azul",
+   "home_id": "218",
+   "away": "León",
+   "away_id": "228",
+   "fecha": "2026-11-29",
+   "liga": "mex.1",
+   "fecha_cst": "2026-11-29 21:00",
+   "liga_nombre": "Liga MX",
+   "proveedor": null,
+   "estado": "pendiente",
+   "momios": null
   }
  ]
 }

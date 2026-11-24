@@ -110,6 +110,50 @@
   "ga": 8.0,
   "n": 4
  },
+ "América": {
+  "league": "mex.1",
+  "id": "227",
+  "matches": [
+   {
+    "date": "2026-11-22T03:00Z",
+    "opp": "Tigres UANL",
+    "home": false,
+    "gf": 0.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-11-08T03:10Z",
+    "opp": "Pumas UNAM",
+    "home": false,
+    "gf": 2.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-11-01T03:10Z",
+    "opp": "Toluca",
+    "home": true,
+    "gf": 2.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-10-29T03:00Z",
+    "opp": "Tijuana",
+    "home": true,
+    "gf": 1.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-26T01:05Z",
+    "opp": "Pachuca",
+    "home": true,
+    "gf": 1.0,
+    "ga": 2.0
+   }
+  ],
+  "gf": 6.0,
+  "ga": 8.0,
+  "n": 5
+ },
  "Arsenal": {
   "league": "uefa.champions",
   "id": 359,
@@ -183,6 +227,50 @@
   "gf": 12.0,
   "ga": 6.0,
   "n": 4
+ },
+ "Atlas": {
+  "league": "mex.1",
+  "id": "216",
+  "matches": [
+   {
+    "date": "2026-11-21T03:00Z",
+    "opp": "FC Juárez",
+    "home": false,
+    "gf": 3.0,
+    "ga": 3.0
+   },
+   {
+    "date": "2026-11-07T23:00Z",
+    "opp": "Pachuca",
+    "home": true,
+    "gf": 1.0,
+    "ga": 4.0
+   },
+   {
+    "date": "2026-10-31T01:00Z",
+    "opp": "Atlético de San Luis",
+    "home": false,
+    "gf": 1.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-25T23:00Z",
+    "opp": "Puebla",
+    "home": true,
+    "gf": 4.0,
+    "ga": 3.0
+   },
+   {
+    "date": "2026-10-22T01:00Z",
+    "opp": "América",
+    "home": true,
+    "gf": 2.0,
+    "ga": 5.0
+   }
+  ],
+  "gf": 11.0,
+  "ga": 15.0,
+  "n": 5
  },
  "Bayer Leverkusen": {
   "league": "uefa.europa",
@@ -369,6 +457,50 @@
   "ga": 7.0,
   "n": 4
  },
+ "Cruz Azul": {
+  "league": "mex.1",
+  "id": "218",
+  "matches": [
+   {
+    "date": "2026-11-22T23:07Z",
+    "opp": "Guadalajara",
+    "home": false,
+    "gf": 0.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-11-08T01:00Z",
+    "opp": "Tigres UANL",
+    "home": false,
+    "gf": 3.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-11-02T01:10Z",
+    "opp": "León",
+    "home": true,
+    "gf": 2.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-26T01:00Z",
+    "opp": "Querétaro",
+    "home": false,
+    "gf": 3.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-22T03:10Z",
+    "opp": "Pachuca",
+    "home": false,
+    "gf": 2.0,
+    "ga": 1.0
+   }
+  ],
+  "gf": 10.0,
+  "ga": 6.0,
+  "n": 5
+ },
  "Dinamo Zagreb": {
   "league": "uefa.europa",
   "id": 597,
@@ -443,6 +575,50 @@
   "ga": 9.0,
   "n": 4
  },
+ "Guadalajara": {
+  "league": "mex.1",
+  "id": "219",
+  "matches": [
+   {
+    "date": "2026-11-22T23:07Z",
+    "opp": "Cruz Azul",
+    "home": true,
+    "gf": 1.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-11-09T02:10Z",
+    "opp": "León",
+    "home": false,
+    "gf": 1.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-11-01T01:07Z",
+    "opp": "Atlante",
+    "home": true,
+    "gf": 4.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-10-25T01:00Z",
+    "opp": "Monterrey",
+    "home": false,
+    "gf": 1.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-21T00:07Z",
+    "opp": "Necaxa",
+    "home": true,
+    "gf": 1.0,
+    "ga": 0.0
+   }
+  ],
+  "gf": 8.0,
+  "ga": 3.0,
+  "n": 5
+ },
  "Internazionale": {
   "league": "uefa.champions",
   "id": 110,
@@ -479,6 +655,50 @@
   "gf": 8.0,
   "ga": 6.0,
   "n": 4
+ },
+ "León": {
+  "league": "mex.1",
+  "id": "228",
+  "matches": [
+   {
+    "date": "2026-11-21T23:00Z",
+    "opp": "Santos",
+    "home": false,
+    "gf": 2.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-11-09T02:10Z",
+    "opp": "Guadalajara",
+    "home": true,
+    "gf": 1.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-11-02T01:10Z",
+    "opp": "Cruz Azul",
+    "home": false,
+    "gf": 1.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-10-24T23:00Z",
+    "opp": "Toluca",
+    "home": true,
+    "gf": 1.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-21T03:10Z",
+    "opp": "Tigres UANL",
+    "home": false,
+    "gf": 2.0,
+    "ga": 0.0
+   }
+  ],
+  "gf": 7.0,
+  "ga": 5.0,
+  "n": 5
  },
  "Lille": {
   "league": "uefa.champions",
@@ -628,6 +848,50 @@
   "ga": 8.0,
   "n": 4
  },
+ "Monterrey": {
+  "league": "mex.1",
+  "id": "220",
+  "matches": [
+   {
+    "date": "2026-11-22T01:00Z",
+    "opp": "Pumas UNAM",
+    "home": false,
+    "gf": 2.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-11-14T23:00Z",
+    "opp": "Querétaro",
+    "home": false,
+    "gf": 1.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-11-08T01:00Z",
+    "opp": "Toluca",
+    "home": false,
+    "gf": 0.0,
+    "ga": 4.0
+   },
+   {
+    "date": "2026-11-01T01:05Z",
+    "opp": "Tijuana",
+    "home": true,
+    "gf": 3.0,
+    "ga": 3.0
+   },
+   {
+    "date": "2026-10-25T01:00Z",
+    "opp": "Guadalajara",
+    "home": true,
+    "gf": 0.0,
+    "ga": 1.0
+   }
+  ],
+  "gf": 6.0,
+  "ga": 8.0,
+  "n": 5
+ },
  "Napoli": {
   "league": "uefa.champions",
   "id": 114,
@@ -739,6 +1003,50 @@
   "ga": 4.0,
   "n": 4
  },
+ "Pachuca": {
+  "league": "mex.1",
+  "id": "234",
+  "matches": [
+   {
+    "date": "2026-11-21T22:50Z",
+    "opp": "Toluca",
+    "home": true,
+    "gf": 2.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-11-07T23:00Z",
+    "opp": "Atlas",
+    "home": false,
+    "gf": 4.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-31T23:00Z",
+    "opp": "Tigres UANL",
+    "home": true,
+    "gf": 3.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-10-26T01:05Z",
+    "opp": "América",
+    "home": false,
+    "gf": 2.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-22T03:10Z",
+    "opp": "Cruz Azul",
+    "home": true,
+    "gf": 1.0,
+    "ga": 2.0
+   }
+  ],
+  "gf": 12.0,
+  "ga": 4.0,
+  "n": 5
+ },
  "Paris Saint-Germain": {
   "league": "uefa.champions",
   "id": 160,
@@ -849,6 +1157,50 @@
   "gf": 8.0,
   "ga": 4.0,
   "n": 4
+ },
+ "Toluca": {
+  "league": "mex.1",
+  "id": "223",
+  "matches": [
+   {
+    "date": "2026-11-21T22:50Z",
+    "opp": "Pachuca",
+    "home": false,
+    "gf": 0.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-11-08T01:00Z",
+    "opp": "Monterrey",
+    "home": true,
+    "gf": 4.0,
+    "ga": 0.0
+   },
+   {
+    "date": "2026-11-01T03:10Z",
+    "opp": "América",
+    "home": false,
+    "gf": 2.0,
+    "ga": 2.0
+   },
+   {
+    "date": "2026-10-24T23:00Z",
+    "opp": "León",
+    "home": false,
+    "gf": 1.0,
+    "ga": 1.0
+   },
+   {
+    "date": "2026-10-22T01:00Z",
+    "opp": "Tijuana",
+    "home": true,
+    "gf": 2.0,
+    "ga": 2.0
+   }
+  ],
+  "gf": 9.0,
+  "ga": 7.0,
+  "n": 5
  },
  "VfB Stuttgart": {
   "league": "uefa.champions",
