@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="color-scheme" content="light dark" />
 <link rel="icon" href="data:," />
-<title>Football AI Agenda — Marcador en vivo (propuesta UI) · Adelanto Semana 5</title>
+<title>Football AI Agenda — Marcador en vivo (módulo de caché) · Adelanto Semana 5</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&family=Archivo+Narrow:wght@600;700&display=swap" rel="stylesheet" />
@@ -307,6 +307,7 @@
   .vivo-demo button{margin:2px 4px 2px 0;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-weight:700;cursor:pointer}
   .vivo-demo button[aria-pressed="true"]{background:var(--ink);color:var(--surface)}
   .vivo-note{color:var(--muted);font-size:.78rem;margin-top:8px}
+  .vivo-real-btn{margin:2px 4px 2px 0;padding:6px 10px;border-radius:999px;border:1px dashed var(--amber);background:var(--surface);color:var(--ink);font-weight:700;cursor:pointer}
   /* ---------- Fuerza del XI (Empleado 2, 23 nov 2026) ---------- */
   .fxi-badge{display:inline-block;font-size:.68rem;font-weight:800;color:var(--amber);background:var(--amber-soft);border-radius:999px;padding:4px 10px;margin-left:8px;vertical-align:middle;letter-spacing:0;text-transform:none}
   .fxi-formula{color:var(--muted);font-size:.82rem;margin:10px 0 0}
@@ -2129,33 +2130,184 @@ var RADIO = {
     h += '<p class="detail-note">' + esc(ventana) + ' según ESPN (23 nov 2026). Racha: ' + n + ' puntos V/E/D, del partido más reciente al más antiguo.</p>';
     return h;
   }
-  /* ---------- Marcador en vivo: propuesta UI (Empleado 2, 24 nov 2026) ----------
-     En esta copia de vista previa NO se consulta ESPN: los datos vienen de
-     VIVO_DEMO. El Galatasaray de hoy lleva datos reales (0-0, 35', 12:20:52 CST
-     24 nov 2026, verificación del jefe; 0-0, 23', 12:08:48 CST, medición del
-     Empleado 1); las edades son de ejemplo para mostrar cada estado. El resto
-     de partidos aún no empieza. */
+  /* ---------- Marcador en vivo: módulo de caché (Empleado 2, 24 nov 2026) ----------
+     El detalle lee primero el caché del workflow (data/vivo.json, contrato del
+     Empleado 1: generado_en / actualizado_en para la antigüedad) y usa el fetch
+     directo a ESPN (dos hosts) como respaldo desde ~5 min. Los 4 estados y sus
+     textos exactos son los de la propuesta aprobada (fresco / viejo / directo /
+     sin datos). En esta copia de vista previa VIVO_CACHE_DEMO suple a
+     data/vivo.json (dato real del vivo.json del Empleado 1: Galatasaray 1-0,
+     88', actualizado 13:29 CST 24 nov 2026); en la página real ese objeto no
+     existe y se lee el archivo. El selector de 4 botones sigue disponible para
+     ver cada estado; el botón "Flujo real (caché)" vuelve al flujo real. */
   var VIVO_DEMO = {
     fresco: {hs: 0, as: 0, min: 35, ageMin: 3},
     viejo: {hs: 0, as: 0, min: 23, ageMin: 12},
     directo: {hs: 0, as: 0, min: 35},
     sindatos: null
   };
+  var VIVO_CACHE_DEMO = {
+    generado_en: "2026-11-24T13:29:00-06:00",
+    actualizado_en: "2026-11-24T13:29:00-06:00",
+    partidos: [
+      {local: "Galatasaray", visitante: "Aston Villa", goles_local: 1, goles_visitante: 0, minuto: 88, estado: "vivo", actualizado_en: "2026-11-24T13:29:00-06:00"}
+    ]
+  };
+  var VIVO_ESPN = {
+    "galatasaray-vs-aston-villa": {liga: "uefa.champions", fecha: "20261124"}
+  };
+  var VIVO_HOSTS = ["https://site.api.espn.com", "https://site.web.api.espn.com"];
   var vivoDemo = "fresco";
+  var vivoModoDemo = false;
+  var vivoEstado = null;
+  var vivoListo = false;
+  var vivoAbierto = false;
+  var vivoDirectoEnCurso = false;
   var vivoTimer = null;
   var vivoTimeout = null;
   var vivoCurrent = null;
-  function vivoHTML(state, home, away){
-    var d = VIVO_DEMO[state];
-    if (state === "sindatos" || !d){
+  function vivoTs(v){
+    if (typeof v === "number" && isFinite(v)){
+      return v < 100000000000 ? v * 1000 : v;
+    }
+    if (typeof v === "string" && v){
+      var t = Date.parse(v);
+      return isNaN(t) ? null : t;
+    }
+    return null;
+  }
+  function vivoNum(){
+    for (var i = 0; i < arguments.length; i++){
+      var v = arguments[i];
+      if (typeof v === "number" && isFinite(v)) return v;
+      if (typeof v === "string" && v !== "" && isFinite(Number(v))) return Number(v);
+    }
+    return null;
+  }
+  function vivoFetchJSON(url, timeoutMs){
+    var f = (typeof window !== "undefined" && window.fetch) ? window.fetch : null;
+    if (!f) return Promise.resolve(null);
+    var ctrl = null, timer = null;
+    try {
+      if (typeof AbortController !== "undefined"){
+        ctrl = new AbortController();
+        timer = setTimeout(function(){ try { ctrl.abort(); } catch (e) {} }, timeoutMs);
+      }
+    } catch (e) { ctrl = null; }
+    var p;
+    try {
+      p = ctrl ? f(url, {signal: ctrl.signal}) : f(url);
+    } catch (e) {
+      if (timer) clearTimeout(timer);
+      return Promise.resolve(null);
+    }
+    return Promise.resolve(p).then(function(res){
+      if (timer) clearTimeout(timer);
+      if (!res || (typeof res.ok !== "undefined" && !res.ok)) return null;
+      try {
+        return Promise.resolve(res.json()).catch(function(){ return null; });
+      } catch (e) { return null; }
+    }).catch(function(){
+      if (timer) clearTimeout(timer);
+      return null;
+    });
+  }
+  function vivoBuscarEnCache(json, home, away){
+    if (!json || typeof json !== "object") return null;
+    var lista = null;
+    if (Array.isArray(json)) lista = json;
+    else if (Array.isArray(json.partidos)) lista = json.partidos;
+    else if (Array.isArray(json.matches)) lista = json.matches;
+    else if (Array.isArray(json.partidos_vivo)) lista = json.partidos_vivo;
+    if (!lista) return null;
+    var topTs = vivoTs(json.actualizado_en) || vivoTs(json.updated_at) || vivoTs(json.generado_en) || vivoTs(json.generated_at);
+    for (var i = 0; i < lista.length; i++){
+      var p = lista[i];
+      if (!p || typeof p !== "object") continue;
+      var loc = p.local || p.home || p.equipo_local;
+      var vis = p.visitante || p.away || p.equipo_visitante;
+      if (!loc || !vis) continue;
+      if (norm(String(loc)) !== norm(home) || norm(String(vis)) !== norm(away)) continue;
+      var hs = vivoNum(p.goles_local, p.homeScore, p.goles_casa);
+      var as = vivoNum(p.goles_visitante, p.awayScore, p.goles_fuera);
+      var min = vivoNum(p.minuto, p.minute, p.min);
+      var ts = vivoTs(p.actualizado_en) || vivoTs(p.updated_at) || vivoTs(p.actualizado) || topTs || vivoTs(p.generado_en) || vivoTs(json.generado_en);
+      if (hs === null || as === null || min === null || !ts) return null;
+      var ageMin = Math.max(0, Math.floor((Date.now() - ts) / 60000));
+      return {fuente: "cache", hs: hs, as: as, min: min, ageMin: ageMin, ts: ts};
+    }
+    return null;
+  }
+  function vivoLeerCache(){
+    if (!vivoCurrent) return Promise.resolve(null);
+    var demo = (typeof VIVO_CACHE_DEMO !== "undefined") ? VIVO_CACHE_DEMO : null;
+    if (demo){
+      return Promise.resolve(vivoBuscarEnCache(demo, vivoCurrent.home, vivoCurrent.away));
+    }
+    return vivoFetchJSON("data/vivo.json", 3000).then(function(json){
+      if (!json) return null;
+      return vivoBuscarEnCache(json, vivoCurrent.home, vivoCurrent.away);
+    });
+  }
+  function vivoScoreboardURL(host, liga, fecha){
+    return host + "/apis/site/v2/sports/soccer/" + liga + "/scoreboard?dates=" + fecha;
+  }
+  function vivoParseScoreboard(json, home, away){
+    if (!json || typeof json !== "object" || !Array.isArray(json.events)) return null;
+    var h = norm(home), a = norm(away);
+    for (var i = 0; i < json.events.length; i++){
+      var ev = json.events[i];
+      if (!ev || typeof ev !== "object") continue;
+      var teams = null, status = null;
+      if (Array.isArray(ev.competitions) && ev.competitions.length){
+        teams = ev.competitions[0].competitors;
+        status = ev.competitions[0].status || ev.status;
+      } else if (Array.isArray(ev.competitors)){
+        teams = ev.competitors;
+        status = ev.status;
+      }
+      if (!teams || !status) continue;
+      var state = status.type ? status.type.state : null;
+      if (state !== "in") continue;
+      var min = parseInt(status.displayClock || "", 10);
+      if (isNaN(min)) continue;
+      var hs = null, as = null;
+      for (var j = 0; j < teams.length; j++){
+        var t = teams[j];
+        if (!t || !t.team) continue;
+        var nm = norm(t.team.displayName || t.team.shortDisplayName || t.team.name || "");
+        var sc = (t.score === undefined || t.score === null) ? null : Number(t.score);
+        if (sc === null || isNaN(sc)) continue;
+        if (nm === h) hs = sc;
+        else if (nm === a) as = sc;
+      }
+      if (hs === null || as === null) continue;
+      return {hs: hs, as: as, min: min};
+    }
+    return null;
+  }
+  function vivoFetchDirecto(key, home, away){
+    var m = VIVO_ESPN[key];
+    if (!m) return Promise.resolve(null);
+    var u1 = vivoScoreboardURL(VIVO_HOSTS[0], m.liga, m.fecha);
+    var u2 = vivoScoreboardURL(VIVO_HOSTS[1], m.liga, m.fecha);
+    return vivoFetchJSON(u1, 5000).then(function(j){
+      var r = j ? vivoParseScoreboard(j, home, away) : null;
+      if (r) return r;
+      return vivoFetchJSON(u2, 5000).then(function(j2){
+        return j2 ? vivoParseScoreboard(j2, home, away) : null;
+      });
+    });
+  }
+  function vivoEstadoHTML(d, home, away){
+    if (!d){
       return '<div class="vivo-box"><p class="vivo-meta">Sin marcador en vivo por ahora. ESPN no responde y aún no hay datos guardados. Se reintenta solo cada minuto.</p></div>';
     }
     var score = esc(home) + " " + d.hs + " – " + d.as + " " + esc(away);
-    if (state === "directo"){
+    if (d.fuente === "directo"){
       return '<div class="vivo-box"><div class="vivo-score"><span class="vivo-live-dot"></span>' + score + '</div>' +
         '<p class="vivo-meta">Minuto ' + d.min + "' · En vivo, actualizado hace menos de 1 min</p></div>";
     }
-    /* Fresco y viejo: mismo dato, cambia el texto según la antigüedad. */
     if (d.ageMin >= 10){
       return '<div class="vivo-box"><div class="vivo-score">' + score + '</div>' +
         '<p class="vivo-meta">Minuto ' + d.min + "' · Último dato conocido hace " + d.ageMin + ' min, ESPN no responde, reintentando…</p></div>';
@@ -2163,28 +2315,106 @@ var RADIO = {
     return '<div class="vivo-box"><div class="vivo-score"><span class="vivo-live-dot"></span>' + score + '</div>' +
       '<p class="vivo-meta">Minuto ' + d.min + "' · Actualizado hace " + d.ageMin + ' min</p></div>';
   }
+  function vivoHTML(state, home, away){
+    var d = VIVO_DEMO[state];
+    if (state === "sindatos" || !d){
+      return vivoEstadoHTML(null, home, away);
+    }
+    return vivoEstadoHTML({
+      fuente: state === "directo" ? "directo" : "cache",
+      hs: d.hs, as: d.as, min: d.min, ageMin: (typeof d.ageMin === "number" ? d.ageMin : 0)
+    }, home, away);
+  }
   function vivoSectionHTML(key, home, away){
     if (key !== "galatasaray-vs-aston-villa"){
       return '<div class="vivo-box"><p class="vivo-meta">El partido aún no empieza.</p>' +
         '<p class="vivo-note">Vista previa: los 4 estados del marcador se muestran en el detalle del Galatasaray–Aston Villa (hoy, 11:45).</p></div>';
     }
-    return vivoHTML(vivoDemo, home, away) +
-      '<p class="vivo-note">Datos reales: 0-0, 35\', 12:20:52 CST 24 nov 2026 (verificación del jefe); 0-0, 23\', 12:08:48 CST 24 nov 2026 (medición del Empleado 1). Las edades son de ejemplo para mostrar cada estado.</p>';
+    if (vivoModoDemo){
+      return vivoHTML(vivoDemo, home, away) +
+        '<p class="vivo-note">Datos reales: 0-0, 35\', 12:20:52 CST 24 nov 2026 (verificación del jefe); 0-0, 23\', 12:08:48 CST 24 nov 2026 (medición del Empleado 1). Las edades son de ejemplo para mostrar cada estado.</p>';
+    }
+    if (!vivoEstado){
+      if (vivoListo){
+        return vivoEstadoHTML(null, home, away);
+      }
+      return '<div class="vivo-box"><p class="vivo-meta">Cargando marcador…</p></div>';
+    }
+    var nota = vivoEstado.fuente === "directo"
+      ? "Fuente: fetch directo a ESPN (respaldo, dos hosts)."
+      : "Fuente: caché data/vivo.json — en esta copia, ejemplo con los datos reales del vivo.json del Empleado 1 (Galatasaray 1-0, 88', actualizado 13:29 CST 24 nov 2026). La edad se calcula desde actualizado_en.";
+    return vivoEstadoHTML(vivoEstado, home, away) + '<p class="vivo-note">' + nota + '</p>';
   }
   function vivoRender(){
+    if (!vivoAbierto) return;
     var sec = document.getElementById("vivoSection");
     if (sec && vivoCurrent){
       sec.innerHTML = vivoSectionHTML(vivoCurrent.key, vivoCurrent.home, vivoCurrent.away);
     }
   }
-  function vivoTick(){
-    /* Cada 60 s: la antigüedad sube 1 min; al cruzar ~10 min el texto cambia solo. */
-    if (!vivoCurrent || vivoCurrent.key !== "galatasaray-vs-aston-villa") return;
-    var d = VIVO_DEMO[vivoDemo];
-    if (d && typeof d.ageMin === "number"){
-      d.ageMin += 1;
-      vivoRender();
+  function vivoIntentarDirecto(){
+    if (vivoDirectoEnCurso || !vivoAbierto || !vivoCurrent || vivoCurrent.key !== "galatasaray-vs-aston-villa" || vivoModoDemo) return;
+    vivoDirectoEnCurso = true;
+    vivoFetchDirecto(vivoCurrent.key, vivoCurrent.home, vivoCurrent.away).then(function(res){
+      vivoDirectoEnCurso = false;
+      if (!vivoAbierto || vivoModoDemo) return;
+      vivoListo = true;
+      if (res){
+        vivoEstado = {fuente: "directo", hs: res.hs, as: res.as, min: res.min, ageMin: 0};
+        vivoRender();
+      } else if (!vivoEstado){
+        vivoRender();
+      }
+    });
+  }
+  function vivoActualizar(){
+    if (!vivoAbierto || !vivoCurrent || vivoCurrent.key !== "galatasaray-vs-aston-villa" || vivoModoDemo){
+      return Promise.resolve();
     }
+    if (vivoEstado && vivoEstado.fuente === "directo" && vivoEstado.ageMin <= 1){
+      vivoIntentarDirecto();
+      return Promise.resolve();
+    }
+    return vivoLeerCache().then(function(cache){
+      if (!vivoAbierto || vivoModoDemo) return;
+      if (cache){
+        if (vivoEstado && vivoEstado.fuente === "cache" && vivoEstado.ts === cache.ts &&
+            vivoEstado.min === cache.min && vivoEstado.hs === cache.hs && vivoEstado.as === cache.as){
+          /* Misma entrada del caché: la edad es la que subió el tick, no se recalcula. */
+          cache.ageMin = vivoEstado.ageMin;
+        }
+        vivoEstado = cache;
+        vivoListo = true;
+        vivoRender();
+        if (cache.ageMin >= 5) vivoIntentarDirecto();
+        return;
+      }
+      if (vivoEstado && vivoEstado.fuente === "cache"){
+        /* La lectura del caché falló: se sigue mostrando el último dato con su edad. */
+        vivoRender();
+        if (vivoEstado.ageMin >= 5) vivoIntentarDirecto();
+        return;
+      }
+      vivoIntentarDirecto();
+    }).catch(function(){
+      if (vivoAbierto && !vivoModoDemo) vivoIntentarDirecto();
+    });
+  }
+  function vivoTick(){
+    if (!vivoAbierto) return;
+    if (!vivoCurrent || vivoCurrent.key !== "galatasaray-vs-aston-villa") return;
+    if (vivoModoDemo){
+      /* Vista previa: la antigüedad sube 1 min; al cruzar ~10 min el texto cambia solo. */
+      var d = VIVO_DEMO[vivoDemo];
+      if (d && typeof d.ageMin === "number"){
+        d.ageMin += 1;
+        vivoRender();
+      }
+      return;
+    }
+    /* Flujo real: la edad sube y se relee el caché / se reintenta el directo. */
+    if (vivoEstado && typeof vivoEstado.ageMin === "number") vivoEstado.ageMin += 1;
+    vivoActualizar();
   }
   function vivoBlock(key, home, away){
     var h = "<h4>Marcador en vivo</h4>";
@@ -2193,31 +2423,54 @@ var RADIO = {
         '<button type="button" class="vivo-demo-btn" data-state="fresco">Caché fresco</button>' +
         '<button type="button" class="vivo-demo-btn" data-state="viejo">Caché viejo</button>' +
         '<button type="button" class="vivo-demo-btn" data-state="directo">Sin caché · en vivo</button>' +
-        '<button type="button" class="vivo-demo-btn" data-state="sindatos">Sin datos</button></div>';
+        '<button type="button" class="vivo-demo-btn" data-state="sindatos">Sin datos</button>' +
+        '<button type="button" class="vivo-real-btn">Flujo real (caché)</button></div>';
     }
     h += '<div id="vivoSection"><div class="vivo-box"><p class="vivo-meta">Cargando marcador…</p></div></div>';
     return h;
   }
   function vivoWire(key, home, away){
     vivoCurrent = {key: key, home: home, away: away};
+    vivoAbierto = true;
+    vivoEstado = null;
+    vivoListo = false;
+    vivoModoDemo = false;
+    vivoDirectoEnCurso = false;
     if (vivoTimer){ clearInterval(vivoTimer); vivoTimer = null; }
     if (vivoTimeout){ clearTimeout(vivoTimeout); vivoTimeout = null; }
     var btns = document.querySelectorAll(".vivo-demo-btn");
     btns.forEach(function(b){
-      b.setAttribute("aria-pressed", b.getAttribute("data-state") === vivoDemo ? "true" : "false");
+      b.setAttribute("aria-pressed", "false");
       b.addEventListener("click", function(){
         vivoDemo = b.getAttribute("data-state");
+        vivoModoDemo = true;
         btns.forEach(function(x){ x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
         vivoRender();
       });
     });
+    var realBtn = document.querySelector(".vivo-real-btn");
+    if (realBtn){
+      realBtn.addEventListener("click", function(){
+        vivoModoDemo = false;
+        btns.forEach(function(x){ x.setAttribute("aria-pressed", "false"); });
+        vivoActualizar();
+      });
+    }
     vivoTimeout = setTimeout(vivoRender, 300);
     vivoTimer = setInterval(vivoTick, 60000);
+    vivoActualizar();
   }
-  /* Solo en esta copia de vista previa: gancho para probar los 4 estados. */
-  window.__vivoTest = {vivoHTML: vivoHTML, vivoTick: vivoTick,
+  /* Solo en esta copia de vista previa: ganchos para probar el módulo y los 4 estados. */
+  window.__vivoTest = {vivoHTML: vivoHTML, vivoTick: vivoTick, vivoEstadoHTML: vivoEstadoHTML,
+    vivoLeerCache: vivoLeerCache, vivoFetchDirecto: vivoFetchDirecto, vivoActualizar: vivoActualizar,
     getDemo: function(){ return vivoDemo; },
-    setDemo: function(s){ vivoDemo = s; }};
+    setDemo: function(s){ vivoDemo = s; },
+    getEstado: function(){ return vivoEstado; },
+    getModoDemo: function(){ return vivoModoDemo; },
+    setCacheDemo: function(o){ VIVO_CACHE_DEMO = o; },
+    getCacheDemo: function(){ return VIVO_CACHE_DEMO; },
+    modoReal: function(){ vivoModoDemo = false; return vivoActualizar(); },
+    modoDemo: function(s){ vivoModoDemo = true; if (s) vivoDemo = s; vivoRender(); }};
   function openDetail(article){
     var names = article.querySelectorAll(".team b");
     if (names.length < 2) return;
@@ -2276,6 +2529,7 @@ var RADIO = {
     document.getElementById("detailClose").focus();
   }
   function closeDetail(){
+    vivoAbierto = false;
     if (vivoTimer){ clearInterval(vivoTimer); vivoTimer = null; }
     if (vivoTimeout){ clearTimeout(vivoTimeout); vivoTimeout = null; }
     overlay.classList.remove("open");
