@@ -16,7 +16,8 @@ cambios. Hoy 24 nov falló de forma intermitente con
 - 12:33 y 12:36: el modal del Galatasaray da 400 en el navegador de la nube.
 - 12:39: el 400 es GENERAL en ese navegador (también Arsenal–City, eng.1).
 - 12:47: el cuerpo del error es de ESPN mismo; la misma URL da 200 por curl
-  y en el navegador real de Luis.
+  desde la VM. La prueba en el navegador real del cliente (teléfono) sigue
+  pendiente, sin confirmar.
 - 12:51: una página de prueba pide las 4 URLs (site.api y site.web.api,
   Champions y Premier) y las 4 dan 200; 12:53 el modal vuelve a dar 400.
 - 12:55: el módulo da 400 en AMBOS hosts; 12:56 curl/node dan 200 al mismo URL.
@@ -36,7 +37,7 @@ workflow de Poisson (otra cadencia, otro propósito; el diario no se toca).
 Cada corrida pide los scoreboards de ESPN **solo para hoy** (hora de México)
 y solo para los pares (liga, fecha) que trae la configuración de la semana
 actual (`scripts/config/semana-actual.json` + `semana-<N>-entresemana.json`
-si existe). Semana 2: 6 ligas, 16 pares (liga, fecha), 28 partidos.
+si existe). Semana 2: 6 ligas, 15 pares (liga, fecha), 28 partidos.
 
 El cron corre cada 5 minutos **solo en ventanas de partido** (horas UTC;
 en noviembre México es UTC-6). El mínimo del cron de GitHub Actions es
@@ -191,7 +192,7 @@ lo dejo como límite declarado, no como número.
 ## 5. Pruebas hechas (hoy, con datos reales)
 
 - `python3 scripts/generar_vivo.py --todas` (13:29 CST): **28/28 partidos,
-  0 fallos**, 16 pares (liga, fecha) consultados, todo por site.api.
+  0 fallos**, 15 pares (liga, fecha) consultados, todo por site.api.
   Ejemplo real en `data/vivo.json`: Galatasaray 1–0 Aston Villa, 88'.
 - `python3 scripts/generar_vivo.py` (modo workflow, solo hoy, 13:29 CST):
   4 partidos actualizados (los de hoy), **28 conservados: el merge
