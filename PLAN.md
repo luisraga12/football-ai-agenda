@@ -17,8 +17,9 @@ producto, nadie debe volver a meterle mano.
 
 **Comunicación del equipo:** desde el 23 nov 2026 los mensajes del equipo
 (`JEFE.md`, `EMPLEADO-1.md`, `EMPLEADO-2.md`) viven en el repo privado
-[buzón](https://github.com/luisraga12/buzón), ya no en este repo. La forma
-de trabajar está en `FORMA-DE-TRABAJAR.md`.
+[buzón](https://github.com/luisraga12/buzon), ya no en este repo. La forma
+de trabajar está en
+[`FORMA-DE-TRABAJAR.md` del buzón](https://github.com/luisraga12/buzon/blob/main/FORMA-DE-TRABAJAR.md).
 
 ## ✅ Semana 1 — Hecha (entregada 19 nov 2026, commit `4032d10`)
 
@@ -32,6 +33,11 @@ de trabajar está en `FORMA-DE-TRABAJAR.md`.
   https://luisraga12.github.io/football-ai-agenda/
 - Cuenta gratuita de API-Football creada y probada en vivo: el plan gratis
   solo abre las temporadas 2022 a 2024, no sirve para la 2026/27.
+- Revisión de la Semana 1 (23 nov 2026, por el Empleado 1, verificada por
+  el jefe contra ESPN en vivo): favorito 1X2 6/16, Más 2.5 5/10 cuando el
+  modelo daba >50%, BTTS 3/6. Semana con 7 empates de 16; el modelo casi
+  no caza el empate (talón del Poisson con solo 5 partidos). El EV del 1X2
+  se lee con más cautela que el de totales.
 - Momios de ESPN/DraftKings verificados en vivo para la Semana 3.
 - Probabilidades Poisson de la Semana 1 añadidas 19 nov 2026 (a petición
   del cliente): 16 partidos del 20–22 nov con 1X2, +2.5 y BTTS, mismo
