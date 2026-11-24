@@ -1549,7 +1549,7 @@
     emptyState.style.display = visible === 0 ? "block" : "none";
   }
 
-  /* F1 (port del jefe, PR #13): el handler de pestañas de estado solo toca
+  /* F1 (port del jefe, PR #17): el handler de pestañas de estado solo toca
      .tab[data-status]; antes usaba .tab y se tragaba los botones de ordenar
      (Por fecha / Por EV / Solo con valor), desincronizando el estado. */
   document.querySelectorAll(".tab[data-status]").forEach(function(t){
@@ -2066,7 +2066,7 @@ var RADIO = {
   "elche-vs-atletico-madrid": {n:5, comp:"liga", h:{gf:0.6,ga:0.6,btts:"0/5",bttsN:0,over:"1/5",overN:1,racha:"LLWDD"}, a:{gf:1.4,ga:0.6,btts:"2/5",bttsN:2,over:"2/5",overN:2,racha:"LWWWW"}},
   "vfb-stuttgart-vs-eintracht-frankfurt": {n:5, comp:"liga", h:{gf:1.8,ga:1.2,btts:"2/5",bttsN:2,over:"2/5",overN:2,racha:"WWLLW"}, a:{gf:1.2,ga:2.0,btts:"2/5",bttsN:2,over:"3/5",overN:3,racha:"DWLWL"}},
   "internazionale-vs-genoa": {n:5, comp:"liga", h:{gf:2.0,ga:1.0,btts:"3/5",bttsN:3,over:"3/5",overN:3,racha:"WLWWW"}, a:{gf:1.2,ga:1.0,btts:"2/5",bttsN:2,over:"2/5",overN:2,racha:"LWWWL"}},
-  "real-madrid-vs-alaves": {n:5, comp:"liga", h:{gf:2.6,ga:0.4,btts:"2/5",bttsN:2,over:"4/5",overN:4,racha:"WWWWW"}, a:{gf:0.8,ga:2.2,btts:"4/5",bttsN:4,over:"1/5",overN:1,racha:"DLDLL"}},
+  "real-madrid-vs-alaves": {n:5, comp:"liga", h:{gf:2.6,ga:0.4,btts:"2/5",bttsN:2,over:"4/5",overN:4,racha:"WWWWW"}, a:{gf:0.8,ga:2.2,btts:"4/5",bttsN:4,over:"3/5",overN:3,racha:"DLDLL"}},
   "everton-vs-liverpool": {n:5, comp:"liga", h:{gf:1.2,ga:1.4,btts:"2/5",bttsN:2,over:"2/5",overN:2,racha:"WWLLD"}, a:{gf:1.4,ga:1.2,btts:"2/5",bttsN:2,over:"3/5",overN:3,racha:"WLWWL"}},
   "sassuolo-vs-napoli": {n:5, comp:"liga", h:{gf:1.2,ga:3.8,btts:"3/5",bttsN:3,over:"4/5",overN:4,racha:"LLLLL"}, a:{gf:1.6,ga:1.6,btts:"3/5",bttsN:3,over:"2/5",overN:2,racha:"DLWDL"}},
   "deportivo-vs-barcelona": {n:5, comp:"liga", h:{gf:1.0,ga:1.2,btts:"3/5",bttsN:3,over:"2/5",overN:2,racha:"DWLDL"}, a:{gf:3.4,ga:1.2,btts:"4/5",bttsN:4,over:"5/5",overN:5,racha:"WWLWW"}},
