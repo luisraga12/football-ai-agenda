@@ -14,6 +14,10 @@ Corre los pasos en orden y valida el resultado:
      Antes del paso 4 se guarda el ev.json vigente en ev-ayer.json,
      solo en la primera corrida del dia, para que el "ayer" sea el
      ultimo ev.json del dia anterior y no el de hace una hora.)
+  7. calcular_tendencias.py (racha por mercado de los ultimos 5
+     partidos por equipo, o 4 en competiciones europeas; escribe
+     tendencias.json. Si falta raw/teams_last5.json, se avisa y se
+     sigue sin tendencias para esa semana.)
 
 Validaciones al final (no se publica nada si fallan):
   - los partidos existen en ESPN (lo garantiza el paso 1: si falta
@@ -128,6 +132,11 @@ def main():
     else:
         print("Sin ev.json anterior: primera corrida, no hay "
               "movimientos vs ayer.")
+    # Paso 7: tendencias por mercado (racha de los ultimos 5 por
+    # equipo). run_tendencias.py avisa y sigue si falta el
+    # teams_last5.json de la semana.
+    run([sys.executable, 'scripts/run_tendencias.py',
+         '--semanas', f'semana-{semana}'])
 
     # ---- validaciones finales ----
     rawdir = os.path.join(ROOT, outdir, 'raw')
