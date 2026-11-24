@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Prueba fetch ESPN (temporal, se borra)</title>
+<style>body{font-family:system-ui,sans-serif;max-width:640px;margin:2em auto;padding:0 1em}pre{background:#f6f6f6;padding:.6em;border-radius:8px;white-space:pre-wrap;word-break:break-all}</style>
+</head>
+<body>
+<h1>Prueba fetch ESPN</h1>
+<p>Archivo temporal de diagnóstico (24 nov 2026). Se borra después de la prueba.</p>
+<div id="salida">Probando…</div>
+<script>
+(async function(){
+  var urls = [
+    ['site.api uefa.champions 2026-11-24', 'https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard?dates=20261124'],
+    ['site.api eng.1 2026-11-29', 'https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard?dates=20261129'],
+    ['site.web.api uefa.champions 2026-11-24', 'https://site.web.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard?dates=20261124'],
+    ['site.web.api eng.1 2026-11-29', 'https://site.web.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard?dates=20261129']
+  ];
+  var out = [];
+  for (var i = 0; i < urls.length; i++) {
+    var nombre = urls[i][0], url = urls[i][1];
+    try {
+      var r = await fetch(url);
+      var txt = await r.text();
+      out.push(nombre + ' -> HTTP ' + r.status + ' :: ' + txt.slice(0, 120));
+    } catch (e) {
+      out.push(nombre + ' -> EXCEPCION: ' + e);
+    }
+  }
+  document.getElementById('salida').innerHTML = '<pre>' + out.join('\n\n') + '</pre><p>Hora: ' + new Date().toLocaleTimeString('es-MX') + '</p>';
+})();
+</script>
+</body>
+</html>
