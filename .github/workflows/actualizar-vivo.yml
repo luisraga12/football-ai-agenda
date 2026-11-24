@@ -49,6 +49,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/vivo.json data/vivo-log.json
+          git add data/vivo.json
+          # vivo-log.json solo existe cuando el script registra fallos;
+          # si no existe, git add fallaba (exit 128) y no se publicaba nada.
+          [ -f data/vivo-log.json ] && git add data/vivo-log.json
           git diff --cached --quiet || git commit -m "Actualizar marcador en vivo (auto)"
           git push
