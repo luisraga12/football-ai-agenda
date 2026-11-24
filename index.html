@@ -2016,7 +2016,14 @@ const MarcadorEnVivo = (() => {
 
   async function scoreboard(liga, fecha) {
     const r = await fetch(`${BASE}/${liga}/scoreboard?dates=${fecha}`);
-    if (!r.ok) throw new Error(`ESPN ${r.status} (${liga} ${fecha})`);
+    if (!r.ok) {
+      // Diagnóstico 24 nov 2026: el navegador de la nube recibe 400 de ESPN
+      // en el fetch (la misma URL carga bien por navegación y por curl).
+      // Se incluye el cuerpo del error para saber por qué.
+      let cuerpo = '';
+      try { cuerpo = (await r.text()).slice(0, 200); } catch (e) { /* sin cuerpo */ }
+      throw new Error(`ESPN ${r.status} (${liga} ${fecha}) ${cuerpo}`);
+    }
     return r.json();
   }
 
