@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generado_en": "2026-11-24T19:29:54Z",
-  "generado_en_mx": "2026-11-24T13:29:55-06:00",
+  "generado_en": "2026-11-24T21:51:41Z",
+  "generado_en_mx": "2026-11-24T15:51:42-06:00",
   "semana": 2,
   "fuente": "ESPN scoreboard (site.api.espn.com, respaldo site.web.api.espn.com)",
   "partidos": [
@@ -236,12 +236,12 @@
       "away_id": 124,
       "home": "Arsenal",
       "away": "Borussia Dortmund",
-      "estado": "pre",
-      "detalle": "Tue, November 24th at 3:00 PM EST",
-      "minuto": "0'",
-      "marcador_local": 0,
-      "marcador_visita": 0,
-      "actualizado_en": "2026-11-24T19:29:54Z"
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+4'",
+      "marcador_local": 1,
+      "marcador_visita": 1,
+      "actualizado_en": "2026-11-24T21:51:41Z"
     },
     {
       "liga": "uefa.champions",
@@ -250,12 +250,12 @@
       "away_id": 114,
       "home": "Manchester City",
       "away": "Napoli",
-      "estado": "pre",
-      "detalle": "Tue, November 24th at 3:00 PM EST",
-      "minuto": "0'",
-      "marcador_local": 0,
-      "marcador_visita": 0,
-      "actualizado_en": "2026-11-24T19:29:54Z"
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+2'",
+      "marcador_local": 2,
+      "marcador_visita": 2,
+      "actualizado_en": "2026-11-24T21:51:41Z"
     },
     {
       "liga": "uefa.champions",
@@ -264,12 +264,12 @@
       "away_id": 362,
       "home": "Galatasaray",
       "away": "Aston Villa",
-      "estado": "in",
-      "detalle": "88'",
-      "minuto": "88'",
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+7'",
       "marcador_local": 1,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-24T19:29:54Z"
+      "actualizado_en": "2026-11-24T21:51:41Z"
     },
     {
       "liga": "uefa.champions",
@@ -278,12 +278,12 @@
       "away_id": 148,
       "home": "Real Madrid",
       "away": "PSV Eindhoven",
-      "estado": "pre",
-      "detalle": "Tue, November 24th at 3:00 PM EST",
-      "minuto": "0'",
-      "marcador_local": 0,
-      "marcador_visita": 0,
-      "actualizado_en": "2026-11-24T19:29:54Z"
+      "estado": "in",
+      "detalle": "90'+3'",
+      "minuto": "90'+3'",
+      "marcador_local": 5,
+      "marcador_visita": 1,
+      "actualizado_en": "2026-11-24T21:51:41Z"
     },
     {
       "liga": "uefa.champions",
