@@ -146,6 +146,20 @@ interfaz (`index.html` no se toca en este trabajo).
     recién jugada y el historial crece con sus resultados. Uso:
     `python3 scripts/run_historial.py` (por defecto solo semana-1).
 
+12. **`generar_vivo.py`** — marcador en vivo con caché (propuesta del
+    jefe en JEFE.md, commit e0016b3, 24 nov 2026; diseño detallado en
+    `propuesta-vivo-cache.md`). Lee la semana actual + entre semana,
+    pide los scoreboards de ESPN de hoy (site.api, con respaldo
+    site.web.api) y escribe `data/vivo.json` con marcador, minuto y
+    estado de los 28 partidos de la semana. Mezcla con el último dato
+    conocido (cada entrada con su `actualizado_en`); si TODAS las
+    consultas fallan, no toca el archivo anterior y sale con código 1;
+    los fallos quedan en `data/vivo-log.json` (últimas 50). Lo corre el
+    workflow `.github/workflows/actualizar-vivo.yml` cada 5 min solo en
+    ventanas de partido (ver el archivo: 3 crons en UTC + la estimación
+    de minutos de Actions). Uso: `python3 scripts/generar_vivo.py`
+    (solo hoy) o `--todas` (toda la semana, para probar).
+
 **Fecha de cálculo en México:** todos los JSON que generan fecha
 (`fecha_calculo`, `fecha_hoy`) usan hora de México
 (`America/Mexico_City`, `ZoneInfo`), no la de la VM, que va en UTC
