@@ -160,6 +160,27 @@ interfaz (`index.html` no se toca en este trabajo).
     de minutos de Actions). Uso: `python3 scripts/generar_vivo.py`
     (solo hoy) o `--todas` (toda la semana, para probar).
 
+13. **`calcular_alineacion_probable.py`** — prototipo Semana 6
+    (alineación probable, orden del jefe, 24 nov 2026). Para cada
+    partido de la semana estima el XI más frecuente por posición de
+    los últimos partidos + la formación más usada, siempre marcado
+    como PROBABLE (ESPN no publica XI probable). Ventana: últimos 5
+    de liga doméstica (fin de semana) o últimos 4 de la competición
+    UEFA (entre semana), antes de la fecha del partido — misma
+    ventana que el Poisson. Fuentes: schedule del equipo y summary
+    por evento de ESPN (site.api, respaldo site.web.api); los
+    summaries se guardan en `data/<semana>/raw/summary_*.json`
+    (raw/ no se sube). El XI se elige por titularidades (desempate:
+    minutos estimados de sustituciones, luego titularidad más
+    reciente); la formación es la (D-M-F) más frecuente en la
+    ventana. Aplica el MAPEO conocido de nombres de otros clubes
+    (Arsenal / Real Madrid, ver `corregir_nombres_xi.py`) y deja en
+    `revisiones` a cualquier titular que no esté en la plantilla de
+    temporada. Si un equipo no tiene datos, queda pendiente, no se
+    inventa nada. Uso:
+    `python3 scripts/calcular_alineacion_probable.py --config scripts/config/semana-2.json --out data/semana-2/alineacion-probable.json`
+    (y lo mismo con `semana-2-entresemana.json`).
+
 **Fecha de cálculo en México:** todos los JSON que generan fecha
 (`fecha_calculo`, `fecha_hoy`) usan hora de México
 (`America/Mexico_City`, `ZoneInfo`), no la de la VM, que va en UTC
