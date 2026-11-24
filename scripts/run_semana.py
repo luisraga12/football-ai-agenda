@@ -9,6 +9,11 @@ Corre los pasos en orden y valida el resultado:
   3. generar_tabla.py      (escribe la tabla .md)
   4. recolectar_momios.py  (momios DraftKings/Bet 365 de ESPN)
   5. calcular_ev.py        (EV por mercado, semaforo y mejor pick)
+  6. calcular_movimientos.py (hoy vs ayer: cambio de mejor pick, de EV
+     en pp con flecha, y de linea de total; escribe movimientos.json.
+     Antes del paso 4 se guarda el ev.json vigente en ev-ayer.json,
+     solo en la primera corrida del dia, para que el "ayer" sea el
+     ultimo ev.json del dia anterior y no el de hace una hora.)
 
 Validaciones al final (no se publica nada si fallan):
   - los partidos existen en ESPN (lo garantiza el paso 1: si falta
@@ -28,10 +33,32 @@ Uso:
 import argparse
 import json
 import os
+import shutil
 import subprocess
 import sys
+from datetime import date
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+def guardar_ayer(outdir):
+    """Guarda el ev.json vigente como ev-ayer.json, solo en la primera
+    corrida del dia. Las corridas de la misma tarde (p. ej. cada hora
+    en dias de partido) no lo pisan: el "ayer" sigue siendo el ultimo
+    ev.json del dia anterior, no el de hace una hora."""
+    ev = os.path.join(ROOT, outdir, 'ev.json')
+    ayer = os.path.join(ROOT, outdir, 'ev-ayer.json')
+    if not os.path.exists(ev):
+        return None
+    hoy = date.today()
+    if os.path.exists(ayer):
+        fecha_ayer = date.fromtimestamp(os.path.getmtime(ayer))
+        if fecha_ayer >= hoy:
+            print(f"{ayer} ya es de hoy ({fecha_ayer}); no se pisa.")
+            return ayer
+    shutil.copy2(ev, ayer)
+    print(f"Snapshot de ayer guardado en {ayer} (ev.json anterior).")
+    return ayer
 
 
 def run(cmd):
@@ -63,10 +90,25 @@ def main():
          '--config', args.config, '--out', outdir])
     run([sys.executable, 'scripts/generar_tabla.py',
          '--config', args.config, '--out', outdir])
+    # Snapshot del ev.json vigente ANTES de regenerarlo: es el "ayer"
+    # de los movimientos (primera corrida del dia; ver guardar_ayer).
+    ayer_path = guardar_ayer(outdir)
     run([sys.executable, 'scripts/recolectar_momios.py',
          '--config', args.config, '--out', outdir])
     run([sys.executable, 'scripts/calcular_ev.py',
          '--config', args.config, '--out', outdir])
+    if ayer_path:
+        fecha_ayer = date.fromtimestamp(
+            os.path.getmtime(ayer_path)).isoformat()
+        run([sys.executable, 'scripts/calcular_movimientos.py',
+             '--hoy', os.path.join(outdir, 'ev.json'),
+             '--ayer', ayer_path,
+             '--salida', os.path.join(outdir, 'movimientos.json'),
+             '--fecha-hoy', date.today().isoformat(),
+             '--fecha-ayer', fecha_ayer])
+    else:
+        print("Sin ev.json anterior: primera corrida, no hay "
+              "movimientos vs ayer.")
 
     # ---- validaciones finales ----
     rawdir = os.path.join(ROOT, outdir, 'raw')

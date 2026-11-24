@@ -61,13 +61,34 @@ interfaz (`index.html` no se toca en este trabajo).
    marcadores; la prueba se hace en una copia con marcadores.
    También escribe el fragmento y el CSS sueltos con
    `--fragment-out` / `--css-out` para que el jefe los pegue.
-7. **`run_semana.py`** — corre los seis pasos (0–5) en orden y valida
+7. **`run_semana.py`** — corre los pasos (0–6) en orden y valida
    el resultado (partidos verificados, 5 partidos por equipo — 4 en
    competiciones europeas, donde solo se han jugado 4 jornadas —, 1X2
    suma 100%, cada partido con momio tiene EV y semáforo, ningún
    partido pendiente tiene EV inventado). Si algo falla, no se publica
-   nada.
-8. **`descubrir_partidos.py`** — descubrimiento automático de partidos
+   nada. Antes de regenerar los momios guarda el ev.json vigente en
+   `data/semana-N/ev-ayer.json` (solo la primera corrida del día) y
+   después del EV corre el paso 6.
+8. **`calcular_movimientos.py` + `run_movimientos.py`** — movimientos
+   de momios, hoy vs ayer (orden del jefe, 23 nov 2026, primera de las
+   6 propuestas). Por partido detecta: cambio de mejor pick, cambio de
+   EV del mejor pick en puntos porcentuales con flecha ↑ (sube más de
+   0.1 pp) / ↓ (baja más de 0.1 pp) / → (sin cambio), cambio de línea
+   de total, y el EV de hoy del pick de ayer. También marca partidos
+   nuevos, momios publicados hoy y partidos que siguen pendientes (sin
+   EV inventado). Escribe `data/semana-N/movimientos.json`, que la
+   página lee para la flecha por tarjeta. El "ayer" es
+   `data/semana-N/ev-ayer.json` (lo guarda `run_semana.py`, ver punto
+   7); a mano se puede usar cualquier ev.json anterior, p. ej. del
+   historial git (`git show <commit>:data/semana-N/ev.json`), y el
+   script acepta los ev.json viejos sin `mercados` (la línea se lee
+   entonces de `momios.total.linea`). `integrar_pagina.py` con
+   `--movimientos data/semana-N/movimientos.json` añade la línea
+   `↑↓ ... vs ayer` a cada tarjeta del fragmento (CSS `.momios-mov`).
+   Uso: `python3 scripts/run_movimientos.py` (las 3 semanas) o
+   `python3 scripts/run_movimientos.py --ayer-commit <commit>` (prueba
+   contra el historial).
+9. **`descubrir_partidos.py`** — descubrimiento automático de partidos
    nuevos publicados tarde en ESPN (orden del jefe, 22 nov 2026, caso
    Liga MX): en cada corrida consulta los scoreboards de las ligas del
    alcance (mex.1, eng.1, esp.1, ger.1, ita.1, uefa.champions,

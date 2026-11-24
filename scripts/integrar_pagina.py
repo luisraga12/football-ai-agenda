@@ -36,6 +36,9 @@ Uso:
     python3 scripts/integrar_pagina.py --ev data/semana-2/ev.json --html copia.html
     python3 scripts/integrar_pagina.py --ev data/semana-2/ev.json --html copia.html --out copia.html --apply
     python3 scripts/integrar_pagina.py --ev data/semana-2/ev.json --fragment-out data/semana-2/fragmento-momios.html --css-out data/semana-2/fragmento-momios.css
+    python3 scripts/integrar_pagina.py --ev data/semana-2/ev.json --movimientos data/semana-2/movimientos.json --fragment-out data/semana-2/fragmento-momios.html
+      (con --movimientos anade la flecha ↑↓ por tarjeta: cambio de EV
+      en pp vs ayer, cambio de mejor pick y cambio de linea de total)
 """
 
 import argparse
@@ -89,7 +92,38 @@ def celda(etiqueta, decimal, ev):
         f'<b class="num {clase_ev(ev)}">{fmt_ev(ev)}</b></div>')
 
 
-def bloque(p):
+def linea_mov(m):
+    """Linea de movimiento de UNA tarjeta (flecha ↑↓ por tarjeta,
+    orden del jefe 23 nov 2026): cambio de EV en pp vs ayer, cambio
+    de mejor pick y cambio de linea de total. None si no hay
+    movimiento que mostrar (sin momio, o sin datos de ayer)."""
+    if not m or m.get('estado') in (None, 'sin_momio'):
+        return None
+    if m['estado'] == 'nuevo':
+        return 'Nuevo partido hoy'
+    if m['estado'] == 'momio_nuevo':
+        return 'Nuevo momio hoy'
+    flecha = m.get('flecha')
+    delta = m.get('delta_ev_pp')
+    if flecha == '↑':
+        texto = f"↑ +{delta:.1f} pp vs ayer"
+    elif flecha == '↓':
+        texto = f"↓ {delta:.1f} pp vs ayer"
+    else:
+        texto = "→ sin cambio vs ayer"
+    if m.get('cambio_pick'):
+        texto += (f" · cambio de pick: {m['mejor_pick_ayer']} → "
+                  f"{m['mejor_pick_hoy']}")
+        if m.get('ev_pick_ayer_hoy') is not None:
+            texto += (f" (el pick de ayer hoy vale "
+                      f"{fmt_ev(m['ev_pick_ayer_hoy'])})")
+    if m.get('cambio_linea'):
+        texto += (f" · línea total {fmt_linea(m['linea_ayer'])} → "
+                  f"{fmt_linea(m['linea_hoy'])}")
+    return texto
+
+
+def bloque(p, mov=None):
     """Bloque completo de momios de UNA tarjeta."""
     ident = id_partido(p)
     titulo = f"{p['home']} vs {p['away']}"
@@ -151,6 +185,10 @@ def bloque(p):
         f'<span>Semáforo: {mejor_txt} · EV = prob. × momio − 1</span></div>',
         '<div class="momios-grid">' + ''.join(celdas) + '</div>',
     ]
+    mov_txt = linea_mov(mov)
+    if mov_txt:
+        partes.append(
+            f'<p class="momios-mov">{html.escape(mov_txt)}</p>')
     for nota in notas:
         partes.append(f'<p class="momios-nota">{html.escape(nota)} '
                       f'({html.escape(p["proveedor"])}).</p>')
@@ -179,6 +217,7 @@ CSS = """/* Fragmento momios — Empleado 1, lunes 23 nov 2026.
 .momios .ev-neg{color:var(--live)}
 .momios-pendiente{margin:10px 0 0;font-size:.86rem;font-weight:700;color:var(--amber)}
 .momios-nota{margin-top:10px;font-size:.78rem;font-weight:700;color:var(--muted)}
+.momios-mov{margin:10px 0 0;font-size:.82rem;font-weight:700;color:var(--muted)}
 """
 
 
@@ -218,12 +257,23 @@ def main():
                     help='escribir el fragmento (todos los bloques) a un archivo')
     ap.add_argument('--css-out', default=None,
                     help='escribir el CSS del fragmento a un archivo')
+    ap.add_argument('--movimientos', default=None,
+                    help='movimientos.json de calcular_movimientos.py: '
+                         'anade la flecha ↑↓ por tarjeta')
     args = ap.parse_args()
 
     ev = json.load(open(args.ev))
+    movs = {}
+    if args.movimientos:
+        mov_data = json.load(open(args.movimientos))
+        movs = {m['slug']: m for m in mov_data['partidos']}
+        print(f"Movimientos leidos de {args.movimientos} "
+              f"({len(movs)} partidos, "
+              f"{mov_data.get('fecha_ayer')} -> "
+              f"{mov_data.get('fecha_hoy')}).")
     bloques = {}
     for p in ev['partidos']:
-        bloques[id_partido(p)] = bloque(p)
+        bloques[id_partido(p)] = bloque(p, movs.get(id_partido(p)))
     if args.fragment_out:
         open(args.fragment_out, 'w').write("\n\n".join(
             f"<!-- MOMIOS-INICIO:{k} -->\n{v}\n<!-- MOMIOS-FIN:{k} -->"
