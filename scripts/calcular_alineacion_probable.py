@@ -35,6 +35,27 @@ scripts/corregir_nombres_xi.py). Se aplica el mismo MAPEO conocido
 esté en la plantilla de temporada del equipo queda en "revisiones"
 para que el jefe lo confirme; no se inventa un reemplazo.
 
+Verificación de nombres (24 nov 2026, corrección (a) del jefe):
+los ~50 nombres señalados por el jefe fueron verificados uno por uno
+contra los fichajes del verano 2026 y contra los datos: los 60 son
+jugadores reales del equipo al que ESPN los asigna (fichajes 2026),
+así que NO se añadió ningún reemplazo al MAPEO — se mantiene solo
+el MAPEO aprobado de Arsenal / Real Madrid (corrección Fuerza del
+XI, cerrada). El detalle con fuentes está en EMPLEADO-1.md.
+
+Fuerza (corrección (b) del jefe, misma fórmula aprobada de Fuerza
+del XI): cada XI probable trae "fuerza" con valor 0-100 y los 3
+componentes con fracciones (goles+asistencias / minutos / puntos,
+cada uno vs el mejor XI 1-4-4-2 por minutos de la misma ventana),
+pesos 0.40/0.30/0.30, cada componente topado en 100. Se calcula con
+los nombres ESPN ANTES del MAPEO (las estadísticas pertenecen al
+hueco del XI). Puntos: 3/1/0 del partido para todo jugador que jugó
+(titular o suplente con minutos > 0); en la investigación original
+solo se contaban los titulares, pero aquí XI probable y mejor XI
+usan la misma tabla, así que las fracciones son comparables y la
+definición del PLAN ("puntos con esos jugadores en cancha") se
+cumple mejor.
+
 Uso:
     python3 scripts/calcular_alineacion_probable.py \
         --config scripts/config/semana-2.json \
@@ -166,11 +187,26 @@ def ventana_partidos(liga, tid, fecha_partido, n):
     return out[:n]
 
 
-def xi_del_partido(summary, equipo, tid=None):
-    """XI titular del equipo en un summary: [{jugador, pos, minutos}].
+def team_result_by_id(summary, tid):
+    """(goles_favor, goles_contra, puntos 3/1/0) del equipo por id."""
+    comp = summary["header"]["competitions"][0]
+    me = next(c for c in comp["competitors"]
+              if str(c["team"].get("id")) == str(tid))
+    other = next(c for c in comp["competitors"]
+                 if str(c["team"].get("id")) != str(tid))
+    gf = int(float(me["score"]))
+    ga = int(float(other["score"]))
+    return gf, ga, 3 if gf > ga else (1 if gf == ga else 0)
 
-    Se busca el roster por id de equipo (más fiable que el nombre:
-    p. ej. el config dice "Deportivo" y ESPN "Deportivo La Coruña").
+
+def xi_del_partido(summary, equipo, tid=None):
+    """XI titular del equipo en un summary + stats de los que jugaron.
+
+    Devuelve (xi, jugados): xi = [{jugador, pos, minutos}] (11
+    titulares); jugados = [{jugador, pos, minutos, goles, asist,
+    puntos}] para todo el que jugó (titular o suplente con minutos
+    > 0). goles/asist salen de x['stats'] del summary (totalGoals /
+    goalAssists); puntos 3/1/0 del resultado del partido.
     """
     ros = None
     for r in summary.get("rosters", []):
@@ -181,17 +217,83 @@ def xi_del_partido(summary, equipo, tid=None):
         ros = next((r for r in summary.get("rosters", [])
                     if r["team"]["displayName"] == equipo), None)
     if not ros:
-        return None
+        return None, None
     entra, sale = parse_substitutions(summary)
-    xi = []
+    try:
+        _gf, _ga, pts = team_result_by_id(summary, tid)
+    except (KeyError, StopIteration, ValueError):
+        pts = 0
+    xi, jugados = [], []
     for x in ros["roster"]:
-        if not x.get("starter"):
-            continue
         name = x["athlete"]["displayName"]
-        pos = norm_pos(x.get("position"), None)
-        xi.append({"jugador": name, "pos": pos,
-                   "minutos": minutes_for_player(True, name, entra, sale)})
-    return xi
+        starter = bool(x.get("starter"))
+        mins = minutes_for_player(starter, name, entra, sale)
+        if starter:
+            pos = norm_pos(x.get("position"), None)
+            xi.append({"jugador": name, "pos": pos, "minutos": mins})
+        if mins <= 0:
+            continue
+        mstats = {s["name"]: s.get("value", 0)
+                  for s in x.get("stats", [])}
+        jugados.append({
+            "jugador": name,
+            "pos": norm_pos(x.get("position"), None),
+            "minutos": mins,
+            "goles": mstats.get("totalGoals", 0),
+            "asist": mstats.get("goalAssists", 0),
+            "puntos": pts,
+        })
+    return xi, jugados
+
+
+def mejor_xi_por_minutos(per_player):
+    """Mejor XI 1-4-4-2 por minutos de la ventana (misma regla que la
+    investigación Fuerza del XI aprobada)."""
+    grupos = {"G": 1, "D": 4, "M": 4, "F": 2}
+    mejor = []
+    for g, n in grupos.items():
+        cands = sorted(
+            ((nm, d) for nm, d in per_player.items() if d["pos"] == g),
+            key=lambda kv: kv[1]["minutos"], reverse=True)[:n]
+        mejor += [nm for nm, _d in cands]
+    if len(mejor) < 11:
+        resto = sorted(
+            ((nm, d) for nm, d in per_player.items() if nm not in mejor),
+            key=lambda kv: kv[1]["minutos"], reverse=True)
+        mejor += [nm for nm, _d in resto[:11 - len(mejor)]]
+    return mejor[:11]
+
+
+def calcular_fuerza(nombres_probable, per_player):
+    """Fuerza del XI probable vs mejor XI (fórmula aprobada 0.40/0.30/
+    0.30, componentes topados en 100). Devuelve el dict 'fuerza' con
+    valor + 3 componentes + valores brutos y totales del mejor XI
+    para mostrar las fracciones (p. ej. 3965/3838)."""
+    def componentes(nombres):
+        ga = sum(per_player.get(n, {}).get("goles", 0)
+                 + per_player.get(n, {}).get("asist", 0)
+                 for n in nombres)
+        mins = sum(per_player.get(n, {}).get("minutos", 0)
+                   for n in nombres)
+        pts = sum(per_player.get(n, {}).get("puntos", 0)
+                  for n in nombres)
+        return ga, mins, pts
+
+    mejor = mejor_xi_por_minutos(per_player)
+    b_ga, b_min, b_pts = componentes(mejor)
+    ga, mins, pts = componentes(nombres_probable)
+    A = min(100, 100 * ga / b_ga) if b_ga else 0
+    B = min(100, 100 * mins / b_min) if b_min else 0
+    C = min(100, 100 * pts / b_pts) if b_pts else 0
+    return {
+        "valor": round(0.40 * A + 0.30 * B + 0.30 * C, 1),
+        "A_goles": round(A, 1),
+        "B_minutos": round(B, 1),
+        "C_puntos": round(C, 1),
+        "goles_asist": ga, "minutos": mins, "puntos": pts,
+        "mejor": {"goles_asist": b_ga, "minutos": b_min,
+                  "puntos": b_pts},
+    }
 
 
 def calcular_xi_probable(ventana_xis):
@@ -287,6 +389,7 @@ def main():
                 equipos_vistos[clave_eq] = lado[rol]
                 continue
             xis, ventana_out, fallos = [], [], []
+            per_player = {}
             for m in ventana:
                 path = os.path.join(raw_dir, f"summary_{liga}_{m['event_id']}.json")
                 if os.path.exists(path):
@@ -299,7 +402,7 @@ def main():
                 if not s:
                     fallos.append(m["event_id"])
                     continue
-                xi = xi_del_partido(s, nombre, tid)
+                xi, jugados = xi_del_partido(s, nombre, tid)
                 if xi is None or len(xi) != 11:
                     fallos.append(m["event_id"])
                     continue
@@ -310,6 +413,20 @@ def main():
                     "formacion": (lambda c: f"{c.get('D',0)}-{c.get('M',0)}-{c.get('F',0)}")(
                         Counter(x["pos"] for x in xi)),
                 })
+                for jg in jugados or []:
+                    dd = per_player.setdefault(jg["jugador"], {
+                        "posiciones": Counter(), "titularidades": 0,
+                        "minutos": 0, "puntos": 0, "goles": 0,
+                        "asist": 0})
+                    dd["posiciones"][jg["pos"]] += 1
+                    dd["minutos"] += jg["minutos"]
+                    dd["puntos"] += jg["puntos"]
+                    dd["goles"] += jg["goles"]
+                    dd["asist"] += jg["asist"]
+                for x in xi:
+                    per_player[x["jugador"]]["titularidades"] += 1
+            for dd in per_player.values():
+                dd["pos"] = dd["posiciones"].most_common(1)[0][0]
             if len(xis) < 3:
                 lado[rol] = {"equipo": nombre, "liga": liga,
                              "ventana": ventana_out,
@@ -319,6 +436,10 @@ def main():
                 equipos_vistos[clave_eq] = lado[rol]
                 continue
             formacion, jugadores, _jug = calcular_xi_probable(xis)
+            # Fuerza con los nombres ESPN, ANTES del MAPEO (las
+            # estadísticas pertenecen al hueco del XI).
+            fuerza = calcular_fuerza(
+                [j["jugador"] for j in jugadores], per_player)
             # Corrección de nombres conocidos + revisión contra plantilla.
             mapa = MAPEO.get(nombre, {})
             roster = fetch_json(f"{BASES[0]}/{liga}/teams/{tid}/roster")
@@ -340,12 +461,14 @@ def main():
                          "ventana": ventana_out,
                          "formacion": formacion,
                          "jugadores": jugadores,
+                         "fuerza": fuerza,
                          "revisiones": revisiones,
                          "fallos_summary": fallos,
                          "probable": True}
             equipos_vistos[clave_eq] = lado[rol]
             print(f"   {nombre}: formación {formacion}, "
-                  f"{len(jugadores)} jugadores, revisiones {len(revisiones)}")
+                  f"{len(jugadores)} jugadores, fuerza "
+                  f"{fuerza['valor']}, revisiones {len(revisiones)}")
         partidos_out.append({
             "fecha": p["fecha"], "liga": liga,
             "local": p["home"], "visita": p["away"],
@@ -361,7 +484,16 @@ def main():
                    "publica XI probable). Ventana: últimos 5 de liga "
                    "doméstica (fin de semana) o últimos 4 de la "
                    "competición UEFA (entre semana), antes de la fecha "
-                   "del partido."),
+                   "del partido. Fuerza por XI: 0.40·goles+asistencias + "
+                   "0.30·minutos + 0.30·puntos, cada componente en % vs "
+                   "el mejor XI 1-4-4-2 por minutos de la misma ventana, "
+                   "con fracciones; calculada con nombres ESPN antes del "
+                   "MAPEO."),
+        "verificacion_nombres": ("Los ~50 nombres señalados por el jefe "
+                   "el 24 nov 2026 fueron verificados uno por uno: los 60 "
+                   "son jugadores reales del equipo asignado (fichajes "
+                   "del verano 2026, con fuentes en EMPLEADO-1.md). No "
+                   "se añadió ningún reemplazo al MAPEO."),
         "partidos": partidos_out,
     }
     json.dump(resultado, open(args.out, "w"), indent=1, ensure_ascii=False)
