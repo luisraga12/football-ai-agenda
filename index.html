@@ -360,6 +360,28 @@
   .sort-label{font-weight:800;font-size:.86rem;color:var(--ink-2)}
   /* ---------- Veredicto en claro (Empleado 2, 23 nov 2026) ---------- */
   .card-verdict{margin:8px 0 0;font-size:.88rem;line-height:1.45;color:var(--ink-2);border-left:3px solid var(--accent);padding-left:9px}
+  /* ---------- Semana 9: tarjetas enlazan al detalle por partido ---------- */
+  .match-link{display:block;color:inherit;text-decoration:none}
+  .match-link:hover .team b{color:var(--accent-strong)}
+  .match-link:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .match-cta{margin-top:10px;font-size:.82rem;font-weight:800;color:var(--accent-strong)}
+  /* ---------- Semana 9: rediseño de "Cómo le fue al modelo" ---------- */
+  .historial{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+  .historial h2{font-size:1.25rem;margin:0 0 10px;border-left:4px solid var(--accent);padding-left:10px}
+  .historial-resumen{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+  .h-chip{background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.82rem;font-weight:700;color:var(--ink-2)}
+  .h-chip strong{color:var(--ink)}
+  .historial-scroll{overflow-x:auto;margin:0 -6px;padding:0 6px}
+  .historial-tabla{min-width:640px}
+  .historial-tabla thead th{background:var(--surface-2);border-bottom:2px solid var(--line)}
+  .historial-tabla tbody tr:nth-child(even){background:var(--surface-2)}
+  .historial-tabla td:first-child{white-space:nowrap}
+  .h-ok{color:var(--accent-strong);font-weight:900}
+  .h-no{color:var(--live);font-weight:900}
+  .h-badge{display:inline-block;border-radius:999px;padding:2px 10px;font-size:.78rem;font-weight:800;white-space:nowrap}
+  .h-badge.ok{background:var(--accent-soft);color:var(--accent-strong)}
+  .h-badge.no{background:var(--live-soft);color:var(--live)}
+
 </style>
 </head>
 <body>
@@ -559,32 +581,27 @@
 <!-- HISTORIAL-INICIO:semana-1 -->
 <section class="historial">
 <h2>Cómo le fue al modelo — semana-1</h2>
-<p>Favorito 1X2: <strong>6/16 (37.5%)</strong>
-· Más 2.5: 5/10
-· Menos 2.5: 4/6
-· BTTS: 3/6
-· No-BTTS: 4/10
-· Empates: 7 de 16</p>
+<p class="historial-resumen"><span class="h-chip">Favorito 1X2: <strong>6/16 (37.5%)</strong></span><span class="h-chip">Más 2.5: 5/10</span><span class="h-chip">Menos 2.5: 4/6</span><span class="h-chip">BTTS: 3/6</span><span class="h-chip">No-BTTS: 4/10</span><span class="h-chip">Empates: 7 de 16</span></p>
 <p class="historial-fecha">Revisión del lunes, fecha de cálculo 2026-11-24 (México).</p>
-<table class="historial-tabla">
+<div class="historial-scroll"><table class="historial-tabla">
 <tr><th>Fecha</th><th>Liga</th><th>Partido</th><th>Resultado</th><th>1X2</th><th>Total</th><th>BTTS</th></tr>
-<tr><td>Vie 20 nov</td><td>Bundesliga</td><td>Bayern Munich vs FC Cologne</td><td>1-1 (X)</td><td>✗</td><td>fallo</td><td>fallo</td></tr>
-<tr><td>Vie 20 nov</td><td>LaLiga</td><td>Athletic Club vs Espanyol</td><td>0-1 (2)</td><td>✗</td><td>acierto</td><td>acierto</td></tr>
-<tr><td>Vie 20 nov</td><td>Liga MX</td><td>Puebla vs Atlético de San Luis</td><td>1-1 (X)</td><td>✗</td><td>acierto</td><td>fallo</td></tr>
-<tr><td>Vie 20 nov</td><td>Liga MX</td><td>FC Juárez vs Atlas</td><td>3-3 (X)</td><td>✗</td><td>acierto</td><td>acierto</td></tr>
-<tr><td>Vie 20 nov</td><td>Liga MX</td><td>Tijuana vs Atlante</td><td>1-0 (1)</td><td>✓</td><td>fallo</td><td>acierto</td></tr>
-<tr><td>Sáb 21 nov</td><td>Premier League</td><td>Manchester City vs Fulham</td><td>1-1 (X)</td><td>✗</td><td>acierto</td><td>fallo</td></tr>
-<tr><td>Sáb 21 nov</td><td>Premier League</td><td>Newcastle United vs Arsenal</td><td>2-2 (X)</td><td>✗</td><td>fallo</td><td>fallo</td></tr>
-<tr><td>Sáb 21 nov</td><td>LaLiga</td><td>Sevilla vs Real Betis</td><td>1-1 (X)</td><td>✗</td><td>fallo</td><td>acierto</td></tr>
-<tr><td>Sáb 21 nov</td><td>LaLiga</td><td>Real Madrid vs Celta Vigo</td><td>2-1 (1)</td><td>✓</td><td>fallo</td><td>fallo</td></tr>
-<tr><td>Sáb 21 nov</td><td>Liga MX</td><td>Pachuca vs Toluca</td><td>2-0 (1)</td><td>✓</td><td>fallo</td><td>fallo</td></tr>
-<tr><td>Sáb 21 nov</td><td>Liga MX</td><td>Pumas UNAM vs Monterrey</td><td>0-2 (2)</td><td>✗</td><td>fallo</td><td>fallo</td></tr>
-<tr><td>Dom 22 nov</td><td>LaLiga</td><td>Barcelona vs Villarreal</td><td>3-2 (1)</td><td>✓</td><td>acierto</td><td>fallo</td></tr>
-<tr><td>Dom 22 nov</td><td>Premier League</td><td>Liverpool vs Manchester United</td><td>4-0 (1)</td><td>✓</td><td>acierto</td><td>fallo</td></tr>
-<tr><td>Dom 22 nov</td><td>Serie A</td><td>Atalanta vs Internazionale</td><td>4-4 (X)</td><td>✗</td><td>acierto</td><td>acierto</td></tr>
-<tr><td>Dom 22 nov</td><td>LaLiga</td><td>Getafe vs Atlético Madrid</td><td>0-3 (2)</td><td>✓</td><td>acierto</td><td>acierto</td></tr>
-<tr><td>Dom 22 nov</td><td>Liga MX</td><td>Guadalajara vs Cruz Azul</td><td>1-0 (1)</td><td>✗</td><td>acierto</td><td>acierto</td></tr>
-</table>
+<tr><td>Vie 20 nov</td><td>Bundesliga</td><td>Bayern Munich vs FC Cologne</td><td>1-1 (X)</td><td class="h-no">✗</td><td><span class="h-badge no">fallo</span></td><td><span class="h-badge no">fallo</span></td></tr>
+<tr><td>Vie 20 nov</td><td>LaLiga</td><td>Athletic Club vs Espanyol</td><td>0-1 (2)</td><td class="h-no">✗</td><td><span class="h-badge ok">acierto</span></td><td><span class="h-badge ok">acierto</span></td></tr>
+<tr><td>Vie 20 nov</td><td>Liga MX</td><td>Puebla vs Atlético de San Luis</td><td>1-1 (X)</td><td class="h-no">✗</td><td><span class="h-badge ok">acierto</span></td><td><span class="h-badge no">fallo</span></td></tr>
+<tr><td>Vie 20 nov</td><td>Liga MX</td><td>FC Juárez vs Atlas</td><td>3-3 (X)</td><td class="h-no">✗</td><td><span class="h-badge ok">acierto</span></td><td><span class="h-badge ok">acierto</span></td></tr>
+<tr><td>Vie 20 nov</td><td>Liga MX</td><td>Tijuana vs Atlante</td><td>1-0 (1)</td><td class="h-ok">✓</td><td><span class="h-badge no">fallo</span></td><td><span class="h-badge ok">acierto</span></td></tr>
+<tr><td>Sáb 21 nov</td><td>Premier League</td><td>Manchester City vs Fulham</td><td>1-1 (X)</td><td class="h-no">✗</td><td><span class="h-badge ok">acierto</span></td><td><span class="h-badge no">fallo</span></td></tr>
+<tr><td>Sáb 21 nov</td><td>Premier League</td><td>Newcastle United vs Arsenal</td><td>2-2 (X)</td><td class="h-no">✗</td><td><span class="h-badge no">fallo</span></td><td><span class="h-badge no">fallo</span></td></tr>
+<tr><td>Sáb 21 nov</td><td>LaLiga</td><td>Sevilla vs Real Betis</td><td>1-1 (X)</td><td class="h-no">✗</td><td><span class="h-badge no">fallo</span></td><td><span class="h-badge ok">acierto</span></td></tr>
+<tr><td>Sáb 21 nov</td><td>LaLiga</td><td>Real Madrid vs Celta Vigo</td><td>2-1 (1)</td><td class="h-ok">✓</td><td><span class="h-badge no">fallo</span></td><td><span class="h-badge no">fallo</span></td></tr>
+<tr><td>Sáb 21 nov</td><td>Liga MX</td><td>Pachuca vs Toluca</td><td>2-0 (1)</td><td class="h-ok">✓</td><td><span class="h-badge no">fallo</span></td><td><span class="h-badge no">fallo</span></td></tr>
+<tr><td>Sáb 21 nov</td><td>Liga MX</td><td>Pumas UNAM vs Monterrey</td><td>0-2 (2)</td><td class="h-no">✗</td><td><span class="h-badge no">fallo</span></td><td><span class="h-badge no">fallo</span></td></tr>
+<tr><td>Dom 22 nov</td><td>LaLiga</td><td>Barcelona vs Villarreal</td><td>3-2 (1)</td><td class="h-ok">✓</td><td><span class="h-badge ok">acierto</span></td><td><span class="h-badge no">fallo</span></td></tr>
+<tr><td>Dom 22 nov</td><td>Premier League</td><td>Liverpool vs Manchester United</td><td>4-0 (1)</td><td class="h-ok">✓</td><td><span class="h-badge ok">acierto</span></td><td><span class="h-badge no">fallo</span></td></tr>
+<tr><td>Dom 22 nov</td><td>Serie A</td><td>Atalanta vs Internazionale</td><td>4-4 (X)</td><td class="h-no">✗</td><td><span class="h-badge ok">acierto</span></td><td><span class="h-badge ok">acierto</span></td></tr>
+<tr><td>Dom 22 nov</td><td>LaLiga</td><td>Getafe vs Atlético Madrid</td><td>0-3 (2)</td><td class="h-ok">✓</td><td><span class="h-badge ok">acierto</span></td><td><span class="h-badge ok">acierto</span></td></tr>
+<tr><td>Dom 22 nov</td><td>Liga MX</td><td>Guadalajara vs Cruz Azul</td><td>1-0 (1)</td><td class="h-no">✗</td><td><span class="h-badge ok">acierto</span></td><td><span class="h-badge ok">acierto</span></td></tr>
+</table></div>
 </section>
 <!-- HISTORIAL-FIN:semana-1 -->
   </section>
@@ -1905,11 +1922,8 @@ var RADIO = {}; /* Integración Semana 7: la Radiografía llega por fetch
   window.__wireDetailCards = wireDetailCards;
   /* Integración Semana 7: las tarjetas las renderiza el cargador de data/;
      el cableado de detalle se añade cuando avisa con "partidos-listos". */
-  if (document.querySelectorAll(".match").length){
-    wireDetailCards();
-  } else {
-    document.addEventListener("partidos-listos", function(){ wireDetailCards(); }, {once: true});
-  }
+  /* Semana 9: las tarjetas ya son enlaces a partido.html; el modal no se
+     cablea. El overlay queda en el HTML, oculto, sin usarse. */
 })();
 
   /* ---------- Marcadores en las tarjetas (jefe, 24 nov 2026) ----------
@@ -2289,6 +2303,7 @@ var RADIO = {}; /* Integración Semana 7: la Radiografía llega por fetch
     var hora = (m.hora || "").slice(0, 5);
     var h = "";
     h += '<article class="match" data-day="' + di.code + '" data-league="' + li.code + '" data-status="upcoming" data-value="' + (sem ? sem.value : "0") + '">';
+    h += '<a class="match-link" href="partido.html?partido=' + key + '">';
     h += '<div class="match-top"><span class="m-league">' + esc(li.display) + '</span><span class="m-time num">' + esc(di.corto) + ' ' + di.dia + ' · ' + esc(hora) + '</span></div>';
     h += '<div class="teams">';
     h += '<div class="team"><span class="crest c-a">' + esc(cr.h) + '</span><b>' + esc(home) + '</b><span class="score dim num">—</span></div>';
@@ -2329,6 +2344,8 @@ var RADIO = {}; /* Integración Semana 7: la Radiografía llega por fetch
       h += '<div class="dcell"><span>X2</span><b class="num">' + fmt1(dnb.x2) + '%</b></div>';
       h += '</div></div>';
     }
+    h += '<div class="match-cta"><span>Ver detalle del partido →</span></div>';
+    h += '</a>';
     h += '<div class="odds" aria-label="Momios reales y valor esperado">';
     if (!mom){
       h += '<div class="derived-h"><span>Momios pendientes</span><span>EV = prob. × momio − 1</span></div>';
