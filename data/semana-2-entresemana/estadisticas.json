@@ -1,0 +1,318 @@
+{
+ "config": "semana-2-entresemana",
+ "fecha_calculo": "2026-11-25",
+ "partidos": [
+  {
+   "local": "Galatasaray",
+   "visita": "Aston Villa",
+   "slug": "galatasaray-vs-aston-villa",
+   "estado": "post",
+   "estadisticas": [
+    {
+     "clave": "posesion",
+     "etiqueta": "Posesión",
+     "local": 45.4,
+     "visita": 54.6,
+     "unidad": "%"
+    },
+    {
+     "clave": "tiros",
+     "etiqueta": "Tiros",
+     "local": 9,
+     "visita": 4,
+     "unidad": ""
+    },
+    {
+     "clave": "tiros_a_puerta",
+     "etiqueta": "Tiros a puerta",
+     "local": 2,
+     "visita": 0,
+     "unidad": ""
+    },
+    {
+     "clave": "corners",
+     "etiqueta": "Córners",
+     "local": 5,
+     "visita": 1,
+     "unidad": ""
+    },
+    {
+     "clave": "faltas",
+     "etiqueta": "Faltas",
+     "local": 13,
+     "visita": 12,
+     "unidad": ""
+    },
+    {
+     "clave": "fueras_de_juego",
+     "etiqueta": "Fueras de juego",
+     "local": 1,
+     "visita": 2,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_amarillas",
+     "etiqueta": "Tarjetas amarillas",
+     "local": 2,
+     "visita": 4,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_rojas",
+     "etiqueta": "Tarjetas rojas",
+     "local": 0,
+     "visita": 0,
+     "unidad": ""
+    },
+    {
+     "clave": "pases_precisos",
+     "etiqueta": "Pases precisos",
+     "local": 290,
+     "visita": 385,
+     "unidad": ""
+    },
+    {
+     "clave": "paradas",
+     "etiqueta": "Paradas",
+     "local": 0,
+     "visita": 1,
+     "unidad": ""
+    }
+   ]
+  },
+  {
+   "local": "Arsenal",
+   "visita": "Borussia Dortmund",
+   "slug": "arsenal-vs-borussia-dortmund",
+   "estado": "post",
+   "estadisticas": [
+    {
+     "clave": "posesion",
+     "etiqueta": "Posesión",
+     "local": 63.2,
+     "visita": 36.8,
+     "unidad": "%"
+    },
+    {
+     "clave": "tiros",
+     "etiqueta": "Tiros",
+     "local": 30,
+     "visita": 13,
+     "unidad": ""
+    },
+    {
+     "clave": "tiros_a_puerta",
+     "etiqueta": "Tiros a puerta",
+     "local": 4,
+     "visita": 4,
+     "unidad": ""
+    },
+    {
+     "clave": "corners",
+     "etiqueta": "Córners",
+     "local": 8,
+     "visita": 5,
+     "unidad": ""
+    },
+    {
+     "clave": "faltas",
+     "etiqueta": "Faltas",
+     "local": 7,
+     "visita": 13,
+     "unidad": ""
+    },
+    {
+     "clave": "fueras_de_juego",
+     "etiqueta": "Fueras de juego",
+     "local": 1,
+     "visita": 4,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_amarillas",
+     "etiqueta": "Tarjetas amarillas",
+     "local": 0,
+     "visita": 0,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_rojas",
+     "etiqueta": "Tarjetas rojas",
+     "local": 0,
+     "visita": 0,
+     "unidad": ""
+    },
+    {
+     "clave": "pases_precisos",
+     "etiqueta": "Pases precisos",
+     "local": 501,
+     "visita": 273,
+     "unidad": ""
+    },
+    {
+     "clave": "paradas",
+     "etiqueta": "Paradas",
+     "local": 3,
+     "visita": 3,
+     "unidad": ""
+    }
+   ]
+  },
+  {
+   "local": "Manchester City",
+   "visita": "Napoli",
+   "slug": "manchester-city-vs-napoli",
+   "estado": "post",
+   "estadisticas": [
+    {
+     "clave": "posesion",
+     "etiqueta": "Posesión",
+     "local": 62.7,
+     "visita": 37.3,
+     "unidad": "%"
+    },
+    {
+     "clave": "tiros",
+     "etiqueta": "Tiros",
+     "local": 18,
+     "visita": 9,
+     "unidad": ""
+    },
+    {
+     "clave": "tiros_a_puerta",
+     "etiqueta": "Tiros a puerta",
+     "local": 7,
+     "visita": 3,
+     "unidad": ""
+    },
+    {
+     "clave": "corners",
+     "etiqueta": "Córners",
+     "local": 9,
+     "visita": 3,
+     "unidad": ""
+    },
+    {
+     "clave": "faltas",
+     "etiqueta": "Faltas",
+     "local": 9,
+     "visita": 9,
+     "unidad": ""
+    },
+    {
+     "clave": "fueras_de_juego",
+     "etiqueta": "Fueras de juego",
+     "local": 0,
+     "visita": 2,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_amarillas",
+     "etiqueta": "Tarjetas amarillas",
+     "local": 1,
+     "visita": 0,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_rojas",
+     "etiqueta": "Tarjetas rojas",
+     "local": 0,
+     "visita": 0,
+     "unidad": ""
+    },
+    {
+     "clave": "pases_precisos",
+     "etiqueta": "Pases precisos",
+     "local": 610,
+     "visita": 330,
+     "unidad": ""
+    },
+    {
+     "clave": "paradas",
+     "etiqueta": "Paradas",
+     "local": 1,
+     "visita": 5,
+     "unidad": ""
+    }
+   ]
+  },
+  {
+   "local": "Real Madrid",
+   "visita": "PSV Eindhoven",
+   "slug": "real-madrid-vs-psv-eindhoven",
+   "estado": "post",
+   "estadisticas": [
+    {
+     "clave": "posesion",
+     "etiqueta": "Posesión",
+     "local": 61.5,
+     "visita": 38.5,
+     "unidad": "%"
+    },
+    {
+     "clave": "tiros",
+     "etiqueta": "Tiros",
+     "local": 24,
+     "visita": 10,
+     "unidad": ""
+    },
+    {
+     "clave": "tiros_a_puerta",
+     "etiqueta": "Tiros a puerta",
+     "local": 9,
+     "visita": 1,
+     "unidad": ""
+    },
+    {
+     "clave": "corners",
+     "etiqueta": "Córners",
+     "local": 4,
+     "visita": 1,
+     "unidad": ""
+    },
+    {
+     "clave": "faltas",
+     "etiqueta": "Faltas",
+     "local": 6,
+     "visita": 11,
+     "unidad": ""
+    },
+    {
+     "clave": "fueras_de_juego",
+     "etiqueta": "Fueras de juego",
+     "local": 4,
+     "visita": 0,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_amarillas",
+     "etiqueta": "Tarjetas amarillas",
+     "local": 3,
+     "visita": 1,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_rojas",
+     "etiqueta": "Tarjetas rojas",
+     "local": 0,
+     "visita": 0,
+     "unidad": ""
+    },
+    {
+     "clave": "pases_precisos",
+     "etiqueta": "Pases precisos",
+     "local": 571,
+     "visita": 318,
+     "unidad": ""
+    },
+    {
+     "clave": "paradas",
+     "etiqueta": "Paradas",
+     "local": 0,
+     "visita": 4,
+     "unidad": ""
+    }
+   ]
+  }
+ ]
+}
