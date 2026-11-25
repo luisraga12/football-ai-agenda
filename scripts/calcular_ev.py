@@ -19,7 +19,12 @@ Reglas (orden del jefe, 22 nov 2026):
   - Mejor pick = el mercado con mayor EV de la tarjeta.
   - Si un partido no tiene momio ("pendiente"), NO se le inventa EV:
     queda pendiente, sin semaforo.
-  - BTTS no lleva EV: ESPN no trae ese momio en esta fuente.
+  - BTTS (orden del jefe, 24 nov 2026): probabilidad Poisson completa
+    (match_probs en poisson_core.py, grid 0-20) para TODOS los partidos,
+    con momio o sin el, en mercados['btts'] con p_btts y p_no_btts.
+    ESPN/DraftKings no trae momio de BTTS en esta fuente (verificado en
+    los scoreboards crudos: solo moneyline, total y pointSpread), asi
+    que momios y EV quedan en None y el BTTS no entra al mejor pick.
 
 Uso:
     python3 scripts/calcular_ev.py --config scripts/config/semana-2.json
@@ -91,6 +96,14 @@ def main():
                 'home': home, 'away': away, 'proveedor': m['proveedor'],
                 'estado': m['estado'], 'mercados': {}, 'mejor_pick': None,
                 'mejor_ev': None, 'semaforo': None}
+        # BTTS para TODOS los partidos (orden del jefe, 24 nov 2026):
+        # la probabilidad ya la calcula el Poisson (r['btts'], distribucion
+        # completa); va en mercados aunque el partido este pendiente, para
+        # que la pagina la muestre en vez de "pendiente". Sin momio ni EV:
+        # ESPN/DraftKings no trae ese momio en esta fuente.
+        fila['mercados']['btts'] = {
+            'p_btts': r['btts'], 'p_no_btts': 100 - r['btts'],
+            'momios': None, 'ev': {'si': None, 'no': None}}
         if m['estado'] != 'con_momio':
             filas.append(fila)
             print(f"PENDIENTE {home} vs {away}: sin momio, sin EV.")
@@ -226,16 +239,20 @@ def main():
              "Semáforo: verde EV ≥ +5%, amarillo 0–+5%, rojo < 0%. La línea "
              "del total varía por partido (la publicada por DraftKings: "
              "2.5, 3.5 o 4.5); el P(over) se calculó para esa línea desde los "
-             "xG. BTTS no tiene momio en esta fuente, por eso no lleva EV.")
+             "xG. BTTS: probabilidad Poisson completa (ambos anotan); no "
+             "lleva EV porque ESPN/DraftKings no trae momio de BTTS en "
+             "esta fuente.")
     L.append("")
     L.append("| Fecha | Partido | 1X2 (decimal) | EV 1 / X / 2 | Total (línea) | "
              "EV Más / Menos | Spread (línea local) | EV Spread local / "
-             "visitante | Mejor pick | EV | Semáforo |")
+             "visitante | P(BTTS) | Mejor pick | EV | Semáforo |")
     L.append("|---|---|---|---|---|---|---|---|---|---|---|")
     for f in filas:
         if f['estado'] != 'con_momio':
+            btts_p = f['mercados']['btts']['p_btts']
             L.append(f"| {f['fecha_txt']} | {f['home']} vs {f['away']} | "
-                     "pendiente | — | — | — | — | — | — | — | ⏳ Pendiente |")
+                     "pendiente | — | — | — | — | — | "
+                     f"{btts_p:.1f}% | — | — | ⏳ Pendiente |")
             continue
         m1x2 = f['mercados'].get('1X2')
         if m1x2 is not None:
@@ -263,9 +280,11 @@ def main():
                   f"{fmt_pct(spr['ev']['visitante'])}") if spr else '—'
         icono = {'verde': '🟢 Verde', 'amarillo': '🟡 Amarillo',
                  'rojo': '🔴 Rojo'}[f['semaforo']]
+        btts_txt = f"{f['mercados']['btts']['p_btts']:.1f}%"
         L.append(f"| {f['fecha_txt']} | {f['home']} vs {f['away']}{prov} | "
                  f"{ml_txt} | {ml_ev} | {tot_txt} | "
-                 f"{tot_ev} | {spr_txt} | {spr_ev} | {f['mejor_pick']} | "
+                 f"{tot_ev} | {spr_txt} | {spr_ev} | {btts_txt} | "
+                 f"{f['mejor_pick']} | "
                  f"{fmt_pct(f['mejor_ev'])} | {icono} |")
     n_verde = sum(1 for f in filas if f['semaforo'] == 'verde')
     n_amar = sum(1 for f in filas if f['semaforo'] == 'amarillo')

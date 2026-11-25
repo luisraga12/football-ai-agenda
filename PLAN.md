@@ -160,7 +160,7 @@ de trabajar está en
   la misma noche, junto con el bloque Fuerza del XI (Semana 8) con sus
   fracciones (Goles/Minutos/Puntos contra el mejor XI).
 
-## ✅ Semana 6 — Datos y UI aprobados; port a la página en vivo en curso (24 nov 2026)
+## ✅ Semana 6 — Hecha (port a la página en vivo 24 nov 2026, PR #37, bb349a8)
 
 - Alineación probable por equipo, como en 365Scores: el XI más frecuente
   por posición en los últimos 3–5 partidos jugados, con la formación más usada.
@@ -172,10 +172,10 @@ de trabajar está en
   Fuerza (fórmula 0.40·Goles + 0.30·Minutos + 0.30·Puntos); nombres verificados
   contra fuentes vivas 60/60 (fichajes del verano 2026).
 - UI aprobada 24 nov en preview (56/56 XI exactos por partido, node --check OK);
-  el port a `index.html` lo hace el jefe con prueba en vivo. Semana 6 completa
-  cuando el port pase la prueba en vivo.
+  port a `index.html` hecho por el jefe con prueba en vivo (PR #37, bb349a8,
+  21:44): 28 tarjetas, XI + Fuerza exactos; página en vivo verificada.
 
-## ⏳ Semana 7 — Mitad hecha: descubrimiento automático ✅ (24 nov 2026); integración de la página pendiente
+## ✅ Semana 7 — Hecha (integración de la página en vivo 25 nov 2026, PR #44, 1051289)
 
 - La página deja de depender de una actualización manual cada semana:
   se actualiza sola, sin que nadie tenga que hacer nada.
@@ -197,11 +197,18 @@ de trabajar está en
   scripts/config/` en Actions aún no se ejerce con un cambio real de config
   (no había partido nuevo que descubrir en esa corrida); la prueba real es
   la próxima corrida programada cuando ESPN publique algo tarde.
-- PENDIENTE: que la página lea sola las tablas de `data/` (integración de
-  la página) — hoy `index.html` lleva los datos incrustados. Es la otra
-  mitad de la Semana 7.
+- HECHO 25 nov (PR #44, 1051289): la página lee sola las tablas de `data/`
+  (integración de E2, port del jefe). `index.html` ya no lleva los partidos
+  incrustados: los carga por fetch de `ev.json`, `alineacion-probable.json`,
+  `raw/teams_last5.json` y `tendencias.json`, así los partidos nuevos
+  aparecen solos. Verificado en vivo: 55 tarjetas (35 + 20), BTTS con valor
+  real en 55/55, Liguilla 8 visibles, 0 errores JS. Verificación 25 nov
+  07:34: la corrida programada de las 07:00 CST aún no había arrancado
+  (ni en cola); las programadas de este repo han llegado tarde antes
+  (16:57 y 18:40 CST), así que no es un fallo por sí solo. El jefe la
+  sigue vigilando.
 
-## ⏳ Semana 8 — Pendiente: Fuerza del XI
+## ✅ Semana 8 — Hecha (en vivo en el modal del detalle, 24 nov 2026)
 
 - Puntaje 0–100 por alineación (oficial cuando esté publicada, probable
   de la Semana 6 cuando no), como en 365Scores: mide qué tan fuerte es
@@ -212,6 +219,44 @@ de trabajar está en
 - Primero se verifica la fuente (estadísticas de jugadores de ESPN) y
   la fórmula exacta; después se programa y se muestra en el detalle
   del partido.
+- HECHO 24 nov: fórmula aprobada por el jefe, datos en PR #33 (56/56 XI con
+  Fuerza) y UI en vivo en el modal del detalle (PR #37, verificado en vivo
+  21:39 con fracciones exactas).
+
+## ✅ Semana 9 — Hecha (en vivo 25 nov 2026, PR #46, e9aaf11)
+
+- El detalle del partido deja de ser un modal y pasa a ser una página propia
+  por partido (estilo OneFootball): más espacio para la alineación y para
+  más análisis.
+- Una sola plantilla (`partido.html`) que se llena sola con los datos de
+  `data/` según el partido (`?partido=<slug>`): nada de páginas hechas a
+  mano. Las tarjetas de la agenda enlazan a la página del partido en lugar
+  de abrir el modal.
+- Alineación: cancha con los 11 parados por formación (la más usada), cada
+  jugador con su nombre y su diseño (sin fotos). Probable de la Semana 6;
+  oficial cuando ESPN la publique (~1h antes) y la reemplaza.
+- Secciones: marcador en vivo/final con minuto, fecha, estadio y liga;
+  alineación + Fuerza del XI; últimos 5 de cada equipo; H2H; Radiografía
+  ("Así llegan"); momios y valor esperado; espacio para más análisis.
+- Estadísticas del partido (pedidas por el cliente 24 nov): posesión, tiros
+  totales, tiros a puerta, duelos ganados, córners, etc., en barras
+  comparadas por equipo. Solo para partidos terminados; E1 verifica primero
+  qué estadísticas trae el resumen de ESPN y propone el JSON exacto. Diseño
+  en el estilo propio de la página, no el de la referencia (el cliente dice
+  que ese diseño es muy feo).
+- La tabla "Cómo le fue al modelo" ya está en la página principal; en la
+  Semana 9 E2 le da una manita de diseño (el cliente dice que se ve fea).
+- Depende de la integración de la Semana 7 (la página lee `data/`): la
+  hace el Empleado 2 cuando entregue la integración.
+- HECHO 25 nov (PR #46, e9aaf11): `partido.html` en vivo + las 55 tarjetas
+  enlazan a su detalle en lugar del modal; tabla "Cómo le fue al modelo"
+  rediseñada con los mismos datos. Verificado en vivo por el jefe:
+  Arsenal–Dortmund (Final 1-1) con BTTS Sí 32.4%/No 67.6%, Fuerza 100.0/100
+  ambos, XI en cancha con nombres, últimos 5, H2H "ARS lidera 3-2",
+  Radiografía ("Así llegan"), 0 errores JS. Pendiente (datos de E1):
+  estadísticas en 55/55 ("pendientes") y últimos 5/H2H/tabla/Radiografía
+  de los 27 partidos nuevos (el DETAIL embebido es del 23 nov; E1 completa
+  raw/teams_last5.json de entre semana).
 
 ## Nota mar 24 nov 2026 — Historial, barra fija y Radiografía (revisión del jefe)
 
