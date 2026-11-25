@@ -102,12 +102,14 @@
   .league-btn .cnt{margin-left:auto;font-size:.74rem;color:var(--muted);font-weight:800}
   @media (max-width:720px){.league-btn .cnt{display:none}}
 
-  /* Match cards — estilo 365Scores */
+  /* Match cards */
   .agenda-head{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin-bottom:14px}
-  .agenda-head h2{font-size:1.45rem;font-weight:900;letter-spacing:-.02em}
+  .agenda-head h2{font-size:1.45rem;font-weight:900;letter-spacing:-.02em;border-left:3px solid var(--accent);padding-left:10px}
   .demo-note{font-size:.78rem;font-weight:700;color:var(--amber);background:var(--amber-soft);border-radius:999px;padding:7px 12px}
-  .match{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 18px;margin-bottom:14px}
+  .match{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 18px;margin-bottom:14px;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;cursor:pointer}
+  .match:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 14px 32px rgba(0,0,0,.35)}
   .match-top{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+  .match-top::after{content:"›";font-size:1.4rem;font-weight:900;color:var(--accent);line-height:1}
   .m-league{font-size:.74rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
   .badge{font-size:.68rem;font-weight:900;letter-spacing:.06em;padding:4px 9px;border-radius:999px;text-transform:uppercase}
   .badge-live{background:var(--live-soft);color:var(--live)}
@@ -115,12 +117,14 @@
   .badge-value{background:var(--accent-soft);color:var(--accent-strong)}
   .m-time{margin-left:auto;font-weight:800;font-size:.86rem;color:var(--ink-2)}
   .m-time.live{color:var(--live)}
+  .m-time .pulse-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--live);margin-right:6px;animation:pulse 1.6s infinite;vertical-align:1px}
+  .m-time.final{color:var(--muted)}
   .teams{display:grid;gap:8px}
   .team{display:grid;grid-template-columns:34px 1fr auto;align-items:center;gap:12px}
   .crest{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-family:"Archivo",sans-serif;font-weight:900;font-size:.7rem;color:#fff}
   .c-a{background:#14532D}.c-b{background:#7C2D12}.c-c{background:#1E3A5F}.c-d{background:#581C87}.c-e{background:#7F1D1D}.c-f{background:#134E4A}.c-g{background:#713F12}.c-h{background:#312E81}
   .team b{font-size:1rem;font-weight:800}
-  .team .score{font-family:"Archivo",sans-serif;font-size:1.25rem;font-weight:900;min-width:24px;text-align:right}
+  .team .score{font-family:"Archivo",sans-serif;font-size:1.25rem;font-weight:900;min-width:28px;text-align:right;font-variant-numeric:tabular-nums}
   .team .score.dim{color:var(--muted);font-size:.95rem;font-weight:700}
   .prob{margin-top:14px}
   .prob-bar{display:flex;height:10px;border-radius:999px;overflow:hidden;background:var(--surface-2)}
@@ -243,7 +247,7 @@
   .steps b::before{content:"";width:9px;height:9px;border-radius:3px;background:var(--blue);flex:0 0 9px}
   .steps p{font-size:.87rem;color:var(--muted);margin-top:4px}
 
-  /* Editorial strip — guiño OneFootball */
+  /* Editorial strip */
   .editorial{display:grid;grid-template-columns:1.4fr 1fr;gap:14px}
   @media (max-width:820px){.editorial{grid-template-columns:1fr}}
   .story{position:relative;border-radius:22px;overflow:hidden;min-height:300px;background:#0A0F07;color:#fff;display:flex;align-items:flex-end}
@@ -265,9 +269,6 @@
   footer strong{color:var(--ink-2)}
 
   /* ---------- Semana 5: detalle del partido (Empleado 2) ---------- */
-  .detail-btn{display:block;width:100%;margin-top:12px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);border-radius:12px;font-weight:800;font-size:.86rem;padding:10px 14px;min-height:44px}
-  .detail-btn:hover{background:var(--surface-3)}
-  .match .teams{cursor:pointer}
   .detail-overlay{position:fixed;inset:0;z-index:100;display:none;align-items:flex-start;justify-content:center;background:rgba(5,8,4,.6);padding:20px 14px;overflow-y:auto}
   .detail-overlay.open{display:flex}
   .detail-modal{background:var(--surface);color:var(--ink);border-radius:var(--radius);box-shadow:var(--shadow);width:100%;max-width:720px;margin:auto}
@@ -372,7 +373,7 @@
       <span class="hero-date">27–29 de noviembre de 2026 · Ciudad Victoria, MX</span>
     </div>
     <h1>Tu agenda de fútbol, <em>con cerebro.</em></h1>
-    <p class="sub">Lo mejor de dos mundos: la <strong>agenda limpia y rápida de 365Scores</strong> y las <strong>tarjetas editoriales de OneFootball</strong>, con una capa de IA encima que compara probabilidad contra momio y solo te avisa cuando hay valor. Sin streams pirata, sin copiar a nadie: <strong>con tus ligas, tus mercados y tus reglas.</strong></p>
+    <p class="sub">Una agenda limpia y rápida, con tarjetas que te cuentan por qué importa cada partido y una capa de IA encima que compara probabilidad contra momio y solo te avisa cuando hay valor. Sin streams pirata, sin copiar a nadie: <strong>con tus ligas, tus mercados y tus reglas.</strong></p>
     <div class="hero-stats">
       <div class="hstat"><b>14</b><span>Ligas y torneos que sigues</span></div>
       <div class="hstat"><b>6</b><span>Mercados analizados por partido</span></div>
@@ -427,17 +428,16 @@
     <!-- AGENDA -->
     <main>
       <!-- ENTRE SEMANA (Semana 2: mar 24 – jue 26 nov; sección del Empleado 2, portada por el jefe) -->
-      <div class="agenda-head">
+      <div class="agenda-head" id="mwHead">
         <h2>Entre semana · 24–26 nov</h2>
         <span class="demo-note">Champions y Europa League · Horas de Monterrey (CST)</span>
       </div>
-      <div class="days" role="group" aria-label="Día entre semana" style="margin-bottom:14px">
+      <div class="days" id="mwDays" role="group" aria-label="Día entre semana" style="margin-bottom:14px">
         <button class="day" type="button" data-day="all" aria-pressed="false">Todos<small>24–26 nov</small></button>
         <button class="day" type="button" data-day="mar" aria-pressed="false">Martes<small>Mar 24</small></button>
         <button class="day" type="button" data-day="mie" aria-pressed="false">Miércoles<small>Mié 25</small></button>
         <button class="day" type="button" data-day="jue" aria-pressed="false">Jueves<small>Jue 26</small></button>
       </div>
-      <p class="rule-note"><strong>Modelo Poisson · Semana 2 entre semana:</strong> probabilidades con los últimos 4 partidos de cada equipo en su competición (solo 4 jornadas europeas jugadas antes del 22 nov 2026; promedios de la competición: Champions 4.11 goles/partido, Europa League 2.97). Una muestra de 4 partidos puede exagerar rachas: los EV más extremos (Club Brugge Local +149.1%, Inter–Stuttgart Visita +128.5%) son desacuerdo entre el modelo y el mercado, no certeza. Momios DraftKings del 22 nov 2026 (ESPN) con EV contra el modelo Poisson. <strong>Estado entre semana: 12 de 12 partidos con valor (EV+).</strong></p>
       <div id="mwList">
 
         <article class="match" data-day="mar" data-league="ucl" data-status="upcoming" data-value="1">
@@ -836,12 +836,11 @@
 <div class="odds" aria-label="Momios reales y valor esperado"><div class="derived-h"><span>Momios DraftKings · 22 nov 2026</span><span>EV = prob. × momio − 1</span></div><div class="derived-grid"><div class="dcell"><span>Local 2.70</span><b class="num" style="color:var(--accent-strong)">+66.5%</b></div><div class="dcell"><span>Empate 3.40</span><b class="num" style="color:var(--accent-strong)">+11.0%</b></div><div class="dcell"><span>Visita 2.55</span><b class="num" style="color:var(--live)">-85.6%</b></div><div class="dcell"><span>Más 2.5 1.80</span><b class="num" style="color:var(--live)">-73.9%</b></div><div class="dcell"><span>Menos 2.5 1.95</span><b class="num" style="color:var(--accent-strong)">+67.0%</b></div></div><div class="odds-add"><button class="add-btn" type="button" data-pick="Olympiacos vs AC Milan · Menos 2.5" data-odds="1.95" data-prob="85.7">Sumar al parlay</button></div></div>
         </article>
       </div>
-      <div class="agenda-head">
+      <div class="agenda-head" id="fsHead">
         <h2>Agenda del fin de semana · 27–29 nov</h2>
         <span class="demo-note">Probabilidades Poisson verificadas por el jefe 19 nov 2026 · Partidos del 27–29 nov · Horas de Monterrey (CST)</span>
       </div>
-      <p class="rule-note"><strong>Modelo Poisson · Semana 2:</strong> Probabilidades Poisson con los últimos 5 partidos de liga por equipo (ESPN, 19 nov 2026). Una muestra de 5 partidos puede exagerar rachas: los favoritos más extremos (Real Madrid 99.0%, Arsenal 83.1%, Napoli 82.7%) conviene leerlos con cautela. Momios DraftKings del 22 nov 2026 (ESPN) con EV calculado contra el modelo Poisson. Hamburg–Bayern trae momios Bet365 porque DraftKings no publicó ese partido en ESPN; su EV 1X2 sí está calculado.</p>
-      <p class="rule-note"><strong>Tablas al 18 nov 2026:</strong> Liga MX Apertura — Cruz Azul líder, 32 pts en 16 partidos, 2 puntos sobre América; Brasileirão — Flamengo 1º 76 pts, Palmeiras 2º 73, Cruzeiro 3º 60 (antes de la jornada 35).</p>
+      <p class="rule-note" id="fsNote"><strong>Tablas al 18 nov 2026:</strong> Liga MX Apertura — Cruz Azul líder, 32 pts en 16 partidos, 2 puntos sobre América; Brasileirão — Flamengo 1º 76 pts, Palmeiras 2º 73, Cruzeiro 3º 60 (antes de la jornada 35).</p>
       <div id="matchList">
 
 
@@ -1443,8 +1442,8 @@
   <!-- EDITORIAL -->
   <section class="block" aria-label="Lecturas del día">
     <div class="sec-head">
-      <h2>El toque OneFootball: leer el partido, no solo el marcador</h2>
-      <p>365Scores te dice qué está pasando. OneFootball te cuenta por qué importa. Tu agenda junta las dos cosas y la IA pone el número encima.</p>
+      <h2>Leer el partido, no solo el marcador</h2>
+      <p>Te decimos qué está pasando y por qué importa. Tu agenda junta las dos cosas y la IA pone el número encima.</p>
     </div>
     <div class="editorial">
       <article class="story">
@@ -1549,7 +1548,7 @@
   </section>
 
   <footer>
-    <p><strong>Football AI Agenda · Proyecto de Luis Raga.</strong> Diseño original inspirado en la estructura de agendas como 365Scores y en las tarjetas editoriales de OneFootball; no copia su código, su diseño propietario ni sus datos. Semana 2: partidos reales del 27–29 nov 2026, verificados el 19 nov 2026 con la API pública de ESPN (sin clave); horas de Monterrey (CST), sin momios ni probabilidades inventadas. Las probabilidades Poisson (modelo propio, Semana 2), los momios DraftKings (22 nov 2026) y el valor esperado ya están integrados. El parlay se guarda en este navegador y sobrevive al recargar (Semana 4). La sección Entre semana (24–26 nov) trae los 12 partidos de Champions y Europa League con Poisson, momios DraftKings y EV (Empleado 1, 22 nov 2026).</p>
+    <p><strong>Football AI Agenda · Proyecto de Luis Raga.</strong> Diseño original, hecho para Luis; no copia el código, el diseño ni los datos de nadie. Semana 2: partidos reales del 27–29 nov 2026, verificados el 19 nov 2026 con la API pública de ESPN (sin clave); horas de Monterrey (CST), sin momios ni probabilidades inventadas. Las probabilidades Poisson (modelo propio, Semana 2), los momios DraftKings (22 nov 2026) y el valor esperado ya están integrados. El parlay se guarda en este navegador y sobrevive al recargar (Semana 4). La sección Entre semana (24–26 nov) trae los 12 partidos de Champions y Europa League con Poisson, momios DraftKings y EV (Empleado 1, 22 nov 2026).</p>
     <p>Esta página es una herramienta de análisis. No realiza apuestas, no ejecuta transacciones y ningún momio mostrado es una cuota en vivo de una casa de apuestas.</p>
   </footer>
 </div>
@@ -1587,6 +1586,42 @@
   var matches = Array.prototype.slice.call(document.querySelectorAll(".match"));
   var emptyState = document.getElementById("emptyState");
 
+  /* Secciones por día (jefe, 24 nov 2026): al elegir un día concreto solo se
+     ve ese día: se oculta la otra sección y el encabezado dice el día. */
+  var DIA_LABEL = {mar:"Martes · 24 nov", mie:"Miércoles · 25 nov", jue:"Jueves · 26 nov", vie:"Viernes · 27 nov", sab:"Sábado · 28 nov", dom:"Domingo · 29 nov"};
+  var MW_DAYS = ["mar", "mie", "jue"];
+  var FS_DAYS = ["vie", "sab", "dom"];
+  var mwHead = document.querySelector("#mwHead");
+  var fsHead = document.querySelector("#fsHead");
+  var mwDaysRow = document.querySelector("#mwDays");
+  var fsNote = document.querySelector("#fsNote");
+  var mwH2Orig = mwHead ? mwHead.querySelector("h2").textContent : "";
+  var fsH2Orig = fsHead ? fsHead.querySelector("h2").textContent : "";
+  function aplicarSecciones(){
+    var mwH2 = mwHead ? mwHead.querySelector("h2") : null;
+    var fsH2 = fsHead ? fsHead.querySelector("h2") : null;
+    if (MW_DAYS.indexOf(currentDay) !== -1){
+      if (mwHead) mwHead.style.display = "";
+      if (mwDaysRow) mwDaysRow.style.display = "";
+      if (fsHead) fsHead.style.display = "none";
+      if (fsNote) fsNote.style.display = "none";
+      if (mwH2) mwH2.textContent = DIA_LABEL[currentDay];
+    } else if (FS_DAYS.indexOf(currentDay) !== -1){
+      if (mwHead) mwHead.style.display = "none";
+      if (mwDaysRow) mwDaysRow.style.display = "none";
+      if (fsHead) fsHead.style.display = "";
+      if (fsNote) fsNote.style.display = "";
+      if (fsH2) fsH2.textContent = DIA_LABEL[currentDay];
+    } else {
+      if (mwHead) mwHead.style.display = "";
+      if (mwDaysRow) mwDaysRow.style.display = "";
+      if (fsHead) fsHead.style.display = "";
+      if (fsNote) fsNote.style.display = "";
+      if (mwH2) mwH2.textContent = mwH2Orig;
+      if (fsH2) fsH2.textContent = fsH2Orig;
+    }
+  }
+
   function applyFilters(){
     var visible = 0;
     matches.forEach(function(m){
@@ -1602,6 +1637,7 @@
       if (show) visible++;
     });
     emptyState.style.display = visible === 0 ? "block" : "none";
+    aplicarSecciones();
   }
 
   /* F1 (port del jefe, PR #17): el handler de pestañas de estado solo toca
@@ -2728,19 +2764,144 @@ var RADIO = {
     if (e.key === "Escape" && overlay.classList.contains("open")) closeDetail();
   });
 
+  /* Tarjeta completa clicable (jefe, 24 nov 2026): sin botón "Ver detalle";
+     toda la tarjeta abre el detalle, salvo los botones internos
+     (p. ej. "Sumar al parlay"). Accesible por teclado. */
   document.querySelectorAll(".match").forEach(function(article){
-    var btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "detail-btn";
-    btn.textContent = "Ver detalle del partido";
-    btn.addEventListener("click", function(){ lastOpener = btn; openDetail(article); });
-    article.appendChild(btn);
-    var teams = article.querySelector(".teams");
-    if (teams){
-      teams.addEventListener("click", function(){ lastOpener = btn; openDetail(article); });
+    article.setAttribute("tabindex", "0");
+    article.setAttribute("role", "button");
+    var nombres = article.querySelectorAll(".team b");
+    if (nombres.length >= 2){
+      article.setAttribute("aria-label", "Ver detalle: " + nombres[0].textContent + " vs " + nombres[1].textContent);
     }
+    article.addEventListener("click", function(e){
+      if (e.target.closest("button")) return;
+      lastOpener = article;
+      openDetail(article);
+    });
+    article.addEventListener("keydown", function(e){
+      if (e.key === "Enter" || e.key === " "){
+        e.preventDefault();
+        lastOpener = article;
+        openDetail(article);
+      }
+    });
   });
 })();
+
+  /* ---------- Marcadores en las tarjetas (jefe, 24 nov 2026) ----------
+     Pinta el marcador en cada tarjeta cuando el partido está en vivo o
+     terminado. Fuente: el caché data/vivo.json (mismo contrato que el
+     módulo del modal) y, en segundo plano, el fetch directo a ESPN para
+     que un caché viejo no deje un "en vivo" desactualizado. 'pre' sigue
+     mostrando "—". Se re-ejecuta cada 60 s. */
+  function normTxt(s){
+    return (s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "")
+      .replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  }
+  function pintarMarcadores(){
+    function aplicar(datos){
+      var porPartido = {};
+      (datos || []).forEach(function(p){
+        porPartido[normTxt(p.home) + "|" + normTxt(p.away)] = p;
+      });
+      var cambio = false;
+      document.querySelectorAll(".match").forEach(function(card){
+        var nombres = card.querySelectorAll(".team b");
+        if (nombres.length < 2) return;
+        var p = porPartido[normTxt(nombres[0].textContent) + "|" + normTxt(nombres[1].textContent)];
+        if (!p) return;
+        var scores = card.querySelectorAll(".team .score");
+        var tiempo = card.querySelector(".m-time");
+        if (scores.length < 2) return;
+        if (p.estado === "in"){
+          scores[0].textContent = p.marcador_local;
+          scores[1].textContent = p.marcador_visita;
+          scores[0].classList.remove("dim");
+          scores[1].classList.remove("dim");
+          card.setAttribute("data-status", "live");
+          if (tiempo){
+            if (!tiempo.getAttribute("data-orig")) tiempo.setAttribute("data-orig", tiempo.textContent);
+            tiempo.innerHTML = '<span class="pulse-dot"></span>' + (p.minuto || "En vivo");
+            tiempo.classList.add("live");
+            tiempo.classList.remove("final");
+            tiempo.title = tiempo.getAttribute("data-orig");
+          }
+          cambio = true;
+        } else if (p.estado === "post"){
+          scores[0].textContent = p.marcador_local;
+          scores[1].textContent = p.marcador_visita;
+          scores[0].classList.remove("dim");
+          scores[1].classList.remove("dim");
+          card.setAttribute("data-status", "finished");
+          if (tiempo){
+            if (!tiempo.getAttribute("data-orig")) tiempo.setAttribute("data-orig", tiempo.textContent);
+            tiempo.textContent = "Final";
+            tiempo.classList.remove("live");
+            tiempo.classList.add("final");
+            tiempo.title = tiempo.getAttribute("data-orig");
+          }
+          cambio = true;
+        }
+      });
+      if (cambio && typeof applyFilters === "function") applyFilters();
+    }
+    function desdeCache(){
+      return fetch("data/vivo.json").then(function(r){
+        if (!r.ok) throw 0;
+        return r.json();
+      }).then(function(j){
+        return j.partidos || [];
+      }).catch(function(){ return null; });
+    }
+    function desdeESPN(){
+      var hoy = new Date();
+      var hoyStr = hoy.getFullYear() + "-" + String(hoy.getMonth() + 1).padStart(2, "0") + "-" + String(hoy.getDate()).padStart(2, "0");
+      var pares = {};
+      Object.keys(PARTIDOS_VIVO || {}).forEach(function(k){
+        var v = PARTIDOS_VIVO[k];
+        if (v.fecha <= hoyStr) pares[v.liga + "|" + v.fecha] = [v.liga, v.fecha.replace(/-/g, "")];
+      });
+      var urls = Object.keys(pares).map(function(k){
+        var l = pares[k];
+        return "https://site.api.espn.com/apis/site/v2/sports/soccer/" + l[0] + "/scoreboard?dates=" + l[1];
+      });
+      return Promise.all(urls.map(function(u){
+        return fetch(u).then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; });
+      })).then(function(res){
+        var out = [];
+        res.forEach(function(j){
+          if (!j || !j.events) return;
+          j.events.forEach(function(e){
+            var c = e.competitions && e.competitions[0];
+            if (!c || !c.competitors) return;
+            var st = (e.status && e.status.type && e.status.type.state) || "pre";
+            var estado = st === "post" ? "post" : (st === "in" ? "in" : "pre");
+            if (estado === "pre") return;
+            var home = null, away = null, hs = null, as = null;
+            c.competitors.forEach(function(comp){
+              var nm = comp.team && comp.team.displayName;
+              var sc = comp.score != null ? Number(comp.score) : null;
+              if (comp.homeAway === "home"){ home = nm; hs = sc; }
+              else { away = nm; as = sc; }
+            });
+            if (!home || !away) return;
+            var detalle = (e.status && (e.status.displayClock || e.status.detail)) || "";
+            out.push({home: home, away: away, estado: estado, marcador_local: hs, marcador_visita: as, minuto: detalle});
+          });
+        });
+        return out;
+      });
+    }
+    desdeCache().then(function(datos){
+      if (datos && datos.length) aplicar(datos);
+      return desdeESPN().then(function(directos){
+        if (directos && directos.length) aplicar(directos);
+      });
+    }).catch(function(){});
+  }
+  pintarMarcadores();
+  setInterval(pintarMarcadores, 60000);
 </script>
 
 </body>
