@@ -179,7 +179,18 @@ interfaz (`index.html` no se toca en este trabajo).
     temporada. Si un equipo no tiene datos, queda pendiente, no se
     inventa nada. Uso:
     `python3 scripts/calcular_alineacion_probable.py --config scripts/config/semana-2.json --out data/semana-2/alineacion-probable.json`
-    (y lo mismo con `semana-2-entresemana.json`).
+    (y lo mismo con `semana-2-entresemana.json`). Cada XI trae
+    `fuerza` (corrección del jefe, 24 nov 2026): valor 0–100 y los 3
+    componentes con fracciones (goles+asistencias / minutos /
+    puntos, cada uno vs el mejor XI 1-4-4-2 por minutos de la misma
+    ventana), pesos 0.40/0.30/0.30, cada componente topado en 100;
+    calculada con los nombres ESPN antes del MAPEO. Puntos: 3/1/0
+    del partido para todo jugador que jugó (titular o suplente con
+    minutos > 0). Verificación de nombres (24 nov 2026): los ~50
+    nombres señalados por el jefe se verificaron uno por uno contra
+    los fichajes del verano 2026 y los datos — los 60 son jugadores
+    reales del equipo asignado, así que no se añadió ningún
+    reemplazo al MAPEO (detalle con fuentes en EMPLEADO-1.md).
 
 **Fecha de cálculo en México:** todos los JSON que generan fecha
 (`fecha_calculo`, `fecha_hoy`) usan hora de México
