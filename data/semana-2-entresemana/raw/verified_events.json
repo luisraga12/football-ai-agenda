@@ -190,53 +190,5 @@
   "date_cst": "2026-11-26 21:10",
   "status": "STATUS_SCHEDULED",
   "espn_id": "401931995"
- },
- {
-  "home": "Atlas",
-  "home_id": "216",
-  "away": "Toluca",
-  "away_id": "223",
-  "fecha": "2026-11-28",
-  "liga": "mex.1",
-  "league": "mex.1",
-  "date_cst": "2026-11-28 19:00",
-  "status": "STATUS_SCHEDULED",
-  "espn_id": "401931997"
- },
- {
-  "home": "América",
-  "home_id": "227",
-  "away": "Monterrey",
-  "away_id": "220",
-  "fecha": "2026-11-28",
-  "liga": "mex.1",
-  "league": "mex.1",
-  "date_cst": "2026-11-28 21:10",
-  "status": "STATUS_SCHEDULED",
-  "espn_id": "401931996"
- },
- {
-  "home": "Guadalajara",
-  "home_id": "219",
-  "away": "Pachuca",
-  "away_id": "234",
-  "fecha": "2026-11-29",
-  "liga": "mex.1",
-  "league": "mex.1",
-  "date_cst": "2026-11-29 19:07",
-  "status": "STATUS_SCHEDULED",
-  "espn_id": "401931983"
- },
- {
-  "home": "Cruz Azul",
-  "home_id": "218",
-  "away": "León",
-  "away_id": "228",
-  "fecha": "2026-11-29",
-  "liga": "mex.1",
-  "league": "mex.1",
-  "date_cst": "2026-11-29 21:00",
-  "status": "STATUS_SCHEDULED",
-  "espn_id": "401932000"
  }
 ]
