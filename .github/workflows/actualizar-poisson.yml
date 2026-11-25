@@ -3,7 +3,7 @@
 # Corre la automatizacion de la semana actual y, si los datos cambiaron,
 # hace commit de los archivos generados en `data/`.
 #
-# - Diario (13:00 UTC): recalcula la semana actual con los últimos
+# - Diario (13:17 UTC): recalcula la semana actual con los últimos
 #   datos de ESPN (últimos 5 de cada equipo — 4 en competiciones
 #   europeas —, promedios de liga, momios y EV). Los momios del fin
 #   de semana siguiente aparecen solos cuando DraftKings/Bet 365 los
