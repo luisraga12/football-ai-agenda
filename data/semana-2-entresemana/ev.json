@@ -14,7 +14,17 @@
    "mejor_decimal": null,
    "mejor_prob": null,
    "semaforo": null,
-   "mercados": {},
+   "mercados": {
+    "btts": {
+     "p_btts": 75.61419818073277,
+     "p_no_btts": 24.38580181926723,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    }
+   },
    "momios": null
   },
   {
@@ -30,7 +40,17 @@
    "mejor_decimal": null,
    "mejor_prob": null,
    "semaforo": null,
-   "mercados": {},
+   "mercados": {
+    "btts": {
+     "p_btts": 32.36199252427044,
+     "p_no_btts": 67.63800747572955,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    }
+   },
    "momios": null
   },
   {
@@ -46,7 +66,17 @@
    "mejor_decimal": null,
    "mejor_prob": null,
    "semaforo": null,
-   "mercados": {},
+   "mercados": {
+    "btts": {
+     "p_btts": 67.84848120484091,
+     "p_no_btts": 32.15151879515909,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    }
+   },
    "momios": null
   },
   {
@@ -62,7 +92,17 @@
    "mejor_decimal": null,
    "mejor_prob": null,
    "semaforo": null,
-   "mercados": {},
+   "mercados": {
+    "btts": {
+     "p_btts": 36.20263701218571,
+     "p_no_btts": 63.79736298781429,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    }
+   },
    "momios": null
   },
   {
@@ -74,21 +114,30 @@
    "proveedor": "DraftKings",
    "estado": "con_momio",
    "mejor_pick": "Local",
-   "mejor_ev": 1.49139404787354,
-   "mejor_decimal": 4.4,
+   "mejor_ev": 1.5480166398706658,
+   "mejor_decimal": 4.5,
    "mejor_prob": 56.6225919971259,
    "semaforo": "verde",
    "mercados": {
+    "btts": {
+     "p_btts": 90.91852374372722,
+     "p_no_btts": 9.08147625627278,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    },
     "1X2": {
      "momios": {
-      "home": 4.4,
+      "home": 4.5,
       "draw": 4.7,
-      "away": 1.6451612903225805
+      "away": 1.625
      },
      "ev": {
-      "1": 1.49139404787354,
+      "1": 1.5480166398706658,
       "X": -0.28677493426446643,
-      "2": -0.5360249242420989
+      "2": -0.5417108933077593
      }
     },
     "total": {
@@ -96,12 +145,12 @@
      "momios": {
       "linea": 3.5,
       "over": 1.7407407407407407,
-      "under": 2.1
+      "under": 2.05
      },
      "p_over": 87.79383009136232,
      "ev": {
       "mas": 0.5282629682570479,
-      "menos": -0.7436704319186087
+      "menos": -0.7497735168729276
      }
     },
     "spread": {
@@ -122,14 +171,14 @@
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 4.4,
+     "home": 4.5,
      "draw": 4.7,
-     "away": 1.6451612903225805
+     "away": 1.625
     },
     "total": {
      "linea": 3.5,
      "over": 1.7407407407407407,
-     "under": 2.1
+     "under": 2.05
     },
     "spread": {
      "home_linea": 0.5,
@@ -153,6 +202,15 @@
    "mejor_prob": 38.08620235323949,
    "semaforo": "verde",
    "mercados": {
+    "btts": {
+     "p_btts": 44.92217825310217,
+     "p_no_btts": 55.07782174689783,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    },
     "1X2": {
      "momios": {
       "home": 1.4166666666666667,
@@ -227,6 +285,15 @@
    "mejor_prob": 86.96582756699488,
    "semaforo": "verde",
    "mercados": {
+    "btts": {
+     "p_btts": 46.711937223653734,
+     "p_no_btts": 53.288062776346266,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    },
     "1X2": {
      "momios": {
       "home": 5.25,
@@ -243,13 +310,13 @@
      "linea": 2.5,
      "momios": {
       "linea": 2.5,
-      "over": 1.7407407407407407,
-      "under": 2.1
+      "over": 1.7692307692307692,
+      "under": 2.05
      },
      "p_over": 75.93706621656739,
      "ev": {
-      "mas": 0.3218674489550619,
-      "menos": -0.49467839054791507
+      "mas": 0.34350194075465357,
+      "menos": -0.5067098574396315
      }
     },
     "spread": {
@@ -276,8 +343,8 @@
     },
     "total": {
      "linea": 2.5,
-     "over": 1.7407407407407407,
-     "under": 2.1
+     "over": 1.7692307692307692,
+     "under": 2.05
     },
     "spread": {
      "home_linea": 0.5,
@@ -301,6 +368,15 @@
    "mejor_prob": 82.82830846994565,
    "semaforo": "verde",
    "mercados": {
+    "btts": {
+     "p_btts": 74.55241478567174,
+     "p_no_btts": 25.447585214328257,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    },
     "1X2": {
      "momios": {
       "home": 1.4444444444444444,
@@ -317,13 +393,13 @@
      "linea": 3.5,
      "momios": {
       "linea": 3.5,
-      "over": 1.7692307692307692,
-      "under": 2.05
+      "over": 1.8,
+      "under": 2.0
      },
      "p_over": 90.0352624598737,
      "ev": {
-      "mas": 0.5929315665977657,
-      "menos": -0.795722880427411
+      "mas": 0.6206347242777268,
+      "menos": -0.8007052491974741
      }
     },
     "spread": {
@@ -350,8 +426,8 @@
     },
     "total": {
      "linea": 3.5,
-     "over": 1.7692307692307692,
-     "under": 2.05
+     "over": 1.8,
+     "under": 2.0
     },
     "spread": {
      "home_linea": -1.5,
@@ -375,6 +451,15 @@
    "mejor_prob": 65.79042458652096,
    "semaforo": "verde",
    "mercados": {
+    "btts": {
+     "p_btts": 51.699686405867354,
+     "p_no_btts": 48.300313594132646,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    },
     "1X2": {
      "momios": {
       "home": 2.55,
@@ -449,6 +534,15 @@
    "mejor_prob": 88.81701785380682,
    "semaforo": "verde",
    "mercados": {
+    "btts": {
+     "p_btts": 26.111815918304544,
+     "p_no_btts": 73.88818408169546,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    },
     "1X2": {
      "momios": {
       "home": 3.6,
@@ -523,16 +617,25 @@
    "mejor_prob": 92.1389830875759,
    "semaforo": "verde",
    "mercados": {
+    "btts": {
+     "p_btts": 13.788300530197764,
+     "p_no_btts": 86.21169946980224,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    },
     "1X2": {
      "momios": {
-      "home": 4.4,
-      "draw": 4.3,
-      "away": 1.7142857142857144
+      "home": 4.5,
+      "draw": 4.4,
+      "away": 1.6666666666666665
      },
      "ev": {
-      "1": -0.7718506425495427,
-      "X": 0.13305288693085404,
-      "2": 0.1736809175899059
+      "1": -0.7666654298802142,
+      "X": 0.15940295406878113,
+      "2": 0.1410786698790749
      }
     },
     "total": {
@@ -554,21 +657,21 @@
       "home_linea": 0.5,
       "home": 2.15,
       "away_linea": -0.5,
-      "away": 1.6451612903225805
+      "away": 1.606060606060606
      },
      "p_cubre_local": 31.535279807255424,
      "ev": {
       "local": -0.32199148414400847,
-      "visitante": 0.12635507413870095
+      "visitante": 0.09958490006529153
      }
     }
    },
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 4.4,
-     "draw": 4.3,
-     "away": 1.7142857142857144
+     "home": 4.5,
+     "draw": 4.4,
+     "away": 1.6666666666666665
     },
     "total": {
      "linea": 3.5,
@@ -579,7 +682,7 @@
      "home_linea": 0.5,
      "home": 2.15,
      "away_linea": -0.5,
-     "away": 1.6451612903225805
+     "away": 1.606060606060606
     }
    }
   },
@@ -597,6 +700,15 @@
    "mejor_prob": 61.68147553184215,
    "semaforo": "verde",
    "mercados": {
+    "btts": {
+     "p_btts": 10.858871714453532,
+     "p_no_btts": 89.14112828554647,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    },
     "1X2": {
      "momios": {
       "home": 2.9,
@@ -671,6 +783,15 @@
    "mejor_prob": 84.37109389154462,
    "semaforo": "verde",
    "mercados": {
+    "btts": {
+     "p_btts": 85.35246845479453,
+     "p_no_btts": 14.647531545205467,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    },
     "1X2": {
      "momios": {
       "home": 1.4444444444444444,
@@ -745,6 +866,15 @@
    "mejor_prob": 34.53897897639122,
    "semaforo": "verde",
    "mercados": {
+    "btts": {
+     "p_btts": 54.07112262994905,
+     "p_no_btts": 45.92887737005095,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    },
     "1X2": {
      "momios": {
       "home": 2.3,
@@ -818,7 +948,17 @@
    "mejor_decimal": null,
    "mejor_prob": null,
    "semaforo": null,
-   "mercados": {},
+   "mercados": {
+    "btts": {
+     "p_btts": 37.04079633116867,
+     "p_no_btts": 62.95920366883133,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    }
+   },
    "momios": null
   },
   {
@@ -835,6 +975,15 @@
    "mejor_prob": 53.29350460419317,
    "semaforo": "verde",
    "mercados": {
+    "btts": {
+     "p_btts": 51.671968626447025,
+     "p_no_btts": 48.328031373552975,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    },
     "1X2": {
      "momios": {
       "home": 3.1,
@@ -903,69 +1052,78 @@
    "liga": "Champions League",
    "proveedor": "DraftKings",
    "estado": "con_momio",
-   "mejor_pick": "Menos 4.5",
-   "mejor_ev": 0.05084743838640504,
-   "mejor_decimal": 2.1,
-   "mejor_prob": 50.04035420887642,
-   "semaforo": "verde",
+   "mejor_pick": "Empate",
+   "mejor_ev": -0.021988382020637465,
+   "mejor_decimal": 14.0,
+   "mejor_prob": 6.985797271281161,
+   "semaforo": "rojo",
    "mercados": {
+    "btts": {
+     "p_btts": 53.72252214972514,
+     "p_no_btts": 46.27747785027486,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    },
     "1X2": {
      "momios": {
-      "home": 21.0,
-      "draw": 13.0,
-      "away": 1.0833333333333333
+      "home": 23.0,
+      "draw": 14.0,
+      "away": 1.0714285714285714
      },
      "ev": {
-      "1": -0.24278410008926,
-      "X": -0.09184635473344915,
-      "2": -0.03140886329541315
+      "1": -0.17066830009776102,
+      "X": -0.021988382020637465,
+      "2": -0.042052721940518456
      }
     },
     "total": {
      "linea": 4.5,
      "momios": {
       "linea": 4.5,
-      "over": 1.7142857142857144,
-      "under": 2.1
+      "over": 1.9090909090909092,
+      "under": 1.8695652173913042
      },
      "p_over": 49.95964579112358,
      "ev": {
-      "mas": -0.14354892929502439,
-      "menos": 0.05084743838640504
+      "mas": -0.046224943987640765,
+      "menos": -0.06446294305144085
      }
     },
     "spread": {
      "home_linea": 3.5,
      "momios": {
       "home_linea": 3.5,
-      "home": 1.625,
+      "home": 1.5882352941176472,
       "away_linea": -3.5,
-      "away": 2.15
+      "away": 2.2
      },
      "p_cubre_local": 59.92897072502556,
      "ev": {
-      "local": -0.0261542257183347,
-      "visitante": -0.13847287058804958
+      "local": -0.04818693554371167,
+      "visitante": -0.11843735595056226
      }
     }
    },
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 21.0,
-     "draw": 13.0,
-     "away": 1.0833333333333333
+     "home": 23.0,
+     "draw": 14.0,
+     "away": 1.0714285714285714
     },
     "total": {
      "linea": 4.5,
-     "over": 1.7142857142857144,
-     "under": 2.1
+     "over": 1.9090909090909092,
+     "under": 1.8695652173913042
     },
     "spread": {
      "home_linea": 3.5,
-     "home": 1.625,
+     "home": 1.5882352941176472,
      "away_linea": -3.5,
-     "away": 2.15
+     "away": 2.2
     }
    }
   },
@@ -978,68 +1136,77 @@
    "proveedor": "DraftKings",
    "estado": "con_momio",
    "mejor_pick": "Local",
-   "mejor_ev": 0.38792668413422704,
-   "mejor_decimal": 3.0,
+   "mejor_ev": 0.45732301834093847,
+   "mejor_decimal": 3.15,
    "mejor_prob": 46.26422280447424,
    "semaforo": "verde",
    "mercados": {
+    "btts": {
+     "p_btts": 77.87170405829914,
+     "p_no_btts": 22.128295941700856,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    },
     "1X2": {
      "momios": {
-      "home": 3.0,
+      "home": 3.15,
       "draw": 3.9,
-      "away": 2.15
+      "away": 2.1
      },
      "ev": {
-      "1": 0.38792668413422704,
+      "1": 0.45732301834093847,
       "X": -0.23341496185723853,
-      "2": -0.26728536260589875
+      "2": -0.28432523789413366
      }
     },
     "total": {
      "linea": 3.5,
      "momios": {
       "linea": 3.5,
-      "over": 2.2,
-      "under": 1.6896551724137931
+      "over": 2.3,
+      "under": 1.625
      },
      "p_over": 62.50157102923476,
      "ev": {
-      "mas": 0.3750345626431648,
-      "menos": -0.3664058553215528
+      "mas": 0.4375361336723993,
+      "menos": -0.3906505292250648
      }
     },
     "spread": {
      "home_linea": 0.5,
      "momios": {
       "home_linea": 0.5,
-      "home": 1.6666666666666665,
+      "home": 1.7142857142857144,
       "away_linea": -0.5,
-      "away": 2.1
+      "away": 2.0
      },
      "p_cubre_local": 65.92024942351946,
      "ev": {
-      "local": 0.09867082372532421,
-      "visitante": -0.28432523789390873
+      "local": 0.13006141868890508,
+      "visitante": -0.31840498847038934
      }
     }
    },
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 3.0,
+     "home": 3.15,
      "draw": 3.9,
-     "away": 2.15
+     "away": 2.1
     },
     "total": {
      "linea": 3.5,
-     "over": 2.2,
-     "under": 1.6896551724137931
+     "over": 2.3,
+     "under": 1.625
     },
     "spread": {
      "home_linea": 0.5,
-     "home": 1.6666666666666665,
+     "home": 1.7142857142857144,
      "away_linea": -0.5,
-     "away": 2.1
+     "away": 2.0
     }
    }
   },
@@ -1057,6 +1224,15 @@
    "mejor_prob": 34.82783034191754,
    "semaforo": "verde",
    "mercados": {
+    "btts": {
+     "p_btts": 52.29356070384168,
+     "p_no_btts": 47.70643929615832,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    },
     "1X2": {
      "momios": {
       "home": 1.1111111111111112,
@@ -1131,6 +1307,15 @@
    "mejor_prob": 56.34981212072615,
    "semaforo": "verde",
    "mercados": {
+    "btts": {
+     "p_btts": 37.23389831306461,
+     "p_no_btts": 62.76610168693539,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    },
     "1X2": {
      "momios": {
       "home": 2.95,
@@ -1147,13 +1332,13 @@
      "linea": 2.5,
      "momios": {
       "linea": 2.5,
-      "over": 1.7692307692307692,
-      "under": 2.05
+      "over": 1.8,
+      "under": 2.0
      },
      "p_over": 35.64006399267127,
      "ev": {
-      "mas": -0.36944502166812365,
-      "menos": 0.31937868815023873
+      "mas": -0.3584788481319171,
+      "menos": 0.28719872014657444
      }
     },
     "spread": {
@@ -1180,8 +1365,8 @@
     },
     "total": {
      "linea": 2.5,
-     "over": 1.7692307692307692,
-     "under": 2.05
+     "over": 1.8,
+     "under": 2.0
     },
     "spread": {
      "home_linea": 0.5,
@@ -1205,6 +1390,15 @@
    "mejor_prob": 80.60855353304956,
    "semaforo": "verde",
    "mercados": {
+    "btts": {
+     "p_btts": 28.626809950035074,
+     "p_no_btts": 71.37319004996493,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    },
     "1X2": {
      "momios": {
       "home": 1.2105263157894737,
@@ -1279,6 +1473,15 @@
    "mejor_prob": 56.4818209607627,
    "semaforo": "verde",
    "mercados": {
+    "btts": {
+     "p_btts": 13.996684319598268,
+     "p_no_btts": 86.00331568040173,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    },
     "1X2": {
      "momios": {
       "home": 1.3636363636363638,
@@ -1353,6 +1556,15 @@
    "mejor_prob": 31.638971471921113,
    "semaforo": "verde",
    "mercados": {
+    "btts": {
+     "p_btts": 61.50264620421193,
+     "p_no_btts": 38.49735379578807,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    },
     "1X2": {
      "momios": {
       "home": 1.1818181818181819,
@@ -1427,6 +1639,15 @@
    "mejor_prob": 93.76758404454769,
    "semaforo": "verde",
    "mercados": {
+    "btts": {
+     "p_btts": 15.88905853789597,
+     "p_no_btts": 84.11094146210402,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    },
     "1X2": {
      "momios": {
       "home": 1.3448275862068966,
@@ -1501,42 +1722,51 @@
    "mejor_prob": 84.92241140133487,
    "semaforo": "verde",
    "mercados": {
+    "btts": {
+     "p_btts": 29.959330974985548,
+     "p_no_btts": 70.04066902501445,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    },
     "1X2": {
      "momios": {
-      "home": 5.75,
+      "home": 6.0,
       "draw": 5.0,
-      "away": 1.4878048780487805
+      "away": 1.4651162790697674
      },
      "ev": {
-      "1": -0.9384287961197102,
+      "1": -0.9357517872553498,
       "X": -0.7993271349930814,
-      "2": 0.412160994656088
+      "2": 0.39062594326979627
      }
     },
     "total": {
      "linea": 3.5,
      "momios": {
       "linea": 3.5,
-      "over": 2.1,
-      "under": 1.7407407407407407
+      "over": 2.05,
+      "under": 1.7692307692307692
      },
      "p_over": 62.902151896428826,
      "ev": {
-      "mas": 0.3209451898250053,
-      "menos": -0.3542226441230203
+      "mas": 0.2894941138767908,
+      "menos": -0.3436534566291254
      }
     },
     "spread": {
      "home_linea": 1.5,
      "momios": {
       "home_linea": 1.5,
-      "home": 1.6451612903225805,
+      "home": 1.6666666666666665,
       "away_linea": -1.5,
       "away": 2.1
      },
      "p_cubre_local": 15.077588598665127,
      "ev": {
-      "local": -0.7519493488606706,
+      "local": -0.7487068566889146,
       "visitante": 0.7833706394280324
      }
     }
@@ -1544,18 +1774,18 @@
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 5.75,
+     "home": 6.0,
      "draw": 5.0,
-     "away": 1.4878048780487805
+     "away": 1.4651162790697674
     },
     "total": {
      "linea": 3.5,
-     "over": 2.1,
-     "under": 1.7407407407407407
+     "over": 2.05,
+     "under": 1.7692307692307692
     },
     "spread": {
      "home_linea": 1.5,
-     "home": 1.6451612903225805,
+     "home": 1.6666666666666665,
      "away_linea": -1.5,
      "away": 2.1
     }
@@ -1575,6 +1805,15 @@
    "mejor_prob": 57.55789840848311,
    "semaforo": "verde",
    "mercados": {
+    "btts": {
+     "p_btts": 69.44322926701707,
+     "p_no_btts": 30.556770732982926,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    },
     "1X2": {
      "momios": {
       "home": 2.05,
@@ -1649,6 +1888,15 @@
    "mejor_prob": 68.43471943311485,
    "semaforo": "verde",
    "mercados": {
+    "btts": {
+     "p_btts": 47.15316477163313,
+     "p_no_btts": 52.84683522836687,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    },
     "1X2": {
      "momios": {
       "home": 1.3703703703703702,
@@ -1723,6 +1971,15 @@
    "mejor_prob": 9.256333088026576,
    "semaforo": "verde",
    "mercados": {
+    "btts": {
+     "p_btts": 62.03000035157762,
+     "p_no_btts": 37.96999964842238,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    },
     "1X2": {
      "momios": {
       "home": 1.1818181818181819,
@@ -1797,6 +2054,15 @@
    "mejor_prob": 14.992063436009499,
    "semaforo": "verde",
    "mercados": {
+    "btts": {
+     "p_btts": 41.6802387677555,
+     "p_no_btts": 58.3197612322445,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    },
     "1X2": {
      "momios": {
       "home": 1.1818181818181819,
@@ -1871,6 +2137,15 @@
    "mejor_prob": 74.85118122263246,
    "semaforo": "verde",
    "mercados": {
+    "btts": {
+     "p_btts": 49.230193525479464,
+     "p_no_btts": 50.769806474520536,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    },
     "1X2": {
      "momios": {
       "home": 3.0,
@@ -1945,6 +2220,15 @@
    "mejor_prob": 76.92259624737316,
    "semaforo": "verde",
    "mercados": {
+    "btts": {
+     "p_btts": 29.541459180563656,
+     "p_no_btts": 70.45854081943634,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    },
     "1X2": {
      "momios": {
       "home": 4.4,
@@ -2019,6 +2303,15 @@
    "mejor_prob": 57.57991147065079,
    "semaforo": "verde",
    "mercados": {
+    "btts": {
+     "p_btts": 52.20642084076685,
+     "p_no_btts": 47.79357915923315,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    },
     "1X2": {
      "momios": {
       "home": 2.85,
@@ -2093,6 +2386,15 @@
    "mejor_prob": 22.580920858768483,
    "semaforo": "verde",
    "mercados": {
+    "btts": {
+     "p_btts": 34.07145558231217,
+     "p_no_btts": 65.92854441768783,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    },
     "1X2": {
      "momios": {
       "home": 1.2352941176470589,
@@ -2167,6 +2469,15 @@
    "mejor_prob": 54.155098453939544,
    "semaforo": "verde",
    "mercados": {
+    "btts": {
+     "p_btts": 86.51138271451443,
+     "p_no_btts": 13.488617285485574,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    },
     "1X2": {
      "momios": {
       "home": 4.7,
@@ -2241,6 +2552,15 @@
    "mejor_prob": 26.72019657043499,
    "semaforo": "verde",
    "mercados": {
+    "btts": {
+     "p_btts": 41.735327347020025,
+     "p_no_btts": 58.264672652979975,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    },
     "1X2": {
      "momios": {
       "home": 1.3508771929824561,

@@ -77,14 +77,14 @@
    "mejor_pick_ayer": "Local",
    "mejor_pick_hoy": "Local",
    "ev_ayer": 1.49139404787354,
-   "ev_hoy": 1.49139404787354,
+   "ev_hoy": 1.5480166398706658,
    "linea_ayer": 3.5,
    "linea_hoy": 3.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": 0.0,
-   "flecha": "→"
+   "delta_ev_pp": 5.662259199712594,
+   "flecha": "↑"
   },
   {
    "slug": "internazionale-vs-vfb-stuttgart",
@@ -300,8 +300,8 @@
    "hora": "11:45",
    "proveedor": "DraftKings",
    "estado": "nuevo",
-   "mejor_pick_hoy": "Menos 4.5",
-   "ev_hoy": 0.05084743838640504
+   "mejor_pick_hoy": "Empate",
+   "ev_hoy": -0.021988382020637465
   },
   {
    "slug": "slavia-prague-vs-villarreal",
@@ -312,7 +312,7 @@
    "proveedor": "DraftKings",
    "estado": "nuevo",
    "mejor_pick_hoy": "Local",
-   "ev_hoy": 0.38792668413422704
+   "ev_hoy": 0.45732301834093847
   },
   {
    "slug": "atletico-madrid-vs-viking-fk",

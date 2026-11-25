@@ -44,7 +44,10 @@ interfaz (`index.html` no se toca en este trabajo).
    `data/semana-N/tabla-momios-semana-N.md`. Desde el 23 nov el
    `ev.json` incluye `mercados` (EV por mercado) y el decimal y la
    probabilidad del mejor pick, para que `integrar_pagina.py` no tenga
-   que leer `raw/ev_result.json`.
+   que leer `raw/ev_result.json`. Desde el 24 nov `mercados` también
+   trae `btts` con su probabilidad Poisson completa (p_btts y
+   p_no_btts) en TODOS los partidos, con momio o sin él; sin momio ni
+   EV porque ESPN/DraftKings no trae ese momio en esta fuente.
    `data/semana-N/tabla-momios-semana-N.md`.
 6. **`integrar_pagina.py`** — fragmento de integración revisado
    (lunes 23 nov 2026, orden del jefe): inyecta el bloque COMPLETO de
