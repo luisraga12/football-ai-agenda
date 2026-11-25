@@ -18,6 +18,11 @@ Corre los pasos en orden y valida el resultado:
      partidos por equipo, o 4 en competiciones europeas; escribe
      tendencias.json. Si falta raw/teams_last5.json, se avisa y se
      sigue sin tendencias para esa semana.)
+  8. calcular_alineacion_probable.py (XI probable + Fuerza por
+     partido, Semana 6; escribe alineacion-probable.json. Es parte
+     del pipeline completo desde la Semana 7: un partido descubierto
+     en el paso 0 tambien lleva su XI probable con Fuerza, no solo
+     Poisson y EV.)
 
 Validaciones al final (no se publica nada si fallan):
   - los partidos existen en ESPN (lo garantiza el paso 1: si falta
@@ -137,6 +142,13 @@ def main():
     # teams_last5.json de la semana.
     run([sys.executable, 'scripts/run_tendencias.py',
          '--semanas', f'semana-{semana}'])
+    # Paso 8: alineacion probable + Fuerza (Semana 6). Un partido
+    # descubierto en el paso 0 tambien lleva su XI probable con
+    # Fuerza; el script marca pendiente al equipo sin datos, no
+    # inventa nada.
+    run([sys.executable, 'scripts/calcular_alineacion_probable.py',
+         '--config', args.config,
+         '--out', os.path.join(outdir, 'alineacion-probable.json')])
 
     # ---- validaciones finales ----
     rawdir = os.path.join(ROOT, outdir, 'raw')

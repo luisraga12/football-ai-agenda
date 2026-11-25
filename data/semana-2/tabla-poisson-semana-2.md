@@ -1,17 +1,13 @@
 # Tabla de probabilidades Poisson — Semana 2 (Football AI Agenda)
 
-**Partidos:** 2026-11-25 al 2026-11-29, horas de Monterrey (CST). **Fuente de datos:** ESPN, API pública sin clave.
+**Partidos:** 2026-11-27 al 2026-11-29, horas de Monterrey (CST). **Fuente de datos:** ESPN, API pública sin clave.
 **Método:** modelo Poisson con goles esperados (xG) por equipo, distribución completa (0–20 goles), P(1)/P(X)/P(2) suman 100%.
 **Fecha de cálculo:** 2026-11-19. Últimos 5 partidos por equipo: partidos de liga completados hasta el 2026-11-19.
 
-## (a) Tabla de los 24 partidos
+## (a) Tabla de los 20 partidos
 
 | Fecha | Hora (CST) | Liga | Local | Visitante | xG local | xG visit. | P(1) | P(X) | P(2) | P(+2.5) | P(ambos anotan) |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| Mié 25 nov | 19:00 | Liga MX | Toluca | Atlas | 3.03 | 1.40 | 70.2% | 15.0% | 14.9% | 81.8% | 71.8% |
-| Mié 25 nov | 21:10 | Liga MX | Monterrey | América | 1.82 | 2.31 | 30.7% | 19.8% | 49.5% | 78.0% | 75.5% |
-| Jue 26 nov | 19:00 | Liga MX | Pachuca | Guadalajara | 1.11 | 1.12 | 35.3% | 28.9% | 35.9% | 38.6% | 45.2% |
-| Jue 26 nov | 21:10 | Liga MX | León | Cruz Azul | 1.01 | 3.16 | 8.6% | 12.1% | 79.3% | 78.5% | 60.8% |
 | Vie 27 nov | 13:30 | Bundesliga | Werder Bremen | Borussia Mönchengladbach | 2.49 | 0.90 | 72.2% | 16.4% | 11.5% | 65.7% | 54.2% |
 | Vie 27 nov | 13:45 | Serie A | Venezia | Bologna | 0.49 | 1.32 | 13.9% | 28.8% | 57.3% | 27.3% | 28.6% |
 | Vie 27 nov | 14:00 | Premier League | Nottingham Forest | Chelsea | 0.78 | 2.12 | 12.7% | 19.2% | 68.1% | 55.4% | 47.8% |
@@ -33,7 +29,7 @@
 | Dom 29 nov | 19:07 | Liga MX | Guadalajara | Pachuca | 1.21 | 1.03 | 40.2% | 28.7% | 31.1% | 38.8% | 45.1% |
 | Dom 29 nov | 21:00 | Liga MX | Cruz Azul | León | 3.41 | 0.94 | 83.4% | 10.2% | 6.4% | 80.8% | 58.7% |
 
-Promedios de la tabla: xG local 1.85, xG visitante 1.52; P(1) media 44.5%, P(X) media 19.9%, P(2) media 35.6%.
+Promedios de la tabla: xG local 1.87, xG visitante 1.42; P(1) media 46.2%, P(X) media 20.0%, P(2) media 33.7%.
 
 ## (b) Tabla de cálculo por equipo (últimos 5 partidos de liga)
 
@@ -103,14 +99,14 @@ Los promedios se calcularon desde los scoreboards de las últimas ~3 jornadas co
 
 ## (d) Fuentes ESPN consultadas (API pública, sin clave)
 
-- Scoreboard por liga y día, 2026-11-25 al 2026-11-29: `site.api.espn.com/apis/site/v2/sports/soccer/{{liga}}/scoreboard?dates={{AAAAMMDD}}` — los {n_partidos} partidos aparecen como STATUS_SCHEDULED con la fecha y hora exactas de la configuración (horas convertidas de UTC a CST, UTC-6).
+- Scoreboard por liga y día, 2026-11-27 al 2026-11-29: `site.api.espn.com/apis/site/v2/sports/soccer/{{liga}}/scoreboard?dates={{AAAAMMDD}}` — los {n_partidos} partidos aparecen como STATUS_SCHEDULED con la fecha y hora exactas de la configuración (horas convertidas de UTC a CST, UTC-6).
 - Schedule por equipo (últimos partidos completados): `site.api.espn.com/apis/site/v2/sports/soccer/{liga}/teams/{id}/schedule` — 40 equipos, 5 partidos completados cada uno, todos de liga, hasta el cutoff.
 - Scoreboards de jornadas pasadas para promedios de liga: 9 fechas por liga (ver tabla c).
 - Los archivos JSON crudos de todas estas consultas están en `raw/` dentro de esta misma carpeta.
 
 ## (e) Datos no verificados y partidos excluidos
 
-- **Ningún partido quedó fuera:** los 24 partidos de la lista se verificaron en el scoreboard de ESPN con fecha, hora y equipos exactos antes de calcular.
+- **Ningún partido quedó fuera:** los 20 partidos de la lista se verificaron en el scoreboard de ESPN con fecha, hora y equipos exactos antes de calcular.
 - **Valores extremos por muestra corta (5 partidos, sin tope aplicado):** son correctos según los datos, pero una muestra de 5 partidos exagera rachas; conviene leer los favoritos más extremos con cautela.
 - **Últimos 5 = solo liga:** el schedule de ESPN por liga devuelve partidos de esa liga; no se mezclaron otras competiciones.
 - **Sin momios ni cuotas en esta tabla:** solo probabilidades propias (Poisson). Los momios y el EV están en la tabla de momios de la misma semana.

@@ -1,6 +1,6 @@
 {
  "semana": 2,
- "fecha_consulta": "2026-11-24",
+ "fecha_consulta": "2026-11-25",
  "partidos": [
   {
    "away": "Borussia Mönchengladbach",
@@ -297,7 +297,7 @@
     },
     "spread": {
      "home_linea": -2.5,
-     "home": 2.1,
+     "home": 2.05,
      "away_linea": 2.5,
      "away": 1.6451612903225805
     }
@@ -486,112 +486,6 @@
      "home": 1.9523809523809523,
      "away_linea": 0.5,
      "away": 1.7142857142857144
-    }
-   }
-  },
-  {
-   "home": "Toluca",
-   "home_id": "223",
-   "away": "Atlas",
-   "away_id": "216",
-   "fecha": "2026-11-25",
-   "liga": "mex.1",
-   "fecha_cst": "2026-11-25 19:00",
-   "liga_nombre": "Liga MX",
-   "proveedor": "DraftKings",
-   "estado": "con_momio",
-   "momios": {
-    "proveedor": "DraftKings",
-    "moneyline": {
-     "home": 1.434782608695652,
-     "draw": 4.8,
-     "away": 6.0
-    },
-    "total": {
-     "linea": 3.5,
-     "over": 2.15,
-     "under": 1.606060606060606
-    },
-    "spread": {
-     "home_linea": -1.5,
-     "home": 2.1,
-     "away_linea": 1.5,
-     "away": 1.625
-    }
-   }
-  },
-  {
-   "home": "Monterrey",
-   "home_id": "220",
-   "away": "América",
-   "away_id": "227",
-   "fecha": "2026-11-25",
-   "liga": "mex.1",
-   "fecha_cst": "2026-11-25 21:10",
-   "liga_nombre": "Liga MX",
-   "proveedor": "DraftKings",
-   "estado": "con_momio",
-   "momios": {
-    "proveedor": "DraftKings",
-    "moneyline": {
-     "home": 2.35,
-     "draw": 3.25,
-     "away": 3.0
-    },
-    "total": {
-     "linea": 2.5,
-     "over": 1.8333333333333335,
-     "under": 1.8695652173913042
-    },
-    "spread": {
-     "home_linea": -0.5,
-     "home": 2.2,
-     "away_linea": 0.5,
-     "away": 1.5555555555555556
-    }
-   }
-  },
-  {
-   "home": "Pachuca",
-   "home_id": "234",
-   "away": "Guadalajara",
-   "away_id": "219",
-   "fecha": "2026-11-26",
-   "liga": "mex.1",
-   "fecha_cst": "2026-11-26 19:00",
-   "liga_nombre": "Liga MX",
-   "proveedor": null,
-   "estado": "pendiente",
-   "momios": null
-  },
-  {
-   "home": "León",
-   "home_id": "228",
-   "away": "Cruz Azul",
-   "away_id": "218",
-   "fecha": "2026-11-26",
-   "liga": "mex.1",
-   "fecha_cst": "2026-11-26 21:10",
-   "liga_nombre": "Liga MX",
-   "proveedor": "DraftKings",
-   "estado": "con_momio",
-   "momios": {
-    "proveedor": "DraftKings",
-    "moneyline": {
-     "home": 3.1,
-     "draw": 3.45,
-     "away": 2.2
-    },
-    "total": {
-     "linea": 2.5,
-     "over": 1.6896551724137931,
-     "under": 2.05
-    },
-    "spread": {
-     "home_linea": 0.5,
-     "home": 1.6451612903225805,
-     "away_linea": -0.5,
-     "away": 2.05
     }
    }
   },

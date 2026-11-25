@@ -21,6 +21,13 @@ Lo que hace este script, en cada corrida:
      y IDs de equipo) y deja constancia en el log. El pipeline completo
      (Poisson + momios + EV) corre despues para el, porque
      run_semana.py llama a este script como paso 0.
+  Solo se agregan partidos cuya fecha esta en las fechas del propio
+  config (cfg['fechas']): asi un partido de entre semana no entra al
+  config de fin de semana ni al reves, y el mismo partido no aparece
+  en los dos configs (las fechas 24-26 y 27-29 no se solapan). Un
+  partido visto cuya fecha no esta en el config se registra en la
+  linea base pero no se agrega; lo ve el otro config si su fecha si
+  esta en el suyo.
 
 Reglas (orden del jefe):
   - Solo ligas del alcance; partidos de Liguilla/playoffs incluidos
@@ -31,6 +38,14 @@ Reglas (orden del jefe):
     que leera la integracion de la pagina (Semana 7).
   - No se guardan los scoreboards completos del descubrimiento (serian
     ~56 JSON por corrida); solo la linea base compacta.
+  - El cambio al config DEBE commitearse (el workflow hace
+    `git add data/ scripts/config/`): leccion de la Liguilla, 24 nov
+    2026 — la corrida c892956 descubrio los 8 cuartos de final y los
+    puso en el ev.json, pero el workflow solo commiteaba `data/` y el
+    cambio al config se perdio; la baseline ya los traia, asi que en
+    la siguiente corrida no se re-agregaron y el pipeline los saco
+    del ev.json. Sin el commit del config, el descubrimiento solo
+    dura una corrida.
 
 Conference League: en ESPN no responde con ninguno de los slugs
 probados (uefa.europa-conference, uefa.conference-league,
@@ -163,11 +178,23 @@ def main():
     base = json.load(open(base_path))
     en_config = {(str(p['home_id']), str(p['away_id']), p['fecha'])
                  for p in cfg['partidos']}
+    # Solo fechas del propio config (Semana 7): un partido de entre
+    # semana no entra al config de fin de semana ni al reves; el otro
+    # config lo ve en su corrida, con su propia linea base.
+    fechas_config = set(cfg['fechas'])
     nuevos = []
+    fuera_de_fechas = 0
     for key, v in vistos_ahora.items():
         kstr = f"{key[0]}|{key[1]}|{key[2]}"
         if kstr not in base and key not in en_config:
-            nuevos.append(v)
+            if v['fecha'] in fechas_config:
+                nuevos.append(v)
+            else:
+                fuera_de_fechas += 1
+    if fuera_de_fechas:
+        print(f"{fuera_de_fechas} partido(s) nuevo(s) con fecha fuera "
+              "de las fechas del config (no se agregan; los ve el "
+              "otro config si su fecha esta en el suyo).")
 
     # ---- 3. Agregar los nuevos al config y actualizar la base ----
     for v in nuevos:

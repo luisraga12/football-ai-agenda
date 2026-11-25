@@ -100,7 +100,17 @@ interfaz (`index.html` no se toca en este trabajo).
    config curada no se llena de partidos que ya existían); en corridas
    posteriores, un partido que aparece nuevo se agrega al config y el
    pipeline completo corre para él. Nunca inventa partidos ni momios.
-   Es el paso 0 de `run_semana.py`.
+   Es el paso 0 de `run_semana.py`. **Solo se agregan partidos cuya
+   fecha está en las fechas del propio config** (Semana 7): así un
+   partido de entre semana no entra al config de fin de semana ni al
+   revés (las fechas 24–26 y 27–29 no se solapan) y el mismo partido
+   no aparece en los dos configs. **El cambio al config debe
+   commitearse** (`git add data/ scripts/config/` en el workflow):
+   lección de la Liguilla, 24 nov 2026 — la corrida c892956 descubrió
+   los 8 cuartos de final y los puso en el ev.json, pero el workflow
+   solo commiteaba `data/` y el cambio al config se perdió; la línea
+   base ya los traía, así que en la siguiente corrida no se
+   re-agregaron y el pipeline los sacó del ev.json.
 10. **`calcular_tendencias.py` + `run_tendencias.py`** — tendencias por
    mercado (orden del jefe, 23 nov 2026, segunda de las 6 propuestas).
    Por partido, la racha de cada equipo en sus últimos 5 partidos de
@@ -186,7 +196,9 @@ interfaz (`index.html` no se toca en este trabajo).
     ventana), pesos 0.40/0.30/0.30, cada componente topado en 100;
     calculada con los nombres ESPN antes del MAPEO. Puntos: 3/1/0
     del partido para todo jugador que jugó (titular o suplente con
-    minutos > 0). Verificación de nombres (24 nov 2026): los ~50
+    minutos > 0). Es el paso 8 de `run_semana.py` desde la Semana 7
+    (un partido descubierto en el paso 0 también lleva su XI
+    probable con Fuerza). Verificación de nombres (24 nov 2026): los ~50
     nombres señalados por el jefe se verificaron uno por uno contra
     los fichajes del verano 2026 y los datos — los 60 son jugadores
     reales del equipo asignado, así que no se añadió ningún
@@ -256,6 +268,13 @@ semana actual:
 
 Si los datos cambiaron, hace commit de `data/` en la rama. Solo usa
 `GITHUB_TOKEN`; no hay secretos ni claves: ESPN es API pública.
+
+**Ojo (Semana 7):** el commit también incluye `scripts/config/`
+(`git add data/ scripts/config/`), porque el descubrimiento (paso 0)
+modifica el config cuando ESPN publica un partido tarde. Si solo se
+commitea `data/`, el cambio al config se pierde en la siguiente
+corrida y el partido descubierto desaparece del ev.json (lección de
+la Liguilla, 24 nov 2026).
 
 **Nota:** los workflows programados solo corren en la rama por defecto
 (`main`). Este workflow se entrega en la rama `semana-3` para revisión

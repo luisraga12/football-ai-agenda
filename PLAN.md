@@ -160,7 +160,7 @@ de trabajar está en
   la misma noche, junto con el bloque Fuerza del XI (Semana 8) con sus
   fracciones (Goles/Minutos/Puntos contra el mejor XI).
 
-## ⏳ Semana 6 — Pendiente: alineación probable
+## ✅ Semana 6 — Datos y UI aprobados; port a la página en vivo en curso (24 nov 2026)
 
 - Alineación probable por equipo, como en 365Scores: el XI más frecuente
   por posición en los últimos 3–5 partidos jugados, con la formación más usada.
@@ -168,8 +168,14 @@ de trabajar está en
   se quita del XI probable y se marca la duda (solo si ESPN reporta la baja).
 - Se marca siempre como **probable, no oficial**: la oficial llega cerca
   del partido y la reemplaza.
+- Datos aprobados 24 nov (PR #33, bb7a60b): script + 2 JSON, 56/56 XI con
+  Fuerza (fórmula 0.40·Goles + 0.30·Minutos + 0.30·Puntos); nombres verificados
+  contra fuentes vivas 60/60 (fichajes del verano 2026).
+- UI aprobada 24 nov en preview (56/56 XI exactos por partido, node --check OK);
+  el port a `index.html` lo hace el jefe con prueba en vivo. Semana 6 completa
+  cuando el port pase la prueba en vivo.
 
-## ⏳ Semana 7 — Pendiente: actualización automática (que la página ya no sea estática)
+## ⏳ Semana 7 — Mitad hecha: descubrimiento automático ✅ (24 nov 2026); integración de la página pendiente
 
 - La página deja de depender de una actualización manual cada semana:
   se actualiza sola, sin que nadie tenga que hacer nada.
@@ -181,6 +187,19 @@ de trabajar está en
   ni en el repo: solo se usa la API de ESPN, que no necesita clave.
 - Si ESPN falla un día, la página sigue mostrando los últimos datos
   guardados, no se queda en blanco.
+- HECHO 24 nov (PR #36, 96705b7): descubrimiento automático de partidos
+  (E1). Cada corrida revisa los scoreboards ESPN de las ligas en alcance,
+  añade los partidos recién publicados al config y corre el pipeline completo
+  (Poisson + momios + XI probable + Fuerza como paso 8); el workflow commitea
+  también `scripts/config/`. Prueba: los 8 cuartos de final de la Liguilla
+  entraron solos (ida 25–26 nov, vuelta 28–29 nov). Corrida manual en main
+  (run #25) en verde; los 8 siguen intactos. Precisión: el `git add
+  scripts/config/` en Actions aún no se ejerce con un cambio real de config
+  (no había partido nuevo que descubrir en esa corrida); la prueba real es
+  la próxima corrida programada cuando ESPN publique algo tarde.
+- PENDIENTE: que la página lea sola las tablas de `data/` (integración de
+  la página) — hoy `index.html` lleva los datos incrustados. Es la otra
+  mitad de la Semana 7.
 
 ## ⏳ Semana 8 — Pendiente: Fuerza del XI
 

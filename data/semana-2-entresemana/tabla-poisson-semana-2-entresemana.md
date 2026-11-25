@@ -1,10 +1,10 @@
 # Tabla de probabilidades Poisson — Semana 2 entre semana (Football AI Agenda)
 
-**Partidos:** 2026-11-24 al 2026-11-29, horas de Monterrey (CST). **Fuente de datos:** ESPN, API pública sin clave.
+**Partidos:** 2026-11-24 al 2026-11-26, horas de Monterrey (CST). **Fuente de datos:** ESPN, API pública sin clave.
 **Método:** modelo Poisson con goles esperados (xG) por equipo, distribución completa (0–20 goles), P(1)/P(X)/P(2) suman 100%.
 **Fecha de cálculo:** 2026-11-22. Últimos 4 partidos por equipo: partidos de liga completados hasta el 2026-11-22.
 
-## (a) Tabla de los 20 partidos
+## (a) Tabla de los 16 partidos
 
 | Fecha | Hora (CST) | Liga | Local | Visitante | xG local | xG visit. | P(1) | P(X) | P(2) | P(+2.5) | P(ambos anotan) |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -24,12 +24,8 @@
 | Jue 26 nov | 11:45 | Europa League | Olympiacos | AC Milan | 1.13 | 0.17 | 61.7% | 32.7% | 5.7% | 14.5% | 10.9% |
 | Jue 26 nov | 19:00 | Liga MX | Pachuca | Guadalajara | 1.04 | 0.85 | 39.1% | 31.7% | 29.2% | 29.4% | 37.0% |
 | Jue 26 nov | 21:10 | Liga MX | León | Cruz Azul | 1.21 | 1.33 | 33.8% | 26.7% | 39.5% | 46.7% | 51.7% |
-| Sáb 28 nov | 19:00 | Liga MX | Atlas | Toluca | 2.22 | 3.59 | 21.5% | 14.6% | 63.9% | 92.9% | 86.7% |
-| Sáb 28 nov | 21:10 | Liga MX | América | Monterrey | 1.38 | 1.28 | 39.5% | 26.0% | 34.5% | 49.7% | 54.1% |
-| Dom 29 nov | 19:07 | Liga MX | Guadalajara | Pachuca | 0.92 | 0.96 | 33.0% | 32.0% | 34.9% | 29.1% | 37.2% |
-| Dom 29 nov | 21:00 | Liga MX | Cruz Azul | León | 1.44 | 1.12 | 44.5% | 26.2% | 29.3% | 47.2% | 51.4% |
 
-Promedios de la tabla: xG local 1.85, xG visitante 1.58; P(1) media 43.4%, P(X) media 20.8%, P(2) media 35.8%.
+Promedios de la tabla: xG local 1.94, xG visitante 1.55; P(1) media 45.6%, P(X) media 19.8%, P(2) media 34.5%.
 
 ## (b) Tabla de cálculo por equipo (últimos 4 partidos de liga)
 
@@ -89,14 +85,14 @@ Los promedios se calcularon desde los scoreboards de las últimas ~3 jornadas co
 
 ## (d) Fuentes ESPN consultadas (API pública, sin clave)
 
-- Scoreboard por liga y día, 2026-11-24 al 2026-11-29: `site.api.espn.com/apis/site/v2/sports/soccer/{{liga}}/scoreboard?dates={{AAAAMMDD}}` — los {n_partidos} partidos aparecen como STATUS_SCHEDULED con la fecha y hora exactas de la configuración (horas convertidas de UTC a CST, UTC-6).
+- Scoreboard por liga y día, 2026-11-24 al 2026-11-26: `site.api.espn.com/apis/site/v2/sports/soccer/{{liga}}/scoreboard?dates={{AAAAMMDD}}` — los {n_partidos} partidos aparecen como STATUS_SCHEDULED con la fecha y hora exactas de la configuración (horas convertidas de UTC a CST, UTC-6).
 - Schedule por equipo (últimos partidos completados): `site.api.espn.com/apis/site/v2/sports/soccer/{liga}/teams/{id}/schedule` — 32 equipos, 4 partidos completados cada uno, todos de liga, hasta el cutoff.
 - Scoreboards de jornadas pasadas para promedios de liga: 9 fechas por liga (ver tabla c).
 - Los archivos JSON crudos de todas estas consultas están en `raw/` dentro de esta misma carpeta.
 
 ## (e) Datos no verificados y partidos excluidos
 
-- **Ningún partido quedó fuera:** los 20 partidos de la lista se verificaron en el scoreboard de ESPN con fecha, hora y equipos exactos antes de calcular.
+- **Ningún partido quedó fuera:** los 16 partidos de la lista se verificaron en el scoreboard de ESPN con fecha, hora y equipos exactos antes de calcular.
 - **Valores extremos por muestra corta (4 partidos, sin tope aplicado):** son correctos según los datos, pero una muestra de 4 partidos exagera rachas; conviene leer los favoritos más extremos con cautela.
 - **Últimos 4 = solo liga:** el schedule de ESPN por liga devuelve partidos de esa liga; no se mezclaron otras competiciones.
 - **Sin momios ni cuotas en esta tabla:** solo probabilidades propias (Poisson). Los momios y el EV están en la tabla de momios de la misma semana.
