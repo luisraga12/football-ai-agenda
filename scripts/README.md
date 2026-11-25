@@ -114,7 +114,15 @@ interfaz (`index.html` no se toca en este trabajo).
    ligas del propio config**: así un partido de entre semana no entra
    al config de fin de semana ni al revés (las fechas 24–26 y 27–29
    no se solapan) y el mismo partido no aparece en los dos configs; una
-   liga que no esté en las ligas del config no se descubre. **El cambio
+   liga que no esté en las ligas del config no se descubre. **Flag
+   `completar_jornada` (orden del jefe, 25 nov 2026, JEFE.md 437b004):
+   con `completar_jornada: false` en el config, el descubrimiento NO
+   agrega nada a ese config (se queda curado en los partidos que
+   tiene); la línea base se sigue actualizando como registro y el log
+   dice cuántos se habrían agregado. Sin la clave (o en true), se
+   completa la jornada como siempre. El fin de semana
+   (`semana-actual.json`, 20 partidos) lleva el flag en false: la
+   corrida de las 07:00 no debe completarlo solo a 40.** **El cambio
    al config debe commitearse** (`git add data/ scripts/config/` en el
    workflow): lección de la Liguilla, 24 nov 2026 — la corrida c892956
    descubrió los 8 cuartos de final y los puso en el ev.json, pero el
