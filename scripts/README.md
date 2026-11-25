@@ -91,25 +91,32 @@ interfaz (`index.html` no se toca en este trabajo).
    contra el historial).
 9. **`descubrir_partidos.py`** — descubrimiento automático de partidos
    nuevos publicados tarde en ESPN (orden del jefe, 22 nov 2026, caso
-   Liga MX): en cada corrida consulta los scoreboards de las ligas del
-   alcance (mex.1, eng.1, esp.1, ger.1, ita.1, uefa.champions,
+   Liga MX) y completar la jornada (orden del jefe, 24 nov 2026,
+   JEFE.md 4531da0): en cada corrida consulta los scoreboards de las
+   ligas del alcance (mex.1, eng.1, esp.1, ger.1, ita.1, uefa.champions,
    uefa.europa; Conference League sin acceso en ESPN con los slugs
-   probados) para la semana corriente (lun–dom) y compara con una línea
-   base guardada en `raw/descubrimiento_vistos.json`. La primera
-   corrida solo establece la línea base y no agrega nada (así una
-   config curada no se llena de partidos que ya existían); en corridas
-   posteriores, un partido que aparece nuevo se agrega al config y el
-   pipeline completo corre para él. Nunca inventa partidos ni momios.
+   probados) para la semana corriente (lun–dom) y compara con el
+   CONFIG: todo partido de ESPN para las fechas y ligas del propio
+   config que no esté en el config se agrega, y el pipeline completo
+   corre para él. Un partido ya terminado en ESPN (estado 'post') no
+   se agrega: la jornada que se completa es la que falta por jugarse
+   (los 5 de Champions del mar 24 nov 2026 ya jugados no entran).
+   La línea base guardada en
+   `raw/descubrimiento_vistos.json` se sigue actualizando como registro
+   de lo visto, pero ya no decide nada (antes solo cazaba partidos
+   publicados después de la línea base; la primera corrida solo la
+   establecía y no agregaba nada). Nunca inventa partidos ni momios.
    Es el paso 0 de `run_semana.py`. **Solo se agregan partidos cuya
-   fecha está en las fechas del propio config** (Semana 7): así un
-   partido de entre semana no entra al config de fin de semana ni al
-   revés (las fechas 24–26 y 27–29 no se solapan) y el mismo partido
-   no aparece en los dos configs. **El cambio al config debe
-   commitearse** (`git add data/ scripts/config/` en el workflow):
-   lección de la Liguilla, 24 nov 2026 — la corrida c892956 descubrió
-   los 8 cuartos de final y los puso en el ev.json, pero el workflow
-   solo commiteaba `data/` y el cambio al config se perdió; la línea
-   base ya los traía, así que en la siguiente corrida no se
+   fecha está en las fechas del propio config y cuya liga está en las
+   ligas del propio config**: así un partido de entre semana no entra
+   al config de fin de semana ni al revés (las fechas 24–26 y 27–29
+   no se solapan) y el mismo partido no aparece en los dos configs; una
+   liga que no esté en las ligas del config no se descubre. **El cambio
+   al config debe commitearse** (`git add data/ scripts/config/` en el
+   workflow): lección de la Liguilla, 24 nov 2026 — la corrida c892956
+   descubrió los 8 cuartos de final y los puso en el ev.json, pero el
+   workflow solo commiteaba `data/` y el cambio al config se perdió; la
+   línea base ya los traía, así que en la siguiente corrida no se
    re-agregaron y el pipeline los sacó del ev.json.
 10. **`calcular_tendencias.py` + `run_tendencias.py`** — tendencias por
    mercado (orden del jefe, 23 nov 2026, segunda de las 6 propuestas).
