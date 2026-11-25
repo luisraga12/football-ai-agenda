@@ -39,6 +39,8 @@ Validaciones al final (no se publica nada si fallan):
   - no hay valores nulos en la tabla
   - cada partido con momio tiene EV y semaforo; ningun partido sin
     momio ("pendiente") tiene EV inventado
+  - cada partido terminado sin momio (estado 'post' en ESPN) lleva
+    su marcador real; si falta, la validacion falla
 
 Uso:
     python3 scripts/run_semana.py --config scripts/config/semana-actual.json
@@ -191,6 +193,15 @@ def main():
             if f['mejor_ev'] is not None or f['semaforo'] is not None:
                 problemas.append(f"{f['home']} vs {f['away']}: pendiente "
                                  "pero con EV inventado")
+            # Un partido terminado sin momio debe llevar su marcador
+            # real de ESPN; si no lo lleva, la correccion no funciono.
+            if f.get('estado_partido') == 'post' and not f.get('marcador'):
+                problemas.append(f"{f['home']} vs {f['away']}: terminado "
+                                 "(post) sin momio pero sin marcador")
+            if f.get('estado_partido') not in (None, 'pre', 'in', 'post'):
+                problemas.append(f"{f['home']} vs {f['away']}: "
+                                 "estado_partido desconocido: "
+                                 f"{f.get('estado_partido')}")
     if problemas:
         print("VALIDACION FALLIDA:")
         for p in problemas:
@@ -199,12 +210,16 @@ def main():
     n_verde = sum(1 for f in evr['partidos'] if f['semaforo'] == 'verde')
     n_amar = sum(1 for f in evr['partidos'] if f['semaforo'] == 'amarillo')
     n_rojo = sum(1 for f in evr['partidos'] if f['semaforo'] == 'rojo')
-    n_pend = sum(1 for f in evr['partidos'] if f['estado'] != 'con_momio')
+    n_pend = sum(1 for f in evr['partidos'] if f['estado'] != 'con_momio'
+                 and f.get('estado_partido') != 'post')
+    n_post_sin_momio = sum(1 for f in evr['partidos']
+                           if f['estado'] != 'con_momio'
+                           and f.get('estado_partido') == 'post')
     print(f"\nOK — Semana {semana} completa y validada: "
           f"{len(res['matches'])} partidos, {len(teams)} equipos, "
           f"tabla en {outdir}/tabla-poisson-semana-{semana}.md "
           f"({n_verde} verdes, {n_amar} amarillos, {n_rojo} rojos, "
-          f"{n_pend} pendientes)")
+          f"{n_pend} pendientes, {n_post_sin_momio} terminados sin momio)")
 
 
 if __name__ == '__main__':

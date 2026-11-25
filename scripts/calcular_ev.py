@@ -94,7 +94,15 @@ def main():
         fila = {'fecha': m['fecha'], 'fecha_txt': DIAS.get(m['fecha'], m['fecha']),
                 'hora': m['fecha_cst'][11:], 'liga': m['liga_nombre'],
                 'home': home, 'away': away, 'proveedor': m['proveedor'],
-                'estado': m['estado'], 'mercados': {}, 'mejor_pick': None,
+                'estado': m['estado'],
+                # Estado real del partido en ESPN y marcador final (si lo
+                # hay): un partido terminado sin momio sigue siendo
+                # 'pendiente' en momios/EV, pero ya no se muestra como
+                # si no se hubiera jugado. El marcador viene solo de
+                # ESPN (recolectar_momios.py); nunca se inventa.
+                'estado_partido': m.get('estado_partido', 'pre'),
+                'marcador': m.get('marcador'),
+                'mercados': {}, 'mejor_pick': None,
                 'mejor_ev': None, 'semaforo': None}
         # BTTS para TODOS los partidos (orden del jefe, 24 nov 2026):
         # la probabilidad ya la calcula el Poisson (r['btts'], distribucion
@@ -213,6 +221,8 @@ def main():
         {'home': f['home'], 'away': f['away'], 'fecha': f['fecha'],
          'hora': f['hora'], 'liga': f['liga'],
          'proveedor': f['proveedor'], 'estado': f['estado'],
+         'estado_partido': f['estado_partido'],
+         'marcador': f['marcador'],
          'mejor_pick': f['mejor_pick'], 'mejor_ev': f['mejor_ev'],
          'mejor_decimal': f.get('mejor_decimal'),
          'mejor_prob': f.get('mejor_prob'),
@@ -250,9 +260,17 @@ def main():
     for f in filas:
         if f['estado'] != 'con_momio':
             btts_p = f['mercados']['btts']['p_btts']
-            L.append(f"| {f['fecha_txt']} | {f['home']} vs {f['away']} | "
+            if f.get('estado_partido') == 'post' and f.get('marcador'):
+                marc = f['marcador']
+                partido_txt = (f"{f['home']} vs {f['away']} "
+                               f"(Final {marc['local']}–{marc['visita']})")
+                estado_txt = '🏁 Terminado sin momio'
+            else:
+                partido_txt = f"{f['home']} vs {f['away']}"
+                estado_txt = '⏳ Pendiente'
+            L.append(f"| {f['fecha_txt']} | {partido_txt} | "
                      "pendiente | — | — | — | — | — | "
-                     f"{btts_p:.1f}% | — | — | ⏳ Pendiente |")
+                     f"{btts_p:.1f}% | — | — | {estado_txt} |")
             continue
         m1x2 = f['mercados'].get('1X2')
         if m1x2 is not None:
@@ -289,10 +307,15 @@ def main():
     n_verde = sum(1 for f in filas if f['semaforo'] == 'verde')
     n_amar = sum(1 for f in filas if f['semaforo'] == 'amarillo')
     n_rojo = sum(1 for f in filas if f['semaforo'] == 'rojo')
-    n_pend = sum(1 for f in filas if f['estado'] != 'con_momio')
+    n_pend = sum(1 for f in filas if f['estado'] != 'con_momio'
+                 and f.get('estado_partido') != 'post')
+    n_post_sin_momio = sum(1 for f in filas
+                           if f['estado'] != 'con_momio'
+                           and f.get('estado_partido') == 'post')
     L.append("")
     L.append(f"**Resumen:** {n_verde} verdes, {n_amar} amarillos, "
-             f"{n_rojo} rojos, {n_pend} pendientes.")
+             f"{n_rojo} rojos, {n_pend} pendientes, "
+             f"{n_post_sin_momio} terminados sin momio.")
     peores = [f for f in filas if f['semaforo'] == 'rojo']
     if peores:
         L.append("Único(s) sin valor: " + ", ".join(
@@ -308,7 +331,8 @@ def main():
     out = os.path.join(outdir, f"tabla-momios-semana-{semana}.md")
     open(out, 'w').write("\n".join(L))
     print(f"\nOK - {n_verde} verdes, {n_amar} amarillos, {n_rojo} rojos, "
-          f"{n_pend} pendientes. Escrito {out} y {outdir}/ev.json")
+          f"{n_pend} pendientes, {n_post_sin_momio} terminados sin momio. "
+          f"Escrito {out} y {outdir}/ev.json")
 
 
 if __name__ == '__main__':
