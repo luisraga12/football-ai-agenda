@@ -140,6 +140,13 @@ def bloque(p, mov=None, tend=None):
             f'<span>{prov_txt}</span>'
             f'</div><p class="momios-pendiente">Momios pendientes — '
             f'sin EV inventado.</p>']
+        # Partido ya terminado sin momio: se muestra el resultado real
+        # de ESPN (estado_partido/marcador), sin inventar EV ni momios.
+        if p.get('estado_partido') == 'post' and p.get('marcador'):
+            marc = p['marcador']
+            partes_pend.append(
+                f'<p class="momios-final">Final: '
+                f"{marc['local']}\u2013{marc['visita']}</p>")
         if tend and tend.get('linea_tarjeta'):
             partes_pend.append(
                 f'<p class="momios-tend">'

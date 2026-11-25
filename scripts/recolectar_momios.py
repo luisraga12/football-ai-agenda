@@ -139,6 +139,38 @@ def extraer_momios(odds_list):
     return proveedor, momios
 
 
+def extraer_estado_marcador(comp):
+    """Saca estado y marcador de un evento de ESPN (mismo patron que
+    generar_vivo.py extraer_partido): competitions[0].status.type.state
+    y competitors[].score. Devuelve (estado, marcador); marcador es
+    {'local': int, 'visita': int} solo cuando ESPN trae ambos goles,
+    si no None. Un partido terminado sin momio sigue siendo 'post'
+    con su marcador real: el estado no depende de los momios."""
+    if not isinstance(comp, dict):
+        return 'pre', None
+    estado = ((comp.get('status') or {}).get('type') or {}).get('state',
+                                                               'pre')
+    local = visita = None
+    for c in comp.get('competitors') or []:
+        try:
+            gol = None if c.get('score') is None else int(float(c['score']))
+        except (TypeError, ValueError):
+            gol = None
+        if c.get('homeAway') == 'home':
+            local = gol
+        elif c.get('homeAway') == 'away':
+            visita = gol
+    # ESPN trae "0" en el score de los partidos aun no jugados: un
+    # 0-0 de un partido 'pre' NO es un marcador real. Solo se publica
+    # marcador cuando el partido esta terminado ('post') o en curso
+    # ('in'); un 'pre' queda siempre sin marcador.
+    marcador = None
+    if estado in ('post', 'in') and local is not None \
+            and visita is not None:
+        marcador = {'local': local, 'visita': visita}
+    return estado, marcador
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--config', required=True, help='JSON de la semana')
@@ -172,6 +204,7 @@ def main():
                             if c['homeAway'] == 'away')
                 dt = datetime.fromisoformat(
                     e['date'].replace('Z', '+00:00')).astimezone(CST)
+                estado_partido, marcador = extraer_estado_marcador(comp)
                 found[(str(home['team']['id']), str(away['team']['id']),
                        dt.strftime('%Y-%m-%d'))] = {
                     'league': lg,
@@ -182,6 +215,8 @@ def main():
                     'away_id': away['team']['id'],
                     'odds': comp.get('odds'),
                     'espn_id': e['id'],
+                    'estado_partido': estado_partido,
+                    'marcador': marcador,
                 }
             time.sleep(0.3)
 
@@ -197,12 +232,18 @@ def main():
         v = found[key]
         proveedor, momios = extraer_momios(v['odds'])
         if momios is None:
+            final_txt = ''
+            if v['estado_partido'] == 'post' and v['marcador']:
+                final_txt = (f" | Final {v['marcador']['local']}–"
+                             f"{v['marcador']['visita']}")
             print(f"PENDIENTE {v['date_cst']} CST | {v['home']} vs {v['away']} "
-                  f"| {ligas[v['league']]} | sin momio en ESPN")
+                  f"| {ligas[v['league']]} | sin momio en ESPN{final_txt}")
             resultados.append({**p, 'fecha_cst': v['date_cst'],
                                'liga_nombre': ligas[v['league']],
                                'proveedor': None, 'estado': 'pendiente',
-                               'momios': None})
+                               'momios': None,
+                               'estado_partido': v['estado_partido'],
+                               'marcador': v['marcador']})
         else:
             ml = momios['moneyline']
             tot = momios['total']
@@ -216,13 +257,19 @@ def main():
             resultados.append({**p, 'fecha_cst': v['date_cst'],
                                'liga_nombre': ligas[v['league']],
                                'proveedor': proveedor, 'estado': 'con_momio',
-                               'momios': momios})
+                               'momios': momios,
+                               'estado_partido': v['estado_partido'],
+                               'marcador': v['marcador']})
     if faltantes:
         print(f"\nERROR: {len(faltantes)} partido(s) no existen en ESPN. "
               "No se calcula nada para no inventar datos.")
         sys.exit(1)
     n_momio = sum(1 for r in resultados if r['estado'] == 'con_momio')
-    n_pend = len(resultados) - n_momio
+    n_pend = sum(1 for r in resultados if r['estado'] != 'con_momio'
+                 and r.get('estado_partido') != 'post')
+    n_post_sin_momio = sum(1 for r in resultados
+                           if r['estado'] != 'con_momio'
+                           and r.get('estado_partido') == 'post')
     with open(os.path.join(rawdir, 'momios.json'), 'w') as f:
         json.dump({'semana': semana,
                    'fecha_consulta': datetime.now(timezone.utc)
@@ -230,7 +277,8 @@ def main():
                    'partidos': resultados},
                   f, indent=1, ensure_ascii=False)
     print(f"\nOK - momios en {rawdir}/momios.json: "
-          f"{n_momio} con momio, {n_pend} pendientes (sin inventar).")
+          f"{n_momio} con momio, {n_pend} pendientes, "
+          f"{n_post_sin_momio} terminados sin momio (sin inventar).")
 
 
 if __name__ == '__main__':
