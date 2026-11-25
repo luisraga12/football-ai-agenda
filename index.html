@@ -516,7 +516,7 @@
       <section class="panel" aria-label="Semáforo de valor">
         <div class="panel-h"><h2>Semáforo de la IA</h2><span>Prob. vs momio</span></div>
         <div class="verdict">
-          <div class="sema-status ok"><span class="dot g"></span><div><b>Estado: 27 de 28 partidos con valor (EV+)</b><p>Semáforo encendido con momios DraftKings del 22 nov 2026 (ESPN). Cada tarjeta muestra su mejor pick y su EV; el filtro «Con valor EV+» ya filtra las 27 tarjetas verdes (12 de 12 entre semana y 15 de 16 el fin de semana). Hamburg–Bayern usa momios Bet365 porque DraftKings no publicó ese partido en ESPN.</p></div></div>
+          <div class="sema-status ok"><span class="dot g"></span><div><b id="semaEstado">Estado: cargando partidos…</b><p id="semaDetalle">El semáforo se calcula con los partidos cargados de data/ (momios DraftKings, ESPN).</p></div></div>
           <div class="sema"><span class="dot g"></span><div><b>Verde · Hay valor</b><p>El valor esperado (probabilidad × momio − 1) es de +5% o más. Es la única señal de entrada.</p></div></div>
           <div class="sema"><span class="dot y"></span><div><b>Amarillo · Justo</b><p>EV positivo pero menor a +5%. Se observa, sobre todo en vivo, esperando un mejor precio.</p></div></div>
           <div class="sema"><span class="dot r"></span><div><b>Rojo · Sin valor</b><p>El momio paga menos de lo que tu probabilidad exige. Aunque “se vea seguro”, no se entra.</p></div></div>
@@ -2074,7 +2074,16 @@ var RADIO = {}; /* Integración Semana 7: la Radiografía llega por fetch
    Si un archivo de data/ falta o el fetch falla, la lista muestra un
    estado honesto ("No se pudieron cargar los partidos...") y la otra
    configuración sigue funcionando; el detalle muestra "pendiente" en la
-   sección que falte. Sin errores crudos. */
+   sección que falte. Sin errores crudos.
+
+   ARREGLOS 25 nov 2026 (orden del jefe, buzon/JEFE.md a4987f1):
+   1. El recuadro "Semáforo de la IA" ya no trae texto fijo: actualizarSemaforo() lo calcula de los partidos cargados (verdes
+   según semaforoDe, por configuración) y escribe #semaEstado y
+   #semaDetalle tras renderizar. El texto estático inicial es neutro
+   ("cargando partidos…") para no mostrar números viejos si falla la carga.
+   2. CREST_MAP cubre los 55 partidos de data/ (35 + 20): se agregaron
+   las 27 entradas que faltaban (4 ida Liguilla + 19 jornada nueva +
+   4 vuelta Liguilla), con códigos sin colisiones entre equipos distintos. */
 (function(){
   "use strict";
 
@@ -2085,11 +2094,14 @@ var RADIO = {}; /* Integración Semana 7: la Radiografía llega por fetch
     tendencias: { mw: "data/semana-2-entresemana/tendencias.json", fs: "data/semana-2/tendencias.json" }
   };
 
-  /* Escudos de los 28 partidos de la base (extraídos de la copia Semana 6;
-     el código varía por partido para el mismo equipo — BVB/DOR, VFB/STU —,
-     así que van por partido, no por equipo). Los partidos nuevos derivan el
-     código del nombre (3 primeras letras, sin prefijos). */
-  var CREST_MAP = {"galatasaray-vs-aston-villa": {"h": "GAL", "a": "AVL"}, "arsenal-vs-borussia-dortmund": {"h": "ARS", "a": "BVB"}, "manchester-city-vs-napoli": {"h": "MCI", "a": "NAP"}, "real-madrid-vs-psv-eindhoven": {"h": "RMA", "a": "PSV"}, "club-brugge-vs-liverpool": {"h": "BRU", "a": "LIV"}, "internazionale-vs-vfb-stuttgart": {"h": "INT", "a": "VFB"}, "lille-vs-bayern-munich": {"h": "LIL", "a": "BAY"}, "paris-saint-germain-vs-as-roma": {"h": "PSG", "a": "ROM"}, "sporting-cp-vs-manchester-united": {"h": "SCP", "a": "MUN"}, "celta-vigo-vs-afc-bournemouth": {"h": "CEL", "a": "BOU"}, "dinamo-zagreb-vs-bayer-leverkusen": {"h": "DIN", "a": "LEV"}, "olympiacos-vs-ac-milan": {"h": "OLY", "a": "MIL"}, "werder-bremen-vs-borussia-monchengladbach": {"h": "WER", "a": "BMG"}, "venezia-vs-bologna": {"h": "VEN", "a": "BOL"}, "nottingham-forest-vs-chelsea": {"h": "NFO", "a": "CHE"}, "levante-vs-racing-santander": {"h": "LEV", "a": "RAC"}, "hamburg-sv-vs-bayern-munich": {"h": "HAM", "a": "BAY"}, "manchester-united-vs-brentford": {"h": "MUN", "a": "BRE"}, "elche-vs-atletico-madrid": {"h": "ELC", "a": "ATM"}, "vfb-stuttgart-vs-eintracht-frankfurt": {"h": "STU", "a": "EIN"}, "internazionale-vs-genoa": {"h": "INT", "a": "GEN"}, "real-madrid-vs-alaves": {"h": "RMA", "a": "ALA"}, "everton-vs-liverpool": {"h": "EVE", "a": "LIV"}, "sassuolo-vs-napoli": {"h": "SAS", "a": "NAP"}, "deportivo-vs-barcelona": {"h": "DEP", "a": "BAR"}, "arsenal-vs-manchester-city": {"h": "ARS", "a": "MCI"}, "borussia-dortmund-vs-bayer-leverkusen": {"h": "DOR", "a": "B04"}, "como-vs-juventus": {"h": "COM", "a": "JUV"}};
+  /* Escudos de los 55 partidos de data/ (35 + 20): los 28 de la base
+     (extraídos de la copia Semana 6; el código varía por partido para el
+     mismo equipo — BVB/DOR, VFB/STU —, así que van por partido, no por
+     equipo) + 27 nuevos (4 ida Liguilla, 19 jornada entre semana nueva,
+     4 vuelta Liguilla; arreglo 25 nov 2026, orden del jefe a4987f1).
+     Los partidos futuros sin entrada derivan el código del nombre
+     (3 primeras letras, sin prefijos). */
+  var CREST_MAP = {"galatasaray-vs-aston-villa": {"h": "GAL", "a": "AVL"}, "arsenal-vs-borussia-dortmund": {"h": "ARS", "a": "BVB"}, "manchester-city-vs-napoli": {"h": "MCI", "a": "NAP"}, "real-madrid-vs-psv-eindhoven": {"h": "RMA", "a": "PSV"}, "club-brugge-vs-liverpool": {"h": "BRU", "a": "LIV"}, "internazionale-vs-vfb-stuttgart": {"h": "INT", "a": "VFB"}, "lille-vs-bayern-munich": {"h": "LIL", "a": "BAY"}, "paris-saint-germain-vs-as-roma": {"h": "PSG", "a": "ROM"}, "sporting-cp-vs-manchester-united": {"h": "SCP", "a": "MUN"}, "celta-vigo-vs-afc-bournemouth": {"h": "CEL", "a": "BOU"}, "dinamo-zagreb-vs-bayer-leverkusen": {"h": "DIN", "a": "LEV"}, "olympiacos-vs-ac-milan": {"h": "OLY", "a": "MIL"}, "werder-bremen-vs-borussia-monchengladbach": {"h": "WER", "a": "BMG"}, "venezia-vs-bologna": {"h": "VEN", "a": "BOL"}, "nottingham-forest-vs-chelsea": {"h": "NFO", "a": "CHE"}, "levante-vs-racing-santander": {"h": "LEV", "a": "RAC"}, "hamburg-sv-vs-bayern-munich": {"h": "HAM", "a": "BAY"}, "manchester-united-vs-brentford": {"h": "MUN", "a": "BRE"}, "elche-vs-atletico-madrid": {"h": "ELC", "a": "ATM"}, "vfb-stuttgart-vs-eintracht-frankfurt": {"h": "STU", "a": "EIN"}, "internazionale-vs-genoa": {"h": "INT", "a": "GEN"}, "real-madrid-vs-alaves": {"h": "RMA", "a": "ALA"}, "everton-vs-liverpool": {"h": "EVE", "a": "LIV"}, "sassuolo-vs-napoli": {"h": "SAS", "a": "NAP"}, "deportivo-vs-barcelona": {"h": "DEP", "a": "BAR"}, "arsenal-vs-manchester-city": {"h": "ARS", "a": "MCI"}, "borussia-dortmund-vs-bayer-leverkusen": {"h": "DOR", "a": "B04"}, "como-vs-juventus": {"h": "COM", "a": "JUV"}, "toluca-vs-atlas": {"h": "TOL", "a": "ATL"}, "monterrey-vs-america": {"h": "MON", "a": "AME"}, "pachuca-vs-guadalajara": {"h": "PAC", "a": "GUA"}, "leon-vs-cruz-azul": {"h": "LEO", "a": "CRU"}, "sabah-fk-vs-barcelona": {"h": "SAB", "a": "BAR"}, "slavia-prague-vs-villarreal": {"h": "SLA", "a": "VIL"}, "atletico-madrid-vs-viking-fk": {"h": "ATM", "a": "VIK"}, "shakhtar-donetsk-vs-fenerbahce": {"h": "SHA", "a": "FEN"}, "besiktas-vs-hapoel-be-er": {"h": "BES", "a": "HAP"}, "marseille-vs-levski-sofia": {"h": "MAR", "a": "SOF"}, "rb-salzburg-vs-ararat-armenia": {"h": "SAL", "a": "ARA"}, "union-st-gilloise-vs-lech-poznan": {"h": "USG", "a": "LEC"}, "viktoria-plzen-vs-benfica": {"h": "PLZ", "a": "BEN"}, "crystal-palace-vs-real-sociedad": {"h": "CRY", "a": "RSO"}, "ferencvaros-vs-nk-celje": {"h": "FER", "a": "NCE"}, "juventus-vs-omonia-nicosia": {"h": "JUV", "a": "OMO"}, "lyon-vs-lillestrom": {"h": "LYO", "a": "LST"}, "nec-nijmegen-vs-stade-rennais": {"h": "NEC", "a": "REN"}, "ofi-crete-vs-anderlecht": {"h": "OFI", "a": "AND"}, "sparta-prague-vs-az-alkmaar": {"h": "SPA", "a": "AZ"}, "sunderland-vs-jagiellonia-bialystok": {"h": "SUN", "a": "JAG"}, "torreense-vs-celtic": {"h": "TOR", "a": "GLA"}, "tsg-hoffenheim-vs-sk-sturm-graz": {"h": "HOF", "a": "STG"}, "atlas-vs-toluca": {"h": "ATL", "a": "TOL"}, "america-vs-monterrey": {"h": "AME", "a": "MON"}, "guadalajara-vs-pachuca": {"h": "GUA", "a": "PAC"}, "cruz-azul-vs-leon": {"h": "CRU", "a": "LEO"}};
 
   /* ---------- Utilidades ---------- */
   function norm(s){
@@ -2531,6 +2543,30 @@ var RADIO = {}; /* Integración Semana 7: la Radiografía llega por fetch
   }
 
   /* ---------- Flujo principal ---------- */
+  /* ---------- Semáforo: se calcula de los datos cargados ---------- */
+  /* Arreglo 1 (orden del jefe, buzon/JEFE.md a4987f1, 25 nov 02:00):
+     el recuadro "Semáforo de la IA" traía texto fijo viejo ("27 de 28
+     partidos con valor") que ya no corresponde a 55 partidos. Ahora se
+     calcula de los partidos cargados: verdes = semáforo Verde según
+     semaforoDe (campo semaforo de ev.json, o EV >= +5% si falta), por
+     configuración. Si la carga falla, queda el texto de "cargando". */
+  function actualizarSemaforo(partidos){
+    var b = document.getElementById("semaEstado");
+    var p = document.getElementById("semaDetalle");
+    if (!b || !p || !Array.isArray(partidos) || partidos.length === 0) return;
+    var total = 0, verdes = 0, totMW = 0, verMW = 0, totFS = 0, verFS = 0;
+    partidos.forEach(function(m){
+      var sem = semaforoDe(m);
+      var esVerde = !!(sem && sem.color === "Verde");
+      total++;
+      if (esVerde) verdes++;
+      if (m._cfg === "mw"){ totMW++; if (esVerde) verMW++; }
+      else if (m._cfg === "fs"){ totFS++; if (esVerde) verFS++; }
+    });
+    b.textContent = "Estado: " + verdes + " de " + total + " partidos con valor (EV+)";
+    p.textContent = "Semáforo encendido con momios DraftKings (ESPN). Cada tarjeta muestra su mejor pick y su EV; el filtro «Con valor EV+» ya filtra las " + verdes + " tarjetas verdes (" + verMW + " de " + totMW + " entre semana y " + verFS + " de " + totFS + " el fin de semana). Hamburg–Bayern usa momios Bet365 porque DraftKings no publicó ese partido en ESPN.";
+  }
+
   function cargar(){
     var evP = Promise.all([fetchJSON(URLS.ev.mw), fetchJSON(URLS.ev.fs)]);
     var xiP = Promise.all([fetchJSON(URLS.xi.mw), fetchJSON(URLS.xi.fs)]);
@@ -2555,6 +2591,7 @@ var RADIO = {}; /* Integración Semana 7: la Radiografía llega por fetch
         });
       } else { errores.push("ev fin de semana"); }
       renderPartidos(partidos);
+      actualizarSemaforo(partidos);
       /* REBASE e3a1220: pintar en vivo/final en las tarjetas nuevas. La base
          trae pintarMarcadores() global (fuera del IIFE de s4): lee
          data/vivo.json y ESPN y pone el marcador en cada tarjeta. Al cargar
@@ -2582,7 +2619,8 @@ var RADIO = {}; /* Integración Semana 7: la Radiografía llega por fetch
   window.__intHelpers = {
     norm: norm, esc: esc, derivar1X2: derivar1X2, derivarDNB: derivarDNB,
     ligaInfo: ligaInfo, dayInfo: dayInfo, semaforoDe: semaforoDe,
-    cardHTML: cardHTML, buildXIMap: buildXIMap, buildRADIOMap: buildRADIOMap
+    cardHTML: cardHTML, buildXIMap: buildXIMap, buildRADIOMap: buildRADIOMap,
+    actualizarSemaforo: actualizarSemaforo, crestFor: crestFor
   };
 })();
 
