@@ -160,7 +160,7 @@ de trabajar está en
   la misma noche, junto con el bloque Fuerza del XI (Semana 8) con sus
   fracciones (Goles/Minutos/Puntos contra el mejor XI).
 
-## ✅ Semana 6 — Datos y UI aprobados; port a la página en vivo en curso (24 nov 2026)
+## ✅ Semana 6 — Hecha (port a la página en vivo 24 nov 2026, PR #37, bb349a8)
 
 - Alineación probable por equipo, como en 365Scores: el XI más frecuente
   por posición en los últimos 3–5 partidos jugados, con la formación más usada.
@@ -172,8 +172,8 @@ de trabajar está en
   Fuerza (fórmula 0.40·Goles + 0.30·Minutos + 0.30·Puntos); nombres verificados
   contra fuentes vivas 60/60 (fichajes del verano 2026).
 - UI aprobada 24 nov en preview (56/56 XI exactos por partido, node --check OK);
-  el port a `index.html` lo hace el jefe con prueba en vivo. Semana 6 completa
-  cuando el port pase la prueba en vivo.
+  port a `index.html` hecho por el jefe con prueba en vivo (PR #37, bb349a8,
+  21:44): 28 tarjetas, XI + Fuerza exactos; página en vivo verificada.
 
 ## ⏳ Semana 7 — Mitad hecha: descubrimiento automático ✅ (24 nov 2026); integración de la página pendiente
 
@@ -201,7 +201,7 @@ de trabajar está en
   la página) — hoy `index.html` lleva los datos incrustados. Es la otra
   mitad de la Semana 7.
 
-## ⏳ Semana 8 — Pendiente: Fuerza del XI
+## ✅ Semana 8 — Hecha (en vivo en el modal del detalle, 24 nov 2026)
 
 - Puntaje 0–100 por alineación (oficial cuando esté publicada, probable
   de la Semana 6 cuando no), como en 365Scores: mide qué tan fuerte es
@@ -212,6 +212,27 @@ de trabajar está en
 - Primero se verifica la fuente (estadísticas de jugadores de ESPN) y
   la fórmula exacta; después se programa y se muestra en el detalle
   del partido.
+- HECHO 24 nov: fórmula aprobada por el jefe, datos en PR #33 (56/56 XI con
+  Fuerza) y UI en vivo en el modal del detalle (PR #37, verificado en vivo
+  21:39 con fracciones exactas).
+
+## ⏳ Semana 9 — Pendiente: página de detalle por partido (pedida por el cliente 24 nov 2026)
+
+- El detalle del partido deja de ser un modal y pasa a ser una página propia
+  por partido (estilo OneFootball): más espacio para la alineación y para
+  más análisis.
+- Una sola plantilla (`partido.html`) que se llena sola con los datos de
+  `data/` según el partido (`?partido=<slug>`): nada de páginas hechas a
+  mano. Las tarjetas de la agenda enlazan a la página del partido en lugar
+  de abrir el modal.
+- Alineación: cancha con los 11 parados por formación (la más usada), cada
+  jugador con su nombre y su diseño (sin fotos). Probable de la Semana 6;
+  oficial cuando ESPN la publique (~1h antes) y la reemplaza.
+- Secciones: marcador en vivo/final con minuto, fecha, estadio y liga;
+  alineación + Fuerza del XI; últimos 5 de cada equipo; H2H; Radiografía
+  ("Así llegan"); momios y valor esperado; espacio para más análisis.
+- Depende de la integración de la Semana 7 (la página lee `data/`): la
+  hace el Empleado 2 cuando entregue la integración.
 
 ## Nota mar 24 nov 2026 — Historial, barra fija y Radiografía (revisión del jefe)
 
