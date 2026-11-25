@@ -231,6 +231,14 @@ de trabajar está en
 - Secciones: marcador en vivo/final con minuto, fecha, estadio y liga;
   alineación + Fuerza del XI; últimos 5 de cada equipo; H2H; Radiografía
   ("Así llegan"); momios y valor esperado; espacio para más análisis.
+- Estadísticas del partido (pedidas por el cliente 24 nov): posesión, tiros
+  totales, tiros a puerta, duelos ganados, córners, etc., en barras
+  comparadas por equipo. Solo para partidos terminados; E1 verifica primero
+  qué estadísticas trae el resumen de ESPN y propone el JSON exacto. Diseño
+  en el estilo propio de la página, no el de la referencia (el cliente dice
+  que ese diseño es muy feo).
+- La tabla "Cómo le fue al modelo" ya está en la página principal; en la
+  Semana 9 E2 le da una manita de diseño (el cliente dice que se ve fea).
 - Depende de la integración de la Semana 7 (la página lee `data/`): la
   hace el Empleado 2 cuando entregue la integración.
 
