@@ -106,9 +106,10 @@
   .agenda-head{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin-bottom:14px}
   .agenda-head h2{font-size:1.45rem;font-weight:900;letter-spacing:-.02em;border-left:3px solid var(--accent);padding-left:10px}
   .demo-note{font-size:.78rem;font-weight:700;color:var(--amber);background:var(--amber-soft);border-radius:999px;padding:7px 12px}
-  .match{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 18px;margin-bottom:14px;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+  .match{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 18px;margin-bottom:14px;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;cursor:pointer}
   .match:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 14px 32px rgba(0,0,0,.35)}
   .match-top{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+  .match-top::after{content:"›";font-size:1.4rem;font-weight:900;color:var(--accent);line-height:1}
   .m-league{font-size:.74rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
   .badge{font-size:.68rem;font-weight:900;letter-spacing:.06em;padding:4px 9px;border-radius:999px;text-transform:uppercase}
   .badge-live{background:var(--live-soft);color:var(--live)}
@@ -268,9 +269,6 @@
   footer strong{color:var(--ink-2)}
 
   /* ---------- Semana 5: detalle del partido (Empleado 2) ---------- */
-  .detail-btn{display:block;width:100%;margin-top:12px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);border-radius:12px;font-weight:800;font-size:.86rem;padding:10px 14px;min-height:44px}
-  .detail-btn:hover{background:var(--surface-3)}
-  .match .teams{cursor:pointer}
   .detail-overlay{position:fixed;inset:0;z-index:100;display:none;align-items:flex-start;justify-content:center;background:rgba(5,8,4,.6);padding:20px 14px;overflow-y:auto}
   .detail-overlay.open{display:flex}
   .detail-modal{background:var(--surface);color:var(--ink);border-radius:var(--radius);box-shadow:var(--shadow);width:100%;max-width:720px;margin:auto}
@@ -2766,17 +2764,28 @@ var RADIO = {
     if (e.key === "Escape" && overlay.classList.contains("open")) closeDetail();
   });
 
+  /* Tarjeta completa clicable (jefe, 24 nov 2026): sin botón "Ver detalle";
+     toda la tarjeta abre el detalle, salvo los botones internos
+     (p. ej. "Sumar al parlay"). Accesible por teclado. */
   document.querySelectorAll(".match").forEach(function(article){
-    var btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "detail-btn";
-    btn.textContent = "Ver detalle del partido";
-    btn.addEventListener("click", function(){ lastOpener = btn; openDetail(article); });
-    article.appendChild(btn);
-    var teams = article.querySelector(".teams");
-    if (teams){
-      teams.addEventListener("click", function(){ lastOpener = btn; openDetail(article); });
+    article.setAttribute("tabindex", "0");
+    article.setAttribute("role", "button");
+    var nombres = article.querySelectorAll(".team b");
+    if (nombres.length >= 2){
+      article.setAttribute("aria-label", "Ver detalle: " + nombres[0].textContent + " vs " + nombres[1].textContent);
     }
+    article.addEventListener("click", function(e){
+      if (e.target.closest("button")) return;
+      lastOpener = article;
+      openDetail(article);
+    });
+    article.addEventListener("keydown", function(e){
+      if (e.key === "Enter" || e.key === " "){
+        e.preventDefault();
+        lastOpener = article;
+        openDetail(article);
+      }
+    });
   });
 })();
 
