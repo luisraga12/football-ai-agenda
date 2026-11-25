@@ -1,10 +1,10 @@
 # Tabla de probabilidades Poisson — Semana 2 entre semana (Football AI Agenda)
 
-**Partidos:** 2026-11-24 al 2026-11-26, horas de Monterrey (CST). **Fuente de datos:** ESPN, API pública sin clave.
+**Partidos:** 2026-11-24 al 2026-11-29, horas de Monterrey (CST). **Fuente de datos:** ESPN, API pública sin clave.
 **Método:** modelo Poisson con goles esperados (xG) por equipo, distribución completa (0–20 goles), P(1)/P(X)/P(2) suman 100%.
-**Fecha de cálculo:** 2026-11-22. Últimos 4 partidos por equipo: partidos de competición completados hasta el 2026-11-22.
+**Fecha de cálculo:** 2026-11-22. Últimos 4 partidos por equipo: partidos de liga completados hasta el 2026-11-22.
 
-## (a) Tabla de los 12 partidos
+## (a) Tabla de los 20 partidos
 
 | Fecha | Hora (CST) | Liga | Local | Visitante | xG local | xG visit. | P(1) | P(X) | P(2) | P(+2.5) | P(ambos anotan) |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -17,18 +17,34 @@
 | Mié 25 nov | 14:00 | Champions League | Lille | Bayern Munich | 0.66 | 3.32 | 4.2% | 8.9% | 87.0% | 75.9% | 46.7% |
 | Mié 25 nov | 14:00 | Champions League | Paris Saint-Germain | AS Roma | 5.30 | 1.38 | 91.6% | 4.9% | 3.5% | 96.3% | 74.6% |
 | Mié 25 nov | 14:00 | Champions League | Sporting CP | Manchester United | 2.12 | 0.89 | 65.8% | 19.6% | 14.6% | 57.8% | 51.7% |
+| Mié 25 nov | 19:00 | Liga MX | Toluca | Atlas | 3.89 | 2.05 | 70.9% | 12.8% | 16.3% | 93.5% | 85.4% |
+| Mié 25 nov | 21:10 | Liga MX | Monterrey | América | 1.38 | 1.28 | 39.5% | 26.0% | 34.5% | 49.7% | 54.1% |
 | Jue 26 nov | 11:45 | Europa League | Celta Vigo | AFC Bournemouth | 0.32 | 2.88 | 2.4% | 8.8% | 88.8% | 62.1% | 26.1% |
 | Jue 26 nov | 11:45 | Europa League | Dinamo Zagreb | Bayer Leverkusen | 0.20 | 1.40 | 5.2% | 26.4% | 68.5% | 21.6% | 13.8% |
 | Jue 26 nov | 11:45 | Europa League | Olympiacos | AC Milan | 1.13 | 0.17 | 61.7% | 32.7% | 5.7% | 14.5% | 10.9% |
+| Jue 26 nov | 19:00 | Liga MX | Pachuca | Guadalajara | 1.04 | 0.85 | 39.1% | 31.7% | 29.2% | 29.4% | 37.0% |
+| Jue 26 nov | 21:10 | Liga MX | León | Cruz Azul | 1.21 | 1.33 | 33.8% | 26.7% | 39.5% | 46.7% | 51.7% |
+| Sáb 28 nov | 19:00 | Liga MX | Atlas | Toluca | 2.22 | 3.59 | 21.5% | 14.6% | 63.9% | 92.9% | 86.7% |
+| Sáb 28 nov | 21:10 | Liga MX | América | Monterrey | 1.38 | 1.28 | 39.5% | 26.0% | 34.5% | 49.7% | 54.1% |
+| Dom 29 nov | 19:07 | Liga MX | Guadalajara | Pachuca | 0.92 | 0.96 | 33.0% | 32.0% | 34.9% | 29.1% | 37.2% |
+| Dom 29 nov | 21:00 | Liga MX | Cruz Azul | León | 1.44 | 1.12 | 44.5% | 26.2% | 29.3% | 47.2% | 51.4% |
 
-Promedios de la tabla: xG local 1.96, xG visitante 1.60; P(1) media 45.6%, P(X) media 18.3%, P(2) media 36.1%.
+Promedios de la tabla: xG local 1.85, xG visitante 1.58; P(1) media 43.4%, P(X) media 20.8%, P(2) media 35.8%.
 
-## (b) Tabla de cálculo por equipo (últimos 4 partidos de competición)
+## (b) Tabla de cálculo por equipo (últimos 4 partidos de liga)
 
-GF = goles a favor, GA = goles en contra en los últimos 4. Ataque = (GF/4) / prom. por equipo de la competición; defensa = (GA/4) / prom. por equipo de la competición.
+GF = goles a favor, GA = goles en contra en los últimos 4. Ataque = (GF/4) / prom. por equipo de la liga; defensa = (GA/4) / prom. por equipo de la liga.
 
 | Liga | Equipo | GF (4) | GA (4) | GF/partido | GA/partido | Ataque | Defensa | Últimos 4 (fecha, H/A, rival, marcador desde el equipo) |
 |---|---|---|---|---|---|---|---|---|
+| Liga MX | América | 6 | 8 | 1.20 | 1.60 | 0.832 | 1.109 | 11-22 A vs Tigres UANL 0-1; 11-08 A vs Pumas UNAM 2-2; 11-01 H vs Toluca 2-2; 10-29 H vs Tijuana 1-1; 10-26 H vs Pachuca 1-2 |
+| Liga MX | Atlas | 11 | 15 | 2.20 | 3.00 | 1.525 | 2.080 | 11-21 A vs FC Juárez 3-3; 11-07 H vs Pachuca 1-4; 10-31 A vs Atlético de San Luis 1-0; 10-25 H vs Puebla 4-3; 10-22 H vs América 2-5 |
+| Liga MX | Cruz Azul | 10 | 6 | 2.00 | 1.20 | 1.387 | 0.832 | 11-22 A vs Guadalajara 0-1; 11-08 A vs Tigres UANL 3-2; 11-02 H vs León 2-1; 10-26 A vs Querétaro 3-1; 10-22 A vs Pachuca 2-1 |
+| Liga MX | Guadalajara | 8 | 3 | 1.60 | 0.60 | 1.109 | 0.416 | 11-22 H vs Cruz Azul 1-0; 11-09 A vs León 1-1; 11-01 H vs Atlante 4-2; 10-25 A vs Monterrey 1-0; 10-21 H vs Necaxa 1-0 |
+| Liga MX | León | 7 | 5 | 1.40 | 1.00 | 0.971 | 0.693 | 11-21 A vs Santos 2-1; 11-09 H vs Guadalajara 1-1; 11-02 A vs Cruz Azul 1-2; 10-24 H vs Toluca 1-1; 10-21 A vs Tigres UANL 2-0 |
+| Liga MX | Monterrey | 6 | 8 | 1.20 | 1.60 | 0.832 | 1.109 | 11-22 A vs Pumas UNAM 2-0; 11-14 A vs Querétaro 1-0; 11-08 A vs Toluca 0-4; 11-01 H vs Tijuana 3-3; 10-25 H vs Guadalajara 0-1 |
+| Liga MX | Pachuca | 12 | 4 | 2.40 | 0.80 | 1.664 | 0.555 | 11-21 H vs Toluca 2-0; 11-07 A vs Atlas 4-1; 10-31 H vs Tigres UANL 3-0; 10-26 A vs América 2-1; 10-22 H vs Cruz Azul 1-2 |
+| Liga MX | Toluca | 9 | 7 | 1.80 | 1.40 | 1.248 | 0.971 | 11-21 A vs Pachuca 0-2; 11-08 H vs Monterrey 4-0; 11-01 A vs América 2-2; 10-24 A vs León 1-1; 10-22 H vs Tijuana 2-2 |
 | Champions League | AS Roma | 10 | 8 | 2.50 | 2.00 | 1.216 | 0.973 | 11-03 A vs Manchester United 2-3; 10-20 H vs Slovan Bratislava 4-0; 10-14 H vs Real Madrid 3-4; 09-10 A vs Fenerbahce 1-1 |
 | Champions League | Arsenal | 8 | 3 | 2.00 | 0.75 | 0.973 | 0.365 | 11-04 A vs Slavia Prague 2-1; 10-21 A vs Bayern Munich 2-2; 10-13 H vs Lille 3-0; 09-09 A vs Napoli 1-0 |
 | Champions League | Aston Villa | 12 | 6 | 3.00 | 1.50 | 1.459 | 0.730 | 11-03 A vs Barcelona 0-3; 10-21 H vs Viking FK 3-1; 10-14 H vs Fenerbahce 6-0; 09-08 A vs Club Brugge 3-2 |
@@ -60,6 +76,7 @@ Los promedios se calcularon desde los scoreboards de las últimas ~3 jornadas co
 
 | Liga | Jornadas usadas (fechas) | Partidos | Goles local | Goles visitante | Prom. goles/partido | Prom. local | Prom. visitante | Prom. por equipo |
 |---|---|---|---|---|---|---|---|---|
+| Liga MX | 20261030, 20261031, 20261101, 20261106, 20261107, 20261108, 20261114, 20261120, 20261121 | 26 | 39 | 36 | 2.885 | 1.500 | 1.385 | 1.442 |
 | Champions League | 20261013, 20261014, 20261020, 20261021, 20261103, 20261104 | 54 | 121 | 101 | 4.111 | 2.241 | 1.870 | 2.056 |
 | Europa League | 20260916, 20260917, 20261015, 20261022, 20261104, 20261105 | 72 | 103 | 111 | 2.972 | 1.431 | 1.542 | 1.486 |
 
@@ -72,14 +89,14 @@ Los promedios se calcularon desde los scoreboards de las últimas ~3 jornadas co
 
 ## (d) Fuentes ESPN consultadas (API pública, sin clave)
 
-- Scoreboard por liga y día, 2026-11-24 al 2026-11-26: `site.api.espn.com/apis/site/v2/sports/soccer/{{liga}}/scoreboard?dates={{AAAAMMDD}}` — los {n_partidos} partidos aparecen como STATUS_SCHEDULED con la fecha y hora exactas de la configuración (horas convertidas de UTC a CST, UTC-6).
-- Schedule por equipo (últimos partidos completados): `site.api.espn.com/apis/site/v2/sports/soccer/{liga}/teams/{id}/schedule` — 24 equipos, 4 partidos completados cada uno, todos de competición, hasta el cutoff.
+- Scoreboard por liga y día, 2026-11-24 al 2026-11-29: `site.api.espn.com/apis/site/v2/sports/soccer/{{liga}}/scoreboard?dates={{AAAAMMDD}}` — los {n_partidos} partidos aparecen como STATUS_SCHEDULED con la fecha y hora exactas de la configuración (horas convertidas de UTC a CST, UTC-6).
+- Schedule por equipo (últimos partidos completados): `site.api.espn.com/apis/site/v2/sports/soccer/{liga}/teams/{id}/schedule` — 32 equipos, 4 partidos completados cada uno, todos de liga, hasta el cutoff.
 - Scoreboards de jornadas pasadas para promedios de liga: 9 fechas por liga (ver tabla c).
 - Los archivos JSON crudos de todas estas consultas están en `raw/` dentro de esta misma carpeta.
 
 ## (e) Datos no verificados y partidos excluidos
 
-- **Ningún partido quedó fuera:** los 12 partidos de la lista se verificaron en el scoreboard de ESPN con fecha, hora y equipos exactos antes de calcular.
+- **Ningún partido quedó fuera:** los 20 partidos de la lista se verificaron en el scoreboard de ESPN con fecha, hora y equipos exactos antes de calcular.
 - **Valores extremos por muestra corta (4 partidos, sin tope aplicado):** son correctos según los datos, pero una muestra de 4 partidos exagera rachas; conviene leer los favoritos más extremos con cautela.
-- **Últimos 4 = solo competición:** el schedule de ESPN por competición devuelve partidos de esa competición; no se mezclaron otras competiciones.
+- **Últimos 4 = solo liga:** el schedule de ESPN por liga devuelve partidos de esa liga; no se mezclaron otras competiciones.
 - **Sin momios ni cuotas en esta tabla:** solo probabilidades propias (Poisson). Los momios y el EV están en la tabla de momios de la misma semana.
