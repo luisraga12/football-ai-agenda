@@ -139,6 +139,158 @@
    "away_id": "218",
    "fecha": "2026-11-26",
    "liga": "mex.1"
+  },
+  {
+   "home": "Sabah FK",
+   "home_id": 21922,
+   "away": "Barcelona",
+   "away_id": 83,
+   "fecha": "2026-11-25",
+   "liga": "uefa.champions"
+  },
+  {
+   "home": "Slavia Prague",
+   "home_id": 494,
+   "away": "Villarreal",
+   "away_id": 102,
+   "fecha": "2026-11-25",
+   "liga": "uefa.champions"
+  },
+  {
+   "home": "Atlético Madrid",
+   "home_id": 1068,
+   "away": "Viking FK",
+   "away_id": 510,
+   "fecha": "2026-11-25",
+   "liga": "uefa.champions"
+  },
+  {
+   "home": "Shakhtar Donetsk",
+   "home_id": 493,
+   "away": "Fenerbahce",
+   "away_id": 436,
+   "fecha": "2026-11-25",
+   "liga": "uefa.champions"
+  },
+  {
+   "home": "Besiktas",
+   "home_id": 1895,
+   "away": "Hapoel Be'er",
+   "away_id": 13083,
+   "fecha": "2026-11-26",
+   "liga": "uefa.europa"
+  },
+  {
+   "home": "Marseille",
+   "home_id": 176,
+   "away": "Levski Sofia",
+   "away_id": 490,
+   "fecha": "2026-11-26",
+   "liga": "uefa.europa"
+  },
+  {
+   "home": "RB Salzburg",
+   "home_id": 2790,
+   "away": "Ararat-Armenia",
+   "away_id": 20024,
+   "fecha": "2026-11-26",
+   "liga": "uefa.europa"
+  },
+  {
+   "home": "Union St.-Gilloise",
+   "home_id": 5807,
+   "away": "Lech Poznan",
+   "away_id": 2990,
+   "fecha": "2026-11-26",
+   "liga": "uefa.europa"
+  },
+  {
+   "home": "Viktoria Plzen",
+   "home_id": 11706,
+   "away": "Benfica",
+   "away_id": 1929,
+   "fecha": "2026-11-26",
+   "liga": "uefa.europa"
+  },
+  {
+   "home": "Crystal Palace",
+   "home_id": 384,
+   "away": "Real Sociedad",
+   "away_id": 89,
+   "fecha": "2026-11-26",
+   "liga": "uefa.europa"
+  },
+  {
+   "home": "Ferencvaros",
+   "home_id": 622,
+   "away": "NK Celje",
+   "away_id": 3362,
+   "fecha": "2026-11-26",
+   "liga": "uefa.europa"
+  },
+  {
+   "home": "Juventus",
+   "home_id": 111,
+   "away": "Omonia Nicosia",
+   "away_id": 617,
+   "fecha": "2026-11-26",
+   "liga": "uefa.europa"
+  },
+  {
+   "home": "Lyon",
+   "home_id": 167,
+   "away": "Lillestrom",
+   "away_id": 987,
+   "fecha": "2026-11-26",
+   "liga": "uefa.europa"
+  },
+  {
+   "home": "NEC Nijmegen",
+   "home_id": 147,
+   "away": "Stade Rennais",
+   "away_id": 169,
+   "fecha": "2026-11-26",
+   "liga": "uefa.europa"
+  },
+  {
+   "home": "OFI Crete",
+   "home_id": 1010,
+   "away": "Anderlecht",
+   "away_id": 441,
+   "fecha": "2026-11-26",
+   "liga": "uefa.europa"
+  },
+  {
+   "home": "Sparta Prague",
+   "home_id": 433,
+   "away": "AZ Alkmaar",
+   "away_id": 140,
+   "fecha": "2026-11-26",
+   "liga": "uefa.europa"
+  },
+  {
+   "home": "Sunderland",
+   "home_id": 366,
+   "away": "Jagiellonia Bialystok",
+   "away_id": 11505,
+   "fecha": "2026-11-26",
+   "liga": "uefa.europa"
+  },
+  {
+   "home": "Torreense",
+   "home_id": 21615,
+   "away": "Celtic",
+   "away_id": 256,
+   "fecha": "2026-11-26",
+   "liga": "uefa.europa"
+  },
+  {
+   "home": "TSG Hoffenheim",
+   "home_id": 7911,
+   "away": "SK Sturm Graz",
+   "away_id": 3746,
+   "fecha": "2026-11-26",
+   "liga": "uefa.europa"
   }
  ],
  "semana": "2-entresemana"
