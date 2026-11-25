@@ -18,13 +18,13 @@
     "1X2": {
      "momios": {
       "home": 1.6896551724137931,
-      "draw": 4.1,
-      "away": 3.95
+      "draw": 4.2,
+      "away": 4.0
      },
      "ev": {
       "1": 0.21918341036805633,
-      "X": -0.3293970815396968,
-      "2": -0.5462209032588411
+      "X": -0.3130409127967626,
+      "2": -0.540476864059586
      }
     },
     "total": {
@@ -32,25 +32,25 @@
      "momios": {
       "linea": 3.5,
       "over": 2.2,
-      "under": 1.625
+      "under": 1.6451612903225805
      },
      "p_over": 43.82265093494816,
      "ev": {
       "mas": -0.03590167943114042,
-      "menos": -0.08711807769290758
+      "menos": -0.07579199925237301
      }
     },
     "spread": {
      "home_linea": -0.5,
      "momios": {
       "home_linea": -0.5,
-      "home": 1.6451612903225805,
+      "home": 1.6666666666666665,
       "away_linea": 0.5,
       "away": 2.05
      },
      "p_cubre_local": 72.15575285851762,
      "ev": {
-      "local": 0.1870785147691607,
+      "local": 0.20259588097529346,
       "visitante": -0.4291929335996111
      }
     }
@@ -59,17 +59,17 @@
     "proveedor": "DraftKings",
     "moneyline": {
      "home": 1.6896551724137931,
-     "draw": 4.1,
-     "away": 3.95
+     "draw": 4.2,
+     "away": 4.0
     },
     "total": {
      "linea": 3.5,
      "over": 2.2,
-     "under": 1.625
+     "under": 1.6451612903225805
     },
     "spread": {
      "home_linea": -0.5,
-     "home": 1.6451612903225805,
+     "home": 1.6666666666666665,
      "away_linea": 0.5,
      "away": 2.05
     }
@@ -84,34 +84,34 @@
    "proveedor": "DraftKings",
    "estado": "con_momio",
    "mejor_pick": "Menos 2.5",
-   "mejor_ev": 0.2860280281395122,
-   "mejor_decimal": 1.7692307692307692,
+   "mejor_ev": 0.30839373297672124,
+   "mejor_decimal": 1.8,
    "mejor_prob": 72.68854072092896,
    "semaforo": "verde",
    "mercados": {
     "1X2": {
      "momios": {
-      "home": 3.3,
-      "draw": 3.15,
-      "away": 2.1
+      "home": 3.35,
+      "draw": 3.2,
+      "away": 2.15
      },
      "ev": {
-      "1": -0.5421006389891267,
-      "X": -0.09296031228237778,
-      "2": 0.20391637239345362
+      "1": -0.5351627698829015,
+      "X": -0.07856285692178056,
+      "2": 0.2325810479266308
      }
     },
     "total": {
      "linea": 2.5,
      "momios": {
       "linea": 2.5,
-      "over": 1.9523809523809523,
-      "under": 1.7692307692307692
+      "over": 2.0,
+      "under": 1.8
      },
      "p_over": 27.311459279071045,
      "ev": {
-      "mas": -0.4667762712181368,
-      "menos": 0.2860280281395122
+      "mas": -0.45377081441857914,
+      "menos": 0.30839373297672124
      }
     },
     "spread": {
@@ -120,32 +120,32 @@
       "home_linea": 0.5,
       "home": 1.6451612903225805,
       "away_linea": -0.5,
-      "away": 2.05
+      "away": 2.1
      },
      "p_cubre_local": 42.67064893364505,
      "ev": {
       "local": -0.29799900141422664,
-      "visitante": 0.17525169686027642
+      "visitante": 0.20391637239345406
      }
     }
    },
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 3.3,
-     "draw": 3.15,
-     "away": 2.1
+     "home": 3.35,
+     "draw": 3.2,
+     "away": 2.15
     },
     "total": {
      "linea": 2.5,
-     "over": 1.9523809523809523,
-     "under": 1.7692307692307692
+     "over": 2.0,
+     "under": 1.8
     },
     "spread": {
      "home_linea": 0.5,
      "home": 1.6451612903225805,
      "away_linea": -0.5,
-     "away": 2.05
+     "away": 2.1
     }
    }
   },
@@ -158,33 +158,33 @@
    "proveedor": "DraftKings",
    "estado": "con_momio",
    "mejor_pick": "Visita",
-   "mejor_ev": 0.7717281637787643,
-   "mejor_decimal": 2.6,
+   "mejor_ev": 0.8739432501506161,
+   "mejor_decimal": 2.75,
    "mejor_prob": 68.14339091456786,
    "semaforo": "verde",
    "mercados": {
     "1X2": {
      "momios": {
-      "home": 2.65,
-      "draw": 3.35,
-      "away": 2.6
+      "home": 2.6,
+      "draw": 3.4,
+      "away": 2.75
      },
      "ev": {
-      "1": -0.6643461603471684,
-      "X": -0.35712071368977527,
-      "2": 0.7717281637787643
+      "1": -0.6706792516613728,
+      "X": -0.3475255004612645,
+      "2": 0.8739432501506161
      }
     },
     "total": {
      "linea": 2.5,
      "momios": {
       "linea": 2.5,
-      "over": 1.7407407407407407,
+      "over": 1.7692307692307692,
       "under": 2.05
      },
      "p_over": 55.394235764950714,
      "ev": {
-      "mas": -0.03572997001752454,
+      "mas": -0.019948136466256594,
       "menos": -0.08558183318148982
      }
     },
@@ -194,32 +194,32 @@
       "home_linea": -0.5,
       "home": 2.45,
       "away_linea": 0.5,
-      "away": 1.4651162790697674
+      "away": 1.4878048780487805
      },
      "p_cubre_local": 12.66618262840874,
      "ev": {
       "local": -0.6896785256039859,
-      "visitante": 0.2795419754442441
+      "visitante": 0.2993567950407481
      }
     }
    },
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 2.65,
-     "draw": 3.35,
-     "away": 2.6
+     "home": 2.6,
+     "draw": 3.4,
+     "away": 2.75
     },
     "total": {
      "linea": 2.5,
-     "over": 1.7407407407407407,
+     "over": 1.7692307692307692,
      "under": 2.05
     },
     "spread": {
      "home_linea": -0.5,
      "home": 2.45,
      "away_linea": 0.5,
-     "away": 1.4651162790697674
+     "away": 1.4878048780487805
     }
    }
   },
@@ -232,21 +232,21 @@
    "proveedor": "DraftKings",
    "estado": "con_momio",
    "mejor_pick": "Menos 3.5",
-   "mejor_ev": 0.11140009870031453,
-   "mejor_decimal": 1.625,
+   "mejor_ev": 0.1398975371285276,
+   "mejor_decimal": 1.6666666666666665,
    "mejor_prob": 68.39385222771166,
    "semaforo": "verde",
    "mercados": {
     "1X2": {
      "momios": {
-      "home": 2.05,
-      "draw": 3.85,
-      "away": 3.15
+      "home": 2.1,
+      "draw": 3.9,
+      "away": 3.2
      },
      "ev": {
-      "1": 0.1002031645894923,
-      "X": -0.09799512566028201,
-      "2": -0.278560070270233
+      "1": 0.12703738811606557,
+      "X": -0.08628077664288314,
+      "2": -0.2671086428142049
      }
     },
     "total": {
@@ -254,46 +254,46 @@
      "momios": {
       "linea": 3.5,
       "over": 2.25,
-      "under": 1.625
+      "under": 1.6666666666666665
      },
      "p_over": 31.606147772288335,
      "ev": {
       "mas": -0.28886167512351246,
-      "menos": 0.11140009870031453
+      "menos": 0.1398975371285276
      }
     },
     "spread": {
      "home_linea": -0.5,
      "momios": {
       "home_linea": -0.5,
-      "home": 1.9523809523809523,
+      "home": 2.0,
       "away_linea": 0.5,
-      "away": 1.7142857142857144
+      "away": 1.7407407407407407
      },
      "p_cubre_local": 53.668447053145975,
      "ev": {
-      "local": 0.0478125377042784,
-      "visitante": -0.20574480662535943
+      "local": 0.07336894106291947,
+      "visitante": -0.19348778203624473
      }
     }
    },
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 2.05,
-     "draw": 3.85,
-     "away": 3.15
+     "home": 2.1,
+     "draw": 3.9,
+     "away": 3.2
     },
     "total": {
      "linea": 3.5,
      "over": 2.25,
-     "under": 1.625
+     "under": 1.6666666666666665
     },
     "spread": {
      "home_linea": -0.5,
-     "home": 1.9523809523809523,
+     "home": 2.0,
      "away_linea": 0.5,
-     "away": 1.7142857142857144
+     "away": 1.7407407407407407
     }
    }
   },
@@ -344,21 +344,21 @@
    "proveedor": "DraftKings",
    "estado": "con_momio",
    "mejor_pick": "Visita",
-   "mejor_ev": 0.48707782945308,
-   "mejor_decimal": 3.3,
+   "mejor_ev": 0.44201486492419884,
+   "mejor_decimal": 3.2,
    "mejor_prob": 45.06296452888121,
    "semaforo": "verde",
    "mercados": {
     "1X2": {
      "momios": {
-      "home": 2.05,
+      "home": 2.1,
       "draw": 3.7,
-      "away": 3.3
+      "away": 3.2
      },
      "ev": {
-      "1": -0.31989867280502493,
+      "1": -0.30331083555636695,
       "X": -0.19482964396930524,
-      "2": 0.48707782945308
+      "2": 0.44201486492419884
      }
     },
     "total": {
@@ -378,23 +378,23 @@
      "home_linea": -0.5,
      "momios": {
       "home_linea": -0.5,
-      "home": 1.9523809523809523,
+      "home": 2.0,
       "away_linea": 0.5,
-      "away": 1.7142857142857144
+      "away": 1.6896551724137931
      },
      "p_cubre_local": 33.17567449731586,
      "ev": {
-      "local": -0.35228445029049993,
-      "visitante": 0.14555986576029945
+      "local": -0.3364865100536828,
+      "visitante": 0.12910067228673205
      }
     }
    },
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 2.05,
+     "home": 2.1,
      "draw": 3.7,
-     "away": 3.3
+     "away": 3.2
     },
     "total": {
      "linea": 2.5,
@@ -403,9 +403,9 @@
     },
     "spread": {
      "home_linea": -0.5,
-     "home": 1.9523809523809523,
+     "home": 2.0,
      "away_linea": 0.5,
-     "away": 1.7142857142857144
+     "away": 1.6896551724137931
     }
    }
   },
@@ -526,13 +526,13 @@
      "home_linea": -0.5,
      "momios": {
       "home_linea": -0.5,
-      "home": 1.6451612903225805,
+      "home": 1.6666666666666665,
       "away_linea": 0.5,
       "away": 2.05
      },
      "p_cubre_local": 78.97136984138228,
      "ev": {
-      "local": 0.29920640706790214,
+      "local": 0.31618949735637125,
       "visitante": -0.5689130817483368
      }
     }
@@ -551,7 +551,7 @@
     },
     "spread": {
      "home_linea": -0.5,
-     "home": 1.6451612903225805,
+     "home": 1.6666666666666665,
      "away_linea": 0.5,
      "away": 2.05
     }
@@ -587,13 +587,13 @@
      "linea": 2.5,
      "momios": {
       "linea": 2.5,
-      "over": 1.5714285714285714,
-      "under": 2.3
+      "over": 1.5555555555555556,
+      "under": 2.35
      },
      "p_over": 29.527671536656108,
      "ev": {
-      "mas": -0.5359937329954041,
-      "menos": 0.6208635546569097
+      "mas": -0.5406806649853495,
+      "menos": 0.6560997188885818
      }
     },
     "spread": {
@@ -620,8 +620,8 @@
     },
     "total": {
      "linea": 2.5,
-     "over": 1.5714285714285714,
-     "under": 2.3
+     "over": 1.5555555555555556,
+     "under": 2.35
     },
     "spread": {
      "home_linea": -1.5,
@@ -647,14 +647,14 @@
    "mercados": {
     "1X2": {
      "momios": {
-      "home": 1.1538461538461537,
-      "draw": 8.5,
-      "away": 14.0
+      "home": 1.1428571428571428,
+      "draw": 9.0,
+      "away": 15.0
      },
      "ev": {
-      "1": 0.14275635962698874,
-      "X": -0.9301301253459752,
-      "2": -0.9805308150939347
+      "1": 0.13187296572577933,
+      "X": -0.9260201327192678,
+      "2": -0.9791401590292157
      }
     },
     "total": {
@@ -676,21 +676,21 @@
       "home_linea": -2.5,
       "home": 2.1,
       "away_linea": 2.5,
-      "away": 1.625
+      "away": 1.6451612903225805
      },
      "p_cubre_local": 89.1480821171115,
      "ev": {
       "local": 0.8721097244593417,
-      "visitante": -0.8236563344030619
+      "visitante": -0.8214684477331247
      }
     }
    },
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 1.1538461538461537,
-     "draw": 8.5,
-     "away": 14.0
+     "home": 1.1428571428571428,
+     "draw": 9.0,
+     "away": 15.0
     },
     "total": {
      "linea": 3.5,
@@ -701,7 +701,7 @@
      "home_linea": -2.5,
      "home": 2.1,
      "away_linea": 2.5,
-     "away": 1.625
+     "away": 1.6451612903225805
     }
    }
   },
@@ -714,33 +714,33 @@
    "proveedor": "DraftKings",
    "estado": "con_momio",
    "mejor_pick": "Local",
-   "mejor_ev": 0.45477791021779934,
-   "mejor_decimal": 3.95,
+   "mejor_ev": 0.4731928204737208,
+   "mejor_decimal": 4.0,
    "mejor_prob": 36.82982051184302,
    "semaforo": "verde",
    "mercados": {
     "1X2": {
      "momios": {
-      "home": 3.95,
-      "draw": 3.55,
-      "away": 1.9090909090909092
+      "home": 4.0,
+      "draw": 3.6,
+      "away": 1.8695652173913042
      },
      "ev": {
-      "1": 0.45477791021779934,
-      "X": -0.11185794423474305,
-      "2": -0.271641853076809
+      "1": 0.4731928204737208,
+      "X": -0.09934890119579565,
+      "2": -0.28672173189509464
      }
     },
     "total": {
      "linea": 2.5,
      "momios": {
       "linea": 2.5,
-      "over": 1.6896551724137931,
+      "over": 1.6666666666666665,
       "under": 2.15
      },
      "p_over": 54.25229320693637,
      "ev": {
-      "mas": -0.08332332167590262,
+      "mas": -0.09579511321772716,
       "menos": -0.01642430394913197
      }
     },
@@ -748,34 +748,34 @@
      "home_linea": 0.5,
      "momios": {
       "home_linea": 0.5,
-      "home": 1.8333333333333335,
+      "home": 1.8695652173913042,
       "away_linea": -0.5,
-      "away": 1.8333333333333335
+      "away": 1.7692307692307692
      },
      "p_cubre_local": 61.84790658973755,
      "ev": {
-      "local": 0.13387828747852182,
-      "visitante": -0.30054495414518834
+      "local": 0.15628694928639741,
+      "visitante": -0.32500142427997203
      }
     }
    },
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 3.95,
-     "draw": 3.55,
-     "away": 1.9090909090909092
+     "home": 4.0,
+     "draw": 3.6,
+     "away": 1.8695652173913042
     },
     "total": {
      "linea": 2.5,
-     "over": 1.6896551724137931,
+     "over": 1.6666666666666665,
      "under": 2.15
     },
     "spread": {
      "home_linea": 0.5,
-     "home": 1.8333333333333335,
+     "home": 1.8695652173913042,
      "away_linea": -0.5,
-     "away": 1.8333333333333335
+     "away": 1.7692307692307692
     }
    }
   },
@@ -788,8 +788,8 @@
    "proveedor": "DraftKings",
    "estado": "con_momio",
    "mejor_pick": "Más 3.5",
-   "mejor_ev": 0.6151922364309095,
-   "mejor_decimal": 2.3,
+   "mejor_ev": 0.6503051111359295,
+   "mejor_decimal": 2.35,
    "mejor_prob": 70.22574941003955,
    "semaforo": "verde",
    "mercados": {
@@ -809,13 +809,13 @@
      "linea": 3.5,
      "momios": {
       "linea": 3.5,
-      "over": 2.3,
-      "under": 1.5714285714285714
+      "over": 2.35,
+      "under": 1.5555555555555556
      },
      "p_over": 70.22574941003955,
      "ev": {
-      "mas": 0.6151922364309095,
-      "menos": -0.5321189193006216
+      "mas": 0.6503051111359295,
+      "menos": -0.5368449908228375
      }
     },
     "spread": {
@@ -842,8 +842,8 @@
     },
     "total": {
      "linea": 3.5,
-     "over": 2.3,
-     "under": 1.5714285714285714
+     "over": 2.35,
+     "under": 1.5555555555555556
     },
     "spread": {
      "home_linea": 0.5,
@@ -958,25 +958,25 @@
      "momios": {
       "linea": 2.5,
       "over": 1.7142857142857144,
-      "under": 2.1
+      "under": 2.05
      },
      "p_over": 43.79501719123032,
      "ev": {
       "mas": -0.24922827672176584,
-      "menos": 0.18030463898416316
+      "menos": 0.15220214757977835
      }
     },
     "spread": {
      "home_linea": -0.5,
      "momios": {
       "home_linea": -0.5,
-      "home": 1.8333333333333335,
+      "home": 1.8695652173913042,
       "away_linea": 0.5,
       "away": 1.8
      },
      "p_cubre_local": 83.06141840673993,
      "ev": {
-      "local": 0.5227926707902322,
+      "local": 0.5528873876042681,
       "visitante": -0.6951055313213188
      }
     }
@@ -991,11 +991,11 @@
     "total": {
      "linea": 2.5,
      "over": 1.7142857142857144,
-     "under": 2.1
+     "under": 2.05
     },
     "spread": {
      "home_linea": -0.5,
-     "home": 1.8333333333333335,
+     "home": 1.8695652173913042,
      "away_linea": 0.5,
      "away": 1.8
     }
@@ -1148,6 +1148,308 @@
      "away": 1.7142857142857144
     }
    }
+  },
+  {
+   "home": "Toluca",
+   "away": "Atlas",
+   "fecha": "2026-11-25",
+   "hora": "19:00",
+   "liga": "Liga MX",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "mejor_pick": "Más 3.5",
+   "mejor_ev": 0.3883982505698984,
+   "mejor_decimal": 2.15,
+   "mejor_prob": 64.57666281720458,
+   "semaforo": "verde",
+   "mercados": {
+    "1X2": {
+     "momios": {
+      "home": 1.434782608695652,
+      "draw": 4.8,
+      "away": 6.0
+     },
+     "ev": {
+      "1": 0.006986125492366435,
+      "X": -0.28198235827848583,
+      "2": -0.10855494065784976
+     }
+    },
+    "total": {
+     "linea": 3.5,
+     "momios": {
+      "linea": 3.5,
+      "over": 2.15,
+      "under": 1.606060606060606
+     },
+     "p_over": 64.57666281720458,
+     "ev": {
+      "mas": 0.3883982505698984,
+      "menos": -0.43107973615510387
+     }
+    },
+    "spread": {
+     "home_linea": -1.5,
+     "momios": {
+      "home_linea": -1.5,
+      "home": 2.1,
+      "away_linea": 1.5,
+      "away": 1.625
+     },
+     "p_cubre_local": 51.109635475122985,
+     "ev": {
+      "local": 0.0733023449775827,
+      "visitante": -0.2055315764707485
+     }
+    }
+   },
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 1.434782608695652,
+     "draw": 4.8,
+     "away": 6.0
+    },
+    "total": {
+     "linea": 3.5,
+     "over": 2.15,
+     "under": 1.606060606060606
+    },
+    "spread": {
+     "home_linea": -1.5,
+     "home": 2.1,
+     "away_linea": 1.5,
+     "away": 1.625
+    }
+   }
+  },
+  {
+   "home": "Monterrey",
+   "away": "América",
+   "fecha": "2026-11-25",
+   "hora": "21:10",
+   "liga": "Liga MX",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "mejor_pick": "Visita",
+   "mejor_ev": 0.4846899631974091,
+   "mejor_decimal": 3.0,
+   "mejor_prob": 49.48966543991364,
+   "semaforo": "verde",
+   "mercados": {
+    "1X2": {
+     "momios": {
+      "home": 2.35,
+      "draw": 3.25,
+      "away": 3.0
+     },
+     "ev": {
+      "1": -0.2786398482314103,
+      "X": -0.35603986860513825,
+      "2": 0.4846899631974091
+     }
+    },
+    "total": {
+     "linea": 2.5,
+     "momios": {
+      "linea": 2.5,
+      "over": 1.8333333333333335,
+      "under": 1.8695652173913042
+     },
+     "p_over": 78.04740819937108,
+     "ev": {
+      "mas": 0.4308691503218034,
+      "menos": -0.5895819793795463
+     }
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "momios": {
+      "home_linea": -0.5,
+      "home": 2.2,
+      "away_linea": 0.5,
+      "away": 1.5555555555555556
+     },
+     "p_cubre_local": 30.696176671003816,
+     "ev": {
+      "local": -0.324684113237916,
+      "visitante": 0.0780594740066074
+     }
+    }
+   },
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 2.35,
+     "draw": 3.25,
+     "away": 3.0
+    },
+    "total": {
+     "linea": 2.5,
+     "over": 1.8333333333333335,
+     "under": 1.8695652173913042
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "home": 2.2,
+     "away_linea": 0.5,
+     "away": 1.5555555555555556
+    }
+   }
+  },
+  {
+   "home": "Pachuca",
+   "away": "Guadalajara",
+   "fecha": "2026-11-26",
+   "hora": "19:00",
+   "liga": "Liga MX",
+   "proveedor": null,
+   "estado": "pendiente",
+   "mejor_pick": null,
+   "mejor_ev": null,
+   "mejor_decimal": null,
+   "mejor_prob": null,
+   "semaforo": null,
+   "mercados": {},
+   "momios": null
+  },
+  {
+   "home": "León",
+   "away": "Cruz Azul",
+   "fecha": "2026-11-26",
+   "hora": "21:10",
+   "liga": "Liga MX",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "mejor_pick": "Visita",
+   "mejor_ev": 0.7447558100017482,
+   "mejor_decimal": 2.2,
+   "mejor_prob": 79.30708227280672,
+   "semaforo": "verde",
+   "mercados": {
+    "1X2": {
+     "momios": {
+      "home": 3.1,
+      "draw": 3.45,
+      "away": 2.2
+     },
+     "ev": {
+      "1": -0.7349168314094426,
+      "X": -0.5811062519452339,
+      "2": 0.7447558100017482
+     }
+    },
+    "total": {
+     "linea": 2.5,
+     "momios": {
+      "linea": 2.5,
+      "over": 1.6896551724137931,
+      "under": 2.05
+     },
+     "p_over": 78.51557889824011,
+     "ev": {
+      "mas": 0.3266425400047468,
+      "menos": -0.5595693674139222
+     }
+    },
+    "spread": {
+     "home_linea": 0.5,
+     "momios": {
+      "home_linea": 0.5,
+      "home": 1.6451612903225805,
+      "away_linea": -0.5,
+      "away": 2.05
+     },
+     "p_cubre_local": 20.692917724237468,
+     "ev": {
+      "local": -0.6595681277625449,
+      "visitante": 0.6257951866531317
+     }
+    }
+   },
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 3.1,
+     "draw": 3.45,
+     "away": 2.2
+    },
+    "total": {
+     "linea": 2.5,
+     "over": 1.6896551724137931,
+     "under": 2.05
+    },
+    "spread": {
+     "home_linea": 0.5,
+     "home": 1.6451612903225805,
+     "away_linea": -0.5,
+     "away": 2.05
+    }
+   }
+  },
+  {
+   "home": "Atlas",
+   "away": "Toluca",
+   "fecha": "2026-11-28",
+   "hora": "19:00",
+   "liga": "Liga MX",
+   "proveedor": null,
+   "estado": "pendiente",
+   "mejor_pick": null,
+   "mejor_ev": null,
+   "mejor_decimal": null,
+   "mejor_prob": null,
+   "semaforo": null,
+   "mercados": {},
+   "momios": null
+  },
+  {
+   "home": "América",
+   "away": "Monterrey",
+   "fecha": "2026-11-28",
+   "hora": "21:10",
+   "liga": "Liga MX",
+   "proveedor": null,
+   "estado": "pendiente",
+   "mejor_pick": null,
+   "mejor_ev": null,
+   "mejor_decimal": null,
+   "mejor_prob": null,
+   "semaforo": null,
+   "mercados": {},
+   "momios": null
+  },
+  {
+   "home": "Guadalajara",
+   "away": "Pachuca",
+   "fecha": "2026-11-29",
+   "hora": "19:07",
+   "liga": "Liga MX",
+   "proveedor": null,
+   "estado": "pendiente",
+   "mejor_pick": null,
+   "mejor_ev": null,
+   "mejor_decimal": null,
+   "mejor_prob": null,
+   "semaforo": null,
+   "mercados": {},
+   "momios": null
+  },
+  {
+   "home": "Cruz Azul",
+   "away": "León",
+   "fecha": "2026-11-29",
+   "hora": "21:00",
+   "liga": "Liga MX",
+   "proveedor": null,
+   "estado": "pendiente",
+   "mejor_pick": null,
+   "mejor_ev": null,
+   "mejor_decimal": null,
+   "mejor_prob": null,
+   "semaforo": null,
+   "mercados": {},
+   "momios": null
   }
  ]
 }

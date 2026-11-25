@@ -1,0 +1,4527 @@
+{
+ "semana": "Semana 2",
+ "config": "semana-2.json",
+ "fecha_calculo": "2026-11-24",
+ "metodo": "XI más frecuente por posición de los últimos partidos + formación más usada; siempre PROBABLE (ESPN no publica XI probable). Ventana: últimos 5 de liga doméstica (fin de semana) o últimos 4 de la competición UEFA (entre semana), antes de la fecha del partido. Fuerza por XI: 0.40·goles+asistencias + 0.30·minutos + 0.30·puntos, cada componente en % vs el mejor XI 1-4-4-2 por minutos de la misma ventana, con fracciones; calculada con nombres ESPN antes del MAPEO.",
+ "verificacion_nombres": "Los ~50 nombres señalados por el jefe el 24 nov 2026 fueron verificados uno por uno: los 60 son jugadores reales del equipo asignado (fichajes del verano 2026, con fuentes en EMPLEADO-1.md). No se añadió ningún reemplazo al MAPEO.",
+ "partidos": [
+  {
+   "fecha": "2026-11-27",
+   "liga": "ger.1",
+   "local": "Werder Bremen",
+   "visita": "Borussia Mönchengladbach",
+   "local_xi": {
+    "equipo": "Werder Bremen",
+    "liga": "ger.1",
+    "ventana_partidos": 5,
+    "ventana": [
+     {
+      "fecha": "2026-11-22",
+      "event_id": "401884730",
+      "rivales": [
+       "Werder Bremen",
+       "Hamburg SV"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-11-07",
+      "event_id": "401884743",
+      "rivales": [
+       "VfB Stuttgart",
+       "Werder Bremen"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-31",
+      "event_id": "401884748",
+      "rivales": [
+       "Werder Bremen",
+       "TSG Hoffenheim"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-24",
+      "event_id": "401884757",
+      "rivales": [
+       "Mainz",
+       "Werder Bremen"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-17",
+      "event_id": "401884766",
+      "rivales": [
+       "Werder Bremen",
+       "SC Paderborn 07"
+      ],
+      "formacion": "4-5-1"
+     }
+    ],
+    "formacion": "4-5-1",
+    "jugadores": [
+     {
+      "jugador": "Karl Hein",
+      "pos": "G",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Marco Friedl",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Amos Pieper",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Arthur",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Olivier Deman",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 431
+     },
+     {
+      "jugador": "Youri Regeer",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 448
+     },
+     {
+      "jugador": "Ludovit Reis",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 437
+     },
+     {
+      "jugador": "Marco Grüll",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 337
+     },
+     {
+      "jugador": "Chuki",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 268
+     },
+     {
+      "jugador": "Eren Dinkci",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 270
+     },
+     {
+      "jugador": "Niclas Füllkrug",
+      "pos": "F",
+      "titularidades": 5,
+      "minutos": 441
+     }
+    ],
+    "fuerza": {
+     "valor": 100.0,
+     "A_goles": 100,
+     "B_minutos": 100,
+     "C_puntos": 100,
+     "goles_asist": 14.0,
+     "minutos": 4455,
+     "puntos": 101,
+     "mejor": {
+      "goles_asist": 14.0,
+      "minutos": 4455,
+      "puntos": 101
+     }
+    },
+    "revisiones": [],
+    "fallos_summary": [],
+    "probable": true
+   },
+   "visita_xi": {
+    "equipo": "Borussia Mönchengladbach",
+    "liga": "ger.1",
+    "ventana_partidos": 5,
+    "ventana": [
+     {
+      "fecha": "2026-11-21",
+      "event_id": "401884731",
+      "rivales": [
+       "Borussia Mönchengladbach",
+       "Borussia Dortmund"
+      ],
+      "formacion": "3-4-3"
+     },
+     {
+      "fecha": "2026-11-06",
+      "event_id": "401884739",
+      "rivales": [
+       "Hamburg SV",
+       "Borussia Mönchengladbach"
+      ],
+      "formacion": "3-4-3"
+     },
+     {
+      "fecha": "2026-10-31",
+      "event_id": "401884749",
+      "rivales": [
+       "Borussia Mönchengladbach",
+       "SC Paderborn 07"
+      ],
+      "formacion": "3-4-3"
+     },
+     {
+      "fecha": "2026-10-23",
+      "event_id": "401884761",
+      "rivales": [
+       "VfB Stuttgart",
+       "Borussia Mönchengladbach"
+      ],
+      "formacion": "3-4-3"
+     },
+     {
+      "fecha": "2026-10-18",
+      "event_id": "401884768",
+      "rivales": [
+       "Borussia Mönchengladbach",
+       "TSG Hoffenheim"
+      ],
+      "formacion": "4-4-2"
+     }
+    ],
+    "formacion": "3-4-3",
+    "jugadores": [
+     {
+      "jugador": "Daniel Batz",
+      "pos": "G",
+      "titularidades": 3,
+      "minutos": 270
+     },
+     {
+      "jugador": "Philipp Sander",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Fabio Chiarodia",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 424
+     },
+     {
+      "jugador": "Kevin Diks",
+      "pos": "D",
+      "titularidades": 2,
+      "minutos": 180
+     },
+     {
+      "jugador": "Joe Scally",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 425
+     },
+     {
+      "jugador": "Florian Neuhaus",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 407
+     },
+     {
+      "jugador": "Zento Uno",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 385
+     },
+     {
+      "jugador": "Lukas Ullrich",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 351
+     },
+     {
+      "jugador": "Wael Mohya",
+      "pos": "F",
+      "titularidades": 5,
+      "minutos": 437
+     },
+     {
+      "jugador": "Shuto Machino",
+      "pos": "F",
+      "titularidades": 4,
+      "minutos": 308
+     },
+     {
+      "jugador": "Robin Hack",
+      "pos": "F",
+      "titularidades": 3,
+      "minutos": 207
+     }
+    ],
+    "fuerza": {
+     "valor": 100.0,
+     "A_goles": 100,
+     "B_minutos": 100,
+     "C_puntos": 100,
+     "goles_asist": 10.0,
+     "minutos": 3949,
+     "puntos": 37,
+     "mejor": {
+      "goles_asist": 9.0,
+      "minutos": 3920,
+      "puntos": 37
+     }
+    },
+    "revisiones": [],
+    "fallos_summary": [],
+    "probable": true
+   }
+  },
+  {
+   "fecha": "2026-11-27",
+   "liga": "ita.1",
+   "local": "Venezia",
+   "visita": "Bologna",
+   "local_xi": {
+    "equipo": "Venezia",
+    "liga": "ita.1",
+    "ventana_partidos": 5,
+    "ventana": [
+     {
+      "fecha": "2026-11-22",
+      "event_id": "401875008",
+      "rivales": [
+       "Juventus",
+       "Venezia"
+      ],
+      "formacion": "3-5-2"
+     },
+     {
+      "fecha": "2026-11-06",
+      "event_id": "401874815",
+      "rivales": [
+       "Venezia",
+       "Udinese"
+      ],
+      "formacion": "3-5-2"
+     },
+     {
+      "fecha": "2026-11-01",
+      "event_id": "401875002",
+      "rivales": [
+       "Como",
+       "Venezia"
+      ],
+      "formacion": "3-5-2"
+     },
+     {
+      "fecha": "2026-10-28",
+      "event_id": "401874773",
+      "rivales": [
+       "Venezia",
+       "Internazionale"
+      ],
+      "formacion": "3-5-2"
+     },
+     {
+      "fecha": "2026-10-25",
+      "event_id": "401874952",
+      "rivales": [
+       "Genoa",
+       "Venezia"
+      ],
+      "formacion": "3-5-2"
+     }
+    ],
+    "formacion": "3-5-2",
+    "jugadores": [
+     {
+      "jugador": "Filip Stankovic",
+      "pos": "G",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Matías Moreno",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Juan Jesus",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Redouane Halhal",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Antoine Hainaut",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 405
+     },
+     {
+      "jugador": "Simon Sohm",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 396
+     },
+     {
+      "jugador": "Enrique Perez",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 360
+     },
+     {
+      "jugador": "Pasquale Mazzocchi",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 270
+     },
+     {
+      "jugador": "Thorir Johann Helgason",
+      "pos": "M",
+      "titularidades": 2,
+      "minutos": 180
+     },
+     {
+      "jugador": "Akor Adams",
+      "pos": "F",
+      "titularidades": 5,
+      "minutos": 447
+     },
+     {
+      "jugador": "Lion Lauberbach",
+      "pos": "F",
+      "titularidades": 3,
+      "minutos": 190
+     }
+    ],
+    "fuerza": {
+     "valor": 96.7,
+     "A_goles": 100,
+     "B_minutos": 98.2,
+     "C_puntos": 90.9,
+     "goles_asist": 3.0,
+     "minutos": 4076,
+     "puntos": 30,
+     "mejor": {
+      "goles_asist": 3.0,
+      "minutos": 4150,
+      "puntos": 33
+     }
+    },
+    "revisiones": [],
+    "fallos_summary": [],
+    "probable": true
+   },
+   "visita_xi": {
+    "equipo": "Bologna",
+    "liga": "ita.1",
+    "ventana_partidos": 5,
+    "ventana": [
+     {
+      "fecha": "2026-11-22",
+      "event_id": "401875047",
+      "rivales": [
+       "Bologna",
+       "Udinese"
+      ],
+      "formacion": "3-4-3"
+     },
+     {
+      "fecha": "2026-11-07",
+      "event_id": "401874974",
+      "rivales": [
+       "Parma",
+       "Bologna"
+      ],
+      "formacion": "3-4-3"
+     },
+     {
+      "fecha": "2026-10-31",
+      "event_id": "401874798",
+      "rivales": [
+       "Bologna",
+       "Monza"
+      ],
+      "formacion": "3-4-3"
+     },
+     {
+      "fecha": "2026-10-28",
+      "event_id": "401874993",
+      "rivales": [
+       "AC Milan",
+       "Bologna"
+      ],
+      "formacion": "3-4-3"
+     },
+     {
+      "fecha": "2026-10-24",
+      "event_id": "401874958",
+      "rivales": [
+       "Cagliari",
+       "Bologna"
+      ],
+      "formacion": "3-4-3"
+     }
+    ],
+    "formacion": "3-4-3",
+    "jugadores": [
+     {
+      "jugador": "Lukasz Skorupski",
+      "pos": "G",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Nicoló Casale",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Arthur Theate",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 430
+     },
+     {
+      "jugador": "Matteo Darmian",
+      "pos": "D",
+      "titularidades": 4,
+      "minutos": 318
+     },
+     {
+      "jugador": "Lewis Ferguson",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Tommaso Pobega",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 434
+     },
+     {
+      "jugador": "Nadir Zortea",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 372
+     },
+     {
+      "jugador": "Juan Miranda",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 255
+     },
+     {
+      "jugador": "Federico Bernardeschi",
+      "pos": "F",
+      "titularidades": 5,
+      "minutos": 399
+     },
+     {
+      "jugador": "Jens Odgaard",
+      "pos": "F",
+      "titularidades": 5,
+      "minutos": 378
+     },
+     {
+      "jugador": "Nicolò Cambiaghi",
+      "pos": "F",
+      "titularidades": 4,
+      "minutos": 340
+     }
+    ],
+    "fuerza": {
+     "valor": 100.0,
+     "A_goles": 100,
+     "B_minutos": 100,
+     "C_puntos": 100,
+     "goles_asist": 13.0,
+     "minutos": 4353,
+     "puntos": 142,
+     "mejor": {
+      "goles_asist": 13.0,
+      "minutos": 4353,
+      "puntos": 142
+     }
+    },
+    "revisiones": [],
+    "fallos_summary": [],
+    "probable": true
+   }
+  },
+  {
+   "fecha": "2026-11-27",
+   "liga": "eng.1",
+   "local": "Nottingham Forest",
+   "visita": "Chelsea",
+   "local_xi": {
+    "equipo": "Nottingham Forest",
+    "liga": "eng.1",
+    "ventana_partidos": 5,
+    "ventana": [
+     {
+      "fecha": "2026-11-21",
+      "event_id": "401879238",
+      "rivales": [
+       "AFC Bournemouth",
+       "Nottingham Forest"
+      ],
+      "formacion": "3-4-3"
+     },
+     {
+      "fecha": "2026-11-07",
+      "event_id": "401878757",
+      "rivales": [
+       "Nottingham Forest",
+       "Manchester City"
+      ],
+      "formacion": "3-4-3"
+     },
+     {
+      "fecha": "2026-10-31",
+      "event_id": "401879249",
+      "rivales": [
+       "Brentford",
+       "Nottingham Forest"
+      ],
+      "formacion": "3-4-3"
+     },
+     {
+      "fecha": "2026-10-23",
+      "event_id": "401879253",
+      "rivales": [
+       "Ipswich Town",
+       "Nottingham Forest"
+      ],
+      "formacion": "3-4-3"
+     },
+     {
+      "fecha": "2026-10-18",
+      "event_id": "401878769",
+      "rivales": [
+       "Nottingham Forest",
+       "Arsenal"
+      ],
+      "formacion": "3-4-3"
+     }
+    ],
+    "formacion": "3-4-3",
+    "jugadores": [
+     {
+      "jugador": "Matz Sels",
+      "pos": "G",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Murillo",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Jair Cunha",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Nikola Milenkovic",
+      "pos": "D",
+      "titularidades": 4,
+      "minutos": 360
+     },
+     {
+      "jugador": "Neco Williams",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 432
+     },
+     {
+      "jugador": "James McAtee",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 402
+     },
+     {
+      "jugador": "Daniel Muñoz",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 327
+     },
+     {
+      "jugador": "Xaver Schlager",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 315
+     },
+     {
+      "jugador": "Liam Delap",
+      "pos": "F",
+      "titularidades": 5,
+      "minutos": 422
+     },
+     {
+      "jugador": "Morgan Gibbs-White",
+      "pos": "F",
+      "titularidades": 4,
+      "minutos": 360
+     },
+     {
+      "jugador": "Dan Ndoye",
+      "pos": "F",
+      "titularidades": 4,
+      "minutos": 252
+     }
+    ],
+    "fuerza": {
+     "valor": 100.0,
+     "A_goles": 100,
+     "B_minutos": 100,
+     "C_puntos": 100,
+     "goles_asist": 7.0,
+     "minutos": 4335,
+     "puntos": 44,
+     "mejor": {
+      "goles_asist": 7.0,
+      "minutos": 4148,
+      "puntos": 40
+     }
+    },
+    "revisiones": [],
+    "fallos_summary": [],
+    "probable": true
+   },
+   "visita_xi": {
+    "equipo": "Chelsea",
+    "liga": "eng.1",
+    "ventana_partidos": 5,
+    "ventana": [
+     {
+      "fecha": "2026-11-21",
+      "event_id": "401879236",
+      "rivales": [
+       "Chelsea",
+       "Leeds United"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-11-08",
+      "event_id": "401879239",
+      "rivales": [
+       "Sunderland",
+       "Chelsea"
+      ],
+      "formacion": "4-3-3"
+     },
+     {
+      "fecha": "2026-10-31",
+      "event_id": "401879248",
+      "rivales": [
+       "Chelsea",
+       "Manchester United"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-24",
+      "event_id": "401878767",
+      "rivales": [
+       "Chelsea",
+       "Tottenham Hotspur"
+      ],
+      "formacion": "3-4-3"
+     },
+     {
+      "fecha": "2026-10-17",
+      "event_id": "401878771",
+      "rivales": [
+       "Everton",
+       "Chelsea"
+      ],
+      "formacion": "4-5-1"
+     }
+    ],
+    "formacion": "4-5-1",
+    "jugadores": [
+     {
+      "jugador": "Mike Penders",
+      "pos": "G",
+      "titularidades": 3,
+      "minutos": 270
+     },
+     {
+      "jugador": "Levi Colwill",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 405
+     },
+     {
+      "jugador": "Josh Acheampong",
+      "pos": "D",
+      "titularidades": 4,
+      "minutos": 343
+     },
+     {
+      "jugador": "Wesley Fofana",
+      "pos": "D",
+      "titularidades": 3,
+      "minutos": 270
+     },
+     {
+      "jugador": "Maxence Lacroix",
+      "pos": "D",
+      "titularidades": 2,
+      "minutos": 180
+     },
+     {
+      "jugador": "Cole Palmer",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Morgan Rogers",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Moisés Caicedo",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 447
+     },
+     {
+      "jugador": "Romeo Lavia",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 270
+     },
+     {
+      "jugador": "Jordan Henderson",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 267
+     },
+     {
+      "jugador": "Pedro Neto",
+      "pos": "F",
+      "titularidades": 4,
+      "minutos": 327
+     }
+    ],
+    "fuerza": {
+     "valor": 100.0,
+     "A_goles": 100,
+     "B_minutos": 100,
+     "C_puntos": 100,
+     "goles_asist": 6.0,
+     "minutos": 3788,
+     "puntos": 54,
+     "mejor": {
+      "goles_asist": 5.0,
+      "minutos": 3608,
+      "puntos": 54
+     }
+    },
+    "revisiones": [],
+    "fallos_summary": [],
+    "probable": true
+   }
+  },
+  {
+   "fecha": "2026-11-27",
+   "liga": "esp.1",
+   "local": "Levante",
+   "visita": "Racing Santander",
+   "local_xi": {
+    "equipo": "Levante",
+    "liga": "esp.1",
+    "ventana_partidos": 5,
+    "ventana": [
+     {
+      "fecha": "2026-11-23",
+      "event_id": "401882802",
+      "rivales": [
+       "Levante",
+       "Elche"
+      ],
+      "formacion": "5-4-1"
+     },
+     {
+      "fecha": "2026-11-08",
+      "event_id": "401882815",
+      "rivales": [
+       "Celta Vigo",
+       "Levante"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-31",
+      "event_id": "401882820",
+      "rivales": [
+       "Levante",
+       "Atlético Madrid"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-25",
+      "event_id": "401882829",
+      "rivales": [
+       "Real Sociedad",
+       "Levante"
+      ],
+      "formacion": "4-4-2"
+     },
+     {
+      "fecha": "2026-10-21",
+      "event_id": "401882870",
+      "rivales": [
+       "Levante",
+       "Athletic Club"
+      ],
+      "formacion": "4-4-2"
+     }
+    ],
+    "formacion": "4-5-1",
+    "jugadores": [
+     {
+      "jugador": "Mathew Ryan",
+      "pos": "G",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Aïssa Mandi",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Jeremy Toljan",
+      "pos": "D",
+      "titularidades": 4,
+      "minutos": 334
+     },
+     {
+      "jugador": "Ifeanyi Ndukwe",
+      "pos": "D",
+      "titularidades": 4,
+      "minutos": 315
+     },
+     {
+      "jugador": "Manu Sánchez",
+      "pos": "D",
+      "titularidades": 3,
+      "minutos": 270
+     },
+     {
+      "jugador": "Jon Ander Olasagasti",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Dani Requena",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 421
+     },
+     {
+      "jugador": "Roger Brugué",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 387
+     },
+     {
+      "jugador": "Thiago Fernández",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 382
+     },
+     {
+      "jugador": "Hugo Sotelo",
+      "pos": "M",
+      "titularidades": 1,
+      "minutos": 45
+     },
+     {
+      "jugador": "Iván Romero",
+      "pos": "F",
+      "titularidades": 4,
+      "minutos": 302
+     }
+    ],
+    "fuerza": {
+     "valor": 92.3,
+     "A_goles": 85.7,
+     "B_minutos": 95.3,
+     "C_puntos": 98.0,
+     "goles_asist": 6.0,
+     "minutos": 3851,
+     "puntos": 49,
+     "mejor": {
+      "goles_asist": 7.0,
+      "minutos": 4039,
+      "puntos": 50
+     }
+    },
+    "revisiones": [],
+    "fallos_summary": [],
+    "probable": true
+   },
+   "visita_xi": {
+    "equipo": "Racing Santander",
+    "liga": "esp.1",
+    "ventana_partidos": 5,
+    "ventana": [
+     {
+      "fecha": "2026-11-22",
+      "event_id": "401882800",
+      "rivales": [
+       "Racing Santander",
+       "Real Sociedad"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-11-07",
+      "event_id": "401882812",
+      "rivales": [
+       "Málaga",
+       "Racing Santander"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-11-01",
+      "event_id": "401882819",
+      "rivales": [
+       "Racing Santander",
+       "Real Madrid"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-24",
+      "event_id": "401882831",
+      "rivales": [
+       "Racing Santander",
+       "Espanyol"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-18",
+      "event_id": "401882840",
+      "rivales": [
+       "Osasuna",
+       "Racing Santander"
+      ],
+      "formacion": "4-5-1"
+     }
+    ],
+    "formacion": "4-5-1",
+    "jugadores": [
+     {
+      "jugador": "Julen Agirrezabala",
+      "pos": "G",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Jeanuël Belocian",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Pablo Ramon",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Jorge Salinas",
+      "pos": "D",
+      "titularidades": 4,
+      "minutos": 353
+     },
+     {
+      "jugador": "Alvaro Mantilla",
+      "pos": "D",
+      "titularidades": 3,
+      "minutos": 270
+     },
+     {
+      "jugador": "Matteo Prati",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Iñigo Vicente",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 423
+     },
+     {
+      "jugador": "Sergio Canales",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 390
+     },
+     {
+      "jugador": "Iván Martín",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 390
+     },
+     {
+      "jugador": "Iker Luque",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 268
+     },
+     {
+      "jugador": "Yassir Zabiri",
+      "pos": "F",
+      "titularidades": 5,
+      "minutos": 417
+     }
+    ],
+    "fuerza": {
+     "valor": 100.0,
+     "A_goles": 100,
+     "B_minutos": 100,
+     "C_puntos": 100,
+     "goles_asist": 11.0,
+     "minutos": 4334,
+     "puntos": 93,
+     "mejor": {
+      "goles_asist": 11.0,
+      "minutos": 4334,
+      "puntos": 93
+     }
+    },
+    "revisiones": [],
+    "fallos_summary": [],
+    "probable": true
+   }
+  },
+  {
+   "fecha": "2026-11-28",
+   "liga": "ger.1",
+   "local": "Hamburg SV",
+   "visita": "Bayern Munich",
+   "local_xi": {
+    "equipo": "Hamburg SV",
+    "liga": "ger.1",
+    "ventana_partidos": 5,
+    "ventana": [
+     {
+      "fecha": "2026-11-22",
+      "event_id": "401884730",
+      "rivales": [
+       "Werder Bremen",
+       "Hamburg SV"
+      ],
+      "formacion": "3-5-2"
+     },
+     {
+      "fecha": "2026-11-06",
+      "event_id": "401884739",
+      "rivales": [
+       "Hamburg SV",
+       "Borussia Mönchengladbach"
+      ],
+      "formacion": "3-5-2"
+     },
+     {
+      "fecha": "2026-11-01",
+      "event_id": "401884752",
+      "rivales": [
+       "Eintracht Frankfurt",
+       "Hamburg SV"
+      ],
+      "formacion": "3-4-3"
+     },
+     {
+      "fecha": "2026-10-24",
+      "event_id": "401884755",
+      "rivales": [
+       "SC Paderborn 07",
+       "Hamburg SV"
+      ],
+      "formacion": "3-5-2"
+     },
+     {
+      "fecha": "2026-10-17",
+      "event_id": "401884767",
+      "rivales": [
+       "Hamburg SV",
+       "VfB Stuttgart"
+      ],
+      "formacion": "3-5-2"
+     }
+    ],
+    "formacion": "3-5-2",
+    "jugadores": [
+     {
+      "jugador": "Daniel Heuer Fernandes",
+      "pos": "G",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Warmed Omari",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Sebastiaan Bornauw",
+      "pos": "D",
+      "titularidades": 4,
+      "minutos": 359
+     },
+     {
+      "jugador": "Shafiq Nandja",
+      "pos": "D",
+      "titularidades": 3,
+      "minutos": 243
+     },
+     {
+      "jugador": "David Møller Wolfe",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Miro Muheim",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 431
+     },
+     {
+      "jugador": "Martin Adeline",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 401
+     },
+     {
+      "jugador": "Zakaria El Ouahdi",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 270
+     },
+     {
+      "jugador": "Bilal Nadir",
+      "pos": "M",
+      "titularidades": 2,
+      "minutos": 180
+     },
+     {
+      "jugador": "Albert Grønbaek",
+      "pos": "F",
+      "titularidades": 3,
+      "minutos": 270
+     },
+     {
+      "jugador": "Fabio Vieira",
+      "pos": "F",
+      "titularidades": 2,
+      "minutos": 180
+     }
+    ],
+    "fuerza": {
+     "valor": 99.9,
+     "A_goles": 100,
+     "B_minutos": 99.8,
+     "C_puntos": 100,
+     "goles_asist": 7.0,
+     "minutos": 3723,
+     "puntos": 54,
+     "mejor": {
+      "goles_asist": 7.0,
+      "minutos": 3732,
+      "puntos": 54
+     }
+    },
+    "revisiones": [],
+    "fallos_summary": [],
+    "probable": true
+   },
+   "visita_xi": {
+    "equipo": "Bayern Munich",
+    "liga": "ger.1",
+    "ventana_partidos": 5,
+    "ventana": [
+     {
+      "fecha": "2026-11-20",
+      "event_id": "401884736",
+      "rivales": [
+       "Bayern Munich",
+       "FC Cologne"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-11-07",
+      "event_id": "401884740",
+      "rivales": [
+       "Mainz",
+       "Bayern Munich"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-31",
+      "event_id": "401884754",
+      "rivales": [
+       "Bayern Munich",
+       "Borussia Dortmund"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-25",
+      "event_id": "401884759",
+      "rivales": [
+       "SC Freiburg",
+       "Bayern Munich"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-17",
+      "event_id": "401884772",
+      "rivales": [
+       "Bayern Munich",
+       "RB Leipzig"
+      ],
+      "formacion": "4-5-1"
+     }
+    ],
+    "formacion": "4-5-1",
+    "jugadores": [
+     {
+      "jugador": "Jonas Urbig",
+      "pos": "G",
+      "titularidades": 4,
+      "minutos": 360
+     },
+     {
+      "jugador": "Dayot Upamecano",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 430
+     },
+     {
+      "jugador": "Konrad Laimer",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 395
+     },
+     {
+      "jugador": "Jonathan Tah",
+      "pos": "D",
+      "titularidades": 3,
+      "minutos": 270
+     },
+     {
+      "jugador": "Josip Stanisic",
+      "pos": "D",
+      "titularidades": 3,
+      "minutos": 218
+     },
+     {
+      "jugador": "Michael Olise",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Joshua Kimmich",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 356
+     },
+     {
+      "jugador": "Nathaniel Brown",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 343
+     },
+     {
+      "jugador": "Aleksandar Pavlovic",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 326
+     },
+     {
+      "jugador": "Lennart Karl",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 243
+     },
+     {
+      "jugador": "Harry Kane",
+      "pos": "F",
+      "titularidades": 5,
+      "minutos": 419
+     }
+    ],
+    "fuerza": {
+     "valor": 100.0,
+     "A_goles": 100,
+     "B_minutos": 100,
+     "C_puntos": 100,
+     "goles_asist": 20.0,
+     "minutos": 4043,
+     "puntos": 111,
+     "mejor": {
+      "goles_asist": 20.0,
+      "minutos": 4043,
+      "puntos": 111
+     }
+    },
+    "revisiones": [],
+    "fallos_summary": [],
+    "probable": true
+   }
+  },
+  {
+   "fecha": "2026-11-28",
+   "liga": "eng.1",
+   "local": "Manchester United",
+   "visita": "Brentford",
+   "local_xi": {
+    "equipo": "Manchester United",
+    "liga": "eng.1",
+    "ventana_partidos": 5,
+    "ventana": [
+     {
+      "fecha": "2026-11-22",
+      "event_id": "401878755",
+      "rivales": [
+       "Liverpool",
+       "Manchester United"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-11-08",
+      "event_id": "401879240",
+      "rivales": [
+       "Manchester United",
+       "Aston Villa"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-31",
+      "event_id": "401879248",
+      "rivales": [
+       "Chelsea",
+       "Manchester United"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-25",
+      "event_id": "401879252",
+      "rivales": [
+       "Manchester United",
+       "AFC Bournemouth"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-18",
+      "event_id": "401879260",
+      "rivales": [
+       "Leeds United",
+       "Manchester United"
+      ],
+      "formacion": "4-5-1"
+     }
+    ],
+    "formacion": "4-5-1",
+    "jugadores": [
+     {
+      "jugador": "Senne Lammens",
+      "pos": "G",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Leny Yoro",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Diogo Dalot",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 426
+     },
+     {
+      "jugador": "Harry Maguire",
+      "pos": "D",
+      "titularidades": 4,
+      "minutos": 315
+     },
+     {
+      "jugador": "Lisandro Martínez",
+      "pos": "D",
+      "titularidades": 3,
+      "minutos": 225
+     },
+     {
+      "jugador": "Bruno Fernandes",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 360
+     },
+     {
+      "jugador": "Amad Diallo",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 324
+     },
+     {
+      "jugador": "Youri Tielemans",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 260
+     },
+     {
+      "jugador": "Andrey Santos",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 246
+     },
+     {
+      "jugador": "Carlos Baleba",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 204
+     },
+     {
+      "jugador": "Bryan Mbeumo",
+      "pos": "F",
+      "titularidades": 5,
+      "minutos": 375
+     }
+    ],
+    "fuerza": {
+     "valor": 98.1,
+     "A_goles": 100,
+     "B_minutos": 98.7,
+     "C_puntos": 95.0,
+     "goles_asist": 5.0,
+     "minutos": 3731,
+     "puntos": 19,
+     "mejor": {
+      "goles_asist": 5.0,
+      "minutos": 3779,
+      "puntos": 20
+     }
+    },
+    "revisiones": [],
+    "fallos_summary": [],
+    "probable": true
+   },
+   "visita_xi": {
+    "equipo": "Brentford",
+    "liga": "eng.1",
+    "ventana_partidos": 5,
+    "ventana": [
+     {
+      "fecha": "2026-11-23",
+      "event_id": "401879237",
+      "rivales": [
+       "Brentford",
+       "Everton"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-11-08",
+      "event_id": "401879244",
+      "rivales": [
+       "Brighton & Hove Albion",
+       "Brentford"
+      ],
+      "formacion": "4-4-2"
+     },
+     {
+      "fecha": "2026-10-31",
+      "event_id": "401879249",
+      "rivales": [
+       "Brentford",
+       "Nottingham Forest"
+      ],
+      "formacion": "4-3-3"
+     },
+     {
+      "fecha": "2026-10-25",
+      "event_id": "401878766",
+      "rivales": [
+       "Hull City",
+       "Brentford"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-17",
+      "event_id": "401879262",
+      "rivales": [
+       "Brentford",
+       "Liverpool"
+      ],
+      "formacion": "4-5-1"
+     }
+    ],
+    "formacion": "4-5-1",
+    "jugadores": [
+     {
+      "jugador": "Caoimhín Kelleher",
+      "pos": "G",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Kristoffer Ajer",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Michael Kayode",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Sepp van den Berg",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 411
+     },
+     {
+      "jugador": "Keane Lewis-Potter",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 378
+     },
+     {
+      "jugador": "Dango Ouattara",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 306
+     },
+     {
+      "jugador": "Vitaly Janelt",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 352
+     },
+     {
+      "jugador": "Mamadou Sangare",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 270
+     },
+     {
+      "jugador": "Mathias Jensen",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 197
+     },
+     {
+      "jugador": "Yehor Yarmoliuk",
+      "pos": "M",
+      "titularidades": 2,
+      "minutos": 164
+     },
+     {
+      "jugador": "Igor Thiago",
+      "pos": "F",
+      "titularidades": 4,
+      "minutos": 360
+     }
+    ],
+    "fuerza": {
+     "valor": 97.6,
+     "A_goles": 100,
+     "B_minutos": 97.6,
+     "C_puntos": 94.3,
+     "goles_asist": 9.0,
+     "minutos": 3880,
+     "puntos": 66,
+     "mejor": {
+      "goles_asist": 9.0,
+      "minutos": 3976,
+      "puntos": 70
+     }
+    },
+    "revisiones": [],
+    "fallos_summary": [],
+    "probable": true
+   }
+  },
+  {
+   "fecha": "2026-11-28",
+   "liga": "esp.1",
+   "local": "Elche",
+   "visita": "Atlético Madrid",
+   "local_xi": {
+    "equipo": "Elche",
+    "liga": "esp.1",
+    "ventana_partidos": 5,
+    "ventana": [
+     {
+      "fecha": "2026-11-23",
+      "event_id": "401882802",
+      "rivales": [
+       "Levante",
+       "Elche"
+      ],
+      "formacion": "4-4-2"
+     },
+     {
+      "fecha": "2026-11-08",
+      "event_id": "401882814",
+      "rivales": [
+       "Elche",
+       "Real Betis"
+      ],
+      "formacion": "4-3-3"
+     },
+     {
+      "fecha": "2026-11-01",
+      "event_id": "401882823",
+      "rivales": [
+       "Elche",
+       "Valencia"
+      ],
+      "formacion": "4-3-3"
+     },
+     {
+      "fecha": "2026-10-24",
+      "event_id": "401882830",
+      "rivales": [
+       "Rayo Vallecano",
+       "Elche"
+      ],
+      "formacion": "4-3-3"
+     },
+     {
+      "fecha": "2026-10-17",
+      "event_id": "401882837",
+      "rivales": [
+       "Villarreal",
+       "Elche"
+      ],
+      "formacion": "5-4-1"
+     }
+    ],
+    "formacion": "4-3-3",
+    "jugadores": [
+     {
+      "jugador": "Matías Dituro",
+      "pos": "G",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Víctor Chust",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Roy Revivo",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 428
+     },
+     {
+      "jugador": "Federico Redondo",
+      "pos": "D",
+      "titularidades": 4,
+      "minutos": 353
+     },
+     {
+      "jugador": "Buba Sangaré",
+      "pos": "D",
+      "titularidades": 4,
+      "minutos": 331
+     },
+     {
+      "jugador": "Javier Morcillo",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Gonzalo Villar",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 291
+     },
+     {
+      "jugador": "Thomas Lemar",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 227
+     },
+     {
+      "jugador": "Germán Valera",
+      "pos": "F",
+      "titularidades": 5,
+      "minutos": 407
+     },
+     {
+      "jugador": "Lucas Cepeda",
+      "pos": "F",
+      "titularidades": 5,
+      "minutos": 356
+     },
+     {
+      "jugador": "Fer Niño",
+      "pos": "F",
+      "titularidades": 4,
+      "minutos": 339
+     }
+    ],
+    "fuerza": {
+     "valor": 100.0,
+     "A_goles": 100,
+     "B_minutos": 100,
+     "C_puntos": 100,
+     "goles_asist": 5.0,
+     "minutos": 4214,
+     "puntos": 55,
+     "mejor": {
+      "goles_asist": 5.0,
+      "minutos": 3948,
+      "puntos": 50
+     }
+    },
+    "revisiones": [],
+    "fallos_summary": [],
+    "probable": true
+   },
+   "visita_xi": {
+    "equipo": "Atlético Madrid",
+    "liga": "esp.1",
+    "ventana_partidos": 5,
+    "ventana": [
+     {
+      "fecha": "2026-11-22",
+      "event_id": "401882803",
+      "rivales": [
+       "Getafe",
+       "Atlético Madrid"
+      ],
+      "formacion": "5-4-1"
+     },
+     {
+      "fecha": "2026-11-08",
+      "event_id": "401882816",
+      "rivales": [
+       "Atlético Madrid",
+       "Barcelona"
+      ],
+      "formacion": "4-4-2"
+     },
+     {
+      "fecha": "2026-10-31",
+      "event_id": "401882820",
+      "rivales": [
+       "Levante",
+       "Atlético Madrid"
+      ],
+      "formacion": "4-4-2"
+     },
+     {
+      "fecha": "2026-10-24",
+      "event_id": "401882834",
+      "rivales": [
+       "Atlético Madrid",
+       "Deportivo"
+      ],
+      "formacion": "4-3-3"
+     },
+     {
+      "fecha": "2026-10-17",
+      "event_id": "401882843",
+      "rivales": [
+       "Espanyol",
+       "Atlético Madrid"
+      ],
+      "formacion": "4-4-2"
+     }
+    ],
+    "formacion": "4-4-2",
+    "jugadores": [
+     {
+      "jugador": "Jan Oblak",
+      "pos": "G",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Dávid Hancko",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Alejandro Grimaldo",
+      "pos": "D",
+      "titularidades": 4,
+      "minutos": 360
+     },
+     {
+      "jugador": "Marcos Llorente",
+      "pos": "D",
+      "titularidades": 4,
+      "minutos": 360
+     },
+     {
+      "jugador": "Marc Pubill",
+      "pos": "D",
+      "titularidades": 4,
+      "minutos": 360
+     },
+     {
+      "jugador": "Pablo Barrios",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 344
+     },
+     {
+      "jugador": "Giuliano Simeone",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 360
+     },
+     {
+      "jugador": "Álex Baena",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 305
+     },
+     {
+      "jugador": "Morten Hjulmand",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 260
+     },
+     {
+      "jugador": "Julián Álvarez",
+      "pos": "F",
+      "titularidades": 4,
+      "minutos": 360
+     },
+     {
+      "jugador": "Lee Kang-In",
+      "pos": "F",
+      "titularidades": 4,
+      "minutos": 256
+     }
+    ],
+    "fuerza": {
+     "valor": 100.0,
+     "A_goles": 100,
+     "B_minutos": 100,
+     "C_puntos": 100,
+     "goles_asist": 12.0,
+     "minutos": 4081,
+     "puntos": 123,
+     "mejor": {
+      "goles_asist": 12.0,
+      "minutos": 4081,
+      "puntos": 123
+     }
+    },
+    "revisiones": [],
+    "fallos_summary": [],
+    "probable": true
+   }
+  },
+  {
+   "fecha": "2026-11-28",
+   "liga": "ger.1",
+   "local": "VfB Stuttgart",
+   "visita": "Eintracht Frankfurt",
+   "local_xi": {
+    "equipo": "VfB Stuttgart",
+    "liga": "ger.1",
+    "ventana_partidos": 5,
+    "ventana": [
+     {
+      "fecha": "2026-11-21",
+      "event_id": "401884729",
+      "rivales": [
+       "Schalke 04",
+       "VfB Stuttgart"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-11-07",
+      "event_id": "401884743",
+      "rivales": [
+       "VfB Stuttgart",
+       "Werder Bremen"
+      ],
+      "formacion": "3-4-3"
+     },
+     {
+      "fecha": "2026-10-31",
+      "event_id": "401884753",
+      "rivales": [
+       "Bayer Leverkusen",
+       "VfB Stuttgart"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-23",
+      "event_id": "401884761",
+      "rivales": [
+       "VfB Stuttgart",
+       "Borussia Mönchengladbach"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-17",
+      "event_id": "401884767",
+      "rivales": [
+       "Hamburg SV",
+       "VfB Stuttgart"
+      ],
+      "formacion": "4-5-1"
+     }
+    ],
+    "formacion": "4-5-1",
+    "jugadores": [
+     {
+      "jugador": "Dennis Seimen",
+      "pos": "G",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Ramon Hendriks",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 449
+     },
+     {
+      "jugador": "Jeff Chabot",
+      "pos": "D",
+      "titularidades": 4,
+      "minutos": 360
+     },
+     {
+      "jugador": "Maximilian Mittelstädt",
+      "pos": "D",
+      "titularidades": 3,
+      "minutos": 270
+     },
+     {
+      "jugador": "Finn Jeltsch",
+      "pos": "D",
+      "titularidades": 3,
+      "minutos": 260
+     },
+     {
+      "jugador": "Deniz Undav",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 332
+     },
+     {
+      "jugador": "Chris Führich",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 328
+     },
+     {
+      "jugador": "Jamie Leweling",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 287
+     },
+     {
+      "jugador": "Grischa Prömel",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 270
+     },
+     {
+      "jugador": "Atakan Karazor",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 221
+     },
+     {
+      "jugador": "Ermedin Demirovic",
+      "pos": "F",
+      "titularidades": 4,
+      "minutos": 317
+     }
+    ],
+    "fuerza": {
+     "valor": 95.6,
+     "A_goles": 90.9,
+     "B_minutos": 98.6,
+     "C_puntos": 98.7,
+     "goles_asist": 10.0,
+     "minutos": 3785,
+     "puntos": 76,
+     "mejor": {
+      "goles_asist": 11.0,
+      "minutos": 3838,
+      "puntos": 77
+     }
+    },
+    "revisiones": [],
+    "fallos_summary": [],
+    "probable": true
+   },
+   "visita_xi": {
+    "equipo": "Eintracht Frankfurt",
+    "liga": "ger.1",
+    "ventana_partidos": 5,
+    "ventana": [
+     {
+      "fecha": "2026-11-21",
+      "event_id": "401884734",
+      "rivales": [
+       "Eintracht Frankfurt",
+       "TSG Hoffenheim"
+      ],
+      "formacion": "4-4-2"
+     },
+     {
+      "fecha": "2026-11-07",
+      "event_id": "401884737",
+      "rivales": [
+       "SC Paderborn 07",
+       "Eintracht Frankfurt"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-11-01",
+      "event_id": "401884752",
+      "rivales": [
+       "Eintracht Frankfurt",
+       "Hamburg SV"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-24",
+      "event_id": "401884763",
+      "rivales": [
+       "Borussia Dortmund",
+       "Eintracht Frankfurt"
+      ],
+      "formacion": "4-4-2"
+     },
+     {
+      "fecha": "2026-10-16",
+      "event_id": "401884770",
+      "rivales": [
+       "Eintracht Frankfurt",
+       "FC Cologne"
+      ],
+      "formacion": "4-4-2"
+     }
+    ],
+    "formacion": "4-4-2",
+    "jugadores": [
+     {
+      "jugador": "Noah Atubolu",
+      "pos": "G",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Lilian Brassier",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Robin Koch",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Elias Baum",
+      "pos": "D",
+      "titularidades": 3,
+      "minutos": 270
+     },
+     {
+      "jugador": "Keita Kosugi",
+      "pos": "D",
+      "titularidades": 3,
+      "minutos": 225
+     },
+     {
+      "jugador": "Raphael Onyedika",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 445
+     },
+     {
+      "jugador": "Farès Chaïbi",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 444
+     },
+     {
+      "jugador": "Ritsu Doan",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 421
+     },
+     {
+      "jugador": "Noël Aséko",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 283
+     },
+     {
+      "jugador": "Jonathan Burkardt",
+      "pos": "F",
+      "titularidades": 4,
+      "minutos": 333
+     },
+     {
+      "jugador": "Younes Ebnoutalib",
+      "pos": "F",
+      "titularidades": 4,
+      "minutos": 325
+     }
+    ],
+    "fuerza": {
+     "valor": 100.0,
+     "A_goles": 100,
+     "B_minutos": 100,
+     "C_puntos": 100,
+     "goles_asist": 8.0,
+     "minutos": 4165,
+     "puntos": 106,
+     "mejor": {
+      "goles_asist": 8.0,
+      "minutos": 4165,
+      "puntos": 106
+     }
+    },
+    "revisiones": [],
+    "fallos_summary": [],
+    "probable": true
+   }
+  },
+  {
+   "fecha": "2026-11-28",
+   "liga": "ita.1",
+   "local": "Internazionale",
+   "visita": "Genoa",
+   "local_xi": {
+    "equipo": "Internazionale",
+    "liga": "ita.1",
+    "ventana_partidos": 5,
+    "ventana": [
+     {
+      "fecha": "2026-11-22",
+      "event_id": "401875001",
+      "rivales": [
+       "Atalanta",
+       "Internazionale"
+      ],
+      "formacion": "3-5-2"
+     },
+     {
+      "fecha": "2026-11-08",
+      "event_id": "401874808",
+      "rivales": [
+       "Internazionale",
+       "Como"
+      ],
+      "formacion": "3-5-2"
+     },
+     {
+      "fecha": "2026-10-31",
+      "event_id": "401874795",
+      "rivales": [
+       "AC Milan",
+       "Internazionale"
+      ],
+      "formacion": "3-4-3"
+     },
+     {
+      "fecha": "2026-10-28",
+      "event_id": "401874773",
+      "rivales": [
+       "Venezia",
+       "Internazionale"
+      ],
+      "formacion": "3-5-2"
+     },
+     {
+      "fecha": "2026-10-25",
+      "event_id": "401875036",
+      "rivales": [
+       "Internazionale",
+       "Fiorentina"
+      ],
+      "formacion": "3-5-2"
+     }
+    ],
+    "formacion": "3-5-2",
+    "jugadores": [
+     {
+      "jugador": "Josep Martínez",
+      "pos": "G",
+      "titularidades": 3,
+      "minutos": 270
+     },
+     {
+      "jugador": "Carlos Augusto",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Alessandro Bastoni",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 428
+     },
+     {
+      "jugador": "Manuel Akanji",
+      "pos": "D",
+      "titularidades": 3,
+      "minutos": 270
+     },
+     {
+      "jugador": "Nicolò Barella",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 321
+     },
+     {
+      "jugador": "Hakan Çalhanoglu",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 321
+     },
+     {
+      "jugador": "Djed Spence",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 270
+     },
+     {
+      "jugador": "Andy Diouf",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 252
+     },
+     {
+      "jugador": "Federico Dimarco",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 241
+     },
+     {
+      "jugador": "Marcus Thuram",
+      "pos": "F",
+      "titularidades": 5,
+      "minutos": 444
+     },
+     {
+      "jugador": "Pio Esposito",
+      "pos": "F",
+      "titularidades": 3,
+      "minutos": 270
+     }
+    ],
+    "fuerza": {
+     "valor": 100.0,
+     "A_goles": 100,
+     "B_minutos": 100,
+     "C_puntos": 100,
+     "goles_asist": 11.0,
+     "minutos": 3727,
+     "puntos": 97,
+     "mejor": {
+      "goles_asist": 10.0,
+      "minutos": 3689,
+      "puntos": 94
+     }
+    },
+    "revisiones": [],
+    "fallos_summary": [],
+    "probable": true
+   },
+   "visita_xi": {
+    "equipo": "Genoa",
+    "liga": "ita.1",
+    "ventana_partidos": 5,
+    "ventana": [
+     {
+      "fecha": "2026-11-22",
+      "event_id": "401874960",
+      "rivales": [
+       "Sassuolo",
+       "Genoa"
+      ],
+      "formacion": "3-4-3"
+     },
+     {
+      "fecha": "2026-11-08",
+      "event_id": "401875018",
+      "rivales": [
+       "Genoa",
+       "AC Milan"
+      ],
+      "formacion": "3-4-3"
+     },
+     {
+      "fecha": "2026-11-01",
+      "event_id": "401874968",
+      "rivales": [
+       "Lecce",
+       "Genoa"
+      ],
+      "formacion": "3-4-3"
+     },
+     {
+      "fecha": "2026-10-28",
+      "event_id": "401874988",
+      "rivales": [
+       "Genoa",
+       "Juventus"
+      ],
+      "formacion": "3-4-3"
+     },
+     {
+      "fecha": "2026-10-25",
+      "event_id": "401874952",
+      "rivales": [
+       "Genoa",
+       "Venezia"
+      ],
+      "formacion": "3-4-3"
+     }
+    ],
+    "formacion": "3-4-3",
+    "jugadores": [
+     {
+      "jugador": "Justin Bijlow",
+      "pos": "G",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Leo Østigard",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Johan Vásquez",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Alessandro Marcandalli",
+      "pos": "D",
+      "titularidades": 4,
+      "minutos": 332
+     },
+     {
+      "jugador": "Mikael Ellertsson",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Hamed Traoré",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 337
+     },
+     {
+      "jugador": "Kingsley Ehizibue",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 270
+     },
+     {
+      "jugador": "Samuel Wiafe",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 234
+     },
+     {
+      "jugador": "Milutin Osmajic",
+      "pos": "F",
+      "titularidades": 5,
+      "minutos": 431
+     },
+     {
+      "jugador": "Junior Messias",
+      "pos": "F",
+      "titularidades": 4,
+      "minutos": 284
+     },
+     {
+      "jugador": "Vitinha",
+      "pos": "F",
+      "titularidades": 2,
+      "minutos": 180
+     }
+    ],
+    "fuerza": {
+     "valor": 100.0,
+     "A_goles": 100,
+     "B_minutos": 100,
+     "C_puntos": 100,
+     "goles_asist": 9.0,
+     "minutos": 3954,
+     "puntos": 117,
+     "mejor": {
+      "goles_asist": 9.0,
+      "minutos": 3775,
+      "puntos": 111
+     }
+    },
+    "revisiones": [],
+    "fallos_summary": [],
+    "probable": true
+   }
+  },
+  {
+   "fecha": "2026-11-28",
+   "liga": "esp.1",
+   "local": "Real Madrid",
+   "visita": "Alavés",
+   "local_xi": {
+    "equipo": "Real Madrid",
+    "liga": "esp.1",
+    "ventana_partidos": 5,
+    "ventana": [
+     {
+      "fecha": "2026-11-21",
+      "event_id": "401882798",
+      "rivales": [
+       "Real Madrid",
+       "Celta Vigo"
+      ],
+      "formacion": "5-4-1"
+     },
+     {
+      "fecha": "2026-11-07",
+      "event_id": "401882808",
+      "rivales": [
+       "Valencia",
+       "Real Madrid"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-11-01",
+      "event_id": "401882819",
+      "rivales": [
+       "Racing Santander",
+       "Real Madrid"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-25",
+      "event_id": "401882832",
+      "rivales": [
+       "Barcelona",
+       "Real Madrid"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-18",
+      "event_id": "401882839",
+      "rivales": [
+       "Real Madrid",
+       "Sevilla"
+      ],
+      "formacion": "4-5-1"
+     }
+    ],
+    "formacion": "4-5-1",
+    "jugadores": [
+     {
+      "jugador": "Thibaut Courtois",
+      "pos": "G",
+      "titularidades": 4,
+      "minutos": 360
+     },
+     {
+      "jugador": "Dean Huijsen",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Antonio Rüdiger",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450,
+      "corregido_de": "Ibrahima Konaté"
+     },
+     {
+      "jugador": "Éder Militão",
+      "pos": "D",
+      "titularidades": 4,
+      "minutos": 360,
+      "corregido_de": "Marc Cucurella"
+     },
+     {
+      "jugador": "Federico Valverde",
+      "pos": "D",
+      "titularidades": 3,
+      "minutos": 265
+     },
+     {
+      "jugador": "Jude Bellingham",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 430
+     },
+     {
+      "jugador": "Vinícius Júnior",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 420,
+      "corregido_de": "Yan Diomande"
+     },
+     {
+      "jugador": "Arda Güler",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 409
+     },
+     {
+      "jugador": "Aurélien Tchouaméni",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 360
+     },
+     {
+      "jugador": "Brahim Díaz",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 298,
+      "corregido_de": "Bernardo Silva"
+     },
+     {
+      "jugador": "Kylian Mbappé",
+      "pos": "F",
+      "titularidades": 5,
+      "minutos": 445
+     }
+    ],
+    "fuerza": {
+     "valor": 100.0,
+     "A_goles": 100,
+     "B_minutos": 100,
+     "C_puntos": 100,
+     "goles_asist": 19.0,
+     "minutos": 4333,
+     "puntos": 156,
+     "mejor": {
+      "goles_asist": 19.0,
+      "minutos": 4333,
+      "puntos": 156
+     }
+    },
+    "revisiones": [],
+    "fallos_summary": [],
+    "probable": true
+   },
+   "visita_xi": {
+    "equipo": "Alavés",
+    "liga": "esp.1",
+    "ventana_partidos": 5,
+    "ventana": [
+     {
+      "fecha": "2026-11-21",
+      "event_id": "401882806",
+      "rivales": [
+       "Alavés",
+       "Deportivo"
+      ],
+      "formacion": "3-4-2"
+     },
+     {
+      "fecha": "2026-11-06",
+      "event_id": "401882809",
+      "rivales": [
+       "Sevilla",
+       "Alavés"
+      ],
+      "formacion": "3-5-2"
+     },
+     {
+      "fecha": "2026-10-31",
+      "event_id": "401882822",
+      "rivales": [
+       "Barcelona",
+       "Alavés"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-23",
+      "event_id": "401882836",
+      "rivales": [
+       "Alavés",
+       "Málaga"
+      ],
+      "formacion": "5-3-2"
+     },
+     {
+      "fecha": "2026-10-18",
+      "event_id": "401882845",
+      "rivales": [
+       "Celta Vigo",
+       "Alavés"
+      ],
+      "formacion": "5-3-2"
+     }
+    ],
+    "formacion": "5-3-2",
+    "jugadores": [
+     {
+      "jugador": "Antonio Sivera",
+      "pos": "G",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Ville Koski",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Nahuel Tenaglia",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Jonny",
+      "pos": "D",
+      "titularidades": 3,
+      "minutos": 270
+     },
+     {
+      "jugador": "Nicolás Valentini",
+      "pos": "D",
+      "titularidades": 3,
+      "minutos": 235
+     },
+     {
+      "jugador": "Pablo Ibáñez",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 346
+     },
+     {
+      "jugador": "Antonio Blanco",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 343
+     },
+     {
+      "jugador": "Ángel Pérez",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 292
+     },
+     {
+      "jugador": "Lucas Boyé",
+      "pos": "F",
+      "titularidades": 5,
+      "minutos": 429
+     },
+     {
+      "jugador": "Toni Martínez",
+      "pos": "F",
+      "titularidades": 3,
+      "minutos": 212
+     },
+     {
+      "jugador": "Abde Rebbach",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 265
+     }
+    ],
+    "fuerza": {
+     "valor": 100.0,
+     "A_goles": 100,
+     "B_minutos": 100,
+     "C_puntos": 100,
+     "goles_asist": 5.0,
+     "minutos": 3876,
+     "puntos": 50,
+     "mejor": {
+      "goles_asist": 5.0,
+      "minutos": 3876,
+      "puntos": 50
+     }
+    },
+    "revisiones": [],
+    "fallos_summary": [],
+    "probable": true
+   }
+  },
+  {
+   "fecha": "2026-11-29",
+   "liga": "eng.1",
+   "local": "Everton",
+   "visita": "Liverpool",
+   "local_xi": {
+    "equipo": "Everton",
+    "liga": "eng.1",
+    "ventana_partidos": 5,
+    "ventana": [
+     {
+      "fecha": "2026-11-23",
+      "event_id": "401879237",
+      "rivales": [
+       "Brentford",
+       "Everton"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-11-06",
+      "event_id": "401879242",
+      "rivales": [
+       "Everton",
+       "Coventry City"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-11-02",
+      "event_id": "401878762",
+      "rivales": [
+       "Newcastle United",
+       "Everton"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-24",
+      "event_id": "401878768",
+      "rivales": [
+       "Arsenal",
+       "Everton"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-17",
+      "event_id": "401878771",
+      "rivales": [
+       "Everton",
+       "Chelsea"
+      ],
+      "formacion": "4-5-1"
+     }
+    ],
+    "formacion": "4-5-1",
+    "jugadores": [
+     {
+      "jugador": "Jordan Pickford",
+      "pos": "G",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "James Tarkowski",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Vitaliy Mykolenko",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Jarrad Branthwaite",
+      "pos": "D",
+      "titularidades": 4,
+      "minutos": 351
+     },
+     {
+      "jugador": "Jake O'Brien",
+      "pos": "D",
+      "titularidades": 3,
+      "minutos": 270
+     },
+     {
+      "jugador": "James Garner",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 445
+     },
+     {
+      "jugador": "Harrison Armstrong",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 428
+     },
+     {
+      "jugador": "Kiernan Dewsbury-Hall",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 425
+     },
+     {
+      "jugador": "Merlin Röhl",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 412
+     },
+     {
+      "jugador": "Tyrique George",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 315
+     },
+     {
+      "jugador": "Thierno Barry",
+      "pos": "F",
+      "titularidades": 5,
+      "minutos": 419
+     }
+    ],
+    "fuerza": {
+     "valor": 100.0,
+     "A_goles": 100,
+     "B_minutos": 100,
+     "C_puntos": 100,
+     "goles_asist": 6.0,
+     "minutos": 4467,
+     "puntos": 66,
+     "mejor": {
+      "goles_asist": 6.0,
+      "minutos": 4467,
+      "puntos": 66
+     }
+    },
+    "revisiones": [],
+    "fallos_summary": [],
+    "probable": true
+   },
+   "visita_xi": {
+    "equipo": "Liverpool",
+    "liga": "eng.1",
+    "ventana_partidos": 5,
+    "ventana": [
+     {
+      "fecha": "2026-11-22",
+      "event_id": "401878755",
+      "rivales": [
+       "Liverpool",
+       "Manchester United"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-11-08",
+      "event_id": "401879243",
+      "rivales": [
+       "Crystal Palace",
+       "Liverpool"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-11-01",
+      "event_id": "401879246",
+      "rivales": [
+       "Liverpool",
+       "Arsenal"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-25",
+      "event_id": "401878765",
+      "rivales": [
+       "Liverpool",
+       "Brighton & Hove Albion"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-17",
+      "event_id": "401879262",
+      "rivales": [
+       "Brentford",
+       "Liverpool"
+      ],
+      "formacion": "4-5-1"
+     }
+    ],
+    "formacion": "4-5-1",
+    "jugadores": [
+     {
+      "jugador": "Alisson Becker",
+      "pos": "G",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Virgil van Dijk",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Jérémy Jacquet",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Milos Kerkez",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 439
+     },
+     {
+      "jugador": "Ronald Araujo",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 391
+     },
+     {
+      "jugador": "Florian Wirtz",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 441
+     },
+     {
+      "jugador": "Alexis Mac Allister",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 432
+     },
+     {
+      "jugador": "Bradley Barcola",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 398
+     },
+     {
+      "jugador": "Dominik Szoboszlai",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 249
+     },
+     {
+      "jugador": "Cody Gakpo",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 233
+     },
+     {
+      "jugador": "Alexander Isak",
+      "pos": "F",
+      "titularidades": 5,
+      "minutos": 421
+     }
+    ],
+    "fuerza": {
+     "valor": 100.0,
+     "A_goles": 100,
+     "B_minutos": 100,
+     "C_puntos": 100,
+     "goles_asist": 15.0,
+     "minutos": 4385,
+     "puntos": 123,
+     "mejor": {
+      "goles_asist": 15.0,
+      "minutos": 4385,
+      "puntos": 123
+     }
+    },
+    "revisiones": [],
+    "fallos_summary": [],
+    "probable": true
+   }
+  },
+  {
+   "fecha": "2026-11-29",
+   "liga": "ita.1",
+   "local": "Sassuolo",
+   "visita": "Napoli",
+   "local_xi": {
+    "equipo": "Sassuolo",
+    "liga": "ita.1",
+    "ventana_partidos": 5,
+    "ventana": [
+     {
+      "fecha": "2026-11-22",
+      "event_id": "401874960",
+      "rivales": [
+       "Sassuolo",
+       "Genoa"
+      ],
+      "formacion": "3-4-3"
+     },
+     {
+      "fecha": "2026-11-07",
+      "event_id": "401874803",
+      "rivales": [
+       "AS Roma",
+       "Sassuolo"
+      ],
+      "formacion": "3-5-2"
+     },
+     {
+      "fecha": "2026-11-02",
+      "event_id": "401874963",
+      "rivales": [
+       "Sassuolo",
+       "Fiorentina"
+      ],
+      "formacion": "4-3-3"
+     },
+     {
+      "fecha": "2026-10-27",
+      "event_id": "401874980",
+      "rivales": [
+       "Sassuolo",
+       "Lazio"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-24",
+      "event_id": "401874961",
+      "rivales": [
+       "Como",
+       "Sassuolo"
+      ],
+      "formacion": "4-5-1"
+     }
+    ],
+    "formacion": "4-5-1",
+    "jugadores": [
+     {
+      "jugador": "Stefano Turati",
+      "pos": "G",
+      "titularidades": 3,
+      "minutos": 270
+     },
+     {
+      "jugador": "Jay Idzes",
+      "pos": "D",
+      "titularidades": 3,
+      "minutos": 270
+     },
+     {
+      "jugador": "Duje Caleta-Car",
+      "pos": "D",
+      "titularidades": 3,
+      "minutos": 262
+     },
+     {
+      "jugador": "Sebastian Walukiewicz",
+      "pos": "D",
+      "titularidades": 3,
+      "minutos": 257
+     },
+     {
+      "jugador": "Josh Doig",
+      "pos": "D",
+      "titularidades": 3,
+      "minutos": 257
+     },
+     {
+      "jugador": "Nemanja Matic",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 276
+     },
+     {
+      "jugador": "Kristian Thorstvedt",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 249
+     },
+     {
+      "jugador": "Rafael Obrador",
+      "pos": "M",
+      "titularidades": 2,
+      "minutos": 180
+     },
+     {
+      "jugador": "Ignace van der Brempt",
+      "pos": "M",
+      "titularidades": 2,
+      "minutos": 180
+     },
+     {
+      "jugador": "Sulemana",
+      "pos": "M",
+      "titularidades": 2,
+      "minutos": 180
+     },
+     {
+      "jugador": "Armand Laurienté",
+      "pos": "F",
+      "titularidades": 4,
+      "minutos": 340
+     }
+    ],
+    "fuerza": {
+     "valor": 69.0,
+     "A_goles": 100,
+     "B_minutos": 96.6,
+     "C_puntos": 0,
+     "goles_asist": 3.0,
+     "minutos": 2790,
+     "puntos": 0,
+     "mejor": {
+      "goles_asist": 3.0,
+      "minutos": 2889,
+      "puntos": 0
+     }
+    },
+    "revisiones": [],
+    "fallos_summary": [],
+    "probable": true
+   },
+   "visita_xi": {
+    "equipo": "Napoli",
+    "liga": "ita.1",
+    "ventana_partidos": 5,
+    "ventana": [
+     {
+      "fecha": "2026-11-21",
+      "event_id": "401875067",
+      "rivales": [
+       "Napoli",
+       "Torino"
+      ],
+      "formacion": "3-5-2"
+     },
+     {
+      "fecha": "2026-11-08",
+      "event_id": "401874810",
+      "rivales": [
+       "Napoli",
+       "Lazio"
+      ],
+      "formacion": "3-4-3"
+     },
+     {
+      "fecha": "2026-11-01",
+      "event_id": "401874949",
+      "rivales": [
+       "Juventus",
+       "Napoli"
+      ],
+      "formacion": "4-3-3"
+     },
+     {
+      "fecha": "2026-10-28",
+      "event_id": "401874799",
+      "rivales": [
+       "Monza",
+       "Napoli"
+      ],
+      "formacion": "4-3-3"
+     },
+     {
+      "fecha": "2026-10-24",
+      "event_id": "401874948",
+      "rivales": [
+       "Napoli",
+       "AS Roma"
+      ],
+      "formacion": "4-3-3"
+     }
+    ],
+    "formacion": "4-3-3",
+    "jugadores": [
+     {
+      "jugador": "Vanja Milinkovic-Savic",
+      "pos": "G",
+      "titularidades": 3,
+      "minutos": 270
+     },
+     {
+      "jugador": "Rafa Marín",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 418
+     },
+     {
+      "jugador": "Mathías Olivera",
+      "pos": "D",
+      "titularidades": 4,
+      "minutos": 360
+     },
+     {
+      "jugador": "Amir Rrahmani",
+      "pos": "D",
+      "titularidades": 3,
+      "minutos": 225
+     },
+     {
+      "jugador": "Giovanni Di Lorenzo",
+      "pos": "D",
+      "titularidades": 3,
+      "minutos": 215
+     },
+     {
+      "jugador": "Scott McTominay",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Frank Anguissa",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 322
+     },
+     {
+      "jugador": "Kevin De Bruyne",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 207
+     },
+     {
+      "jugador": "Noa Lang",
+      "pos": "F",
+      "titularidades": 4,
+      "minutos": 349
+     },
+     {
+      "jugador": "Rasmus Højlund",
+      "pos": "F",
+      "titularidades": 4,
+      "minutos": 327
+     },
+     {
+      "jugador": "Matteo Politano",
+      "pos": "F",
+      "titularidades": 4,
+      "minutos": 296
+     }
+    ],
+    "fuerza": {
+     "valor": 100.0,
+     "A_goles": 100,
+     "B_minutos": 100,
+     "C_puntos": 100,
+     "goles_asist": 14.0,
+     "minutos": 3689,
+     "puntos": 82,
+     "mejor": {
+      "goles_asist": 9.0,
+      "minutos": 3458,
+      "puntos": 78
+     }
+    },
+    "revisiones": [],
+    "fallos_summary": [],
+    "probable": true
+   }
+  },
+  {
+   "fecha": "2026-11-29",
+   "liga": "esp.1",
+   "local": "Deportivo",
+   "visita": "Barcelona",
+   "local_xi": {
+    "equipo": "Deportivo",
+    "liga": "esp.1",
+    "ventana_partidos": 5,
+    "ventana": [
+     {
+      "fecha": "2026-11-21",
+      "event_id": "401882806",
+      "rivales": [
+       "Alavés",
+       "Deportivo"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-11-07",
+      "event_id": "401882813",
+      "rivales": [
+       "Espanyol",
+       "Deportivo"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-11-02",
+      "event_id": "401882824",
+      "rivales": [
+       "Deportivo",
+       "Osasuna"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-24",
+      "event_id": "401882834",
+      "rivales": [
+       "Atlético Madrid",
+       "Deportivo"
+      ],
+      "formacion": "5-3-2"
+     },
+     {
+      "fecha": "2026-10-16",
+      "event_id": "401882844",
+      "rivales": [
+       "Deportivo",
+       "Levante"
+      ],
+      "formacion": "4-4-2"
+     }
+    ],
+    "formacion": "4-5-1",
+    "jugadores": [
+     {
+      "jugador": "Leo Román",
+      "pos": "G",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Giacomo Quagliata",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 406
+     },
+     {
+      "jugador": "Miguel Loureiro",
+      "pos": "D",
+      "titularidades": 4,
+      "minutos": 360
+     },
+     {
+      "jugador": "José María Giménez",
+      "pos": "D",
+      "titularidades": 4,
+      "minutos": 360
+     },
+     {
+      "jugador": "Adrià Altimira",
+      "pos": "D",
+      "titularidades": 3,
+      "minutos": 270
+     },
+     {
+      "jugador": "Mario Soriano Carreno",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Yeremay Hernández",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 381
+     },
+     {
+      "jugador": "Luismi Cruz",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 242
+     },
+     {
+      "jugador": "Lorenzo Amatucci",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 263
+     },
+     {
+      "jugador": "David Mella",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 209
+     },
+     {
+      "jugador": "Bil Nsongo",
+      "pos": "F",
+      "titularidades": 4,
+      "minutos": 350
+     }
+    ],
+    "fuerza": {
+     "valor": 100.0,
+     "A_goles": 100,
+     "B_minutos": 100,
+     "C_puntos": 100,
+     "goles_asist": 4.0,
+     "minutos": 3877,
+     "puntos": 52,
+     "mejor": {
+      "goles_asist": 4.0,
+      "minutos": 3877,
+      "puntos": 52
+     }
+    },
+    "revisiones": [],
+    "fallos_summary": [],
+    "probable": true
+   },
+   "visita_xi": {
+    "equipo": "Barcelona",
+    "liga": "esp.1",
+    "ventana_partidos": 5,
+    "ventana": [
+     {
+      "fecha": "2026-11-22",
+      "event_id": "401882804",
+      "rivales": [
+       "Barcelona",
+       "Villarreal"
+      ],
+      "formacion": "4-3-3"
+     },
+     {
+      "fecha": "2026-11-08",
+      "event_id": "401882816",
+      "rivales": [
+       "Atlético Madrid",
+       "Barcelona"
+      ],
+      "formacion": "5-4-1"
+     },
+     {
+      "fecha": "2026-10-31",
+      "event_id": "401882822",
+      "rivales": [
+       "Barcelona",
+       "Alavés"
+      ],
+      "formacion": "4-3-3"
+     },
+     {
+      "fecha": "2026-10-25",
+      "event_id": "401882832",
+      "rivales": [
+       "Barcelona",
+       "Real Madrid"
+      ],
+      "formacion": "4-3-3"
+     },
+     {
+      "fecha": "2026-10-17",
+      "event_id": "401882846",
+      "rivales": [
+       "Real Betis",
+       "Barcelona"
+      ],
+      "formacion": "4-5-1"
+     }
+    ],
+    "formacion": "4-3-3",
+    "jugadores": [
+     {
+      "jugador": "Joan García",
+      "pos": "G",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Pau Cubarsí",
+      "pos": "D",
+      "titularidades": 4,
+      "minutos": 360
+     },
+     {
+      "jugador": "Gerard Martín",
+      "pos": "D",
+      "titularidades": 4,
+      "minutos": 315
+     },
+     {
+      "jugador": "João Cancelo",
+      "pos": "D",
+      "titularidades": 4,
+      "minutos": 302
+     },
+     {
+      "jugador": "Xavi Espart",
+      "pos": "D",
+      "titularidades": 2,
+      "minutos": 180
+     },
+     {
+      "jugador": "Pedri",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 405
+     },
+     {
+      "jugador": "Fermín López",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 368
+     },
+     {
+      "jugador": "Rodri",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 270
+     },
+     {
+      "jugador": "Lamine Yamal",
+      "pos": "F",
+      "titularidades": 5,
+      "minutos": 414
+     },
+     {
+      "jugador": "Raphinha",
+      "pos": "F",
+      "titularidades": 4,
+      "minutos": 328
+     },
+     {
+      "jugador": "Karim Adeyemi",
+      "pos": "F",
+      "titularidades": 3,
+      "minutos": 220
+     }
+    ],
+    "fuerza": {
+     "valor": 98.9,
+     "A_goles": 100,
+     "B_minutos": 99.1,
+     "C_puntos": 97.4,
+     "goles_asist": 25.0,
+     "minutos": 3649,
+     "puntos": 111,
+     "mejor": {
+      "goles_asist": 25.0,
+      "minutos": 3682,
+      "puntos": 114
+     }
+    },
+    "revisiones": [],
+    "fallos_summary": [],
+    "probable": true
+   }
+  },
+  {
+   "fecha": "2026-11-29",
+   "liga": "eng.1",
+   "local": "Arsenal",
+   "visita": "Manchester City",
+   "local_xi": {
+    "equipo": "Arsenal",
+    "liga": "eng.1",
+    "ventana_partidos": 5,
+    "ventana": [
+     {
+      "fecha": "2026-11-21",
+      "event_id": "401879232",
+      "rivales": [
+       "Newcastle United",
+       "Arsenal"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-11-07",
+      "event_id": "401878760",
+      "rivales": [
+       "Arsenal",
+       "Hull City"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-11-01",
+      "event_id": "401879246",
+      "rivales": [
+       "Liverpool",
+       "Arsenal"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-24",
+      "event_id": "401878768",
+      "rivales": [
+       "Arsenal",
+       "Everton"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-18",
+      "event_id": "401878769",
+      "rivales": [
+       "Nottingham Forest",
+       "Arsenal"
+      ],
+      "formacion": "4-5-1"
+     }
+    ],
+    "formacion": "4-5-1",
+    "jugadores": [
+     {
+      "jugador": "David Raya",
+      "pos": "G",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Gabriel Magalhães",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "William Saliba",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450,
+      "corregido_de": "Ezri Konsa"
+     },
+     {
+      "jugador": "Riccardo Calafiori",
+      "pos": "D",
+      "titularidades": 4,
+      "minutos": 339
+     },
+     {
+      "jugador": "Jurriën Timber",
+      "pos": "D",
+      "titularidades": 3,
+      "minutos": 270
+     },
+     {
+      "jugador": "Martin Ødegaard",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 448
+     },
+     {
+      "jugador": "Declan Rice",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 413
+     },
+     {
+      "jugador": "Noni Madueke",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 360
+     },
+     {
+      "jugador": "Martín Zubimendi",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 287,
+      "corregido_de": "Bruno Guimarães"
+     },
+     {
+      "jugador": "Eberechi Eze",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 195
+     },
+     {
+      "jugador": "Kai Havertz",
+      "pos": "F",
+      "titularidades": 4,
+      "minutos": 303
+     }
+    ],
+    "fuerza": {
+     "valor": 100.0,
+     "A_goles": 100,
+     "B_minutos": 100,
+     "C_puntos": 100,
+     "goles_asist": 11.0,
+     "minutos": 4121,
+     "puntos": 137,
+     "mejor": {
+      "goles_asist": 11.0,
+      "minutos": 4121,
+      "puntos": 137
+     }
+    },
+    "revisiones": [],
+    "fallos_summary": [],
+    "probable": true
+   },
+   "visita_xi": {
+    "equipo": "Manchester City",
+    "liga": "eng.1",
+    "ventana_partidos": 5,
+    "ventana": [
+     {
+      "fecha": "2026-11-21",
+      "event_id": "401879233",
+      "rivales": [
+       "Manchester City",
+       "Fulham"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-11-07",
+      "event_id": "401878757",
+      "rivales": [
+       "Nottingham Forest",
+       "Manchester City"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-31",
+      "event_id": "401879245",
+      "rivales": [
+       "Manchester City",
+       "Brighton & Hove Albion"
+      ],
+      "formacion": "4-3-3"
+     },
+     {
+      "fecha": "2026-10-24",
+      "event_id": "401879256",
+      "rivales": [
+       "Aston Villa",
+       "Manchester City"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-17",
+      "event_id": "401879259",
+      "rivales": [
+       "Manchester City",
+       "Ipswich Town"
+      ],
+      "formacion": "4-5-1"
+     }
+    ],
+    "formacion": "4-5-1",
+    "jugadores": [
+     {
+      "jugador": "Gianluigi Donnarumma",
+      "pos": "G",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Rúben Dias",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Abdukodir Khusanov",
+      "pos": "D",
+      "titularidades": 4,
+      "minutos": 360
+     },
+     {
+      "jugador": "Marc Guéhi",
+      "pos": "D",
+      "titularidades": 4,
+      "minutos": 270
+     },
+     {
+      "jugador": "Josko Gvardiol",
+      "pos": "D",
+      "titularidades": 3,
+      "minutos": 214
+     },
+     {
+      "jugador": "Jérémy Doku",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 437
+     },
+     {
+      "jugador": "Iliman Ndiaye",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 406
+     },
+     {
+      "jugador": "Elliot Anderson",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 360
+     },
+     {
+      "jugador": "Enzo Fernández",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 232
+     },
+     {
+      "jugador": "Ayyoub Bouaddi",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 230
+     },
+     {
+      "jugador": "Erling Haaland",
+      "pos": "F",
+      "titularidades": 5,
+      "minutos": 450
+     }
+    ],
+    "fuerza": {
+     "valor": 100.0,
+     "A_goles": 100,
+     "B_minutos": 100,
+     "C_puntos": 100,
+     "goles_asist": 7.0,
+     "minutos": 3972,
+     "puntos": 44,
+     "mejor": {
+      "goles_asist": 7.0,
+      "minutos": 3972,
+      "puntos": 44
+     }
+    },
+    "revisiones": [],
+    "fallos_summary": [],
+    "probable": true
+   }
+  },
+  {
+   "fecha": "2026-11-29",
+   "liga": "ger.1",
+   "local": "Borussia Dortmund",
+   "visita": "Bayer Leverkusen",
+   "local_xi": {
+    "equipo": "Borussia Dortmund",
+    "liga": "ger.1",
+    "ventana_partidos": 5,
+    "ventana": [
+     {
+      "fecha": "2026-11-21",
+      "event_id": "401884731",
+      "rivales": [
+       "Borussia Mönchengladbach",
+       "Borussia Dortmund"
+      ],
+      "formacion": "3-4-3"
+     },
+     {
+      "fecha": "2026-11-07",
+      "event_id": "401884745",
+      "rivales": [
+       "Borussia Dortmund",
+       "SV Elversberg"
+      ],
+      "formacion": "4-3-3"
+     },
+     {
+      "fecha": "2026-10-31",
+      "event_id": "401884754",
+      "rivales": [
+       "Bayern Munich",
+       "Borussia Dortmund"
+      ],
+      "formacion": "3-4-3"
+     },
+     {
+      "fecha": "2026-10-24",
+      "event_id": "401884763",
+      "rivales": [
+       "Borussia Dortmund",
+       "Eintracht Frankfurt"
+      ],
+      "formacion": "3-4-3"
+     },
+     {
+      "fecha": "2026-10-17",
+      "event_id": "401884769",
+      "rivales": [
+       "1. FC Union Berlin",
+       "Borussia Dortmund"
+      ],
+      "formacion": "3-4-3"
+     }
+    ],
+    "formacion": "3-4-3",
+    "jugadores": [
+     {
+      "jugador": "Gregor Kobel",
+      "pos": "G",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Nico Schlotterbeck",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Kouakou Gadou",
+      "pos": "D",
+      "titularidades": 4,
+      "minutos": 360
+     },
+     {
+      "jugador": "Waldemar Anton",
+      "pos": "D",
+      "titularidades": 4,
+      "minutos": 360
+     },
+     {
+      "jugador": "Daniel Svensson",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 428
+     },
+     {
+      "jugador": "Felix Nmecha",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 425
+     },
+     {
+      "jugador": "Jobe Bellingham",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 323
+     },
+     {
+      "jugador": "Julian Ryerson",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 270
+     },
+     {
+      "jugador": "Serhou Guirassy",
+      "pos": "F",
+      "titularidades": 3,
+      "minutos": 270
+     },
+     {
+      "jugador": "Fábio Silva",
+      "pos": "F",
+      "titularidades": 3,
+      "minutos": 226
+     },
+     {
+      "jugador": "Maximilian Beier",
+      "pos": "F",
+      "titularidades": 3,
+      "minutos": 219
+     }
+    ],
+    "fuerza": {
+     "valor": 100.0,
+     "A_goles": 100,
+     "B_minutos": 100,
+     "C_puntos": 100,
+     "goles_asist": 9.0,
+     "minutos": 3983,
+     "puntos": 112,
+     "mejor": {
+      "goles_asist": 7.0,
+      "minutos": 3922,
+      "puntos": 109
+     }
+    },
+    "revisiones": [],
+    "fallos_summary": [],
+    "probable": true
+   },
+   "visita_xi": {
+    "equipo": "Bayer Leverkusen",
+    "liga": "ger.1",
+    "ventana_partidos": 5,
+    "ventana": [
+     {
+      "fecha": "2026-11-21",
+      "event_id": "401884735",
+      "rivales": [
+       "Bayer Leverkusen",
+       "SC Paderborn 07"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-11-08",
+      "event_id": "401884738",
+      "rivales": [
+       "FC Cologne",
+       "Bayer Leverkusen"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-31",
+      "event_id": "401884753",
+      "rivales": [
+       "Bayer Leverkusen",
+       "VfB Stuttgart"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-25",
+      "event_id": "401884760",
+      "rivales": [
+       "TSG Hoffenheim",
+       "Bayer Leverkusen"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-18",
+      "event_id": "401884771",
+      "rivales": [
+       "Bayer Leverkusen",
+       "SC Freiburg"
+      ],
+      "formacion": "4-5-1"
+     }
+    ],
+    "formacion": "4-5-1",
+    "jugadores": [
+     {
+      "jugador": "Mark Flekken",
+      "pos": "G",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Miguel Gutiérrez",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Edmond Tapsoba",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 438
+     },
+     {
+      "jugador": "Jarell Quansah",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 424
+     },
+     {
+      "jugador": "Facundo Medina",
+      "pos": "D",
+      "titularidades": 4,
+      "minutos": 352
+     },
+     {
+      "jugador": "Ezequiel Fernández",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Aleix García",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 443
+     },
+     {
+      "jugador": "Ibrahim Maza",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 352
+     },
+     {
+      "jugador": "Afonso Moreira",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 314
+     },
+     {
+      "jugador": "Moussa Diaby",
+      "pos": "M",
+      "titularidades": 2,
+      "minutos": 163
+     },
+     {
+      "jugador": "Patrik Schick",
+      "pos": "F",
+      "titularidades": 5,
+      "minutos": 427
+     }
+    ],
+    "fuerza": {
+     "valor": 96.5,
+     "A_goles": 94.1,
+     "B_minutos": 99.3,
+     "C_puntos": 96.8,
+     "goles_asist": 16.0,
+     "minutos": 4319,
+     "puntos": 90,
+     "mejor": {
+      "goles_asist": 17.0,
+      "minutos": 4350,
+      "puntos": 93
+     }
+    },
+    "revisiones": [],
+    "fallos_summary": [],
+    "probable": true
+   }
+  },
+  {
+   "fecha": "2026-11-29",
+   "liga": "ita.1",
+   "local": "Como",
+   "visita": "Juventus",
+   "local_xi": {
+    "equipo": "Como",
+    "liga": "ita.1",
+    "ventana_partidos": 5,
+    "ventana": [
+     {
+      "fecha": "2026-11-21",
+      "event_id": "401875056",
+      "rivales": [
+       "Como",
+       "Cagliari"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-11-08",
+      "event_id": "401874808",
+      "rivales": [
+       "Internazionale",
+       "Como"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-11-01",
+      "event_id": "401875002",
+      "rivales": [
+       "Como",
+       "Venezia"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-27",
+      "event_id": "401874786",
+      "rivales": [
+       "Torino",
+       "Como"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-10-24",
+      "event_id": "401874961",
+      "rivales": [
+       "Como",
+       "Sassuolo"
+      ],
+      "formacion": "4-5-1"
+     }
+    ],
+    "formacion": "4-5-1",
+    "jugadores": [
+     {
+      "jugador": "Jean Butez",
+      "pos": "G",
+      "titularidades": 3,
+      "minutos": 270
+     },
+     {
+      "jugador": "Marc-Oliver Kempf",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Yan Couto",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 403
+     },
+     {
+      "jugador": "Jacobo Ramón",
+      "pos": "D",
+      "titularidades": 4,
+      "minutos": 360
+     },
+     {
+      "jugador": "Kaiki",
+      "pos": "D",
+      "titularidades": 3,
+      "minutos": 270
+     },
+     {
+      "jugador": "Lucas Da Cunha",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Luis Milla",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 315
+     },
+     {
+      "jugador": "Martin Baturina",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 262
+     },
+     {
+      "jugador": "Nico Paz",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 253
+     },
+     {
+      "jugador": "Máximo Perrone",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 193
+     },
+     {
+      "jugador": "Tasos Douvikas",
+      "pos": "F",
+      "titularidades": 5,
+      "minutos": 450
+     }
+    ],
+    "fuerza": {
+     "valor": 99.9,
+     "A_goles": 100,
+     "B_minutos": 99.8,
+     "C_puntos": 100,
+     "goles_asist": 13.0,
+     "minutos": 3916,
+     "puntos": 126,
+     "mejor": {
+      "goles_asist": 13.0,
+      "minutos": 3923,
+      "puntos": 126
+     }
+    },
+    "revisiones": [],
+    "fallos_summary": [],
+    "probable": true
+   },
+   "visita_xi": {
+    "equipo": "Juventus",
+    "liga": "ita.1",
+    "ventana_partidos": 5,
+    "ventana": [
+     {
+      "fecha": "2026-11-22",
+      "event_id": "401875008",
+      "rivales": [
+       "Juventus",
+       "Venezia"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
+      "fecha": "2026-11-08",
+      "event_id": "401875003",
+      "rivales": [
+       "Fiorentina",
+       "Juventus"
+      ],
+      "formacion": "4-4-2"
+     },
+     {
+      "fecha": "2026-11-01",
+      "event_id": "401874949",
+      "rivales": [
+       "Juventus",
+       "Napoli"
+      ],
+      "formacion": "4-4-2"
+     },
+     {
+      "fecha": "2026-10-28",
+      "event_id": "401874988",
+      "rivales": [
+       "Genoa",
+       "Juventus"
+      ],
+      "formacion": "3-4-3"
+     },
+     {
+      "fecha": "2026-10-25",
+      "event_id": "401874772",
+      "rivales": [
+       "Lecce",
+       "Juventus"
+      ],
+      "formacion": "3-4-2"
+     }
+    ],
+    "formacion": "4-4-2",
+    "jugadores": [
+     {
+      "jugador": "Guglielmo Vicario",
+      "pos": "G",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Bremer",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Pierre Kalulu",
+      "pos": "D",
+      "titularidades": 4,
+      "minutos": 360
+     },
+     {
+      "jugador": "Jhon Lucumí",
+      "pos": "D",
+      "titularidades": 4,
+      "minutos": 341
+     },
+     {
+      "jugador": "Juan Cabal",
+      "pos": "D",
+      "titularidades": 3,
+      "minutos": 212
+     },
+     {
+      "jugador": "Weston McKennie",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 393
+     },
+     {
+      "jugador": "Douglas Luiz",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 385
+     },
+     {
+      "jugador": "Teun Koopmeiners",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 360
+     },
+     {
+      "jugador": "Kerim Alajbegovic",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 180
+     },
+     {
+      "jugador": "Randal Kolo Muani",
+      "pos": "F",
+      "titularidades": 5,
+      "minutos": 391
+     },
+     {
+      "jugador": "Nick Woltemade",
+      "pos": "F",
+      "titularidades": 3,
+      "minutos": 237
+     }
+    ],
+    "fuerza": {
+     "valor": 100.0,
+     "A_goles": 100,
+     "B_minutos": 100,
+     "C_puntos": 100,
+     "goles_asist": 13.0,
+     "minutos": 3948,
+     "puntos": 101,
+     "mejor": {
+      "goles_asist": 13.0,
+      "minutos": 3948,
+      "puntos": 101
+     }
+    },
+    "revisiones": [],
+    "fallos_summary": [],
+    "probable": true
+   }
+  }
+ ]
+}

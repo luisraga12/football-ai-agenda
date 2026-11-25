@@ -673,5 +673,77 @@
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
   "liga_nombre": "Europa League"
+ },
+ "223|216|2026-11-25": {
+  "home": "Toluca",
+  "home_id": "223",
+  "away": "Atlas",
+  "away_id": "216",
+  "fecha": "2026-11-25",
+  "liga": "mex.1",
+  "liga_nombre": "Liga MX"
+ },
+ "220|227|2026-11-25": {
+  "home": "Monterrey",
+  "home_id": "220",
+  "away": "América",
+  "away_id": "227",
+  "fecha": "2026-11-25",
+  "liga": "mex.1",
+  "liga_nombre": "Liga MX"
+ },
+ "234|219|2026-11-26": {
+  "home": "Pachuca",
+  "home_id": "234",
+  "away": "Guadalajara",
+  "away_id": "219",
+  "fecha": "2026-11-26",
+  "liga": "mex.1",
+  "liga_nombre": "Liga MX"
+ },
+ "228|218|2026-11-26": {
+  "home": "León",
+  "home_id": "228",
+  "away": "Cruz Azul",
+  "away_id": "218",
+  "fecha": "2026-11-26",
+  "liga": "mex.1",
+  "liga_nombre": "Liga MX"
+ },
+ "216|223|2026-11-28": {
+  "home": "Atlas",
+  "home_id": "216",
+  "away": "Toluca",
+  "away_id": "223",
+  "fecha": "2026-11-28",
+  "liga": "mex.1",
+  "liga_nombre": "Liga MX"
+ },
+ "227|220|2026-11-28": {
+  "home": "América",
+  "home_id": "227",
+  "away": "Monterrey",
+  "away_id": "220",
+  "fecha": "2026-11-28",
+  "liga": "mex.1",
+  "liga_nombre": "Liga MX"
+ },
+ "219|234|2026-11-29": {
+  "home": "Guadalajara",
+  "home_id": "219",
+  "away": "Pachuca",
+  "away_id": "234",
+  "fecha": "2026-11-29",
+  "liga": "mex.1",
+  "liga_nombre": "Liga MX"
+ },
+ "218|228|2026-11-29": {
+  "home": "Cruz Azul",
+  "home_id": "218",
+  "away": "León",
+  "away_id": "228",
+  "fecha": "2026-11-29",
+  "liga": "mex.1",
+  "liga_nombre": "Liga MX"
  }
 }
