@@ -23,6 +23,11 @@ Corre los pasos en orden y valida el resultado:
      del pipeline completo desde la Semana 7: un partido descubierto
      en el paso 0 tambien lleva su XI probable con Fuerza, no solo
      Poisson y EV.)
+  9. calcular_estadisticas.py (estadisticas del partido terminado
+     desde el resumen de ESPN, Semana 9; escribe estadisticas.json.
+     Solo partidos con estado 'post'; sin resumen o sin boxscore no
+     se publica nada para ese partido, nunca ceros inventados.
+     "duelos_ganados" no se publica: el resumen de ESPN no lo trae.)
 
 Validaciones al final (no se publica nada si fallan):
   - los partidos existen en ESPN (lo garantiza el paso 1: si falta
@@ -149,6 +154,12 @@ def main():
     run([sys.executable, 'scripts/calcular_alineacion_probable.py',
          '--config', args.config,
          '--out', os.path.join(outdir, 'alineacion-probable.json')])
+    # Paso 9: estadisticas del partido terminado (Semana 9). Solo los
+    # partidos con estado 'post' en ESPN llevan estadisticas; el resto
+    # queda "pendiente" en la pagina hasta que se juegue.
+    run([sys.executable, 'scripts/calcular_estadisticas.py',
+         '--config', args.config,
+         '--out', outdir])
 
     # ---- validaciones finales ----
     rawdir = os.path.join(ROOT, outdir, 'raw')
