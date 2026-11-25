@@ -114,7 +114,15 @@ interfaz (`index.html` no se toca en este trabajo).
    ligas del propio config**: así un partido de entre semana no entra
    al config de fin de semana ni al revés (las fechas 24–26 y 27–29
    no se solapan) y el mismo partido no aparece en los dos configs; una
-   liga que no esté en las ligas del config no se descubre. **El cambio
+   liga que no esté en las ligas del config no se descubre. **Flag
+   `completar_jornada` (orden del jefe, 25 nov 2026, JEFE.md 437b004):
+   con `completar_jornada: false` en el config, el descubrimiento NO
+   agrega nada a ese config (se queda curado en los partidos que
+   tiene); la línea base se sigue actualizando como registro y el log
+   dice cuántos se habrían agregado. Sin la clave (o en true), se
+   completa la jornada como siempre. El fin de semana
+   (`semana-actual.json`, 20 partidos) lleva el flag en false: la
+   corrida de las 07:00 no debe completarlo solo a 40.** **El cambio
    al config debe commitearse** (`git add data/ scripts/config/` en el
    workflow): lección de la Liguilla, 24 nov 2026 — la corrida c892956
    descubrió los 8 cuartos de final y los puso en el ev.json, pero el
@@ -213,6 +221,28 @@ interfaz (`index.html` no se toca en este trabajo).
     los fichajes del verano 2026 y los datos — los 60 son jugadores
     reales del equipo asignado, así que no se añadió ningún
     reemplazo al MAPEO (detalle con fuentes en EMPLEADO-1.md).
+14. **`calcular_estadisticas.py`** — estadísticas del partido terminado
+    (Semana 9, orden del jefe, 25 nov 2026, JEFE.md 437b004 + da79093).
+    Para cada partido con estado 'post' en ESPN descarga el resumen
+    (`summary?event=<id>`) y publica `data/<config>/estadisticas.json`
+    en el formato que espera `partido.html` (comentario ~línea 1274):
+    10 estadísticas (posesión, tiros, tiros a puerta, córners, faltas,
+    fueras de juego, tarjetas amarillas, tarjetas rojas, pases
+    precisos, paradas). "duelos_ganados" NO se publica: el resumen de
+    ESPN no trae duelos (verificado en summaries de Champions y Liga
+    MX). Un partido terminado sin resumen o sin boxscore queda fuera
+    del archivo; la página muestra "Estadísticas pendientes", sin
+    ceros inventados. Es el paso 9 de `run_semana.py`.
+15. **`completar_teams_last5.py`** — completa `raw/teams_last5.json`
+    con los equipos del config que faltan (Semana 9, orden del jefe,
+    25 nov 2026, JEFE.md da79093). Reutiliza la lógica exacta de
+    `recolectar_datos.py` paso 2 (mismo cutoff del config, últimos 5
+    completados antes del cutoff, 4 en competiciones UEFA) y no toca
+    los equipos ya presentes. Guarda también
+    `raw/schedule_<liga>_<id>.json` por equipo nuevo. Uso:
+    `python3 scripts/completar_teams_last5.py --config scripts/config/semana-2-entresemana.json`.
+    (La corrida diaria regenera el archivo completo de todos modos en
+    el paso 1; este script es para completarlo sin re-correr todo.)
 
 **Fecha de cálculo en México:** todos los JSON que generan fecha
 (`fecha_calculo`, `fecha_hoy`) usan hora de México

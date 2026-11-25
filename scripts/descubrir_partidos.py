@@ -6,6 +6,16 @@ todavia no existen en ESPN cuando se escribe el config — la Liga MX
 entre semana, que se agenda hasta que se acaba la jornada — nadie
 los detecta.
 
+Cambio del 25 nov 2026 (jefe, JEFE.md 437b004 — fin de semana curado):
+el config puede traer `completar_jornada: false`. Con ese flag, el
+descubrimiento NO agrega partidos a ese config (se queda curado en
+los que tiene), aunque ESPN tenga mas para sus fechas y ligas; la
+linea base se sigue actualizando como registro y el log dice
+cuantos se habrian agregado. Sin la clave (o en true), el
+comportamiento es el de siempre: completar la jornada. El fin de
+semana (semana-actual.json, 20 partidos) lleva el flag en false; la
+corrida de las 07:00 no debe completarlo solo a 40.
+
 Cambio del 24 nov 2026 (jefe, JEFE.md 4531da0 — automatizar que la
 jornada quede completa): el descubrimiento ya NO caza solo los
 partidos publicados despues de la linea base. En cada corrida, para
@@ -136,8 +146,14 @@ def main():
 
     lunes = lunes_de(cfg['fechas'][0])
     dias = [(lunes + timedelta(days=i)).isoformat() for i in range(7)]
+    # Flag del 25 nov 2026 (jefe, JEFE.md 437b004): con
+    # completar_jornada: false el config se queda curado y el
+    # descubrimiento no agrega nada (la base se sigue actualizando).
+    # Sin la clave, o en true, se completa la jornada como siempre.
+    completar = cfg.get('completar_jornada', True)
     print(f"Descubrimiento: semana {dias[0]} al {dias[-1]} "
-          f"(config {cfg['nombre']})")
+          f"(config {cfg['nombre']}) — completar jornada: "
+          f"{'sí' if completar else 'no (config curado)'}")
 
     # ---- 1. Scoreboards de la semana, ligas del alcance ----
     vistos_ahora = {}
@@ -195,6 +211,7 @@ def main():
     fechas_config = set(cfg['fechas'])
     ligas_config = set(cfg['ligas'])
     nuevos = []
+    no_agregados = 0
     fuera_de_alcance = 0
     terminados = 0
     for key, v in vistos_ahora.items():
@@ -204,13 +221,21 @@ def main():
             terminados += 1
             continue
         if v['fecha'] in fechas_config and v['liga'] in ligas_config:
-            nuevos.append(v)
+            if completar:
+                nuevos.append(v)
+            else:
+                no_agregados += 1
         else:
             fuera_de_alcance += 1
     if terminados:
         print(f"{terminados} partido(s) ya terminado(s) en ESPN "
               "(no se agregan: la jornada que se completa es la que "
               "falta por jugarse).")
+    if no_agregados:
+        print(f"Config curado (completar_jornada: false): "
+              f"{no_agregados} partido(s) visto(s) en ESPN para las "
+              "fechas y ligas del config que NO se agregan; el config "
+              "se queda como esta.")
     if fuera_de_alcance:
         print(f"{fuera_de_alcance} partido(s) visto(s) en ESPN con "
               "fecha o liga fuera del config (no se agregan; los ve "

@@ -175,5 +175,6 @@
    "liga": "mex.1"
   }
  ],
- "semana": 2
+ "semana": 2,
+ "completar_jornada": false
 }
