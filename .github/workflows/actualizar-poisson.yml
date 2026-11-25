@@ -12,6 +12,16 @@
 #   resultados y los últimos 5 se actualicen solos mientras se juega.
 # - Manual (`workflow_dispatch`): para probar o forzar una corrida.
 #
+# El paso "Publicar cambios" hace `git add data/ scripts/config/`:
+# el config TAMBIÉN se commitea, porque el descubrimiento (paso 0)
+# lo modifica cuando ESPN publica un partido tarde. Lección de la
+# Liguilla, 24 nov 2026 (Semana 7): la corrida c892956 descubrió los
+# 8 cuartos de final y los puso en el ev.json, pero el workflow solo
+# hacía `git add data/` y el cambio al config se perdió; la línea
+# base ya los traía, así que en la siguiente corrida no se
+# re-agregaron y el pipeline los sacó del ev.json. Sin el commit del
+# config, el descubrimiento solo dura una corrida.
+#
 # La semana que se calcula es la de `scripts/config/semana-actual.json`.
 # Para cambiar de semana, ese archivo debe apuntar a la configuración
 # nueva (p. ej. copiar `semana-2.json` sobre `semana-actual.json`).
@@ -67,6 +77,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/
+          git add data/ scripts/config/
           git diff --cached --quiet || git commit -m "Actualizar datos y Poisson (auto)"
           git push
