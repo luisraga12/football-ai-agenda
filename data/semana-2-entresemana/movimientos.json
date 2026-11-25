@@ -1,6 +1,6 @@
 {
  "semana": "2-entresemana",
- "fecha_hoy": "2026-11-25",
+ "fecha_hoy": "2026-11-24",
  "fecha_ayer": "2026-11-25",
  "partidos": [
   {
@@ -115,14 +115,14 @@
    "mejor_pick_ayer": "Visita",
    "mejor_pick_hoy": "Visita",
    "ev_ayer": 0.44943045944991455,
-   "ev_hoy": 0.44943045944991455,
+   "ev_hoy": 0.39672389728809954,
    "linea_ayer": 2.5,
    "linea_hoy": 2.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": 0.0,
-   "flecha": "→"
+   "delta_ev_pp": -5.270656216181502,
+   "flecha": "↓"
   },
   {
    "slug": "paris-saint-germain-vs-as-roma",
@@ -248,14 +248,14 @@
    "mejor_pick_ayer": "Visita",
    "mejor_pick_hoy": "Visita",
    "ev_ayer": 0.05343885877993215,
-   "ev_hoy": 0.05343885877993215,
+   "ev_hoy": 0.07070834826812789,
    "linea_ayer": 2.5,
    "linea_hoy": 2.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": 0.0,
-   "flecha": "→"
+   "delta_ev_pp": 1.7269489488195733,
+   "flecha": "↑"
   },
   {
    "slug": "pachuca-vs-guadalajara",
@@ -291,6 +291,215 @@
    "cambio_pick": false,
    "delta_ev_pp": 0.0,
    "flecha": "→"
+  },
+  {
+   "slug": "sabah-fk-vs-barcelona",
+   "home": "Sabah FK",
+   "away": "Barcelona",
+   "fecha": "2026-11-25",
+   "hora": "11:45",
+   "proveedor": "DraftKings",
+   "estado": "nuevo",
+   "mejor_pick_hoy": "Menos 4.5",
+   "ev_hoy": 0.05084743838640504
+  },
+  {
+   "slug": "slavia-prague-vs-villarreal",
+   "home": "Slavia Prague",
+   "away": "Villarreal",
+   "fecha": "2026-11-25",
+   "hora": "11:45",
+   "proveedor": "DraftKings",
+   "estado": "nuevo",
+   "mejor_pick_hoy": "Local",
+   "ev_hoy": 0.38792668413422704
+  },
+  {
+   "slug": "atletico-madrid-vs-viking-fk",
+   "home": "Atlético Madrid",
+   "away": "Viking FK",
+   "fecha": "2026-11-25",
+   "hora": "14:00",
+   "proveedor": "DraftKings",
+   "estado": "nuevo",
+   "mejor_pick_hoy": "Visita",
+   "ev_hoy": 5.965566068383509
+  },
+  {
+   "slug": "shakhtar-donetsk-vs-fenerbahce",
+   "home": "Shakhtar Donetsk",
+   "away": "Fenerbahce",
+   "fecha": "2026-11-25",
+   "hora": "14:00",
+   "proveedor": "DraftKings",
+   "estado": "nuevo",
+   "mejor_pick_hoy": "Local",
+   "ev_hoy": 0.6623194575614215
+  },
+  {
+   "slug": "besiktas-vs-hapoel-be-er",
+   "home": "Besiktas",
+   "away": "Hapoel Be'er",
+   "fecha": "2026-11-26",
+   "hora": "11:45",
+   "proveedor": "DraftKings",
+   "estado": "nuevo",
+   "mejor_pick_hoy": "Spread local -1.5",
+   "ev_hoy": 0.2539108327363264
+  },
+  {
+   "slug": "marseille-vs-levski-sofia",
+   "home": "Marseille",
+   "away": "Levski Sofia",
+   "fecha": "2026-11-26",
+   "hora": "11:45",
+   "proveedor": "DraftKings",
+   "estado": "nuevo",
+   "mejor_pick_hoy": "Visita",
+   "ev_hoy": 3.5185456768610157
+  },
+  {
+   "slug": "rb-salzburg-vs-ararat-armenia",
+   "home": "RB Salzburg",
+   "away": "Ararat-Armenia",
+   "fecha": "2026-11-26",
+   "hora": "11:45",
+   "proveedor": "DraftKings",
+   "estado": "nuevo",
+   "mejor_pick_hoy": "Visita",
+   "ev_hoy": 3.113066291349744
+  },
+  {
+   "slug": "union-st-gilloise-vs-lech-poznan",
+   "home": "Union St.-Gilloise",
+   "away": "Lech Poznan",
+   "fecha": "2026-11-26",
+   "hora": "11:45",
+   "proveedor": "DraftKings",
+   "estado": "nuevo",
+   "mejor_pick_hoy": "Spread local -1.5",
+   "ev_hoy": 0.7190723741500411
+  },
+  {
+   "slug": "viktoria-plzen-vs-benfica",
+   "home": "Viktoria Plzen",
+   "away": "Benfica",
+   "fecha": "2026-11-26",
+   "hora": "11:45",
+   "proveedor": "DraftKings",
+   "estado": "nuevo",
+   "mejor_pick_hoy": "Spread visitante -1.5",
+   "ev_hoy": 0.7833706394280324
+  },
+  {
+   "slug": "crystal-palace-vs-real-sociedad",
+   "home": "Crystal Palace",
+   "away": "Real Sociedad",
+   "fecha": "2026-11-26",
+   "hora": "14:00",
+   "proveedor": "DraftKings",
+   "estado": "nuevo",
+   "mejor_pick_hoy": "Visita",
+   "ev_hoy": 0.8418527490714596
+  },
+  {
+   "slug": "ferencvaros-vs-nk-celje",
+   "home": "Ferencvaros",
+   "away": "NK Celje",
+   "fecha": "2026-11-26",
+   "hora": "14:00",
+   "proveedor": "DraftKings",
+   "estado": "nuevo",
+   "mejor_pick_hoy": "Más 3.5",
+   "ev_hoy": 0.5739985469616415
+  },
+  {
+   "slug": "juventus-vs-omonia-nicosia",
+   "home": "Juventus",
+   "away": "Omonia Nicosia",
+   "fecha": "2026-11-26",
+   "hora": "14:00",
+   "proveedor": "DraftKings",
+   "estado": "nuevo",
+   "mejor_pick_hoy": "Visita",
+   "ev_hoy": 0.2958866323237206
+  },
+  {
+   "slug": "lyon-vs-lillestrom",
+   "home": "Lyon",
+   "away": "Lillestrom",
+   "fecha": "2026-11-26",
+   "hora": "14:00",
+   "proveedor": "DraftKings",
+   "estado": "nuevo",
+   "mejor_pick_hoy": "Empate",
+   "ev_hoy": 0.19936507488075983
+  },
+  {
+   "slug": "nec-nijmegen-vs-stade-rennais",
+   "home": "NEC Nijmegen",
+   "away": "Stade Rennais",
+   "fecha": "2026-11-26",
+   "hora": "14:00",
+   "proveedor": "DraftKings",
+   "estado": "nuevo",
+   "mejor_pick_hoy": "Menos 3.5",
+   "ev_hoy": 0.2021553347877334
+  },
+  {
+   "slug": "ofi-crete-vs-anderlecht",
+   "home": "OFI Crete",
+   "away": "Anderlecht",
+   "fecha": "2026-11-26",
+   "hora": "14:00",
+   "proveedor": "DraftKings",
+   "estado": "nuevo",
+   "mejor_pick_hoy": "Menos 2.5",
+   "ev_hoy": 0.653835819318523
+  },
+  {
+   "slug": "sparta-prague-vs-az-alkmaar",
+   "home": "Sparta Prague",
+   "away": "AZ Alkmaar",
+   "fecha": "2026-11-26",
+   "hora": "14:00",
+   "proveedor": "DraftKings",
+   "estado": "nuevo",
+   "mejor_pick_hoy": "Visita",
+   "ev_hoy": 0.35312791956029366
+  },
+  {
+   "slug": "sunderland-vs-jagiellonia-bialystok",
+   "home": "Sunderland",
+   "away": "Jagiellonia Bialystok",
+   "fecha": "2026-11-26",
+   "hora": "14:00",
+   "proveedor": "DraftKings",
+   "estado": "nuevo",
+   "mejor_pick_hoy": "Visita",
+   "ev_hoy": 1.4839012944645331
+  },
+  {
+   "slug": "torreense-vs-celtic",
+   "home": "Torreense",
+   "away": "Celtic",
+   "fecha": "2026-11-26",
+   "hora": "14:00",
+   "proveedor": "DraftKings",
+   "estado": "nuevo",
+   "mejor_pick_hoy": "Local",
+   "ev_hoy": 1.5452896273351584
+  },
+  {
+   "slug": "tsg-hoffenheim-vs-sk-sturm-graz",
+   "home": "TSG Hoffenheim",
+   "away": "SK Sturm Graz",
+   "fecha": "2026-11-26",
+   "hora": "14:00",
+   "proveedor": "DraftKings",
+   "estado": "nuevo",
+   "mejor_pick_hoy": "Empate",
+   "ev_hoy": 0.5364113028000119
   }
  ]
 }
