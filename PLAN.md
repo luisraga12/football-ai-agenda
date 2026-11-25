@@ -175,7 +175,7 @@ de trabajar está en
   port a `index.html` hecho por el jefe con prueba en vivo (PR #37, bb349a8,
   21:44): 28 tarjetas, XI + Fuerza exactos; página en vivo verificada.
 
-## ⏳ Semana 7 — Mitad hecha: descubrimiento automático ✅ (24 nov 2026); integración de la página pendiente
+## ✅ Semana 7 — Hecha (integración de la página en vivo 25 nov 2026, PR #44, 1051289)
 
 - La página deja de depender de una actualización manual cada semana:
   se actualiza sola, sin que nadie tenga que hacer nada.
@@ -197,9 +197,14 @@ de trabajar está en
   scripts/config/` en Actions aún no se ejerce con un cambio real de config
   (no había partido nuevo que descubrir en esa corrida); la prueba real es
   la próxima corrida programada cuando ESPN publique algo tarde.
-- PENDIENTE: que la página lea sola las tablas de `data/` (integración de
-  la página) — hoy `index.html` lleva los datos incrustados. Es la otra
-  mitad de la Semana 7.
+- HECHO 25 nov (PR #44, 1051289): la página lee sola las tablas de `data/`
+  (integración de E2, port del jefe). `index.html` ya no lleva los partidos
+  incrustados: los carga por fetch de `ev.json`, `alineacion-probable.json`,
+  `raw/teams_last5.json` y `tendencias.json`, así los partidos nuevos
+  aparecen solos. Verificado en vivo: 55 tarjetas (35 + 20), BTTS con valor
+  real en 55/55, Liguilla 8 visibles, 0 errores JS. Pendiente de verificar:
+  la corrida programada del 25 nov 07:00 (primera prueba real del `git add
+  scripts/config/` en Actions con el descubrimiento nuevo).
 
 ## ✅ Semana 8 — Hecha (en vivo en el modal del detalle, 24 nov 2026)
 
