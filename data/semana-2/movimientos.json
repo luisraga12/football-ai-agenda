@@ -184,14 +184,14 @@
    "mejor_pick_ayer": "Spread local -2.5",
    "mejor_pick_hoy": "Spread local -2.5",
    "ev_ayer": 0.8721097244593417,
-   "ev_hoy": 0.8721097244593417,
+   "ev_hoy": 0.8275356834007856,
    "linea_ayer": 3.5,
    "linea_hoy": 3.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": 0.0,
-   "flecha": "→"
+   "delta_ev_pp": -4.4574041058556,
+   "flecha": "↓"
   },
   {
    "slug": "everton-vs-liverpool",
@@ -306,50 +306,6 @@
    "cambio_pick": false,
    "delta_ev_pp": 0.0,
    "flecha": "→"
-  },
-  {
-   "slug": "toluca-vs-atlas",
-   "home": "Toluca",
-   "away": "Atlas",
-   "fecha": "2026-11-25",
-   "hora": "19:00",
-   "proveedor": "DraftKings",
-   "estado": "nuevo",
-   "mejor_pick_hoy": "Más 3.5",
-   "ev_hoy": 0.3883982505698984
-  },
-  {
-   "slug": "monterrey-vs-america",
-   "home": "Monterrey",
-   "away": "América",
-   "fecha": "2026-11-25",
-   "hora": "21:10",
-   "proveedor": "DraftKings",
-   "estado": "nuevo",
-   "mejor_pick_hoy": "Visita",
-   "ev_hoy": 0.4846899631974091
-  },
-  {
-   "slug": "pachuca-vs-guadalajara",
-   "home": "Pachuca",
-   "away": "Guadalajara",
-   "fecha": "2026-11-26",
-   "hora": "19:00",
-   "proveedor": null,
-   "estado": "nuevo",
-   "mejor_pick_hoy": null,
-   "ev_hoy": null
-  },
-  {
-   "slug": "leon-vs-cruz-azul",
-   "home": "León",
-   "away": "Cruz Azul",
-   "fecha": "2026-11-26",
-   "hora": "21:10",
-   "proveedor": "DraftKings",
-   "estado": "nuevo",
-   "mejor_pick_hoy": "Visita",
-   "ev_hoy": 0.7447558100017482
   },
   {
    "slug": "atlas-vs-toluca",
