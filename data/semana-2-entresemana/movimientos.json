@@ -115,13 +115,13 @@
    "mejor_pick_ayer": "Visita",
    "mejor_pick_hoy": "Visita",
    "ev_ayer": 0.39672389728809954,
-   "ev_hoy": 0.46942260371818945,
+   "ev_hoy": 0.44943045944991455,
    "linea_ayer": 2.5,
    "linea_hoy": 2.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": 7.269870643008991,
+   "delta_ev_pp": 5.270656216181502,
    "flecha": "↑"
   },
   {
@@ -228,7 +228,7 @@
    "proveedor": "DraftKings",
    "estado": "nuevo",
    "mejor_pick_hoy": "Más 3.5",
-   "ev_hoy": 0.8139785186682091
+   "ev_hoy": 0.8561640656139817
   },
   {
    "slug": "monterrey-vs-america",
@@ -239,7 +239,7 @@
    "proveedor": "DraftKings",
    "estado": "nuevo",
    "mejor_pick_hoy": "Visita",
-   "ev_hoy": 0.03616936929173664
+   "ev_hoy": 0.05343885877993215
   },
   {
    "slug": "pachuca-vs-guadalajara",
@@ -262,50 +262,6 @@
    "estado": "nuevo",
    "mejor_pick_hoy": "Menos 2.5",
    "ev_hoy": 0.09251684438595986
-  },
-  {
-   "slug": "atlas-vs-toluca",
-   "home": "Atlas",
-   "away": "Toluca",
-   "fecha": "2026-11-28",
-   "hora": "19:00",
-   "proveedor": null,
-   "estado": "nuevo",
-   "mejor_pick_hoy": null,
-   "ev_hoy": null
-  },
-  {
-   "slug": "america-vs-monterrey",
-   "home": "América",
-   "away": "Monterrey",
-   "fecha": "2026-11-28",
-   "hora": "21:10",
-   "proveedor": null,
-   "estado": "nuevo",
-   "mejor_pick_hoy": null,
-   "ev_hoy": null
-  },
-  {
-   "slug": "guadalajara-vs-pachuca",
-   "home": "Guadalajara",
-   "away": "Pachuca",
-   "fecha": "2026-11-29",
-   "hora": "19:07",
-   "proveedor": null,
-   "estado": "nuevo",
-   "mejor_pick_hoy": null,
-   "ev_hoy": null
-  },
-  {
-   "slug": "cruz-azul-vs-leon",
-   "home": "Cruz Azul",
-   "away": "León",
-   "fecha": "2026-11-29",
-   "hora": "21:00",
-   "proveedor": null,
-   "estado": "nuevo",
-   "mejor_pick_hoy": null,
-   "ev_hoy": null
   }
  ]
 }
