@@ -6,7 +6,8 @@
   "away_id": "368",
   "fecha": "2026-11-23",
   "liga": "eng.1",
-  "liga_nombre": "Premier League"
+  "liga_nombre": "Premier League",
+  "estado": "post"
  },
  "393|363|2026-11-27": {
   "home": "Nottingham Forest",
@@ -15,7 +16,8 @@
   "away_id": "363",
   "fecha": "2026-11-27",
   "liga": "eng.1",
-  "liga_nombre": "Premier League"
+  "liga_nombre": "Premier League",
+  "estado": "pre"
  },
  "357|388|2026-11-28": {
   "home": "Leeds United",
@@ -24,7 +26,8 @@
   "away_id": "388",
   "fecha": "2026-11-28",
   "liga": "eng.1",
-  "liga_nombre": "Premier League"
+  "liga_nombre": "Premier League",
+  "estado": "pre"
  },
  "360|337|2026-11-28": {
   "home": "Manchester United",
@@ -33,7 +36,8 @@
   "away_id": "337",
   "fecha": "2026-11-28",
   "liga": "eng.1",
-  "liga_nombre": "Premier League"
+  "liga_nombre": "Premier League",
+  "estado": "pre"
  },
  "373|362|2026-11-28": {
   "home": "Ipswich Town",
@@ -42,7 +46,8 @@
   "away_id": "362",
   "fecha": "2026-11-28",
   "liga": "eng.1",
-  "liga_nombre": "Premier League"
+  "liga_nombre": "Premier League",
+  "estado": "pre"
  },
  "368|364|2026-11-29": {
   "home": "Everton",
@@ -51,7 +56,8 @@
   "away_id": "364",
   "fecha": "2026-11-29",
   "liga": "eng.1",
-  "liga_nombre": "Premier League"
+  "liga_nombre": "Premier League",
+  "estado": "pre"
  },
  "331|361|2026-11-29": {
   "home": "Brighton & Hove Albion",
@@ -60,7 +66,8 @@
   "away_id": "361",
   "fecha": "2026-11-29",
   "liga": "eng.1",
-  "liga_nombre": "Premier League"
+  "liga_nombre": "Premier League",
+  "estado": "pre"
  },
  "384|306|2026-11-29": {
   "home": "Crystal Palace",
@@ -69,7 +76,8 @@
   "away_id": "306",
   "fecha": "2026-11-29",
   "liga": "eng.1",
-  "liga_nombre": "Premier League"
+  "liga_nombre": "Premier League",
+  "estado": "pre"
  },
  "370|349|2026-11-29": {
   "home": "Fulham",
@@ -78,7 +86,8 @@
   "away_id": "349",
   "fecha": "2026-11-29",
   "liga": "eng.1",
-  "liga_nombre": "Premier League"
+  "liga_nombre": "Premier League",
+  "estado": "pre"
  },
  "366|367|2026-11-29": {
   "home": "Sunderland",
@@ -87,7 +96,8 @@
   "away_id": "367",
   "fecha": "2026-11-29",
   "liga": "eng.1",
-  "liga_nombre": "Premier League"
+  "liga_nombre": "Premier League",
+  "estado": "pre"
  },
  "359|382|2026-11-29": {
   "home": "Arsenal",
@@ -96,7 +106,8 @@
   "away_id": "382",
   "fecha": "2026-11-29",
   "liga": "eng.1",
-  "liga_nombre": "Premier League"
+  "liga_nombre": "Premier League",
+  "estado": "pre"
  },
  "1538|3751|2026-11-23": {
   "home": "Levante",
@@ -105,7 +116,8 @@
   "away_id": "3751",
   "fecha": "2026-11-23",
   "liga": "esp.1",
-  "liga_nombre": "LaLiga"
+  "liga_nombre": "LaLiga",
+  "estado": "post"
  },
  "1538|87|2026-11-27": {
   "home": "Levante",
@@ -114,7 +126,8 @@
   "away_id": "87",
   "fecha": "2026-11-27",
   "liga": "esp.1",
-  "liga_nombre": "LaLiga"
+  "liga_nombre": "LaLiga",
+  "estado": "pre"
  },
  "244|101|2026-11-28": {
   "home": "Real Betis",
@@ -123,7 +136,8 @@
   "away_id": "101",
   "fecha": "2026-11-28",
   "liga": "esp.1",
-  "liga_nombre": "LaLiga"
+  "liga_nombre": "LaLiga",
+  "estado": "pre"
  },
  "99|93|2026-11-28": {
   "home": "Málaga",
@@ -132,7 +146,8 @@
   "away_id": "93",
   "fecha": "2026-11-28",
   "liga": "esp.1",
-  "liga_nombre": "LaLiga"
+  "liga_nombre": "LaLiga",
+  "estado": "pre"
  },
  "3751|1068|2026-11-28": {
   "home": "Elche",
@@ -141,7 +156,8 @@
   "away_id": "1068",
   "fecha": "2026-11-28",
   "liga": "esp.1",
-  "liga_nombre": "LaLiga"
+  "liga_nombre": "LaLiga",
+  "estado": "pre"
  },
  "86|96|2026-11-28": {
   "home": "Real Madrid",
@@ -150,7 +166,8 @@
   "away_id": "96",
   "fecha": "2026-11-28",
   "liga": "esp.1",
-  "liga_nombre": "LaLiga"
+  "liga_nombre": "LaLiga",
+  "estado": "pre"
  },
  "94|97|2026-11-29": {
   "home": "Valencia",
@@ -159,7 +176,8 @@
   "away_id": "97",
   "fecha": "2026-11-29",
   "liga": "esp.1",
-  "liga_nombre": "LaLiga"
+  "liga_nombre": "LaLiga",
+  "estado": "pre"
  },
  "90|83|2026-11-29": {
   "home": "Deportivo",
@@ -168,7 +186,8 @@
   "away_id": "83",
   "fecha": "2026-11-29",
   "liga": "esp.1",
-  "liga_nombre": "LaLiga"
+  "liga_nombre": "LaLiga",
+  "estado": "pre"
  },
  "85|102|2026-11-29": {
   "home": "Celta Vigo",
@@ -177,7 +196,8 @@
   "away_id": "102",
   "fecha": "2026-11-29",
   "liga": "esp.1",
-  "liga_nombre": "LaLiga"
+  "liga_nombre": "LaLiga",
+  "estado": "pre"
  },
  "89|243|2026-11-29": {
   "home": "Real Sociedad",
@@ -186,7 +206,8 @@
   "away_id": "243",
   "fecha": "2026-11-29",
   "liga": "esp.1",
-  "liga_nombre": "LaLiga"
+  "liga_nombre": "LaLiga",
+  "estado": "pre"
  },
  "137|268|2026-11-27": {
   "home": "Werder Bremen",
@@ -195,7 +216,8 @@
   "away_id": "268",
   "fecha": "2026-11-27",
   "liga": "ger.1",
-  "liga_nombre": "Bundesliga"
+  "liga_nombre": "Bundesliga",
+  "estado": "pre"
  },
  "122|10388|2026-11-28": {
   "home": "FC Cologne",
@@ -204,7 +226,8 @@
   "away_id": "10388",
   "fecha": "2026-11-28",
   "liga": "ger.1",
-  "liga_nombre": "Bundesliga"
+  "liga_nombre": "Bundesliga",
+  "estado": "pre"
  },
  "127|132|2026-11-28": {
   "home": "Hamburg SV",
@@ -213,7 +236,8 @@
   "away_id": "132",
   "fecha": "2026-11-28",
   "liga": "ger.1",
-  "liga_nombre": "Bundesliga"
+  "liga_nombre": "Bundesliga",
+  "estado": "pre"
  },
  "2950|598|2026-11-28": {
   "home": "Mainz",
@@ -222,7 +246,8 @@
   "away_id": "598",
   "fecha": "2026-11-28",
   "liga": "ger.1",
-  "liga_nombre": "Bundesliga"
+  "liga_nombre": "Bundesliga",
+  "estado": "pre"
  },
  "3307|133|2026-11-28": {
   "home": "SC Paderborn 07",
@@ -231,7 +256,8 @@
   "away_id": "133",
   "fecha": "2026-11-28",
   "liga": "ger.1",
-  "liga_nombre": "Bundesliga"
+  "liga_nombre": "Bundesliga",
+  "estado": "pre"
  },
  "134|125|2026-11-28": {
   "home": "VfB Stuttgart",
@@ -240,7 +266,8 @@
   "away_id": "125",
   "fecha": "2026-11-28",
   "liga": "ger.1",
-  "liga_nombre": "Bundesliga"
+  "liga_nombre": "Bundesliga",
+  "estado": "pre"
  },
  "126|11420|2026-11-29": {
   "home": "SC Freiburg",
@@ -249,7 +276,8 @@
   "away_id": "11420",
   "fecha": "2026-11-29",
   "liga": "ger.1",
-  "liga_nombre": "Bundesliga"
+  "liga_nombre": "Bundesliga",
+  "estado": "pre"
  },
  "7911|3841|2026-11-29": {
   "home": "TSG Hoffenheim",
@@ -258,7 +286,8 @@
   "away_id": "3841",
   "fecha": "2026-11-29",
   "liga": "ger.1",
-  "liga_nombre": "Bundesliga"
+  "liga_nombre": "Bundesliga",
+  "estado": "pre"
  },
  "124|131|2026-11-29": {
   "home": "Borussia Dortmund",
@@ -267,7 +296,8 @@
   "away_id": "131",
   "fecha": "2026-11-29",
   "liga": "ger.1",
-  "liga_nombre": "Bundesliga"
+  "liga_nombre": "Bundesliga",
+  "estado": "pre"
  },
  "4007|109|2026-11-23": {
   "home": "Monza",
@@ -276,7 +306,8 @@
   "away_id": "109",
   "fecha": "2026-11-23",
   "liga": "ita.1",
-  "liga_nombre": "Serie A"
+  "liga_nombre": "Serie A",
+  "estado": "post"
  },
  "17530|107|2026-11-27": {
   "home": "Venezia",
@@ -285,7 +316,8 @@
   "away_id": "107",
   "fecha": "2026-11-27",
   "liga": "ita.1",
-  "liga_nombre": "Serie A"
+  "liga_nombre": "Serie A",
+  "estado": "pre"
  },
  "4057|115|2026-11-28": {
   "home": "Frosinone",
@@ -294,7 +326,8 @@
   "away_id": "115",
   "fecha": "2026-11-28",
   "liga": "ita.1",
-  "liga_nombre": "Serie A"
+  "liga_nombre": "Serie A",
+  "estado": "pre"
  },
  "239|112|2026-11-28": {
   "home": "Torino",
@@ -303,7 +336,8 @@
   "away_id": "112",
   "fecha": "2026-11-28",
   "liga": "ita.1",
-  "liga_nombre": "Serie A"
+  "liga_nombre": "Serie A",
+  "estado": "pre"
  },
  "110|3263|2026-11-28": {
   "home": "Internazionale",
@@ -312,7 +346,8 @@
   "away_id": "3263",
   "fecha": "2026-11-28",
   "liga": "ita.1",
-  "liga_nombre": "Serie A"
+  "liga_nombre": "Serie A",
+  "estado": "pre"
  },
  "118|109|2026-11-29": {
   "home": "Udinese",
@@ -321,7 +356,8 @@
   "away_id": "109",
   "fecha": "2026-11-29",
   "liga": "ita.1",
-  "liga_nombre": "Serie A"
+  "liga_nombre": "Serie A",
+  "estado": "pre"
  },
  "3997|114|2026-11-29": {
   "home": "Sassuolo",
@@ -330,7 +366,8 @@
   "away_id": "114",
   "fecha": "2026-11-29",
   "liga": "ita.1",
-  "liga_nombre": "Serie A"
+  "liga_nombre": "Serie A",
+  "estado": "pre"
  },
  "104|4007|2026-11-29": {
   "home": "AS Roma",
@@ -339,7 +376,8 @@
   "away_id": "4007",
   "fecha": "2026-11-29",
   "liga": "ita.1",
-  "liga_nombre": "Serie A"
+  "liga_nombre": "Serie A",
+  "estado": "pre"
  },
  "2572|111|2026-11-29": {
   "home": "Como",
@@ -348,7 +386,8 @@
   "away_id": "111",
   "fecha": "2026-11-29",
   "liga": "ita.1",
-  "liga_nombre": "Serie A"
+  "liga_nombre": "Serie A",
+  "estado": "pre"
  },
  "2980|4411|2026-11-24": {
   "home": "Bodo/Glimt",
@@ -357,7 +396,8 @@
   "away_id": "4411",
   "fecha": "2026-11-24",
   "liga": "uefa.champions",
-  "liga_nombre": "Champions League"
+  "liga_nombre": "Champions League",
+  "estado": "post"
  },
  "432|362|2026-11-24": {
   "home": "Galatasaray",
@@ -366,7 +406,8 @@
   "away_id": "362",
   "fecha": "2026-11-24",
   "liga": "uefa.champions",
-  "liga_nombre": "Champions League"
+  "liga_nombre": "Champions League",
+  "estado": "post"
  },
  "359|124|2026-11-24": {
   "home": "Arsenal",
@@ -375,7 +416,8 @@
   "away_id": "124",
   "fecha": "2026-11-24",
   "liga": "uefa.champions",
-  "liga_nombre": "Champions League"
+  "liga_nombre": "Champions League",
+  "estado": "post"
  },
  "2572|887|2026-11-24": {
   "home": "Como",
@@ -384,7 +426,8 @@
   "away_id": "887",
   "fecha": "2026-11-24",
   "liga": "uefa.champions",
-  "liga_nombre": "Champions League"
+  "liga_nombre": "Champions League",
+  "estado": "post"
  },
  "142|437|2026-11-24": {
   "home": "Feyenoord Rotterdam",
@@ -393,7 +436,8 @@
   "away_id": "437",
   "fecha": "2026-11-24",
   "liga": "uefa.champions",
-  "liga_nombre": "Champions League"
+  "liga_nombre": "Champions League",
+  "estado": "post"
  },
  "382|114|2026-11-24": {
   "home": "Manchester City",
@@ -402,7 +446,8 @@
   "away_id": "114",
   "fecha": "2026-11-24",
   "liga": "uefa.champions",
-  "liga_nombre": "Champions League"
+  "liga_nombre": "Champions League",
+  "estado": "post"
  },
  "11420|175|2026-11-24": {
   "home": "RB Leipzig",
@@ -411,7 +456,8 @@
   "away_id": "175",
   "fecha": "2026-11-24",
   "liga": "uefa.champions",
-  "liga_nombre": "Champions League"
+  "liga_nombre": "Champions League",
+  "estado": "post"
  },
  "86|148|2026-11-24": {
   "home": "Real Madrid",
@@ -420,7 +466,8 @@
   "away_id": "148",
   "fecha": "2026-11-24",
   "liga": "uefa.champions",
-  "liga_nombre": "Champions League"
+  "liga_nombre": "Champions League",
+  "estado": "post"
  },
  "521|244|2026-11-24": {
   "home": "Slovan Bratislava",
@@ -429,7 +476,8 @@
   "away_id": "244",
   "fecha": "2026-11-24",
   "liga": "uefa.champions",
-  "liga_nombre": "Champions League"
+  "liga_nombre": "Champions League",
+  "estado": "post"
  },
  "21922|83|2026-11-25": {
   "home": "Sabah FK",
@@ -438,7 +486,8 @@
   "away_id": "83",
   "fecha": "2026-11-25",
   "liga": "uefa.champions",
-  "liga_nombre": "Champions League"
+  "liga_nombre": "Champions League",
+  "estado": "post"
  },
  "494|102|2026-11-25": {
   "home": "Slavia Prague",
@@ -447,7 +496,8 @@
   "away_id": "102",
   "fecha": "2026-11-25",
   "liga": "uefa.champions",
-  "liga_nombre": "Champions League"
+  "liga_nombre": "Champions League",
+  "estado": "post"
  },
  "1068|510|2026-11-25": {
   "home": "Atlético Madrid",
@@ -456,7 +506,8 @@
   "away_id": "510",
   "fecha": "2026-11-25",
   "liga": "uefa.champions",
-  "liga_nombre": "Champions League"
+  "liga_nombre": "Champions League",
+  "estado": "post"
  },
  "570|364|2026-11-25": {
   "home": "Club Brugge",
@@ -465,7 +516,8 @@
   "away_id": "364",
   "fecha": "2026-11-25",
   "liga": "uefa.champions",
-  "liga_nombre": "Champions League"
+  "liga_nombre": "Champions League",
+  "estado": "post"
  },
  "110|134|2026-11-25": {
   "home": "Internazionale",
@@ -474,7 +526,8 @@
   "away_id": "134",
   "fecha": "2026-11-25",
   "liga": "uefa.champions",
-  "liga_nombre": "Champions League"
+  "liga_nombre": "Champions League",
+  "estado": "post"
  },
  "166|132|2026-11-25": {
   "home": "Lille",
@@ -483,7 +536,8 @@
   "away_id": "132",
   "fecha": "2026-11-25",
   "liga": "uefa.champions",
-  "liga_nombre": "Champions League"
+  "liga_nombre": "Champions League",
+  "estado": "post"
  },
  "160|104|2026-11-25": {
   "home": "Paris Saint-Germain",
@@ -492,7 +546,8 @@
   "away_id": "104",
   "fecha": "2026-11-25",
   "liga": "uefa.champions",
-  "liga_nombre": "Champions League"
+  "liga_nombre": "Champions League",
+  "estado": "post"
  },
  "493|436|2026-11-25": {
   "home": "Shakhtar Donetsk",
@@ -501,7 +556,8 @@
   "away_id": "436",
   "fecha": "2026-11-25",
   "liga": "uefa.champions",
-  "liga_nombre": "Champions League"
+  "liga_nombre": "Champions League",
+  "estado": "post"
  },
  "2250|360|2026-11-25": {
   "home": "Sporting CP",
@@ -510,7 +566,8 @@
   "away_id": "360",
   "fecha": "2026-11-25",
   "liga": "uefa.champions",
-  "liga_nombre": "Champions League"
+  "liga_nombre": "Champions League",
+  "estado": "post"
  },
  "1895|13083|2026-11-26": {
   "home": "Besiktas",
@@ -519,7 +576,8 @@
   "away_id": "13083",
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
-  "liga_nombre": "Europa League"
+  "liga_nombre": "Europa League",
+  "estado": "pre"
  },
  "85|349|2026-11-26": {
   "home": "Celta Vigo",
@@ -528,7 +586,8 @@
   "away_id": "349",
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
-  "liga_nombre": "Europa League"
+  "liga_nombre": "Europa League",
+  "estado": "pre"
  },
  "597|131|2026-11-26": {
   "home": "Dinamo Zagreb",
@@ -537,7 +596,8 @@
   "away_id": "131",
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
-  "liga_nombre": "Europa League"
+  "liga_nombre": "Europa League",
+  "estado": "pre"
  },
  "176|490|2026-11-26": {
   "home": "Marseille",
@@ -546,7 +606,8 @@
   "away_id": "490",
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
-  "liga_nombre": "Europa League"
+  "liga_nombre": "Europa League",
+  "estado": "pre"
  },
  "435|103|2026-11-26": {
   "home": "Olympiacos",
@@ -555,7 +616,8 @@
   "away_id": "103",
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
-  "liga_nombre": "Europa League"
+  "liga_nombre": "Europa League",
+  "estado": "pre"
  },
  "2790|20024|2026-11-26": {
   "home": "RB Salzburg",
@@ -564,7 +626,8 @@
   "away_id": "20024",
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
-  "liga_nombre": "Europa League"
+  "liga_nombre": "Europa League",
+  "estado": "pre"
  },
  "5807|2990|2026-11-26": {
   "home": "Union St.-Gilloise",
@@ -573,7 +636,8 @@
   "away_id": "2990",
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
-  "liga_nombre": "Europa League"
+  "liga_nombre": "Europa League",
+  "estado": "pre"
  },
  "11706|1929|2026-11-26": {
   "home": "Viktoria Plzen",
@@ -582,7 +646,8 @@
   "away_id": "1929",
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
-  "liga_nombre": "Europa League"
+  "liga_nombre": "Europa League",
+  "estado": "pre"
  },
  "384|89|2026-11-26": {
   "home": "Crystal Palace",
@@ -591,7 +656,8 @@
   "away_id": "89",
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
-  "liga_nombre": "Europa League"
+  "liga_nombre": "Europa League",
+  "estado": "pre"
  },
  "622|3362|2026-11-26": {
   "home": "Ferencvaros",
@@ -600,7 +666,8 @@
   "away_id": "3362",
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
-  "liga_nombre": "Europa League"
+  "liga_nombre": "Europa League",
+  "estado": "pre"
  },
  "111|617|2026-11-26": {
   "home": "Juventus",
@@ -609,7 +676,8 @@
   "away_id": "617",
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
-  "liga_nombre": "Europa League"
+  "liga_nombre": "Europa League",
+  "estado": "pre"
  },
  "167|987|2026-11-26": {
   "home": "Lyon",
@@ -618,7 +686,8 @@
   "away_id": "987",
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
-  "liga_nombre": "Europa League"
+  "liga_nombre": "Europa League",
+  "estado": "pre"
  },
  "147|169|2026-11-26": {
   "home": "NEC Nijmegen",
@@ -627,7 +696,8 @@
   "away_id": "169",
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
-  "liga_nombre": "Europa League"
+  "liga_nombre": "Europa League",
+  "estado": "pre"
  },
  "1010|441|2026-11-26": {
   "home": "OFI Crete",
@@ -636,7 +706,8 @@
   "away_id": "441",
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
-  "liga_nombre": "Europa League"
+  "liga_nombre": "Europa League",
+  "estado": "pre"
  },
  "433|140|2026-11-26": {
   "home": "Sparta Prague",
@@ -645,7 +716,8 @@
   "away_id": "140",
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
-  "liga_nombre": "Europa League"
+  "liga_nombre": "Europa League",
+  "estado": "pre"
  },
  "366|11505|2026-11-26": {
   "home": "Sunderland",
@@ -654,7 +726,8 @@
   "away_id": "11505",
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
-  "liga_nombre": "Europa League"
+  "liga_nombre": "Europa League",
+  "estado": "pre"
  },
  "21615|256|2026-11-26": {
   "home": "Torreense",
@@ -663,7 +736,8 @@
   "away_id": "256",
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
-  "liga_nombre": "Europa League"
+  "liga_nombre": "Europa League",
+  "estado": "pre"
  },
  "7911|3746|2026-11-26": {
   "home": "TSG Hoffenheim",
@@ -672,7 +746,8 @@
   "away_id": "3746",
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
-  "liga_nombre": "Europa League"
+  "liga_nombre": "Europa League",
+  "estado": "pre"
  },
  "223|216|2026-11-25": {
   "home": "Toluca",
@@ -681,7 +756,8 @@
   "away_id": "216",
   "fecha": "2026-11-25",
   "liga": "mex.1",
-  "liga_nombre": "Liga MX"
+  "liga_nombre": "Liga MX",
+  "estado": "pre"
  },
  "220|227|2026-11-25": {
   "home": "Monterrey",
@@ -690,7 +766,8 @@
   "away_id": "227",
   "fecha": "2026-11-25",
   "liga": "mex.1",
-  "liga_nombre": "Liga MX"
+  "liga_nombre": "Liga MX",
+  "estado": "pre"
  },
  "234|219|2026-11-26": {
   "home": "Pachuca",
@@ -699,7 +776,8 @@
   "away_id": "219",
   "fecha": "2026-11-26",
   "liga": "mex.1",
-  "liga_nombre": "Liga MX"
+  "liga_nombre": "Liga MX",
+  "estado": "pre"
  },
  "228|218|2026-11-26": {
   "home": "León",
@@ -708,7 +786,8 @@
   "away_id": "218",
   "fecha": "2026-11-26",
   "liga": "mex.1",
-  "liga_nombre": "Liga MX"
+  "liga_nombre": "Liga MX",
+  "estado": "pre"
  },
  "216|223|2026-11-28": {
   "home": "Atlas",
@@ -717,7 +796,8 @@
   "away_id": "223",
   "fecha": "2026-11-28",
   "liga": "mex.1",
-  "liga_nombre": "Liga MX"
+  "liga_nombre": "Liga MX",
+  "estado": "pre"
  },
  "227|220|2026-11-28": {
   "home": "América",
@@ -726,7 +806,8 @@
   "away_id": "220",
   "fecha": "2026-11-28",
   "liga": "mex.1",
-  "liga_nombre": "Liga MX"
+  "liga_nombre": "Liga MX",
+  "estado": "pre"
  },
  "219|234|2026-11-29": {
   "home": "Guadalajara",
@@ -735,7 +816,8 @@
   "away_id": "234",
   "fecha": "2026-11-29",
   "liga": "mex.1",
-  "liga_nombre": "Liga MX"
+  "liga_nombre": "Liga MX",
+  "estado": "pre"
  },
  "218|228|2026-11-29": {
   "home": "Cruz Azul",
@@ -744,6 +826,7 @@
   "away_id": "228",
   "fecha": "2026-11-29",
   "liga": "mex.1",
-  "liga_nombre": "Liga MX"
+  "liga_nombre": "Liga MX",
+  "estado": "pre"
  }
 }

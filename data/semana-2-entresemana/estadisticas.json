@@ -313,6 +313,708 @@
      "unidad": ""
     }
    ]
+  },
+  {
+   "local": "Club Brugge",
+   "visita": "Liverpool",
+   "slug": "club-brugge-vs-liverpool",
+   "estado": "post",
+   "estadisticas": [
+    {
+     "clave": "posesion",
+     "etiqueta": "Posesión",
+     "local": 53.5,
+     "visita": 46.5,
+     "unidad": "%"
+    },
+    {
+     "clave": "tiros",
+     "etiqueta": "Tiros",
+     "local": 17,
+     "visita": 13,
+     "unidad": ""
+    },
+    {
+     "clave": "tiros_a_puerta",
+     "etiqueta": "Tiros a puerta",
+     "local": 5,
+     "visita": 4,
+     "unidad": ""
+    },
+    {
+     "clave": "corners",
+     "etiqueta": "Córners",
+     "local": 8,
+     "visita": 4,
+     "unidad": ""
+    },
+    {
+     "clave": "faltas",
+     "etiqueta": "Faltas",
+     "local": 9,
+     "visita": 13,
+     "unidad": ""
+    },
+    {
+     "clave": "fueras_de_juego",
+     "etiqueta": "Fueras de juego",
+     "local": 3,
+     "visita": 0,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_amarillas",
+     "etiqueta": "Tarjetas amarillas",
+     "local": 0,
+     "visita": 0,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_rojas",
+     "etiqueta": "Tarjetas rojas",
+     "local": 0,
+     "visita": 0,
+     "unidad": ""
+    },
+    {
+     "clave": "pases_precisos",
+     "etiqueta": "Pases precisos",
+     "local": 459,
+     "visita": 387,
+     "unidad": ""
+    },
+    {
+     "clave": "paradas",
+     "etiqueta": "Paradas",
+     "local": 1,
+     "visita": 5,
+     "unidad": ""
+    }
+   ]
+  },
+  {
+   "local": "Internazionale",
+   "visita": "VfB Stuttgart",
+   "slug": "internazionale-vs-vfb-stuttgart",
+   "estado": "post",
+   "estadisticas": [
+    {
+     "clave": "posesion",
+     "etiqueta": "Posesión",
+     "local": 50.8,
+     "visita": 49.2,
+     "unidad": "%"
+    },
+    {
+     "clave": "tiros",
+     "etiqueta": "Tiros",
+     "local": 20,
+     "visita": 13,
+     "unidad": ""
+    },
+    {
+     "clave": "tiros_a_puerta",
+     "etiqueta": "Tiros a puerta",
+     "local": 5,
+     "visita": 2,
+     "unidad": ""
+    },
+    {
+     "clave": "corners",
+     "etiqueta": "Córners",
+     "local": 11,
+     "visita": 6,
+     "unidad": ""
+    },
+    {
+     "clave": "faltas",
+     "etiqueta": "Faltas",
+     "local": 9,
+     "visita": 10,
+     "unidad": ""
+    },
+    {
+     "clave": "fueras_de_juego",
+     "etiqueta": "Fueras de juego",
+     "local": 0,
+     "visita": 1,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_amarillas",
+     "etiqueta": "Tarjetas amarillas",
+     "local": 2,
+     "visita": 1,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_rojas",
+     "etiqueta": "Tarjetas rojas",
+     "local": 0,
+     "visita": 0,
+     "unidad": ""
+    },
+    {
+     "clave": "pases_precisos",
+     "etiqueta": "Pases precisos",
+     "local": 433,
+     "visita": 411,
+     "unidad": ""
+    },
+    {
+     "clave": "paradas",
+     "etiqueta": "Paradas",
+     "local": 1,
+     "visita": 3,
+     "unidad": ""
+    }
+   ]
+  },
+  {
+   "local": "Lille",
+   "visita": "Bayern Munich",
+   "slug": "lille-vs-bayern-munich",
+   "estado": "post",
+   "estadisticas": [
+    {
+     "clave": "posesion",
+     "etiqueta": "Posesión",
+     "local": 35.2,
+     "visita": 64.8,
+     "unidad": "%"
+    },
+    {
+     "clave": "tiros",
+     "etiqueta": "Tiros",
+     "local": 15,
+     "visita": 12,
+     "unidad": ""
+    },
+    {
+     "clave": "tiros_a_puerta",
+     "etiqueta": "Tiros a puerta",
+     "local": 3,
+     "visita": 7,
+     "unidad": ""
+    },
+    {
+     "clave": "corners",
+     "etiqueta": "Córners",
+     "local": 3,
+     "visita": 4,
+     "unidad": ""
+    },
+    {
+     "clave": "faltas",
+     "etiqueta": "Faltas",
+     "local": 2,
+     "visita": 11,
+     "unidad": ""
+    },
+    {
+     "clave": "fueras_de_juego",
+     "etiqueta": "Fueras de juego",
+     "local": 0,
+     "visita": 4,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_amarillas",
+     "etiqueta": "Tarjetas amarillas",
+     "local": 0,
+     "visita": 1,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_rojas",
+     "etiqueta": "Tarjetas rojas",
+     "local": 0,
+     "visita": 0,
+     "unidad": ""
+    },
+    {
+     "clave": "pases_precisos",
+     "etiqueta": "Pases precisos",
+     "local": 329,
+     "visita": 681,
+     "unidad": ""
+    },
+    {
+     "clave": "paradas",
+     "etiqueta": "Paradas",
+     "local": 7,
+     "visita": 2,
+     "unidad": ""
+    }
+   ]
+  },
+  {
+   "local": "Paris Saint-Germain",
+   "visita": "AS Roma",
+   "slug": "paris-saint-germain-vs-as-roma",
+   "estado": "post",
+   "estadisticas": [
+    {
+     "clave": "posesion",
+     "etiqueta": "Posesión",
+     "local": 66,
+     "visita": 34,
+     "unidad": "%"
+    },
+    {
+     "clave": "tiros",
+     "etiqueta": "Tiros",
+     "local": 15,
+     "visita": 13,
+     "unidad": ""
+    },
+    {
+     "clave": "tiros_a_puerta",
+     "etiqueta": "Tiros a puerta",
+     "local": 4,
+     "visita": 4,
+     "unidad": ""
+    },
+    {
+     "clave": "corners",
+     "etiqueta": "Córners",
+     "local": 3,
+     "visita": 4,
+     "unidad": ""
+    },
+    {
+     "clave": "faltas",
+     "etiqueta": "Faltas",
+     "local": 5,
+     "visita": 18,
+     "unidad": ""
+    },
+    {
+     "clave": "fueras_de_juego",
+     "etiqueta": "Fueras de juego",
+     "local": 1,
+     "visita": 0,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_amarillas",
+     "etiqueta": "Tarjetas amarillas",
+     "local": 0,
+     "visita": 2,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_rojas",
+     "etiqueta": "Tarjetas rojas",
+     "local": 0,
+     "visita": 0,
+     "unidad": ""
+    },
+    {
+     "clave": "pases_precisos",
+     "etiqueta": "Pases precisos",
+     "local": 623,
+     "visita": 270,
+     "unidad": ""
+    },
+    {
+     "clave": "paradas",
+     "etiqueta": "Paradas",
+     "local": 2,
+     "visita": 2,
+     "unidad": ""
+    }
+   ]
+  },
+  {
+   "local": "Sporting CP",
+   "visita": "Manchester United",
+   "slug": "sporting-cp-vs-manchester-united",
+   "estado": "post",
+   "estadisticas": [
+    {
+     "clave": "posesion",
+     "etiqueta": "Posesión",
+     "local": 50.8,
+     "visita": 49.2,
+     "unidad": "%"
+    },
+    {
+     "clave": "tiros",
+     "etiqueta": "Tiros",
+     "local": 11,
+     "visita": 7,
+     "unidad": ""
+    },
+    {
+     "clave": "tiros_a_puerta",
+     "etiqueta": "Tiros a puerta",
+     "local": 4,
+     "visita": 2,
+     "unidad": ""
+    },
+    {
+     "clave": "corners",
+     "etiqueta": "Córners",
+     "local": 3,
+     "visita": 2,
+     "unidad": ""
+    },
+    {
+     "clave": "faltas",
+     "etiqueta": "Faltas",
+     "local": 18,
+     "visita": 13,
+     "unidad": ""
+    },
+    {
+     "clave": "fueras_de_juego",
+     "etiqueta": "Fueras de juego",
+     "local": 1,
+     "visita": 6,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_amarillas",
+     "etiqueta": "Tarjetas amarillas",
+     "local": 2,
+     "visita": 1,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_rojas",
+     "etiqueta": "Tarjetas rojas",
+     "local": 0,
+     "visita": 1,
+     "unidad": ""
+    },
+    {
+     "clave": "pases_precisos",
+     "etiqueta": "Pases precisos",
+     "local": 413,
+     "visita": 395,
+     "unidad": ""
+    },
+    {
+     "clave": "paradas",
+     "etiqueta": "Paradas",
+     "local": 0,
+     "visita": 2,
+     "unidad": ""
+    }
+   ]
+  },
+  {
+   "local": "Sabah FK",
+   "visita": "Barcelona",
+   "slug": "sabah-fk-vs-barcelona",
+   "estado": "post",
+   "estadisticas": [
+    {
+     "clave": "posesion",
+     "etiqueta": "Posesión",
+     "local": 28.6,
+     "visita": 71.4,
+     "unidad": "%"
+    },
+    {
+     "clave": "tiros",
+     "etiqueta": "Tiros",
+     "local": 8,
+     "visita": 25,
+     "unidad": ""
+    },
+    {
+     "clave": "tiros_a_puerta",
+     "etiqueta": "Tiros a puerta",
+     "local": 3,
+     "visita": 14,
+     "unidad": ""
+    },
+    {
+     "clave": "corners",
+     "etiqueta": "Córners",
+     "local": 4,
+     "visita": 6,
+     "unidad": ""
+    },
+    {
+     "clave": "faltas",
+     "etiqueta": "Faltas",
+     "local": 9,
+     "visita": 8,
+     "unidad": ""
+    },
+    {
+     "clave": "fueras_de_juego",
+     "etiqueta": "Fueras de juego",
+     "local": 4,
+     "visita": 2,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_amarillas",
+     "etiqueta": "Tarjetas amarillas",
+     "local": 1,
+     "visita": 0,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_rojas",
+     "etiqueta": "Tarjetas rojas",
+     "local": 0,
+     "visita": 0,
+     "unidad": ""
+    },
+    {
+     "clave": "pases_precisos",
+     "etiqueta": "Pases precisos",
+     "local": 215,
+     "visita": 633,
+     "unidad": ""
+    },
+    {
+     "clave": "paradas",
+     "etiqueta": "Paradas",
+     "local": 9,
+     "visita": 2,
+     "unidad": ""
+    }
+   ]
+  },
+  {
+   "local": "Slavia Prague",
+   "visita": "Villarreal",
+   "slug": "slavia-prague-vs-villarreal",
+   "estado": "post",
+   "estadisticas": [
+    {
+     "clave": "posesion",
+     "etiqueta": "Posesión",
+     "local": 51.9,
+     "visita": 48.1,
+     "unidad": "%"
+    },
+    {
+     "clave": "tiros",
+     "etiqueta": "Tiros",
+     "local": 13,
+     "visita": 7,
+     "unidad": ""
+    },
+    {
+     "clave": "tiros_a_puerta",
+     "etiqueta": "Tiros a puerta",
+     "local": 1,
+     "visita": 5,
+     "unidad": ""
+    },
+    {
+     "clave": "corners",
+     "etiqueta": "Córners",
+     "local": 13,
+     "visita": 0,
+     "unidad": ""
+    },
+    {
+     "clave": "faltas",
+     "etiqueta": "Faltas",
+     "local": 12,
+     "visita": 15,
+     "unidad": ""
+    },
+    {
+     "clave": "fueras_de_juego",
+     "etiqueta": "Fueras de juego",
+     "local": 3,
+     "visita": 1,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_amarillas",
+     "etiqueta": "Tarjetas amarillas",
+     "local": 2,
+     "visita": 4,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_rojas",
+     "etiqueta": "Tarjetas rojas",
+     "local": 0,
+     "visita": 0,
+     "unidad": ""
+    },
+    {
+     "clave": "pases_precisos",
+     "etiqueta": "Pases precisos",
+     "local": 313,
+     "visita": 319,
+     "unidad": ""
+    },
+    {
+     "clave": "paradas",
+     "etiqueta": "Paradas",
+     "local": 4,
+     "visita": 1,
+     "unidad": ""
+    }
+   ]
+  },
+  {
+   "local": "Atlético Madrid",
+   "visita": "Viking FK",
+   "slug": "atletico-madrid-vs-viking-fk",
+   "estado": "post",
+   "estadisticas": [
+    {
+     "clave": "posesion",
+     "etiqueta": "Posesión",
+     "local": 48.4,
+     "visita": 51.6,
+     "unidad": "%"
+    },
+    {
+     "clave": "tiros",
+     "etiqueta": "Tiros",
+     "local": 20,
+     "visita": 9,
+     "unidad": ""
+    },
+    {
+     "clave": "tiros_a_puerta",
+     "etiqueta": "Tiros a puerta",
+     "local": 9,
+     "visita": 1,
+     "unidad": ""
+    },
+    {
+     "clave": "corners",
+     "etiqueta": "Córners",
+     "local": 6,
+     "visita": 1,
+     "unidad": ""
+    },
+    {
+     "clave": "faltas",
+     "etiqueta": "Faltas",
+     "local": 7,
+     "visita": 9,
+     "unidad": ""
+    },
+    {
+     "clave": "fueras_de_juego",
+     "etiqueta": "Fueras de juego",
+     "local": 2,
+     "visita": 1,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_amarillas",
+     "etiqueta": "Tarjetas amarillas",
+     "local": 0,
+     "visita": 1,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_rojas",
+     "etiqueta": "Tarjetas rojas",
+     "local": 0,
+     "visita": 1,
+     "unidad": ""
+    },
+    {
+     "clave": "pases_precisos",
+     "etiqueta": "Pases precisos",
+     "local": 480,
+     "visita": 511,
+     "unidad": ""
+    },
+    {
+     "clave": "paradas",
+     "etiqueta": "Paradas",
+     "local": 1,
+     "visita": 7,
+     "unidad": ""
+    }
+   ]
+  },
+  {
+   "local": "Shakhtar Donetsk",
+   "visita": "Fenerbahce",
+   "slug": "shakhtar-donetsk-vs-fenerbahce",
+   "estado": "post",
+   "estadisticas": [
+    {
+     "clave": "posesion",
+     "etiqueta": "Posesión",
+     "local": 54.2,
+     "visita": 45.8,
+     "unidad": "%"
+    },
+    {
+     "clave": "tiros",
+     "etiqueta": "Tiros",
+     "local": 8,
+     "visita": 13,
+     "unidad": ""
+    },
+    {
+     "clave": "tiros_a_puerta",
+     "etiqueta": "Tiros a puerta",
+     "local": 2,
+     "visita": 5,
+     "unidad": ""
+    },
+    {
+     "clave": "corners",
+     "etiqueta": "Córners",
+     "local": 3,
+     "visita": 5,
+     "unidad": ""
+    },
+    {
+     "clave": "faltas",
+     "etiqueta": "Faltas",
+     "local": 12,
+     "visita": 14,
+     "unidad": ""
+    },
+    {
+     "clave": "fueras_de_juego",
+     "etiqueta": "Fueras de juego",
+     "local": 0,
+     "visita": 2,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_amarillas",
+     "etiqueta": "Tarjetas amarillas",
+     "local": 2,
+     "visita": 1,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_rojas",
+     "etiqueta": "Tarjetas rojas",
+     "local": 0,
+     "visita": 0,
+     "unidad": ""
+    },
+    {
+     "clave": "pases_precisos",
+     "etiqueta": "Pases precisos",
+     "local": 426,
+     "visita": 338,
+     "unidad": ""
+    },
+    {
+     "clave": "paradas",
+     "etiqueta": "Paradas",
+     "local": 4,
+     "visita": 2,
+     "unidad": ""
+    }
+   ]
   }
  ]
 }

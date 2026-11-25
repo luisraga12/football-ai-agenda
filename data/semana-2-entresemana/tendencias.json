@@ -1,7 +1,7 @@
 {
  "semana": "2-entresemana",
  "ventana": "últimos partidos de la competición [4, 5]",
- "fecha_calculo": "2026-11-24",
+ "fecha_calculo": "2026-11-25",
  "partidos": [
   {
    "slug": "galatasaray-vs-aston-villa",
@@ -186,42 +186,42 @@
    "fecha": "2026-11-25",
    "hora": "14:00",
    "liga": "Champions League",
-   "estado": "con_momio",
-   "linea_total": 3.5,
-   "linea_referencia": false,
+   "estado": "pendiente",
+   "linea_total": 2.5,
+   "linea_referencia": true,
    "local": {
     "n": 4,
     "g": 3,
     "e": 0,
     "p": 1,
-    "mas": 2,
-    "menos": 2,
+    "mas": 4,
+    "menos": 0,
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 1,
-    "spread_linea": 0.5,
-    "cubre": 3,
-    "no_cubre": 1,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
    "visita": {
     "n": 4,
     "g": 3,
     "e": 0,
     "p": 1,
-    "mas": 3,
-    "menos": 1,
+    "mas": 4,
+    "menos": 0,
     "empuje": 0,
     "btts_si": 4,
     "btts_no": 0,
-    "spread_linea": -0.5,
-    "cubre": 3,
-    "no_cubre": 1,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Club Brugge 3G-0E-1P · Más 3.5 2/4 · Menos 3.5 2/4 · BTTS 3/4 · Cubre +0.5 3/4 — Liverpool 3G-0E-1P · Más 3.5 3/4 · Menos 3.5 1/4 · BTTS 4/4 · Cubre -0.5 3/4"
+   "linea_tarjeta": "Tendencias: Club Brugge 3G-0E-1P · Más 2.5 4/4 · Menos 2.5 0/4 · BTTS 3/4 — Liverpool 3G-0E-1P · Más 2.5 4/4 · Menos 2.5 0/4 · BTTS 4/4"
   },
   {
    "slug": "internazionale-vs-vfb-stuttgart",
@@ -230,42 +230,42 @@
    "fecha": "2026-11-25",
    "hora": "14:00",
    "liga": "Champions League",
-   "estado": "con_momio",
-   "linea_total": 3.5,
-   "linea_referencia": false,
+   "estado": "pendiente",
+   "linea_total": 2.5,
+   "linea_referencia": true,
    "local": {
     "n": 4,
     "g": 2,
     "e": 0,
     "p": 2,
-    "mas": 1,
-    "menos": 3,
+    "mas": 3,
+    "menos": 1,
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 2,
-    "spread_linea": -1.5,
-    "cubre": 1,
-    "no_cubre": 3,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
    "visita": {
     "n": 4,
     "g": 2,
     "e": 1,
     "p": 1,
-    "mas": 1,
-    "menos": 3,
+    "mas": 2,
+    "menos": 2,
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 2,
-    "spread_linea": 1.5,
-    "cubre": 3,
-    "no_cubre": 1,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Internazionale 2G-0E-2P · Más 3.5 1/4 · Menos 3.5 3/4 · BTTS 2/4 · Cubre -1.5 1/4 — VfB Stuttgart 2G-1E-1P · Más 3.5 1/4 · Menos 3.5 3/4 · BTTS 2/4 · Cubre +1.5 3/4"
+   "linea_tarjeta": "Tendencias: Internazionale 2G-0E-2P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 2/4 — VfB Stuttgart 2G-1E-1P · Más 2.5 2/4 · Menos 2.5 2/4 · BTTS 2/4"
   },
   {
    "slug": "lille-vs-bayern-munich",
@@ -274,9 +274,9 @@
    "fecha": "2026-11-25",
    "hora": "14:00",
    "liga": "Champions League",
-   "estado": "con_momio",
+   "estado": "pendiente",
    "linea_total": 2.5,
-   "linea_referencia": false,
+   "linea_referencia": true,
    "local": {
     "n": 4,
     "g": 0,
@@ -287,9 +287,9 @@
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 2,
-    "spread_linea": 0.5,
-    "cubre": 1,
-    "no_cubre": 3,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
@@ -303,13 +303,13 @@
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 2,
-    "spread_linea": -0.5,
-    "cubre": 2,
-    "no_cubre": 2,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Lille 0G-1E-3P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 2/4 · Cubre +0.5 1/4 — Bayern Munich 2G-2E-0P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 2/4 · Cubre -0.5 2/4"
+   "linea_tarjeta": "Tendencias: Lille 0G-1E-3P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 2/4 — Bayern Munich 2G-2E-0P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 2/4"
   },
   {
    "slug": "paris-saint-germain-vs-as-roma",
@@ -318,9 +318,9 @@
    "fecha": "2026-11-25",
    "hora": "14:00",
    "liga": "Champions League",
-   "estado": "con_momio",
-   "linea_total": 3.5,
-   "linea_referencia": false,
+   "estado": "pendiente",
+   "linea_total": 2.5,
+   "linea_referencia": true,
    "local": {
     "n": 4,
     "g": 4,
@@ -331,11 +331,11 @@
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 1,
-    "spread_linea": -1.5,
-    "cubre": 4,
+    "spread_linea": null,
+    "cubre": 0,
     "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
    "visita": {
     "n": 4,
@@ -347,13 +347,13 @@
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 1,
-    "spread_linea": 1.5,
-    "cubre": 4,
+    "spread_linea": null,
+    "cubre": 0,
     "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Paris Saint-Germain 4G-0E-0P · Más 3.5 4/4 · Menos 3.5 0/4 · BTTS 3/4 · Cubre -1.5 4/4 — AS Roma 1G-1E-2P · Más 3.5 3/4 · Menos 3.5 1/4 · BTTS 3/4 · Cubre +1.5 4/4"
+   "linea_tarjeta": "Tendencias: Paris Saint-Germain 4G-0E-0P · Más 2.5 4/4 · Menos 2.5 0/4 · BTTS 3/4 — AS Roma 1G-1E-2P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 3/4"
   },
   {
    "slug": "sporting-cp-vs-manchester-united",
@@ -362,9 +362,9 @@
    "fecha": "2026-11-25",
    "hora": "14:00",
    "liga": "Champions League",
-   "estado": "con_momio",
-   "linea_total": 3.5,
-   "linea_referencia": false,
+   "estado": "pendiente",
+   "linea_total": 2.5,
+   "linea_referencia": true,
    "local": {
     "n": 4,
     "g": 3,
@@ -375,11 +375,11 @@
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 2,
-    "spread_linea": -0.5,
-    "cubre": 3,
-    "no_cubre": 1,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
    "visita": {
     "n": 4,
@@ -391,13 +391,13 @@
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 2,
-    "spread_linea": 0.5,
-    "cubre": 2,
-    "no_cubre": 2,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Sporting CP 3G-0E-1P · Más 3.5 2/4 · Menos 3.5 2/4 · BTTS 2/4 · Cubre -0.5 3/4 — Manchester United 2G-0E-2P · Más 3.5 3/4 · Menos 3.5 1/4 · BTTS 2/4 · Cubre +0.5 2/4"
+   "linea_tarjeta": "Tendencias: Sporting CP 3G-0E-1P · Más 2.5 2/4 · Menos 2.5 2/4 · BTTS 2/4 — Manchester United 2G-0E-2P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 2/4"
   },
   {
    "slug": "celta-vigo-vs-afc-bournemouth",
@@ -626,9 +626,9 @@
    "fecha": "2026-11-26",
    "hora": "19:00",
    "liga": "Liga MX",
-   "estado": "pendiente",
+   "estado": "con_momio",
    "linea_total": 2.5,
-   "linea_referencia": true,
+   "linea_referencia": false,
    "local": {
     "n": 5,
     "g": 4,
@@ -639,9 +639,9 @@
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 2,
-    "spread_linea": null,
-    "cubre": 0,
-    "no_cubre": 0,
+    "spread_linea": 0.5,
+    "cubre": 4,
+    "no_cubre": 1,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
@@ -655,13 +655,13 @@
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 3,
-    "spread_linea": null,
-    "cubre": 0,
-    "no_cubre": 0,
+    "spread_linea": -0.5,
+    "cubre": 4,
+    "no_cubre": 1,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Pachuca 4G-0E-1P · Más 2.5 4/5 · Menos 2.5 1/5 · BTTS 3/5 — Guadalajara 4G-1E-0P · Más 2.5 1/5 · Menos 2.5 4/5 · BTTS 2/5"
+   "linea_tarjeta": "Tendencias: Pachuca 4G-0E-1P · Más 2.5 4/5 · Menos 2.5 1/5 · BTTS 3/5 · Cubre +0.5 4/5 — Guadalajara 4G-1E-0P · Más 2.5 1/5 · Menos 2.5 4/5 · BTTS 2/5 · Cubre -0.5 4/5"
   },
   {
    "slug": "leon-vs-cruz-azul",
@@ -714,42 +714,42 @@
    "fecha": "2026-11-25",
    "hora": "11:45",
    "liga": "Champions League",
-   "estado": "con_momio",
-   "linea_total": 4.5,
-   "linea_referencia": false,
+   "estado": "pendiente",
+   "linea_total": 2.5,
+   "linea_referencia": true,
    "local": {
     "n": 4,
     "g": 1,
     "e": 0,
     "p": 3,
-    "mas": 1,
-    "menos": 3,
+    "mas": 3,
+    "menos": 1,
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 2,
-    "spread_linea": 3.5,
-    "cubre": 3,
-    "no_cubre": 1,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 4.5
+    "linea_total": 2.5
    },
    "visita": {
     "n": 4,
     "g": 3,
     "e": 0,
     "p": 1,
-    "mas": 3,
-    "menos": 1,
+    "mas": 4,
+    "menos": 0,
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 1,
-    "spread_linea": -3.5,
-    "cubre": 1,
-    "no_cubre": 3,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 4.5
+    "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Sabah FK 1G-0E-3P · Más 4.5 1/4 · Menos 4.5 3/4 · BTTS 2/4 · Cubre +3.5 3/4 — Barcelona 3G-0E-1P · Más 4.5 3/4 · Menos 4.5 1/4 · BTTS 3/4 · Cubre -3.5 1/4"
+   "linea_tarjeta": "Tendencias: Sabah FK 1G-0E-3P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 2/4 — Barcelona 3G-0E-1P · Más 2.5 4/4 · Menos 2.5 0/4 · BTTS 3/4"
   },
   {
    "slug": "slavia-prague-vs-villarreal",
@@ -758,24 +758,24 @@
    "fecha": "2026-11-25",
    "hora": "11:45",
    "liga": "Champions League",
-   "estado": "con_momio",
-   "linea_total": 3.5,
-   "linea_referencia": false,
+   "estado": "pendiente",
+   "linea_total": 2.5,
+   "linea_referencia": true,
    "local": {
     "n": 4,
     "g": 0,
     "e": 1,
     "p": 3,
-    "mas": 2,
-    "menos": 2,
+    "mas": 3,
+    "menos": 1,
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 1,
-    "spread_linea": 0.5,
-    "cubre": 1,
-    "no_cubre": 3,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
    "visita": {
     "n": 4,
@@ -787,13 +787,13 @@
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 1,
-    "spread_linea": -0.5,
-    "cubre": 1,
-    "no_cubre": 3,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Slavia Prague 0G-1E-3P · Más 3.5 2/4 · Menos 3.5 2/4 · BTTS 3/4 · Cubre +0.5 1/4 — Villarreal 1G-0E-3P · Más 3.5 4/4 · Menos 3.5 0/4 · BTTS 3/4 · Cubre -0.5 1/4"
+   "linea_tarjeta": "Tendencias: Slavia Prague 0G-1E-3P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 3/4 — Villarreal 1G-0E-3P · Más 2.5 4/4 · Menos 2.5 0/4 · BTTS 3/4"
   },
   {
    "slug": "atletico-madrid-vs-viking-fk",
@@ -802,24 +802,24 @@
    "fecha": "2026-11-25",
    "hora": "14:00",
    "liga": "Champions League",
-   "estado": "con_momio",
-   "linea_total": 3.5,
-   "linea_referencia": false,
+   "estado": "pendiente",
+   "linea_total": 2.5,
+   "linea_referencia": true,
    "local": {
     "n": 4,
     "g": 1,
     "e": 1,
     "p": 2,
-    "mas": 0,
-    "menos": 4,
+    "mas": 1,
+    "menos": 3,
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 2,
-    "spread_linea": -2.5,
+    "spread_linea": null,
     "cubre": 0,
-    "no_cubre": 4,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
    "visita": {
     "n": 4,
@@ -831,13 +831,13 @@
     "empuje": 0,
     "btts_si": 4,
     "btts_no": 0,
-    "spread_linea": 2.5,
-    "cubre": 4,
+    "spread_linea": null,
+    "cubre": 0,
     "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Atlético Madrid 1G-1E-2P · Más 3.5 0/4 · Menos 3.5 4/4 · BTTS 2/4 · Cubre -2.5 0/4 — Viking FK 1G-1E-2P · Más 3.5 4/4 · Menos 3.5 0/4 · BTTS 4/4 · Cubre +2.5 4/4"
+   "linea_tarjeta": "Tendencias: Atlético Madrid 1G-1E-2P · Más 2.5 1/4 · Menos 2.5 3/4 · BTTS 2/4 — Viking FK 1G-1E-2P · Más 2.5 4/4 · Menos 2.5 0/4 · BTTS 4/4"
   },
   {
    "slug": "shakhtar-donetsk-vs-fenerbahce",
@@ -846,9 +846,9 @@
    "fecha": "2026-11-25",
    "hora": "14:00",
    "liga": "Champions League",
-   "estado": "con_momio",
+   "estado": "pendiente",
    "linea_total": 2.5,
-   "linea_referencia": false,
+   "linea_referencia": true,
    "local": {
     "n": 4,
     "g": 1,
@@ -859,9 +859,9 @@
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 2,
-    "spread_linea": 0.5,
-    "cubre": 2,
-    "no_cubre": 2,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
@@ -875,13 +875,13 @@
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 1,
-    "spread_linea": -0.5,
-    "cubre": 1,
-    "no_cubre": 3,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Shakhtar Donetsk 1G-1E-2P · Más 2.5 1/4 · Menos 2.5 3/4 · BTTS 2/4 · Cubre +0.5 2/4 — Fenerbahce 1G-2E-1P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 3/4 · Cubre -0.5 1/4"
+   "linea_tarjeta": "Tendencias: Shakhtar Donetsk 1G-1E-2P · Más 2.5 1/4 · Menos 2.5 3/4 · BTTS 2/4 — Fenerbahce 1G-2E-1P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 3/4"
   },
   {
    "slug": "besiktas-vs-hapoel-be'er",
@@ -1111,7 +1111,7 @@
    "hora": "14:00",
    "liga": "Europa League",
    "estado": "con_momio",
-   "linea_total": 2.5,
+   "linea_total": 3.5,
    "linea_referencia": false,
    "local": {
     "n": 4,
@@ -1127,15 +1127,15 @@
     "cubre": 1,
     "no_cubre": 3,
     "empuje_spread": 0,
-    "linea_total": 2.5
+    "linea_total": 3.5
    },
    "visita": {
     "n": 4,
     "g": 1,
     "e": 2,
     "p": 1,
-    "mas": 2,
-    "menos": 2,
+    "mas": 1,
+    "menos": 3,
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 1,
@@ -1143,9 +1143,9 @@
     "cubre": 3,
     "no_cubre": 1,
     "empuje_spread": 0,
-    "linea_total": 2.5
+    "linea_total": 3.5
    },
-   "linea_tarjeta": "Tendencias: Crystal Palace 1G-2E-1P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 3/4 · Cubre -0.5 1/4 — Real Sociedad 1G-2E-1P · Más 2.5 2/4 · Menos 2.5 2/4 · BTTS 3/4 · Cubre +0.5 3/4"
+   "linea_tarjeta": "Tendencias: Crystal Palace 1G-2E-1P · Más 3.5 3/4 · Menos 3.5 1/4 · BTTS 3/4 · Cubre -0.5 1/4 — Real Sociedad 1G-2E-1P · Más 3.5 1/4 · Menos 3.5 3/4 · BTTS 3/4 · Cubre +0.5 3/4"
   },
   {
    "slug": "ferencvaros-vs-nk-celje",

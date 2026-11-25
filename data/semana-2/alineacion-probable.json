@@ -1,7 +1,7 @@
 {
  "semana": "Semana 2",
  "config": "semana-actual.json",
- "fecha_calculo": "2026-11-24",
+ "fecha_calculo": "2026-11-25",
  "metodo": "XI más frecuente por posición de los últimos partidos + formación más usada; siempre PROBABLE (ESPN no publica XI probable). Ventana: últimos 5 de liga doméstica (fin de semana) o últimos 4 de la competición UEFA (entre semana), antes de la fecha del partido. Fuerza por XI: 0.40·goles+asistencias + 0.30·minutos + 0.30·puntos, cada componente en % vs el mejor XI 1-4-4-2 por minutos de la misma ventana, con fracciones; calculada con nombres ESPN antes del MAPEO.",
  "verificacion_nombres": "Los ~50 nombres señalados por el jefe el 24 nov 2026 fueron verificados uno por uno: los 60 son jugadores reales del equipo asignado (fichajes del verano 2026, con fuentes en EMPLEADO-1.md). No se añadió ningún reemplazo al MAPEO.",
  "partidos": [

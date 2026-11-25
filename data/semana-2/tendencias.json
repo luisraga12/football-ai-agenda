@@ -1,7 +1,7 @@
 {
  "semana": 2,
  "ventana": "últimos 5 partidos de la competición",
- "fecha_calculo": "2026-11-24",
+ "fecha_calculo": "2026-11-25",
  "partidos": [
   {
    "slug": "werder-bremen-vs-borussia-monchengladbach",
@@ -231,15 +231,15 @@
    "hora": "09:00",
    "liga": "Premier League",
    "estado": "con_momio",
-   "linea_total": 2.5,
+   "linea_total": 3.5,
    "linea_referencia": false,
    "local": {
     "n": 5,
     "g": 0,
     "e": 3,
     "p": 2,
-    "mas": 2,
-    "menos": 3,
+    "mas": 1,
+    "menos": 4,
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 2,
@@ -247,15 +247,15 @@
     "cubre": 0,
     "no_cubre": 5,
     "empuje_spread": 0,
-    "linea_total": 2.5
+    "linea_total": 3.5
    },
    "visita": {
     "n": 5,
     "g": 1,
     "e": 2,
     "p": 2,
-    "mas": 2,
-    "menos": 3,
+    "mas": 1,
+    "menos": 4,
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 2,
@@ -263,9 +263,9 @@
     "cubre": 3,
     "no_cubre": 2,
     "empuje_spread": 0,
-    "linea_total": 2.5
+    "linea_total": 3.5
    },
-   "linea_tarjeta": "Tendencias: Manchester United 0G-3E-2P · Más 2.5 2/5 · Menos 2.5 3/5 · BTTS 3/5 · Cubre -0.5 0/5 — Brentford 1G-2E-2P · Más 2.5 2/5 · Menos 2.5 3/5 · BTTS 3/5 · Cubre +0.5 3/5"
+   "linea_tarjeta": "Tendencias: Manchester United 0G-3E-2P · Más 3.5 1/5 · Menos 3.5 4/5 · BTTS 3/5 · Cubre -0.5 0/5 — Brentford 1G-2E-2P · Más 3.5 1/5 · Menos 3.5 4/5 · BTTS 3/5 · Cubre +0.5 3/5"
   },
   {
    "slug": "elche-vs-atletico-madrid",
@@ -363,15 +363,15 @@
    "hora": "13:45",
    "liga": "Serie A",
    "estado": "con_momio",
-   "linea_total": 2.5,
+   "linea_total": 3.5,
    "linea_referencia": false,
    "local": {
     "n": 5,
     "g": 4,
     "e": 0,
     "p": 1,
-    "mas": 3,
-    "menos": 2,
+    "mas": 2,
+    "menos": 3,
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 2,
@@ -379,15 +379,15 @@
     "cubre": 3,
     "no_cubre": 2,
     "empuje_spread": 0,
-    "linea_total": 2.5
+    "linea_total": 3.5
    },
    "visita": {
     "n": 5,
     "g": 3,
     "e": 0,
     "p": 2,
-    "mas": 2,
-    "menos": 3,
+    "mas": 0,
+    "menos": 5,
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 3,
@@ -395,9 +395,9 @@
     "cubre": 4,
     "no_cubre": 1,
     "empuje_spread": 0,
-    "linea_total": 2.5
+    "linea_total": 3.5
    },
-   "linea_tarjeta": "Tendencias: Internazionale 4G-0E-1P · Más 2.5 3/5 · Menos 2.5 2/5 · BTTS 3/5 · Cubre -1.5 3/5 — Genoa 3G-0E-2P · Más 2.5 2/5 · Menos 2.5 3/5 · BTTS 2/5 · Cubre +1.5 4/5"
+   "linea_tarjeta": "Tendencias: Internazionale 4G-0E-1P · Más 3.5 2/5 · Menos 3.5 3/5 · BTTS 3/5 · Cubre -1.5 3/5 — Genoa 3G-0E-2P · Más 3.5 0/5 · Menos 3.5 5/5 · BTTS 2/5 · Cubre +1.5 4/5"
   },
   {
    "slug": "real-madrid-vs-alaves",
@@ -495,15 +495,15 @@
    "hora": "08:00",
    "liga": "Serie A",
    "estado": "con_momio",
-   "linea_total": 3.5,
+   "linea_total": 2.5,
    "linea_referencia": false,
    "local": {
     "n": 5,
     "g": 0,
     "e": 0,
     "p": 5,
-    "mas": 3,
-    "menos": 2,
+    "mas": 4,
+    "menos": 1,
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 2,
@@ -511,7 +511,7 @@
     "cubre": 0,
     "no_cubre": 5,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
    "visita": {
     "n": 5,
@@ -527,9 +527,9 @@
     "cubre": 1,
     "no_cubre": 4,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Sassuolo 0G-0E-5P · Más 3.5 3/5 · Menos 3.5 2/5 · BTTS 3/5 · Cubre +0.5 0/5 — Napoli 1G-2E-2P · Más 3.5 2/5 · Menos 3.5 3/5 · BTTS 3/5 · Cubre -0.5 1/5"
+   "linea_tarjeta": "Tendencias: Sassuolo 0G-0E-5P · Más 2.5 4/5 · Menos 2.5 1/5 · BTTS 3/5 · Cubre +0.5 0/5 — Napoli 1G-2E-2P · Más 2.5 2/5 · Menos 2.5 3/5 · BTTS 3/5 · Cubre -0.5 1/5"
   },
   {
    "slug": "deportivo-vs-barcelona",
