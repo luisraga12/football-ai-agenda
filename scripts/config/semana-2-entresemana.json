@@ -1,1 +1,145 @@
-{"cutoff":"2026-11-22T23:59:59Z","fechas":["2026-11-24","2026-11-25","2026-11-26"],"ligas":{"uefa.champions":"Champions League","uefa.europa":"Europa League"},"nombre":"Semana 2 entre semana","partidos":[{"away":"Aston Villa","away_id":362,"fecha":"2026-11-24","home":"Galatasaray","home_id":432,"liga":"uefa.champions"},{"away":"Borussia Dortmund","away_id":124,"fecha":"2026-11-24","home":"Arsenal","home_id":359,"liga":"uefa.champions"},{"away":"Napoli","away_id":114,"fecha":"2026-11-24","home":"Manchester City","home_id":382,"liga":"uefa.champions"},{"away":"PSV Eindhoven","away_id":148,"fecha":"2026-11-24","home":"Real Madrid","home_id":86,"liga":"uefa.champions"},{"away":"Liverpool","away_id":364,"fecha":"2026-11-25","home":"Club Brugge","home_id":570,"liga":"uefa.champions"},{"away":"VfB Stuttgart","away_id":134,"fecha":"2026-11-25","home":"Internazionale","home_id":110,"liga":"uefa.champions"},{"away":"Bayern Munich","away_id":132,"fecha":"2026-11-25","home":"Lille","home_id":166,"liga":"uefa.champions"},{"away":"AS Roma","away_id":104,"fecha":"2026-11-25","home":"Paris Saint-Germain","home_id":160,"liga":"uefa.champions"},{"away":"Manchester United","away_id":360,"fecha":"2026-11-25","home":"Sporting CP","home_id":2250,"liga":"uefa.champions"},{"away":"AFC Bournemouth","away_id":349,"fecha":"2026-11-26","home":"Celta Vigo","home_id":85,"liga":"uefa.europa"},{"away":"Bayer Leverkusen","away_id":131,"fecha":"2026-11-26","home":"Dinamo Zagreb","home_id":597,"liga":"uefa.europa"},{"away":"AC Milan","away_id":103,"fecha":"2026-11-26","home":"Olympiacos","home_id":435,"liga":"uefa.europa"}],"semana":"2-entresemana"}
+{
+ "cutoff": "2026-11-22T23:59:59Z",
+ "fechas": [
+  "2026-11-24",
+  "2026-11-25",
+  "2026-11-26"
+ ],
+ "ligas": {
+  "uefa.champions": "Champions League",
+  "uefa.europa": "Europa League",
+  "mex.1": "Liga MX"
+ },
+ "nombre": "Semana 2 entre semana",
+ "partidos": [
+  {
+   "away": "Aston Villa",
+   "away_id": 362,
+   "fecha": "2026-11-24",
+   "home": "Galatasaray",
+   "home_id": 432,
+   "liga": "uefa.champions"
+  },
+  {
+   "away": "Borussia Dortmund",
+   "away_id": 124,
+   "fecha": "2026-11-24",
+   "home": "Arsenal",
+   "home_id": 359,
+   "liga": "uefa.champions"
+  },
+  {
+   "away": "Napoli",
+   "away_id": 114,
+   "fecha": "2026-11-24",
+   "home": "Manchester City",
+   "home_id": 382,
+   "liga": "uefa.champions"
+  },
+  {
+   "away": "PSV Eindhoven",
+   "away_id": 148,
+   "fecha": "2026-11-24",
+   "home": "Real Madrid",
+   "home_id": 86,
+   "liga": "uefa.champions"
+  },
+  {
+   "away": "Liverpool",
+   "away_id": 364,
+   "fecha": "2026-11-25",
+   "home": "Club Brugge",
+   "home_id": 570,
+   "liga": "uefa.champions"
+  },
+  {
+   "away": "VfB Stuttgart",
+   "away_id": 134,
+   "fecha": "2026-11-25",
+   "home": "Internazionale",
+   "home_id": 110,
+   "liga": "uefa.champions"
+  },
+  {
+   "away": "Bayern Munich",
+   "away_id": 132,
+   "fecha": "2026-11-25",
+   "home": "Lille",
+   "home_id": 166,
+   "liga": "uefa.champions"
+  },
+  {
+   "away": "AS Roma",
+   "away_id": 104,
+   "fecha": "2026-11-25",
+   "home": "Paris Saint-Germain",
+   "home_id": 160,
+   "liga": "uefa.champions"
+  },
+  {
+   "away": "Manchester United",
+   "away_id": 360,
+   "fecha": "2026-11-25",
+   "home": "Sporting CP",
+   "home_id": 2250,
+   "liga": "uefa.champions"
+  },
+  {
+   "away": "AFC Bournemouth",
+   "away_id": 349,
+   "fecha": "2026-11-26",
+   "home": "Celta Vigo",
+   "home_id": 85,
+   "liga": "uefa.europa"
+  },
+  {
+   "away": "Bayer Leverkusen",
+   "away_id": 131,
+   "fecha": "2026-11-26",
+   "home": "Dinamo Zagreb",
+   "home_id": 597,
+   "liga": "uefa.europa"
+  },
+  {
+   "away": "AC Milan",
+   "away_id": 103,
+   "fecha": "2026-11-26",
+   "home": "Olympiacos",
+   "home_id": 435,
+   "liga": "uefa.europa"
+  },
+  {
+   "home": "Toluca",
+   "home_id": "223",
+   "away": "Atlas",
+   "away_id": "216",
+   "fecha": "2026-11-25",
+   "liga": "mex.1"
+  },
+  {
+   "home": "Monterrey",
+   "home_id": "220",
+   "away": "América",
+   "away_id": "227",
+   "fecha": "2026-11-25",
+   "liga": "mex.1"
+  },
+  {
+   "home": "Pachuca",
+   "home_id": "234",
+   "away": "Guadalajara",
+   "away_id": "219",
+   "fecha": "2026-11-26",
+   "liga": "mex.1"
+  },
+  {
+   "home": "León",
+   "home_id": "228",
+   "away": "Cruz Azul",
+   "away_id": "218",
+   "fecha": "2026-11-26",
+   "liga": "mex.1"
+  }
+ ],
+ "semana": "2-entresemana"
+}
