@@ -202,9 +202,11 @@ de trabajar está en
   incrustados: los carga por fetch de `ev.json`, `alineacion-probable.json`,
   `raw/teams_last5.json` y `tendencias.json`, así los partidos nuevos
   aparecen solos. Verificado en vivo: 55 tarjetas (35 + 20), BTTS con valor
-  real en 55/55, Liguilla 8 visibles, 0 errores JS. Pendiente de verificar:
-  la corrida programada del 25 nov 07:00 (primera prueba real del `git add
-  scripts/config/` en Actions con el descubrimiento nuevo).
+  real en 55/55, Liguilla 8 visibles, 0 errores JS. Verificación 25 nov
+  07:34: la corrida programada de las 07:00 CST aún no había arrancado
+  (ni en cola); las programadas de este repo han llegado tarde antes
+  (16:57 y 18:40 CST), así que no es un fallo por sí solo. El jefe la
+  sigue vigilando.
 
 ## ✅ Semana 8 — Hecha (en vivo en el modal del detalle, 24 nov 2026)
 
@@ -221,7 +223,7 @@ de trabajar está en
   Fuerza) y UI en vivo en el modal del detalle (PR #37, verificado en vivo
   21:39 con fracciones exactas).
 
-## ⏳ Semana 9 — Pendiente: página de detalle por partido (pedida por el cliente 24 nov 2026)
+## ✅ Semana 9 — Hecha (en vivo 25 nov 2026, PR #46, e9aaf11)
 
 - El detalle del partido deja de ser un modal y pasa a ser una página propia
   por partido (estilo OneFootball): más espacio para la alineación y para
@@ -246,6 +248,15 @@ de trabajar está en
   Semana 9 E2 le da una manita de diseño (el cliente dice que se ve fea).
 - Depende de la integración de la Semana 7 (la página lee `data/`): la
   hace el Empleado 2 cuando entregue la integración.
+- HECHO 25 nov (PR #46, e9aaf11): `partido.html` en vivo + las 55 tarjetas
+  enlazan a su detalle en lugar del modal; tabla "Cómo le fue al modelo"
+  rediseñada con los mismos datos. Verificado en vivo por el jefe:
+  Arsenal–Dortmund (Final 1-1) con BTTS Sí 32.4%/No 67.6%, Fuerza 100.0/100
+  ambos, XI en cancha con nombres, últimos 5, H2H "ARS lidera 3-2",
+  Radiografía ("Así llegan"), 0 errores JS. Pendiente (datos de E1):
+  estadísticas en 55/55 ("pendientes") y últimos 5/H2H/tabla/Radiografía
+  de los 27 partidos nuevos (el DETAIL embebido es del 23 nov; E1 completa
+  raw/teams_last5.json de entre semana).
 
 ## Nota mar 24 nov 2026 — Historial, barra fija y Radiografía (revisión del jefe)
 
