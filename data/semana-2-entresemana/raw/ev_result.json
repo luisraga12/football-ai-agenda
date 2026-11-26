@@ -10,6 +10,11 @@
    "away": "Aston Villa",
    "proveedor": null,
    "estado": "pendiente",
+   "estado_partido": "post",
+   "marcador": {
+    "local": 1,
+    "visita": 0
+   },
    "mercados": {
     "btts": {
      "p_btts": 75.61419818073277,
@@ -19,6 +24,21 @@
       "si": null,
       "no": null
      }
+    },
+    "1X2": {
+     "prob": {
+      "1": 18.133451942534123,
+      "X": 15.878349744122227,
+      "2": 65.98819831224769
+     },
+     "momios": null,
+     "ev": null
+    },
+    "total": {
+     "linea": 2.5,
+     "p_over": 83.51028192590184,
+     "momios": null,
+     "ev": null
     }
    },
    "mejor_pick": null,
@@ -34,6 +54,11 @@
    "away": "Borussia Dortmund",
    "proveedor": null,
    "estado": "pendiente",
+   "estado_partido": "post",
+   "marcador": {
+    "local": 1,
+    "visita": 1
+   },
    "mercados": {
     "btts": {
      "p_btts": 32.36199252427044,
@@ -43,6 +68,21 @@
       "si": null,
       "no": null
      }
+    },
+    "1X2": {
+     "prob": {
+      "1": 54.99386293682236,
+      "X": 28.70036734342377,
+      "2": 16.3057697197538
+     },
+     "momios": null,
+     "ev": null
+    },
+    "total": {
+     "linea": 2.5,
+     "p_over": 29.81090258375548,
+     "momios": null,
+     "ev": null
     }
    },
    "mejor_pick": null,
@@ -58,6 +98,11 @@
    "away": "Napoli",
    "proveedor": null,
    "estado": "pendiente",
+   "estado_partido": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 2
+   },
    "mercados": {
     "btts": {
      "p_btts": 67.84848120484091,
@@ -67,6 +112,21 @@
       "si": null,
       "no": null
      }
+    },
+    "1X2": {
+     "prob": {
+      "1": 88.36587176790076,
+      "X": 6.941633129508537,
+      "2": 4.692494216472801
+     },
+     "momios": null,
+     "ev": null
+    },
+    "total": {
+     "linea": 2.5,
+     "p_over": 91.38881471085888,
+     "momios": null,
+     "ev": null
     }
    },
    "mejor_pick": null,
@@ -82,6 +142,11 @@
    "away": "PSV Eindhoven",
    "proveedor": null,
    "estado": "pendiente",
+   "estado_partido": "post",
+   "marcador": {
+    "local": 5,
+    "visita": 1
+   },
    "mercados": {
     "btts": {
      "p_btts": 36.20263701218571,
@@ -91,6 +156,21 @@
       "si": null,
       "no": null
      }
+    },
+    "1X2": {
+     "prob": {
+      "1": 65.1941067487273,
+      "X": 22.77340817725659,
+      "2": 12.032485074016071
+     },
+     "momios": null,
+     "ev": null
+    },
+    "total": {
+     "linea": 2.5,
+     "p_over": 40.51569603747752,
+     "momios": null,
+     "ev": null
     }
    },
    "mejor_pick": null,
@@ -106,6 +186,11 @@
    "away": "Liverpool",
    "proveedor": null,
    "estado": "pendiente",
+   "estado_partido": "post",
+   "marcador": {
+    "local": 0,
+    "visita": 3
+   },
    "mercados": {
     "btts": {
      "p_btts": 90.91852374372722,
@@ -115,6 +200,21 @@
       "si": null,
       "no": null
      }
+    },
+    "1X2": {
+     "prob": {
+      "1": 56.6225919971259,
+      "X": 15.175001398628375,
+      "2": 28.20240656567635
+     },
+     "momios": null,
+     "ev": null
+    },
+    "total": {
+     "linea": 2.5,
+     "p_over": 95.21975635628345,
+     "momios": null,
+     "ev": null
     }
    },
    "mejor_pick": null,
@@ -130,6 +230,11 @@
    "away": "VfB Stuttgart",
    "proveedor": null,
    "estado": "pendiente",
+   "estado_partido": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 0
+   },
    "mercados": {
     "btts": {
      "p_btts": 44.92217825310217,
@@ -139,6 +244,21 @@
       "si": null,
       "no": null
      }
+    },
+    "1X2": {
+     "prob": {
+      "1": 33.00850548030801,
+      "X": 28.90529216645251,
+      "2": 38.08620235323949
+     },
+     "momios": null,
+     "ev": null
+    },
+    "total": {
+     "linea": 2.5,
+     "p_over": 38.33419352572454,
+     "momios": null,
+     "ev": null
     }
    },
    "mejor_pick": null,
@@ -154,6 +274,11 @@
    "away": "Bayern Munich",
    "proveedor": null,
    "estado": "pendiente",
+   "estado_partido": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 1
+   },
    "mercados": {
     "btts": {
      "p_btts": 46.711937223653734,
@@ -163,6 +288,21 @@
       "si": null,
       "no": null
      }
+    },
+    "1X2": {
+     "prob": {
+      "1": 4.179452710771699,
+      "X": 8.85471971492155,
+      "2": 86.96582756699488
+     },
+     "momios": null,
+     "ev": null
+    },
+    "total": {
+     "linea": 2.5,
+     "p_over": 75.93706621656739,
+     "momios": null,
+     "ev": null
     }
    },
    "mejor_pick": null,
@@ -178,6 +318,11 @@
    "away": "AS Roma",
    "proveedor": null,
    "estado": "pendiente",
+   "estado_partido": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 2
+   },
    "mercados": {
     "btts": {
      "p_btts": 74.55241478567174,
@@ -187,6 +332,21 @@
       "si": null,
       "no": null
      }
+    },
+    "1X2": {
+     "prob": {
+      "1": 91.55894879425041,
+      "X": 4.94220915638776,
+      "2": 3.4988210734676137
+     },
+     "momios": null,
+     "ev": null
+    },
+    "total": {
+     "linea": 2.5,
+     "p_over": 96.25178086778229,
+     "momios": null,
+     "ev": null
     }
    },
    "mejor_pick": null,
@@ -202,6 +362,11 @@
    "away": "Manchester United",
    "proveedor": null,
    "estado": "pendiente",
+   "estado_partido": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 2
+   },
    "mercados": {
     "btts": {
      "p_btts": 51.699686405867354,
@@ -211,6 +376,21 @@
       "si": null,
       "no": null
      }
+    },
+    "1X2": {
+     "prob": {
+      "1": 65.79042458652096,
+      "X": 19.621015210925385,
+      "2": 14.588560202551667
+     },
+     "momios": null,
+     "ev": null
+    },
+    "total": {
+     "linea": 2.5,
+     "p_over": 57.82811864692897,
+     "momios": null,
+     "ev": null
     }
    },
    "mejor_pick": null,
@@ -226,6 +406,8 @@
    "away": "AFC Bournemouth",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 26.111815918304544,
@@ -291,6 +473,8 @@
    "away": "Bayer Leverkusen",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 13.788300530197764,
@@ -318,12 +502,12 @@
      "momios": {
       "linea": 3.5,
       "over": 2.2,
-      "under": 1.6896551724137931
+      "under": 1.6666666666666665
      },
      "p_over": 7.8610169124241045,
      "ev": {
       "mas": -0.8270576279266697,
-      "menos": 0.5568310935486962
+      "menos": 0.5356497181262649
      }
     },
     "spread": {
@@ -332,19 +516,19 @@
       "home_linea": 0.5,
       "home": 2.15,
       "away_linea": -0.5,
-      "away": 1.606060606060606
+      "away": 1.625
      },
      "p_cubre_local": 31.535279807255424,
      "ev": {
       "local": -0.32199148414400847,
-      "visitante": 0.09958490006529153
+      "visitante": 0.11255170313209928
      }
     }
    },
    "mejor_pick": "Menos 3.5",
-   "mejor_ev": 0.5568310935486962,
+   "mejor_ev": 0.5356497181262649,
    "semaforo": "verde",
-   "mejor_decimal": 1.6896551724137931,
+   "mejor_decimal": 1.6666666666666665,
    "mejor_prob": 92.1389830875759
   },
   {
@@ -356,6 +540,8 @@
    "away": "AC Milan",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 10.858871714453532,
@@ -421,6 +607,8 @@
    "away": "Atlas",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 85.35246845479453,
@@ -433,27 +621,27 @@
     },
     "1X2": {
      "momios": {
-      "home": 1.434782608695652,
-      "draw": 5.0,
-      "away": 6.5
+      "home": 1.4444444444444444,
+      "draw": 4.8,
+      "away": 6.0
      },
      "ev": {
-      "1": 0.016884881831407794,
-      "X": -0.35850175489212366,
-      "2": 0.05925561187648576
+      "1": 0.023732591473370146,
+      "X": -0.38416168469643874,
+      "2": -0.022225589037090043
      }
     },
     "total": {
-     "linea": 3.5,
+     "linea": 2.5,
      "momios": {
-      "linea": 3.5,
-      "over": 2.25,
-      "under": 1.606060606060606
+      "linea": 2.5,
+      "over": 1.5555555555555556,
+      "under": 2.35
      },
-     "p_over": 84.37109389154462,
+     "p_over": 93.54765688552858,
      "ev": {
-      "mas": 0.8983496125597539,
-      "menos": -0.7489902958338984
+      "mas": 0.4551857737748892,
+      "menos": -0.8483699368099217
      }
     },
     "spread": {
@@ -471,11 +659,11 @@
      }
     }
    },
-   "mejor_pick": "Más 3.5",
-   "mejor_ev": 0.8983496125597539,
+   "mejor_pick": "Más 2.5",
+   "mejor_ev": 0.4551857737748892,
    "semaforo": "verde",
-   "mejor_decimal": 2.25,
-   "mejor_prob": 84.37109389154462
+   "mejor_decimal": 1.5555555555555556,
+   "mejor_prob": 93.54765688552858
   },
   {
    "fecha": "2026-11-25",
@@ -486,6 +674,8 @@
    "away": "América",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 54.07112262994905,
@@ -551,6 +741,8 @@
    "away": "Guadalajara",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 37.04079633116867,
@@ -616,6 +808,8 @@
    "away": "Cruz Azul",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 51.671968626447025,
@@ -681,6 +875,11 @@
    "away": "Barcelona",
    "proveedor": null,
    "estado": "pendiente",
+   "estado_partido": "post",
+   "marcador": {
+    "local": 1,
+    "visita": 4
+   },
    "mercados": {
     "btts": {
      "p_btts": 53.72252214972514,
@@ -690,6 +889,21 @@
       "si": null,
       "no": null
      }
+    },
+    "1X2": {
+     "prob": {
+      "1": 3.6057899995749523,
+      "X": 6.985797271281161,
+      "2": 89.40841261888495
+     },
+     "momios": null,
+     "ev": null
+    },
+    "total": {
+     "linea": 2.5,
+     "p_over": 84.4530590530153,
+     "momios": null,
+     "ev": null
     }
    },
    "mejor_pick": null,
@@ -705,6 +919,11 @@
    "away": "Villarreal",
    "proveedor": null,
    "estado": "pendiente",
+   "estado_partido": "post",
+   "marcador": {
+    "local": 0,
+    "visita": 1
+   },
    "mercados": {
     "btts": {
      "p_btts": 77.87170405829914,
@@ -714,6 +933,21 @@
       "si": null,
       "no": null
      }
+    },
+    "1X2": {
+     "prob": {
+      "1": 46.26422280447424,
+      "X": 19.656026619045168,
+      "2": 34.07975057646983
+     },
+     "momios": null,
+     "ev": null
+    },
+    "total": {
+     "linea": 2.5,
+     "p_over": 80.41568875631874,
+     "momios": null,
+     "ev": null
     }
    },
    "mejor_pick": null,
@@ -729,6 +963,11 @@
    "away": "Viking FK",
    "proveedor": null,
    "estado": "pendiente",
+   "estado_partido": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 0
+   },
    "mercados": {
     "btts": {
      "p_btts": 52.29356070384168,
@@ -738,6 +977,21 @@
       "si": null,
       "no": null
      }
+    },
+    "1X2": {
+     "prob": {
+      "1": 38.63184400028269,
+      "X": 26.540325657799706,
+      "2": 34.82783034191754
+     },
+     "momios": null,
+     "ev": null
+    },
+    "total": {
+     "linea": 2.5,
+     "p_over": 47.420621007250766,
+     "momios": null,
+     "ev": null
     }
    },
    "mejor_pick": null,
@@ -753,6 +1007,11 @@
    "away": "Fenerbahce",
    "proveedor": null,
    "estado": "pendiente",
+   "estado_partido": "post",
+   "marcador": {
+    "local": 0,
+    "visita": 1
+   },
    "mercados": {
     "btts": {
      "p_btts": 37.23389831306461,
@@ -762,6 +1021,21 @@
       "si": null,
       "no": null
      }
+    },
+    "1X2": {
+     "prob": {
+      "1": 56.34981212072615,
+      "X": 26.698952646627383,
+      "2": 16.951235232646493
+     },
+     "momios": null,
+     "ev": null
+    },
+    "total": {
+     "linea": 2.5,
+     "p_over": 35.64006399267127,
+     "momios": null,
+     "ev": null
     }
    },
    "mejor_pick": null,
@@ -777,6 +1051,8 @@
    "away": "Hapoel Be'er",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 28.626809950035074,
@@ -842,6 +1118,8 @@
    "away": "Levski Sofia",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 13.996684319598268,
@@ -907,6 +1185,8 @@
    "away": "Ararat-Armenia",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 61.50264620421193,
@@ -919,48 +1199,48 @@
     },
     "1X2": {
      "momios": {
-      "home": 1.1666666666666667,
+      "home": 1.1538461538461537,
       "draw": 8.5,
-      "away": 14.0
+      "away": 15.0
      },
      "ev": {
-      "1": -0.4775168380449476,
+      "1": -0.483258411253245,
       "X": 1.0040243877856043,
-      "2": 3.429456006068956
+      "2": 3.745845720788167
      }
     },
     "total": {
      "linea": 3.5,
      "momios": {
       "linea": 3.5,
-      "over": 1.8,
-      "under": 2.0
+      "over": 1.7692307692307692,
+      "under": 2.05
      },
      "p_over": 37.436095405924256,
      "ev": {
-      "mas": -0.3261502826933633,
-      "menos": 0.25127809188151495
+      "mas": -0.33766908127980166,
+      "menos": 0.28256004417855274
      }
     },
     "spread": {
      "home_linea": -2.5,
      "momios": {
       "home_linea": -2.5,
-      "home": 2.05,
+      "home": 2.0,
       "away_linea": 2.5,
-      "away": 1.6666666666666665
+      "away": 1.7142857142857144
      },
      "p_cubre_local": 10.0474288479856,
      "ev": {
-      "local": -0.7940277086162952,
-      "visitante": 0.4992095192002399
+      "local": -0.799051423040288,
+      "visitante": 0.5420440768916757
      }
     }
    },
    "mejor_pick": "Visita",
-   "mejor_ev": 3.429456006068956,
+   "mejor_ev": 3.745845720788167,
    "semaforo": "verde",
-   "mejor_decimal": 14.0,
+   "mejor_decimal": 15.0,
    "mejor_prob": 31.638971471921113
   },
   {
@@ -972,6 +1252,8 @@
    "away": "Lech Poznan",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 15.88905853789597,
@@ -1037,6 +1319,8 @@
    "away": "Benfica",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 29.959330974985548,
@@ -1102,6 +1386,8 @@
    "away": "Real Sociedad",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 69.44322926701707,
@@ -1167,6 +1453,8 @@
    "away": "NK Celje",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 47.15316477163313,
@@ -1206,14 +1494,14 @@
      "home_linea": -1.5,
      "momios": {
       "home_linea": -1.5,
-      "home": 1.9090909090909092,
+      "home": 1.9523809523809523,
       "away_linea": 1.5,
-      "away": 1.8
+      "away": 1.7692307692307692
      },
      "p_cubre_local": 80.51741421489957,
      "ev": {
-      "local": 0.5371506350117192,
-      "visitante": -0.6493134558681923
+      "local": 0.5720066584813726,
+      "visitante": -0.6553080976482233
      }
     }
    },
@@ -1232,6 +1520,8 @@
    "away": "Omonia Nicosia",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 62.03000035157762,
@@ -1297,6 +1587,8 @@
    "away": "Lillestrom",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 41.6802387677555,
@@ -1309,41 +1601,41 @@
     },
     "1X2": {
      "momios": {
-      "home": 1.1904761904761905,
-      "draw": 7.5,
-      "away": 13.0
+      "home": 1.2105263157894737,
+      "draw": 7.0,
+      "away": 12.0
      },
      "ev": {
-      "1": -0.07637670194099688,
-      "X": 0.12440475770071235,
-      "2": -0.03493466148868185
+      "1": -0.060820941131582096,
+      "X": 0.04944444052066488,
+      "2": -0.10917045675878323
      }
     },
     "total": {
      "linea": 3.5,
      "momios": {
       "linea": 3.5,
-      "over": 1.9523809523809523,
+      "over": 2.0,
       "under": 1.8333333333333335
      },
      "p_over": 36.16906477442206,
      "ev": {
-      "mas": -0.2938420686898551,
+      "mas": -0.2766187045115588,
       "menos": 0.17023381246892888
      }
     },
     "spread": {
-     "home_linea": -2.5,
+     "home_linea": -1.5,
      "momios": {
-      "home_linea": -2.5,
-      "home": 2.25,
-      "away_linea": 2.5,
-      "away": 1.5882352941176472
+      "home_linea": -1.5,
+      "home": 1.5714285714285714,
+      "away_linea": 1.5,
+      "away": 2.25
      },
-     "p_cubre_local": 32.40125893049839,
+     "p_cubre_local": 54.92639494158736,
      "ev": {
-      "local": -0.2709716740637861,
-      "visitante": 0.07362706404502561
+      "local": -0.13687093663219863,
+      "visitante": 0.014156113814284499
      }
     }
    },
@@ -1362,6 +1654,8 @@
    "away": "Stade Rennais",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 49.230193525479464,
@@ -1427,6 +1721,8 @@
    "away": "Anderlecht",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 29.541459180563656,
@@ -1492,6 +1788,8 @@
    "away": "AZ Alkmaar",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 52.20642084076685,
@@ -1557,6 +1855,8 @@
    "away": "Jagiellonia Bialystok",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 34.07145558231217,
@@ -1622,6 +1922,8 @@
    "away": "Celtic",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 86.51138271451443,
@@ -1687,6 +1989,8 @@
    "away": "SK Sturm Graz",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 41.735327347020025,

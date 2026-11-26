@@ -113,6 +113,25 @@ def main():
             'p_btts': r['btts'], 'p_no_btts': 100 - r['btts'],
             'momios': None, 'ev': {'si': None, 'no': None}}
         if m['estado'] != 'con_momio':
+            # 1X2 y total del MODELO solo para los partidos sin momio
+            # (orden del jefe, 25 nov 2026; mismo precedente que
+            # BTTS): las probabilidades ya las calcula el Poisson
+            # (r['p1'/'px'/'p2'] y r['over25'] para la linea 2.5) y
+            # van en mercados aunque no haya momio, para que la
+            # pagina muestre las probabilidades del modelo en vez
+            # de "1X2: pendiente" / "Total: pendiente". Sin momio
+            # ni EV: no hay con que calcularlos y no se inventan.
+            # Un partido terminado sin momio sigue sin EV ni
+            # semaforo; solo deja de verse como si no se hubiera
+            # jugado. (Solo aqui: con momio, los mercados 1X2/total
+            # los escribe el bloque de abajo con momios y EV, y la
+            # tabla .md supone momios dict; no se toca ese camino.)
+            fila['mercados']['1X2'] = {
+                'prob': {'1': r['p1'], 'X': r['px'], '2': r['p2']},
+                'momios': None, 'ev': None}
+            fila['mercados']['total'] = {
+                'linea': 2.5, 'p_over': r['over25'],
+                'momios': None, 'ev': None}
             filas.append(fila)
             print(f"PENDIENTE {home} vs {away}: sin momio, sin EV.")
             continue
