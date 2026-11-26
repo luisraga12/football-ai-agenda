@@ -154,7 +154,7 @@ var pitches = out.querySelectorAll(".pitch");
 var names = out.querySelectorAll(".pitch-player").length;
 var heads = [];
 out.querySelectorAll(".pitch-head span").forEach(function(s){ heads.push(s.textContent); });
-document.getElementById("verif").innerHTML = "<b>Partido:</b> " + esc(slug) + " — " + esc(d.home) + " vs " + esc(d.away) + "<br><b>Estadio:</b> " + esc(estadioTexto(d)) + "<br><b>Alineación oficial publicada:</b> " + (d.lineup && d.lineup.alineacion_publicada ? "sí" : "no") + "<br><b>Canchas renderizadas:</b> " + pitches.length + " · <b>nombres en cancha:</b> " + names + "<br><b>Encabezados de cancha:</b> " + esc(heads.join(" | "));
+document.getElementById("verif").innerHTML = "<b>Partido:</b> " + esc(slug) + " — " + esc(d.home) + " vs " + esc(d.away) + "<br><b>Estadio (chip):</b> " + esc(estadioTexto(d)) + "<br><b>Alineación oficial publicada:</b> " + (d.lineup && d.lineup.alineacion_publicada ? "sí" : "no") + "<br><b>Canchas renderizadas:</b> " + pitches.length + " · <b>nombres en cancha:</b> " + names + "<br><b>Encabezados de cancha:</b> " + esc(heads.join(" | "));
 }
 </script>
 </body>
