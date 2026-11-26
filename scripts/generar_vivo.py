@@ -39,9 +39,13 @@ Reglas (orden del jefe, 24 nov 2026; propuesta-vivo-cache.md):
 Uso:
     python3 scripts/generar_vivo.py [--config scripts/config/semana-actual.json]
                                      [--salida data/vivo.json] [--todas]
-    --todas: consulta todas las fechas de la semana (no solo hoy).
-             Sin --todas solo se consultan las fechas de hoy (hora de
-             Mexico), que es lo que corre el workflow cada 5 minutos.
+    --todas: consulta todas las fechas de la semana (no solo hoy y ayer).
+             Sin --todas se consultan las fechas de hoy y de ayer (hora
+             de Mexico), que es lo que corre el workflow cada 5 minutos.
+             Ayer se consulta para cerrar en "post" con su marcador
+             final real los partidos terminados el dia anterior: el
+             scoreboard de hoy ya no los trae, y sin ayer quedarian
+             congelados en su ultimo estado conocido (26 nov 2026).
 """
 
 import argparse
@@ -51,7 +55,7 @@ import sys
 import tempfile
 import urllib.error
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 
 MX = ZoneInfo("America/Mexico_City")
@@ -185,14 +189,23 @@ def main():
 
     ahora_utc = datetime.now(UTC)
     ahora_iso = ahora_utc.strftime("%Y-%m-%dT%H:%M:%SZ")
-    hoy_mx = datetime.now(MX).strftime("%Y-%m-%d")
+    hoy_mx_dt = datetime.now(MX)
+    hoy_mx = hoy_mx_dt.strftime("%Y-%m-%d")
+    # Ayer (hora de Mexico): se consulta ademas de hoy para cerrar en
+    # "post" con su marcador final real los partidos terminados el dia
+    # anterior. El scoreboard de hoy ya no los trae; sin ayer, el merge
+    # los dejaba congelados en su ultimo estado conocido (p. ej.
+    # Toluca-Atlas "in" 23' 1-0 y Monterrey-America "pre" en main la
+    # noche del 25-26 nov 2026).
+    ayer_mx = (hoy_mx_dt - timedelta(days=1)).strftime("%Y-%m-%d")
 
     semana, partidos = cargar_config(args.config)
     pares = sorted({(p["liga"], p["fecha"]) for p in partidos})
     if not args.todas:
-        pares = [par for par in pares if par[1] == hoy_mx]
+        pares = [par for par in pares if par[1] in (hoy_mx, ayer_mx)]
     if not pares:
-        print(f"Sin fechas que consultar hoy ({hoy_mx}); no se escribe nada.")
+        print(f"Sin fechas que consultar hoy ni ayer ({hoy_mx}, {ayer_mx}); "
+              "no se escribe nada.")
         return 0
 
     # Datos previos (merge): si el archivo existe y es valido, se conserva.
