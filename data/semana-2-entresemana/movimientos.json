@@ -176,14 +176,14 @@
    "mejor_pick_ayer": "Menos 3.5",
    "mejor_pick_hoy": "Menos 3.5",
    "ev_ayer": 0.5568310935486962,
-   "ev_hoy": 0.5568310935486962,
+   "ev_hoy": 0.5356497181262649,
    "linea_ayer": 3.5,
    "linea_hoy": 3.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": 0.0,
-   "flecha": "→"
+   "delta_ev_pp": -2.118137542243126,
+   "flecha": "↓"
   },
   {
    "slug": "olympiacos-vs-ac-milan",

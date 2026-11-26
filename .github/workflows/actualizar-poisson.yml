@@ -3,7 +3,7 @@
 # Corre la automatizacion de la semana actual y, si los datos cambiaron,
 # hace commit de los archivos generados en `data/`.
 #
-# - Diario (13:00 UTC): recalcula la semana actual con los últimos
+# - Diario (13:17 UTC): recalcula la semana actual con los últimos
 #   datos de ESPN (últimos 5 de cada equipo — 4 en competiciones
 #   europeas —, promedios de liga, momios y EV). Los momios del fin
 #   de semana siguiente aparecen solos cuando DraftKings/Bet 365 los
@@ -47,7 +47,7 @@ name: Actualizar datos, Poisson, momios y EV
 
 on:
   schedule:
-    - cron: '0 13 * * *'        # diario, 13:00 UTC (07:00 CST)
+    - cron: '17 13 * * *'        # diario, 13:17 UTC (07:17 CST)
     - cron: '0 * * * 5,6,0'     # cada hora vie/sáb/dom (días de partido)
   workflow_dispatch:
 
@@ -59,6 +59,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Registrar hora de arranque
+        run: |
+          echo "schedule=${{ github.event.schedule}}"
+          date -u +"%Y-%m-%d %H:%M:%S UTC"
+          date +"%Y-%m-%d %H:%M:%S %Z"
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'

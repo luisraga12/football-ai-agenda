@@ -13,7 +13,12 @@
    "liga_nombre": "Champions League",
    "proveedor": null,
    "estado": "pendiente",
-   "momios": null
+   "momios": null,
+   "estado_partido": "post",
+   "marcador": {
+    "local": 1,
+    "visita": 0
+   }
   },
   {
    "away": "Borussia Dortmund",
@@ -26,7 +31,12 @@
    "liga_nombre": "Champions League",
    "proveedor": null,
    "estado": "pendiente",
-   "momios": null
+   "momios": null,
+   "estado_partido": "post",
+   "marcador": {
+    "local": 1,
+    "visita": 1
+   }
   },
   {
    "away": "Napoli",
@@ -39,7 +49,12 @@
    "liga_nombre": "Champions League",
    "proveedor": null,
    "estado": "pendiente",
-   "momios": null
+   "momios": null,
+   "estado_partido": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 2
+   }
   },
   {
    "away": "PSV Eindhoven",
@@ -52,7 +67,12 @@
    "liga_nombre": "Champions League",
    "proveedor": null,
    "estado": "pendiente",
-   "momios": null
+   "momios": null,
+   "estado_partido": "post",
+   "marcador": {
+    "local": 5,
+    "visita": 1
+   }
   },
   {
    "away": "Liverpool",
@@ -65,7 +85,12 @@
    "liga_nombre": "Champions League",
    "proveedor": null,
    "estado": "pendiente",
-   "momios": null
+   "momios": null,
+   "estado_partido": "post",
+   "marcador": {
+    "local": 0,
+    "visita": 3
+   }
   },
   {
    "away": "VfB Stuttgart",
@@ -78,7 +103,12 @@
    "liga_nombre": "Champions League",
    "proveedor": null,
    "estado": "pendiente",
-   "momios": null
+   "momios": null,
+   "estado_partido": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 0
+   }
   },
   {
    "away": "Bayern Munich",
@@ -91,7 +121,12 @@
    "liga_nombre": "Champions League",
    "proveedor": null,
    "estado": "pendiente",
-   "momios": null
+   "momios": null,
+   "estado_partido": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 1
+   }
   },
   {
    "away": "AS Roma",
@@ -104,7 +139,12 @@
    "liga_nombre": "Champions League",
    "proveedor": null,
    "estado": "pendiente",
-   "momios": null
+   "momios": null,
+   "estado_partido": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 2
+   }
   },
   {
    "away": "Manchester United",
@@ -117,7 +157,12 @@
    "liga_nombre": "Champions League",
    "proveedor": null,
    "estado": "pendiente",
-   "momios": null
+   "momios": null,
+   "estado_partido": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 2
+   }
   },
   {
    "away": "AFC Bournemouth",
@@ -148,7 +193,9 @@
      "away_linea": -0.5,
      "away": 2.0
     }
-   }
+   },
+   "estado_partido": "pre",
+   "marcador": null
   },
   {
    "away": "Bayer Leverkusen",
@@ -171,15 +218,17 @@
     "total": {
      "linea": 3.5,
      "over": 2.2,
-     "under": 1.6896551724137931
+     "under": 1.6666666666666665
     },
     "spread": {
      "home_linea": 0.5,
      "home": 2.15,
      "away_linea": -0.5,
-     "away": 1.606060606060606
+     "away": 1.625
     }
-   }
+   },
+   "estado_partido": "pre",
+   "marcador": null
   },
   {
    "away": "AC Milan",
@@ -210,7 +259,9 @@
      "away_linea": -0.5,
      "away": 2.3
     }
-   }
+   },
+   "estado_partido": "pre",
+   "marcador": null
   },
   {
    "home": "Toluca",
@@ -233,7 +284,7 @@
     "total": {
      "linea": 3.5,
      "over": 2.25,
-     "under": 1.606060606060606
+     "under": 1.5882352941176472
     },
     "spread": {
      "home_linea": -1.5,
@@ -241,7 +292,9 @@
      "away_linea": 1.5,
      "away": 1.6451612903225805
     }
-   }
+   },
+   "estado_partido": "pre",
+   "marcador": null
   },
   {
    "home": "Monterrey",
@@ -272,7 +325,9 @@
      "away_linea": 0.5,
      "away": 1.625
     }
-   }
+   },
+   "estado_partido": "pre",
+   "marcador": null
   },
   {
    "home": "Pachuca",
@@ -303,7 +358,9 @@
      "away_linea": -0.5,
      "away": 2.4
     }
-   }
+   },
+   "estado_partido": "pre",
+   "marcador": null
   },
   {
    "home": "León",
@@ -334,7 +391,9 @@
      "away_linea": -0.5,
      "away": 2.05
     }
-   }
+   },
+   "estado_partido": "pre",
+   "marcador": null
   },
   {
    "home": "Sabah FK",
@@ -347,7 +406,12 @@
    "liga_nombre": "Champions League",
    "proveedor": null,
    "estado": "pendiente",
-   "momios": null
+   "momios": null,
+   "estado_partido": "post",
+   "marcador": {
+    "local": 1,
+    "visita": 4
+   }
   },
   {
    "home": "Slavia Prague",
@@ -360,7 +424,12 @@
    "liga_nombre": "Champions League",
    "proveedor": null,
    "estado": "pendiente",
-   "momios": null
+   "momios": null,
+   "estado_partido": "post",
+   "marcador": {
+    "local": 0,
+    "visita": 1
+   }
   },
   {
    "home": "Atlético Madrid",
@@ -373,7 +442,12 @@
    "liga_nombre": "Champions League",
    "proveedor": null,
    "estado": "pendiente",
-   "momios": null
+   "momios": null,
+   "estado_partido": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 0
+   }
   },
   {
    "home": "Shakhtar Donetsk",
@@ -386,7 +460,12 @@
    "liga_nombre": "Champions League",
    "proveedor": null,
    "estado": "pendiente",
-   "momios": null
+   "momios": null,
+   "estado_partido": "post",
+   "marcador": {
+    "local": 0,
+    "visita": 1
+   }
   },
   {
    "home": "Besiktas",
@@ -417,7 +496,9 @@
      "away_linea": 1.5,
      "away": 2.1
     }
-   }
+   },
+   "estado_partido": "pre",
+   "marcador": null
   },
   {
    "home": "Marseille",
@@ -448,7 +529,9 @@
      "away_linea": 1.5,
      "away": 1.8
     }
-   }
+   },
+   "estado_partido": "pre",
+   "marcador": null
   },
   {
    "home": "RB Salzburg",
@@ -479,7 +562,9 @@
      "away_linea": 2.5,
      "away": 1.6666666666666665
     }
-   }
+   },
+   "estado_partido": "pre",
+   "marcador": null
   },
   {
    "home": "Union St.-Gilloise",
@@ -510,7 +595,9 @@
      "away_linea": 1.5,
      "away": 1.8333333333333335
     }
-   }
+   },
+   "estado_partido": "pre",
+   "marcador": null
   },
   {
    "home": "Viktoria Plzen",
@@ -541,7 +628,9 @@
      "away_linea": -1.5,
      "away": 2.1
     }
-   }
+   },
+   "estado_partido": "pre",
+   "marcador": null
   },
   {
    "home": "Crystal Palace",
@@ -572,7 +661,9 @@
      "away_linea": 0.5,
      "away": 1.7407407407407407
     }
-   }
+   },
+   "estado_partido": "pre",
+   "marcador": null
   },
   {
    "home": "Ferencvaros",
@@ -599,11 +690,13 @@
     },
     "spread": {
      "home_linea": -1.5,
-     "home": 1.9090909090909092,
+     "home": 1.9523809523809523,
      "away_linea": 1.5,
-     "away": 1.8
+     "away": 1.7692307692307692
     }
-   }
+   },
+   "estado_partido": "pre",
+   "marcador": null
   },
   {
    "home": "Juventus",
@@ -634,7 +727,9 @@
      "away_linea": 2.5,
      "away": 1.606060606060606
     }
-   }
+   },
+   "estado_partido": "pre",
+   "marcador": null
   },
   {
    "home": "Lyon",
@@ -665,7 +760,9 @@
      "away_linea": 2.5,
      "away": 1.5882352941176472
     }
-   }
+   },
+   "estado_partido": "pre",
+   "marcador": null
   },
   {
    "home": "NEC Nijmegen",
@@ -696,7 +793,9 @@
      "away_linea": -0.5,
      "away": 2.0
     }
-   }
+   },
+   "estado_partido": "pre",
+   "marcador": null
   },
   {
    "home": "OFI Crete",
@@ -727,7 +826,9 @@
      "away_linea": -0.5,
      "away": 1.7142857142857144
     }
-   }
+   },
+   "estado_partido": "pre",
+   "marcador": null
   },
   {
    "home": "Sparta Prague",
@@ -758,7 +859,9 @@
      "away_linea": -0.5,
      "away": 2.15
     }
-   }
+   },
+   "estado_partido": "pre",
+   "marcador": null
   },
   {
    "home": "Sunderland",
@@ -789,7 +892,9 @@
      "away_linea": 1.5,
      "away": 2.05
     }
-   }
+   },
+   "estado_partido": "pre",
+   "marcador": null
   },
   {
    "home": "Torreense",
@@ -820,7 +925,9 @@
      "away_linea": -0.5,
      "away": 1.606060606060606
     }
-   }
+   },
+   "estado_partido": "pre",
+   "marcador": null
   },
   {
    "home": "TSG Hoffenheim",
@@ -851,7 +958,9 @@
      "away_linea": 1.5,
      "away": 1.9090909090909092
     }
-   }
+   },
+   "estado_partido": "pre",
+   "marcador": null
   }
  ]
 }

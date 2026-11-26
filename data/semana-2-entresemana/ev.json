@@ -9,6 +9,11 @@
    "liga": "Champions League",
    "proveedor": null,
    "estado": "pendiente",
+   "estado_partido": "post",
+   "marcador": {
+    "local": 1,
+    "visita": 0
+   },
    "mejor_pick": null,
    "mejor_ev": null,
    "mejor_decimal": null,
@@ -35,6 +40,11 @@
    "liga": "Champions League",
    "proveedor": null,
    "estado": "pendiente",
+   "estado_partido": "post",
+   "marcador": {
+    "local": 1,
+    "visita": 1
+   },
    "mejor_pick": null,
    "mejor_ev": null,
    "mejor_decimal": null,
@@ -61,6 +71,11 @@
    "liga": "Champions League",
    "proveedor": null,
    "estado": "pendiente",
+   "estado_partido": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 2
+   },
    "mejor_pick": null,
    "mejor_ev": null,
    "mejor_decimal": null,
@@ -87,6 +102,11 @@
    "liga": "Champions League",
    "proveedor": null,
    "estado": "pendiente",
+   "estado_partido": "post",
+   "marcador": {
+    "local": 5,
+    "visita": 1
+   },
    "mejor_pick": null,
    "mejor_ev": null,
    "mejor_decimal": null,
@@ -113,6 +133,11 @@
    "liga": "Champions League",
    "proveedor": null,
    "estado": "pendiente",
+   "estado_partido": "post",
+   "marcador": {
+    "local": 0,
+    "visita": 3
+   },
    "mejor_pick": null,
    "mejor_ev": null,
    "mejor_decimal": null,
@@ -139,6 +164,11 @@
    "liga": "Champions League",
    "proveedor": null,
    "estado": "pendiente",
+   "estado_partido": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 0
+   },
    "mejor_pick": null,
    "mejor_ev": null,
    "mejor_decimal": null,
@@ -165,6 +195,11 @@
    "liga": "Champions League",
    "proveedor": null,
    "estado": "pendiente",
+   "estado_partido": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 1
+   },
    "mejor_pick": null,
    "mejor_ev": null,
    "mejor_decimal": null,
@@ -191,6 +226,11 @@
    "liga": "Champions League",
    "proveedor": null,
    "estado": "pendiente",
+   "estado_partido": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 2
+   },
    "mejor_pick": null,
    "mejor_ev": null,
    "mejor_decimal": null,
@@ -217,6 +257,11 @@
    "liga": "Champions League",
    "proveedor": null,
    "estado": "pendiente",
+   "estado_partido": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 2
+   },
    "mejor_pick": null,
    "mejor_ev": null,
    "mejor_decimal": null,
@@ -243,6 +288,8 @@
    "liga": "Europa League",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mejor_pick": "Visita",
    "mejor_ev": 0.865157374929943,
    "mejor_decimal": 2.1,
@@ -326,9 +373,11 @@
    "liga": "Europa League",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mejor_pick": "Menos 3.5",
-   "mejor_ev": 0.5568310935486962,
-   "mejor_decimal": 1.6896551724137931,
+   "mejor_ev": 0.5356497181262649,
+   "mejor_decimal": 1.6666666666666665,
    "mejor_prob": 92.1389830875759,
    "semaforo": "verde",
    "mercados": {
@@ -358,12 +407,12 @@
      "momios": {
       "linea": 3.5,
       "over": 2.2,
-      "under": 1.6896551724137931
+      "under": 1.6666666666666665
      },
      "p_over": 7.8610169124241045,
      "ev": {
       "mas": -0.8270576279266697,
-      "menos": 0.5568310935486962
+      "menos": 0.5356497181262649
      }
     },
     "spread": {
@@ -372,12 +421,12 @@
       "home_linea": 0.5,
       "home": 2.15,
       "away_linea": -0.5,
-      "away": 1.606060606060606
+      "away": 1.625
      },
      "p_cubre_local": 31.535279807255424,
      "ev": {
       "local": -0.32199148414400847,
-      "visitante": 0.09958490006529153
+      "visitante": 0.11255170313209928
      }
     }
    },
@@ -391,13 +440,13 @@
     "total": {
      "linea": 3.5,
      "over": 2.2,
-     "under": 1.6896551724137931
+     "under": 1.6666666666666665
     },
     "spread": {
      "home_linea": 0.5,
      "home": 2.15,
      "away_linea": -0.5,
-     "away": 1.606060606060606
+     "away": 1.625
     }
    }
   },
@@ -409,6 +458,8 @@
    "liga": "Europa League",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mejor_pick": "Local",
    "mejor_ev": 0.7579220526575015,
    "mejor_decimal": 2.85,
@@ -492,6 +543,8 @@
    "liga": "Liga MX",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mejor_pick": "Más 3.5",
    "mejor_ev": 0.8983496125597539,
    "mejor_decimal": 2.25,
@@ -524,12 +577,12 @@
      "momios": {
       "linea": 3.5,
       "over": 2.25,
-      "under": 1.606060606060606
+      "under": 1.5882352941176472
      },
      "p_over": 84.37109389154462,
      "ev": {
       "mas": 0.8983496125597539,
-      "menos": -0.7489902958338984
+      "menos": -0.7517761971010027
      }
     },
     "spread": {
@@ -557,7 +610,7 @@
     "total": {
      "linea": 3.5,
      "over": 2.25,
-     "under": 1.606060606060606
+     "under": 1.5882352941176472
     },
     "spread": {
      "home_linea": -1.5,
@@ -575,6 +628,8 @@
    "liga": "Liga MX",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mejor_pick": "Visita",
    "mejor_ev": 0.0879778377563234,
    "mejor_decimal": 3.15,
@@ -658,6 +713,8 @@
    "liga": "Liga MX",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mejor_pick": "Menos 2.5",
    "mejor_ev": 0.41267461031180064,
    "mejor_decimal": 2.0,
@@ -741,6 +798,8 @@
    "liga": "Liga MX",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mejor_pick": "Menos 2.5",
    "mejor_ev": 0.09251684438595986,
    "mejor_decimal": 2.05,
@@ -824,6 +883,11 @@
    "liga": "Champions League",
    "proveedor": null,
    "estado": "pendiente",
+   "estado_partido": "post",
+   "marcador": {
+    "local": 1,
+    "visita": 4
+   },
    "mejor_pick": null,
    "mejor_ev": null,
    "mejor_decimal": null,
@@ -850,6 +914,11 @@
    "liga": "Champions League",
    "proveedor": null,
    "estado": "pendiente",
+   "estado_partido": "post",
+   "marcador": {
+    "local": 0,
+    "visita": 1
+   },
    "mejor_pick": null,
    "mejor_ev": null,
    "mejor_decimal": null,
@@ -876,6 +945,11 @@
    "liga": "Champions League",
    "proveedor": null,
    "estado": "pendiente",
+   "estado_partido": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 0
+   },
    "mejor_pick": null,
    "mejor_ev": null,
    "mejor_decimal": null,
@@ -902,6 +976,11 @@
    "liga": "Champions League",
    "proveedor": null,
    "estado": "pendiente",
+   "estado_partido": "post",
+   "marcador": {
+    "local": 0,
+    "visita": 1
+   },
    "mejor_pick": null,
    "mejor_ev": null,
    "mejor_decimal": null,
@@ -928,6 +1007,8 @@
    "liga": "Europa League",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mejor_pick": "Spread local -1.5",
    "mejor_ev": 0.32614071941468614,
    "mejor_decimal": 1.6451612903225805,
@@ -1011,6 +1092,8 @@
    "liga": "Europa League",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mejor_pick": "Visita",
    "mejor_ev": 3.800954781664829,
    "mejor_decimal": 8.5,
@@ -1094,6 +1177,8 @@
    "liga": "Europa League",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mejor_pick": "Visita",
    "mejor_ev": 3.429456006068956,
    "mejor_decimal": 14.0,
@@ -1177,6 +1262,8 @@
    "liga": "Europa League",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mejor_pick": "Spread local -1.5",
    "mejor_ev": 0.7530461364850218,
    "mejor_decimal": 1.8695652173913042,
@@ -1260,6 +1347,8 @@
    "liga": "Europa League",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mejor_pick": "Spread visitante -1.5",
    "mejor_ev": 0.7833706394280324,
    "mejor_decimal": 2.1,
@@ -1343,6 +1432,8 @@
    "liga": "Europa League",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mejor_pick": "Visita",
    "mejor_ev": 0.8418527490714596,
    "mejor_decimal": 3.2,
@@ -1426,6 +1517,8 @@
    "liga": "Europa League",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mejor_pick": "Más 3.5",
    "mejor_ev": 0.6082159066781991,
    "mejor_decimal": 2.35,
@@ -1470,14 +1563,14 @@
      "home_linea": -1.5,
      "momios": {
       "home_linea": -1.5,
-      "home": 1.9090909090909092,
+      "home": 1.9523809523809523,
       "away_linea": 1.5,
-      "away": 1.8
+      "away": 1.7692307692307692
      },
      "p_cubre_local": 80.51741421489957,
      "ev": {
-      "local": 0.5371506350117192,
-      "visitante": -0.6493134558681923
+      "local": 0.5720066584813726,
+      "visitante": -0.6553080976482233
      }
     }
    },
@@ -1495,9 +1588,9 @@
     },
     "spread": {
      "home_linea": -1.5,
-     "home": 1.9090909090909092,
+     "home": 1.9523809523809523,
      "away_linea": 1.5,
-     "away": 1.8
+     "away": 1.7692307692307692
     }
    }
   },
@@ -1509,6 +1602,8 @@
    "liga": "Europa League",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mejor_pick": "Visita",
    "mejor_ev": 0.2958866323237206,
    "mejor_decimal": 14.0,
@@ -1592,6 +1687,8 @@
    "liga": "Europa League",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mejor_pick": "Menos 3.5",
    "mejor_ev": 0.17023381246892888,
    "mejor_decimal": 1.8333333333333335,
@@ -1675,6 +1772,8 @@
    "liga": "Europa League",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mejor_pick": "Menos 3.5",
    "mejor_ev": 0.2314226588239532,
    "mejor_decimal": 1.6451612903225805,
@@ -1758,6 +1857,8 @@
    "liga": "Europa League",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mejor_pick": "Menos 2.5",
    "mejor_ev": 0.653835819318523,
    "mejor_decimal": 2.15,
@@ -1841,6 +1942,8 @@
    "liga": "Europa League",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mejor_pick": "Visita",
    "mejor_ev": 0.32433796382496816,
    "mejor_decimal": 2.3,
@@ -1924,6 +2027,8 @@
    "liga": "Europa League",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mejor_pick": "Visita",
    "mejor_ev": 1.4839012944645331,
    "mejor_decimal": 11.0,
@@ -2007,6 +2112,8 @@
    "liga": "Europa League",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mejor_pick": "Local",
    "mejor_ev": 1.5452896273351584,
    "mejor_decimal": 4.7,
@@ -2090,6 +2197,8 @@
    "liga": "Europa League",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mejor_pick": "Empate",
    "mejor_ev": 0.5364113028000119,
    "mejor_decimal": 5.75,
