@@ -29,7 +29,7 @@ dia). Un partido terminado sin resumen, o sin boxscore, queda FUERA
 del archivo (la pagina muestra "Estadisticas pendientes", sin ceros
 inventados). Los resumenes crudos se guardan en
 data/<config>/raw/summary_<liga>_<id>.json como cache auditable
-(raw/ no se sube, regla 7 del jefe).
+(raw/ SÍ se sube: el workflow lo incluye en el commit con `git add data/`).
 
 Uso:
     python3 scripts/calcular_estadisticas.py --config scripts/config/semana-2-entresemana.json
