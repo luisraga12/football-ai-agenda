@@ -41,8 +41,10 @@
 # corriente y los agrega al config; la primera corrida de cada config
 # solo establece la línea base.
 #
-# El workflow usa solo `GITHUB_TOKEN` (sin secretos adicionales) y no
-# publica ninguna clave: los datos vienen de la API pública de ESPN.
+# El workflow usa `GITHUB_TOKEN` y el secreto opcional `BSD_TOKEN`
+# (token pelado de Bzzoiro; si no existe, recolectar_momios.py salta la
+# segunda fuente sin romper nada y los datos siguen viniendo de ESPN).
+# Ninguna clave se publica: los datos se consultan en privado.
 name: Actualizar datos, Poisson, momios y EV
 
 on:
@@ -57,6 +59,8 @@ permissions:
 jobs:
   actualizar:
     runs-on: ubuntu-latest
+    env:
+      BSD_TOKEN: ${{ secrets.BSD_TOKEN }}
     steps:
       - uses: actions/checkout@v4
       - name: Registrar hora de arranque

@@ -23,13 +23,20 @@ solos a los partidos descubiertos:
     competicion resuelta desde los schedule_*.json del raw. Estadio
     y alineacion oficial (Semana 10, orden del jefe 26 nov 2026)
     salen del summary de ESPN por evento: gameInfo.venue y
-    rosters[].roster filtrado por starter.
+    rosters[].roster filtrado por starter. Del MISMO summary salen
+    tambien la tabla (standings.groups) y el historial directo
+    (seasonseries, "Last 5 Matchups"). Para la Liguilla MX el
+    summary no trae tabla (fase final sin tabla): se usa la tabla
+    regular final (Apertura 2026) del summary de un partido de la
+    ultima jornada regular (9 nov 2026).
 
 Reglas (nada inventado, orden del jefe):
-  1. Lo que no tiene fuente en el repo queda en null y la pagina lo
-     muestra como pendiente: h2h y standings no tienen fuente en el
-     repo (el endpoint de posiciones de ESPN no responde), asi que
-     van en null en las entradas nuevas.
+  1. Lo que no tiene fuente queda en null y la pagina lo muestra
+     como pendiente. h2h y standings SI tienen fuente: el summary
+     de ESPN por evento (tabla en standings.groups, historial en
+     seasonseries). El endpoint /standings de ESPN no responde
+     (404), no se usa. Si alguna fuente falla, el campo queda en
+     null y se avisa, nunca se inventa.
   2. Las 28 entradas que ya existen embebidas en partido.html se
      PRESERVAN tal cual (con su h2h, sus standings y sus ultimos 5
      con copas, que el generador no puede reproducir desde
@@ -242,17 +249,167 @@ def extraer_estadio_lineup(summary, home, away, home_id, away_id):
     }
 
 
+def _fila_tabla(entries, team_id, team_name):
+    """Fila de la tabla ESPN (DETAIL.standings) para un equipo, o None.
+
+    entries: summary.standings.groups[0].standings.entries. La fila
+    DETAIL lleva los 8 campos del embebido, todos texto: pos (rank),
+    pts, pj, g (ganados), e (empatados), p (perdidos), dg
+    (pointDifferential, ya con signo) y récord "G-E-P". Se busca por
+    id de equipo y, si no hay id, por nombre.
+    """
+    for e in entries or []:
+        if (str(e.get("id")) == str(team_id)
+                or e.get("team") == team_name):
+            st = {x.get("name"): x.get("displayValue")
+                  for x in e.get("stats") or []}
+            try:
+                g, em, p = st["wins"], st["ties"], st["losses"]
+            except KeyError:
+                return None
+            return {
+                "pos": st.get("rank"), "pts": st.get("points"),
+                "pj": st.get("gamesPlayed"), "g": g, "e": em, "p": p,
+                "dg": st.get("pointDifferential"),
+                "récord": f"{g}-{em}-{p}",
+            }
+    return None
+
+
+def extraer_standings(summary, home_id, away_id, home, away):
+    """(standings, header) desde summary.standings.groups, o (None, None).
+
+    La tabla es la de la competicion del partido, en vivo. Devuelve
+    standings solo si estan los dos equipos; si no, None (la pagina
+    muestra "pendiente").
+    """
+    grupos = ((summary or {}).get("standings") or {}).get("groups") or []
+    for g in grupos:
+        entries = (g.get("standings") or {}).get("entries") or []
+        if not entries:
+            continue
+        casa = _fila_tabla(entries, home_id, home)
+        fuera = _fila_tabla(entries, away_id, away)
+        if casa and fuera:
+            return {"home": casa, "away": fuera}, g.get("header")
+    return None, None
+
+
+def _resumen_serie(summary_en):
+    """'BMG leads series 2-1-2' -> 'BMG lidera la serie 2-1-2';
+    'Series tied 2-2' -> 'Serie empatada 2-2'. None si no se reconoce
+    (el llamador usa una etiqueta neutra, nunca un registro inventado)."""
+    if not summary_en:
+        return None
+    m = re.match(r"^(\w+) leads series ([\d-]+)$", summary_en)
+    if m:
+        return f"{m.group(1)} lidera la serie {m.group(2)}"
+    m = re.match(r"^Series tied ([\d-]+)$", summary_en)
+    if m:
+        return f"Serie empatada {m.group(1)}"
+    return None
+
+
+def _fecha_corta_h2h(iso):
+    """'2026-01-31T14:30:00Z' -> '31 ene 2026' (fecha UTC, igual que
+    lastFive en convertir_last5: el repo usa la fecha ISO)."""
+    d = date.fromisoformat(iso[:10])
+    return f"{d.day} {MESES_ES[d.month - 1]} {d.year}"
+
+
+def extraer_h2h(summary):
+    """DETAIL.h2h desde summary.seasonseries (head-to-head), o None.
+
+    Formato identico al embebido (verificado contra
+    werder-bremen-vs-borussia-monchengladbach: resumen, etiqueta y
+    los 5 partidos coinciden con el summary de ESPN): resumen
+    traducido del summary de ESPN, etiqueta = shortSummary
+    ("Last 5 Matchups"), partidos del mas reciente al mas antiguo.
+    """
+    for serie in (summary or {}).get("seasonseries") or []:
+        if serie.get("type") != "head-to-head":
+            continue
+        resumen = _resumen_serie(serie.get("summary"))
+        partidos = []
+        for ev in serie.get("events") or []:
+            comps = ev.get("competitors") or []
+            casa = next((c for c in comps
+                         if c.get("homeAway") == "home"), None)
+            fuera = next((c for c in comps
+                          if c.get("homeAway") == "away"), None)
+            if not casa or not fuera:
+                continue
+            partidos.append({
+                "fecha": _fecha_corta_h2h(ev.get("date") or ""),
+                "local": (casa.get("team") or {}).get("displayName"),
+                "visitante": (fuera.get("team") or {}).get("displayName"),
+                "goles_local": str(casa.get("score")),
+                "goles_visitante": str(fuera.get("score")),
+            })
+        if not partidos:
+            return None
+        return {
+            "resumen": resumen or "Historial directo",
+            "etiqueta": serie.get("shortSummary") or "Last 5 Matchups",
+            "partidos": partidos,
+        }
+    return None
+
+
+_TABLA_MX_REGULAR = None  # cache por corrida: (entries, header) o False
+
+
+def tabla_mx_regular():
+    """Tabla regular final (Apertura 2026) para la Liguilla MX.
+
+    Los summaries de Liguilla traen standings.groups vacio (fase
+    final sin tabla). La tabla regular final sale del summary de un
+    partido de la ultima jornada regular: se busca el primer evento
+    terminado en el scoreboard mex.1 del 8 nov 2026 (fecha en hora
+    local CST — los eventos salen con fecha UTC 9 nov; el
+    scoreboard con dates=20261109 devuelve 0 eventos).
+    Cache por corrida; None si falla (la tabla MX queda en null).
+    """
+    global _TABLA_MX_REGULAR
+    if _TABLA_MX_REGULAR is not None:
+        return _TABLA_MX_REGULAR or None
+    _TABLA_MX_REGULAR = False
+    try:
+        req = urllib.request.Request(
+            f"{ESPN_BASES[0]}/mex.1/scoreboard?dates=20261108",
+            headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=20) as r:
+            sb = json.load(r)
+        for ev in sb.get("events") or []:
+            if (ev.get("status") or {}).get("type", {}).get("state") != "post":
+                continue
+            summary = fetch_summary("mex.1", ev["id"])
+            if summary is None:
+                continue
+            grupos = (summary.get("standings") or {}).get("groups") or []
+            for g in grupos:
+                entries = (g.get("standings") or {}).get("entries") or []
+                if entries:
+                    _TABLA_MX_REGULAR = (entries, g.get("header"))
+                    return _TABLA_MX_REGULAR
+    except Exception as exc:
+        print(f"AVISO: tabla regular MX no disponible ({exc})")
+    return None
+
+
 def resumen_partido(liga, event_id, home, away, home_id, away_id,
                     dirs, avisos, key):
-    """(estadio, lineup) del partido desde el summary ESPN.
+    """(estadio, lineup, summary) del partido desde el summary ESPN.
 
     Fetch en vivo por evento; si falla, respaldo con el summary
     guardado en raw/ (si lo hay); si no hay nada, fail-soft (estadio
-    None, alineacion_publicada False). Nunca se inventa nada.
+    None, alineacion_publicada False, summary None). Nunca se inventa
+    nada. El summary se devuelve para reutilizarlo (standings, h2h)
+    sin volver a llamar a ESPN.
     """
     vacio = (None, {"alineacion_publicada": False,
                     "jugadores": {"local": [], "visita": []},
-                    "jugadores_en_roster": 0})
+                    "jugadores_en_roster": 0}, None)
     if not event_id:
         return vacio
     summary = fetch_summary(liga, event_id)
@@ -266,7 +423,9 @@ def resumen_partido(liga, event_id, home, away, home_id, away_id,
                       "pendientes)")
         return vacio
     time.sleep(0.2)
-    return extraer_estadio_lineup(summary, home, away, home_id, away_id)
+    estadio, lineup = extraer_estadio_lineup(
+        summary, home, away, home_id, away_id)
+    return estadio, lineup, summary
 
 
 def fecha_corta(iso):
@@ -382,9 +541,21 @@ def main():
             # campos existentes.
             entrada = dict(embebido[key])
             entrada["fuente_detalle"] = "embebido"
-            estadio, lineup = resumen_partido(
+            estadio, lineup, _summary = resumen_partido(
                 p["liga"], entrada.get("espn_event_id"), home, away,
                 p["home_id"], p["away_id"], dirs, avisos, key)
+            # Septima ronda, Tarea 2: a la entrada preservada SOLO se
+            # le añaden estadio y lineup (Semana 10) MAS el h2h cuando
+            # viene en null (no se toca ningun campo existente: el h2h
+            # preservado, los standings y los ultimos 5 con copas se
+            # quedan tal cual).
+            if not entrada.get("h2h"):
+                h2h_pres = extraer_h2h(_summary)
+                if h2h_pres is not None:
+                    entrada["h2h"] = h2h_pres
+                else:
+                    avisos.append(f"{home} vs {away}: sin historial "
+                                  "directo ESPN (h2h pendiente)")
             entrada["estadio"] = estadio
             entrada["lineup"] = lineup
             detalle[key] = entrada
@@ -425,9 +596,34 @@ def main():
             for j in juegos:
                 del j["fecha_iso"]
             lf[lado] = juegos
-        estadio, lineup = resumen_partido(
+        estadio, lineup, summary = resumen_partido(
             p["liga"], (ver or {}).get("espn_id"), home, away,
             p["home_id"], p["away_id"], dirs, avisos, key)
+        standings, header_tabla = extraer_standings(
+            summary, p["home_id"], p["away_id"], home, away)
+        if standings is None and p["liga"] == "mex.1":
+            # Liguilla: el summary no trae tabla; usar la regular final.
+            ref = tabla_mx_regular()
+            if ref is not None:
+                entries_mx, header_mx = ref
+                casa = _fila_tabla(entries_mx, p["home_id"], home)
+                fuera = _fila_tabla(entries_mx, p["away_id"], away)
+                if casa and fuera:
+                    standings = {"home": casa, "away": fuera}
+                    header_tabla = header_mx
+                else:
+                    avisos.append(f"{home} vs {away}: equipos sin "
+                                  "fila en la tabla regular MX")
+            else:
+                avisos.append(f"{home} vs {away}: sin tabla regular MX "
+                              "(standings pendiente)")
+        h2h = extraer_h2h(summary)
+        if standings is None:
+            avisos.append(f"{home} vs {away}: sin standings ESPN "
+                          "(tabla pendiente)")
+        if h2h is None:
+            avisos.append(f"{home} vs {away}: sin historial directo "
+                          "ESPN (h2h pendiente)")
         detalle[key] = {
             "home": home, "away": away, "league": liga_display,
             "day": DIAS_ES[fecha.weekday()],
@@ -435,11 +631,12 @@ def main():
                      if hora else None),
             "espn_event_id": (ver or {}).get("espn_id"),
             "lastFive": lf,
-            "h2h": None,
-            "standings": None,
+            "h2h": h2h,
+            "standings": standings,
             "lineup": lineup,
             "estadio": estadio,
-            "sources": {"standings_header": liga_display + " Standings"},
+            "sources": {"standings_header":
+                        header_tabla or liga_display + " Standings"},
             "fuente_detalle": "generado",
         }
 
@@ -470,6 +667,8 @@ def main():
     n_estadio = sum(1 for e in detalle.values() if e.get("estadio"))
     n_xi = sum(1 for e in detalle.values()
                if (e.get("lineup") or {}).get("alineacion_publicada"))
+    n_standings = sum(1 for e in detalle.values() if e.get("standings"))
+    n_h2h = sum(1 for e in detalle.values() if e.get("h2h"))
     salida = {
         "version": 1,
         "generado_en": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -477,7 +676,8 @@ def main():
         "fuente": ("config + ev.json + verified_events.json + "
                    "teams_last5.json + schedule_*.json + DETAIL "
                    "embebido en partido.html (preservado) + summary "
-                   "ESPN por evento (estadio + alineacion oficial)"),
+                   "ESPN por evento (estadio + alineacion oficial + "
+                   "standings + h2h; tabla regular MX para Liguilla)"),
         "partidos_vivo": partidos_vivo,
         "detalle": detalle,
         "resumen": {
@@ -488,6 +688,8 @@ def main():
             "detalle_preservado_embebido": n_preservados,
             "detalle_con_estadio": n_estadio,
             "detalle_con_alineacion_oficial": n_xi,
+            "detalle_con_standings": n_standings,
+            "detalle_con_h2h": n_h2h,
             "avisos": avisos,
         },
     }
@@ -501,6 +703,7 @@ def main():
           f"{len(detalle)} detalle ({n_nuevos} generados, "
           f"{n_preservados} preservados del embebido), "
           f"{n_estadio} con estadio, {n_xi} con alineacion oficial, "
+          f"{n_standings} con standings, {n_h2h} con h2h, "
           f"{len(avisos)} aviso(s).")
     return 0
 
