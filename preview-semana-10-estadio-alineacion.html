@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preview Semana 10 — Estadio y alineación oficial — Football AI Agenda</title>
+<style>
+:root{--bg:#F3F5EF;--surface:#FFFFFF;--surface-2:#E9EEE1;--surface-3:#DDE6CF;--ink:#11160E;--ink-2:#3D4738;--muted:#66725E;--line:#D8E0CC;--accent:#5E8F06;--accent-strong:#4A7303;--accent-soft:#E4F0C8;--on-accent:#FFFFFF;--blue:#1D6FE0;--blue-soft:#DFEBFC;--live:#D92D20;--live-soft:#FDEBE6;--amber:#B54708;--amber-soft:#FEF3E2;--hero-ink:#F5F8EE;--shadow:0 10px 30px rgba(20,35,8,.10);--radius:18px}
+@media (prefers-color-scheme: dark){:root{--bg:#090C08;--surface:#12160F;--surface-2:#1A2015;--surface-3:#242E1E;--ink:#F1F5E9;--ink-2:#CBD6BE;--muted:#93A187;--line:#28331F;--accent:#BFE84A;--accent-strong:#D2F76B;--accent-soft:#26351A;--on-accent:#141C06;--blue:#6FA8F5;--blue-soft:#1B2C47;--live:#FF6B61;--live-soft:#3D1618;--amber:#FDBA74;--amber-soft:#3A2A14;--shadow:0 10px 30px rgba(0,0,0,.45)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Manrope,system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:0 18px 40px}
+h1{font-size:1.4rem;margin:18px 0 4px}
+h4{font-size:1.05rem;margin:16px 0 8px}
+a{color:var(--accent-strong);font-weight:800;text-decoration:none}
+.preview-box{background:var(--accent-soft);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin:18px 0}
+.preview-box p{margin:6px 0;color:var(--ink-2);font-size:.92rem;line-height:1.5}
+.det-head{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin:18px 0}
+.det-teams{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;margin:16px 0 8px}
+.det-team{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;min-width:0}
+.det-team b{font-size:1.2rem;line-height:1.15}
+.det-vs{color:var(--muted);font-weight:900;font-size:1rem}
+.det-meta{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.chip{display:inline-flex;align-items:center;gap:6px;background:var(--surface-2);border-radius:999px;padding:7px 12px;font-size:.85rem;font-weight:700}
+.detail-pending{color:var(--muted);font-weight:700}
+.detail-note{color:var(--muted);font-size:.9rem}
+.det-section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:6px 18px 18px;margin:0 0 16px}
+.pitch-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:640px){.pitch-grid{grid-template-columns:1fr}}
+.pitch{position:relative;background:linear-gradient(180deg,#2E7A33,#1E5224);border-radius:14px;padding:12px;color:#fff;overflow:hidden}
+.pitch::before{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:rgba(255,255,255,.35)}
+.pitch::after{content:"";position:absolute;left:50%;top:50%;width:90px;height:90px;margin:-45px 0 0 -45px;border:2px solid rgba(255,255,255,.35);border-radius:50%;pointer-events:none}
+.pitch-head{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:.85rem;margin-bottom:4px;position:relative;z-index:1}
+.pitch-head b{font-size:.95rem}
+.pitch-row{display:flex;justify-content:space-evenly;gap:6px;padding:10px 0;position:relative;z-index:1}
+.pitch-player{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:0;flex:1}
+.pitch-dot{width:30px;height:30px;border-radius:50%;background:var(--surface);color:var(--ink);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.72rem;border:2px solid rgba(0,0,0,.18)}
+.pitch-name{font-size:.72rem;font-weight:700;text-align:center;line-height:1.2;text-shadow:0 1px 2px rgba(0,0,0,.55)}
+.pitch-note{color:rgba(255,255,255,.88);font-size:.78rem;margin:8px 0 0;position:relative;z-index:1}
+.check{font-size:.92rem;line-height:1.6;color:var(--ink-2)}
+.check b{color:var(--ink)}
+</style>
+</head>
+<body>
+<main class="wrap">
+<div class="preview-box">
+<p><b>Preview Semana 10 — estadio y alineación oficial (Empleado 2, 26 nov 2026).</b> Esta página prueba, con datos reales, el render que después se aplica a <code>partido.html</code>: el chip de estadio en la cabecera y la alineación oficial en cancha. Las funciones <code>estadioTexto</code>, <code>posCancha</code>, <code>xiOficial</code>, <code>pitchXI</code> y <code>pitchBlock</code> son las mismas que lleva <code>partido.html</code>; el CSS es el de <code>partido.html</code>.</p>
+<p>Datos reales: entradas <code>detalle</code> de <code>data/mapas.json</code> (Empleado 1, commit <code>e76e258</code>, 26 nov 2026 06:24 CST; fuente: summary ESPN por evento). Solo se embeben los campos que usa este render (<code>home</code>, <code>away</code>, <code>league</code>, <code>estadio</code>, <code>lineup</code>); nada inventado.</p>
+<p>Probar: <a href="?partido=toluca-vs-atlas">Toluca–Atlas (oficial 11+11)</a> · <a href="?partido=galatasaray-vs-aston-villa">Galatasaray–Aston Villa (oficial 11+11)</a> · <a href="?partido=pachuca-vs-guadalajara">Pachuca–Guadalajara (alineación por confirmar)</a></p>
+<p>Nota: esta preview no embebe el XI probable (<code>alineacion-probable.json</code>); en <code>partido.html</code>, cuando la oficial no está publicada, la cancha muestra el XI probable (· Probable) debajo del aviso, como en Semana 9. Ese camino es código existente, sin cambios.</p>
+</div>
+<div id="salida"></div>
+<div class="det-section"><h4>Verificación</h4><div class="check" id="verif"></div></div>
+</main>
+<script>
+"use strict";
+/* Datos reales (data/mapas.json, E1 e76e258): estadio + lineup tal cual. */
+var DETAIL = {
+"toluca-vs-atlas": {"home": "Toluca", "away": "Atlas", "league": "Liga MX", "estadio": {"nombre": "Estadio Nemesio Díez Riega", "ciudad": "Toluca", "pais": "Mexico"}, "lineup": {"alineacion_publicada": true, "jugadores_en_roster": 42, "jugadores": {"local": [{"jugador": "Luis García", "pos": "G", "dorsal": 22}, {"jugador": "Bruno Méndez", "pos": "CD-L", "dorsal": 4}, {"jugador": "Luan", "pos": "CD-R", "dorsal": 13}, {"jugador": "Jesús Gallardo", "pos": "LB", "dorsal": 20}, {"jugador": "Santiago Simón", "pos": "RB", "dorsal": 19}, {"jugador": "Jesús Angulo", "pos": "AM", "dorsal": 10}, {"jugador": "Nicolás Castro", "pos": "LM", "dorsal": 8}, {"jugador": "Franco Romero", "pos": "RM", "dorsal": 5}, {"jugador": "Paulinho", "pos": "F", "dorsal": 26}, {"jugador": "Alexis Vega", "pos": "AM-L", "dorsal": 9}, {"jugador": "Helinho", "pos": "AM-R", "dorsal": 11}], "visita": [{"jugador": "Camilo Vargas", "pos": "G", "dorsal": 12}, {"jugador": "Adonis Frias", "pos": "CD-L", "dorsal": 19}, {"jugador": "Manuel Capasso", "pos": "CD-R", "dorsal": 28}, {"jugador": "Milton Valenzuela", "pos": "LB", "dorsal": 16}, {"jugador": "Jorge Sánchez", "pos": "RB", "dorsal": 3}, {"jugador": "Elías Montiel", "pos": "AM", "dorsal": 18}, {"jugador": "Aldo Rocha", "pos": "LM", "dorsal": 26}, {"jugador": "Edgar Zaldivar", "pos": "RM", "dorsal": 6}, {"jugador": "Florián Monzón", "pos": "F", "dorsal": 9}, {"jugador": "Luís Esteves", "pos": "AM-L", "dorsal": 10}, {"jugador": "Kevin Zenón", "pos": "AM-R", "dorsal": 20}]}}},
+"galatasaray-vs-aston-villa": {"home": "Galatasaray", "away": "Aston Villa", "league": "Champions League", "estadio": {"nombre": "RAMS Park", "ciudad": "Istanbul", "pais": "Türkiye"}, "lineup": {"alineacion_publicada": true, "jugadores_en_roster": 43, "jugadores": {"local": [{"jugador": "Ugurcan Çakir", "pos": "G", "dorsal": 1}, {"jugador": "Abdülkerim Bardakçi", "pos": "CD-L", "dorsal": 42}, {"jugador": "Davinson Sánchez", "pos": "CD-R", "dorsal": 6}, {"jugador": "Ismail Jakobs", "pos": "LB", "dorsal": 4}, {"jugador": "Wilfried Singo", "pos": "RB", "dorsal": 90}, {"jugador": "Alexey Batrakov", "pos": "AM", "dorsal": 83}, {"jugador": "Lucas Torreira", "pos": "LM", "dorsal": 34}, {"jugador": "Mario Lemina", "pos": "RM", "dorsal": 99}, {"jugador": "Baris Alper Yilmaz", "pos": "F", "dorsal": 53}, {"jugador": "Eren Elmali", "pos": "AM-L", "dorsal": 17}, {"jugador": "Yunus Akgün", "pos": "AM-R", "dorsal": 11}], "visita": [{"jugador": "Zion Suzuki", "pos": "G", "dorsal": 1}, {"jugador": "Tyrone Mings", "pos": "CD-L", "dorsal": 5}, {"jugador": "Victor Lindelöf", "pos": "CD-R", "dorsal": 3}, {"jugador": "Ian Maatsen", "pos": "LB", "dorsal": 22}, {"jugador": "Taylor Harwood-Bellis", "pos": "RB", "dorsal": 4}, {"jugador": "John McGinn", "pos": "AM", "dorsal": 7}, {"jugador": "João Gomes", "pos": "LM", "dorsal": 35}, {"jugador": "Boubacar Kamara", "pos": "RM", "dorsal": 8}, {"jugador": "Nicolas Jackson", "pos": "F", "dorsal": 11}, {"jugador": "Johan Manzambi", "pos": "AM-L", "dorsal": 44}, {"jugador": "Alysson", "pos": "AM-R", "dorsal": 47}]}}},
+"pachuca-vs-guadalajara": {"home": "Pachuca", "away": "Guadalajara", "league": "Liga MX", "estadio": {"nombre": "Estadio Hidalgo", "ciudad": "Pachuca", "pais": "Mexico"}, "lineup": {"alineacion_publicada": false, "jugadores_en_roster": 0, "jugadores": {"local": [], "visita": []}}}
+};
+var XI_PROBABLE = {};
+function esc(s){ return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
+/* ---------- Estadio (Semana 10, 26 nov 2026, Empleado 2) ----------
+El estadio llega en DETAIL[slug].estadio (data/mapas.json, E1, summary
+ESPN gameInfo.venue: {nombre, ciudad, pais}); si no está publicado
+(estadio null o sin nombre) la cabecera dice "por confirmar". */
+function estadioTexto(d){
+var e = d && d.estadio;
+if (!e || !e.nombre) return "Estadio: por confirmar";
+var lugar = [e.ciudad, e.pais].filter(function(x){ return x; }).join(", ");
+return "Estadio: " + e.nombre + (lugar ? " · " + lugar : "");
+}
+/* ---------- Alineación oficial en cancha (Semana 10, 26 nov 2026) ----------
+El XI oficial llega en DETAIL[slug].lineup (data/mapas.json, E1, ESPN):
+{alineacion_publicada, jugadores: {local: [...11], visita: [...11]}},
+cada jugador {jugador, pos, dorsal}. Las posiciones de ESPN son
+granulares (CD-L, LB, AM-R, CF-L…); se normalizan a G/D/M/F para la
+cancha, como en Semana 9 (sin fotos, solo nombres). La formación se
+calcula de los conteos D-M-F de los 11; si no suman 10 de campo, no
+se inventa formación ("—"). */
+function posCancha(p){
+p = (p || "").toUpperCase();
+if (p === "G" || p === "GK") return "G";
+if (p === "F" || p.indexOf("CF") === 0 || p === "LF" || p === "RF" || p === "ST") return "F";
+if (p.indexOf("CD") === 0 || p === "LB" || p === "RB" || p === "SW" || p === "DF") return "D";
+if (p === "DM" || p.indexOf("CM") === 0 || p === "AM" || p === "LM" || p === "RM" || p.indexOf("AM-") === 0 || p === "MF") return "M";
+return "?";
+}
+function xiOficial(lista, equipo){
+var j = [];
+(lista || []).forEach(function(p){
+if (!p || p.jugador == null || p.jugador === "") return;
+j.push([p.jugador, posCancha(p.pos), (p.dorsal == null ? "" : String(p.dorsal))]);
+});
+var nD = 0, nM = 0, nF = 0;
+j.forEach(function(p){ if (p[1] === "D") nD++; else if (p[1] === "M") nM++; else if (p[1] === "F") nF++; });
+var fm = (nD + nM + nF === 10) ? (nD + "-" + nM + "-" + nF) : "—";
+return {e: equipo || "", fm: fm, of: true, j: j};
+}
+function pitchXI(xi, rol){
+if (!xi || !Array.isArray(xi.j) || !xi.j.length){
+return '<div class="detail-pending">pendiente — aún no hay XI probable publicado para este equipo.</div>';
+}
+var grupos = [["F", "Delanteros"], ["M", "Mediocampistas"], ["D", "Defensas"], ["G", "Portero"], ["?", "Posición por confirmar"]];
+var h = '<div class="pitch" aria-label="Alineación en cancha: ' + esc(xi.e) + '">';
+h += '<div class="pitch-head"><b>' + esc(xi.e) + '</b><span>' + esc(rol) + ' · Formación ' + esc(xi.fm) + (xi.of ? ' · Oficial' : ' · Probable') + '</span></div>';
+grupos.forEach(function(g){
+var jug = xi.j.filter(function(p){ return p[1] === g[0]; });
+if (!jug.length) return;
+h += '<div class="pitch-row" aria-label="' + esc(g[1]) + '">';
+jug.forEach(function(p){
+h += '<div class="pitch-player"><span class="pitch-dot">' + esc(p[1]) + '</span><span class="pitch-name">' + esc(p[0]) + '</span></div>';
+});
+h += '</div>';
+});
+h += '<p class="pitch-note">Los 11 parados por posición (arriba los delanteros, abajo el portero). Sin fotos.</p></div>';
+return h;
+}
+function pitchBlock(key){
+var h = "<h4>Alineación en cancha</h4>";
+var d = DETAIL[key] || null;
+var lin = d && d.lineup;
+if (lin && lin.alineacion_publicada && lin.jugadores && lin.jugadores.local && lin.jugadores.visita && lin.jugadores.local.length === 11 && lin.jugadores.visita.length === 11){
+h = "<h4>Alineación oficial en cancha</h4>";
+h += '<p class="detail-note">Alineación oficial publicada por ESPN — los 11 titulares de cada equipo.</p>';
+h += '<div class="pitch-grid">' + pitchXI(xiOficial(lin.jugadores.local, d.home), "Local") + pitchXI(xiOficial(lin.jugadores.visita, d.away), "Visita") + '</div>';
+return h;
+}
+h += '<p class="detail-note">Alineación oficial: por confirmar — ESPN aún no publica los 11 titulares.</p>';
+var m = XI_PROBABLE[key];
+if (!m){
+return h + '<div class="detail-pending">pendiente — aún no hay XI probable publicado para este partido.</div>';
+}
+h += '<div class="pitch-grid">' + pitchXI(m.hx, "Local") + pitchXI(m.vx, "Visita") + '</div>';
+return h;
+}
+var params = new URLSearchParams(window.location.search);
+var slug = (params.get("partido") || "toluca-vs-atlas").trim().toLowerCase();
+var d = DETAIL[slug];
+var out = document.getElementById("salida");
+if (!d){
+out.innerHTML = '<div class="det-section"><p class="detail-pending">Partido no incluido en esta preview: ' + esc(slug) + '</p></div>';
+} else {
+var h = '<div class="det-head"><div class="det-teams"><div class="det-team"><b>' + esc(d.home) + '</b><span class="det-role">Local</span></div><div class="det-vs">vs</div><div class="det-team"><b>' + esc(d.away) + '</b><span class="det-role">Visita</span></div></div>';
+h += '<p class="det-meta"><span class="chip">' + esc(d.league) + '</span><span class="chip">' + esc(estadioTexto(d)) + '</span></p></div>';
+h += '<div class="det-section">' + pitchBlock(slug) + '</div>';
+out.innerHTML = h;
+var pitches = out.querySelectorAll(".pitch");
+var names = out.querySelectorAll(".pitch-player").length;
+var heads = [];
+out.querySelectorAll(".pitch-head span").forEach(function(s){ heads.push(s.textContent); });
+document.getElementById("verif").innerHTML = "<b>Partido:</b> " + esc(slug) + " — " + esc(d.home) + " vs " + esc(d.away) + "<br><b>Estadio:</b> " + esc(estadioTexto(d)) + "<br><b>Alineación oficial publicada:</b> " + (d.lineup && d.lineup.alineacion_publicada ? "sí" : "no") + "<br><b>Canchas renderizadas:</b> " + pitches.length + " · <b>nombres en cancha:</b> " + names + "<br><b>Encabezados de cancha:</b> " + esc(heads.join(" | "));
+}
+</script>
+</body>
+</html>
