@@ -173,7 +173,7 @@ function probModelo(m){
   var mk = m.mercados || {};
   var bt = mk.btts || {};
   var sp = mk.spread || {};
-  return 'Prob. del modelo: BTTS Sí ' + fmt1(bt.p_btts) + '% · No ' + fmt1(bt.p_no_btts) + '% · spread local ' + fmtLineaSigno(sp.home_linea) + ', P(cubre) ' + fmt1(sp.p_cubre_local) + '%';
+  return 'Prob. del modelo: BTTS Sí ' + fmt1(bt.p_btts) + '% · No ' + fmt1(bt.p_no_btts) + '%' + ((typeof sp.home_linea === "number" && typeof sp.p_cubre_local === "number") ? ' · spread local ' + fmtLineaSigno(sp.home_linea) + ', P(cubre) ' + fmt1(sp.p_cubre_local) + '%' : ' · sin mercado spread');
 }
 Promise.all([fetchJSON(URLS.ev.mw), fetchJSON(URLS.ev.fs), cargarBSD()]).then(function(res){
   var evMW = res[0], evFS = res[1];
