@@ -12,6 +12,14 @@ Lee la configuracion de la semana (scripts/config/semana-N.json) y:
      NO se inventa ninguna cuota.
   3. Escribe data/semana-N/raw/momios.json (para calcular_ev.py) y
      guarda los scoreboards crudos en data/semana-N/raw/odds_*.json.
+  4. Segunda fuente (Bzzoiro, BSD, plan gratis): despues del bucle
+     ESPN, recolectar_bsd() agrega por partido la clave 'bsd' con
+     btts, asian_handicap y total_corners (consenso, proveedor
+     "BSD-consensus"). Si un partido no tiene momio BSD, queda
+     registrado en 'sin_momio', nunca se inventa una cuota. Sin
+     credencial BSD (secreto BSD_TOKEN en Actions o conector
+     custom.bzzoiro en local), la segunda fuente se salta con aviso
+     y la parte ESPN sigue igual.
 
 Estructura de momios en ESPN (verificada en vivo, 22 nov 2026):
   - DraftKings: moneyline.home/away/draw.close.odds (americano, texto
@@ -29,8 +37,12 @@ Uso:
 import argparse
 import json
 import os
+import re
 import sys
 import time
+import unicodedata
+import urllib.error
+import urllib.parse
 import urllib.request
 from datetime import datetime, timezone, timedelta
 
@@ -171,6 +183,334 @@ def extraer_estado_marcador(comp):
     return estado, marcador
 
 
+# ----------------------------------------------------------------------
+# Segunda fuente de momios: Bzzoiro Sports Data (BSD), plan gratis.
+# Verificado con datos reales (26 nov 2026, semana 2, 55 partidos):
+# - IDs BSD confirmados por pais + temporada vigente: eng.1=1, esp.1=3,
+#   ger.1=5, ita.1=4, mex.1=19 (Apertura), UCL=7, UEL=8.
+#   (OJO: Serie A NO es 9, Bundesliga NO es 96, UCL NO es 29: esos son
+#   Brasil, Austria y CAF. La lista de /leagues/ tiene 110 ligas.)
+# - Eventos: 55/55 partidos tienen evento BSD (ventana de fechas ampliada
+#   +-1 dia: los partidos de 29 nov por la noche caen en 30 nov UTC).
+# - Cobertura de momios (sobre los 55 partidos): btts 53/55,
+#   asian_handicap 35/55 (BSD aun no publica AH del fin de semana),
+#   total_corners 51/55.
+# - Estrategia: 7 llamadas de eventos + 21 de momios (liga+mercado,
+#   updated_after = hoy - 7 dias, paginacion completa). Sin updated_after
+#   la liga trae miles de filas historicas; con el, ~50-700 por llamada.
+# - Autenticacion: en GitHub Actions usa el secreto BSD_TOKEN (token
+#   PELADO; el codigo agrega "Token "). En local (VM de Muse) usa el
+#   conector custom.bzzoiro (el valor guardado YA trae "Token ", no se
+#   agrega otro prefijo). Si no hay ni secreto ni conector, BSD se salta
+#   con aviso y el resto del script sigue (la fuente ESPN no depende de
+#   BSD). El token NUNCA se imprime ni se guarda en archivos.
+# ----------------------------------------------------------------------
+
+BSD_BASE = "https://sports.bzzoiro.com/api/v2"
+BSD_LEAGUE_IDS = {"eng.1": 1, "esp.1": 3, "ger.1": 5, "ita.1": 4,
+                  "mex.1": 19, "uefa.champions": 7, "uefa.europa": 8}
+BSD_MARKETS = ["btts", "asian_handicap", "total_corners"]
+BSD_DIAS_COBERTURA = 7  # updated_after = hoy - 7 dias
+
+# Normalizacion de nombres de equipo (ESPN vs BSD traen variantes).
+_TRANSlit = {"ø": "o", "đ": "d", "ł": "l", "ß": "ss", "æ": "ae",
+             "þ": "th", "ð": "d", "ı": "i", "ŋ": "n"}
+_GENERICOS = {"fc", "cf", "sc", "sv", "afc", "fk", "nk", "sk", "cd", "pfc",
+              "kks", "rsc", "losc", "tsg", "vfb", "gnk", "ac", "as", "ud",
+              "club", "de", "a", "real", "olympique",
+              "cfc", "1", "04", "07", "05", "fsv", "kv"}
+_ALIAS = {"munchen": "munich", "hamburger": "hamburg",
+          "internazionale": "inter", "monchengladbach": "gladbach",
+          "mgladbach": "gladbach", "lyonnais": "lyon", "praha": "prague"}
+
+
+class _NoRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, *a):
+        raise RuntimeError("redirect refused")
+
+
+def _bsd_headers():
+    """Cabecera Authorization para BSD, o None si no hay credencial.
+
+    1) Secreto BSD_TOKEN (GitHub Actions): token pelado, se agrega
+       el prefijo "Token ". 2) Conector custom.bzzoiro (local): el
+    valor guardado YA trae "Token ", se usa tal cual via surrogate.
+    """
+    token = os.environ.get("BSD_TOKEN")
+    if token:
+        return {"Authorization": "Token " + token.strip()}
+    try:
+        sys.path.insert(
+            0, "/opt/muse/skills/custom-connector-setup/bin")
+        from dynamic_credentials import add_surrogate_to_request
+        req = urllib.request.Request(BSD_BASE + "/")
+        add_surrogate_to_request(
+            req, "custom.bzzoiro", allowed_hosts=["sports.bzzoiro.com"])
+        return dict(req.header_items())
+    except Exception as exc:  # sin conector (p. ej. en Actions sin secreto)
+        print(f"BSD: sin credencial ({exc}); se salta la segunda fuente.")
+        return None
+
+
+def _bsd_get(path, headers, contador):
+    """GET a BSD. Devuelve (status, json|None). Cuenta las llamadas."""
+    contador[0] += 1
+    url = BSD_BASE + path
+    req = urllib.request.Request(url, headers={
+        "User-Agent": "football-ai-agenda/1.0", **headers})
+    try:
+        with urllib.request.build_opener(_NoRedirect()).open(
+                req, timeout=60) as r:
+            return r.status, json.load(r)
+    except urllib.error.HTTPError as e:
+        print(f"BSD: {path} -> HTTP {e.code}")
+        return e.code, None
+    except Exception as e:
+        print(f"BSD: {path} -> error {e}")
+        return 0, None
+
+
+def _bsd_get_all(path, headers, contador):
+    """GET paginado (sigue `next`). Devuelve la lista de `results`."""
+    rows = []
+    while path:
+        status, data = _bsd_get(path, headers, contador)
+        if status != 200 or not isinstance(data, dict):
+            break
+        rows += data.get("results", []) or []
+        nxt = data.get("next")
+        path = nxt.replace(BSD_BASE, "") if nxt else None
+    return rows
+
+
+def _bsd_tokens(nombre):
+    """Tokens normalizados de un nombre de equipo."""
+    n = str(nombre or "")
+    for k, v in _TRANSlit.items():
+        n = n.replace(k, v)
+    n = unicodedata.normalize("NFKD", n)
+    n = "".join(c for c in n if not unicodedata.combining(c)).lower()
+    n = re.sub(r"[^a-z0-9 ]", " ", n)
+    toks = [_ALIAS.get(t, t) for t in n.split() if t]
+    kept = [t for t in toks if t not in _GENERICOS]
+    return set(kept if kept else toks)
+
+
+def _bsd_tok_match(a, b):
+    if a == b:
+        return True
+    if len(a) >= 4 and len(b) >= 4 and (a.startswith(b) or b.startswith(a)):
+        return True
+    return False
+
+
+def _bsd_match_partido(partido, candidatos):
+    """Empareja un partido del config con un evento BSD.
+
+    candidatos: [(bsd_id, home, away)] de la misma liga y fecha CST.
+    Exige >=1 token compartido en cada lado y ganador unico por
+    puntuacion. Devuelve (bsd_id, metodo) o (None, None).
+    """
+    th, ta = _bsd_tokens(partido["home"]), _bsd_tokens(partido["away"])
+    mejor, mejor_pts, segundo = None, -1, -1
+    for eid, h, a in candidatos:
+        sh = sum(1 for x in th if any(_bsd_tok_match(x, y)
+                                      for y in _bsd_tokens(h)))
+        sa = sum(1 for x in ta if any(_bsd_tok_match(x, y)
+                                      for y in _bsd_tokens(a)))
+        if sh < 1 or sa < 1:
+            continue
+        pts = sh + sa
+        if pts > mejor_pts:
+            segundo, mejor, mejor_pts = mejor_pts, eid, pts
+        elif pts > segundo:
+            segundo = pts
+    if mejor is None or mejor_pts <= segundo:
+        return None, None
+    for eid, h, a in candidatos:
+        if eid == mejor and _bsd_tokens(h) == th and _bsd_tokens(a) == ta:
+            return mejor, "exacto"
+    return mejor, "nombre-variante"
+
+
+def _bsd_elegir_btts(filas):
+    """Filas btts de un evento -> {'yes': x, 'no': y} o None."""
+    out = {}
+    for r in filas:
+        if r.get("bookmaker_slug") != "consensus":
+            continue
+        if r.get("outcome") == "yes" and r.get("decimal_odds"):
+            out["yes"] = float(r["decimal_odds"])
+        elif r.get("outcome") == "no" and r.get("decimal_odds"):
+            out["no"] = float(r["decimal_odds"])
+    return out if out.get("yes") and out.get("no") else None
+
+
+def _bsd_elegir_ah(filas):
+    """Filas asian_handicap -> {'line', 'home', 'away', 'push'} o None.
+
+    Agrupa por linea; elige la linea con mas casas (desempate: la mas
+    cercana a 0). Quarter lines (-0.25, -0.75...) y `push` se conservan.
+    """
+    por_linea = {}
+    for r in filas:
+        if r.get("bookmaker_slug") != "consensus":
+            continue
+        linea = r.get("line")
+        if linea is None:
+            continue
+        g = por_linea.setdefault(float(linea), {"home": None, "away": None,
+                                                "push": r.get("push"),
+                                                "casas": 0})
+        if r.get("outcome") == "HOME" and r.get("decimal_odds"):
+            g["home"] = float(r["decimal_odds"])
+        elif r.get("outcome") == "AWAY" and r.get("decimal_odds"):
+            g["away"] = float(r["decimal_odds"])
+        g["casas"] = max(g["casas"], int(r.get("bookmaker_count") or 0))
+    completas = {l: g for l, g in por_linea.items()
+                 if g["home"] and g["away"]}
+    if not completas:
+        return None
+    linea = sorted(completas, key=lambda l: (-completas[l]["casas"],
+                                             abs(l)))[0]
+    g = completas[linea]
+    return {"line": linea, "home": g["home"], "away": g["away"],
+            "push": g["push"], "bookmakers": g["casas"]}
+
+
+def _bsd_elegir_corners(filas):
+    """Filas total_corners -> {'line', 'over', 'under'} o None.
+
+    Elige la linea mas cercana a 9.5; desempate: mas casas.
+    """
+    por_linea = {}
+    for r in filas:
+        if r.get("bookmaker_slug") != "consensus":
+            continue
+        linea = r.get("line")
+        if linea is None:
+            continue
+        g = por_linea.setdefault(float(linea), {"over": None, "under": None,
+                                                "casas": 0})
+        if r.get("outcome") == "over" and r.get("decimal_odds"):
+            g["over"] = float(r["decimal_odds"])
+        elif r.get("outcome") == "under" and r.get("decimal_odds"):
+            g["under"] = float(r["decimal_odds"])
+        g["casas"] = max(g["casas"], int(r.get("bookmaker_count") or 0))
+    completas = {l: g for l, g in por_linea.items()
+                 if g["over"] and g["under"]}
+    if not completas:
+        return None
+    linea = sorted(completas, key=lambda l: (abs(l - 9.5),
+                                             -completas[l]["casas"]))[0]
+    g = completas[linea]
+    return {"line": linea, "over": g["over"], "under": g["under"],
+            "bookmakers": g["casas"]}
+
+
+def recolectar_bsd(resultados, ligas, fechas):
+    """Agrega la segunda fuente (BSD) a los partidos de `resultados`.
+
+    No toca la parte ESPN. Por partido agrega la clave 'bsd':
+    {'proveedor': 'BSD-consensus', 'bsd_event_id': int,
+     'btts': {...}|None, 'asian_handicap': {...}|None,
+     'corners': {...}|None, 'sin_momio': [mercados sin fila]}.
+    Si un partido no tiene evento BSD o BSD falla, 'bsd' queda None y
+    se reporta; nunca se inventa un momio. Devuelve un resumen.
+    """
+    resumen = {"llamadas_bsd": 0, "partidos": len(resultados),
+               "con_evento": 0, "sin_evento": [],
+               "con_btts": 0, "con_ah": 0, "con_corners": 0}
+    headers = _bsd_headers()
+    if headers is None:
+        for r in resultados:
+            r["bsd"] = None
+        return resumen
+    contador = [0]
+    desde = (datetime.fromisoformat(min(fechas)) - timedelta(days=1)
+             ).strftime("%Y-%m-%d")
+    hasta = (datetime.fromisoformat(max(fechas)) + timedelta(days=1)
+             ).strftime("%Y-%m-%d")
+    actualizado = (datetime.now(timezone.utc)
+                   - timedelta(days=BSD_DIAS_COBERTURA)
+                   ).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    # 1) Eventos BSD por liga (ventana ampliada +-1 dia por UTC/CST).
+    eventos = {}
+    for esp_code in ligas:
+        lid = BSD_LEAGUE_IDS.get(esp_code)
+        if lid is None:
+            print(f"BSD: liga {esp_code} sin ID BSD; se salta.")
+            continue
+        filas = _bsd_get_all(
+            f"/events/?league_id={lid}&date_from={desde}"
+            f"&date_to={hasta}&limit=100", headers, contador)
+        for e in filas:
+            dt = datetime.fromisoformat(
+                e["event_date"].replace("Z", "+00:00")).astimezone(CST)
+            eventos[e["id"]] = {"home": e.get("home_team"),
+                                "away": e.get("away_team"),
+                                "fecha": dt.strftime("%Y-%m-%d"),
+                                "liga": esp_code}
+    por_liga_fecha = {}
+    for eid, e in eventos.items():
+        por_liga_fecha.setdefault((e["liga"], e["fecha"]), []).append(
+            (eid, e["home"], e["away"]))
+
+    # 2) Emparejar cada partido del config con su evento BSD.
+    bsd_por_partido = {}
+    for r in resultados:
+        cands = por_liga_fecha.get((r["liga"], r["fecha"]), [])
+        eid, metodo = _bsd_match_partido(r, cands)
+        if eid:
+            bsd_por_partido[id(r)] = eid
+            resumen["con_evento"] += 1
+        else:
+            resumen["sin_evento"].append(
+                f"{r['fecha']} {r['home']} vs {r['away']} [{r['liga']}]")
+
+    # 3) Momios por liga+mercado (solo ligas del config).
+    filas_por_evento = {}  # (liga, mercado) -> {event_id: [filas]}
+    for esp_code in ligas:
+        lid = BSD_LEAGUE_IDS.get(esp_code)
+        if lid is None:
+            continue
+        for m in BSD_MARKETS:
+            filas = _bsd_get_all(
+                f"/odds/?league_id={lid}&market={m}&is_live=false"
+                f"&updated_after={actualizado}&limit=100",
+                headers, contador)
+            por_evento = {}
+            for row in filas:
+                por_evento.setdefault(row["event_id"], []).append(row)
+            filas_por_evento[(esp_code, m)] = por_evento
+
+    # 4) Mapear a la forma de momios.json.
+    for r in resultados:
+        eid = bsd_por_partido.get(id(r))
+        if not eid:
+            r["bsd"] = None
+            continue
+        btts = _bsd_elegir_btts(
+            filas_por_evento.get((r["liga"], "btts"), {}).get(eid, []))
+        ah = _bsd_elegir_ah(
+            filas_por_evento.get((r["liga"], "asian_handicap"), {})
+            .get(eid, []))
+        cor = _bsd_elegir_corners(
+            filas_por_evento.get((r["liga"], "total_corners"), {})
+            .get(eid, []))
+        sin = [m for m, v in (("btts", btts), ("asian_handicap", ah),
+                              ("corners", cor)) if v is None]
+        r["bsd"] = {"proveedor": "BSD-consensus", "bsd_event_id": eid,
+                    "btts": btts, "asian_handicap": ah, "corners": cor,
+                    "sin_momio": sin}
+        resumen["con_btts"] += bool(btts)
+        resumen["con_ah"] += bool(ah)
+        resumen["con_corners"] += bool(cor)
+    resumen["llamadas_bsd"] = contador[0]
+    return resumen
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--config', required=True, help='JSON de la semana')
@@ -270,6 +610,15 @@ def main():
     n_post_sin_momio = sum(1 for r in resultados
                            if r['estado'] != 'con_momio'
                            and r.get('estado_partido') == 'post')
+
+    # ---- Segunda fuente (BSD): no toca la parte ESPN ----
+    resumen_bsd = recolectar_bsd(resultados, ligas, fechas)
+    print(f"\nBSD: {resumen_bsd['con_evento']}/{resumen_bsd['partidos']} "
+          f"con evento | btts {resumen_bsd['con_btts']} | "
+          f"asian_handicap {resumen_bsd['con_ah']} | "
+          f"corners {resumen_bsd['con_corners']} | "
+          f"{resumen_bsd['llamadas_bsd']} llamadas")
+
     with open(os.path.join(rawdir, 'momios.json'), 'w') as f:
         json.dump({'semana': semana,
                    'fecha_consulta': datetime.now(timezone.utc)
