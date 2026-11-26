@@ -1258,8 +1258,8 @@ function buildRADIOMap(rawData, tenData, partidos){
    - DETAIL embebido (28 partidos, ESPN 23 nov 2026): últimos 5, H2H y
      tabla. Los 27 partidos nuevos aún no tienen esa consulta: muestran
      "pendiente", nunca se inventa.
-   - PARTIDOS_VIVO + MarcadorEnVivo: marcador en vivo/final con minuto
-     (28 partidos con IDs de ESPN; los 27 nuevos muestran "pendiente").
+   - data/mapas.json (55 partidos, con IDs de ESPN) + MarcadorEnVivo: marcador en vivo/final con minuto.
+     PARTIDOS_VIVO ya no se embebe a mano: se llena con mapas.json en main().
 
    Estadio: ningún JSON de data/ trae el estadio, así que la cabecera
    dice "Estadio: por confirmar" hasta que el E1 lo publique.
