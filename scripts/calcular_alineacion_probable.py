@@ -68,7 +68,7 @@ Uso:
         --config scripts/config/semana-2-entresemana.json \
         --out data/semana-2-entresemana/alineacion-probable.json
 Los summaries se guardan en data/<semana>/raw/summary_*.json (raw/
-no se sube al repo, regla del jefe). fecha_calculo en hora de México.
+SÍ se sube al repo: el workflow lo incluye en el commit con `git add data/`). fecha_calculo en hora de México.
 """
 
 import argparse
