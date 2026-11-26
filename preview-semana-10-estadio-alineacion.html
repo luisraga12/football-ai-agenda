@@ -46,8 +46,8 @@ a{color:var(--accent-strong);font-weight:800;text-decoration:none}
 <div class="preview-box">
 <p><b>Preview Semana 10 — estadio y alineación oficial (Empleado 2, 26 nov 2026).</b> Esta página prueba, con datos reales, el render que después se aplica a <code>partido.html</code>: el chip de estadio en la cabecera y la alineación oficial en cancha. Las funciones <code>estadioTexto</code>, <code>posCancha</code>, <code>xiOficial</code>, <code>pitchXI</code> y <code>pitchBlock</code> son las mismas que lleva <code>partido.html</code>; el CSS es el de <code>partido.html</code>.</p>
 <p>Datos reales: entradas <code>detalle</code> de <code>data/mapas.json</code> (Empleado 1, commit <code>e76e258</code>, 26 nov 2026 06:24 CST; fuente: summary ESPN por evento). Solo se embeben los campos que usa este render (<code>home</code>, <code>away</code>, <code>league</code>, <code>estadio</code>, <code>lineup</code>); nada inventado.</p>
-<p>Probar: <a href="?partido=toluca-vs-atlas">Toluca–Atlas (oficial 11+11)</a> · <a href="?partido=galatasaray-vs-aston-villa">Galatasaray–Aston Villa (oficial 11+11)</a> · <a href="?partido=pachuca-vs-guadalajara">Pachuca–Guadalajara (alineación por confirmar)</a></p>
-<p>Nota: esta preview no embebe el XI probable (<code>alineacion-probable.json</code>); en <code>partido.html</code>, cuando la oficial no está publicada, la cancha muestra el XI probable (· Probable) debajo del aviso, como en Semana 9. Ese camino es código existente, sin cambios.</p>
+<p>Probar: <a href="#partido=toluca-vs-atlas">Toluca–Atlas (oficial 11+11)</a> · <a href="#partido=galatasaray-vs-aston-villa">Galatasaray–Aston Villa (oficial 11+11)</a> · <a href="#partido=pachuca-vs-guadalajara">Pachuca–Guadalajara (alineación por confirmar)</a></p>
+<p>Nota: esta preview no embebe el XI probable (<code>alineacion-probable.json</code>); en <code>partido.html</code>, cuando la oficial no está publicada, la cancha muestra el XI probable (· Probable) debajo del aviso, como en Semana 9. Ese camino es código existente, sin cambios. En htmlpreview.github.io el partido se elige con <code>#partido=…</code> (el <code>?partido=…</code> de <code>partido.html</code> también funciona fuera de htmlpreview).</p>
 </div>
 <div id="salida"></div>
 <div class="det-section"><h4>Verificación</h4><div class="check" id="verif"></div></div>
@@ -137,7 +137,10 @@ h += '<div class="pitch-grid">' + pitchXI(m.hx, "Local") + pitchXI(m.vx, "Visita
 return h;
 }
 var params = new URLSearchParams(window.location.search);
-var slug = (params.get("partido") || "toluca-vs-atlas").trim().toLowerCase();
+var slug = (params.get("partido") || "").trim().toLowerCase();
+if (!slug && window.location.hash){ var hm = window.location.hash.match(/partido=([^&]+)/); if (hm) slug = decodeURIComponent(hm[1]).trim().toLowerCase(); }
+if (!slug) slug = "toluca-vs-atlas";
+window.addEventListener("hashchange", function(){ window.location.reload(); });
 var d = DETAIL[slug];
 var out = document.getElementById("salida");
 if (!d){
