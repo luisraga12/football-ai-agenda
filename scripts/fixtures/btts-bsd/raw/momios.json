@@ -1,0 +1,107 @@
+{
+  "fecha_consulta": "2026-11-26",
+  "partidos": [
+    {
+      "home": "Werder Bremen",
+      "away": "Borussia Mönchengladbach",
+      "fecha": "2026-11-27",
+      "fecha_cst": "2026-11-27 13:30",
+      "liga": "ger.1",
+      "liga_nombre": "Bundesliga",
+      "proveedor": "DraftKings",
+      "estado": "con_momio",
+      "estado_partido": "pre",
+      "marcador": null,
+      "momios": {
+        "moneyline": {
+          "home": 1.4,
+          "draw": 5.0,
+          "away": 8.0
+        },
+        "total": {
+          "linea": 2.5,
+          "over": 1.7,
+          "under": 2.2
+        },
+        "spread": {
+          "home_linea": -0.5,
+          "away_linea": 0.5,
+          "home": 1.67,
+          "away": 2.05
+        }
+      },
+      "bsd": {
+        "proveedor": "BSD-consensus",
+        "bsd_event_id": 999001,
+        "btts": {
+          "yes": 1.8,
+          "no": 2.0
+        },
+        "asian_handicap": null,
+        "corners": null,
+        "sin_momio": [
+          "asian_handicap",
+          "corners"
+        ]
+      }
+    },
+    {
+      "home": "Venezia",
+      "away": "Bologna",
+      "fecha": "2026-11-27",
+      "fecha_cst": "2026-11-27 14:00",
+      "liga": "ita.1",
+      "liga_nombre": "Serie A",
+      "proveedor": null,
+      "estado": "pendiente",
+      "estado_partido": "pre",
+      "marcador": null,
+      "momios": null,
+      "bsd": {
+        "proveedor": "BSD-consensus",
+        "bsd_event_id": 999002,
+        "btts": {
+          "yes": 2.1,
+          "no": 1.75
+        },
+        "asian_handicap": null,
+        "corners": null,
+        "sin_momio": [
+          "asian_handicap",
+          "corners"
+        ]
+      }
+    },
+    {
+      "home": "Nottingham Forest",
+      "away": "Chelsea",
+      "fecha": "2026-11-27",
+      "fecha_cst": "2026-11-27 15:00",
+      "liga": "eng.1",
+      "liga_nombre": "Premier League",
+      "proveedor": "DraftKings",
+      "estado": "con_momio",
+      "estado_partido": "pre",
+      "marcador": null,
+      "momios": {
+        "moneyline": {
+          "home": 2.1,
+          "draw": 3.6,
+          "away": 3.4
+        },
+        "total": {
+          "linea": 2.5,
+          "over": 1.8,
+          "under": 2.0
+        },
+        "spread": {
+          "home_linea": 0.5,
+          "away_linea": -0.5,
+          "home": 1.8,
+          "away": 2.0
+        }
+      },
+      "bsd": null
+    }
+  ]
+}

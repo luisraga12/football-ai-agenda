@@ -1,0 +1,14 @@
+{
+  "cutoff": "2026-11-19T23:59:59Z",
+  "fechas": [
+    "2026-11-27"
+  ],
+  "ligas": {
+    "eng.1": "Premier League",
+    "esp.1": "LaLiga",
+    "ger.1": "Bundesliga",
+    "ita.1": "Serie A"
+  },
+  "nombre": "Semana 2 (fixture BTTS-BSD)",
+  "semana": "2"
+}

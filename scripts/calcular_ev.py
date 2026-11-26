@@ -25,6 +25,9 @@ Reglas (orden del jefe, 22 nov 2026):
     ESPN/DraftKings no trae momio de BTTS en esta fuente (verificado en
     los scoreboards crudos: solo moneyline, total y pointSpread), asi
     que momios y EV quedan en None y el BTTS no entra al mejor pick.
+  Con momio BSD (llave 'bsd' en momios.json con btts {yes, no} decimales,
+  consenso BSD), los momios y el EV si se llenan: ev.si = p_btts x momio_si - 1
+  y ev.no = p_no_btts x momio_no - 1; sin esa llave, quedan en None.
 
 Uso:
     python3 scripts/calcular_ev.py --config scripts/config/semana-2.json
@@ -108,10 +111,29 @@ def main():
         # la probabilidad ya la calcula el Poisson (r['btts'], distribucion
         # completa); va en mercados aunque el partido este pendiente, para
         # que la pagina la muestre en vez de "pendiente". Sin momio ni EV:
-        # ESPN/DraftKings no trae ese momio en esta fuente.
+        # ESPN/DraftKings no trae ese momio en esta fuente (salvo momio BSD: ver bloque siguiente).
         fila['mercados']['btts'] = {
             'p_btts': r['btts'], 'p_no_btts': 100 - r['btts'],
             'momios': None, 'ev': {'si': None, 'no': None}}
+        # BTTS con momio BSD (octava ronda, lado E1): si momios.json
+        # trae la llave 'bsd' con btts {yes, no} decimales (consenso
+        # BSD, scripts/recolectar_momios.py), se llenan los momios y
+        # el EV con la formula del jefe: ev.si = p_btts x momio_si - 1
+        # y ev.no = p_no_btts x momio_no - 1 (reusa ev(), que ya hace
+        # prob_pct / 100 * decimal - 1). Sin llave bsd, sin btts en
+        # ella, o sin los dos decimales, momios y EV quedan en None:
+        # nada inventado. El BTTS sigue sin entrar al mejor pick.
+        bsd = m.get('bsd') if isinstance(m, dict) else None
+        btts_bsd = bsd.get('btts') if isinstance(bsd, dict) else None
+        if isinstance(btts_bsd, dict):
+            momio_si = btts_bsd.get('yes')
+            momio_no = btts_bsd.get('no')
+            if momio_si is not None and momio_no is not None:
+                fila['mercados']['btts']['momios'] = {
+                    'si': float(momio_si), 'no': float(momio_no)}
+                fila['mercados']['btts']['ev'] = {
+                    'si': ev(r['btts'], float(momio_si)),
+                    'no': ev(100 - r['btts'], float(momio_no))}
         if m['estado'] != 'con_momio':
             # 1X2 y total del MODELO solo para los partidos sin momio
             # (orden del jefe, 25 nov 2026; mismo precedente que
@@ -268,9 +290,9 @@ def main():
              "Semáforo: verde EV ≥ +5%, amarillo 0–+5%, rojo < 0%. La línea "
              "del total varía por partido (la publicada por DraftKings: "
              "2.5, 3.5 o 4.5); el P(over) se calculó para esa línea desde los "
-             "xG. BTTS: probabilidad Poisson completa (ambos anotan); no "
-             "lleva EV porque ESPN/DraftKings no trae momio de BTTS en "
-             "esta fuente.")
+             "xG. BTTS: probabilidad Poisson completa (ambos anotan); el EV se "
+             "calcula solo con momio BSD (llave 'bsd' en momios.json); sin esa "
+             "llave no lleva EV porque ESPN/DraftKings no trae momio de BTTS en esta fuente.")
     L.append("")
     L.append("| Fecha | Partido | 1X2 (decimal) | EV 1 / X / 2 | Total (línea) | "
              "EV Más / Menos | Spread (línea local) | EV Spread local / "
