@@ -2,14 +2,14 @@
 
 **Partidos:** 2026-11-27 al 2026-11-29, horas de Monterrey (CST). **Fuente de momios:** ESPN (API pública sin clave), DraftKings salvo que se indique otro proveedor. **Fecha de consulta:** 2026-11-26.
 
-**Método:** EV = probabilidad Poisson (tabla-poisson-semana-2.md) × momio decimal − 1. Semáforo: verde EV ≥ +5%, amarillo 0–+5%, rojo < 0%. La línea del total varía por partido (la publicada por DraftKings: 2.5, 3.5 o 4.5); el P(over) se calculó para esa línea desde los xG. BTTS: probabilidad Poisson completa (ambos anotan); no lleva EV porque ESPN/DraftKings no trae momio de BTTS en esta fuente.
+**Método:** EV = probabilidad Poisson (tabla-poisson-semana-2.md) × momio decimal − 1. Semáforo: verde EV ≥ +5%, amarillo 0–+5%, rojo < 0%. La línea del total varía por partido (la publicada por DraftKings: 2.5, 3.5 o 4.5); el P(over) se calculó para esa línea desde los xG. BTTS: probabilidad Poisson completa (ambos anotan); el EV se calcula solo con momio BSD (llave 'bsd' en momios.json); sin esa llave no lleva EV porque ESPN/DraftKings no trae momio de BTTS en esta fuente.
 
 | Fecha | Partido | 1X2 (decimal) | EV 1 / X / 2 | Total (línea) | EV Más / Menos | Spread (línea local) | EV Spread local / visitante | P(BTTS) | Mejor pick | EV | Semáforo |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 11/27 nov | Werder Bremen vs Borussia Mönchengladbach | 1.69 / 4.20 / 4.00 | +21.9% / -31.3% / -54.0% | 3.5 (2.30 / 1.61) | +0.8% / -9.8% | -0.5 (1.67 / 2.10) | +20.3% / -41.5% | 54.2% | Local | +21.9% | 🟢 Verde |
 | 11/27 nov | Venezia vs Bologna | 3.25 / 3.15 / 2.20 | -54.9% / -9.3% / +26.1% | 2.5 (2.05 / 1.74) | -44.0% / +26.5% | +0.5 (1.65 / 2.15) | -29.8% / +23.3% | 28.6% | Menos 2.5 | +26.5% | 🟢 Verde |
 | 11/27 nov | Nottingham Forest vs Chelsea | 2.50 / 3.35 / 2.85 | -68.3% / -35.7% / +94.2% | 2.5 (1.80 / 2.00) | -0.3% / -10.8% | -0.5 (2.35 / 1.53) | -70.2% / +33.3% | 47.8% | Visita | +94.2% | 🟢 Verde |
-| 11/27 nov | Levante vs Racing Santander | 2.05 / 4.00 / 3.30 | +10.0% / -6.3% / -24.4% | 3.5 (2.05 / 1.80) | -35.2% / +23.1% | -0.5 (1.95 / 1.77) | +4.8% / -18.0% | 54.5% | Menos 3.5 | +23.1% | 🟢 Verde |
+| 11/27 nov | Levante vs Racing Santander | 2.00 / 4.00 / 3.30 | +7.3% / -6.3% / -24.4% | 3.5 (2.00 / 1.80) | -36.8% / +23.1% | -0.5 (1.95 / 1.77) | +4.8% / -18.0% | 54.5% | Menos 3.5 | +23.1% | 🟢 Verde |
 | 11/28 nov | Hamburg SV vs Bayern Munich (Bet 365) | 9.00 / 7.00 / 1.25 | +169.5% / +41.5% / -37.7% | — | — | — | — | 73.4% | Local | +169.5% | 🟢 Verde |
 | 11/28 nov | Manchester United vs Brentford | 2.15 / 3.75 / 3.20 | -28.7% / -18.4% / +44.2% | 2.5 (1.57 / 2.40) | +9.2% / -26.7% | -0.5 (2.05 / 1.69) | -32.0% / +12.9% | 69.1% | Visita | +44.2% | 🟢 Verde |
 | 11/28 nov | Elche vs Atlético Madrid | 6.00 / 4.80 / 1.48 | +5.9% / +122.7% / -46.9% | 3.5 (2.40 / 1.57) | -95.8% / +54.4% | +1.5 (1.61 / 2.20) | +44.9% / -78.5% | 13.8% | Empate | +122.7% | 🟢 Verde |
@@ -21,9 +21,9 @@
 | 11/29 nov | Deportivo vs Barcelona | 10.00 / 7.50 / 1.22 | +15.6% / +4.1% / -8.9% | 3.5 (1.62 / 2.25) | -1.5% / -11.4% | +2.5 (1.57 / 2.25) | +0.7% / -19.1% | 65.8% | Local | +15.6% | 🟢 Verde |
 | 11/29 nov | Arsenal vs Manchester City | 2.00 / 3.80 / 3.55 | +66.1% / -46.9% / -89.5% | 2.5 (1.74 / 2.10) | -23.8% / +18.0% | -0.5 (1.91 / 1.80) | +58.6% / -69.5% | 18.6% | Local | +66.1% | 🟢 Verde |
 | 11/29 nov | Borussia Dortmund vs Bayer Leverkusen | 2.05 / 3.80 / 3.00 | +43.4% / -37.3% / -59.4% | 3.5 (2.20 / 1.67) | +8.8% / -15.8% | -0.5 (2.00 / 1.71) | +39.9% / -48.5% | 60.6% | Local | +43.4% | 🟢 Verde |
-| 11/29 nov | Como vs Juventus | 2.00 / 3.40 / 3.30 | +18.9% / -10.8% / -52.7% | 2.5 (1.77 / 1.95) | -40.0% / +29.0% | -0.5 (1.95 / 1.71) | +16.0% / -30.5% | 33.8% | Menos 2.5 | +29.0% | 🟢 Verde |
+| 11/29 nov | Como vs Juventus | 1.95 / 3.45 / 3.65 | +16.0% / -9.5% / -47.7% | 2.5 (1.80 / 2.00) | -39.0% / +32.2% | -0.5 (1.91 / 1.80) | +13.5% / -27.0% | 33.8% | Menos 2.5 | +32.2% | 🟢 Verde |
 | 11/28 nov | Atlas vs Toluca | pendiente | — | — | — | — | — | 73.3% | — | — | ⏳ Pendiente |
-| 11/28 nov | América vs Monterrey | 2.35 / 2.95 / 3.25 | +30.8% / -44.4% / -17.1% | 2.5 (1.77 / 1.91) | +39.3% / -59.4% | -0.5 (2.25 / 1.54) | +25.2% / -31.7% | 74.7% | Más 2.5 | +39.3% | 🟢 Verde |
+| 11/28 nov | América vs Monterrey | 2.30 / 2.95 / 3.35 | +28.0% / -44.4% / -14.6% | 2.5 (1.77 / 1.91) | +39.3% / -59.4% | -0.5 (2.20 / 1.57) | +22.4% / -30.3% | 74.7% | Más 2.5 | +39.3% | 🟢 Verde |
 | 11/29 nov | Guadalajara vs Pachuca | pendiente | — | — | — | — | — | 45.1% | — | — | ⏳ Pendiente |
 | 11/29 nov | Cruz Azul vs León | pendiente | — | — | — | — | — | 58.7% | — | — | ⏳ Pendiente |
 

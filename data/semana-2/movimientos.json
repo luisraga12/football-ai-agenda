@@ -299,14 +299,14 @@
    "mejor_pick_ayer": "Menos 2.5",
    "mejor_pick_hoy": "Menos 2.5",
    "ev_ayer": 0.29040857858101665,
-   "ev_hoy": 0.29040857858101665,
+   "ev_hoy": 0.32188195854640744,
    "linea_ayer": 2.5,
    "linea_hoy": 2.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": 0.0,
-   "flecha": "→"
+   "delta_ev_pp": 3.147337996539079,
+   "flecha": "↑"
   },
   {
    "slug": "atlas-vs-toluca",

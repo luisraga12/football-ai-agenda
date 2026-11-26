@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado_en": "2026-11-26T19:05:28Z",
+  "generado_en": "2026-11-26T22:27:19Z",
   "semana": "2-entresemana",
   "fuente": "config + ev.json + verified_events.json + teams_last5.json + schedule_*.json + DETAIL embebido en partido.html (preservado) + summary ESPN por evento (estadio + alineacion oficial + standings + h2h; tabla regular MX para Liguilla)",
   "partidos_vivo": {
@@ -5945,24 +5945,24 @@
       },
       "standings": {
         "home": {
-          "pos": "8",
-          "pts": "7",
-          "pj": "4",
-          "g": "2",
+          "pos": "7",
+          "pts": "10",
+          "pj": "5",
+          "g": "3",
           "e": "1",
           "p": "1",
-          "dg": "+3",
-          "récord": "2-1-1"
+          "dg": "+4",
+          "récord": "3-1-1"
         },
         "away": {
-          "pos": "33",
+          "pos": "35",
           "pts": "1",
-          "pj": "4",
+          "pj": "5",
           "g": "0",
           "e": "1",
-          "p": "3",
-          "dg": "-7",
-          "récord": "0-1-3"
+          "p": "4",
+          "dg": "-8",
+          "récord": "0-1-4"
         }
       },
       "lineup": {
@@ -6057,14 +6057,14 @@
               "dorsal": "28"
             },
             {
-              "jugador": "Forson Amankwah",
+              "jugador": "Zahi Ahmed",
               "pos": "LM",
-              "dorsal": "17"
+              "dorsal": "9"
             },
             {
-              "jugador": "Zahi Ahmed",
+              "jugador": "Forson Amankwah",
               "pos": "RM",
-              "dorsal": "9"
+              "dorsal": "17"
             },
             {
               "jugador": "Igor Zlatanovic",
@@ -6428,24 +6428,24 @@
       "h2h": null,
       "standings": {
         "home": {
-          "pos": "26",
-          "pts": "4",
-          "pj": "4",
-          "g": "1",
+          "pos": "18",
+          "pts": "7",
+          "pj": "5",
+          "g": "2",
           "e": "1",
           "p": "2",
-          "dg": "-5",
-          "récord": "1-1-2"
+          "dg": "-3",
+          "récord": "2-1-2"
         },
         "away": {
           "pos": "36",
           "pts": "0",
-          "pj": "4",
+          "pj": "5",
           "g": "0",
           "e": "0",
-          "p": "4",
-          "dg": "-10",
-          "récord": "0-0-4"
+          "p": "5",
+          "dg": "-12",
+          "récord": "0-0-5"
         }
       },
       "lineup": {
@@ -6674,24 +6674,24 @@
       "h2h": null,
       "standings": {
         "home": {
-          "pos": "4",
-          "pts": "10",
-          "pj": "4",
+          "pos": "6",
+          "pts": "11",
+          "pj": "5",
           "g": "3",
-          "e": "1",
+          "e": "2",
           "p": "0",
           "dg": "+8",
-          "récord": "3-1-0"
+          "récord": "3-2-0"
         },
         "away": {
-          "pos": "35",
-          "pts": "1",
-          "pj": "4",
+          "pos": "34",
+          "pts": "2",
+          "pj": "5",
           "g": "0",
-          "e": "1",
+          "e": "2",
           "p": "3",
           "dg": "-10",
-          "récord": "0-1-3"
+          "récord": "0-2-3"
         }
       },
       "lineup": {
@@ -6714,9 +6714,9 @@
               "dorsal": "29"
             },
             {
-              "jugador": "Louis Patris",
+              "jugador": "Guilherme Smith",
               "pos": "LB",
-              "dorsal": "27"
+              "dorsal": "11"
             },
             {
               "jugador": "Denzel De Roeve",
@@ -6729,14 +6729,14 @@
               "dorsal": "6"
             },
             {
-              "jugador": "Guilherme Smith",
+              "jugador": "Adem Zorgane",
               "pos": "LM",
-              "dorsal": "11"
+              "dorsal": "8"
             },
             {
-              "jugador": "Adem Zorgane",
+              "jugador": "Louis Patris",
               "pos": "RM",
-              "dorsal": "8"
+              "dorsal": "27"
             },
             {
               "jugador": "Kevin Rodríguez",
@@ -6920,24 +6920,24 @@
       "h2h": null,
       "standings": {
         "home": {
-          "pos": "30",
-          "pts": "3",
-          "pj": "4",
-          "g": "1",
+          "pos": "19",
+          "pts": "6",
+          "pj": "5",
+          "g": "2",
           "e": "0",
           "p": "3",
-          "dg": "-4",
-          "récord": "1-0-3"
+          "dg": "0",
+          "récord": "2-0-3"
         },
         "away": {
-          "pos": "1",
+          "pos": "5",
           "pts": "12",
-          "pj": "4",
+          "pj": "5",
           "g": "4",
           "e": "0",
-          "p": "0",
-          "dg": "+10",
-          "récord": "4-0-0"
+          "p": "1",
+          "dg": "+6",
+          "récord": "4-0-1"
         }
       },
       "lineup": {
@@ -7166,24 +7166,24 @@
       "h2h": null,
       "standings": {
         "home": {
-          "pos": "21",
-          "pts": "5",
-          "pj": "4",
-          "g": "1",
+          "pos": "12",
+          "pts": "8",
+          "pj": "5",
+          "g": "2",
           "e": "2",
           "p": "1",
-          "dg": "+3",
-          "récord": "1-2-1"
+          "dg": "+4",
+          "récord": "2-2-1"
         },
         "away": {
-          "pos": "20",
+          "pos": "27",
           "pts": "5",
-          "pj": "4",
+          "pj": "5",
           "g": "1",
           "e": "2",
-          "p": "1",
-          "dg": "+5",
-          "récord": "1-2-1"
+          "p": "2",
+          "dg": "+4",
+          "récord": "1-2-2"
         }
       },
       "lineup": {
@@ -7196,53 +7196,53 @@
               "dorsal": "1"
             },
             {
-              "jugador": "Axel Disasi",
-              "pos": "D",
-              "dorsal": "5"
-            },
-            {
-              "jugador": "Jaydee Canvot",
-              "pos": "D",
-              "dorsal": "6"
-            },
-            {
               "jugador": "Chris Richards",
-              "pos": "D",
+              "pos": "CD-L",
               "dorsal": "26"
             },
             {
+              "jugador": "Axel Disasi",
+              "pos": "CD-R",
+              "dorsal": "5"
+            },
+            {
+              "jugador": "Ben Chilwell",
+              "pos": "LB",
+              "dorsal": "33"
+            },
+            {
+              "jugador": "Jaydee Canvot",
+              "pos": "RB",
+              "dorsal": "6"
+            },
+            {
+              "jugador": "Will Hughes",
+              "pos": "CM-L",
+              "dorsal": "19"
+            },
+            {
               "jugador": "Quinten Timber",
-              "pos": "M",
+              "pos": "CM-R",
               "dorsal": "23"
             },
             {
               "jugador": "Daichi Kamada",
-              "pos": "M",
+              "pos": "LM",
               "dorsal": "18"
             },
             {
-              "jugador": "Ben Chilwell",
-              "pos": "M",
-              "dorsal": "33"
-            },
-            {
-              "jugador": "Eddie Nketiah",
-              "pos": "M",
-              "dorsal": "9"
-            },
-            {
-              "jugador": "Will Hughes",
-              "pos": "M",
-              "dorsal": "19"
-            },
-            {
               "jugador": "Yéremy Pino",
-              "pos": "M",
+              "pos": "RM",
               "dorsal": "10"
             },
             {
+              "jugador": "Eddie Nketiah",
+              "pos": "CF-L",
+              "dorsal": "9"
+            },
+            {
               "jugador": "Jean-Philippe Mateta",
-              "pos": "F",
+              "pos": "CF-R",
               "dorsal": "14"
             }
           ],
@@ -7253,54 +7253,54 @@
               "dorsal": "13"
             },
             {
+              "jugador": "Mamadou Sarr",
+              "pos": "CD-L",
+              "dorsal": "19"
+            },
+            {
               "jugador": "Jon Martín",
-              "pos": "D",
+              "pos": "CD-R",
               "dorsal": "6"
             },
             {
               "jugador": "Aihen Muñoz",
-              "pos": "D",
+              "pos": "LB",
               "dorsal": "3"
             },
             {
               "jugador": "Héctor Fort",
-              "pos": "D",
+              "pos": "RB",
               "dorsal": "22"
             },
             {
-              "jugador": "Mamadou Sarr",
-              "pos": "D",
-              "dorsal": "19"
-            },
-            {
-              "jugador": "Gonçalo Guedes",
-              "pos": "M",
-              "dorsal": "11"
-            },
-            {
               "jugador": "Jon Gorrotxategi",
-              "pos": "M",
+              "pos": "CM-L",
               "dorsal": "4"
             },
             {
               "jugador": "Beñat Turrientes",
-              "pos": "M",
+              "pos": "CM-R",
               "dorsal": "8"
             },
             {
+              "jugador": "Gonçalo Guedes",
+              "pos": "LM",
+              "dorsal": "11"
+            },
+            {
               "jugador": "Job Ochieng",
-              "pos": "M",
+              "pos": "RM",
               "dorsal": "12"
             },
             {
-              "jugador": "Mikel Oyarzabal",
-              "pos": "F",
-              "dorsal": "10"
+              "jugador": "Arsen Zakharyan",
+              "pos": "CF-L",
+              "dorsal": "23"
             },
             {
-              "jugador": "Arsen Zakharyan",
-              "pos": "F",
-              "dorsal": "23"
+              "jugador": "Mikel Oyarzabal",
+              "pos": "CF-R",
+              "dorsal": "10"
             }
           ]
         },
@@ -7413,23 +7413,23 @@
       "standings": {
         "home": {
           "pos": "3",
-          "pts": "12",
-          "pj": "4",
+          "pts": "13",
+          "pj": "5",
           "g": "4",
-          "e": "0",
+          "e": "1",
           "p": "0",
           "dg": "+8",
-          "récord": "4-0-0"
+          "récord": "4-1-0"
         },
         "away": {
-          "pos": "25",
-          "pts": "4",
-          "pj": "4",
+          "pos": "28",
+          "pts": "5",
+          "pj": "5",
           "g": "1",
-          "e": "1",
+          "e": "2",
           "p": "2",
           "dg": "-4",
-          "récord": "1-1-2"
+          "récord": "1-2-2"
         }
       },
       "lineup": {
@@ -7442,39 +7442,39 @@
               "dorsal": "1"
             },
             {
-              "jugador": "Toon Raemaekers",
-              "pos": "D",
-              "dorsal": "28"
-            },
-            {
               "jugador": "Mariano Gómez",
-              "pos": "D",
+              "pos": "CD-L",
               "dorsal": "4"
             },
             {
-              "jugador": "Attila Osvath",
-              "pos": "D",
-              "dorsal": "14"
+              "jugador": "Toon Raemaekers",
+              "pos": "CD-R",
+              "dorsal": "28"
             },
             {
               "jugador": "Cadu",
-              "pos": "D",
+              "pos": "LB",
               "dorsal": "20"
             },
             {
-              "jugador": "Matús Bero",
-              "pos": "M",
-              "dorsal": "22"
+              "jugador": "Attila Osvath",
+              "pos": "RB",
+              "dorsal": "14"
             },
             {
               "jugador": "Ádám Nagy",
-              "pos": "M",
+              "pos": "CM",
               "dorsal": "6"
             },
             {
               "jugador": "Marius Dumitru Corbu",
-              "pos": "M",
+              "pos": "LM",
               "dorsal": "17"
+            },
+            {
+              "jugador": "Matús Bero",
+              "pos": "RM",
+              "dorsal": "22"
             },
             {
               "jugador": "Lenny Joseph",
@@ -7482,14 +7482,14 @@
               "dorsal": "75"
             },
             {
-              "jugador": "Kristoffer Zachariassen",
-              "pos": "F",
-              "dorsal": "16"
+              "jugador": "Daniel Arzani",
+              "pos": "LF",
+              "dorsal": "15"
             },
             {
-              "jugador": "Daniel Arzani",
-              "pos": "F",
-              "dorsal": "15"
+              "jugador": "Kristoffer Zachariassen",
+              "pos": "RF",
+              "dorsal": "16"
             }
           ],
           "visita": [
@@ -7500,43 +7500,38 @@
             },
             {
               "jugador": "Artemijus Tutyskinas",
-              "pos": "D",
+              "pos": "CD-L",
               "dorsal": "6"
             },
             {
-              "jugador": "Matic Ivansek",
-              "pos": "D",
-              "dorsal": "77"
-            },
-            {
               "jugador": "Lukasz Bejger",
-              "pos": "D",
+              "pos": "CD-R",
               "dorsal": "44"
             },
             {
               "jugador": "Milot Avdyli",
-              "pos": "D",
+              "pos": "LB",
               "dorsal": "11"
             },
             {
-              "jugador": "Mario Kvesic",
-              "pos": "M",
-              "dorsal": "8"
+              "jugador": "Matic Ivansek",
+              "pos": "RB",
+              "dorsal": "77"
             },
             {
               "jugador": "Svit Seslar",
-              "pos": "M",
+              "pos": "CM",
               "dorsal": "10"
             },
             {
-              "jugador": "Mark Zabukovnik",
-              "pos": "M",
-              "dorsal": "19"
+              "jugador": "Mario Kvesic",
+              "pos": "LM",
+              "dorsal": "8"
             },
             {
-              "jugador": "Benjamin Verbic",
-              "pos": "F",
-              "dorsal": "7"
+              "jugador": "Mark Zabukovnik",
+              "pos": "RM",
+              "dorsal": "19"
             },
             {
               "jugador": "Blaz Kramer",
@@ -7544,8 +7539,13 @@
               "dorsal": "9"
             },
             {
+              "jugador": "Benjamin Verbic",
+              "pos": "LF",
+              "dorsal": "7"
+            },
+            {
               "jugador": "Veton Tusha",
-              "pos": "F",
+              "pos": "RF",
               "dorsal": "25"
             }
           ]
@@ -7667,54 +7667,54 @@
               "dorsal": "33"
             },
             {
-              "jugador": "Federico Gatti",
-              "pos": "D",
-              "dorsal": "4"
-            },
-            {
-              "jugador": "Juan Cabal",
-              "pos": "D",
-              "dorsal": "32"
-            },
-            {
               "jugador": "Jhon Lucumí",
-              "pos": "D",
+              "pos": "CD",
               "dorsal": "26"
             },
             {
               "jugador": "Lloyd Kelly",
-              "pos": "D",
+              "pos": "CD-L",
               "dorsal": "6"
             },
             {
-              "jugador": "Jérémie Boga",
-              "pos": "M",
-              "dorsal": "13"
-            },
-            {
-              "jugador": "Francisco Conceição",
-              "pos": "M",
-              "dorsal": "7"
-            },
-            {
-              "jugador": "Pape Matar Sarr",
-              "pos": "M",
-              "dorsal": "29"
+              "jugador": "Federico Gatti",
+              "pos": "CD-R",
+              "dorsal": "4"
             },
             {
               "jugador": "Douglas Luiz",
-              "pos": "M",
+              "pos": "CM-L",
               "dorsal": "12"
             },
             {
+              "jugador": "Pape Matar Sarr",
+              "pos": "CM-R",
+              "dorsal": "29"
+            },
+            {
+              "jugador": "Juan Cabal",
+              "pos": "LM",
+              "dorsal": "32"
+            },
+            {
               "jugador": "Andrea Cambiaso",
-              "pos": "M",
+              "pos": "RM",
               "dorsal": "20"
             },
             {
               "jugador": "Jeff Ekhator",
               "pos": "F",
               "dorsal": "18"
+            },
+            {
+              "jugador": "Jérémie Boga",
+              "pos": "CF-L",
+              "dorsal": "13"
+            },
+            {
+              "jugador": "Francisco Conceição",
+              "pos": "CF-R",
+              "dorsal": "7"
             }
           ],
           "visita": [
@@ -7724,54 +7724,54 @@
               "dorsal": "1"
             },
             {
-              "jugador": "Senou Coulibaly",
-              "pos": "D",
-              "dorsal": "5"
-            },
-            {
               "jugador": "Lubomir Satka",
-              "pos": "D",
+              "pos": "CD-L",
               "dorsal": "37"
             },
             {
+              "jugador": "Senou Coulibaly",
+              "pos": "CD-R",
+              "dorsal": "5"
+            },
+            {
               "jugador": "Jean-Kévin Duverne",
-              "pos": "D",
+              "pos": "LB",
               "dorsal": "93"
             },
             {
               "jugador": "Loïc Négo",
-              "pos": "D",
+              "pos": "RB",
               "dorsal": "77"
             },
             {
-              "jugador": "Panagiotis Andreou",
-              "pos": "M",
-              "dorsal": "74"
-            },
-            {
-              "jugador": "Jaden Montnor",
-              "pos": "M",
-              "dorsal": "7"
-            },
-            {
-              "jugador": "Mateo Maric",
-              "pos": "M",
-              "dorsal": "14"
-            },
-            {
               "jugador": "Muamer Tankovic",
-              "pos": "M",
+              "pos": "AM",
               "dorsal": "22"
             },
             {
-              "jugador": "Florin Tanase",
-              "pos": "M",
-              "dorsal": "17"
+              "jugador": "Mateo Maric",
+              "pos": "LM",
+              "dorsal": "14"
+            },
+            {
+              "jugador": "Panagiotis Andreou",
+              "pos": "RM",
+              "dorsal": "74"
             },
             {
               "jugador": "Andronikos Kakoulis",
               "pos": "F",
               "dorsal": "9"
+            },
+            {
+              "jugador": "Jaden Montnor",
+              "pos": "AM-L",
+              "dorsal": "7"
+            },
+            {
+              "jugador": "Florin Tanase",
+              "pos": "AM-R",
+              "dorsal": "17"
             }
           ]
         },
@@ -7883,24 +7883,24 @@
       "h2h": null,
       "standings": {
         "home": {
-          "pos": "13",
-          "pts": "7",
-          "pj": "4",
+          "pos": "14",
+          "pts": "8",
+          "pj": "5",
           "g": "2",
-          "e": "1",
+          "e": "2",
           "p": "1",
           "dg": "-1",
-          "récord": "2-1-1"
+          "récord": "2-2-1"
         },
         "away": {
-          "pos": "34",
-          "pts": "1",
-          "pj": "4",
+          "pos": "33",
+          "pts": "2",
+          "pj": "5",
           "g": "0",
-          "e": "1",
+          "e": "2",
           "p": "3",
           "dg": "-8",
-          "récord": "0-1-3"
+          "récord": "0-2-3"
         }
       },
       "lineup": {
@@ -7908,59 +7908,59 @@
         "jugadores": {
           "local": [
             {
-              "jugador": "Khalis Merah",
-              "pos": "SUB",
-              "dorsal": "18"
-            },
-            {
-              "jugador": "Ruben Kluivert",
-              "pos": "SUB",
-              "dorsal": "21"
-            },
-            {
-              "jugador": "Nicolás Tagliafico",
-              "pos": "SUB",
-              "dorsal": "3"
-            },
-            {
-              "jugador": "Rémi Himbert",
-              "pos": "SUB",
-              "dorsal": "45"
-            },
-            {
-              "jugador": "Julien Duranville",
-              "pos": "SUB",
-              "dorsal": "24"
-            },
-            {
-              "jugador": "Felix Bacher",
-              "pos": "SUB",
-              "dorsal": "20"
-            },
-            {
               "jugador": "Dominik Greif",
-              "pos": "SUB",
+              "pos": "G",
               "dorsal": "1"
             },
             {
+              "jugador": "Ruben Kluivert",
+              "pos": "CD-L",
+              "dorsal": "21"
+            },
+            {
+              "jugador": "Felix Bacher",
+              "pos": "CD-R",
+              "dorsal": "20"
+            },
+            {
+              "jugador": "Nicolás Tagliafico",
+              "pos": "LB",
+              "dorsal": "3"
+            },
+            {
               "jugador": "Steeve Kango",
-              "pos": "SUB",
+              "pos": "RB",
               "dorsal": "37"
             },
             {
-              "jugador": "Kail Boudache",
-              "pos": "SUB",
-              "dorsal": "26"
+              "jugador": "Khalis Merah",
+              "pos": "CM",
+              "dorsal": "18"
             },
             {
               "jugador": "Noah Nartey",
-              "pos": "SUB",
+              "pos": "LM",
               "dorsal": "99"
             },
             {
               "jugador": "Corentin Tolisso",
-              "pos": "SUB",
+              "pos": "RM",
               "dorsal": "8"
+            },
+            {
+              "jugador": "Rémi Himbert",
+              "pos": "F",
+              "dorsal": "45"
+            },
+            {
+              "jugador": "Julien Duranville",
+              "pos": "LF",
+              "dorsal": "24"
+            },
+            {
+              "jugador": "Kail Boudache",
+              "pos": "RF",
+              "dorsal": "26"
             }
           ],
           "visita": [
@@ -7970,54 +7970,54 @@
               "dorsal": "12"
             },
             {
-              "jugador": "Lars Ranger",
-              "pos": "D",
-              "dorsal": "2"
-            },
-            {
-              "jugador": "Frederik Elkaer",
-              "pos": "D",
-              "dorsal": "11"
-            },
-            {
-              "jugador": "Sander Moen Foss",
-              "pos": "D",
-              "dorsal": "5"
-            },
-            {
               "jugador": "Stian Kristiansen",
-              "pos": "D",
+              "pos": "CD-L",
               "dorsal": "47"
             },
             {
+              "jugador": "Sander Moen Foss",
+              "pos": "CD-R",
+              "dorsal": "5"
+            },
+            {
+              "jugador": "Frederik Elkaer",
+              "pos": "LB",
+              "dorsal": "11"
+            },
+            {
+              "jugador": "Lars Ranger",
+              "pos": "RB",
+              "dorsal": "2"
+            },
+            {
+              "jugador": "Filip Ottosson",
+              "pos": "CM",
+              "dorsal": "21"
+            },
+            {
               "jugador": "Gustav Nyheim",
-              "pos": "M",
+              "pos": "LM",
               "dorsal": "14"
             },
             {
               "jugador": "Henrik Melland",
-              "pos": "M",
+              "pos": "RM",
               "dorsal": "16"
-            },
-            {
-              "jugador": "Vá",
-              "pos": "M",
-              "dorsal": "20"
-            },
-            {
-              "jugador": "Camil Jebara",
-              "pos": "M",
-              "dorsal": "19"
-            },
-            {
-              "jugador": "Filip Ottosson",
-              "pos": "M",
-              "dorsal": "21"
             },
             {
               "jugador": "Eric Kitolano",
               "pos": "F",
               "dorsal": "17"
+            },
+            {
+              "jugador": "Vá",
+              "pos": "LF",
+              "dorsal": "20"
+            },
+            {
+              "jugador": "Camil Jebara",
+              "pos": "RF",
+              "dorsal": "19"
             }
           ]
         },
@@ -8134,58 +8134,58 @@
           "local": [
             {
               "jugador": "Gonzalo Crettaz",
-              "pos": "SUB",
+              "pos": "G",
               "dorsal": "1"
             },
             {
-              "jugador": "Willum Thór Willumsson",
-              "pos": "SUB",
-              "dorsal": "11"
-            },
-            {
-              "jugador": "Clement Bischoff",
-              "pos": "SUB",
-              "dorsal": "99"
-            },
-            {
-              "jugador": "Bryan Linssen",
-              "pos": "SUB",
-              "dorsal": "30"
-            },
-            {
-              "jugador": "Deveron Fonville",
-              "pos": "SUB",
-              "dorsal": "24"
-            },
-            {
-              "jugador": "Darko Nejasmic",
-              "pos": "SUB",
-              "dorsal": "6"
-            },
-            {
               "jugador": "Ahmetcan Kaplan",
-              "pos": "SUB",
+              "pos": "CD",
               "dorsal": "22"
             },
             {
-              "jugador": "Tjaronn Chery",
-              "pos": "SUB",
-              "dorsal": "9"
-            },
-            {
-              "jugador": "Dusan Tadic",
-              "pos": "SUB",
-              "dorsal": "10"
+              "jugador": "Deveron Fonville",
+              "pos": "CD-L",
+              "dorsal": "24"
             },
             {
               "jugador": "Tobias Storm",
-              "pos": "SUB",
+              "pos": "CD-R",
               "dorsal": "21"
             },
             {
               "jugador": "Noé Lebreton",
-              "pos": "SUB",
+              "pos": "CM-L",
               "dorsal": "20"
+            },
+            {
+              "jugador": "Darko Nejasmic",
+              "pos": "CM-R",
+              "dorsal": "6"
+            },
+            {
+              "jugador": "Clement Bischoff",
+              "pos": "LM",
+              "dorsal": "99"
+            },
+            {
+              "jugador": "Willum Thór Willumsson",
+              "pos": "RM",
+              "dorsal": "11"
+            },
+            {
+              "jugador": "Bryan Linssen",
+              "pos": "F",
+              "dorsal": "30"
+            },
+            {
+              "jugador": "Dusan Tadic",
+              "pos": "CF-L",
+              "dorsal": "10"
+            },
+            {
+              "jugador": "Tjaronn Chery",
+              "pos": "CF-R",
+              "dorsal": "9"
             }
           ],
           "visita": [
@@ -8195,53 +8195,53 @@
               "dorsal": "30"
             },
             {
+              "jugador": "Charlie Cresswell",
+              "pos": "CD",
+              "dorsal": "4"
+            },
+            {
               "jugador": "Gonçalo Oliveira",
-              "pos": "D",
+              "pos": "CD-L",
               "dorsal": "5"
             },
             {
               "jugador": "Abdelhamid Aït Boudlal",
-              "pos": "D",
+              "pos": "CD-R",
               "dorsal": "48"
             },
             {
-              "jugador": "Bryan Reynolds",
-              "pos": "D",
-              "dorsal": "14"
-            },
-            {
-              "jugador": "Charlie Cresswell",
-              "pos": "D",
-              "dorsal": "4"
-            },
-            {
               "jugador": "Mahamadou Nagida",
-              "pos": "D",
+              "pos": "LB",
               "dorsal": "18"
             },
             {
-              "jugador": "Djaoui Cissé",
-              "pos": "M",
-              "dorsal": "6"
+              "jugador": "Bryan Reynolds",
+              "pos": "RB",
+              "dorsal": "14"
             },
             {
               "jugador": "Adrien Thomasson",
-              "pos": "M",
+              "pos": "CM",
               "dorsal": "28"
             },
             {
+              "jugador": "Djaoui Cissé",
+              "pos": "CM-L",
+              "dorsal": "6"
+            },
+            {
               "jugador": "Sebastian Szymanski",
-              "pos": "M",
+              "pos": "CM-R",
               "dorsal": "17"
             },
             {
               "jugador": "Esteban Lepaul",
-              "pos": "F",
+              "pos": "CF-L",
               "dorsal": "9"
             },
             {
               "jugador": "Boulaye Dia",
-              "pos": "F",
+              "pos": "CF-R",
               "dorsal": "22"
             }
           ]
@@ -8354,28 +8354,28 @@
       "h2h": null,
       "standings": {
         "home": {
-          "pos": "16",
+          "pos": "21",
           "pts": "6",
-          "pj": "4",
+          "pj": "5",
           "g": "2",
           "e": "0",
-          "p": "2",
-          "dg": "+1",
-          "récord": "2-0-2"
+          "p": "3",
+          "dg": "-1",
+          "récord": "2-0-3"
         },
         "away": {
-          "pos": "15",
-          "pts": "6",
-          "pj": "4",
-          "g": "2",
+          "pos": "11",
+          "pts": "9",
+          "pj": "5",
+          "g": "3",
           "e": "0",
           "p": "2",
-          "dg": "+3",
-          "récord": "2-0-2"
+          "dg": "+5",
+          "récord": "3-0-2"
         }
       },
       "lineup": {
-        "alineacion_publicada": false,
+        "alineacion_publicada": true,
         "jugadores": {
           "local": [
             {
@@ -8384,54 +8384,54 @@
               "dorsal": "1"
             },
             {
-              "jugador": "Konstantinos Kostoulas",
-              "pos": "D",
-              "dorsal": "5"
-            },
-            {
-              "jugador": "Dimitris Nikolaou",
-              "pos": "D",
-              "dorsal": "43"
-            },
-            {
               "jugador": "Christos Shelis",
-              "pos": "D",
+              "pos": "CD",
               "dorsal": "16"
             },
             {
-              "jugador": "Nicolaos Athanasiou",
-              "pos": "M",
-              "dorsal": "3"
+              "jugador": "Dimitris Nikolaou",
+              "pos": "CD-L",
+              "dorsal": "43"
             },
             {
-              "jugador": "Thanasis Androutsos",
-              "pos": "M",
-              "dorsal": "14"
-            },
-            {
-              "jugador": "Lorenzo Dickmann",
-              "pos": "M",
-              "dorsal": "24"
+              "jugador": "Konstantinos Kostoulas",
+              "pos": "CD-R",
+              "dorsal": "5"
             },
             {
               "jugador": "Andreas Bouchalakis",
-              "pos": "M",
+              "pos": "CM-L",
               "dorsal": "41"
             },
             {
-              "jugador": "Taxiarchis Fountas",
-              "pos": "M",
-              "dorsal": "11"
+              "jugador": "Thanasis Androutsos",
+              "pos": "CM-R",
+              "dorsal": "14"
             },
             {
-              "jugador": "Aitor Cantalapiedra",
-              "pos": "M",
-              "dorsal": "10"
+              "jugador": "Nicolaos Athanasiou",
+              "pos": "LM",
+              "dorsal": "3"
+            },
+            {
+              "jugador": "Lorenzo Dickmann",
+              "pos": "RM",
+              "dorsal": "24"
             },
             {
               "jugador": "Thiago Thomas Nuss",
               "pos": "F",
               "dorsal": "18"
+            },
+            {
+              "jugador": "Taxiarchis Fountas",
+              "pos": "CF-L",
+              "dorsal": "11"
+            },
+            {
+              "jugador": "Aitor Cantalapiedra",
+              "pos": "CF-R",
+              "dorsal": "10"
             }
           ],
           "visita": [
@@ -8439,10 +8439,60 @@
               "jugador": "Colin Coosemans",
               "pos": "G",
               "dorsal": "26"
+            },
+            {
+              "jugador": "Léo Pétrot",
+              "pos": "CD-L",
+              "dorsal": "27"
+            },
+            {
+              "jugador": "Giulian Biancone",
+              "pos": "CD-R",
+              "dorsal": "4"
+            },
+            {
+              "jugador": "Oleg Reabciuk",
+              "pos": "LB",
+              "dorsal": "5"
+            },
+            {
+              "jugador": "Ali Maamar",
+              "pos": "RB",
+              "dorsal": "79"
+            },
+            {
+              "jugador": "Thelo Aasgaard",
+              "pos": "CM-L",
+              "dorsal": "19"
+            },
+            {
+              "jugador": "Mario Stroeykens",
+              "pos": "CM-R",
+              "dorsal": "29"
+            },
+            {
+              "jugador": "Marten Winkler",
+              "pos": "LM",
+              "dorsal": "10"
+            },
+            {
+              "jugador": "Lukás Ambros",
+              "pos": "RM",
+              "dorsal": "18"
+            },
+            {
+              "jugador": "Tawfik Bentayeb",
+              "pos": "CF-L",
+              "dorsal": "21"
+            },
+            {
+              "jugador": "Mihajlo Cvetkovic",
+              "pos": "CF-R",
+              "dorsal": "9"
             }
           ]
         },
-        "jugadores_en_roster": 24
+        "jugadores_en_roster": 46
       },
       "estadio": {
         "nombre": "Pankritio Stadium",
@@ -8569,33 +8619,145 @@
       },
       "standings": {
         "home": {
-          "pos": "22",
+          "pos": "29",
           "pts": "4",
-          "pj": "4",
+          "pj": "5",
           "g": "1",
           "e": "1",
-          "p": "2",
-          "dg": "0",
-          "récord": "1-1-2"
+          "p": "3",
+          "dg": "-2",
+          "récord": "1-1-3"
         },
         "away": {
-          "pos": "14",
-          "pts": "6",
-          "pj": "4",
-          "g": "2",
+          "pos": "10",
+          "pts": "9",
+          "pj": "5",
+          "g": "3",
           "e": "0",
           "p": "2",
-          "dg": "+3",
-          "récord": "2-0-2"
+          "dg": "+5",
+          "récord": "3-0-2"
         }
       },
       "lineup": {
-        "alineacion_publicada": false,
+        "alineacion_publicada": true,
         "jugadores": {
-          "local": [],
-          "visita": []
+          "local": [
+            {
+              "jugador": "Jakub Surovcik",
+              "pos": "G",
+              "dorsal": "44"
+            },
+            {
+              "jugador": "Jaroslav Zelený",
+              "pos": "CD-L",
+              "dorsal": "30"
+            },
+            {
+              "jugador": "Loïc Mbe Soh",
+              "pos": "CD-R",
+              "dorsal": "22"
+            },
+            {
+              "jugador": "Viktor Vitályos",
+              "pos": "LB",
+              "dorsal": "15"
+            },
+            {
+              "jugador": "Ki-Jana Hoever",
+              "pos": "RB",
+              "dorsal": "25"
+            },
+            {
+              "jugador": "Sivert Mannsverk",
+              "pos": "CM",
+              "dorsal": "20"
+            },
+            {
+              "jugador": "Patrik Vydra",
+              "pos": "LM",
+              "dorsal": "26"
+            },
+            {
+              "jugador": "Andrew Irving",
+              "pos": "RM",
+              "dorsal": "18"
+            },
+            {
+              "jugador": "Jonatan Brunes",
+              "pos": "F",
+              "dorsal": "14"
+            },
+            {
+              "jugador": "John Mercado",
+              "pos": "LF",
+              "dorsal": "17"
+            },
+            {
+              "jugador": "Josimar Alcócer",
+              "pos": "RF",
+              "dorsal": "7"
+            }
+          ],
+          "visita": [
+            {
+              "jugador": "Jari De Busser",
+              "pos": "G",
+              "dorsal": "28"
+            },
+            {
+              "jugador": "Wesley Hoedt",
+              "pos": "CD-L",
+              "dorsal": "29"
+            },
+            {
+              "jugador": "Wouter Goes",
+              "pos": "CD-R",
+              "dorsal": "3"
+            },
+            {
+              "jugador": "Mees De Wit",
+              "pos": "LB",
+              "dorsal": "34"
+            },
+            {
+              "jugador": "Denso Kasius",
+              "pos": "RB",
+              "dorsal": "30"
+            },
+            {
+              "jugador": "Valdemar Byskov",
+              "pos": "AM",
+              "dorsal": "17"
+            },
+            {
+              "jugador": "Peer Koopmeiners",
+              "pos": "LM",
+              "dorsal": "6"
+            },
+            {
+              "jugador": "Jordy Clasie",
+              "pos": "RM",
+              "dorsal": "8"
+            },
+            {
+              "jugador": "Bendegúz Kovács",
+              "pos": "F",
+              "dorsal": "18"
+            },
+            {
+              "jugador": "Wassim Bouziane",
+              "pos": "AM-L",
+              "dorsal": "27"
+            },
+            {
+              "jugador": "Calvin Stengs",
+              "pos": "AM-R",
+              "dorsal": "14"
+            }
+          ]
         },
-        "jugadores_en_roster": 0
+        "jugadores_en_roster": 45
       },
       "estadio": {
         "nombre": "Generali Arena",
@@ -8703,68 +8865,124 @@
       "h2h": null,
       "standings": null,
       "lineup": {
-        "alineacion_publicada": false,
+        "alineacion_publicada": true,
         "jugadores": {
           "local": [
             {
               "jugador": "Robin Roefs",
-              "pos": "SUB",
+              "pos": "G",
               "dorsal": "22"
             },
             {
-              "jugador": "Malick Fofana",
-              "pos": "SUB",
-              "dorsal": "39"
+              "jugador": "Omar Alderete",
+              "pos": "CD-L",
+              "dorsal": "15"
             },
             {
-              "jugador": "Tymur Tutierov",
-              "pos": "SUB",
-              "dorsal": "57"
+              "jugador": "Kevin Danso",
+              "pos": "CD-R",
+              "dorsal": "4"
             },
             {
-              "jugador": "Chris Rigg",
-              "pos": "SUB",
-              "dorsal": "11"
+              "jugador": "Reinildo Mandava",
+              "pos": "LB",
+              "dorsal": "17"
             },
             {
               "jugador": "Trai Hume",
-              "pos": "SUB",
+              "pos": "RB",
               "dorsal": "32"
             },
             {
               "jugador": "Enzo Le Fée",
-              "pos": "SUB",
+              "pos": "AM",
               "dorsal": "28"
             },
             {
-              "jugador": "Reinildo Mandava",
-              "pos": "SUB",
-              "dorsal": "17"
-            },
-            {
               "jugador": "Noah Sadiki",
-              "pos": "SUB",
+              "pos": "LM",
               "dorsal": "27"
             },
             {
-              "jugador": "Nilson Angulo",
-              "pos": "SUB",
-              "dorsal": "10"
+              "jugador": "Chris Rigg",
+              "pos": "RM",
+              "dorsal": "11"
             },
             {
-              "jugador": "Kevin Danso",
-              "pos": "SUB",
+              "jugador": "Tymur Tutierov",
+              "pos": "F",
+              "dorsal": "57"
+            },
+            {
+              "jugador": "Malick Fofana",
+              "pos": "AM-L",
+              "dorsal": "39"
+            },
+            {
+              "jugador": "Nilson Angulo",
+              "pos": "AM-R",
+              "dorsal": "10"
+            }
+          ],
+          "visita": [
+            {
+              "jugador": "Slawomir Abramowicz",
+              "pos": "G",
+              "dorsal": "50"
+            },
+            {
+              "jugador": "Yuki Kobayashi",
+              "pos": "CD-L",
               "dorsal": "4"
             },
             {
-              "jugador": "Omar Alderete",
-              "pos": "SUB",
-              "dorsal": "15"
+              "jugador": "Bernardo Vital",
+              "pos": "CD-R",
+              "dorsal": "5"
+            },
+            {
+              "jugador": "Guilherme Montoia",
+              "pos": "LB",
+              "dorsal": "23"
+            },
+            {
+              "jugador": "Rodrigo Conceição",
+              "pos": "RB",
+              "dorsal": "27"
+            },
+            {
+              "jugador": "Anders Klynge",
+              "pos": "AM",
+              "dorsal": "19"
+            },
+            {
+              "jugador": "Taras Romanczuk",
+              "pos": "LM",
+              "dorsal": "6"
+            },
+            {
+              "jugador": "Eryk Kozlowski",
+              "pos": "RM",
+              "dorsal": "85"
+            },
+            {
+              "jugador": "Nik Prelec",
+              "pos": "F",
+              "dorsal": "99"
+            },
+            {
+              "jugador": "Kajetan Szmyt",
+              "pos": "AM-L",
+              "dorsal": "7"
+            },
+            {
+              "jugador": "Kamil Jozwiak",
+              "pos": "AM-R",
+              "dorsal": "72"
             }
-          ],
-          "visita": []
+          ]
         },
-        "jugadores_en_roster": 23
+        "jugadores_en_roster": 46
       },
       "estadio": {
         "nombre": "Stadium of Light",
@@ -8872,33 +9090,145 @@
       "h2h": null,
       "standings": {
         "home": {
-          "pos": "19",
+          "pos": "23",
           "pts": "6",
-          "pj": "4",
+          "pj": "5",
           "g": "2",
           "e": "0",
-          "p": "2",
-          "dg": "-2",
-          "récord": "2-0-2"
+          "p": "3",
+          "dg": "-3",
+          "récord": "2-0-3"
         },
         "away": {
-          "pos": "32",
-          "pts": "3",
-          "pj": "4",
-          "g": "1",
+          "pos": "25",
+          "pts": "6",
+          "pj": "5",
+          "g": "2",
           "e": "0",
           "p": "3",
-          "dg": "-5",
-          "récord": "1-0-3"
+          "dg": "-4",
+          "récord": "2-0-3"
         }
       },
       "lineup": {
-        "alineacion_publicada": false,
+        "alineacion_publicada": true,
         "jugadores": {
-          "local": [],
-          "visita": []
+          "local": [
+            {
+              "jugador": "Adriel",
+              "pos": "G",
+              "dorsal": "31"
+            },
+            {
+              "jugador": "Stopira",
+              "pos": "CD-L",
+              "dorsal": "2"
+            },
+            {
+              "jugador": "Volnei Feltes",
+              "pos": "CD-R",
+              "dorsal": "4"
+            },
+            {
+              "jugador": "Javier Vazquez",
+              "pos": "LB",
+              "dorsal": "23"
+            },
+            {
+              "jugador": "Jonathan Mutombo",
+              "pos": "RB",
+              "dorsal": "45"
+            },
+            {
+              "jugador": "João Marques",
+              "pos": "AM",
+              "dorsal": "33"
+            },
+            {
+              "jugador": "Alejandro Alfaro",
+              "pos": "LM",
+              "dorsal": "8"
+            },
+            {
+              "jugador": "Mohamed Diadié",
+              "pos": "RM",
+              "dorsal": "5"
+            },
+            {
+              "jugador": "Musa Drammeh",
+              "pos": "F",
+              "dorsal": "17"
+            },
+            {
+              "jugador": "Dany Jean",
+              "pos": "AM-L",
+              "dorsal": "7"
+            },
+            {
+              "jugador": "Manuel Pozo",
+              "pos": "AM-R",
+              "dorsal": "11"
+            }
+          ],
+          "visita": [
+            {
+              "jugador": "Sam Johnstone",
+              "pos": "G",
+              "dorsal": "26"
+            },
+            {
+              "jugador": "Liam Scales",
+              "pos": "CD-L",
+              "dorsal": "5"
+            },
+            {
+              "jugador": "Dane Murray",
+              "pos": "CD-R",
+              "dorsal": "47"
+            },
+            {
+              "jugador": "Kieran Tierney",
+              "pos": "LB",
+              "dorsal": "63"
+            },
+            {
+              "jugador": "Colby Donovan",
+              "pos": "RB",
+              "dorsal": "51"
+            },
+            {
+              "jugador": "Luke McCowan",
+              "pos": "AM",
+              "dorsal": "14"
+            },
+            {
+              "jugador": "Alex Oxlade-Chamberlain",
+              "pos": "LM",
+              "dorsal": "21"
+            },
+            {
+              "jugador": "Callum McGregor",
+              "pos": "RM",
+              "dorsal": "42"
+            },
+            {
+              "jugador": "Kasper Høgh",
+              "pos": "F",
+              "dorsal": "9"
+            },
+            {
+              "jugador": "Jota",
+              "pos": "AM-L",
+              "dorsal": "7"
+            },
+            {
+              "jugador": "Yang Hyun-Jun",
+              "pos": "AM-R",
+              "dorsal": "13"
+            }
+          ]
         },
-        "jugadores_en_roster": 0
+        "jugadores_en_roster": 46
       },
       "estadio": {
         "nombre": "Estádio Dr. Magalhaes Pessoa",
@@ -9006,34 +9336,84 @@
       "h2h": null,
       "standings": {
         "home": {
-          "pos": "23",
-          "pts": "4",
-          "pj": "4",
-          "g": "1",
+          "pos": "15",
+          "pts": "7",
+          "pj": "5",
+          "g": "2",
           "e": "1",
           "p": "2",
-          "dg": "0",
-          "récord": "1-1-2"
+          "dg": "+2",
+          "récord": "2-1-2"
         },
         "away": {
-          "pos": "24",
+          "pos": "31",
           "pts": "4",
-          "pj": "4",
+          "pj": "5",
           "g": "1",
           "e": "1",
-          "p": "2",
-          "dg": "-3",
-          "récord": "1-1-2"
+          "p": "3",
+          "dg": "-5",
+          "récord": "1-1-3"
         }
       },
       "lineup": {
-        "alineacion_publicada": false,
+        "alineacion_publicada": true,
         "jugadores": {
           "local": [
             {
               "jugador": "Oliver Baumann",
               "pos": "G",
               "dorsal": "1"
+            },
+            {
+              "jugador": "Koki Machida",
+              "pos": "CD-L",
+              "dorsal": "28"
+            },
+            {
+              "jugador": "Ozan Kabak",
+              "pos": "CD-R",
+              "dorsal": "5"
+            },
+            {
+              "jugador": "Leon Avdullahu",
+              "pos": "SW",
+              "dorsal": "7"
+            },
+            {
+              "jugador": "Mats Rots",
+              "pos": "LB",
+              "dorsal": "39"
+            },
+            {
+              "jugador": "Vladimír Coufal",
+              "pos": "RB",
+              "dorsal": "34"
+            },
+            {
+              "jugador": "Alexander Prass",
+              "pos": "CM",
+              "dorsal": "22"
+            },
+            {
+              "jugador": "Adam Daghim",
+              "pos": "LM",
+              "dorsal": "14"
+            },
+            {
+              "jugador": "Wouter Burger",
+              "pos": "RM",
+              "dorsal": "18"
+            },
+            {
+              "jugador": "Fisnik Asllani",
+              "pos": "CF-L",
+              "dorsal": "11"
+            },
+            {
+              "jugador": "Adam Hlozek",
+              "pos": "CF-R",
+              "dorsal": "10"
             }
           ],
           "visita": [
@@ -9041,10 +9421,60 @@
               "jugador": "Adam Stejskal",
               "pos": "G",
               "dorsal": "1"
+            },
+            {
+              "jugador": "Joshua Quarshie",
+              "pos": "CD-L",
+              "dorsal": "2"
+            },
+            {
+              "jugador": "Albert Vallci",
+              "pos": "CD-R",
+              "dorsal": "5"
+            },
+            {
+              "jugador": "Jon Gorenc Stankovic",
+              "pos": "SW",
+              "dorsal": "4"
+            },
+            {
+              "jugador": "Luís Balbo",
+              "pos": "LB",
+              "dorsal": "27"
+            },
+            {
+              "jugador": "Arjan Malic",
+              "pos": "RB",
+              "dorsal": "23"
+            },
+            {
+              "jugador": "Jacob Peter Hödl",
+              "pos": "CM",
+              "dorsal": "43"
+            },
+            {
+              "jugador": "Luca Weinhandl",
+              "pos": "LM",
+              "dorsal": "39"
+            },
+            {
+              "jugador": "Valmir Matoshi",
+              "pos": "RM",
+              "dorsal": "78"
+            },
+            {
+              "jugador": "Seedy Jatta",
+              "pos": "CF-L",
+              "dorsal": "20"
+            },
+            {
+              "jugador": "Oumar Diakité",
+              "pos": "CF-R",
+              "dorsal": "14"
             }
           ]
         },
-        "jugadores_en_roster": 2
+        "jugadores_en_roster": 44
       },
       "estadio": {
         "nombre": "PreZero Arena",
@@ -12937,7 +13367,7 @@
     "detalle_generado": 27,
     "detalle_preservado_embebido": 28,
     "detalle_con_estadio": 55,
-    "detalle_con_alineacion_oficial": 28,
+    "detalle_con_alineacion_oficial": 33,
     "detalle_con_standings": 51,
     "detalle_con_h2h": 35,
     "avisos": [
