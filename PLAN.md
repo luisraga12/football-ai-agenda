@@ -64,7 +64,8 @@ de trabajar está en
   (20–22 nov) hasta el domingo 22, para no tapar los partidos de este fin
   de semana; la Semana 2 ya está hecha y solo falta ponerla en vivo.
 
-## ⏳ Semana 3 — Pendiente
+## ✅ Semana 3 — Hecha (entregada dentro  de la Semana 2 en vivo, 22–25 nov 2026)
+- **Cierre 25 nov 2026 (jefe):** todo el alcance de esta semana está entregado y en vivo dentro de la página de la Semana 2: momios reales de ESPN/DraftKings por partido, EV y semáforo de valor, DNB y doble oportunidad derivados del 1X2 en cada tarjeta, y parlay solo con picks EV+. Queda UN pendiente: la fuente extra de momios para ambos anotan, córners y hándicap asiático (The Odds API o MoviOdds, por verificar).
 
 - Momios reales de ESPN/DraftKings por partido (1X2, over/under 2.5, handicap).
 - Comparar probabilidad propia vs momio: valor esperado (EV) y semáforo
@@ -143,7 +144,8 @@ de trabajar está en
   página hoy se actualiza por horario (diario + cada hora en días de
   partido), no en vivo.
 
-## ⏳ Semana 4 — Pendiente
+## ✅ Semana 4 — Hecha (entregada dentro de la Semana 2 en vivo, 22 nov 2026, verificada 25 nov 2026)
+- **Cierre 25 nov 2026 (jefe):** parlay builder con picks reales de valor positivo y guardado de picks en localStorage con la vista «Mis picks guardados», todo en vivo en la página de la Semana 2 y verificado corriendo el 25 nov (guardar, recargar y limpiar funcionan).
 
 - Parlay builder con picks reales (solo los de valor positivo).
 - Guardar los picks elegidos.
@@ -272,3 +274,11 @@ de trabajar está en
 - Cada semana se actualizan los partidos con los de esa semana (a partir
   de la Semana 7, eso lo hace el flujo automático).
 - Nunca se hacen apuestas ni se maneja dinero desde la página.
+
+## Actualización 25 nov 2026 (jefe)
+- PR #50: arreglo de crestas recortadas en el detalle (merge 1c9cb5b).
+- PR #52: partidos terminados sin momio muestran Final en ev.json (merge 44013ae); estado sigue «pendiente» (= sin momios), el estado real vive en estado_partido + marcador.
+- PR #54: cron diario a 13:17 UTC + registro de hora de arranque (merge 60a2c90); el disparador externo quedó rechazado por ahora.
+- Semana 10 aprobada: estadio y alineación oficial en partido.html (E1 datos + E2 página), primero en preview.
+- Auditoría de automatización del 25 nov: backlog de 20 puntos registrado en el buzón (JEFE.md) — lo urgente es la cobertura en vivo (28 de 55 partidos) y el cambio de semana manual.
+- Oportunidad de mejora (cliente): el Poisson no descuenta las bajas de estrellas; conectar la Fuerza del XI con el modelo, posible Semana 11 o después, con calibración previa.

@@ -1,6 +1,6 @@
 {
  "semana": "2-entresemana",
- "fecha_consulta": "2026-11-25",
+ "fecha_consulta": "2026-11-26",
  "partidos": [
   {
    "away": "Aston Villa",
@@ -277,14 +277,14 @@
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 1.434782608695652,
-     "draw": 5.0,
-     "away": 6.5
+     "home": 1.4444444444444444,
+     "draw": 4.8,
+     "away": 6.0
     },
     "total": {
-     "linea": 3.5,
-     "over": 2.25,
-     "under": 1.5882352941176472
+     "linea": 2.5,
+     "over": 1.5555555555555556,
+     "under": 2.35
     },
     "spread": {
      "home_linea": -1.5,
@@ -547,20 +547,20 @@
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 1.1666666666666667,
+     "home": 1.1538461538461537,
      "draw": 8.5,
-     "away": 14.0
+     "away": 15.0
     },
     "total": {
      "linea": 3.5,
-     "over": 1.8,
-     "under": 2.0
+     "over": 1.7692307692307692,
+     "under": 2.05
     },
     "spread": {
      "home_linea": -2.5,
-     "home": 2.05,
+     "home": 2.0,
      "away_linea": 2.5,
-     "away": 1.6666666666666665
+     "away": 1.7142857142857144
     }
    },
    "estado_partido": "pre",
@@ -745,20 +745,20 @@
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 1.1904761904761905,
-     "draw": 7.5,
-     "away": 13.0
+     "home": 1.2105263157894737,
+     "draw": 7.0,
+     "away": 12.0
     },
     "total": {
      "linea": 3.5,
-     "over": 1.9523809523809523,
+     "over": 2.0,
      "under": 1.8333333333333335
     },
     "spread": {
-     "home_linea": -2.5,
-     "home": 2.25,
-     "away_linea": 2.5,
-     "away": 1.5882352941176472
+     "home_linea": -1.5,
+     "home": 1.5714285714285714,
+     "away_linea": 1.5,
+     "away": 2.25
     }
    },
    "estado_partido": "pre",

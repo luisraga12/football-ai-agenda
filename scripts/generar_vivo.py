@@ -20,9 +20,20 @@ Reglas (orden del jefe, 24 nov 2026; propuesta-vivo-cache.md):
      con codigo 1 (el workflow lo registra, no escribe nada roto).
   4. Mezcla (merge): los partidos de fechas que no se consultaron en
      esta corrida conservan su ultimo dato conocido (con su
-     actualizado_en). Asi vivo.json siempre trae los 28 partidos de la
-     semana y cada entrada dice de cuando es su dato.
-  5. Los fallos se registran en data/vivo-log.json (ultimas 50 entradas)
+     actualizado_en). Y siembra (seed): todo partido del config que
+     aun no tiene entrada en vivo.json recibe una entrada
+     programada (estado 'pre', sin marcador, origen 'config'), para
+     que vivo.json siempre traiga TODOS los partidos de la semana y
+     la pagina nunca se quede sin marcador en vivo por un partido
+     descubierto tarde. La siembra nunca inventa un resultado: la
+     entrada programada no muestra marcador hasta que ESPN lo
+     publique.
+  5. Solo se escribe si algo cambio: una entrada solo se actualiza
+     cuando cambia su contenido real (estado, minuto o marcador);
+     si nada cambio, el archivo no se reescribe y generado_en
+     conserva la hora del ultimo cambio real. Asi el historial de
+     git refleja cambios de verdad y no un commit cada 5 minutos.
+  6. Los fallos se registran en data/vivo-log.json (ultimas 50 entradas)
      para auditarlos; vivo.json lleva solo un campo "advertencia" corto.
 
 Uso:
@@ -117,6 +128,34 @@ def extraer_partido(evento, liga, fecha, ahora_iso):
     }
 
 
+def contenido_igual(a, b):
+    """True si dos entradas de vivo.json dicen lo mismo (estado,
+    minuto y marcador). actualizado_en y origen no cuentan: si el
+    contenido no cambio, la entrada se conserva tal cual para no
+    reescribir el archivo cada 5 minutos."""
+    for campo in ("estado", "detalle", "minuto", "marcador_local",
+                  "marcador_visita"):
+        if a.get(campo) != b.get(campo):
+            return False
+    return True
+
+
+def registrar_fallos(fallos, log_path):
+    """Agrega fallos a data/vivo-log.json (ultimas 50 entradas)."""
+    registro = []
+    if os.path.isfile(log_path):
+        try:
+            with open(log_path, encoding="utf-8") as f:
+                registro = json.load(f)
+        except (OSError, ValueError):
+            registro = []
+    registro.extend(fallos)
+    registro = registro[-50:]
+    with open(log_path, "w", encoding="utf-8") as f:
+        json.dump(registro, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+
+
 def cargar_config(path_config):
     """Partidos de la semana actual + entre semana (si hay)."""
     with open(path_config, encoding="utf-8") as f:
@@ -158,6 +197,7 @@ def main():
 
     # Datos previos (merge): si el archivo existe y es valido, se conserva.
     previos = {}
+    viejo = None
     if os.path.isfile(args.salida):
         try:
             with open(args.salida, encoding="utf-8") as f:
@@ -166,6 +206,7 @@ def main():
                 previos[clave(p)] = p
         except (OSError, ValueError):
             print("AVISO: vivo.json anterior ilegible; se regenera desde cero.")
+            viejo = None
 
     nuevos = dict(previos)
     fallos = []
@@ -196,17 +237,60 @@ def main():
                                "error": f"partido no en ESPN: "
                                         f"{p['home']} vs {p['away']}"})
                 continue
-            nuevos[clave(ext)] = ext
+            anterior = nuevos.get(clave(ext))
+            if anterior is not None and contenido_igual(anterior, ext):
+                # Sin cambio real: se conserva la entrada tal cual (con
+                # su actualizado_en), para no reescribir cada 5 minutos.
+                pass
+            else:
+                nuevos[clave(ext)] = ext
             encontrados += 1
         print(f"OK {liga} {fecha} via {host.split('/')[2]}: "
               f"{len(eventos)} eventos en el scoreboard.")
 
-    if consultados > 0 and encontrados == 0 and not previos:
-        print("FALLO TOTAL: ninguna consulta devolvio partidos; "
-              "vivo.json no se toca.")
+    # Siembra: todo partido del config sin entrada recibe una entrada
+    # programada (estado 'pre', sin marcador, origen 'config'). Asi
+    # vivo.json cubre la semana completa aunque ESPN aun no publique
+    # el partido, la corrida solo consulte las fechas de hoy o el
+    # partido se haya descubierto tarde (paso 0). La siembra nunca
+    # inventa un resultado: la entrada programada no muestra marcador
+    # hasta que ESPN lo publique, y en la siguiente corrida el dato
+    # real de ESPN la reemplaza (misma clave liga/fecha/ids).
+    sembrados = 0
+    for p in partidos:
+        k = (p["liga"], p["fecha"], str(p["home_id"]), str(p["away_id"]))
+        if k not in nuevos:
+            nuevos[k] = {
+                "liga": p["liga"], "fecha": p["fecha"],
+                "home_id": p["home_id"], "away_id": p["away_id"],
+                "home": p["home"], "away": p["away"],
+                "estado": "pre", "detalle": "", "minuto": "",
+                "marcador_local": None, "marcador_visita": None,
+                "actualizado_en": ahora_iso, "origen": "config",
+            }
+            sembrados += 1
+
+    if not partidos:
+        print("FALLO TOTAL: el config no trae partidos; vivo.json "
+              "no se toca.")
         return 1
+    # Si todas las consultas fallaron, igual se escribe la siembra
+    # (partidos programados, sin marcador): la pagina muestra los
+    # partidos programados en vez de quedarse sin vivo.json. Los
+    # fallos quedan en vivo-log.json.
 
     lista = [nuevos[k] for k in sorted(nuevos)]
+    previos_lista = (viejo.get("partidos")
+                     if isinstance(viejo, dict) else None)
+    if previos_lista == lista:
+        # Nada cambio: no se reescribe el archivo (generado_en
+        # conserva la hora del ultimo cambio real). Los fallos de
+        # esta corrida igual se registran.
+        if fallos:
+            registrar_fallos(fallos, args.log)
+        print(f"vivo.json: sin cambios ({len(lista)} partidos, "
+              f"{len(fallos)} fallo(s) en esta corrida).")
+        return 0
     advertencia = None
     if fallos:
         advertencia = (f"{len(fallos)} fallo(s) en la ultima corrida "
@@ -236,21 +320,11 @@ def main():
     os.replace(tmp, args.salida)
 
     if fallos:
-        registro = []
-        if os.path.isfile(args.log):
-            try:
-                with open(args.log, encoding="utf-8") as f:
-                    registro = json.load(f)
-            except (OSError, ValueError):
-                registro = []
-        registro.extend(fallos)
-        registro = registro[-50:]
-        with open(args.log, "w", encoding="utf-8") as f:
-            json.dump(registro, f, ensure_ascii=False, indent=2)
-            f.write("\n")
+        registrar_fallos(fallos, args.log)
 
     print(f"vivo.json: {len(lista)} partidos "
           f"({encontrados} actualizados en esta corrida, "
+          f"{sembrados} sembrados del config, "
           f"{len(fallos)} fallo(s)).")
     return 0
 
