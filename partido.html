@@ -1671,7 +1671,7 @@ function buildRADIOMap(rawData, tenData, partidos){
     var p = buscarStats(estDocs, slug);
     if (!p || !p.estadisticas){
       statsState = "pendiente";
-      return h + '<div class="detail-pending">Estadísticas pendientes — el Empleado 1 aún no publica el JSON de estadísticas (data/&lt;config&gt;/estadisticas.json). Cuando llegue, esta sección muestra posesión, tiros, tiros a puerta, duelos ganados, córners y el resto en barras comparadas.</div>';
+      return h + '<div class="detail-pending">Estadísticas pendientes — el Empleado 1 aún no publica el JSON de estadísticas (data/&lt;config&gt;/estadisticas.json). Cuando llegue, esta sección muestra posesión, tiros, tiros a puerta, córners y el resto en barras comparadas.</div>';
     }
     var lista = normalizarStats(p.estadisticas);
     if (!lista.length){
