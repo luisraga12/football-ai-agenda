@@ -157,14 +157,14 @@
    "mejor_pick_ayer": "Visita",
    "mejor_pick_hoy": "Visita",
    "ev_ayer": 0.865157374929943,
-   "ev_hoy": 0.865157374929943,
+   "ev_hoy": 0.7763403570761362,
    "linea_ayer": 2.5,
    "linea_hoy": 2.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": 0.0,
-   "flecha": "→"
+   "delta_ev_pp": -8.881701785380681,
+   "flecha": "↓"
   },
   {
    "slug": "dinamo-zagreb-vs-bayer-leverkusen",
@@ -176,14 +176,14 @@
    "mejor_pick_ayer": "Menos 3.5",
    "mejor_pick_hoy": "Menos 3.5",
    "ev_ayer": 0.5356497181262649,
-   "ev_hoy": 0.5356497181262649,
+   "ev_hoy": 0.5158348830536679,
    "linea_ayer": 3.5,
    "linea_hoy": 3.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": 0.0,
-   "flecha": "→"
+   "delta_ev_pp": -1.981483507259707,
+   "flecha": "↓"
   },
   {
    "slug": "olympiacos-vs-ac-milan",
@@ -210,19 +210,15 @@
    "away": "Atlas",
    "fecha": "2026-11-25",
    "hora": "19:00",
-   "proveedor": "DraftKings",
+   "proveedor": null,
    "mejor_pick_ayer": "Más 3.5",
-   "mejor_pick_hoy": "Más 2.5",
+   "mejor_pick_hoy": null,
    "ev_ayer": 0.8983496125597539,
-   "ev_hoy": 0.4551857737748892,
+   "ev_hoy": null,
    "linea_ayer": 3.5,
    "linea_hoy": 2.5,
    "cambio_linea": true,
-   "estado": "con_momio",
-   "cambio_pick": true,
-   "delta_ev_pp": -44.31638387848646,
-   "flecha": "↓",
-   "ev_pick_ayer_hoy": 0.4551857737748892
+   "estado": "sin_momio"
   },
   {
    "slug": "monterrey-vs-america",
@@ -230,18 +226,15 @@
    "away": "América",
    "fecha": "2026-11-25",
    "hora": "21:10",
-   "proveedor": "DraftKings",
+   "proveedor": null,
    "mejor_pick_ayer": "Visita",
-   "mejor_pick_hoy": "Visita",
+   "mejor_pick_hoy": null,
    "ev_ayer": 0.0879778377563234,
-   "ev_hoy": 0.0879778377563234,
+   "ev_hoy": null,
    "linea_ayer": 2.5,
    "linea_hoy": 2.5,
    "cambio_linea": false,
-   "estado": "con_momio",
-   "cambio_pick": false,
-   "delta_ev_pp": 0.0,
-   "flecha": "→"
+   "estado": "sin_momio"
   },
   {
    "slug": "pachuca-vs-guadalajara",
@@ -253,14 +246,14 @@
    "mejor_pick_ayer": "Menos 2.5",
    "mejor_pick_hoy": "Menos 2.5",
    "ev_ayer": 0.41267461031180064,
-   "ev_hoy": 0.41267461031180064,
+   "ev_hoy": 0.2714071492806207,
    "linea_ayer": 2.5,
    "linea_hoy": 2.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": 0.0,
-   "flecha": "→"
+   "delta_ev_pp": -14.126746103117993,
+   "flecha": "↓"
   },
   {
    "slug": "leon-vs-cruz-azul",
@@ -355,14 +348,14 @@
    "mejor_pick_ayer": "Spread local -1.5",
    "mejor_pick_hoy": "Spread local -1.5",
    "ev_ayer": 0.32614071941468614,
-   "ev_hoy": 0.32614071941468614,
+   "ev_hoy": 0.6121710706609911,
    "linea_ayer": 3.5,
    "linea_hoy": 3.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": 0.0,
-   "flecha": "→"
+   "delta_ev_pp": 28.603035124630495,
+   "flecha": "↑"
   },
   {
    "slug": "marseille-vs-levski-sofia",
@@ -374,14 +367,14 @@
    "mejor_pick_ayer": "Visita",
    "mejor_pick_hoy": "Visita",
    "ev_ayer": 3.800954781664829,
-   "ev_hoy": 3.800954781664829,
+   "ev_hoy": 3.5185456768610157,
    "linea_ayer": 2.5,
    "linea_hoy": 2.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": 0.0,
-   "flecha": "→"
+   "delta_ev_pp": -28.24091048038131,
+   "flecha": "↓"
   },
   {
    "slug": "rb-salzburg-vs-ararat-armenia",
@@ -393,14 +386,14 @@
    "mejor_pick_ayer": "Visita",
    "mejor_pick_hoy": "Visita",
    "ev_ayer": 3.429456006068956,
-   "ev_hoy": 3.745845720788167,
+   "ev_hoy": 3.113066291349744,
    "linea_ayer": 3.5,
    "linea_hoy": 3.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": 31.638971471921096,
-   "flecha": "↑"
+   "delta_ev_pp": -31.638971471921185,
+   "flecha": "↓"
   },
   {
    "slug": "union-st-gilloise-vs-lech-poznan",
@@ -412,14 +405,14 @@
    "mejor_pick_ayer": "Spread local -1.5",
    "mejor_pick_hoy": "Spread local -1.5",
    "ev_ayer": 0.7530461364850218,
-   "ev_hoy": 0.7530461364850218,
+   "ev_hoy": 0.7190723741500411,
    "linea_ayer": 3.5,
    "linea_hoy": 3.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": 0.0,
-   "flecha": "→"
+   "delta_ev_pp": -3.397376233498073,
+   "flecha": "↓"
   },
   {
    "slug": "viktoria-plzen-vs-benfica",
@@ -429,16 +422,17 @@
    "hora": "11:45",
    "proveedor": "DraftKings",
    "mejor_pick_ayer": "Spread visitante -1.5",
-   "mejor_pick_hoy": "Spread visitante -1.5",
+   "mejor_pick_hoy": "Visita",
    "ev_ayer": 0.7833706394280324,
-   "ev_hoy": 0.7833706394280324,
+   "ev_hoy": 0.47646705087904295,
    "linea_ayer": 3.5,
-   "linea_hoy": 3.5,
-   "cambio_linea": false,
+   "linea_hoy": 2.5,
+   "cambio_linea": true,
    "estado": "con_momio",
-   "cambio_pick": false,
-   "delta_ev_pp": 0.0,
-   "flecha": "→"
+   "cambio_pick": true,
+   "delta_ev_pp": -30.690358854898946,
+   "flecha": "↓",
+   "ev_pick_ayer_hoy": 0.4487139134049507
   },
   {
    "slug": "crystal-palace-vs-real-sociedad",
@@ -450,14 +444,14 @@
    "mejor_pick_ayer": "Visita",
    "mejor_pick_hoy": "Visita",
    "ev_ayer": 0.8418527490714596,
-   "ev_hoy": 0.8418527490714596,
+   "ev_hoy": 1.0145264442969086,
    "linea_ayer": 3.5,
    "linea_hoy": 3.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": 0.0,
-   "flecha": "→"
+   "delta_ev_pp": 17.267369522544907,
+   "flecha": "↑"
   },
   {
    "slug": "ferencvaros-vs-nk-celje",
@@ -467,16 +461,17 @@
    "hora": "14:00",
    "proveedor": "DraftKings",
    "mejor_pick_ayer": "Más 3.5",
-   "mejor_pick_hoy": "Más 3.5",
+   "mejor_pick_hoy": "Spread local -1.5",
    "ev_ayer": 0.6082159066781991,
-   "ev_hoy": 0.6082159066781991,
+   "ev_hoy": 0.5720066584813726,
    "linea_ayer": 3.5,
    "linea_hoy": 3.5,
    "cambio_linea": false,
    "estado": "con_momio",
-   "cambio_pick": false,
-   "delta_ev_pp": 0.0,
-   "flecha": "→"
+   "cambio_pick": true,
+   "delta_ev_pp": -3.6209248196826582,
+   "flecha": "↓",
+   "ev_pick_ayer_hoy": 0.5397811872450842
   },
   {
    "slug": "juventus-vs-omonia-nicosia",
@@ -490,8 +485,8 @@
    "ev_ayer": 0.2958866323237206,
    "ev_hoy": 0.2958866323237206,
    "linea_ayer": 3.5,
-   "linea_hoy": 3.5,
-   "cambio_linea": false,
+   "linea_hoy": 2.5,
+   "cambio_linea": true,
    "estado": "con_momio",
    "cambio_pick": false,
    "delta_ev_pp": 0.0,
@@ -507,14 +502,14 @@
    "mejor_pick_ayer": "Menos 3.5",
    "mejor_pick_hoy": "Menos 3.5",
    "ev_ayer": 0.17023381246892888,
-   "ev_hoy": 0.17023381246892888,
+   "ev_hoy": 0.050121837582088435,
    "linea_ayer": 3.5,
    "linea_hoy": 3.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": 0.0,
-   "flecha": "→"
+   "delta_ev_pp": -12.011197488684044,
+   "flecha": "↓"
   },
   {
    "slug": "nec-nijmegen-vs-stade-rennais",
@@ -526,14 +521,14 @@
    "mejor_pick_ayer": "Menos 3.5",
    "mejor_pick_hoy": "Menos 3.5",
    "ev_ayer": 0.2314226588239532,
-   "ev_hoy": 0.2314226588239532,
+   "ev_hoy": 0.24751968704387428,
    "linea_ayer": 3.5,
    "linea_hoy": 3.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": 0.0,
-   "flecha": "→"
+   "delta_ev_pp": 1.6097028219921095,
+   "flecha": "↑"
   },
   {
    "slug": "ofi-crete-vs-anderlecht",
@@ -545,14 +540,14 @@
    "mejor_pick_ayer": "Menos 2.5",
    "mejor_pick_hoy": "Menos 2.5",
    "ev_ayer": 0.653835819318523,
-   "ev_hoy": 0.653835819318523,
+   "ev_hoy": 0.5384519249474633,
    "linea_ayer": 2.5,
    "linea_hoy": 2.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": 0.0,
-   "flecha": "→"
+   "delta_ev_pp": -11.538389437105966,
+   "flecha": "↓"
   },
   {
    "slug": "sparta-prague-vs-az-alkmaar",
@@ -564,14 +559,14 @@
    "mejor_pick_ayer": "Visita",
    "mejor_pick_hoy": "Visita",
    "ev_ayer": 0.32433796382496816,
-   "ev_hoy": 0.32433796382496816,
+   "ev_hoy": 0.4970776982369207,
    "linea_ayer": 2.5,
    "linea_hoy": 2.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": 0.0,
-   "flecha": "→"
+   "delta_ev_pp": 17.273973441195256,
+   "flecha": "↑"
   },
   {
    "slug": "sunderland-vs-jagiellonia-bialystok",
@@ -585,8 +580,8 @@
    "ev_ayer": 1.4839012944645331,
    "ev_hoy": 1.4839012944645331,
    "linea_ayer": 3.5,
-   "linea_hoy": 3.5,
-   "cambio_linea": false,
+   "linea_hoy": 2.5,
+   "cambio_linea": true,
    "estado": "con_momio",
    "cambio_pick": false,
    "delta_ev_pp": 0.0,
@@ -602,14 +597,14 @@
    "mejor_pick_ayer": "Local",
    "mejor_pick_hoy": "Local",
    "ev_ayer": 1.5452896273351584,
-   "ev_hoy": 1.5452896273351584,
+   "ev_hoy": 1.4369794304272796,
    "linea_ayer": 3.5,
    "linea_hoy": 3.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": 0.0,
-   "flecha": "→"
+   "delta_ev_pp": -10.83101969078788,
+   "flecha": "↓"
   },
   {
    "slug": "tsg-hoffenheim-vs-sk-sturm-graz",
@@ -619,16 +614,17 @@
    "hora": "14:00",
    "proveedor": "DraftKings",
    "mejor_pick_ayer": "Empate",
-   "mejor_pick_hoy": "Empate",
+   "mejor_pick_hoy": "Visita",
    "ev_ayer": 0.5364113028000119,
-   "ev_hoy": 0.5364113028000119,
+   "ev_hoy": 0.8185168730653165,
    "linea_ayer": 3.5,
    "linea_hoy": 3.5,
    "cambio_linea": false,
    "estado": "con_momio",
-   "cambio_pick": false,
-   "delta_ev_pp": 0.0,
-   "flecha": "→"
+   "cambio_pick": true,
+   "delta_ev_pp": 28.21055702653046,
+   "flecha": "↑",
+   "ev_pick_ayer_hoy": 0.7368127770782744
   }
  ]
 }

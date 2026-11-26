@@ -1,6 +1,6 @@
 {
  "semana": 2,
- "fecha_consulta": "2026-11-25",
+ "fecha_consulta": "2026-11-26",
  "partidos": [
   {
    "away": "Borussia Mönchengladbach",
@@ -22,15 +22,35 @@
     },
     "total": {
      "linea": 3.5,
-     "over": 2.2,
-     "under": 1.6451612903225805
+     "over": 2.3,
+     "under": 1.606060606060606
     },
     "spread": {
      "home_linea": -0.5,
      "home": 1.6666666666666665,
      "away_linea": 0.5,
-     "away": 2.05
+     "away": 2.1
     }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 213764,
+    "btts": {
+     "yes": 1.49,
+     "no": 2.474
+    },
+    "asian_handicap": null,
+    "corners": {
+     "line": 9.5,
+     "over": 1.805,
+     "under": 1.955,
+     "bookmakers": 2
+    },
+    "sin_momio": [
+     "asian_handicap"
+    ]
    }
   },
   {
@@ -47,21 +67,41 @@
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 3.3,
-     "draw": 3.25,
-     "away": 2.15
+     "home": 3.25,
+     "draw": 3.15,
+     "away": 2.2
     },
     "total": {
      "linea": 2.5,
-     "over": 2.0,
-     "under": 1.8
+     "over": 2.05,
+     "under": 1.7407407407407407
     },
     "spread": {
      "home_linea": 0.5,
-     "home": 1.6666666666666665,
+     "home": 1.6451612903225805,
      "away_linea": -0.5,
-     "away": 2.05
+     "away": 2.15
     }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 210186,
+    "btts": {
+     "yes": 1.786,
+     "no": 1.946
+    },
+    "asian_handicap": null,
+    "corners": {
+     "line": 9.5,
+     "over": 2.153,
+     "under": 1.637,
+     "bookmakers": 3
+    },
+    "sin_momio": [
+     "asian_handicap"
+    ]
    }
   },
   {
@@ -78,21 +118,41 @@
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 2.55,
-     "draw": 3.4,
-     "away": 2.8
+     "home": 2.5,
+     "draw": 3.35,
+     "away": 2.85
     },
     "total": {
      "linea": 2.5,
-     "over": 1.7407407407407407,
-     "under": 2.05
+     "over": 1.8,
+     "under": 2.0
     },
     "spread": {
      "home_linea": -0.5,
-     "home": 2.4,
+     "home": 2.35,
      "away_linea": 0.5,
-     "away": 1.5128205128205128
+     "away": 1.526315789473684
     }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 209653,
+    "btts": {
+     "yes": 1.594,
+     "no": 2.254
+    },
+    "asian_handicap": null,
+    "corners": {
+     "line": 9.5,
+     "over": 1.67,
+     "under": 2.103,
+     "bookmakers": 3
+    },
+    "sin_momio": [
+     "asian_handicap"
+    ]
    }
   },
   {
@@ -109,21 +169,41 @@
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 2.1,
-     "draw": 3.9,
-     "away": 3.2
+     "home": 2.05,
+     "draw": 4.0,
+     "away": 3.3
     },
     "total": {
      "linea": 3.5,
-     "over": 2.15,
-     "under": 1.6896551724137931
+     "over": 2.05,
+     "under": 1.8
     },
     "spread": {
      "home_linea": -0.5,
      "home": 1.9523809523809523,
      "away_linea": 0.5,
-     "away": 1.7407407407407407
+     "away": 1.7692307692307692
     }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 213654,
+    "btts": {
+     "yes": 1.41,
+     "no": 2.73
+    },
+    "asian_handicap": null,
+    "corners": {
+     "line": 9.5,
+     "over": 1.707,
+     "under": 2.037,
+     "bookmakers": 3
+    },
+    "sin_momio": [
+     "asian_handicap"
+    ]
    }
   },
   {
@@ -140,12 +220,32 @@
    "momios": {
     "proveedor": "Bet 365",
     "moneyline": {
-     "home": 9.5,
-     "draw": 6.25,
+     "home": 9.0,
+     "draw": 7.0,
      "away": 1.25
     },
     "total": null,
     "spread": null
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 213761,
+    "btts": {
+     "yes": 1.602,
+     "no": 2.218
+    },
+    "asian_handicap": null,
+    "corners": {
+     "line": 9.5,
+     "over": 1.64,
+     "under": 2.15,
+     "bookmakers": 2
+    },
+    "sin_momio": [
+     "asian_handicap"
+    ]
    }
   },
   {
@@ -162,21 +262,41 @@
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 2.1,
+     "home": 2.15,
      "draw": 3.75,
-     "away": 3.25
+     "away": 3.2
     },
     "total": {
-     "linea": 3.5,
-     "over": 2.4,
-     "under": 1.5714285714285714
+     "linea": 2.5,
+     "over": 1.5714285714285714,
+     "under": 2.4
     },
     "spread": {
      "home_linea": -0.5,
-     "home": 2.0,
+     "home": 2.05,
      "away_linea": 0.5,
-     "away": 1.7142857142857144
+     "away": 1.6896551724137931
     }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 209652,
+    "btts": {
+     "yes": 1.466,
+     "no": 2.566
+    },
+    "asian_handicap": null,
+    "corners": {
+     "line": 9.5,
+     "over": 1.677,
+     "under": 2.087,
+     "bookmakers": 3
+    },
+    "sin_momio": [
+     "asian_handicap"
+    ]
    }
   },
   {
@@ -194,8 +314,8 @@
     "proveedor": "DraftKings",
     "moneyline": {
      "home": 6.0,
-     "draw": 4.7,
-     "away": 1.5
+     "draw": 4.8,
+     "away": 1.4761904761904763
     },
     "total": {
      "linea": 3.5,
@@ -208,6 +328,26 @@
      "away_linea": -1.5,
      "away": 2.2
     }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 213652,
+    "btts": {
+     "yes": 1.706,
+     "no": 2.056
+    },
+    "asian_handicap": null,
+    "corners": {
+     "line": 9.5,
+     "over": 2.103,
+     "under": 1.683,
+     "bookmakers": 3
+    },
+    "sin_momio": [
+     "asian_handicap"
+    ]
    }
   },
   {
@@ -239,6 +379,26 @@
      "away_linea": 0.5,
      "away": 2.05
     }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 213766,
+    "btts": {
+     "yes": 1.296,
+     "no": 3.342
+    },
+    "asian_handicap": null,
+    "corners": {
+     "line": 9.5,
+     "over": 1.5,
+     "under": 2.375,
+     "bookmakers": 2
+    },
+    "sin_momio": [
+     "asian_handicap"
+    ]
    }
   },
   {
@@ -255,21 +415,41 @@
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 1.303030303030303,
+     "home": 1.2941176470588236,
      "draw": 5.25,
-     "away": 8.0
+     "away": 8.5
     },
     "total": {
      "linea": 3.5,
      "over": 2.35,
-     "under": 1.5714285714285714
+     "under": 1.5882352941176472
     },
     "spread": {
      "home_linea": -1.5,
-     "home": 1.8695652173913042,
+     "home": 1.8333333333333335,
      "away_linea": 1.5,
-     "away": 1.8333333333333335
+     "away": 1.8695652173913042
     }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 210181,
+    "btts": {
+     "yes": 1.83,
+     "no": 1.91
+    },
+    "asian_handicap": null,
+    "corners": {
+     "line": 9.5,
+     "over": 1.88,
+     "under": 1.863,
+     "bookmakers": 3
+    },
+    "sin_momio": [
+     "asian_handicap"
+    ]
    }
   },
   {
@@ -286,21 +466,41 @@
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 1.1333333333333333,
-     "draw": 9.5,
-     "away": 17.0
+     "home": 1.125,
+     "draw": 10.0,
+     "away": 18.0
     },
     "total": {
      "linea": 3.5,
      "over": 1.8333333333333335,
-     "under": 1.9523809523809523
+     "under": 2.0
     },
     "spread": {
      "home_linea": -2.5,
-     "home": 2.0,
+     "home": 1.9523809523809523,
      "away_linea": 2.5,
-     "away": 1.7407407407407407
+     "away": 1.7692307692307692
     }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 213657,
+    "btts": {
+     "yes": 2.028,
+     "no": 1.726
+    },
+    "asian_handicap": null,
+    "corners": {
+     "line": 9.5,
+     "over": 1.66,
+     "under": 2.04,
+     "bookmakers": 3
+    },
+    "sin_momio": [
+     "asian_handicap"
+    ]
    }
   },
   {
@@ -317,21 +517,41 @@
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 4.1,
-     "draw": 3.6,
-     "away": 1.8695652173913042
+     "home": 4.4,
+     "draw": 3.8,
+     "away": 1.8
     },
     "total": {
      "linea": 2.5,
      "over": 1.6666666666666665,
-     "under": 2.15
+     "under": 2.2
     },
     "spread": {
      "home_linea": 0.5,
-     "home": 1.9090909090909092,
+     "home": 2.0,
      "away_linea": -0.5,
-     "away": 1.7692307692307692
+     "away": 1.7407407407407407
     }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 209648,
+    "btts": {
+     "yes": 1.596,
+     "no": 2.24
+    },
+    "asian_handicap": null,
+    "corners": {
+     "line": 9.5,
+     "over": 1.64,
+     "under": 2.155,
+     "bookmakers": 2
+    },
+    "sin_momio": [
+     "asian_handicap"
+    ]
    }
   },
   {
@@ -348,21 +568,41 @@
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 4.3,
-     "draw": 4.1,
+     "home": 4.4,
+     "draw": 4.2,
      "away": 1.625
     },
     "total": {
      "linea": 2.5,
-     "over": 1.5555555555555556,
-     "under": 2.35
+     "over": 1.5714285714285714,
+     "under": 2.4
     },
     "spread": {
      "home_linea": 0.5,
      "home": 2.15,
      "away_linea": -0.5,
-     "away": 1.5882352941176472
+     "away": 1.606060606060606
     }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 210183,
+    "btts": {
+     "yes": 1.555,
+     "no": 2.312
+    },
+    "asian_handicap": null,
+    "corners": {
+     "line": 9.5,
+     "over": 1.82,
+     "under": 1.945,
+     "bookmakers": 2
+    },
+    "sin_momio": [
+     "asian_handicap"
+    ]
    }
   },
   {
@@ -379,21 +619,41 @@
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 9.0,
-     "draw": 7.0,
-     "away": 1.2352941176470589
+     "home": 10.0,
+     "draw": 7.5,
+     "away": 1.2222222222222223
     },
     "total": {
      "linea": 3.5,
-     "over": 1.6451612903225805,
-     "under": 2.2
+     "over": 1.625,
+     "under": 2.25
     },
     "spread": {
-     "home_linea": 1.5,
-     "home": 2.15,
-     "away_linea": -1.5,
-     "away": 1.5882352941176472
+     "home_linea": 2.5,
+     "home": 1.5714285714285714,
+     "away_linea": -2.5,
+     "away": 2.25
     }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 213651,
+    "btts": {
+     "yes": 1.55,
+     "no": 2.33
+    },
+    "asian_handicap": null,
+    "corners": {
+     "line": 9.5,
+     "over": 1.705,
+     "under": 2.085,
+     "bookmakers": 2
+    },
+    "sin_momio": [
+     "asian_handicap"
+    ]
    }
   },
   {
@@ -410,21 +670,41 @@
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 1.9523809523809523,
-     "draw": 3.75,
+     "home": 2.0,
+     "draw": 3.8,
      "away": 3.55
     },
     "total": {
      "linea": 2.5,
-     "over": 1.7142857142857144,
-     "under": 2.05
+     "over": 1.7407407407407407,
+     "under": 2.1
     },
     "spread": {
      "home_linea": -0.5,
-     "home": 1.8695652173913042,
+     "home": 1.9090909090909092,
      "away_linea": 0.5,
-     "away": 1.7692307692307692
+     "away": 1.8
     }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 209645,
+    "btts": {
+     "yes": 1.608,
+     "no": 2.22
+    },
+    "asian_handicap": null,
+    "corners": {
+     "line": 9.5,
+     "over": 1.885,
+     "under": 1.885,
+     "bookmakers": 2
+    },
+    "sin_momio": [
+     "asian_handicap"
+    ]
    }
   },
   {
@@ -441,21 +721,41 @@
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 2.1,
-     "draw": 3.7,
-     "away": 2.9
+     "home": 2.05,
+     "draw": 3.8,
+     "away": 3.0
     },
     "total": {
      "linea": 3.5,
-     "over": 2.15,
-     "under": 1.6451612903225805
+     "over": 2.2,
+     "under": 1.6666666666666665
     },
     "spread": {
      "home_linea": -0.5,
      "home": 2.0,
      "away_linea": 0.5,
-     "away": 1.6896551724137931
+     "away": 1.7142857142857144
     }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 213760,
+    "btts": {
+     "yes": 1.418,
+     "no": 2.686
+    },
+    "asian_handicap": null,
+    "corners": {
+     "line": 9.5,
+     "over": 1.815,
+     "under": 1.94,
+     "bookmakers": 2
+    },
+    "sin_momio": [
+     "asian_handicap"
+    ]
    }
   },
   {
@@ -487,6 +787,26 @@
      "away_linea": 0.5,
      "away": 1.7142857142857144
     }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 210179,
+    "btts": {
+     "yes": 1.63,
+     "no": 2.164
+    },
+    "asian_handicap": null,
+    "corners": {
+     "line": 9.5,
+     "over": 1.93,
+     "under": 1.84,
+     "bookmakers": 2
+    },
+    "sin_momio": [
+     "asian_handicap"
+    ]
    }
   },
   {
@@ -500,7 +820,21 @@
    "liga_nombre": "Liga MX",
    "proveedor": null,
    "estado": "pendiente",
-   "momios": null
+   "momios": null,
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 655531,
+    "btts": null,
+    "asian_handicap": null,
+    "corners": null,
+    "sin_momio": [
+     "btts",
+     "asian_handicap",
+     "corners"
+    ]
+   }
   },
   {
    "home": "América",
@@ -511,9 +845,43 @@
    "liga": "mex.1",
    "fecha_cst": "2026-11-28 21:10",
    "liga_nombre": "Liga MX",
-   "proveedor": null,
-   "estado": "pendiente",
-   "momios": null
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 2.35,
+     "draw": 2.95,
+     "away": 3.25
+    },
+    "total": {
+     "linea": 2.5,
+     "over": 1.7692307692307692,
+     "under": 1.9090909090909092
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "home": 2.25,
+     "away_linea": 0.5,
+     "away": 1.5405405405405406
+    }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 655529,
+    "btts": {
+     "yes": 1.62,
+     "no": 2.197
+    },
+    "asian_handicap": null,
+    "corners": null,
+    "sin_momio": [
+     "asian_handicap",
+     "corners"
+    ]
+   }
   },
   {
    "home": "Guadalajara",
@@ -526,7 +894,27 @@
    "liga_nombre": "Liga MX",
    "proveedor": null,
    "estado": "pendiente",
-   "momios": null
+   "momios": null,
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 655530,
+    "btts": {
+     "yes": 1.583,
+     "no": 2.235
+    },
+    "asian_handicap": null,
+    "corners": {
+     "line": 9.5,
+     "over": 1.65,
+     "under": 2.14,
+     "bookmakers": 2
+    },
+    "sin_momio": [
+     "asian_handicap"
+    ]
+   }
   },
   {
    "home": "Cruz Azul",
@@ -539,7 +927,27 @@
    "liga_nombre": "Liga MX",
    "proveedor": null,
    "estado": "pendiente",
-   "momios": null
+   "momios": null,
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 655532,
+    "btts": {
+     "yes": 1.572,
+     "no": 2.286
+    },
+    "asian_handicap": null,
+    "corners": {
+     "line": 9.5,
+     "over": 1.595,
+     "under": 2.19,
+     "bookmakers": 2
+    },
+    "sin_momio": [
+     "asian_handicap"
+    ]
+   }
   }
  ]
 }
