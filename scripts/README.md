@@ -302,7 +302,7 @@ ESPN (`scoreboard_*`, `odds_*`, `schedule_*`), `teams_last5.json`,
 `.github/workflows/actualizar-poisson.yml` corre `run_semana.py` con la
 semana actual:
 
-- diario a las 13:00 UTC (07:00 CST),
+- diario a las 13:17 UTC (07:17 CST),
 - cada hora viernes, sábado y domingo (días de partido),
 - manual (`workflow_dispatch`).
 
@@ -317,8 +317,7 @@ corrida y el partido descubierto desaparece del ev.json (lección de
 la Liguilla, 24 nov 2026).
 
 **Nota:** los workflows programados solo corren en la rama por defecto
-(`main`). Este workflow se entrega en la rama `semana-3` para revisión
-del jefe; empieza a correr solo cuando se fusione a `main`.
+(`main`).
 
 ## Metodología (aprobada por el jefe, 19 nov 2026)
 
