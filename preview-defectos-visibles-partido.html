@@ -468,9 +468,9 @@ function xiTeamCard(xi, rol){
       "<div class=\"fxi-num\">" + esc(z.v.toFixed(1)) + "<small> / 100</small></div>" +
       "<div class=\"fxi-bar\"><div class=\"fxi-fill " + fxiColor(z.v) + "\" style=\"width:" + esc(String(z.v)) + "%\"></div></div>" +
       "<ul class=\"fxi-lines\">" +
-      "<li><span>Goles</span><b>" + esc(xiPct(z.a)) + "% (" + esc(z.ga.toFixed(1)) + "/" + esc(z.ma.toFixed(1)) + " del mejor XI)</b></li>" +
-      "<li><span>Minutos</span><b>" + esc(xiPct(z.b)) + "% (" + esc(z.m) + "/" + esc(z.mb) + " del mejor XI)</b></li>" +
-      "<li><span>Puntos</span><b>" + esc(xiPct(z.c)) + "% (" + esc(z.p) + "/" + esc(z.mc) + " del mejor XI)</b></li>" +
+      "<li><span>Goles</span><b>" + esc(xiPct(z.ma ? z.ga/z.ma*100 : z.a)) + "% (" + esc(z.ga.toFixed(1)) + "/" + esc(z.ma.toFixed(1)) + " del mejor XI)</b></li>" +
+      "<li><span>Minutos</span><b>" + esc(xiPct(z.mb ? z.m/z.mb*100 : z.b)) + "% (" + esc(z.m) + "/" + esc(z.mb) + " del mejor XI)</b></li>" +
+      "<li><span>Puntos</span><b>" + esc(xiPct(z.mc ? z.p/z.mc*100 : z.c)) + "% (" + esc(z.p) + "/" + esc(z.mc) + " del mejor XI)</b></li>" +
       "</ul>" +
       "<p class=\"xi-sub\">" + (xi.of ? "Alineación oficial — publicada por ESPN" : "Alineación probable — probable, no oficial") + "</p>" +
       xiList(xi) +
@@ -1305,7 +1305,7 @@ function buildRADIOMap(rawData, tenData, partidos){
 
   var root = document.getElementById("detalle");
   var params = new URLSearchParams(window.location.search);
-  var slug = (params.get("partido") || "").trim().toLowerCase();
+  var slug = (params.get("partido") || "toluca-vs-atlas").trim().toLowerCase(); /* SOLO PREVIEW: sin ?partido= abre Toluca-Atlas para probar; NO portar a partido.html. */
   var statsState = "pendiente";
 
   window.__detalle = {slug: slug, ok: false};
@@ -1413,7 +1413,7 @@ function buildRADIOMap(rawData, tenData, partidos){
      data-prob), así que basta con guardar el nombre del pick. */
   function wireParlay(){
     var btn = document.querySelector(".add-btn");
-    if (!btn) return;
+    if (!btn) return; /* Empleado 2, 25 nov 2026: al cargar, refleja el pick ya guardado en el parlay (antes solo cambiaba al hacer clic). */ try{var r0=localStorage.getItem("faa-parlay-semana-2-v1");var a0=r0?JSON.parse(r0):[];if(Array.isArray(a0)&&a0.indexOf(btn.getAttribute("data-pick"))!==-1){btn.disabled=true;btn.textContent="En tu parlay ✓";}}catch(e0){}
     btn.addEventListener("click", function(){
       try {
         var raw = localStorage.getItem("faa-parlay-semana-2-v1");
@@ -1620,7 +1620,7 @@ function buildRADIOMap(rawData, tenData, partidos){
     h += radiografiaBlock(m.home, m.away, slug);
     h += standingsBlock(slug, m.home, m.away);
     h += statsBlock(estDocs, slug, m.home, m.away);
-    h += "<h4>Más análisis</h4><div class=\"detail-pending\">Espacio reservado para más análisis del modelo. Aún no hay contenido aquí.</div>";
+    // Empleado 2, 25 nov 2026: sección "Más análisis" retirada; estaba vacía (solo decía "Espacio reservado..."). Vuelve cuando el modelo tenga análisis real.
     h += '<p class="detail-note">Datos: data/ (partidos, momios, XI probable y Radiografía) y ESPN (consultado 23–24 nov 2026). Últimos 5, historial y tabla son datos reales; lo no verificado se muestra como pendiente.</p>';
     h += '</div>';
     root.innerHTML = h;
