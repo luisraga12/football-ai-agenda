@@ -16,11 +16,14 @@ solos a los partidos descubiertos:
     away}} — la misma forma del PARTIDOS_VIVO embebido. Sale del
     config de la semana (fin de semana + entre semana).
   - detalle: {slug: {home, away, league, day, time, espn_event_id,
-    lastFive, h2h, standings, lineup, sources}} — la misma forma
-    del DETAIL embebido. Identidad y espn_event_id salen de ev.json
-    y verified_events.json; lastFive sale de raw/teams_last5.json
-    (los mismos 5 que usa el modelo) con la competicion resuelta
-    desde los schedule_*.json del raw.
+    lastFive, h2h, standings, lineup, estadio, sources}} — la misma
+    forma del DETAIL embebido. Identidad y espn_event_id salen de
+    ev.json y verified_events.json; lastFive sale de
+    raw/teams_last5.json (los mismos 5 que usa el modelo) con la
+    competicion resuelta desde los schedule_*.json del raw. Estadio
+    y alineacion oficial (Semana 10, orden del jefe 26 nov 2026)
+    salen del summary de ESPN por evento: gameInfo.venue y
+    rosters[].roster filtrado por starter.
 
 Reglas (nada inventado, orden del jefe):
   1. Lo que no tiene fuente en el repo queda en null y la pagina lo
@@ -32,7 +35,10 @@ Reglas (nada inventado, orden del jefe):
      con copas, que el generador no puede reproducir desde
      teams_last5, que es solo de liga) y se marcan con
      fuente_detalle 'embebido'. Las nuevas llevan 'generado'. Asi
-     el cambio no quita nada de lo que la pagina ya muestra.
+     el cambio no quita nada de lo que la pagina ya muestra. A la
+     entrada preservada SOLO se le añaden estadio y lineup
+     (Semana 10, decision del jefe 26 nov 2026), sin tocar ninguno
+     de sus campos existentes.
   3. El slug es exactamente el de la pagina (norm() en JS):
      minusculas, sin acentos, [^a-z0-9]+ -> '-', sin guiones en
      los extremos; clave = norm(local) + '-vs-' + norm(visita).
@@ -53,7 +59,9 @@ import json
 import os
 import re
 import sys
+import time
 import unicodedata
+import urllib.request
 from datetime import date, datetime, timezone
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -144,6 +152,121 @@ def leer_detalle_embebido(path_partido):
     except ValueError as e:
         print(f"AVISO: DETAIL embebido ilegible: {e}")
         return {}
+
+
+ESPN_BASES = [
+    "https://site.api.espn.com/apis/site/v2/sports/soccer",
+    "https://site.web.api.espn.com/apis/site/v2/sports/soccer",
+]
+
+
+def fetch_summary(liga, event_id):
+    """Summary ESPN por evento, con respaldo de host; None si fallan
+    ambos (mismo patron que calcular_alineacion_probable.py)."""
+    for base in ESPN_BASES:
+        try:
+            req = urllib.request.Request(
+                f"{base}/{liga}/summary?event={event_id}",
+                headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                return json.load(r)
+        except Exception:
+            continue
+    return None
+
+
+def cargar_summary_cache(dirs, liga, event_id):
+    """Summary guardado en raw/ por calcular_alineacion_probable.py
+    (summary_{liga}_{event_id}.json); None si no hay ninguno."""
+    for d in dirs:
+        p = os.path.join(d, "raw", f"summary_{liga}_{event_id}.json")
+        if not os.path.isfile(p):
+            continue
+        try:
+            return cargar_json(p)
+        except (OSError, ValueError):
+            continue
+    return None
+
+
+def extraer_estadio_lineup(summary, home, away, home_id, away_id):
+    """(estadio, lineup) desde un summary ESPN (Semana 10).
+
+    Estadio sale de gameInfo.venue (el venue de nivel superior viene
+    vacio en ESPN). La alineacion oficial sale de rosters[].roster
+    filtrado por starter — boxscore.teams[].lineup[] viene vacio, no
+    se usa (decision del jefe 26 nov 2026) — y se separa por equipo
+    (local/visita), como el XI probable. Publicada solo si hay 11
+    titulares en cada lado. Fail-soft: sin datos, estadio None y
+    alineacion_publicada False.
+    """
+    estadio = None
+    venue = (summary.get("gameInfo") or {}).get("venue") or {}
+    if venue.get("fullName"):
+        direccion = venue.get("address") or {}
+        estadio = {
+            "nombre": venue.get("fullName"),
+            "ciudad": direccion.get("city"),
+            "pais": direccion.get("country"),
+        }
+    xis = {"local": [], "visita": []}
+    n_roster = 0
+    for r in summary.get("rosters") or []:
+        equipo = r.get("team") or {}
+        if str(equipo.get("id")) == str(home_id):
+            lado = "local"
+        elif str(equipo.get("id")) == str(away_id):
+            lado = "visita"
+        elif equipo.get("displayName") == home:
+            lado = "local"
+        elif equipo.get("displayName") == away:
+            lado = "visita"
+        else:
+            continue
+        for x in r.get("roster") or []:
+            n_roster += 1
+            if not x.get("starter"):
+                continue
+            atleta = x.get("athlete") or {}
+            pos = x.get("position") or {}
+            xis[lado].append({
+                "jugador": atleta.get("displayName"),
+                "pos": pos.get("abbreviation") or pos.get("name"),
+                "dorsal": x.get("jersey"),
+            })
+    return estadio, {
+        "alineacion_publicada": (len(xis["local"]) == 11
+                                 and len(xis["visita"]) == 11),
+        "jugadores": xis,
+        "jugadores_en_roster": n_roster,
+    }
+
+
+def resumen_partido(liga, event_id, home, away, home_id, away_id,
+                    dirs, avisos, key):
+    """(estadio, lineup) del partido desde el summary ESPN.
+
+    Fetch en vivo por evento; si falla, respaldo con el summary
+    guardado en raw/ (si lo hay); si no hay nada, fail-soft (estadio
+    None, alineacion_publicada False). Nunca se inventa nada.
+    """
+    vacio = (None, {"alineacion_publicada": False,
+                    "jugadores": {"local": [], "visita": []},
+                    "jugadores_en_roster": 0})
+    if not event_id:
+        return vacio
+    summary = fetch_summary(liga, event_id)
+    if summary is None:
+        summary = cargar_summary_cache(dirs, liga, event_id)
+        if summary is not None:
+            avisos.append(f"{key}: summary en vivo fallo, se uso el "
+                          "guardado en raw/")
+    if summary is None:
+        avisos.append(f"{key}: sin summary ESPN (estadio/lineup "
+                      "pendientes)")
+        return vacio
+    time.sleep(0.2)
+    return extraer_estadio_lineup(summary, home, away, home_id, away_id)
 
 
 def fecha_corta(iso):
@@ -254,9 +377,16 @@ def main():
         }
         if key in embebido:
             # Se preserva tal cual lo hecho a mano (h2h, standings,
-            # ultimos 5 con copas); solo se marca la fuente.
+            # ultimos 5 con copas); solo se marca la fuente y se le
+            # AÑADEN estadio y lineup (Semana 10), sin tocar sus
+            # campos existentes.
             entrada = dict(embebido[key])
             entrada["fuente_detalle"] = "embebido"
+            estadio, lineup = resumen_partido(
+                p["liga"], entrada.get("espn_event_id"), home, away,
+                p["home_id"], p["away_id"], dirs, avisos, key)
+            entrada["estadio"] = estadio
+            entrada["lineup"] = lineup
             detalle[key] = entrada
             continue
         evm = ev_por_partido.get((home, away))
@@ -295,6 +425,9 @@ def main():
             for j in juegos:
                 del j["fecha_iso"]
             lf[lado] = juegos
+        estadio, lineup = resumen_partido(
+            p["liga"], (ver or {}).get("espn_id"), home, away,
+            p["home_id"], p["away_id"], dirs, avisos, key)
         detalle[key] = {
             "home": home, "away": away, "league": liga_display,
             "day": DIAS_ES[fecha.weekday()],
@@ -304,8 +437,8 @@ def main():
             "lastFive": lf,
             "h2h": None,
             "standings": None,
-            "lineup": {"alineacion_publicada": False,
-                       "jugadores_en_roster": 0},
+            "lineup": lineup,
+            "estadio": estadio,
             "sources": {"standings_header": liga_display + " Standings"},
             "fuente_detalle": "generado",
         }
@@ -322,6 +455,9 @@ def main():
         for campo in ("home", "away", "league", "day", "time"):
             if not e.get(campo):
                 problemas.append(f"{key}: sin {campo}")
+        for campo in ("estadio", "lineup"):
+            if campo not in e:
+                problemas.append(f"{key}: sin {campo} (Semana 10)")
     if problemas:
         print("VALIDACION FALLIDA:")
         for p in problemas:
@@ -331,13 +467,17 @@ def main():
     n_nuevos = sum(1 for e in detalle.values()
                    if e.get("fuente_detalle") == "generado")
     n_preservados = len(detalle) - n_nuevos
+    n_estadio = sum(1 for e in detalle.values() if e.get("estadio"))
+    n_xi = sum(1 for e in detalle.values()
+               if (e.get("lineup") or {}).get("alineacion_publicada"))
     salida = {
         "version": 1,
         "generado_en": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "semana": semana,
         "fuente": ("config + ev.json + verified_events.json + "
                    "teams_last5.json + schedule_*.json + DETAIL "
-                   "embebido en partido.html (preservado)"),
+                   "embebido en partido.html (preservado) + summary "
+                   "ESPN por evento (estadio + alineacion oficial)"),
         "partidos_vivo": partidos_vivo,
         "detalle": detalle,
         "resumen": {
@@ -346,6 +486,8 @@ def main():
             "detalle": len(detalle),
             "detalle_generado": n_nuevos,
             "detalle_preservado_embebido": n_preservados,
+            "detalle_con_estadio": n_estadio,
+            "detalle_con_alineacion_oficial": n_xi,
             "avisos": avisos,
         },
     }
@@ -358,6 +500,7 @@ def main():
     print(f"mapas.json: {len(partidos_vivo)} partidos_vivo, "
           f"{len(detalle)} detalle ({n_nuevos} generados, "
           f"{n_preservados} preservados del embebido), "
+          f"{n_estadio} con estadio, {n_xi} con alineacion oficial, "
           f"{len(avisos)} aviso(s).")
     return 0
 
