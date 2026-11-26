@@ -188,7 +188,7 @@ function leerCache(p) {
   });
 }
 function pedirScoreboard(host, liga, fecha) {
-  const url = host + '/' + liga + '/scoreboard?dates=' + fecha;
+  const url = host + '/' + liga + '/scoreboard?dates=' + String(fecha).replace(/-/g, '');
   return fetchJSON(url, DIRECTO_TIMEOUT_MS);
 }
 function scoreboard(liga, fecha) {
@@ -350,7 +350,7 @@ function textoEstado(e, t, home, away) {
   if (e.min == null) {
     return '<div class="partido vivo"><b>' + sc + '</b><br>En vivo</div>';
   }
-  if (e.fuente === 'directo') {
+  if (e.fuente === 'directo' || e.fuente === 'reloj') {
     if (age < 1) {
       return '<div class="partido vivo"><b>' + sc + '</b><br>Minuto ' + e.min + "' · En vivo, actualizado hace menos de 1 min</div>";
     }
