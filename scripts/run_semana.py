@@ -162,6 +162,15 @@ def main():
     run([sys.executable, 'scripts/calcular_estadisticas.py',
          '--config', args.config,
          '--out', outdir])
+    # Paso 10: mapas en vivo + detalle (cobertura 28 -> 55, 25 nov
+    # 2026). Regenera data/mapas.json (PARTIDOS_VIVO y DETAIL) desde
+    # los datos, para que un partido descubierto en el paso 0 tenga
+    # marcador en vivo y detalle sin que nadie edite el HTML a mano.
+    # Lee los dos configs (fin de semana + entre semana) y el DETAIL
+    # embebido en partido.html, que preserva para las 28 claves que
+    # ya existen (h2h, standings y ultimos 5 con copas).
+    run([sys.executable, 'scripts/generar_mapas.py',
+         '--config', args.config])
 
     # ---- validaciones finales ----
     rawdir = os.path.join(ROOT, outdir, 'raw')

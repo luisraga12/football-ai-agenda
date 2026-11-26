@@ -27,8 +27,11 @@ Reglas de seguridad:
   - Si a un partido le falta su par de marcadores, FALLA SIN TOCAR NADA
     (valida todos antes de escribir).
   - Los partidos "pendiente" se muestran como "Momios pendientes", sin
-    EV inventado; si un partido trae 1X2 pero no total/spread (p. ej.
-    Hamburg-Bayern, solo Bet365), esas celdas se omiten y se anota.
+    EV inventado; un partido YA TERMINADO sin momio no lleva ese
+    texto (ya no va a publicar momios): muestra solo "Final: H–A"
+    con el marcador real de ESPN. Si un partido trae 1X2 pero no
+    total/spread (p. ej. Hamburg-Bayern, solo Bet365), esas celdas
+    se omiten y se anota.
   - Nunca toca index.html: la prueba se hace en una COPIA con
     marcadores (ver fragmento de prueba en EMPLEADO-1.md).
 
@@ -130,6 +133,26 @@ def bloque(p, mov=None, tend=None):
     ident = id_partido(p)
     titulo = f"{p['home']} vs {p['away']}"
     if p['estado'] != 'con_momio':
+        # Partido ya terminado sin momio: se muestra SOLO el
+        # resultado real de ESPN (estado_partido/marcador), sin
+        # ningun texto de "Momios pendientes": un partido terminado
+        # ya no va a publicar momios, asi que ese texto es contenido
+        # muerto. Sin EV ni momios inventados.
+        if p.get('estado_partido') == 'post' and p.get('marcador'):
+            marc = p['marcador']
+            partes_fin = [
+                f'<div class="odds momios" data-partido="{ident}" '
+                f'aria-label="Momios de {html.escape(titulo)}">',
+                f'<div class="derived-h"><span>Final</span>'
+                f'<span>Resultado final de ESPN</span></div>'
+                f'<p class="momios-final">Final: '
+                f"{marc['local']}\u2013{marc['visita']}</p>"]
+            if tend and tend.get('linea_tarjeta'):
+                partes_fin.append(
+                    f'<p class="momios-tend">'
+                    f'{html.escape(tend["linea_tarjeta"])}</p>')
+            partes_fin.append('</div>')
+            return ''.join(partes_fin)
         prov = p.get('proveedor')
         prov_txt = (f"{html.escape(prov)} aún no publica"
                     if prov else "aún no publicados")
@@ -140,13 +163,6 @@ def bloque(p, mov=None, tend=None):
             f'<span>{prov_txt}</span>'
             f'</div><p class="momios-pendiente">Momios pendientes — '
             f'sin EV inventado.</p>']
-        # Partido ya terminado sin momio: se muestra el resultado real
-        # de ESPN (estado_partido/marcador), sin inventar EV ni momios.
-        if p.get('estado_partido') == 'post' and p.get('marcador'):
-            marc = p['marcador']
-            partes_pend.append(
-                f'<p class="momios-final">Final: '
-                f"{marc['local']}\u2013{marc['visita']}</p>")
         if tend and tend.get('linea_tarjeta'):
             partes_pend.append(
                 f'<p class="momios-tend">'
