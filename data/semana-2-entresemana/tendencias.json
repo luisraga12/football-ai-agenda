@@ -406,7 +406,7 @@
    "fecha": "2026-11-26",
    "hora": "11:45",
    "liga": "Europa League",
-   "estado": "con_momio",
+   "estado": "pendiente",
    "linea_total": 2.5,
    "linea_referencia": false,
    "local": {
@@ -419,9 +419,9 @@
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 1,
-    "spread_linea": 0.5,
-    "cubre": 1,
-    "no_cubre": 3,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
@@ -435,13 +435,13 @@
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 2,
-    "spread_linea": -0.5,
-    "cubre": 4,
+    "spread_linea": null,
+    "cubre": 0,
     "no_cubre": 0,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Celta Vigo 1G-0E-3P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 3/4 · Cubre +0.5 1/4 — AFC Bournemouth 4G-0E-0P · Más 2.5 4/4 · Menos 2.5 0/4 · BTTS 2/4 · Cubre -0.5 4/4"
+   "linea_tarjeta": "Tendencias: Celta Vigo 1G-0E-3P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 3/4 — AFC Bournemouth 4G-0E-0P · Más 2.5 4/4 · Menos 2.5 0/4 · BTTS 2/4"
   },
   {
    "slug": "dinamo-zagreb-vs-bayer-leverkusen",
@@ -450,8 +450,8 @@
    "fecha": "2026-11-26",
    "hora": "11:45",
    "liga": "Europa League",
-   "estado": "con_momio",
-   "linea_total": 3.5,
+   "estado": "pendiente",
+   "linea_total": 2.5,
    "linea_referencia": false,
    "local": {
     "n": 4,
@@ -463,11 +463,11 @@
     "empuje": 0,
     "btts_si": 1,
     "btts_no": 3,
-    "spread_linea": 0.5,
-    "cubre": 3,
-    "no_cubre": 1,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
    "visita": {
     "n": 4,
@@ -479,13 +479,13 @@
     "empuje": 0,
     "btts_si": 0,
     "btts_no": 4,
-    "spread_linea": -0.5,
-    "cubre": 3,
-    "no_cubre": 1,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Dinamo Zagreb 2G-1E-1P · Más 3.5 1/4 · Menos 3.5 3/4 · BTTS 1/4 · Cubre +0.5 3/4 — Bayer Leverkusen 3G-0E-1P · Más 3.5 1/4 · Menos 3.5 3/4 · BTTS 0/4 · Cubre -0.5 3/4"
+   "linea_tarjeta": "Tendencias: Dinamo Zagreb 2G-1E-1P · Más 2.5 1/4 · Menos 2.5 3/4 · BTTS 1/4 — Bayer Leverkusen 3G-0E-1P · Más 2.5 1/4 · Menos 2.5 3/4 · BTTS 0/4"
   },
   {
    "slug": "olympiacos-vs-ac-milan",
@@ -494,7 +494,7 @@
    "fecha": "2026-11-26",
    "hora": "11:45",
    "liga": "Europa League",
-   "estado": "con_momio",
+   "estado": "pendiente",
    "linea_total": 2.5,
    "linea_referencia": false,
    "local": {
@@ -507,8 +507,8 @@
     "empuje": 0,
     "btts_si": 1,
     "btts_no": 3,
-    "spread_linea": 0.5,
-    "cubre": 4,
+    "spread_linea": null,
+    "cubre": 0,
     "no_cubre": 0,
     "empuje_spread": 0,
     "linea_total": 2.5
@@ -523,13 +523,13 @@
     "empuje": 0,
     "btts_si": 0,
     "btts_no": 4,
-    "spread_linea": -0.5,
-    "cubre": 1,
-    "no_cubre": 3,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Olympiacos 3G-1E-0P · Más 2.5 1/4 · Menos 2.5 3/4 · BTTS 1/4 · Cubre +0.5 4/4 — AC Milan 1G-0E-3P · Más 2.5 2/4 · Menos 2.5 2/4 · BTTS 0/4 · Cubre -0.5 1/4"
+   "linea_tarjeta": "Tendencias: Olympiacos 3G-1E-0P · Más 2.5 1/4 · Menos 2.5 3/4 · BTTS 1/4 — AC Milan 1G-0E-3P · Más 2.5 2/4 · Menos 2.5 2/4 · BTTS 0/4"
   },
   {
    "slug": "toluca-vs-atlas",
@@ -890,8 +890,8 @@
    "fecha": "2026-11-26",
    "hora": "11:45",
    "liga": "Europa League",
-   "estado": "con_momio",
-   "linea_total": 3.5,
+   "estado": "pendiente",
+   "linea_total": 2.5,
    "linea_referencia": false,
    "local": {
     "n": 4,
@@ -903,29 +903,29 @@
     "empuje": 0,
     "btts_si": 4,
     "btts_no": 0,
-    "spread_linea": -1.5,
-    "cubre": 1,
-    "no_cubre": 3,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
    "visita": {
     "n": 4,
     "g": 0,
     "e": 1,
     "p": 3,
-    "mas": 1,
-    "menos": 3,
+    "mas": 2,
+    "menos": 2,
     "empuje": 0,
     "btts_si": 1,
     "btts_no": 3,
-    "spread_linea": 1.5,
-    "cubre": 2,
-    "no_cubre": 2,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Besiktas 2G-1E-1P · Más 3.5 4/4 · Menos 3.5 0/4 · BTTS 4/4 · Cubre -1.5 1/4 — Hapoel Be'er 0G-1E-3P · Más 3.5 1/4 · Menos 3.5 3/4 · BTTS 1/4 · Cubre +1.5 2/4"
+   "linea_tarjeta": "Tendencias: Besiktas 2G-1E-1P · Más 2.5 4/4 · Menos 2.5 0/4 · BTTS 4/4 — Hapoel Be'er 0G-1E-3P · Más 2.5 2/4 · Menos 2.5 2/4 · BTTS 1/4"
   },
   {
    "slug": "marseille-vs-levski-sofia",
@@ -934,7 +934,7 @@
    "fecha": "2026-11-26",
    "hora": "11:45",
    "liga": "Europa League",
-   "estado": "con_momio",
+   "estado": "pendiente",
    "linea_total": 2.5,
    "linea_referencia": false,
    "local": {
@@ -947,9 +947,9 @@
     "empuje": 0,
     "btts_si": 1,
     "btts_no": 3,
-    "spread_linea": -1.5,
+    "spread_linea": null,
     "cubre": 0,
-    "no_cubre": 4,
+    "no_cubre": 0,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
@@ -963,13 +963,13 @@
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 2,
-    "spread_linea": 1.5,
-    "cubre": 4,
+    "spread_linea": null,
+    "cubre": 0,
     "no_cubre": 0,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Marseille 1G-0E-3P · Más 2.5 1/4 · Menos 2.5 3/4 · BTTS 1/4 · Cubre -1.5 0/4 — Levski Sofia 2G-1E-1P · Más 2.5 1/4 · Menos 2.5 3/4 · BTTS 2/4 · Cubre +1.5 4/4"
+   "linea_tarjeta": "Tendencias: Marseille 1G-0E-3P · Más 2.5 1/4 · Menos 2.5 3/4 · BTTS 1/4 — Levski Sofia 2G-1E-1P · Más 2.5 1/4 · Menos 2.5 3/4 · BTTS 2/4"
   },
   {
    "slug": "rb-salzburg-vs-ararat-armenia",
@@ -978,8 +978,8 @@
    "fecha": "2026-11-26",
    "hora": "11:45",
    "liga": "Europa League",
-   "estado": "con_momio",
-   "linea_total": 3.5,
+   "estado": "pendiente",
+   "linea_total": 2.5,
    "linea_referencia": false,
    "local": {
     "n": 4,
@@ -991,11 +991,11 @@
     "empuje": 0,
     "btts_si": 1,
     "btts_no": 3,
-    "spread_linea": -2.5,
+    "spread_linea": null,
     "cubre": 0,
-    "no_cubre": 4,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
    "visita": {
     "n": 4,
@@ -1007,13 +1007,13 @@
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 1,
-    "spread_linea": 2.5,
-    "cubre": 2,
-    "no_cubre": 2,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: RB Salzburg 1G-1E-2P · Más 3.5 2/4 · Menos 3.5 2/4 · BTTS 1/4 · Cubre -2.5 0/4 — Ararat-Armenia 0G-0E-4P · Más 3.5 4/4 · Menos 3.5 0/4 · BTTS 3/4 · Cubre +2.5 2/4"
+   "linea_tarjeta": "Tendencias: RB Salzburg 1G-1E-2P · Más 2.5 2/4 · Menos 2.5 2/4 · BTTS 1/4 — Ararat-Armenia 0G-0E-4P · Más 2.5 4/4 · Menos 2.5 0/4 · BTTS 3/4"
   },
   {
    "slug": "union-st.-gilloise-vs-lech-poznan",
@@ -1022,24 +1022,24 @@
    "fecha": "2026-11-26",
    "hora": "11:45",
    "liga": "Europa League",
-   "estado": "con_momio",
-   "linea_total": 3.5,
+   "estado": "pendiente",
+   "linea_total": 2.5,
    "linea_referencia": false,
    "local": {
     "n": 4,
     "g": 3,
     "e": 1,
     "p": 0,
-    "mas": 1,
-    "menos": 3,
+    "mas": 3,
+    "menos": 1,
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 2,
-    "spread_linea": -1.5,
-    "cubre": 2,
-    "no_cubre": 2,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
    "visita": {
     "n": 4,
@@ -1051,13 +1051,13 @@
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 2,
-    "spread_linea": 1.5,
-    "cubre": 1,
-    "no_cubre": 3,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Union St.-Gilloise 3G-1E-0P · Más 3.5 1/4 · Menos 3.5 3/4 · BTTS 2/4 · Cubre -1.5 2/4 — Lech Poznan 0G-1E-3P · Más 3.5 3/4 · Menos 3.5 1/4 · BTTS 2/4 · Cubre +1.5 1/4"
+   "linea_tarjeta": "Tendencias: Union St.-Gilloise 3G-1E-0P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 2/4 — Lech Poznan 0G-1E-3P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 2/4"
   },
   {
    "slug": "viktoria-plzen-vs-benfica",
@@ -1066,7 +1066,7 @@
    "fecha": "2026-11-26",
    "hora": "11:45",
    "liga": "Europa League",
-   "estado": "con_momio",
+   "estado": "pendiente",
    "linea_total": 2.5,
    "linea_referencia": false,
    "local": {
@@ -1079,9 +1079,9 @@
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 2,
-    "spread_linea": 0.5,
-    "cubre": 1,
-    "no_cubre": 3,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
@@ -1095,13 +1095,13 @@
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 1,
-    "spread_linea": -0.5,
-    "cubre": 4,
+    "spread_linea": null,
+    "cubre": 0,
     "no_cubre": 0,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Viktoria Plzen 1G-0E-3P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 2/4 · Cubre +0.5 1/4 — Benfica 4G-0E-0P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 3/4 · Cubre -0.5 4/4"
+   "linea_tarjeta": "Tendencias: Viktoria Plzen 1G-0E-3P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 2/4 — Benfica 4G-0E-0P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 3/4"
   },
   {
    "slug": "crystal-palace-vs-real-sociedad",
@@ -1110,8 +1110,8 @@
    "fecha": "2026-11-26",
    "hora": "14:00",
    "liga": "Europa League",
-   "estado": "con_momio",
-   "linea_total": 3.5,
+   "estado": "pendiente",
+   "linea_total": 2.5,
    "linea_referencia": false,
    "local": {
     "n": 4,
@@ -1123,29 +1123,29 @@
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 1,
-    "spread_linea": -0.5,
-    "cubre": 1,
-    "no_cubre": 3,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
    "visita": {
     "n": 4,
     "g": 1,
     "e": 2,
     "p": 1,
-    "mas": 1,
-    "menos": 3,
+    "mas": 2,
+    "menos": 2,
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 1,
-    "spread_linea": 0.5,
-    "cubre": 3,
-    "no_cubre": 1,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Crystal Palace 1G-2E-1P · Más 3.5 3/4 · Menos 3.5 1/4 · BTTS 3/4 · Cubre -0.5 1/4 — Real Sociedad 1G-2E-1P · Más 3.5 1/4 · Menos 3.5 3/4 · BTTS 3/4 · Cubre +0.5 3/4"
+   "linea_tarjeta": "Tendencias: Crystal Palace 1G-2E-1P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 3/4 — Real Sociedad 1G-2E-1P · Más 2.5 2/4 · Menos 2.5 2/4 · BTTS 3/4"
   },
   {
    "slug": "ferencvaros-vs-nk-celje",
@@ -1154,42 +1154,42 @@
    "fecha": "2026-11-26",
    "hora": "14:00",
    "liga": "Europa League",
-   "estado": "con_momio",
-   "linea_total": 3.5,
+   "estado": "pendiente",
+   "linea_total": 2.5,
    "linea_referencia": false,
    "local": {
     "n": 4,
     "g": 4,
     "e": 0,
     "p": 0,
-    "mas": 2,
-    "menos": 2,
+    "mas": 3,
+    "menos": 1,
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 1,
-    "spread_linea": -1.5,
-    "cubre": 3,
-    "no_cubre": 1,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
    "visita": {
     "n": 4,
     "g": 1,
     "e": 1,
     "p": 2,
-    "mas": 2,
-    "menos": 2,
+    "mas": 3,
+    "menos": 1,
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 2,
-    "spread_linea": 1.5,
-    "cubre": 2,
-    "no_cubre": 2,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Ferencvaros 4G-0E-0P · Más 3.5 2/4 · Menos 3.5 2/4 · BTTS 3/4 · Cubre -1.5 3/4 — NK Celje 1G-1E-2P · Más 3.5 2/4 · Menos 3.5 2/4 · BTTS 2/4 · Cubre +1.5 2/4"
+   "linea_tarjeta": "Tendencias: Ferencvaros 4G-0E-0P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 3/4 — NK Celje 1G-1E-2P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 2/4"
   },
   {
    "slug": "juventus-vs-omonia-nicosia",
@@ -1198,7 +1198,7 @@
    "fecha": "2026-11-26",
    "hora": "14:00",
    "liga": "Europa League",
-   "estado": "con_momio",
+   "estado": "pendiente",
    "linea_total": 2.5,
    "linea_referencia": false,
    "local": {
@@ -1211,9 +1211,9 @@
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 1,
-    "spread_linea": -1.5,
-    "cubre": 1,
-    "no_cubre": 3,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
@@ -1227,13 +1227,13 @@
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 2,
-    "spread_linea": 1.5,
-    "cubre": 2,
-    "no_cubre": 2,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Juventus 3G-1E-0P · Más 2.5 4/4 · Menos 2.5 0/4 · BTTS 3/4 · Cubre -1.5 1/4 — Omonia Nicosia 2G-0E-2P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 2/4 · Cubre +1.5 2/4"
+   "linea_tarjeta": "Tendencias: Juventus 3G-1E-0P · Más 2.5 4/4 · Menos 2.5 0/4 · BTTS 3/4 — Omonia Nicosia 2G-0E-2P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 2/4"
   },
   {
    "slug": "lyon-vs-lillestrom",
@@ -1242,42 +1242,42 @@
    "fecha": "2026-11-26",
    "hora": "14:00",
    "liga": "Europa League",
-   "estado": "con_momio",
-   "linea_total": 3.5,
+   "estado": "pendiente",
+   "linea_total": 2.5,
    "linea_referencia": false,
    "local": {
     "n": 4,
     "g": 2,
     "e": 1,
     "p": 1,
-    "mas": 1,
-    "menos": 3,
+    "mas": 3,
+    "menos": 1,
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 1,
-    "spread_linea": -1.5,
+    "spread_linea": null,
     "cubre": 0,
-    "no_cubre": 4,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
    "visita": {
     "n": 4,
     "g": 0,
     "e": 1,
     "p": 3,
-    "mas": 1,
-    "menos": 3,
+    "mas": 2,
+    "menos": 2,
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 2,
-    "spread_linea": 1.5,
-    "cubre": 3,
-    "no_cubre": 1,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Lyon 2G-1E-1P · Más 3.5 1/4 · Menos 3.5 3/4 · BTTS 3/4 · Cubre -1.5 0/4 — Lillestrom 0G-1E-3P · Más 3.5 1/4 · Menos 3.5 3/4 · BTTS 2/4 · Cubre +1.5 3/4"
+   "linea_tarjeta": "Tendencias: Lyon 2G-1E-1P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 3/4 — Lillestrom 0G-1E-3P · Más 2.5 2/4 · Menos 2.5 2/4 · BTTS 2/4"
   },
   {
    "slug": "nec-nijmegen-vs-stade-rennais",
@@ -1286,8 +1286,8 @@
    "fecha": "2026-11-26",
    "hora": "14:00",
    "liga": "Europa League",
-   "estado": "con_momio",
-   "linea_total": 3.5,
+   "estado": "pendiente",
+   "linea_total": 2.5,
    "linea_referencia": false,
    "local": {
     "n": 4,
@@ -1299,29 +1299,29 @@
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 1,
-    "spread_linea": 0.5,
-    "cubre": 3,
-    "no_cubre": 1,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
    "visita": {
     "n": 4,
     "g": 1,
     "e": 3,
     "p": 0,
-    "mas": 1,
-    "menos": 3,
+    "mas": 2,
+    "menos": 2,
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 2,
-    "spread_linea": -0.5,
-    "cubre": 1,
-    "no_cubre": 3,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: NEC Nijmegen 2G-1E-1P · Más 3.5 3/4 · Menos 3.5 1/4 · BTTS 3/4 · Cubre +0.5 3/4 — Stade Rennais 1G-3E-0P · Más 3.5 1/4 · Menos 3.5 3/4 · BTTS 2/4 · Cubre -0.5 1/4"
+   "linea_tarjeta": "Tendencias: NEC Nijmegen 2G-1E-1P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 3/4 — Stade Rennais 1G-3E-0P · Más 2.5 2/4 · Menos 2.5 2/4 · BTTS 2/4"
   },
   {
    "slug": "ofi-crete-vs-anderlecht",
@@ -1330,7 +1330,7 @@
    "fecha": "2026-11-26",
    "hora": "14:00",
    "liga": "Europa League",
-   "estado": "con_momio",
+   "estado": "pendiente",
    "linea_total": 2.5,
    "linea_referencia": false,
    "local": {
@@ -1343,9 +1343,9 @@
     "empuje": 0,
     "btts_si": 1,
     "btts_no": 3,
-    "spread_linea": 0.5,
-    "cubre": 2,
-    "no_cubre": 2,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
@@ -1359,13 +1359,13 @@
     "empuje": 0,
     "btts_si": 1,
     "btts_no": 3,
-    "spread_linea": -0.5,
-    "cubre": 2,
-    "no_cubre": 2,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: OFI Crete 2G-0E-2P · Más 2.5 1/4 · Menos 2.5 3/4 · BTTS 1/4 · Cubre +0.5 2/4 — Anderlecht 2G-0E-2P · Más 2.5 2/4 · Menos 2.5 2/4 · BTTS 1/4 · Cubre -0.5 2/4"
+   "linea_tarjeta": "Tendencias: OFI Crete 2G-0E-2P · Más 2.5 1/4 · Menos 2.5 3/4 · BTTS 1/4 — Anderlecht 2G-0E-2P · Más 2.5 2/4 · Menos 2.5 2/4 · BTTS 1/4"
   },
   {
    "slug": "sparta-prague-vs-az-alkmaar",
@@ -1374,7 +1374,7 @@
    "fecha": "2026-11-26",
    "hora": "14:00",
    "liga": "Europa League",
-   "estado": "con_momio",
+   "estado": "pendiente",
    "linea_total": 2.5,
    "linea_referencia": false,
    "local": {
@@ -1387,9 +1387,9 @@
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 1,
-    "spread_linea": -0.5,
-    "cubre": 1,
-    "no_cubre": 3,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
@@ -1403,13 +1403,13 @@
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 2,
-    "spread_linea": 0.5,
-    "cubre": 2,
-    "no_cubre": 2,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Sparta Prague 1G-1E-2P · Más 2.5 2/4 · Menos 2.5 2/4 · BTTS 3/4 · Cubre -0.5 1/4 — AZ Alkmaar 2G-0E-2P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 2/4 · Cubre +0.5 2/4"
+   "linea_tarjeta": "Tendencias: Sparta Prague 1G-1E-2P · Más 2.5 2/4 · Menos 2.5 2/4 · BTTS 3/4 — AZ Alkmaar 2G-0E-2P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 2/4"
   },
   {
    "slug": "sunderland-vs-jagiellonia-bialystok",
@@ -1418,7 +1418,7 @@
    "fecha": "2026-11-26",
    "hora": "14:00",
    "liga": "Europa League",
-   "estado": "con_momio",
+   "estado": "pendiente",
    "linea_total": 2.5,
    "linea_referencia": false,
    "local": {
@@ -1431,9 +1431,9 @@
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 2,
-    "spread_linea": -1.5,
+    "spread_linea": null,
     "cubre": 0,
-    "no_cubre": 4,
+    "no_cubre": 0,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
@@ -1447,13 +1447,13 @@
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 2,
-    "spread_linea": 1.5,
-    "cubre": 3,
-    "no_cubre": 1,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Sunderland 2G-1E-1P · Más 2.5 1/4 · Menos 2.5 3/4 · BTTS 2/4 · Cubre -1.5 0/4 — Jagiellonia Bialystok 1G-0E-3P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 2/4 · Cubre +1.5 3/4"
+   "linea_tarjeta": "Tendencias: Sunderland 2G-1E-1P · Más 2.5 1/4 · Menos 2.5 3/4 · BTTS 2/4 — Jagiellonia Bialystok 1G-0E-3P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 2/4"
   },
   {
    "slug": "torreense-vs-celtic",
@@ -1462,42 +1462,42 @@
    "fecha": "2026-11-26",
    "hora": "14:00",
    "liga": "Europa League",
-   "estado": "con_momio",
-   "linea_total": 3.5,
+   "estado": "pendiente",
+   "linea_total": 2.5,
    "linea_referencia": false,
    "local": {
     "n": 4,
     "g": 2,
     "e": 0,
     "p": 2,
-    "mas": 2,
-    "menos": 2,
+    "mas": 4,
+    "menos": 0,
     "empuje": 0,
     "btts_si": 4,
     "btts_no": 0,
-    "spread_linea": 0.5,
-    "cubre": 2,
-    "no_cubre": 2,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
    "visita": {
     "n": 4,
     "g": 1,
     "e": 0,
     "p": 3,
-    "mas": 3,
-    "menos": 1,
+    "mas": 4,
+    "menos": 0,
     "empuje": 0,
     "btts_si": 4,
     "btts_no": 0,
-    "spread_linea": -0.5,
-    "cubre": 1,
-    "no_cubre": 3,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Torreense 2G-0E-2P · Más 3.5 2/4 · Menos 3.5 2/4 · BTTS 4/4 · Cubre +0.5 2/4 — Celtic 1G-0E-3P · Más 3.5 3/4 · Menos 3.5 1/4 · BTTS 4/4 · Cubre -0.5 1/4"
+   "linea_tarjeta": "Tendencias: Torreense 2G-0E-2P · Más 2.5 4/4 · Menos 2.5 0/4 · BTTS 4/4 — Celtic 1G-0E-3P · Más 2.5 4/4 · Menos 2.5 0/4 · BTTS 4/4"
   },
   {
    "slug": "tsg-hoffenheim-vs-sk-sturm-graz",
@@ -1506,42 +1506,42 @@
    "fecha": "2026-11-26",
    "hora": "14:00",
    "liga": "Europa League",
-   "estado": "con_momio",
-   "linea_total": 3.5,
+   "estado": "pendiente",
+   "linea_total": 2.5,
    "linea_referencia": false,
    "local": {
     "n": 4,
     "g": 1,
     "e": 1,
     "p": 2,
-    "mas": 1,
-    "menos": 3,
+    "mas": 2,
+    "menos": 2,
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 2,
-    "spread_linea": -1.5,
-    "cubre": 1,
-    "no_cubre": 3,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
    "visita": {
     "n": 4,
     "g": 1,
     "e": 1,
     "p": 2,
-    "mas": 1,
-    "menos": 3,
+    "mas": 2,
+    "menos": 2,
     "empuje": 0,
     "btts_si": 1,
     "btts_no": 3,
-    "spread_linea": 1.5,
-    "cubre": 3,
-    "no_cubre": 1,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: TSG Hoffenheim 1G-1E-2P · Más 3.5 1/4 · Menos 3.5 3/4 · BTTS 2/4 · Cubre -1.5 1/4 — SK Sturm Graz 1G-1E-2P · Más 3.5 1/4 · Menos 3.5 3/4 · BTTS 1/4 · Cubre +1.5 3/4"
+   "linea_tarjeta": "Tendencias: TSG Hoffenheim 1G-1E-2P · Más 2.5 2/4 · Menos 2.5 2/4 · BTTS 2/4 — SK Sturm Graz 1G-1E-2P · Más 2.5 2/4 · Menos 2.5 2/4 · BTTS 1/4"
   }
  ]
 }
