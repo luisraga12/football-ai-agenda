@@ -1261,14 +1261,14 @@ function buildRADIOMap(rawData, tenData, partidos){
    - data/mapas.json (55 partidos, con IDs de ESPN) + MarcadorEnVivo: marcador en vivo/final con minuto.
      PARTIDOS_VIVO ya no se embebe a mano: se llena con mapas.json en main().
 
-   Estadio: ningún JSON de data/ trae el estadio, así que la cabecera
-   dice "Estadio: por confirmar" hasta que el E1 lo publique.
+   Estadio: data/mapas.json trae el estadio por partido (E1, Semana 10, 26 nov 2026, summary ESPN gameInfo.venue); la cabecera muestra "Estadio: <nombre> · <ciudad>, <país>" y "Estadio: por confirmar" cuando el dato no está publicado (estadio null). Ver estadioTexto.
+    
 
-   Alineación oficial: hoy los JSON solo traen XI probable
-   (local_xi.probable === true, sin campo "oficial"). El cableado ya está:
-   si algún día un XI trae oficial: true (o el partido trae oficial: true),
-   la sección pasa a decir "Alineación oficial" y la formación deja de
-   decir "más usada". Ver xiEmbebido/buildXIMap en el bloque anterior.
+   Alineación oficial: data/mapas.json trae el XI oficial por partido (lineup.alineacion_publicada, jugadores.local/visita, 11+11, ESPN). Cuando está publicada, la cancha muestra el XI oficial (· Oficial) y la formación se calcula de las posiciones (D-M-F); cuando no, la cancha sigue con el XI probable (· Probable) y avisa "Alineación oficial: por confirmar". Las posiciones de ESPN (CD-L, LB, AM-R…) se normalizan a G/D/M/F para la cancha (xiOficial). Ver pitchBlock / xiOficial.
+    
+    
+    
+    
 
    Estadísticas del partido — formato JSON esperado
    (data/<config>/estadisticas.json, lo publica el Empleado 1):
@@ -1318,7 +1318,7 @@ function buildRADIOMap(rawData, tenData, partidos){
   }
 
   /* ---------- Cabecera: marcador, fecha, estadio, liga ---------- */
-  function headerHTML(m, di, li){
+  /* ---------- Estadio (Semana 10, 26 nov 2026, Empleado 2) ---------- El estadio llega en DETAIL[slug].estadio (data/mapas.json, E1, summary ESPN gameInfo.venue: {nombre, ciudad, pais}); si no está publicado (estadio null o sin nombre) la cabecera dice "por confirmar". */ function estadioTexto(d){ var e = d && d.estadio; if (!e || !e.nombre) return "Estadio: por confirmar"; var lugar = [e.ciudad, e.pais].filter(function(x){ return x; }).join(", "); return "Estadio: " + e.nombre + (lugar ? " · " + lugar : ""); } function headerHTML(m, di, li){
     var cr = crestFor(slug, m.home, m.away);
     var h = '<div class="det-head">';
     h += '<p class="det-crumb"><a href="index.html">← Agenda</a> · ' + esc(li.display) + ' · ' + esc(semanaLabel(m._semana)) + '</p>';
@@ -1328,7 +1328,7 @@ function buildRADIOMap(rawData, tenData, partidos){
     h += '<div class="det-team"><span class="crest c-b">' + esc(cr.a) + '</span><b>' + esc(m.away) + '</b><span class="det-role">Visita</span></div>';
     h += '</div>';
     h += '<p class="det-meta"><span class="chip">' + esc(di.largo) + ' ' + di.dia + ' · ' + esc((m.hora || "").slice(0, 5)) + '</span>' +
-      '<span class="chip">Estadio: por confirmar</span></p>';
+      '<span class="chip">' + esc(estadioTexto(DETAIL[slug])) + '</span></p>';
     h += '<div id="vivoLine" class="detail-pending">Consultando ESPN…</div>';
     h += '</div>';
     return h;
@@ -1469,9 +1469,9 @@ function buildRADIOMap(rawData, tenData, partidos){
     return h;
   }
 
-  function pitchBlock(key){
+  /* Semana 10 (E2): XI oficial de data/mapas.json; posiciones ESPN (CD-L, LB, AM-R...) se normalizan a G/D/M/F; la formación se calcula D-M-F. */ function posCancha(p){ p = (p || "").toUpperCase(); if (p === "G" || p === "GK") return "G"; if (p === "F" || p.indexOf("CF") === 0 || p === "LF" || p === "RF" || p === "ST") return "F"; if (p.indexOf("CD") === 0 || p === "LB" || p === "RB" || p === "SW" || p === "DF") return "D"; if (p === "DM" || p.indexOf("CM") === 0 || p === "AM" || p === "LM" || p === "RM" || p.indexOf("AM-") === 0 || p === "MF") return "M"; return "?"; } function xiOficial(lista, equipo){ var j = []; (lista || []).forEach(function(p){ if (!p || p.jugador == null || p.jugador === "") return; j.push([p.jugador, posCancha(p.pos), (p.dorsal == null ? "" : String(p.dorsal))]); }); var nD = 0, nM = 0, nF = 0; j.forEach(function(p){ if (p[1] === "D") nD++; else if (p[1] === "M") nM++; else if (p[1] === "F") nF++; }); var fm = (nD + nM + nF === 10) ? (nD + "-" + nM + "-" + nF) : "—"; return {e: equipo || "", fm: fm, of: true, j: j}; } function pitchBlock(key){
     var h = "<h4>Alineación en cancha</h4>";
-    var m = XI_PROBABLE[key];
+    var d = DETAIL[key] || null; var lin = d && d.lineup; if (lin && lin.alineacion_publicada && lin.jugadores && lin.jugadores.local && lin.jugadores.visita && lin.jugadores.local.length === 11 && lin.jugadores.visita.length === 11){ h = "<h4>Alineación oficial en cancha</h4>"; h += '<p class="detail-note">Alineación oficial publicada por ESPN — los 11 titulares de cada equipo.</p>'; h += '<div class="pitch-grid">' + pitchXI(xiOficial(lin.jugadores.local, d.home), "Local") + pitchXI(xiOficial(lin.jugadores.visita, d.away), "Visita") + '</div>'; return h; } h += '<p class="detail-note">Alineación oficial: por confirmar — ESPN aún no publica los 11 titulares.</p>'; var m = XI_PROBABLE[key];
     if (!m){
       return h + '<div class="detail-pending">pendiente — aún no hay XI probable publicado para este partido.</div>';
     }
@@ -1670,7 +1670,7 @@ function buildRADIOMap(rawData, tenData, partidos){
         return;
       }
       /* Tarea C, 25 nov 2026: data/mapas.json (55 partidos) se fusiona sobre los mapas embebidos (28). DETAIL embebido se conserva: generar_mapas.py lo lee de este archivo. */ if (res[10]){ var mp = res[10]; if (mp.partidos_vivo){ Object.keys(mp.partidos_vivo).forEach(function(k){ PARTIDOS_VIVO[k] = mp.partidos_vivo[k]; }); } if (mp.detalle){ Object.keys(mp.detalle).forEach(function(k){ if (!DETAIL[k]) DETAIL[k] = mp.detalle[k]; }); } } var xiMap = buildXIMap([res[2], res[3]]);
-      if (window.__setXI) window.__setXI(xiMap);
+      /* Semana 10 (E2): estadio y alineación oficial (data/mapas.json, E1) se añaden a DETAIL sin tocar sus campos existentes (h2h, standings y lastFive se conservan); la fusión de arriba solo agrega las entradas nuevas. */ if (res[10] && res[10].detalle){ Object.keys(res[10].detalle).forEach(function(k){ var dd = res[10].detalle[k]; if (!dd) return; if (!DETAIL[k]) DETAIL[k] = {}; if (dd.estadio) DETAIL[k].estadio = dd.estadio; if (dd.lineup) DETAIL[k].lineup = dd.lineup; }); } if (window.__setXI) window.__setXI(xiMap);
       var radioMap = buildRADIOMap(
         {mw: res[4], fs: res[5]},
         {mw: res[6], fs: res[7]},
