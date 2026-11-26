@@ -27,6 +27,6 @@
 | 11/29 nov | Guadalajara vs Pachuca | pendiente | — | — | — | — | — | 45.1% | — | — | ⏳ Pendiente |
 | 11/29 nov | Cruz Azul vs León | pendiente | — | — | — | — | — | 58.7% | — | — | ⏳ Pendiente |
 
-**Resumen:** 15 verdes, 1 amarillos, 0 rojos, 4 pendientes.
+**Resumen:** 15 verdes, 1 amarillos, 0 rojos, 4 pendientes, 0 terminados sin momio.
 
 **Advertencia:** el modelo Poisson usa solo los últimos partidos por equipo y puede exagerar rachas; los EV extremos reflejan desacuerdo fuerte entre el modelo y el mercado, no una certeza.
