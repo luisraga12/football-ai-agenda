@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generado_en": "2026-11-26T01:24:31Z",
-  "generado_en_mx": "2026-11-25T19:24:32-06:00",
+  "generado_en": "2026-11-26T12:07:59Z",
+  "generado_en_mx": "2026-11-26T06:08:02-06:00",
   "semana": 2,
   "fuente": "ESPN scoreboard (site.api.espn.com, respaldo site.web.api.espn.com)",
   "partidos": [
@@ -236,12 +236,12 @@
       "away_id": 227,
       "home": "Monterrey",
       "away": "América",
-      "estado": "pre",
-      "detalle": "Wed, November 25th at 10:10 PM EST",
-      "minuto": "0'",
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+7'",
       "marcador_local": 0,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "actualizado_en": "2026-11-26T12:07:59Z"
     },
     {
       "liga": "mex.1",
@@ -250,12 +250,12 @@
       "away_id": 216,
       "home": "Toluca",
       "away": "Atlas",
-      "estado": "in",
-      "detalle": "23'",
-      "minuto": "23'",
-      "marcador_local": 1,
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+6'",
+      "marcador_local": 2,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-26T01:24:31Z"
+      "actualizado_en": "2026-11-26T12:07:59Z"
     },
     {
       "liga": "mex.1",
