@@ -45,16 +45,20 @@ XI, cerrada). El detalle con fuentes está en EMPLEADO-1.md.
 
 Fuerza (corrección (b) del jefe, misma fórmula aprobada de Fuerza
 del XI): cada XI probable trae "fuerza" con valor 0-100 y los 3
-componentes con fracciones (goles+asistencias / minutos / puntos,
-cada uno vs el mejor XI 1-4-4-2 por minutos de la misma ventana),
-pesos 0.40/0.30/0.30, cada componente topado en 100. Se calcula con
-los nombres ESPN ANTES del MAPEO (las estadísticas pertenecen al
-hueco del XI). Puntos: 3/1/0 del partido para todo jugador que jugó
-(titular o suplente con minutos > 0); en la investigación original
-solo se contaban los titulares, pero aquí XI probable y mejor XI
-usan la misma tabla, así que las fracciones son comparables y la
-definición del PLAN ("puntos con esos jugadores en cancha") se
-cumple mejor.
+componentes con fracciones (goles+asistencias / minutos / puntos),
+pesos 0.40/0.30/0.30, cada componente topado en 100. Cada componente
+se mide contra el mejor XI posible EN ESE componente con la MISMA
+formación del XI probable (corrección 25 nov 2026: antes los 3 se
+medían contra un solo mejor XI 1-4-4-2 por minutos y el XI probable
+podía superarlo en bruto — 88 casos en la Semana 2, p. ej. Atlas 65
+puntos vs mejor 63). El denominador es así el máximo alcanzable y
+cada componente es un % verdadero ≤ 100. Se calcula con los nombres
+ESPN ANTES del MAPEO (las estadísticas pertenecen al hueco del XI).
+Puntos: 3/1/0 del partido para todo jugador que jugó (titular o
+suplente con minutos > 0); en la investigación original solo se
+contaban los titulares, pero aquí XI probable y mejor XI usan la
+misma tabla, así que las fracciones son comparables y la definición
+del PLAN ("puntos con esos jugadores en cancha") se cumple mejor.
 
 Uso:
     python3 scripts/calcular_alineacion_probable.py \
@@ -246,20 +250,25 @@ def xi_del_partido(summary, equipo, tid=None):
     return xi, jugados
 
 
-def mejor_xi_por_minutos(per_player):
-    """Mejor XI 1-4-4-2 por minutos de la ventana (misma regla que la
-    investigación Fuerza del XI aprobada)."""
-    grupos = {"G": 1, "D": 4, "M": 4, "F": 2}
+def mejor_xi_por_componente(per_player, grupos, clave):
+    """Mejor XI posible con la formación dada (grupos {"G","D","M","F"})
+    maximizando el componente que da `clave` (función jugador->valor).
+
+    Toma por grupo a los de mayor valor en ese componente; si un grupo
+    no tiene suficientes candidatos, completa con los de mayor valor
+    sin importar el grupo (misma regla de respaldo que la
+    investigación Fuerza del XI aprobada).
+    """
     mejor = []
     for g, n in grupos.items():
         cands = sorted(
             ((nm, d) for nm, d in per_player.items() if d["pos"] == g),
-            key=lambda kv: kv[1]["minutos"], reverse=True)[:n]
+            key=lambda kv: clave(kv[1]), reverse=True)[:n]
         mejor += [nm for nm, _d in cands]
     if len(mejor) < 11:
         resto = sorted(
             ((nm, d) for nm, d in per_player.items() if nm not in mejor),
-            key=lambda kv: kv[1]["minutos"], reverse=True)
+            key=lambda kv: clave(kv[1]), reverse=True)
         mejor += [nm for nm, _d in resto[:11 - len(mejor)]]
     return mejor[:11]
 
@@ -268,7 +277,20 @@ def calcular_fuerza(nombres_probable, per_player):
     """Fuerza del XI probable vs mejor XI (fórmula aprobada 0.40/0.30/
     0.30, componentes topados en 100). Devuelve el dict 'fuerza' con
     valor + 3 componentes + valores brutos y totales del mejor XI
-    para mostrar las fracciones (p. ej. 3965/3838)."""
+    para mostrar las fracciones (p. ej. 3965/3838).
+
+    Corrección 25 nov 2026 (denominador Atlas 65/63): antes los 3
+    componentes se medían contra UN solo mejor XI 1-4-4-2 elegido por
+    minutos, y el XI probable (elegido por titularidades, con su
+    propia formación) podía superarlo en bruto en cualquier
+    componente — 88 casos en la Semana 2 (Atlas 65 puntos vs mejor
+    63). Ahora cada componente se mide contra el mejor XI posible
+    en ESE componente con la MISMA formación del XI probable: el
+    denominador es el máximo alcanzable, así que cada componente es
+    un % verdadero ≤ 100 (el tope en 100 queda como red de
+    seguridad). El XI probable siempre es candidato de su propia
+    formación, así que el denominador nunca es menor que su valor.
+    """
     def componentes(nombres):
         ga = sum(per_player.get(n, {}).get("goles", 0)
                  + per_player.get(n, {}).get("asist", 0)
@@ -279,8 +301,19 @@ def calcular_fuerza(nombres_probable, per_player):
                   for n in nombres)
         return ga, mins, pts
 
-    mejor = mejor_xi_por_minutos(per_player)
-    b_ga, b_min, b_pts = componentes(mejor)
+    # Formación del XI probable (conteo por grupo de sus posiciones).
+    grupos = {"G": 0, "D": 0, "M": 0, "F": 0}
+    for n in nombres_probable:
+        pos = per_player.get(n, {}).get("pos")
+        if pos in grupos:
+            grupos[pos] += 1
+    b_ga = componentes(mejor_xi_por_componente(
+        per_player, grupos,
+        lambda d: d.get("goles", 0) + d.get("asist", 0)))[0]
+    b_min = componentes(mejor_xi_por_componente(
+        per_player, grupos, lambda d: d.get("minutos", 0)))[1]
+    b_pts = componentes(mejor_xi_por_componente(
+        per_player, grupos, lambda d: d.get("puntos", 0)))[2]
     ga, mins, pts = componentes(nombres_probable)
     A = min(100, 100 * ga / b_ga) if b_ga else 0
     B = min(100, 100 * mins / b_min) if b_min else 0
@@ -486,7 +519,10 @@ def main():
                    "competición UEFA (entre semana), antes de la fecha "
                    "del partido. Fuerza por XI: 0.40·goles+asistencias + "
                    "0.30·minutos + 0.30·puntos, cada componente en % vs "
-                   "el mejor XI 1-4-4-2 por minutos de la misma ventana, "
+                   "el mejor XI posible en ese componente con la misma "
+                   "formación del XI probable (corrección 25 nov 2026: "
+                   "antes era un solo mejor XI 1-4-4-2 por minutos y el "
+                   "XI podía superarlo, p. ej. Atlas 65/63), "
                    "con fracciones; calculada con nombres ESPN antes del "
                    "MAPEO."),
         "verificacion_nombres": ("Los ~50 nombres señalados por el jefe "
