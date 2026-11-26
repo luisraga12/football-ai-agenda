@@ -1305,7 +1305,7 @@ function buildRADIOMap(rawData, tenData, partidos){
 
   var root = document.getElementById("detalle");
   var params = new URLSearchParams(window.location.search);
-  var slug = (params.get("partido") || "toluca-vs-atlas").trim().toLowerCase(); /* SOLO PREVIEW: sin ?partido= abre Toluca-Atlas para probar; NO portar a partido.html. */
+  var slug = (params.get("partido") || "").trim().toLowerCase();
   var statsState = "pendiente";
 
   window.__detalle = {slug: slug, ok: false};
