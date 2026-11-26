@@ -468,9 +468,9 @@ function xiTeamCard(xi, rol){
       "<div class=\"fxi-num\">" + esc(z.v.toFixed(1)) + "<small> / 100</small></div>" +
       "<div class=\"fxi-bar\"><div class=\"fxi-fill " + fxiColor(z.v) + "\" style=\"width:" + esc(String(z.v)) + "%\"></div></div>" +
       "<ul class=\"fxi-lines\">" +
-      "<li><span>Goles</span><b>" + esc(xiPct(z.a)) + "% (" + esc(z.ga.toFixed(1)) + "/" + esc(z.ma.toFixed(1)) + " del mejor XI)</b></li>" +
-      "<li><span>Minutos</span><b>" + esc(xiPct(z.b)) + "% (" + esc(z.m) + "/" + esc(z.mb) + " del mejor XI)</b></li>" +
-      "<li><span>Puntos</span><b>" + esc(xiPct(z.c)) + "% (" + esc(z.p) + "/" + esc(z.mc) + " del mejor XI)</b></li>" +
+      "<li><span>Goles</span><b>" + esc(xiPct(z.ma ? z.ga/z.ma*100 : z.a)) + "% (" + esc(z.ga.toFixed(1)) + "/" + esc(z.ma.toFixed(1)) + " del mejor XI)</b></li>" +
+      "<li><span>Minutos</span><b>" + esc(xiPct(z.mb ? z.m/z.mb*100 : z.b)) + "% (" + esc(z.m) + "/" + esc(z.mb) + " del mejor XI)</b></li>" +
+      "<li><span>Puntos</span><b>" + esc(xiPct(z.mc ? z.p/z.mc*100 : z.c)) + "% (" + esc(z.p) + "/" + esc(z.mc) + " del mejor XI)</b></li>" +
       "</ul>" +
       "<p class=\"xi-sub\">" + (xi.of ? "Alineación oficial — publicada por ESPN" : "Alineación probable — probable, no oficial") + "</p>" +
       xiList(xi) +
@@ -955,7 +955,7 @@ const MarcadorEnVivo = (() => {
 
 if (typeof module !== 'undefined') module.exports = MarcadorEnVivo;
 
-var PARTIDOS_VIVO = {"werder-bremen-vs-borussia-monchengladbach":{"liga":"ger.1","fecha":"2026-11-27","home_id":137,"away_id":268,"home":"Werder Bremen","away":"Borussia Mönchengladbach"},"venezia-vs-bologna":{"liga":"ita.1","fecha":"2026-11-27","home_id":17530,"away_id":107,"home":"Venezia","away":"Bologna"},"nottingham-forest-vs-chelsea":{"liga":"eng.1","fecha":"2026-11-27","home_id":393,"away_id":363,"home":"Nottingham Forest","away":"Chelsea"},"levante-vs-racing-santander":{"liga":"esp.1","fecha":"2026-11-27","home_id":1538,"away_id":87,"home":"Levante","away":"Racing Santander"},"hamburg-sv-vs-bayern-munich":{"liga":"ger.1","fecha":"2026-11-28","home_id":127,"away_id":132,"home":"Hamburg SV","away":"Bayern Munich"},"manchester-united-vs-brentford":{"liga":"eng.1","fecha":"2026-11-28","home_id":360,"away_id":337,"home":"Manchester United","away":"Brentford"},"elche-vs-atletico-madrid":{"liga":"esp.1","fecha":"2026-11-28","home_id":3751,"away_id":1068,"home":"Elche","away":"Atlético Madrid"},"vfb-stuttgart-vs-eintracht-frankfurt":{"liga":"ger.1","fecha":"2026-11-28","home_id":134,"away_id":125,"home":"VfB Stuttgart","away":"Eintracht Frankfurt"},"internazionale-vs-genoa":{"liga":"ita.1","fecha":"2026-11-28","home_id":110,"away_id":3263,"home":"Internazionale","away":"Genoa"},"real-madrid-vs-alaves":{"liga":"esp.1","fecha":"2026-11-28","home_id":86,"away_id":96,"home":"Real Madrid","away":"Alavés"},"everton-vs-liverpool":{"liga":"eng.1","fecha":"2026-11-29","home_id":368,"away_id":364,"home":"Everton","away":"Liverpool"},"sassuolo-vs-napoli":{"liga":"ita.1","fecha":"2026-11-29","home_id":3997,"away_id":114,"home":"Sassuolo","away":"Napoli"},"deportivo-vs-barcelona":{"liga":"esp.1","fecha":"2026-11-29","home_id":90,"away_id":83,"home":"Deportivo","away":"Barcelona"},"arsenal-vs-manchester-city":{"liga":"eng.1","fecha":"2026-11-29","home_id":359,"away_id":382,"home":"Arsenal","away":"Manchester City"},"borussia-dortmund-vs-bayer-leverkusen":{"liga":"ger.1","fecha":"2026-11-29","home_id":124,"away_id":131,"home":"Borussia Dortmund","away":"Bayer Leverkusen"},"como-vs-juventus":{"liga":"ita.1","fecha":"2026-11-29","home_id":2572,"away_id":111,"home":"Como","away":"Juventus"},"galatasaray-vs-aston-villa":{"liga":"uefa.champions","fecha":"2026-11-24","home_id":432,"away_id":362,"home":"Galatasaray","away":"Aston Villa"},"arsenal-vs-borussia-dortmund":{"liga":"uefa.champions","fecha":"2026-11-24","home_id":359,"away_id":124,"home":"Arsenal","away":"Borussia Dortmund"},"manchester-city-vs-napoli":{"liga":"uefa.champions","fecha":"2026-11-24","home_id":382,"away_id":114,"home":"Manchester City","away":"Napoli"},"real-madrid-vs-psv-eindhoven":{"liga":"uefa.champions","fecha":"2026-11-24","home_id":86,"away_id":148,"home":"Real Madrid","away":"PSV Eindhoven"},"club-brugge-vs-liverpool":{"liga":"uefa.champions","fecha":"2026-11-25","home_id":570,"away_id":364,"home":"Club Brugge","away":"Liverpool"},"internazionale-vs-vfb-stuttgart":{"liga":"uefa.champions","fecha":"2026-11-25","home_id":110,"away_id":134,"home":"Internazionale","away":"VfB Stuttgart"},"lille-vs-bayern-munich":{"liga":"uefa.champions","fecha":"2026-11-25","home_id":166,"away_id":132,"home":"Lille","away":"Bayern Munich"},"paris-saint-germain-vs-as-roma":{"liga":"uefa.champions","fecha":"2026-11-25","home_id":160,"away_id":104,"home":"Paris Saint-Germain","away":"AS Roma"},"sporting-cp-vs-manchester-united":{"liga":"uefa.champions","fecha":"2026-11-25","home_id":2250,"away_id":360,"home":"Sporting CP","away":"Manchester United"},"celta-vigo-vs-afc-bournemouth":{"liga":"uefa.europa","fecha":"2026-11-26","home_id":85,"away_id":349,"home":"Celta Vigo","away":"AFC Bournemouth"},"dinamo-zagreb-vs-bayer-leverkusen":{"liga":"uefa.europa","fecha":"2026-11-26","home_id":597,"away_id":131,"home":"Dinamo Zagreb","away":"Bayer Leverkusen"},"olympiacos-vs-ac-milan":{"liga":"uefa.europa","fecha":"2026-11-26","home_id":435,"away_id":103,"home":"Olympiacos","away":"AC Milan"}};
+var PARTIDOS_VIVO = {};
 
 </script>
 <script>
@@ -965,7 +965,7 @@ var URLS = {
     xi: { mw: "data/semana-2-entresemana/alineacion-probable.json", fs: "data/semana-2/alineacion-probable.json" },
     raw: { mw: "data/semana-2-entresemana/raw/teams_last5.json", fs: "data/semana-2/raw/teams_last5.json" },
     tendencias: { mw: "data/semana-2-entresemana/tendencias.json", fs: "data/semana-2/tendencias.json" },
-    est: { mw: "data/semana-2-entresemana/estadisticas.json", fs: "data/semana-2/estadisticas.json" }
+    est: { mw: "data/semana-2-entresemana/estadisticas.json", fs: "data/semana-2/estadisticas.json" }, mapas: "data/mapas.json"
   };
 var CREST_MAP = {"galatasaray-vs-aston-villa": {"h": "GAL", "a": "AVL"}, "arsenal-vs-borussia-dortmund": {"h": "ARS", "a": "BVB"}, "manchester-city-vs-napoli": {"h": "MCI", "a": "NAP"}, "real-madrid-vs-psv-eindhoven": {"h": "RMA", "a": "PSV"}, "club-brugge-vs-liverpool": {"h": "BRU", "a": "LIV"}, "internazionale-vs-vfb-stuttgart": {"h": "INT", "a": "VFB"}, "lille-vs-bayern-munich": {"h": "LIL", "a": "BAY"}, "paris-saint-germain-vs-as-roma": {"h": "PSG", "a": "ROM"}, "sporting-cp-vs-manchester-united": {"h": "SCP", "a": "MUN"}, "celta-vigo-vs-afc-bournemouth": {"h": "CEL", "a": "BOU"}, "dinamo-zagreb-vs-bayer-leverkusen": {"h": "DIN", "a": "LEV"}, "olympiacos-vs-ac-milan": {"h": "OLY", "a": "MIL"}, "werder-bremen-vs-borussia-monchengladbach": {"h": "WER", "a": "BMG"}, "venezia-vs-bologna": {"h": "VEN", "a": "BOL"}, "nottingham-forest-vs-chelsea": {"h": "NFO", "a": "CHE"}, "levante-vs-racing-santander": {"h": "LEV", "a": "RAC"}, "hamburg-sv-vs-bayern-munich": {"h": "HAM", "a": "BAY"}, "manchester-united-vs-brentford": {"h": "MUN", "a": "BRE"}, "elche-vs-atletico-madrid": {"h": "ELC", "a": "ATM"}, "vfb-stuttgart-vs-eintracht-frankfurt": {"h": "STU", "a": "EIN"}, "internazionale-vs-genoa": {"h": "INT", "a": "GEN"}, "real-madrid-vs-alaves": {"h": "RMA", "a": "ALA"}, "everton-vs-liverpool": {"h": "EVE", "a": "LIV"}, "sassuolo-vs-napoli": {"h": "SAS", "a": "NAP"}, "deportivo-vs-barcelona": {"h": "DEP", "a": "BAR"}, "arsenal-vs-manchester-city": {"h": "ARS", "a": "MCI"}, "borussia-dortmund-vs-bayer-leverkusen": {"h": "DOR", "a": "B04"}, "como-vs-juventus": {"h": "COM", "a": "JUV"}, "toluca-vs-atlas": {"h": "TOL", "a": "ATL"}, "monterrey-vs-america": {"h": "MON", "a": "AME"}, "pachuca-vs-guadalajara": {"h": "PAC", "a": "GUA"}, "leon-vs-cruz-azul": {"h": "LEO", "a": "CRU"}, "sabah-fk-vs-barcelona": {"h": "SAB", "a": "BAR"}, "slavia-prague-vs-villarreal": {"h": "SLA", "a": "VIL"}, "atletico-madrid-vs-viking-fk": {"h": "ATM", "a": "VIK"}, "shakhtar-donetsk-vs-fenerbahce": {"h": "SHA", "a": "FEN"}, "besiktas-vs-hapoel-be-er": {"h": "BES", "a": "HAP"}, "marseille-vs-levski-sofia": {"h": "MAR", "a": "SOF"}, "rb-salzburg-vs-ararat-armenia": {"h": "SAL", "a": "ARA"}, "union-st-gilloise-vs-lech-poznan": {"h": "USG", "a": "LEC"}, "viktoria-plzen-vs-benfica": {"h": "PLZ", "a": "BEN"}, "crystal-palace-vs-real-sociedad": {"h": "CRY", "a": "RSO"}, "ferencvaros-vs-nk-celje": {"h": "FER", "a": "NCE"}, "juventus-vs-omonia-nicosia": {"h": "JUV", "a": "OMO"}, "lyon-vs-lillestrom": {"h": "LYO", "a": "LST"}, "nec-nijmegen-vs-stade-rennais": {"h": "NEC", "a": "REN"}, "ofi-crete-vs-anderlecht": {"h": "OFI", "a": "AND"}, "sparta-prague-vs-az-alkmaar": {"h": "SPA", "a": "AZ"}, "sunderland-vs-jagiellonia-bialystok": {"h": "SUN", "a": "JAG"}, "torreense-vs-celtic": {"h": "TOR", "a": "GLA"}, "tsg-hoffenheim-vs-sk-sturm-graz": {"h": "HOF", "a": "STG"}, "atlas-vs-toluca": {"h": "ATL", "a": "TOL"}, "america-vs-monterrey": {"h": "AME", "a": "MON"}, "guadalajara-vs-pachuca": {"h": "GUA", "a": "PAC"}, "cruz-azul-vs-leon": {"h": "CRU", "a": "LEO"}};
 var LIGAS = {
@@ -1081,7 +1081,7 @@ function probDe(ev, momio){
   }
 function derivar1X2(m){
     var mk = m && m.mercados && m.mercados["1X2"];
-    if (!mk || !mk.momios || !mk.ev) return null;
+    if (mk && mk.prob && typeof mk.prob["1"] === "number" && typeof mk.prob["X"] === "number" && typeof mk.prob["2"] === "number") return {p1: mk.prob["1"], px: mk.prob["X"], p2: mk.prob["2"]}; if (!mk || !mk.momios || !mk.ev) return null;
     var p1 = probDe(mk.ev["1"], mk.momios.home);
     var px = probDe(mk.ev["X"], mk.momios.draw);
     var p2 = probDe(mk.ev["2"], mk.momios.away);
@@ -1107,7 +1107,7 @@ function semaforoDe(m){
 function evColor(ev){
     return (typeof ev === "number" && ev < 0) ? "var(--live)" : "var(--accent-strong)";
   }
-function celdaMomio(label, momio, ev){
+function celdaMomio(label, momio, ev, prob){ if (typeof prob === "number" && isFinite(prob) && (typeof momio !== "number" || typeof ev !== "number" || !isFinite(momio) || !isFinite(ev))){ return '<div class="dcell"><span>' + esc(label) + '</span><b class="num">' + fmt1(prob) + '%</b><span>prob. del modelo, sin momio</span></div>'; }
     if (typeof momio !== "number" || typeof ev !== "number" || !isFinite(momio) || !isFinite(ev)){
       return '<div class="dcell"><span>' + esc(label) + '</span><b class="num">pendiente</b></div>';
     }
@@ -1258,8 +1258,8 @@ function buildRADIOMap(rawData, tenData, partidos){
    - DETAIL embebido (28 partidos, ESPN 23 nov 2026): últimos 5, H2H y
      tabla. Los 27 partidos nuevos aún no tienen esa consulta: muestran
      "pendiente", nunca se inventa.
-   - PARTIDOS_VIVO + MarcadorEnVivo: marcador en vivo/final con minuto
-     (28 partidos con IDs de ESPN; los 27 nuevos muestran "pendiente").
+   - data/mapas.json (55 partidos, con IDs de ESPN) + MarcadorEnVivo: marcador en vivo/final con minuto.
+     PARTIDOS_VIVO ya no se embebe a mano: se llena con mapas.json en main().
 
    Estadio: ningún JSON de data/ trae el estadio, así que la cabecera
    dice "Estadio: por confirmar" hasta que el E1 lo publique.
@@ -1354,14 +1354,14 @@ function buildRADIOMap(rawData, tenData, partidos){
 
   /* ---------- Momios y valor esperado (misma parrilla que la tarjeta) ---------- */
   function oddsBlock(m){
-    var h = "<h4>Momios y valor esperado</h4>";
+    var h = "<h4>Momios y valor esperado</h4>"; if (m && m.estado_partido === "post" && m.marcador && typeof m.marcador.local === "number" && typeof m.marcador.visita === "number"){ var hF = "<h4>Momios y valor esperado</h4>"; hF += '<p><b>Final: ' + esc(m.home) + ' ' + m.marcador.local + ' – ' + m.marcador.visita + ' ' + esc(m.away) + '</b></p>'; hF += '<p class="detail-note">Partido terminado sin momios: no hay EV ni pick; las probabilidades son las del modelo antes del partido.</p>'; var pF = derivar1X2(m); var tF = m.mercados && m.mercados.total ? m.mercados.total : null; if (pF || (tF && typeof tF.p_over === "number")){ hF += '<div class="odds"><div class="derived-h"><span>Probabilidad del modelo (sin momio)</span></div><div class="derived-grid">'; if (pF){ hF += celdaMomio("Local", null, null, pF.p1); hF += celdaMomio("Empate", null, null, pF.px); hF += celdaMomio("Visita", null, null, pF.p2); } if (tF && typeof tF.p_over === "number"){ hF += celdaMomio("Más " + fmtLinea(tF.linea), null, null, tF.p_over); hF += celdaMomio("Menos " + fmtLinea(tF.linea), null, null, 100 - tF.p_over); } hF += '</div></div>'; } return hF; }
     var sem = semaforoDe(m);
     var p12 = derivar1X2(m);
     if (sem){
       h += '<p><span class="chip ' + sem.cls + '">Semáforo EV · <strong>' + sem.color + ' · ' + esc(m.mejor_pick) + ' ' + fmtEvPct(sem.ev) + '</strong></span></p>';
     }
     if (p12){
-      h += '<p class="detail-note">Probabilidad del modelo (1X2, derivada de EV y momio): Local ' + fmt1(p12.p1) + '% · Empate ' + fmt1(p12.px) + '% · Visita ' + fmt1(p12.p2) + '%.</p>';
+      h += '<p class="detail-note">Probabilidad del modelo (1X2' + ((m.mercados && m.mercados["1X2"] && m.mercados["1X2"].prob) ? "" : ", derivada de EV y momio") + '): Local ' + fmt1(p12.p1) + '% · Empate ' + fmt1(p12.px) + '% · Visita ' + fmt1(p12.p2) + '%.</p>';
       var dnb = derivarDNB(p12);
       if (dnb){
         h += '<div class="derived" aria-label="Mercados derivados del 1X2: apuesta sin empate y doble oportunidad">';
@@ -1384,9 +1384,9 @@ function buildRADIOMap(rawData, tenData, partidos){
     h += '<div class="odds"><div class="derived-h"><span>Momios ' + esc(m.proveedor || (mom.proveedor || "")) + '</span><span>EV = prob. × momio − 1</span></div><div class="derived-grid">';
     var mo12 = mk12 && mk12.momios ? mk12.momios : (mom.moneyline || null);
     var ev12 = mk12 && mk12.ev ? mk12.ev : null;
-    h += celdaMomio("Local", mo12 ? mo12.home : null, ev12 ? ev12["1"] : null);
-    h += celdaMomio("Empate", mo12 ? mo12.draw : null, ev12 ? ev12["X"] : null);
-    h += celdaMomio("Visita", mo12 ? mo12.away : null, ev12 ? ev12["2"] : null);
+    h += celdaMomio("Local", mo12 ? mo12.home : null, ev12 ? ev12["1"] : null, p12 ? p12.p1 : null);
+    h += celdaMomio("Empate", mo12 ? mo12.draw : null, ev12 ? ev12["X"] : null, p12 ? p12.px : null);
+    h += celdaMomio("Visita", mo12 ? mo12.away : null, ev12 ? ev12["2"] : null, p12 ? p12.p2 : null);
     var tMom = null, tEv = null, tLin = null;
     if (tot){
       if (typeof tot.linea === "number") tLin = tot.linea;
@@ -1397,8 +1397,8 @@ function buildRADIOMap(rawData, tenData, partidos){
     if (tMom || tEv || tLin != null){
       var labelMas = (tLin == null) ? "Más" : "Más " + fmtLinea(tLin);
       var labelMenos = (tLin == null) ? "Menos" : "Menos " + fmtLinea(tLin);
-      h += celdaMomio(labelMas, tMom ? tMom.over : null, tEv ? tEv.mas : null);
-      h += celdaMomio(labelMenos, tMom ? tMom.under : null, tEv ? tEv.menos : null);
+      h += celdaMomio(labelMas, tMom ? tMom.over : null, tEv ? tEv.mas : null, (tot && typeof tot.p_over === "number") ? tot.p_over : null);
+      h += celdaMomio(labelMenos, tMom ? tMom.under : null, tEv ? tEv.menos : null, (tot && typeof tot.p_over === "number") ? 100 - tot.p_over : null);
     }
     h += '</div>';
     if (sem && sem.value === "1"){
@@ -1413,7 +1413,7 @@ function buildRADIOMap(rawData, tenData, partidos){
      data-prob), así que basta con guardar el nombre del pick. */
   function wireParlay(){
     var btn = document.querySelector(".add-btn");
-    if (!btn) return;
+    if (!btn) return; /* Empleado 2, 25 nov 2026: al cargar, refleja el pick ya guardado en el parlay (antes solo cambiaba al hacer clic). */ try{var r0=localStorage.getItem("faa-parlay-semana-2-v1");var a0=r0?JSON.parse(r0):[];if(Array.isArray(a0)&&a0.indexOf(btn.getAttribute("data-pick"))!==-1){btn.disabled=true;btn.textContent="En tu parlay ✓";}}catch(e0){}
     btn.addEventListener("click", function(){
       try {
         var raw = localStorage.getItem("faa-parlay-semana-2-v1");
@@ -1483,7 +1483,7 @@ function buildRADIOMap(rawData, tenData, partidos){
   function lastFiveBlock(key, home, away){
     var h = "<h4>Últimos 5 partidos</h4><div class=\"detail-two\">";
     var d = DETAIL[key] || null;
-    if (d){ h += lastFiveList(home, d.lastFive.home) + lastFiveList(away, d.lastFive.away); }
+    if (d && d.lastFive){ h += lastFiveList(home, d.lastFive.home) + lastFiveList(away, d.lastFive.away); }
     else { h += lastFiveList(home, null) + lastFiveList(away, null); }
     h += "</div>";
     return h;
@@ -1512,7 +1512,7 @@ function buildRADIOMap(rawData, tenData, partidos){
   function standingsBlock(key, home, away){
     var h = "<h4>Posición en la tabla</h4><div class=\"detail-pos\">";
     var d = DETAIL[key] || null;
-    if (d){ h += posBox(home, d.league, d.standings.home) + posBox(away, d.league, d.standings.away); }
+    if (d && d.standings){ h += posBox(home, d.league, d.standings.home) + posBox(away, d.league, d.standings.away); }
     else { h += posBox(home, "", null) + posBox(away, "", null); }
     h += "</div>";
     return h;
@@ -1620,7 +1620,7 @@ function buildRADIOMap(rawData, tenData, partidos){
     h += radiografiaBlock(m.home, m.away, slug);
     h += standingsBlock(slug, m.home, m.away);
     h += statsBlock(estDocs, slug, m.home, m.away);
-    h += "<h4>Más análisis</h4><div class=\"detail-pending\">Espacio reservado para más análisis del modelo. Aún no hay contenido aquí.</div>";
+    // Empleado 2, 25 nov 2026: sección "Más análisis" retirada; estaba vacía (solo decía "Espacio reservado..."). Vuelve cuando el modelo tenga análisis real.
     h += '<p class="detail-note">Datos: data/ (partidos, momios, XI probable y Radiografía) y ESPN (consultado 23–24 nov 2026). Últimos 5, historial y tabla son datos reales; lo no verificado se muestra como pendiente.</p>';
     h += '</div>';
     root.innerHTML = h;
@@ -1647,7 +1647,7 @@ function buildRADIOMap(rawData, tenData, partidos){
       fetchJSON(URLS.xi.mw), fetchJSON(URLS.xi.fs),
       fetchJSON(URLS.raw.mw), fetchJSON(URLS.raw.fs),
       fetchJSON(URLS.tendencias.mw), fetchJSON(URLS.tendencias.fs),
-      fetchJSON(URLS.est.mw), fetchJSON(URLS.est.fs)
+      fetchJSON(URLS.est.mw), fetchJSON(URLS.est.fs), fetchJSON(URLS.mapas)
     ]).then(function(res){
       var partidos = [];
       [[res[0], "mw"], [res[1], "fs"]].forEach(function(pair){
@@ -1669,7 +1669,7 @@ function buildRADIOMap(rawData, tenData, partidos){
         errorPage("No hay ningún partido con ese identificador (" + slug + "). Vuelve a la agenda y abre el detalle desde su tarjeta.");
         return;
       }
-      var xiMap = buildXIMap([res[2], res[3]]);
+      /* Tarea C, 25 nov 2026: data/mapas.json (55 partidos) se fusiona sobre los mapas embebidos (28). DETAIL embebido se conserva: generar_mapas.py lo lee de este archivo. */ if (res[10]){ var mp = res[10]; if (mp.partidos_vivo){ Object.keys(mp.partidos_vivo).forEach(function(k){ PARTIDOS_VIVO[k] = mp.partidos_vivo[k]; }); } if (mp.detalle){ Object.keys(mp.detalle).forEach(function(k){ if (!DETAIL[k]) DETAIL[k] = mp.detalle[k]; }); } } var xiMap = buildXIMap([res[2], res[3]]);
       if (window.__setXI) window.__setXI(xiMap);
       var radioMap = buildRADIOMap(
         {mw: res[4], fs: res[5]},
