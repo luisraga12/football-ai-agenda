@@ -393,6 +393,8 @@
   .pitch-note{color:rgba(255,255,255,.88);font-size:.78rem;margin:8px 0 0;position:relative;z-index:1}
   .det-loading{color:var(--muted);font-weight:700;padding:24px 0}
 
+.bsd-block{border-top:1px dashed var(--line);margin-top:10px;padding-top:4px}
+.bsd-h{color:var(--accent-strong)}
 </style>
 </head>
 <body>
@@ -965,7 +967,8 @@ var URLS = {
     xi: { mw: "data/semana-2-entresemana/alineacion-probable.json", fs: "data/semana-2/alineacion-probable.json" },
     raw: { mw: "data/semana-2-entresemana/raw/teams_last5.json", fs: "data/semana-2/raw/teams_last5.json" },
     tendencias: { mw: "data/semana-2-entresemana/tendencias.json", fs: "data/semana-2/tendencias.json" },
-    est: { mw: "data/semana-2-entresemana/estadisticas.json", fs: "data/semana-2/estadisticas.json" }, mapas: "data/mapas.json"
+    est: { mw: "data/semana-2-entresemana/estadisticas.json", fs: "data/semana-2/estadisticas.json" }, mapas: "data/mapas.json",
+  momios: { mw: "data/semana-2-entresemana/raw/momios.json", fs: "data/semana-2/raw/momios.json" }
   };
 var CREST_MAP = {"galatasaray-vs-aston-villa": {"h": "GAL", "a": "AVL"}, "arsenal-vs-borussia-dortmund": {"h": "ARS", "a": "BVB"}, "manchester-city-vs-napoli": {"h": "MCI", "a": "NAP"}, "real-madrid-vs-psv-eindhoven": {"h": "RMA", "a": "PSV"}, "club-brugge-vs-liverpool": {"h": "BRU", "a": "LIV"}, "internazionale-vs-vfb-stuttgart": {"h": "INT", "a": "VFB"}, "lille-vs-bayern-munich": {"h": "LIL", "a": "BAY"}, "paris-saint-germain-vs-as-roma": {"h": "PSG", "a": "ROM"}, "sporting-cp-vs-manchester-united": {"h": "SCP", "a": "MUN"}, "celta-vigo-vs-afc-bournemouth": {"h": "CEL", "a": "BOU"}, "dinamo-zagreb-vs-bayer-leverkusen": {"h": "DIN", "a": "LEV"}, "olympiacos-vs-ac-milan": {"h": "OLY", "a": "MIL"}, "werder-bremen-vs-borussia-monchengladbach": {"h": "WER", "a": "BMG"}, "venezia-vs-bologna": {"h": "VEN", "a": "BOL"}, "nottingham-forest-vs-chelsea": {"h": "NFO", "a": "CHE"}, "levante-vs-racing-santander": {"h": "LEV", "a": "RAC"}, "hamburg-sv-vs-bayern-munich": {"h": "HAM", "a": "BAY"}, "manchester-united-vs-brentford": {"h": "MUN", "a": "BRE"}, "elche-vs-atletico-madrid": {"h": "ELC", "a": "ATM"}, "vfb-stuttgart-vs-eintracht-frankfurt": {"h": "STU", "a": "EIN"}, "internazionale-vs-genoa": {"h": "INT", "a": "GEN"}, "real-madrid-vs-alaves": {"h": "RMA", "a": "ALA"}, "everton-vs-liverpool": {"h": "EVE", "a": "LIV"}, "sassuolo-vs-napoli": {"h": "SAS", "a": "NAP"}, "deportivo-vs-barcelona": {"h": "DEP", "a": "BAR"}, "arsenal-vs-manchester-city": {"h": "ARS", "a": "MCI"}, "borussia-dortmund-vs-bayer-leverkusen": {"h": "DOR", "a": "B04"}, "como-vs-juventus": {"h": "COM", "a": "JUV"}, "toluca-vs-atlas": {"h": "TOL", "a": "ATL"}, "monterrey-vs-america": {"h": "MON", "a": "AME"}, "pachuca-vs-guadalajara": {"h": "PAC", "a": "GUA"}, "leon-vs-cruz-azul": {"h": "LEO", "a": "CRU"}, "sabah-fk-vs-barcelona": {"h": "SAB", "a": "BAR"}, "slavia-prague-vs-villarreal": {"h": "SLA", "a": "VIL"}, "atletico-madrid-vs-viking-fk": {"h": "ATM", "a": "VIK"}, "shakhtar-donetsk-vs-fenerbahce": {"h": "SHA", "a": "FEN"}, "besiktas-vs-hapoel-be-er": {"h": "BES", "a": "HAP"}, "marseille-vs-levski-sofia": {"h": "MAR", "a": "SOF"}, "rb-salzburg-vs-ararat-armenia": {"h": "SAL", "a": "ARA"}, "union-st-gilloise-vs-lech-poznan": {"h": "USG", "a": "LEC"}, "viktoria-plzen-vs-benfica": {"h": "PLZ", "a": "BEN"}, "crystal-palace-vs-real-sociedad": {"h": "CRY", "a": "RSO"}, "ferencvaros-vs-nk-celje": {"h": "FER", "a": "NCE"}, "juventus-vs-omonia-nicosia": {"h": "JUV", "a": "OMO"}, "lyon-vs-lillestrom": {"h": "LYO", "a": "LST"}, "nec-nijmegen-vs-stade-rennais": {"h": "NEC", "a": "REN"}, "ofi-crete-vs-anderlecht": {"h": "OFI", "a": "AND"}, "sparta-prague-vs-az-alkmaar": {"h": "SPA", "a": "AZ"}, "sunderland-vs-jagiellonia-bialystok": {"h": "SUN", "a": "JAG"}, "torreense-vs-celtic": {"h": "TOR", "a": "GLA"}, "tsg-hoffenheim-vs-sk-sturm-graz": {"h": "HOF", "a": "STG"}, "atlas-vs-toluca": {"h": "ATL", "a": "TOL"}, "america-vs-monterrey": {"h": "AME", "a": "MON"}, "guadalajara-vs-pachuca": {"h": "GUA", "a": "PAC"}, "cruz-azul-vs-leon": {"h": "CRU", "a": "LEO"}};
 var LIGAS = {
@@ -1107,6 +1110,98 @@ function semaforoDe(m){
 function evColor(ev){
     return (typeof ev === "number" && ev < 0) ? "var(--live)" : "var(--accent-strong)";
   }
+/* ---------- Mercados BSD (Bzzoiro, segunda fuente) · Séptima ronda, Tarea 1 ----------
+   Fuente: momios.json (misma ruta relativa que ev.json). Solo se muestra un mercado
+   BSD cuando ese partido trae la clave "bsd" en momios.json; sin ella no se muestra
+   nada inventado. Esquema (scripts/recolectar_momios.py, docstring de recolectar_bsd):
+     bsd = {proveedor:"BSD-consensus", bsd_event_id:int,
+            btts:{yes,no}|null,
+            asian_handicap:{line,home,away,push,bookmakers}|null,
+            corners:{line,over,under}|null,
+            sin_momio:["btts"|"asian_handicap"|"total_corners"]}
+   EV = probabilidad del modelo × momio decimal − 1.
+   - BTTS: p_btts / p_no_btts de ev.json (mercados.btts).
+   - Hándicap asiático: solo si la línea BSD coincide con la línea spread de
+     ev.json (mercados.spread.home_linea) y no admite devolución (push false);
+     entonces P(cubre local) = p_cubre_local y P(cubre visita) = 1 − p_cubre_local.
+     Con devolución o línea distinta se muestran solo los momios, sin EV.
+   - Córners: el modelo Poisson no estima córners; solo se muestran los momios, sin EV.
+   La carga es fail-soft: si momios.json no se puede leer, simplemente no hay BSD. */
+var BSD_DATOS = {};
+var BSD_CUENTA = {partidos: 0, btts: 0, ah: 0, corners: 0};
+function claveBSD(home, away, fecha){ return norm(home) + "-vs-" + norm(away) + "|" + String(fecha || "").slice(0, 10); }
+function bsdDePartido(m, datos){ if (!m) return null; var mapa = datos || BSD_DATOS; return mapa[claveBSD(m.home, m.away, m.fecha)] || null; }
+function cargarBSD(){
+  var urls = [URLS.momios.mw, URLS.momios.fs];
+  return Promise.all(urls.map(function(u){ return fetchJSON(u); })).then(function(listas){
+    var n = 0, nb = 0, na = 0, nc = 0;
+    listas.forEach(function(j){
+      if (!j || !Array.isArray(j.partidos)) return;
+      j.partidos.forEach(function(p){
+        if (p && p.bsd){
+          BSD_DATOS[claveBSD(p.home, p.away, p.fecha)] = p.bsd;
+          n++;
+          if (p.bsd.btts) nb++;
+          if (p.bsd.asian_handicap) na++;
+          if (p.bsd.corners) nc++;
+        }
+      });
+    });
+    BSD_CUENTA = {partidos: n, btts: nb, ah: na, corners: nc};
+    return BSD_CUENTA;
+  });
+}
+function evBSD(p, momio){
+  if (typeof p !== "number" || !isFinite(p) || typeof momio !== "number" || !isFinite(momio) || momio <= 0) return null;
+  return (p / 100) * momio - 1;
+}
+function fmtLineaSigno(x){ if (typeof x !== "number" || !isFinite(x)) return ""; return (x > 0 ? "+" : "") + fmtLinea(x); }
+function celdaBSD(label, momio, nota){ return '<div class="cell"><span>' + esc(label) + ' ' + fmtMomio(momio) + '</span><b class="num">' + esc(nota) + '</b></div>'; }
+function renderBSD(m, b){
+  if (!b) return "";
+  var mk = (m && m.mercados) ? m.mercados : {};
+  var h = "";
+  if (b.btts && typeof b.btts.yes === "number" && typeof b.btts.no === "number" && mk.btts && typeof mk.btts.p_btts === "number" && typeof mk.btts.p_no_btts === "number"){
+    h += '<div class="derived-h"><span>Ambos marcan · BSD</span><span>EV = prob. × momio − 1</span></div>';
+    h += '<div class="derived-grid">';
+    h += celdaMomio("Sí", b.btts.yes, evBSD(mk.btts.p_btts, b.btts.yes), mk.btts.p_btts);
+    h += celdaMomio("No", b.btts.no, evBSD(mk.btts.p_no_btts, b.btts.no), mk.btts.p_no_btts);
+    h += '</div>';
+  }
+  if (b.asian_handicap && typeof b.asian_handicap.line === "number" && typeof b.asian_handicap.home === "number" && typeof b.asian_handicap.away === "number"){
+    var ah = b.asian_handicap;
+    var sp = mk.spread || null;
+    var evL = null, evV = null, pL = null, pV = null, motivo = "sin EV (sin spread del modelo)";
+    if (sp && typeof sp.home_linea === "number" && typeof sp.p_cubre_local === "number"){
+      if (ah.push === true) motivo = "con devolución · sin EV";
+      else if (sp.home_linea !== ah.line) motivo = "línea distinta al spread · sin EV";
+      else { pL = sp.p_cubre_local; pV = 100 - sp.p_cubre_local; evL = evBSD(pL, ah.home); evV = evBSD(pV, ah.away); }
+    }
+    var conEV = (evL !== null && evV !== null);
+    h += '<div class="derived-h"><span>Hándicap asiático ' + fmtLineaSigno(ah.line) + ' · BSD</span><span>' + (conEV ? 'EV = prob. × momio − 1' : motivo) + '</span></div>';
+    h += '<div class="derived-grid">';
+    if (!conEV){
+      h += celdaBSD("Local " + fmtLineaSigno(ah.line), ah.home, "sin EV");
+      h += celdaBSD("Visita " + fmtLineaSigno(-ah.line), ah.away, "sin EV");
+    } else {
+      h += celdaMomio("Local " + fmtLineaSigno(ah.line), ah.home, evL, pL);
+      h += celdaMomio("Visita " + fmtLineaSigno(-ah.line), ah.away, evV, pV);
+    }
+    h += '</div>';
+  }
+  if (b.corners && typeof b.corners.line === "number" && typeof b.corners.over === "number" && typeof b.corners.under === "number"){
+    var co = b.corners;
+    h += '<div class="derived-h"><span>Córners ' + fmtLinea(co.line) + ' · BSD</span><span>sin EV (el modelo no estima córners)</span></div>';
+    h += '<div class="derived-grid">';
+    h += celdaBSD("Más " + fmtLinea(co.line), co.over, "sin EV");
+    h += celdaBSD("Menos " + fmtLinea(co.line), co.under, "sin EV");
+    h += '</div>';
+  }
+  if (!h) return "";
+  return '<div class="bsd-block"><div class="derived-h bsd-h"><span>Mercados BSD (Bzzoiro)</span><span>segunda fuente · consenso</span></div>' + h + '</div>';
+}
+function htmlBSD(m, datos){ return renderBSD(m, bsdDePartido(m, datos)); }
+/* ---------- Fin del módulo BSD ---------- */
 function celdaMomio(label, momio, ev, prob){ if (typeof prob === "number" && isFinite(prob) && (typeof momio !== "number" || typeof ev !== "number" || !isFinite(momio) || !isFinite(ev))){ return '<div class="dcell"><span>' + esc(label) + '</span><b class="num">' + fmt1(prob) + '%</b><span>prob. del modelo, sin momio</span></div>'; }
     if (typeof momio !== "number" || typeof ev !== "number" || !isFinite(momio) || !isFinite(ev)){
       return '<div class="dcell"><span>' + esc(label) + '</span><b class="num">pendiente</b></div>';
@@ -1612,6 +1707,7 @@ function buildRADIOMap(rawData, tenData, partidos){
     h += headerHTML(m, di, li);
     h += '<div class="detail-body">';
     h += oddsBlock(m);
+    h += htmlBSD(m);
     h += bttsBlock(m);
     h += pitchBlock(slug);
     h += fuerzaXIBlock(slug, m.home, m.away);
@@ -1647,7 +1743,7 @@ function buildRADIOMap(rawData, tenData, partidos){
       fetchJSON(URLS.xi.mw), fetchJSON(URLS.xi.fs),
       fetchJSON(URLS.raw.mw), fetchJSON(URLS.raw.fs),
       fetchJSON(URLS.tendencias.mw), fetchJSON(URLS.tendencias.fs),
-      fetchJSON(URLS.est.mw), fetchJSON(URLS.est.fs), fetchJSON(URLS.mapas)
+      fetchJSON(URLS.est.mw), fetchJSON(URLS.est.fs), fetchJSON(URLS.mapas), cargarBSD()
     ]).then(function(res){
       var partidos = [];
       [[res[0], "mw"], [res[1], "fs"]].forEach(function(pair){
