@@ -612,7 +612,7 @@ const MarcadorEnVivo = (() => {
   let terminal = null;     // {tipo:'pre'} | {tipo:'post', hs, as} | null
   let listo = false;       // primera actualización completada
   let abierto = false;
-  let directoEnCurso = false;
+  let directoEnCurso = false; let inicioMs = null; // BUG estado en vivo (26 nov 2026): ms del inicio (fecha+hora de ev.json, hora local); el reloj manda sobre el 'pre' horneado.
 
   function normNombre(s) {
     return (s || '').toLowerCase().normalize('NFD')
@@ -655,7 +655,7 @@ const MarcadorEnVivo = (() => {
     return null;
   }
 
-  function edadMin(ts) {
+  /* BUG estado en vivo (26 nov 2026): minuto desde el reloj, misma convención que el displayClock de ESPN (el primer minuto se muestra como 1'); null si aún no empieza o si ya pasaron más de 125 minutos. */ function minutoDeReloj(ahora) { if (inicioMs == null) return null; const d = Math.floor((ahora - inicioMs) / 60000); if (d < 0 || d > 125) return null; return d + 1; } function yaEmpezo(ahora) { return inicioMs != null && ahora >= inicioMs; } function edadMin(ts) {
     if (!ts) return 0;
     return Math.max(0, Math.floor((Date.now() - ts) / 60000));
   }
@@ -741,7 +741,7 @@ const MarcadorEnVivo = (() => {
   }
 
   async function pedirScoreboard(base, liga, fecha) {
-    const r = await fetch(`${base}/${liga}/scoreboard?dates=${fecha}`);
+    const r = await fetch(`${base}/${liga}/scoreboard?dates=${String(fecha).replace(/-/g, '')}`); /* BUG estado en vivo (26 nov 2026): ESPN devuelve 400 con la fecha con guiones; la tarjeta de index.html quita los guiones (?dates=20261126). */
     if (!r.ok) {
       // Diagnóstico 24 nov 2026: el navegador de la nube recibe 400 de ESPN
       // en el fetch (la misma URL carga bien por navegación y por curl).
@@ -815,7 +815,7 @@ const MarcadorEnVivo = (() => {
         render();
         return;
       }
-      if (res.estadoPartido === 'pre') {
+      if (res.estadoPartido === 'pre') { if (yaEmpezo(Date.now())) { terminal = null; estado = { fuente: 'reloj', hs: null, as: null, min: minutoDeReloj(Date.now()), ts: Date.now(), estadoPartido: 'in' }; render(); return; }
         terminal = { tipo: 'pre' };
         estado = null;
         render();
@@ -849,7 +849,7 @@ const MarcadorEnVivo = (() => {
     } catch (e) { cache = null; }
     if (!abierto) return estado;
     if (cache) {
-      if (cache.estadoPartido === 'pre') {
+      if (cache.estadoPartido === 'pre') { if (yaEmpezo(Date.now())) { terminal = null; estado = { fuente: 'reloj', hs: null, as: null, min: minutoDeReloj(Date.now()), ts: Date.now(), estadoPartido: 'in' }; listo = true; render(); intentarDirecto(); return estado; }
         terminal = { tipo: 'pre' };
         estado = null;
         listo = true;
@@ -900,9 +900,9 @@ const MarcadorEnVivo = (() => {
     if (!e) {
       return '<div class="partido pendiente">Sin marcador en vivo por ahora. ESPN no responde y aún no hay datos guardados. Se reintenta solo cada minuto.</div>';
     }
-    const sc = escHtml(home) + ' ' + e.hs + ' – ' + e.as + ' ' + escHtml(away);
+    const hsTxt = e.hs != null ? e.hs : '—'; const asTxt = e.as != null ? e.as : '—'; const sc = escHtml(home) + ' ' + hsTxt + ' – ' + asTxt + ' ' + escHtml(away);
     const age = edadMin(e.ts);
-    if (e.fuente === 'directo') {
+    if (e.min == null) return '<div class="partido vivo"><b>' + sc + '</b><br>En vivo</div>'; if (e.fuente === 'directo' || e.fuente === 'reloj') {
       if (age < 1) {
         return '<div class="partido vivo"><b>' + sc + '</b><br>Minuto ' + e.min + "' · En vivo, actualizado hace menos de 1 min</div>";
       }
@@ -926,7 +926,7 @@ const MarcadorEnVivo = (() => {
     elActual.innerHTML = textoEstado(estado, terminal, partido.home, partido.away);
   }
 
-  function init(partidos, el, ms = 60000) {
+  function init(partidos, el, ms = 60000, inicio = null) {
     stop();
     if (!partidos || !partidos.length || !el) return { stop };
     partido = partidos[0];
@@ -934,7 +934,7 @@ const MarcadorEnVivo = (() => {
     estado = null;
     terminal = null;
     listo = false;
-    abierto = true;
+    abierto = true; inicioMs = (typeof inicio === 'number' && isFinite(inicio)) ? inicio : null; /* BUG estado en vivo (26 nov 2026): ms del inicio (fecha+hora de ev.json). */
     directoEnCurso = false;
     render();
     timer = setInterval(tick, ms);
@@ -944,7 +944,7 @@ const MarcadorEnVivo = (() => {
 
   function stop() {
     if (timer) { clearInterval(timer); timer = null; }
-    abierto = false;
+    abierto = false; inicioMs = null;
     elActual = null;
     directoEnCurso = false;
   }
@@ -1429,13 +1429,13 @@ function buildRADIOMap(rawData, tenData, partidos){
     return h;
   }
 
-  function initVivo(){
+  function initVivo(m){
     var el = document.getElementById("vivoLine");
     if (!el) return;
-    var pv = (typeof PARTIDOS_VIVO !== "undefined") ? PARTIDOS_VIVO[slug] : null;
+    var pv = (typeof PARTIDOS_VIVO !== "undefined") ? PARTIDOS_VIVO[slug] : null; var inicio = null; if (m && m.fecha && m.hora) { var t = Date.parse(m.fecha + "T" + m.hora + ":00"); if (isFinite(t)) inicio = t; } /* BUG estado en vivo (26 nov 2026): la hora de inicio (ev.json, hora local) decide si el partido ya empezó. */
     if (pv && typeof MarcadorEnVivo !== "undefined" && MarcadorEnVivo.init){
       try {
-        MarcadorEnVivo.init([pv], el);
+        MarcadorEnVivo.init([pv], el, 60000, inicio);
         window.__detalle.vivo = true;
       } catch (e){
         el.textContent = "Sin marcador en vivo por ahora.";
@@ -1721,7 +1721,7 @@ function buildRADIOMap(rawData, tenData, partidos){
     h += '</div>';
     root.innerHTML = h;
     wireParlay();
-    initVivo();
+    initVivo(m);
     window.__detalle = {
       slug: slug, ok: true, home: m.home, away: m.away,
       liga: m.liga, fecha: m.fecha, estado: m.estado,
