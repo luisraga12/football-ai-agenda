@@ -1,6 +1,6 @@
 {
  "config": "semana-2-entresemana",
- "fecha_calculo": "2026-11-25",
+ "fecha_calculo": "2026-11-26",
  "partidos": [
   {
    "local": "Galatasaray",
@@ -700,6 +700,162 @@
      "etiqueta": "Paradas",
      "local": 0,
      "visita": 2,
+     "unidad": ""
+    }
+   ]
+  },
+  {
+   "local": "Toluca",
+   "visita": "Atlas",
+   "slug": "toluca-vs-atlas",
+   "estado": "post",
+   "estadisticas": [
+    {
+     "clave": "posesion",
+     "etiqueta": "Posesión",
+     "local": 59,
+     "visita": 41,
+     "unidad": "%"
+    },
+    {
+     "clave": "tiros",
+     "etiqueta": "Tiros",
+     "local": 19,
+     "visita": 11,
+     "unidad": ""
+    },
+    {
+     "clave": "tiros_a_puerta",
+     "etiqueta": "Tiros a puerta",
+     "local": 6,
+     "visita": 5,
+     "unidad": ""
+    },
+    {
+     "clave": "corners",
+     "etiqueta": "Córners",
+     "local": 7,
+     "visita": 5,
+     "unidad": ""
+    },
+    {
+     "clave": "faltas",
+     "etiqueta": "Faltas",
+     "local": 7,
+     "visita": 7,
+     "unidad": ""
+    },
+    {
+     "clave": "fueras_de_juego",
+     "etiqueta": "Fueras de juego",
+     "local": 2,
+     "visita": 3,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_amarillas",
+     "etiqueta": "Tarjetas amarillas",
+     "local": 2,
+     "visita": 1,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_rojas",
+     "etiqueta": "Tarjetas rojas",
+     "local": 0,
+     "visita": 0,
+     "unidad": ""
+    },
+    {
+     "clave": "pases_precisos",
+     "etiqueta": "Pases precisos",
+     "local": 432,
+     "visita": 277,
+     "unidad": ""
+    },
+    {
+     "clave": "paradas",
+     "etiqueta": "Paradas",
+     "local": 5,
+     "visita": 4,
+     "unidad": ""
+    }
+   ]
+  },
+  {
+   "local": "Monterrey",
+   "visita": "América",
+   "slug": "monterrey-vs-america",
+   "estado": "post",
+   "estadisticas": [
+    {
+     "clave": "posesion",
+     "etiqueta": "Posesión",
+     "local": 30.9,
+     "visita": 69.1,
+     "unidad": "%"
+    },
+    {
+     "clave": "tiros",
+     "etiqueta": "Tiros",
+     "local": 8,
+     "visita": 19,
+     "unidad": ""
+    },
+    {
+     "clave": "tiros_a_puerta",
+     "etiqueta": "Tiros a puerta",
+     "local": 1,
+     "visita": 8,
+     "unidad": ""
+    },
+    {
+     "clave": "corners",
+     "etiqueta": "Córners",
+     "local": 3,
+     "visita": 12,
+     "unidad": ""
+    },
+    {
+     "clave": "faltas",
+     "etiqueta": "Faltas",
+     "local": 5,
+     "visita": 21,
+     "unidad": ""
+    },
+    {
+     "clave": "fueras_de_juego",
+     "etiqueta": "Fueras de juego",
+     "local": 3,
+     "visita": 1,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_amarillas",
+     "etiqueta": "Tarjetas amarillas",
+     "local": 0,
+     "visita": 6,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_rojas",
+     "etiqueta": "Tarjetas rojas",
+     "local": 1,
+     "visita": 0,
+     "unidad": ""
+    },
+    {
+     "clave": "pases_precisos",
+     "etiqueta": "Pases precisos",
+     "local": 145,
+     "visita": 426,
+     "unidad": ""
+    },
+    {
+     "clave": "paradas",
+     "etiqueta": "Paradas",
+     "local": 8,
+     "visita": 1,
      "unidad": ""
     }
    ]
