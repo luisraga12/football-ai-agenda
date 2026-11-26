@@ -122,7 +122,7 @@ interfaz (`index.html` no se toca en este trabajo).
    dice cuántos se habrían agregado. Sin la clave (o en true), se
    completa la jornada como siempre. El fin de semana
    (`semana-actual.json`, 20 partidos) lleva el flag en false: la
-   corrida de las 07:00 no debe completarlo solo a 40.** **El cambio
+   corrida de las 07:17 no debe completarlo solo a 40.** **El cambio
    al config debe commitearse** (`git add data/ scripts/config/` en el
    workflow): lección de la Liguilla, 24 nov 2026 — la corrida c892956
    descubrió los 8 cuartos de final y los puso en el ev.json, pero el
@@ -302,7 +302,7 @@ ESPN (`scoreboard_*`, `odds_*`, `schedule_*`), `teams_last5.json`,
 `.github/workflows/actualizar-poisson.yml` corre `run_semana.py` con la
 semana actual:
 
-- diario a las 13:00 UTC (07:00 CST),
+- diario a las 13:17 UTC (07:17 CST),
 - cada hora viernes, sábado y domingo (días de partido),
 - manual (`workflow_dispatch`).
 
@@ -317,13 +317,11 @@ corrida y el partido descubierto desaparece del ev.json (lección de
 la Liguilla, 24 nov 2026).
 
 **Nota:** los workflows programados solo corren en la rama por defecto
-(`main`). Este workflow se entrega en la rama `semana-3` para revisión
-del jefe; empieza a correr solo cuando se fusione a `main`.
+(`main`).
 
 ## Metodología (aprobada por el jefe, 19 nov 2026)
 
-- Prom. por equipo = prom. total de goles por partido / 2.
-- Ataque = (GF/n) / prom. por equipo; defensa = (GA/n) / prom. por equipo
+- Prom. 
   (n = partidos usados: 5 en ligas, 4 en competiciones europeas).
 - xG local = prom. local × ataque local × defensa visitante;
   xG visitante = prom. visitante × ataque visitante × defensa local.
