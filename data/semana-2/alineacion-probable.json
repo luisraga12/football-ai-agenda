@@ -2,7 +2,7 @@
  "semana": "Semana 2",
  "config": "semana-actual.json",
  "fecha_calculo": "2026-11-25",
- "metodo": "XI más frecuente por posición de los últimos partidos + formación más usada; siempre PROBABLE (ESPN no publica XI probable). Ventana: últimos 5 de liga doméstica (fin de semana) o últimos 4 de la competición UEFA (entre semana), antes de la fecha del partido. Fuerza por XI: 0.40·goles+asistencias + 0.30·minutos + 0.30·puntos, cada componente en % vs el mejor XI 1-4-4-2 por minutos de la misma ventana, con fracciones; calculada con nombres ESPN antes del MAPEO.",
+ "metodo": "XI más frecuente por posición de los últimos partidos + formación más usada; siempre PROBABLE (ESPN no publica XI probable). Ventana: últimos 5 de liga doméstica (fin de semana) o últimos 4 de la competición UEFA (entre semana), antes de la fecha del partido. Fuerza por XI: 0.40·goles+asistencias + 0.30·minutos + 0.30·puntos, cada componente en % vs el mejor XI posible en ese componente con la misma formación del XI probable (corrección 25 nov 2026: antes era un solo mejor XI 1-4-4-2 por minutos y el XI podía superarlo, p. ej. Atlas 65/63), con fracciones; calculada con nombres ESPN antes del MAPEO.",
  "verificacion_nombres": "Los ~50 nombres señalados por el jefe el 24 nov 2026 fueron verificados uno por uno: los 60 son jugadores reales del equipo asignado (fichajes del verano 2026, con fuentes en EMPLEADO-1.md). No se añadió ningún reemplazo al MAPEO.",
  "partidos": [
   {
@@ -131,17 +131,17 @@
      }
     ],
     "fuerza": {
-     "valor": 100.0,
-     "A_goles": 100,
+     "valor": 94.1,
+     "A_goles": 87.5,
      "B_minutos": 100,
-     "C_puntos": 100,
+     "C_puntos": 97.1,
      "goles_asist": 14.0,
      "minutos": 4455,
      "puntos": 101,
      "mejor": {
-      "goles_asist": 14.0,
+      "goles_asist": 16.0,
       "minutos": 4455,
-      "puntos": 101
+      "puntos": 104
      }
     },
     "revisiones": [],
@@ -269,17 +269,17 @@
      }
     ],
     "fuerza": {
-     "valor": 100.0,
+     "valor": 95.8,
      "A_goles": 100,
      "B_minutos": 100,
-     "C_puntos": 100,
+     "C_puntos": 86.0,
      "goles_asist": 10.0,
      "minutos": 3949,
      "puntos": 37,
      "mejor": {
-      "goles_asist": 9.0,
-      "minutos": 3920,
-      "puntos": 37
+      "goles_asist": 10.0,
+      "minutos": 3949,
+      "puntos": 43
      }
     },
     "revisiones": [],
@@ -413,16 +413,16 @@
      }
     ],
     "fuerza": {
-     "valor": 96.7,
-     "A_goles": 100,
-     "B_minutos": 98.2,
+     "valor": 87.1,
+     "A_goles": 75.0,
+     "B_minutos": 99.4,
      "C_puntos": 90.9,
      "goles_asist": 3.0,
      "minutos": 4076,
      "puntos": 30,
      "mejor": {
-      "goles_asist": 3.0,
-      "minutos": 4150,
+      "goles_asist": 4.0,
+      "minutos": 4102,
       "puntos": 33
      }
     },
@@ -704,8 +704,8 @@
      "puntos": 44,
      "mejor": {
       "goles_asist": 7.0,
-      "minutos": 4148,
-      "puntos": 40
+      "minutos": 4335,
+      "puntos": 44
      }
     },
     "revisiones": [],
@@ -841,8 +841,8 @@
      "minutos": 3788,
      "puntos": 54,
      "mejor": {
-      "goles_asist": 5.0,
-      "minutos": 3608,
+      "goles_asist": 6.0,
+      "minutos": 3788,
       "puntos": 54
      }
     },
@@ -977,16 +977,16 @@
      }
     ],
     "fuerza": {
-     "valor": 92.3,
+     "valor": 93.3,
      "A_goles": 85.7,
-     "B_minutos": 95.3,
+     "B_minutos": 98.6,
      "C_puntos": 98.0,
      "goles_asist": 6.0,
      "minutos": 3851,
      "puntos": 49,
      "mejor": {
       "goles_asist": 7.0,
-      "minutos": 4039,
+      "minutos": 3904,
       "puntos": 50
      }
     },
@@ -1117,17 +1117,17 @@
      }
     ],
     "fuerza": {
-     "valor": 100.0,
+     "valor": 99.1,
      "A_goles": 100,
      "B_minutos": 100,
-     "C_puntos": 100,
+     "C_puntos": 96.9,
      "goles_asist": 11.0,
      "minutos": 4334,
      "puntos": 93,
      "mejor": {
       "goles_asist": 11.0,
       "minutos": 4334,
-      "puntos": 93
+      "puntos": 96
      }
     },
     "revisiones": [],
@@ -1261,17 +1261,17 @@
      }
     ],
     "fuerza": {
-     "valor": 99.9,
-     "A_goles": 100,
+     "valor": 93.3,
+     "A_goles": 87.5,
      "B_minutos": 99.8,
-     "C_puntos": 100,
+     "C_puntos": 94.7,
      "goles_asist": 7.0,
      "minutos": 3723,
      "puntos": 54,
      "mejor": {
-      "goles_asist": 7.0,
+      "goles_asist": 8.0,
       "minutos": 3732,
-      "puntos": 54
+      "puntos": 57
      }
     },
     "revisiones": [],
@@ -1399,15 +1399,15 @@
      }
     ],
     "fuerza": {
-     "valor": 100.0,
-     "A_goles": 100,
+     "valor": 94.8,
+     "A_goles": 87.0,
      "B_minutos": 100,
      "C_puntos": 100,
      "goles_asist": 20.0,
      "minutos": 4043,
      "puntos": 111,
      "mejor": {
-      "goles_asist": 20.0,
+      "goles_asist": 23.0,
       "minutos": 4043,
       "puntos": 111
      }
@@ -1543,15 +1543,15 @@
      }
     ],
     "fuerza": {
-     "valor": 98.1,
-     "A_goles": 100,
+     "valor": 86.7,
+     "A_goles": 71.4,
      "B_minutos": 98.7,
      "C_puntos": 95.0,
      "goles_asist": 5.0,
      "minutos": 3731,
      "puntos": 19,
      "mejor": {
-      "goles_asist": 5.0,
+      "goles_asist": 7.0,
       "minutos": 3779,
       "puntos": 20
      }
@@ -1681,16 +1681,16 @@
      }
     ],
     "fuerza": {
-     "valor": 97.6,
-     "A_goles": 100,
-     "B_minutos": 97.6,
+     "valor": 88.3,
+     "A_goles": 75.0,
+     "B_minutos": 100,
      "C_puntos": 94.3,
      "goles_asist": 9.0,
      "minutos": 3880,
      "puntos": 66,
      "mejor": {
-      "goles_asist": 9.0,
-      "minutos": 3976,
+      "goles_asist": 12.0,
+      "minutos": 3880,
       "puntos": 70
      }
     },
@@ -1834,8 +1834,8 @@
      "puntos": 55,
      "mejor": {
       "goles_asist": 5.0,
-      "minutos": 3948,
-      "puntos": 50
+      "minutos": 4214,
+      "puntos": 55
      }
     },
     "revisiones": [],
@@ -1963,15 +1963,15 @@
      }
     ],
     "fuerza": {
-     "valor": 100.0,
-     "A_goles": 100,
+     "valor": 96.9,
+     "A_goles": 92.3,
      "B_minutos": 100,
      "C_puntos": 100,
      "goles_asist": 12.0,
      "minutos": 4081,
      "puntos": 123,
      "mejor": {
-      "goles_asist": 12.0,
+      "goles_asist": 13.0,
       "minutos": 4081,
       "puntos": 123
      }
@@ -2107,17 +2107,17 @@
      }
     ],
     "fuerza": {
-     "valor": 95.6,
-     "A_goles": 90.9,
-     "B_minutos": 98.6,
-     "C_puntos": 98.7,
+     "valor": 100.0,
+     "A_goles": 100,
+     "B_minutos": 100,
+     "C_puntos": 100,
      "goles_asist": 10.0,
      "minutos": 3785,
      "puntos": 76,
      "mejor": {
-      "goles_asist": 11.0,
-      "minutos": 3838,
-      "puntos": 77
+      "goles_asist": 10.0,
+      "minutos": 3785,
+      "puntos": 76
      }
     },
     "revisiones": [],
@@ -2245,15 +2245,15 @@
      }
     ],
     "fuerza": {
-     "valor": 100.0,
-     "A_goles": 100,
+     "valor": 95.6,
+     "A_goles": 88.9,
      "B_minutos": 100,
      "C_puntos": 100,
      "goles_asist": 8.0,
      "minutos": 4165,
      "puntos": 106,
      "mejor": {
-      "goles_asist": 8.0,
+      "goles_asist": 9.0,
       "minutos": 4165,
       "puntos": 106
      }
@@ -2389,17 +2389,17 @@
      }
     ],
     "fuerza": {
-     "valor": 100.0,
-     "A_goles": 100,
+     "valor": 95.5,
+     "A_goles": 91.7,
      "B_minutos": 100,
-     "C_puntos": 100,
+     "C_puntos": 96.0,
      "goles_asist": 11.0,
      "minutos": 3727,
      "puntos": 97,
      "mejor": {
-      "goles_asist": 10.0,
-      "minutos": 3689,
-      "puntos": 94
+      "goles_asist": 12.0,
+      "minutos": 3727,
+      "puntos": 101
      }
     },
     "revisiones": [],
@@ -2527,17 +2527,17 @@
      }
     ],
     "fuerza": {
-     "valor": 100.0,
-     "A_goles": 100,
+     "valor": 85.0,
+     "A_goles": 64.3,
      "B_minutos": 100,
-     "C_puntos": 100,
+     "C_puntos": 97.5,
      "goles_asist": 9.0,
      "minutos": 3954,
      "puntos": 117,
      "mejor": {
-      "goles_asist": 9.0,
-      "minutos": 3775,
-      "puntos": 111
+      "goles_asist": 14.0,
+      "minutos": 3954,
+      "puntos": 120
      }
     },
     "revisiones": [],
@@ -2813,15 +2813,15 @@
      }
     ],
     "fuerza": {
-     "valor": 100.0,
-     "A_goles": 100,
+     "valor": 93.3,
+     "A_goles": 83.3,
      "B_minutos": 100,
      "C_puntos": 100,
      "goles_asist": 5.0,
      "minutos": 3876,
      "puntos": 50,
      "mejor": {
-      "goles_asist": 5.0,
+      "goles_asist": 6.0,
       "minutos": 3876,
       "puntos": 50
      }
@@ -3239,16 +3239,16 @@
      }
     ],
     "fuerza": {
-     "valor": 69.0,
-     "A_goles": 100,
-     "B_minutos": 96.6,
+     "valor": 53.7,
+     "A_goles": 60.0,
+     "B_minutos": 99.0,
      "C_puntos": 0,
      "goles_asist": 3.0,
      "minutos": 2790,
      "puntos": 0,
      "mejor": {
-      "goles_asist": 3.0,
-      "minutos": 2889,
+      "goles_asist": 5.0,
+      "minutos": 2817,
       "puntos": 0
      }
     },
@@ -3377,17 +3377,17 @@
      }
     ],
     "fuerza": {
-     "valor": 100.0,
+     "valor": 99.5,
      "A_goles": 100,
-     "B_minutos": 100,
-     "C_puntos": 100,
+     "B_minutos": 99.6,
+     "C_puntos": 98.8,
      "goles_asist": 14.0,
      "minutos": 3689,
      "puntos": 82,
      "mejor": {
-      "goles_asist": 9.0,
-      "minutos": 3458,
-      "puntos": 78
+      "goles_asist": 14.0,
+      "minutos": 3703,
+      "puntos": 83
      }
     },
     "revisiones": [],
@@ -3659,17 +3659,17 @@
      }
     ],
     "fuerza": {
-     "valor": 98.9,
+     "valor": 97.3,
      "A_goles": 100,
-     "B_minutos": 99.1,
-     "C_puntos": 97.4,
+     "B_minutos": 98.6,
+     "C_puntos": 92.5,
      "goles_asist": 25.0,
      "minutos": 3649,
      "puntos": 111,
      "mejor": {
       "goles_asist": 25.0,
-      "minutos": 3682,
-      "puntos": 114
+      "minutos": 3702,
+      "puntos": 120
      }
     },
     "revisiones": [],
@@ -3805,15 +3805,15 @@
      }
     ],
     "fuerza": {
-     "valor": 100.0,
-     "A_goles": 100,
+     "valor": 96.7,
+     "A_goles": 91.7,
      "B_minutos": 100,
      "C_puntos": 100,
      "goles_asist": 11.0,
      "minutos": 4121,
      "puntos": 137,
      "mejor": {
-      "goles_asist": 11.0,
+      "goles_asist": 12.0,
       "minutos": 4121,
       "puntos": 137
      }
@@ -3943,15 +3943,15 @@
      }
     ],
     "fuerza": {
-     "valor": 100.0,
-     "A_goles": 100,
+     "valor": 95.0,
+     "A_goles": 87.5,
      "B_minutos": 100,
      "C_puntos": 100,
      "goles_asist": 7.0,
      "minutos": 3972,
      "puntos": 44,
      "mejor": {
-      "goles_asist": 7.0,
+      "goles_asist": 8.0,
       "minutos": 3972,
       "puntos": 44
      }
@@ -4087,17 +4087,17 @@
      }
     ],
     "fuerza": {
-     "valor": 100.0,
+     "valor": 98.9,
      "A_goles": 100,
-     "B_minutos": 100,
-     "C_puntos": 100,
+     "B_minutos": 99.9,
+     "C_puntos": 96.6,
      "goles_asist": 9.0,
      "minutos": 3983,
      "puntos": 112,
      "mejor": {
-      "goles_asist": 7.0,
-      "minutos": 3922,
-      "puntos": 109
+      "goles_asist": 9.0,
+      "minutos": 3987,
+      "puntos": 116
      }
     },
     "revisiones": [],
@@ -4225,17 +4225,17 @@
      }
     ],
     "fuerza": {
-     "valor": 96.5,
-     "A_goles": 94.1,
-     "B_minutos": 99.3,
-     "C_puntos": 96.8,
+     "valor": 95.6,
+     "A_goles": 88.9,
+     "B_minutos": 100,
+     "C_puntos": 100,
      "goles_asist": 16.0,
      "minutos": 4319,
      "puntos": 90,
      "mejor": {
-      "goles_asist": 17.0,
-      "minutos": 4350,
-      "puntos": 93
+      "goles_asist": 18.0,
+      "minutos": 4319,
+      "puntos": 90
      }
     },
     "revisiones": [],
@@ -4369,17 +4369,17 @@
      }
     ],
     "fuerza": {
-     "valor": 99.9,
+     "valor": 99.2,
      "A_goles": 100,
      "B_minutos": 99.8,
-     "C_puntos": 100,
+     "C_puntos": 97.7,
      "goles_asist": 13.0,
      "minutos": 3916,
      "puntos": 126,
      "mejor": {
       "goles_asist": 13.0,
       "minutos": 3923,
-      "puntos": 126
+      "puntos": 129
      }
     },
     "revisiones": [],
@@ -4651,17 +4651,17 @@
      }
     ],
     "fuerza": {
-     "valor": 99.9,
-     "A_goles": 100,
+     "valor": 91.5,
+     "A_goles": 82.4,
      "B_minutos": 99.7,
-     "C_puntos": 100,
+     "C_puntos": 95.6,
      "goles_asist": 14.0,
      "minutos": 3609,
      "puntos": 65,
      "mejor": {
-      "goles_asist": 14.0,
+      "goles_asist": 17.0,
       "minutos": 3620,
-      "puntos": 63
+      "puntos": 68
      }
     },
     "revisiones": [],
@@ -4789,16 +4789,16 @@
      }
     ],
     "fuerza": {
-     "valor": 85.9,
-     "A_goles": 68.8,
-     "B_minutos": 96.3,
+     "valor": 95.9,
+     "A_goles": 91.7,
+     "B_minutos": 99.0,
      "C_puntos": 98.3,
      "goles_asist": 11.0,
      "minutos": 3202,
      "puntos": 57,
      "mejor": {
-      "goles_asist": 16.0,
-      "minutos": 3326,
+      "goles_asist": 12.0,
+      "minutos": 3233,
       "puntos": 58
      }
     },
@@ -4933,15 +4933,15 @@
      }
     ],
     "fuerza": {
-     "valor": 98.7,
-     "A_goles": 100,
+     "valor": 93.0,
+     "A_goles": 85.7,
      "B_minutos": 99.6,
      "C_puntos": 96.0,
      "goles_asist": 6.0,
      "minutos": 3219,
      "puntos": 24,
      "mejor": {
-      "goles_asist": 6.0,
+      "goles_asist": 7.0,
       "minutos": 3232,
       "puntos": 25
      }
@@ -5080,8 +5080,8 @@
      "puntos": 61,
      "mejor": {
       "goles_asist": 6.0,
-      "minutos": 3769,
-      "puntos": 60
+      "minutos": 3931,
+      "puntos": 61
      }
     },
     "revisiones": [],
@@ -5215,17 +5215,17 @@
      }
     ],
     "fuerza": {
-     "valor": 100.0,
-     "A_goles": 100,
+     "valor": 93.3,
+     "A_goles": 83.3,
      "B_minutos": 100,
      "C_puntos": 100,
      "goles_asist": 10.0,
      "minutos": 4162,
      "puntos": 137,
      "mejor": {
-      "goles_asist": 8.0,
-      "minutos": 3803,
-      "puntos": 121
+      "goles_asist": 12.0,
+      "minutos": 4162,
+      "puntos": 137
      }
     },
     "revisiones": [],
@@ -5497,17 +5497,17 @@
      }
     ],
     "fuerza": {
-     "valor": 90.8,
-     "A_goles": 80.0,
-     "B_minutos": 98.6,
-     "C_puntos": 97.3,
+     "valor": 89.1,
+     "A_goles": 72.7,
+     "B_minutos": 100,
+     "C_puntos": 100,
      "goles_asist": 8.0,
      "minutos": 3383,
      "puntos": 108,
      "mejor": {
-      "goles_asist": 10.0,
-      "minutos": 3431,
-      "puntos": 111
+      "goles_asist": 11.0,
+      "minutos": 3383,
+      "puntos": 108
      }
     },
     "revisiones": [],
@@ -5635,17 +5635,17 @@
      }
     ],
     "fuerza": {
-     "valor": 99.9,
+     "valor": 100.0,
      "A_goles": 100,
-     "B_minutos": 99.6,
+     "B_minutos": 100,
      "C_puntos": 100,
      "goles_asist": 8.0,
      "minutos": 3846,
      "puntos": 77,
      "mejor": {
-      "goles_asist": 5.0,
-      "minutos": 3861,
-      "puntos": 75
+      "goles_asist": 8.0,
+      "minutos": 3846,
+      "puntos": 77
      }
     },
     "revisiones": [],
