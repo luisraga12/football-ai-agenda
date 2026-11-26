@@ -1483,7 +1483,7 @@ function buildRADIOMap(rawData, tenData, partidos){
   function lastFiveBlock(key, home, away){
     var h = "<h4>Últimos 5 partidos</h4><div class=\"detail-two\">";
     var d = DETAIL[key] || null;
-    if (d){ h += lastFiveList(home, d.lastFive.home) + lastFiveList(away, d.lastFive.away); }
+    if (d && d.lastFive){ h += lastFiveList(home, d.lastFive.home) + lastFiveList(away, d.lastFive.away); }
     else { h += lastFiveList(home, null) + lastFiveList(away, null); }
     h += "</div>";
     return h;
@@ -1512,7 +1512,7 @@ function buildRADIOMap(rawData, tenData, partidos){
   function standingsBlock(key, home, away){
     var h = "<h4>Posición en la tabla</h4><div class=\"detail-pos\">";
     var d = DETAIL[key] || null;
-    if (d){ h += posBox(home, d.league, d.standings.home) + posBox(away, d.league, d.standings.away); }
+    if (d && d.standings){ h += posBox(home, d.league, d.standings.home) + posBox(away, d.league, d.standings.away); }
     else { h += posBox(home, "", null) + posBox(away, "", null); }
     h += "</div>";
     return h;
