@@ -116,7 +116,7 @@
   "liga": "uefa.europa",
   "league": "uefa.europa",
   "date_cst": "2026-11-26 11:45",
-  "status": "STATUS_SCHEDULED",
+  "status": "STATUS_SECOND_HALF",
   "espn_id": "401915519"
  },
  {
@@ -128,7 +128,7 @@
   "liga": "uefa.europa",
   "league": "uefa.europa",
   "date_cst": "2026-11-26 11:45",
-  "status": "STATUS_SCHEDULED",
+  "status": "STATUS_SECOND_HALF",
   "espn_id": "401915517"
  },
  {
@@ -140,7 +140,7 @@
   "liga": "uefa.europa",
   "league": "uefa.europa",
   "date_cst": "2026-11-26 11:45",
-  "status": "STATUS_SCHEDULED",
+  "status": "STATUS_SECOND_HALF",
   "espn_id": "401915521"
  },
  {
@@ -152,7 +152,7 @@
   "liga": "mex.1",
   "league": "mex.1",
   "date_cst": "2026-11-25 19:00",
-  "status": "STATUS_SCHEDULED",
+  "status": "STATUS_FULL_TIME",
   "espn_id": "401931986"
  },
  {
@@ -164,7 +164,7 @@
   "liga": "mex.1",
   "league": "mex.1",
   "date_cst": "2026-11-25 21:10",
-  "status": "STATUS_SCHEDULED",
+  "status": "STATUS_FULL_TIME",
   "espn_id": "401931998"
  },
  {
@@ -248,7 +248,7 @@
   "liga": "uefa.europa",
   "league": "uefa.europa",
   "date_cst": "2026-11-26 11:45",
-  "status": "STATUS_SCHEDULED",
+  "status": "STATUS_FIRST_HALF",
   "espn_id": "401915506"
  },
  {
@@ -260,7 +260,7 @@
   "liga": "uefa.europa",
   "league": "uefa.europa",
   "date_cst": "2026-11-26 11:45",
-  "status": "STATUS_SCHEDULED",
+  "status": "STATUS_SECOND_HALF",
   "espn_id": "401915507"
  },
  {
@@ -272,7 +272,7 @@
   "liga": "uefa.europa",
   "league": "uefa.europa",
   "date_cst": "2026-11-26 11:45",
-  "status": "STATUS_SCHEDULED",
+  "status": "STATUS_SECOND_HALF",
   "espn_id": "401915520"
  },
  {
@@ -284,7 +284,7 @@
   "liga": "uefa.europa",
   "league": "uefa.europa",
   "date_cst": "2026-11-26 11:45",
-  "status": "STATUS_SCHEDULED",
+  "status": "STATUS_SECOND_HALF",
   "espn_id": "401915508"
  },
  {
@@ -296,7 +296,7 @@
   "liga": "uefa.europa",
   "league": "uefa.europa",
   "date_cst": "2026-11-26 11:45",
-  "status": "STATUS_SCHEDULED",
+  "status": "STATUS_SECOND_HALF",
   "espn_id": "401915518"
  },
  {

@@ -1,7 +1,7 @@
 {
  "semana": "2-entresemana",
  "ventana": "últimos partidos de la competición [4, 5]",
- "fecha_calculo": "2026-11-25",
+ "fecha_calculo": "2026-11-26",
  "partidos": [
   {
    "slug": "galatasaray-vs-aston-villa",
@@ -538,7 +538,7 @@
    "fecha": "2026-11-25",
    "hora": "19:00",
    "liga": "Liga MX",
-   "estado": "con_momio",
+   "estado": "pendiente",
    "linea_total": 2.5,
    "linea_referencia": false,
    "local": {
@@ -551,9 +551,9 @@
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 2,
-    "spread_linea": -1.5,
-    "cubre": 1,
-    "no_cubre": 4,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
@@ -567,13 +567,13 @@
     "empuje": 0,
     "btts_si": 4,
     "btts_no": 1,
-    "spread_linea": 1.5,
-    "cubre": 3,
-    "no_cubre": 2,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Toluca 1G-3E-1P · Más 2.5 3/5 · Menos 2.5 2/5 · BTTS 3/5 · Cubre -1.5 1/5 — Atlas 2G-1E-2P · Más 2.5 4/5 · Menos 2.5 1/5 · BTTS 4/5 · Cubre +1.5 3/5"
+   "linea_tarjeta": "Tendencias: Toluca 1G-3E-1P · Más 2.5 3/5 · Menos 2.5 2/5 · BTTS 3/5 — Atlas 2G-1E-2P · Más 2.5 4/5 · Menos 2.5 1/5 · BTTS 4/5"
   },
   {
    "slug": "monterrey-vs-america",
@@ -582,7 +582,7 @@
    "fecha": "2026-11-25",
    "hora": "21:10",
    "liga": "Liga MX",
-   "estado": "con_momio",
+   "estado": "pendiente",
    "linea_total": 2.5,
    "linea_referencia": false,
    "local": {
@@ -595,9 +595,9 @@
     "empuje": 0,
     "btts_si": 1,
     "btts_no": 4,
-    "spread_linea": -0.5,
-    "cubre": 2,
-    "no_cubre": 3,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
@@ -611,13 +611,13 @@
     "empuje": 0,
     "btts_si": 4,
     "btts_no": 1,
-    "spread_linea": 0.5,
-    "cubre": 3,
-    "no_cubre": 2,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Monterrey 2G-1E-2P · Más 2.5 2/5 · Menos 2.5 3/5 · BTTS 1/5 · Cubre -0.5 2/5 — América 0G-3E-2P · Más 2.5 3/5 · Menos 2.5 2/5 · BTTS 4/5 · Cubre +0.5 3/5"
+   "linea_tarjeta": "Tendencias: Monterrey 2G-1E-2P · Más 2.5 2/5 · Menos 2.5 3/5 · BTTS 1/5 — América 0G-3E-2P · Más 2.5 3/5 · Menos 2.5 2/5 · BTTS 4/5"
   },
   {
    "slug": "pachuca-vs-guadalajara",
@@ -1067,23 +1067,23 @@
    "hora": "11:45",
    "liga": "Europa League",
    "estado": "con_momio",
-   "linea_total": 3.5,
+   "linea_total": 2.5,
    "linea_referencia": false,
    "local": {
     "n": 4,
     "g": 1,
     "e": 0,
     "p": 3,
-    "mas": 0,
-    "menos": 4,
+    "mas": 3,
+    "menos": 1,
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 2,
-    "spread_linea": 1.5,
-    "cubre": 3,
-    "no_cubre": 1,
+    "spread_linea": 0.5,
+    "cubre": 1,
+    "no_cubre": 3,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
    "visita": {
     "n": 4,
@@ -1095,13 +1095,13 @@
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 1,
-    "spread_linea": -1.5,
+    "spread_linea": -0.5,
     "cubre": 4,
     "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Viktoria Plzen 1G-0E-3P · Más 3.5 0/4 · Menos 3.5 4/4 · BTTS 2/4 · Cubre +1.5 3/4 — Benfica 4G-0E-0P · Más 3.5 3/4 · Menos 3.5 1/4 · BTTS 3/4 · Cubre -1.5 4/4"
+   "linea_tarjeta": "Tendencias: Viktoria Plzen 1G-0E-3P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 2/4 · Cubre +0.5 1/4 — Benfica 4G-0E-0P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 3/4 · Cubre -0.5 4/4"
   },
   {
    "slug": "crystal-palace-vs-real-sociedad",
@@ -1199,41 +1199,41 @@
    "hora": "14:00",
    "liga": "Europa League",
    "estado": "con_momio",
-   "linea_total": 3.5,
+   "linea_total": 2.5,
    "linea_referencia": false,
    "local": {
     "n": 4,
     "g": 3,
     "e": 1,
     "p": 0,
-    "mas": 2,
-    "menos": 2,
+    "mas": 4,
+    "menos": 0,
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 1,
-    "spread_linea": -2.5,
+    "spread_linea": -1.5,
     "cubre": 1,
     "no_cubre": 3,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
    "visita": {
     "n": 4,
     "g": 2,
     "e": 0,
     "p": 2,
-    "mas": 2,
-    "menos": 2,
+    "mas": 3,
+    "menos": 1,
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 2,
-    "spread_linea": 2.5,
-    "cubre": 3,
-    "no_cubre": 1,
+    "spread_linea": 1.5,
+    "cubre": 2,
+    "no_cubre": 2,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Juventus 3G-1E-0P · Más 3.5 2/4 · Menos 3.5 2/4 · BTTS 3/4 · Cubre -2.5 1/4 — Omonia Nicosia 2G-0E-2P · Más 3.5 2/4 · Menos 3.5 2/4 · BTTS 2/4 · Cubre +2.5 3/4"
+   "linea_tarjeta": "Tendencias: Juventus 3G-1E-0P · Más 2.5 4/4 · Menos 2.5 0/4 · BTTS 3/4 · Cubre -1.5 1/4 — Omonia Nicosia 2G-0E-2P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 2/4 · Cubre +1.5 2/4"
   },
   {
    "slug": "lyon-vs-lillestrom",
@@ -1387,9 +1387,9 @@
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 1,
-    "spread_linea": 0.5,
-    "cubre": 2,
-    "no_cubre": 2,
+    "spread_linea": -0.5,
+    "cubre": 1,
+    "no_cubre": 3,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
@@ -1403,13 +1403,13 @@
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 2,
-    "spread_linea": -0.5,
+    "spread_linea": 0.5,
     "cubre": 2,
     "no_cubre": 2,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Sparta Prague 1G-1E-2P · Más 2.5 2/4 · Menos 2.5 2/4 · BTTS 3/4 · Cubre +0.5 2/4 — AZ Alkmaar 2G-0E-2P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 2/4 · Cubre -0.5 2/4"
+   "linea_tarjeta": "Tendencias: Sparta Prague 1G-1E-2P · Más 2.5 2/4 · Menos 2.5 2/4 · BTTS 3/4 · Cubre -0.5 1/4 — AZ Alkmaar 2G-0E-2P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 2/4 · Cubre +0.5 2/4"
   },
   {
    "slug": "sunderland-vs-jagiellonia-bialystok",
@@ -1419,15 +1419,15 @@
    "hora": "14:00",
    "liga": "Europa League",
    "estado": "con_momio",
-   "linea_total": 3.5,
+   "linea_total": 2.5,
    "linea_referencia": false,
    "local": {
     "n": 4,
     "g": 2,
     "e": 1,
     "p": 1,
-    "mas": 0,
-    "menos": 4,
+    "mas": 1,
+    "menos": 3,
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 2,
@@ -1435,15 +1435,15 @@
     "cubre": 0,
     "no_cubre": 4,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
    "visita": {
     "n": 4,
     "g": 1,
     "e": 0,
     "p": 3,
-    "mas": 1,
-    "menos": 3,
+    "mas": 3,
+    "menos": 1,
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 2,
@@ -1451,9 +1451,9 @@
     "cubre": 3,
     "no_cubre": 1,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Sunderland 2G-1E-1P · Más 3.5 0/4 · Menos 3.5 4/4 · BTTS 2/4 · Cubre -1.5 0/4 — Jagiellonia Bialystok 1G-0E-3P · Más 3.5 1/4 · Menos 3.5 3/4 · BTTS 2/4 · Cubre +1.5 3/4"
+   "linea_tarjeta": "Tendencias: Sunderland 2G-1E-1P · Más 2.5 1/4 · Menos 2.5 3/4 · BTTS 2/4 · Cubre -1.5 0/4 — Jagiellonia Bialystok 1G-0E-3P · Más 2.5 3/4 · Menos 2.5 1/4 · BTTS 2/4 · Cubre +1.5 3/4"
   },
   {
    "slug": "torreense-vs-celtic",

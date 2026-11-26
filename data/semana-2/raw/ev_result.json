@@ -10,6 +10,8 @@
    "away": "Borussia Mönchengladbach",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 54.248616912999516,
@@ -36,13 +38,13 @@
      "linea": 3.5,
      "momios": {
       "linea": 3.5,
-      "over": 2.2,
-      "under": 1.6451612903225805
+      "over": 2.3,
+      "under": 1.606060606060606
      },
      "p_over": 43.82265093494816,
      "ev": {
-      "mas": -0.03590167943114042,
-      "menos": -0.07579199925237301
+      "mas": 0.00792097150380755,
+      "menos": -0.09775772713704622
      }
     },
     "spread": {
@@ -51,12 +53,12 @@
       "home_linea": -0.5,
       "home": 1.6666666666666665,
       "away_linea": 0.5,
-      "away": 2.05
+      "away": 2.1
      },
      "p_cubre_local": 72.15575285851762,
      "ev": {
       "local": 0.20259588097529346,
-      "visitante": -0.4291929335996111
+      "visitante": -0.4152708100288699
      }
     }
    },
@@ -75,6 +77,8 @@
    "away": "Bologna",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 28.57022132138396,
@@ -87,48 +91,48 @@
     },
     "1X2": {
      "momios": {
-      "home": 3.3,
-      "draw": 3.25,
-      "away": 2.15
+      "home": 3.25,
+      "draw": 3.15,
+      "away": 2.2
      },
      "ev": {
-      "1": -0.5421006389891267,
-      "X": -0.06416540156118344,
-      "2": 0.2325810479266308
+      "1": -0.5490385080953522,
+      "X": -0.09296031228237778,
+      "2": 0.26124572345980845
      }
     },
     "total": {
      "linea": 2.5,
      "momios": {
       "linea": 2.5,
-      "over": 2.0,
-      "under": 1.8
+      "over": 2.05,
+      "under": 1.7407407407407407
      },
      "p_over": 27.311459279071045,
      "ev": {
-      "mas": -0.45377081441857914,
-      "menos": 0.30839373297672124
+      "mas": -0.4401150847790437,
+      "menos": 0.2653190421791336
      }
     },
     "spread": {
      "home_linea": 0.5,
      "momios": {
       "home_linea": 0.5,
-      "home": 1.6666666666666665,
+      "home": 1.6451612903225805,
       "away_linea": -0.5,
-      "away": 2.05
+      "away": 2.15
      },
      "p_cubre_local": 42.67064893364505,
      "ev": {
-      "local": -0.2888225177725826,
-      "visitante": 0.17525169686027642
+      "local": -0.29799900141422664,
+      "visitante": 0.23258104792663148
      }
     }
    },
    "mejor_pick": "Menos 2.5",
-   "mejor_ev": 0.30839373297672124,
+   "mejor_ev": 0.2653190421791336,
    "semaforo": "verde",
-   "mejor_decimal": 1.8,
+   "mejor_decimal": 1.7407407407407407,
    "mejor_prob": 72.68854072092896
   },
   {
@@ -140,6 +144,8 @@
    "away": "Chelsea",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 47.77979683394982,
@@ -152,48 +158,48 @@
     },
     "1X2": {
      "momios": {
-      "home": 2.55,
-      "draw": 3.4,
-      "away": 2.8
+      "home": 2.5,
+      "draw": 3.35,
+      "away": 2.85
      },
      "ev": {
-      "1": -0.6770123429755772,
-      "X": -0.3475255004612645,
-      "2": 0.9080149456078999
+      "1": -0.6833454342897816,
+      "X": -0.35712071368977527,
+      "2": 0.942086641065184
      }
     },
     "total": {
      "linea": 2.5,
      "momios": {
       "linea": 2.5,
-      "over": 1.7407407407407407,
-      "under": 2.05
+      "over": 1.8,
+      "under": 2.0
      },
      "p_over": 55.394235764950714,
      "ev": {
-      "mas": -0.03572997001752454,
-      "menos": -0.08558183318148982
+      "mas": -0.0029037562308871223,
+      "menos": -0.10788471529901433
      }
     },
     "spread": {
      "home_linea": -0.5,
      "momios": {
       "home_linea": -0.5,
-      "home": 2.4,
+      "home": 2.35,
       "away_linea": 0.5,
-      "away": 1.5128205128205128
+      "away": 1.526315789473684
      },
      "p_cubre_local": 12.66618262840874,
      "ev": {
-      "local": -0.6960116169181902,
-      "visitante": 0.3212039038266372
+      "local": -0.7023447082323946,
+      "visitante": 0.3329898440927088
      }
     }
    },
    "mejor_pick": "Visita",
-   "mejor_ev": 0.9080149456078999,
+   "mejor_ev": 0.942086641065184,
    "semaforo": "verde",
-   "mejor_decimal": 2.8,
+   "mejor_decimal": 2.85,
    "mejor_prob": 68.14339091456786
   },
   {
@@ -205,6 +211,8 @@
    "away": "Racing Santander",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 54.46520578327011,
@@ -217,27 +225,27 @@
     },
     "1X2": {
      "momios": {
-      "home": 2.1,
-      "draw": 3.9,
-      "away": 3.2
+      "home": 2.05,
+      "draw": 4.0,
+      "away": 3.3
      },
      "ev": {
-      "1": 0.12703738811606557,
-      "X": -0.08628077664288314,
-      "2": -0.2671086428142049
+      "1": 0.1002031645894923,
+      "X": -0.06285207860808528,
+      "2": -0.24420578790214886
      }
     },
     "total": {
      "linea": 3.5,
      "momios": {
       "linea": 3.5,
-      "over": 2.15,
-      "under": 1.6896551724137931
+      "over": 2.05,
+      "under": 1.8
      },
      "p_over": 31.606147772288335,
      "ev": {
-      "mas": -0.3204678228958009,
-      "menos": 0.15562026177857646
+      "mas": -0.3520739706680892,
+      "menos": 0.23108934009880988
      }
     },
     "spread": {
@@ -246,19 +254,19 @@
       "home_linea": -0.5,
       "home": 1.9523809523809523,
       "away_linea": 0.5,
-      "away": 1.7407407407407407
+      "away": 1.7692307692307692
      },
      "p_cubre_local": 53.668447053145975,
      "ev": {
       "local": 0.0478125377042784,
-      "visitante": -0.19348778203624473
+      "visitante": -0.18028790940181338
      }
     }
    },
    "mejor_pick": "Menos 3.5",
-   "mejor_ev": 0.15562026177857646,
+   "mejor_ev": 0.23108934009880988,
    "semaforo": "verde",
-   "mejor_decimal": 1.6896551724137931,
+   "mejor_decimal": 1.8,
    "mejor_prob": 68.39385222771166
   },
   {
@@ -270,6 +278,8 @@
    "away": "Bayern Munich",
    "proveedor": "Bet 365",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 73.35407887185416,
@@ -282,21 +292,21 @@
     },
     "1X2": {
      "momios": {
-      "home": 9.5,
-      "draw": 6.25,
+      "home": 9.0,
+      "draw": 7.0,
       "away": 1.25
      },
      "ev": {
-      "1": 1.844418076077233,
-      "X": 0.26341363213835334,
+      "1": 1.6947118615468524,
+      "X": 0.4150232679949557,
       "2": -0.3769482627536881
      }
     }
    },
    "mejor_pick": "Local",
-   "mejor_ev": 1.844418076077233,
+   "mejor_ev": 1.6947118615468524,
    "semaforo": "verde",
-   "mejor_decimal": 9.5,
+   "mejor_decimal": 9.0,
    "mejor_prob": 29.941242906076138
   },
   {
@@ -308,6 +318,8 @@
    "away": "Brentford",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 69.10908157863284,
@@ -320,48 +332,48 @@
     },
     "1X2": {
      "momios": {
-      "home": 2.1,
+      "home": 2.15,
       "draw": 3.75,
-      "away": 3.25
+      "away": 3.2
      },
      "ev": {
-      "1": -0.30331083555636695,
+      "1": -0.2867229983077091,
       "X": -0.18394896348240397,
-      "2": 0.4645463471886393
+      "2": 0.44201486492419884
      }
     },
     "total": {
-     "linea": 3.5,
+     "linea": 2.5,
      "momios": {
-      "linea": 3.5,
-      "over": 2.4,
-      "under": 1.5714285714285714
+      "linea": 2.5,
+      "over": 1.5714285714285714,
+      "under": 2.4
      },
-     "p_over": 48.165809228975675,
+     "p_over": 69.46429915994796,
      "ev": {
-      "mas": 0.15597942149541622,
-      "menos": -0.18546271645533208
+      "mas": 0.09158184394203928,
+      "menos": -0.267143179838751
      }
     },
     "spread": {
      "home_linea": -0.5,
      "momios": {
       "home_linea": -0.5,
-      "home": 2.0,
+      "home": 2.05,
       "away_linea": 0.5,
-      "away": 1.7142857142857144
+      "away": 1.6896551724137931
      },
      "p_cubre_local": 33.17567449731586,
      "ev": {
-      "local": -0.3364865100536828,
-      "visitante": 0.14555986576029945
+      "local": -0.31989867280502493,
+      "visitante": 0.12910067228673205
      }
     }
    },
    "mejor_pick": "Visita",
-   "mejor_ev": 0.4645463471886393,
+   "mejor_ev": 0.44201486492419884,
    "semaforo": "verde",
-   "mejor_decimal": 3.25,
+   "mejor_decimal": 3.2,
    "mejor_prob": 45.06296452888121
   },
   {
@@ -373,6 +385,8 @@
    "away": "Atlético Madrid",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 13.815475682249998,
@@ -386,13 +400,13 @@
     "1X2": {
      "momios": {
       "home": 6.0,
-      "draw": 4.7,
-      "away": 1.5
+      "draw": 4.8,
+      "away": 1.4761904761904763
      },
      "ev": {
       "1": 0.05905924458398615,
-      "X": 1.1804495832990267,
-      "2": -0.46065297602866506
+      "X": 1.226842127624538,
+      "2": -0.4692140399012259
      }
     },
     "total": {
@@ -424,9 +438,9 @@
     }
    },
    "mejor_pick": "Empate",
-   "mejor_ev": 1.1804495832990267,
+   "mejor_ev": 1.226842127624538,
    "semaforo": "verde",
-   "mejor_decimal": 4.7,
+   "mejor_decimal": 4.8,
    "mejor_prob": 46.39254432551121
   },
   {
@@ -438,6 +452,8 @@
    "away": "Eintracht Frankfurt",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 50.212236940901576,
@@ -503,6 +519,8 @@
    "away": "Genoa",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 35.49380022173494,
@@ -515,14 +533,14 @@
     },
     "1X2": {
      "momios": {
-      "home": 1.303030303030303,
+      "home": 1.2941176470588236,
       "draw": 5.25,
-      "away": 8.0
+      "away": 8.5
      },
      "ev": {
-      "1": -0.39089076438000325,
+      "1": -0.3950570382214532,
       "X": 0.610992183511301,
-      "2": 0.8055073678972138
+      "2": 0.9183515783907896
      }
     },
     "total": {
@@ -530,33 +548,33 @@
      "momios": {
       "linea": 3.5,
       "over": 2.35,
-      "under": 1.5714285714285714
+      "under": 1.5882352941176472
      },
      "p_over": 12.466321794331874,
      "ev": {
       "mas": -0.707041437833201,
-      "menos": 0.3755292289462133
+      "menos": 0.39024077150178793
      }
     },
     "spread": {
      "home_linea": -1.5,
      "momios": {
       "home_linea": -1.5,
-      "home": 1.8695652173913042,
+      "home": 1.8333333333333335,
       "away_linea": 1.5,
-      "away": 1.8333333333333335
+      "away": 1.8695652173913042
      },
      "p_cubre_local": 20.474161434642237,
      "ev": {
-      "local": -0.6172221992653844,
-      "visitante": 0.45797370703155904
+      "local": -0.6246403736982256,
+      "visitante": 0.48678741665668834
      }
     }
    },
    "mejor_pick": "Visita",
-   "mejor_ev": 0.8055073678972138,
+   "mejor_ev": 0.9183515783907896,
    "semaforo": "verde",
-   "mejor_decimal": 8.0,
+   "mejor_decimal": 8.5,
    "mejor_prob": 22.568842098715173
   },
   {
@@ -568,6 +586,8 @@
    "away": "Alavés",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 21.08751545467823,
@@ -580,14 +600,14 @@
     },
     "1X2": {
      "momios": {
-      "home": 1.1333333333333333,
-      "draw": 9.5,
-      "away": 17.0
+      "home": 1.125,
+      "draw": 10.0,
+      "away": 18.0
      },
      "ev": {
-      "1": 0.12244069101139798,
-      "X": -0.9219101400925604,
-      "2": -0.9763588468997778
+      "1": 0.11418745063631408,
+      "X": -0.917800147465853,
+      "2": -0.9749681908350588
      }
     },
     "total": {
@@ -595,33 +615,33 @@
      "momios": {
       "linea": 3.5,
       "over": 1.8333333333333335,
-      "under": 1.9523809523809523
+      "under": 2.0
      },
      "p_over": 83.48029417354033,
      "ev": {
       "mas": 0.5304720598482395,
-      "menos": -0.677472410054835
+      "menos": -0.6696058834708065
      }
     },
     "spread": {
      "home_linea": -2.5,
      "momios": {
       "home_linea": -2.5,
-      "home": 2.0,
+      "home": 1.9523809523809523,
       "away_linea": 2.5,
-      "away": 1.7407407407407407
+      "away": 1.7692307692307692
      },
      "p_cubre_local": 89.1480821171115,
      "ev": {
-      "local": 0.7829616423422301,
-      "visitante": -0.8110962442608298
+      "local": 0.740510174667415,
+      "visitante": -0.8080045297642804
      }
     }
    },
    "mejor_pick": "Spread local -2.5",
-   "mejor_ev": 0.7829616423422301,
+   "mejor_ev": 0.740510174667415,
    "semaforo": "verde",
-   "mejor_decimal": 2.0,
+   "mejor_decimal": 1.9523809523809523,
    "mejor_prob": 89.1480821171115
   },
   {
@@ -633,6 +653,8 @@
    "away": "Liverpool",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 57.68873047190473,
@@ -645,14 +667,14 @@
     },
     "1X2": {
      "momios": {
-      "home": 4.1,
-      "draw": 3.6,
-      "away": 1.8695652173913042
+      "home": 4.4,
+      "draw": 3.8,
+      "away": 1.8
      },
      "ev": {
-      "1": 0.5100226409855637,
-      "X": -0.09934890119579565,
-      "2": -0.28672173189509464
+      "1": 0.6205121025210929,
+      "X": -0.04931272904000661,
+      "2": -0.3132623186152771
      }
     },
     "total": {
@@ -660,33 +682,33 @@
      "momios": {
       "linea": 2.5,
       "over": 1.6666666666666665,
-      "under": 2.15
+      "under": 2.2
      },
      "p_over": 54.25229320693637,
      "ev": {
       "mas": -0.09579511321772716,
-      "menos": -0.01642430394913197
+      "menos": 0.006449549447399949
      }
     },
     "spread": {
      "home_linea": 0.5,
      "momios": {
       "home_linea": 0.5,
-      "home": 1.9090909090909092,
+      "home": 2.0,
       "away_linea": -0.5,
-      "away": 1.7692307692307692
+      "away": 1.7407407407407407
      },
      "p_cubre_local": 61.84790658973755,
      "ev": {
-      "local": 0.18073276216771683,
-      "visitante": -0.32500142427997203
+      "local": 0.2369581317947509,
+      "visitante": -0.33587096656209814
      }
     }
    },
    "mejor_pick": "Local",
-   "mejor_ev": 0.5100226409855637,
+   "mejor_ev": 0.6205121025210929,
    "semaforo": "verde",
-   "mejor_decimal": 4.1,
+   "mejor_decimal": 4.4,
    "mejor_prob": 36.82982051184302
   },
   {
@@ -698,6 +720,8 @@
    "away": "Napoli",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 65.91101030085687,
@@ -710,13 +734,13 @@
     },
     "1X2": {
      "momios": {
-      "home": 4.3,
-      "draw": 4.1,
+      "home": 4.4,
+      "draw": 4.2,
       "away": 1.625
      },
      "ev": {
-      "1": -0.6870839594317737,
-      "X": -0.5892588841681743,
+      "1": -0.6798068422092568,
+      "X": -0.5792408081722761,
       "2": 0.3439531095717894
      }
     },
@@ -724,13 +748,13 @@
      "linea": 2.5,
      "momios": {
       "linea": 2.5,
-      "over": 1.5555555555555556,
-      "under": 2.35
+      "over": 1.5714285714285714,
+      "under": 2.4
      },
      "p_over": 85.52601153678626,
      "ev": {
-      "mas": 0.330404623905564,
-      "menos": -0.659861271114477
+      "mas": 0.3439801812923555,
+      "menos": -0.6526242768828702
      }
     },
     "spread": {
@@ -739,20 +763,20 @@
       "home_linea": 0.5,
       "home": 2.15,
       "away_linea": -0.5,
-      "away": 1.5882352941176472
+      "away": 1.606060606060606
      },
      "p_cubre_local": 17.295193218415076,
      "ev": {
       "local": -0.6281533458040759,
-      "visitante": 0.313546931236937
+      "visitante": 0.3282893210375759
      }
     }
    },
-   "mejor_pick": "Visita",
-   "mejor_ev": 0.3439531095717894,
+   "mejor_pick": "Más 2.5",
+   "mejor_ev": 0.3439801812923555,
    "semaforo": "verde",
-   "mejor_decimal": 1.625,
-   "mejor_prob": 82.70480674287934
+   "mejor_decimal": 1.5714285714285714,
+   "mejor_prob": 85.52601153678626
   },
   {
    "fecha": "2026-11-29",
@@ -763,6 +787,8 @@
    "away": "Barcelona",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 65.84935244609946,
@@ -775,48 +801,48 @@
     },
     "1X2": {
      "momios": {
-      "home": 9.0,
-      "draw": 7.0,
-      "away": 1.2352941176470589
+      "home": 10.0,
+      "draw": 7.5,
+      "away": 1.2222222222222223
      },
      "ev": {
-      "1": 0.040289397772508284,
-      "X": -0.028253337348328023,
-      "2": -0.07897540684654203
+      "1": 0.15587710863612037,
+      "X": 0.04115713855536285,
+      "2": -0.08872169883758385
      }
     },
     "total": {
      "linea": 3.5,
      "momios": {
       "linea": 3.5,
-      "over": 1.6451612903225805,
-      "under": 2.2
+      "over": 1.625,
+      "under": 2.25
      },
      "p_over": 60.6311701187088,
      "ev": {
-      "mas": -0.0025194593373714103,
-      "menos": -0.13388574261159347
+      "mas": -0.01474348557098204,
+      "menos": -0.11420132767094793
      }
     },
     "spread": {
-     "home_linea": 1.5,
+     "home_linea": 2.5,
      "momios": {
-      "home_linea": 1.5,
-      "home": 2.15,
-      "away_linea": -1.5,
-      "away": 1.5882352941176472
+      "home_linea": 2.5,
+      "home": 1.5714285714285714,
+      "away_linea": -2.5,
+      "away": 2.25
      },
-     "p_cubre_local": 44.47725435750601,
+     "p_cubre_local": 64.06285064725384,
      "ev": {
-      "local": -0.04373903131362078,
-      "visitante": -0.11816815744274245
+      "local": 0.0067019387425604204,
+      "visitante": -0.1914141395632114
      }
     }
    },
    "mejor_pick": "Local",
-   "mejor_ev": 0.040289397772508284,
-   "semaforo": "amarillo",
-   "mejor_decimal": 9.0,
+   "mejor_ev": 0.15587710863612037,
+   "semaforo": "verde",
+   "mejor_decimal": 10.0,
    "mejor_prob": 11.558771086361205
   },
   {
@@ -828,6 +854,8 @@
    "away": "Manchester City",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 18.616243418864773,
@@ -840,13 +868,13 @@
     },
     "1X2": {
      "momios": {
-      "home": 1.9523809523809523,
-      "draw": 3.75,
+      "home": 2.0,
+      "draw": 3.8,
       "away": 3.55
      },
      "ev": {
-      "1": 0.6216753117506366,
-      "X": -0.47596346129247324,
+      "1": 0.6612283681347986,
+      "X": -0.46897630744303953,
       "2": -0.8947682767491848
      }
     },
@@ -854,34 +882,34 @@
      "linea": 2.5,
      "momios": {
       "linea": 2.5,
-      "over": 1.7142857142857144,
-      "under": 2.05
+      "over": 1.7407407407407407,
+      "under": 2.1
      },
      "p_over": 43.79501719123032,
      "ev": {
-      "mas": -0.24922827672176584,
-      "menos": 0.15220214757977835
+      "mas": -0.2376422933378426,
+      "menos": 0.18030463898416316
      }
     },
     "spread": {
      "home_linea": -0.5,
      "momios": {
       "home_linea": -0.5,
-      "home": 1.8695652173913042,
+      "home": 1.9090909090909092,
       "away_linea": 0.5,
-      "away": 1.7692307692307692
+      "away": 1.8
      },
      "p_cubre_local": 83.06141840673993,
      "ev": {
-      "local": 0.5528873876042681,
-      "visitante": -0.7003174025807835
+      "local": 0.5857179877650351,
+      "visitante": -0.6951055313213188
      }
     }
    },
    "mejor_pick": "Local",
-   "mejor_ev": 0.6216753117506366,
+   "mejor_ev": 0.6612283681347986,
    "semaforo": "verde",
-   "mejor_decimal": 1.9523809523809523,
+   "mejor_decimal": 2.0,
    "mejor_prob": 83.06141840673993
   },
   {
@@ -893,6 +921,8 @@
    "away": "Bayer Leverkusen",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 60.60071165935997,
@@ -905,27 +935,27 @@
     },
     "1X2": {
      "momios": {
-      "home": 2.1,
-      "draw": 3.7,
-      "away": 2.9
+      "home": 2.05,
+      "draw": 3.8,
+      "away": 3.0
      },
      "ev": {
-      "1": 0.46937121735409026,
-      "X": -0.38909448073141806,
-      "2": -0.6079495205369201
+      "1": 0.43438618836946885,
+      "X": -0.37258352075118617,
+      "2": -0.5944305384864691
      }
     },
     "total": {
      "linea": 3.5,
      "momios": {
       "linea": 3.5,
-      "over": 2.15,
-      "under": 1.6451612903225805
+      "over": 2.2,
+      "under": 1.6666666666666665
      },
      "p_over": 49.47587600545618,
      "ev": {
-      "mas": 0.0637313341173078,
-      "menos": -0.16879666976718233
+      "mas": 0.08846927212003597,
+      "menos": -0.15793126675760305
      }
     },
     "spread": {
@@ -934,19 +964,19 @@
       "home_linea": -0.5,
       "home": 2.0,
       "away_linea": 0.5,
-      "away": 1.6896551724137931
+      "away": 1.7142857142857144
      },
      "p_cubre_local": 69.97005796924239,
      "ev": {
       "local": 0.3994011593848479,
-      "visitante": -0.4925975312044404
+      "visitante": -0.48520099375844095
      }
     }
    },
    "mejor_pick": "Local",
-   "mejor_ev": 0.46937121735409026,
+   "mejor_ev": 0.43438618836946885,
    "semaforo": "verde",
-   "mejor_decimal": 2.1,
+   "mejor_decimal": 2.05,
    "mejor_prob": 69.97005796924239
   },
   {
@@ -958,6 +988,8 @@
    "away": "Juventus",
    "proveedor": "DraftKings",
    "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 33.837993850698545,
@@ -1023,6 +1055,8 @@
    "away": "Toluca",
    "proveedor": null,
    "estado": "pendiente",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 73.27295746236004,
@@ -1032,6 +1066,21 @@
       "si": null,
       "no": null
      }
+    },
+    "1X2": {
+     "prob": {
+      "1": 18.768910659913153,
+      "X": 16.71062276002194,
+      "2": 64.52046657971748
+     },
+     "momios": null,
+     "ev": null
+    },
+    "total": {
+     "linea": 2.5,
+     "p_over": 80.50548259719768,
+     "momios": null,
+     "ev": null
     }
    },
    "mejor_pick": null,
@@ -1045,8 +1094,10 @@
    "liga": "Liga MX",
    "home": "América",
    "away": "Monterrey",
-   "proveedor": null,
-   "estado": "pendiente",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 74.72531131465108,
@@ -1056,11 +1107,52 @@
       "si": null,
       "no": null
      }
+    },
+    "1X2": {
+     "momios": {
+      "home": 2.35,
+      "draw": 2.95,
+      "away": 3.25
+     },
+     "ev": {
+      "1": 0.30765136541415106,
+      "X": -0.44389961669561084,
+      "2": -0.17110698065698682
+     }
+    },
+    "total": {
+     "linea": 2.5,
+     "momios": {
+      "linea": 2.5,
+      "over": 1.7692307692307692,
+      "under": 1.9090909090909092
+     },
+     "p_over": 78.72189518488007,
+     "ev": {
+      "mas": 0.39277199173249344,
+      "menos": -0.5937816353477103
+     }
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "momios": {
+      "home_linea": -0.5,
+      "home": 2.25,
+      "away_linea": 0.5,
+      "away": 1.5405405405405406
+     },
+     "p_cubre_local": 55.64473895379366,
+     "ev": {
+      "local": 0.2520066264603573,
+      "visitante": -0.3166892217206051
+     }
     }
    },
-   "mejor_pick": null,
-   "mejor_ev": null,
-   "semaforo": null
+   "mejor_pick": "Más 2.5",
+   "mejor_ev": 0.39277199173249344,
+   "semaforo": "verde",
+   "mejor_decimal": 1.7692307692307692,
+   "mejor_prob": 78.72189518488007
   },
   {
    "fecha": "2026-11-29",
@@ -1071,6 +1163,8 @@
    "away": "Pachuca",
    "proveedor": null,
    "estado": "pendiente",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 45.11120322405937,
@@ -1080,6 +1174,21 @@
       "si": null,
       "no": null
      }
+    },
+    "1X2": {
+     "prob": {
+      "1": 40.209614017889756,
+      "X": 28.66619011826348,
+      "2": 31.124195863846783
+     },
+     "momios": null,
+     "ev": null
+    },
+    "total": {
+     "linea": 2.5,
+     "p_over": 38.78954875613464,
+     "momios": null,
+     "ev": null
     }
    },
    "mejor_pick": null,
@@ -1095,6 +1204,8 @@
    "away": "León",
    "proveedor": null,
    "estado": "pendiente",
+   "estado_partido": "pre",
+   "marcador": null,
    "mercados": {
     "btts": {
      "p_btts": 58.734518991950566,
@@ -1104,6 +1215,21 @@
       "si": null,
       "no": null
      }
+    },
+    "1X2": {
+     "prob": {
+      "1": 83.3631323961373,
+      "X": 10.188926219278569,
+      "2": 6.447941373072597
+     },
+     "momios": null,
+     "ev": null
+    },
+    "total": {
+     "linea": 2.5,
+     "p_over": 80.7712977251591,
+     "momios": null,
+     "ev": null
     }
    },
    "mejor_pick": null,
