@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Preview — Mercados BSD · Séptima ronda, Tarea 1</title>
+<style>
+:root{--bg:#F3F5EF;--surface:#FFFFFF;--surface-2:#E9EEE1;--ink:#11160E;--muted:#66725E;--line:#D8E0CC;--accent-strong:#4A7303;--live:#D92020}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,sans-serif;font-size:16px;line-height:1.5;padding:0 18px 48px}
+.wrap{max-width:1020px;margin:0 auto}
+h1{font-family:Archivo,system-ui,sans-serif;font-size:1.9rem;line-height:1.1;margin:22px 0 6px}
+h2{font-size:1.25rem;margin:34px 0 8px}
+p{margin:0 0 10px}
+code{background:var(--surface-2);padding:1px 5px;border-radius:6px}
+.note{background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.note.warn{background:#FDF3D7;border-color:#E3C878}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:14px 0}
+.card h3{margin:0 0 2px;font-size:1.15rem}
+.card .meta{color:var(--muted);font-size:.85rem;margin-bottom:10px}
+.odds{background:var(--surface-2);border-radius:12px;padding:12px}
+.derived-h{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:.72rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:10px 0}
+.derived-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.dcell{background:var(--surface);border-radius:10px;padding:8px 6px;text-align:center}
+.dcell span{display:block;font-size:.82rem;color:var(--muted)}
+.dcell b.num{display:block;font-size:1.05rem;font-family:"Archivo Narrow",Archivo,sans-serif}
+.bsd-block{border-top:1px dashed var(--line);margin-top:12px;padding-top:2px}
+.bsd-h{color:var(--accent-strong)}
+.badge{display:inline-block;background:var(--accent-strong);color:#fff;border-radius:999px;padding:2px 10px;font-size:.72rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
+.badge.demo{background:#B54708}
+.verif{font-size:.85rem;color:var(--muted);margin-top:10px}
+.verif b{color:var(--ink)}
+@media (max-width:640px){.derived-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Preview — Mercados BSD</h1>
+<p><b>Séptima ronda, Tarea 1 (Empleado 2).</b> Render de los mercados BSD (BTTS, hándicap asiático y córners) en las tarjetas y en el detalle, solo cuando <code>momios.json</code> trae la llave <code>bsd</code>. Sin llave <code>bsd</code> no se muestra nada inventado. El mismo módulo <code>htmlBSD</code> de abajo es el que se aplica a <code>index.html</code> y <code>partido.html</code>.</p>
+<p class="note"><b>Estado de los datos (26 nov 2026):</b> ningún <code>momios.json</code> del repo trae aún la llave <code>bsd</code> (el E1 validó en local y no subió ese archivo; el flujo diario aún no trae <code>bsd</code>). Por eso la sección 1 muestra hoy <b>0 mercados BSD</b>: eso verifica la compuerta «sin llave bsd no se muestra nada». La verificación con momios reales queda pendiente de que se publiquen.</p>
+<h2>1 · Datos reales (ev.json + momios.json de empleado-2)</h2>
+<div id="resumen-real" class="note">Cargando datos reales…</div>
+<div id="cartas-reales"></div>
+<h2>2 · DEMO — momios ilustrativos, no reales</h2>
+<p class="note warn"><b>DEMO.</b> Los momios BSD de esta sección son <b>ilustrativos</b> (no reales): solo sirven para verificar visualmente las filas, los rótulos y el cálculo del EV con el mismo código. Los partidos, las fechas y las probabilidades del modelo sí son reales (de <code>ev.json</code>). Esta demo <b>NO</b> se aplica a <code>index.html</code> ni a <code>partido.html</code>.</p>
+<div id="cartas-demo">Cargando demo…</div>
+</div>
+<script>
+/* Ayudantes copiados tal cual de index.html (empleado-2). */
+function norm(s){ return (s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, ""); }
+function esc(s){ return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
+function fetchJSON(url){ if (typeof fetch !== "function") return Promise.resolve(null); var timeout = new Promise(function(resolve){ setTimeout(function(){ resolve(null); }, 10000); }); var req = fetch(url).then(function(r){ if (!r || !r.ok) return null; return r.json().then(function(j){ return j; }, function(){ return null; }); }, function(){ return null; }); return Promise.race([req, timeout]); }
+function fmt1(x){ return (Math.round(x * 10) / 10).toFixed(1); }
+function fmtMomio(x){ if (typeof x !== "number" || !isFinite(x)) return "—"; return x.toFixed(2); }
+function fmtLinea(x){ if (typeof x !== "number" || !isFinite(x)) return ""; return (x === Math.round(x) ? String(Math.round(x)) : x.toFixed(1)); }
+function fmtEvPct(evPct){ var v = Math.abs(evPct); return (evPct >= 0 ? "+" : "-") + v.toFixed(1) + "%"; }
+function evColor(ev){ return (typeof ev === "number" && ev < 0) ? "var(--live)" : "var(--accent-strong)"; }
+function celdaMomio(label, momio, ev, prob){
+  if (typeof prob === "number" && isFinite(prob) && (typeof momio !== "number" || typeof ev !== "number" || !isFinite(momio) || !isFinite(ev))){
+    return '<div class="dcell"><span>' + esc(label) + '</span><b class="num">' + fmt1(prob) + '%</b><span>prob. del modelo, sin momio</span></div>';
+  }
+  if (typeof momio !== "number" || typeof ev !== "number" || !isFinite(momio) || !isFinite(ev)){
+    return '<div class="dcell"><span>' + esc(label) + '</span><b class="num">pendiente</b></div>';
+  }
+  return '<div class="dcell"><span>' + esc(label) + ' ' + fmtMomio(momio) + '</span><b class="num" style="color:' + evColor(ev * 100) + '">' + fmtEvPct(ev * 100) + '</b></div>';
+}
+
+/* ---------- Mercados BSD (Bzzoiro, segunda fuente) · Séptima ronda, Tarea 1 ----------
+   Fuente: momios.json (misma ruta relativa que ev.json). Solo se muestra un mercado
+   BSD cuando ese partido trae la clave "bsd" en momios.json; sin ella no se muestra
+   nada inventado. Esquema (scripts/recolectar_momios.py, docstring de recolectar_bsd):
+     bsd = {proveedor:"BSD-consensus", bsd_event_id:int,
+            btts:{yes,no}|null,
+            asian_handicap:{line,home,away,push,bookmakers}|null,
+            corners:{line,over,under}|null,
+            sin_momio:["btts"|"asian_handicap"|"total_corners"]}
+   EV = probabilidad del modelo × momio decimal − 1.
+   - BTTS: p_btts / p_no_btts de ev.json (mercados.btts).
+   - Hándicap asiático: EV solo si la línea BSD coincide con la línea spread de
+     ev.json (mercados.spread.home_linea) y no admite devolución (push false);
+     entonces P(cubre local) = p_cubre_local y P(cubre visita) = 1 − p_cubre_local.
+     Con devolución o con línea distinta se muestran solo los momios, sin EV.
+   - Córners: el modelo Poisson no estima córners; solo se muestran los momios, sin EV.
+   La carga es fail-soft: si momios.json no se puede leer, simplemente no hay BSD. */
+var BSD_DATOS = {};
+var BSD_CUENTA = {partidos: 0, btts: 0, ah: 0, corners: 0};
+function claveBSD(home, away, fecha){ return norm(home) + "-vs-" + norm(away) + "|" + String(fecha || "").slice(0, 10); }
+function bsdDePartido(m, datos){ if (!m) return null; var mapa = datos || BSD_DATOS; return mapa[claveBSD(m.home, m.away, m.fecha)] || null; }
+function cargarBSD(){
+  var urls = [URLS.momios.mw, URLS.momios.fs];
+  return Promise.all(urls.map(function(u){ return fetchJSON(u); })).then(function(listas){
+    var n = 0, nb = 0, na = 0, nc = 0;
+    listas.forEach(function(j){
+      if (!j || !Array.isArray(j.partidos)) return;
+      j.partidos.forEach(function(p){
+        if (p && p.bsd){
+          BSD_DATOS[claveBSD(p.home, p.away, p.fecha)] = p.bsd;
+          n++;
+          if (p.bsd.btts) nb++;
+          if (p.bsd.asian_handicap) na++;
+          if (p.bsd.corners) nc++;
+        }
+      });
+    });
+    BSD_CUENTA = {partidos: n, btts: nb, ah: na, corners: nc};
+    return BSD_CUENTA;
+  });
+}
+function evBSD(p, momio){
+  if (typeof p !== "number" || !isFinite(p) || typeof momio !== "number" || !isFinite(momio) || momio <= 0) return null;
+  return (p / 100) * momio - 1;
+}
+function fmtLineaSigno(x){ if (typeof x !== "number" || !isFinite(x)) return ""; return (x > 0 ? "+" : "") + fmtLinea(x); }
+function celdaBSD(label, momio, nota){ return '<div class="dcell"><span>' + esc(label) + ' ' + fmtMomio(momio) + '</span><b class="num">' + esc(nota) + '</b></div>'; }
+function renderBSD(m, b){
+  if (!b) return "";
+  var mk = (m && m.mercados) ? m.mercados : {};
+  var h = "";
+  if (b.btts && typeof b.btts.yes === "number" && typeof b.btts.no === "number" && mk.btts && typeof mk.btts.p_btts === "number" && typeof mk.btts.p_no_btts === "number"){
+    h += '<div class="derived-h"><span>Ambos marcan · BSD</span><span>EV = prob. × momio − 1</span></div>';
+    h += '<div class="derived-grid">';
+    h += celdaMomio("Sí", b.btts.yes, evBSD(mk.btts.p_btts, b.btts.yes), mk.btts.p_btts);
+    h += celdaMomio("No", b.btts.no, evBSD(mk.btts.p_no_btts, b.btts.no), mk.btts.p_no_btts);
+    h += '</div>';
+  }
+  if (b.asian_handicap && typeof b.asian_handicap.line === "number" && typeof b.asian_handicap.home === "number" && typeof b.asian_handicap.away === "number"){
+    var ah = b.asian_handicap;
+    var sp = mk.spread || null;
+    var evL = null, evV = null, pL = null, pV = null, motivo = "sin EV (sin spread del modelo)";
+    if (sp && typeof sp.home_linea === "number" && typeof sp.p_cubre_local === "number"){
+      if (ah.push === true) motivo = "con devolución · sin EV";
+      else if (sp.home_linea !== ah.line) motivo = "línea distinta al spread · sin EV";
+      else { pL = sp.p_cubre_local; pV = 100 - sp.p_cubre_local; evL = evBSD(pL, ah.home); evV = evBSD(pV, ah.away); }
+    }
+    var conEV = (evL != null && evV != null);
+    h += '<div class="derived-h"><span>Hándicap asiático ' + fmtLineaSigno(ah.line) + ' · BSD</span><span>' + (conEV ? 'EV = prob. × momio − 1' : motivo) + '</span></div>';
+    h += '<div class="derived-grid">';
+    if (!conEV){
+      h += celdaBSD("Local " + fmtLineaSigno(ah.line), ah.home, "sin EV");
+      h += celdaBSD("Visita " + fmtLineaSigno(-ah.line), ah.away, "sin EV");
+    } else {
+      h += celdaMomio("Local " + fmtLineaSigno(ah.line), ah.home, evL, pL);
+      h += celdaMomio("Visita " + fmtLineaSigno(-ah.line), ah.away, evV, pV);
+    }
+    h += '</div>';
+  }
+  if (b.corners && typeof b.corners.line === "number" && typeof b.corners.over === "number" && typeof b.corners.under === "number"){
+    var co = b.corners;
+    h += '<div class="derived-h"><span>Córners ' + fmtLinea(co.line) + ' · BSD</span><span>sin EV (el modelo no estima córners)</span></div>';
+    h += '<div class="derived-grid">';
+    h += celdaBSD("Más " + fmtLinea(co.line), co.over, "sin EV");
+    h += celdaBSD("Menos " + fmtLinea(co.line), co.under, "sin EV");
+    h += '</div>';
+  }
+  if (!h) return "";
+  return '<div class="bsd-block"><div class="derived-h bsd-h"><span>Mercados BSD (Bzzoiro)</span><span>segunda fuente · consenso</span></div>' + h + '</div>';
+}
+function htmlBSD(m, datos){ return renderBSD(m, bsdDePartido(m, datos)); }
+/* ---------- Fin del módulo BSD ---------- */
+
+var BASE = "https://raw.githubusercontent.com/luisraga12/football-ai-agenda/empleado-2/";
+var URLS = {
+  ev: {mw: BASE + "data/semana-2-entresemana/ev.json", fs: BASE + "data/semana-2/ev.json"},
+  momios: {mw: BASE + "data/semana-2-entresemana/raw/momios.json", fs: BASE + "data/semana-2/raw/momios.json"}
+};
+function tarjeta(m, cfg, inner, verif){
+  return '<article class="card"><h3>' + esc(m.home) + ' vs ' + esc(m.away) + '</h3>'
+    + '<div class="meta">' + esc(m.liga || "") + ' · ' + esc(m.fecha || "") + ' ' + esc(m.hora || "") + ' · ' + (cfg === "mw" ? "entre semana" : "fin de semana") + '</div>'
+    + '<div class="odds">' + inner + '</div>'
+    + '<p class="verif">' + verif + '</p></article>';
+}
+function probModelo(m){
+  var mk = m.mercados || {};
+  var bt = mk.btts || {};
+  var sp = mk.spread || {};
+  return 'Prob. del modelo: BTTS Sí ' + fmt1(bt.p_btts) + '% · No ' + fmt1(bt.p_no_btts) + '% · spread local ' + fmtLineaSigno(sp.home_linea) + ', P(cubre) ' + fmt1(sp.p_cubre_local) + '%';
+}
+Promise.all([fetchJSON(URLS.ev.mw), fetchJSON(URLS.ev.fs), cargarBSD()]).then(function(res){
+  var evMW = res[0], evFS = res[1];
+  var lista = [];
+  if (evMW && Array.isArray(evMW.partidos)) evMW.partidos.forEach(function(p){ if (p && p.home && p.away){ p._cfg = "mw"; lista.push(p); } });
+  if (evFS && Array.isArray(evFS.partidos)) evFS.partidos.forEach(function(p){ if (p && p.home && p.away){ p._cfg = "fs"; lista.push(p); } });
+  var c = BSD_CUENTA;
+  document.getElementById("resumen-real").innerHTML = '<b>Partidos en ev.json:</b> ' + lista.length
+    + ' · <b>con llave bsd en momios.json:</b> ' + c.partidos
+    + ' · <b>con BTTS BSD:</b> ' + c.btts + ' · <b>con hándicap asiático BSD:</b> ' + c.ah
+    + ' · <b>con córners BSD:</b> ' + c.corners
+    + (c.partidos === 0 ? ' — hoy <b>0</b>: la compuerta funciona, no se muestra ningún mercado BSD inventado.' : '');
+  var muestra = lista.filter(function(p){ return p.estado_partido !== "post"; }).slice(0, 3)
+    .concat(lista.filter(function(p){ return p._cfg === "fs" && p.estado_partido !== "post"; }).slice(0, 3));
+  var hr = "";
+  muestra.forEach(function(m){
+    var b = htmlBSD(m);
+    hr += tarjeta(m, m._cfg, b, b
+      ? '<b>Verificación:</b> momios.json trae llave bsd para este partido; se muestran los mercados BSD con momio real.'
+      : '<b>Verificación:</b> momios.json no trae llave bsd para este partido → no se muestra ningún mercado BSD (nada inventado).');
+  });
+  document.getElementById("cartas-reales").innerHTML = hr || "<p>Sin partidos.</p>";
+  /* DEMO: mismo renderBSD, con objetos bsd ilustrativos sobre partidos reales. */
+  var mW = null, mE = null;
+  lista.forEach(function(p){ if (!mW && p._cfg === "fs" && p.home === "Werder Bremen") mW = p; });
+  if (!mW) lista.forEach(function(p){ if (!mW && p._cfg === "fs" && p.mercados && p.mercados.btts && p.mercados.spread) mW = p; });
+  lista.forEach(function(p){ if (!mE && p._cfg === "mw" && p !== mW && p.mercados && p.mercados.btts) mE = p; });
+  var demo = [];
+  if (mW){
+    demo.push({m: mW, b: {proveedor: "BSD-consensus", bsd_event_id: 1000001, btts: {yes: 1.95, no: 1.85}, asian_handicap: {line: -0.5, home: 1.80, away: 2.05, push: false, bookmakers: 12}, corners: {line: 10.5, over: 1.90, under: 1.90}, sin_momio: []}, nota: '<b>DEMO A — bsd completo.</b> Esperado: BTTS Sí <b>+5.8%</b> · No <b>−15.4%</b>; AH Local <b>+29.9%</b> · Visita <b>−42.9%</b> (línea −0.5 = spread, sin devolución); córners solo momios 1.90 / 1.90, sin EV.'});
+    demo.push({m: mW, b: {proveedor: "BSD-consensus", bsd_event_id: 1000001, btts: {yes: 1.95, no: 1.85}, asian_handicap: {line: -1.0, home: 2.10, away: 1.75, push: true, bookmakers: 9}, corners: null, sin_momio: ["total_corners"]}, nota: '<b>DEMO B — AH con devolución.</b> Esperado: BTTS con EV (igual que A); AH momios 2.10 / 1.75 <b>sin EV</b> (con devolución); córners no aparece.'});
+    demo.push({m: mW, b: {proveedor: "BSD-consensus", bsd_event_id: 1000001, btts: {yes: 1.95, no: 1.85}, asian_handicap: {line: -1.5, home: 2.40, away: 1.60, push: false, bookmakers: 11}, corners: {line: 10.5, over: 1.90, under: 1.90}, sin_momio: []}, nota: '<b>DEMO C — AH con línea distinta al spread.</b> Esperado: AH momios 2.40 / 1.60 <b>sin EV</b> (línea −1.5 ≠ spread −0.5); BTTS con EV; córners solo momios.'});
+    demo.push({m: mW, b: {proveedor: "BSD-consensus", bsd_event_id: 1000001, btts: {yes: 1.80, no: 2.00}, asian_handicap: null, corners: null, sin_momio: ["asian_handicap", "total_corners"]}, nota: '<b>DEMO D — solo BTTS.</b> Esperado: solo BTTS; Sí <b>−2.4%</b> · No <b>−8.5%</b>; ni AH ni córners aparecen.'});
+    demo.push({m: mW, b: {proveedor: "BSD-consensus", bsd_event_id: 1000001, btts: null, asian_handicap: null, corners: {line: 9.5, over: 2.00, under: 1.80}, sin_momio: ["btts", "asian_handicap"]}, nota: '<b>DEMO F — solo córners.</b> Esperado: solo córners 9.5, momios 2.00 / 1.80, <b>sin EV</b>.'});
+  }
+  if (mE){
+    demo.push({m: mE, b: null, nota: '<b>DEMO E — bsd null.</b> Esperado: no aparece ningún mercado BSD (el bloque no se renderiza).'});
+  }
+  var hd = "";
+  demo.forEach(function(d){
+    var inner = renderBSD(d.m, d.b);
+    hd += tarjeta(d.m, d.m._cfg, inner, '<span class="badge demo">Demo</span> ' + probModelo(d.m) + '<br>' + d.nota);
+  });
+  document.getElementById("cartas-demo").innerHTML = hd || "<p>No se pudo armar la demo (sin datos).</p>";
+}).catch(function(){
+  document.getElementById("resumen-real").textContent = "No se pudieron cargar los datos reales.";
+  document.getElementById("cartas-demo").textContent = "No se pudo armar la demo.";
+});
+</script>
+</body>
+</html>
