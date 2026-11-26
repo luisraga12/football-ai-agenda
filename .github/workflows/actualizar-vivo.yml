@@ -19,11 +19,13 @@
 # horario. Los workflows programados solo corren en `main`.
 #
 # El script (scripts/generar_vivo.py) pide los scoreboards de ESPN de
-# hoy (site.api, con respaldo site.web.api), mezcla con el ultimo dato
-# conocido y SOLO reemplaza data/vivo.json si la consulta salio bien y
-# el JSON es valido. Si ESPN falla, se conserva el ultimo archivo bueno
-# y el fallo queda en data/vivo-log.json. Nunca se escribe un archivo
-# vacio o roto. Solo se hace commit si algo cambio.
+# hoy y de ayer (site.api, con respaldo site.web.api), mezcla con el ultimo
+# dato conocido y SOLO reemplaza data/vivo.json si la consulta salio bien y
+# el JSON es valido. Ayer se consulta para cerrar en "post" los partidos
+# terminados el dia anterior, que el scoreboard de hoy ya no trae. Si ESPN
+# falla, se conserva el ultimo archivo bueno y el fallo queda en
+# data/vivo-log.json. Nunca se escribe un archivo vacio o roto. Solo se
+# hace commit si algo cambio.
 name: Marcador en vivo (cache)
 
 on:
