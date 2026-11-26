@@ -397,9 +397,8 @@
     <h1>Tu agenda de fútbol, <em>con cerebro.</em></h1>
     <p class="sub">Una agenda limpia y rápida, con tarjetas que te cuentan por qué importa cada partido y una capa de IA encima que compara probabilidad contra momio y solo te avisa cuando hay valor. Sin streams pirata, sin copiar a nadie: <strong>con tus ligas, tus mercados y tus reglas.</strong></p>
     <div class="hero-stats">
-      <div class="hstat"><b>14</b><span>Ligas y torneos que sigues</span></div>
-      <div class="hstat"><b>6</b><span>Mercados analizados por partido</span></div>
-      <div class="hstat"><b>1X2</b><span>+ goles, BTTS, córners y hándicap</span></div>
+      <div class="hstat"><b id="heroLeagues">7</b><span>Ligas con partidos esta semana</span></div>
+      <div class="hstat"><b>1X2</b><span>+ hándicap y goles; BTTS como probabilidad</span></div>
       <div class="hstat"><b>EV+</b><span>Solo entra si el valor es positivo</span></div>
     </div>
   </div>
@@ -418,7 +417,6 @@
       <button class="tab" type="button" data-status="all" aria-pressed="true">Todos</button>
       <button class="tab" type="button" data-status="live" aria-pressed="false">En vivo</button>
       <button class="tab" type="button" data-status="upcoming" aria-pressed="false">Próximos</button>
-      <button class="tab" type="button" data-status="value" aria-pressed="false">Con valor EV+</button>
     </div>
     <div class="sort-ctl" role="group" aria-label="Ordenar tarjetas por valor">
       <span class="sort-label">Ordenar:</span>
@@ -436,14 +434,15 @@
     <aside class="panel" aria-label="Tus ligas">
       <div class="panel-h"><h2>Tus ligas</h2><span>Las de Luis</span></div>
       <ul class="leagues" id="leagueList">
-        <li><button class="league-btn" type="button" data-league="all" aria-pressed="true"><span class="flag">ALL</span> Todas <span class="cnt">28</span></button></li>
-        <li><button class="league-btn" type="button" data-league="premier" aria-pressed="false"><span class="flag">ENG</span> Premier League <span class="cnt">4</span></button></li>
-        <li><button class="league-btn" type="button" data-league="laliga" aria-pressed="false"><span class="flag">ESP</span> LaLiga <span class="cnt">4</span></button></li>
-        <li><button class="league-btn" type="button" data-league="seriea" aria-pressed="false"><span class="flag">ITA</span> Serie A <span class="cnt">4</span></button></li>
-        <li><button class="league-btn" type="button" data-league="bundes" aria-pressed="false"><span class="flag">GER</span> Bundesliga <span class="cnt">4</span></button></li>
-        <li><button class="league-btn" type="button" data-league="ucl" aria-pressed="false"><span class="flag">UCL</span> Champions League <span class="cnt">9</span></button></li>
-        <li><button class="league-btn" type="button" data-league="uel" aria-pressed="false"><span class="flag">UEL</span> Europa League <span class="cnt">3</span></button></li>
+        <li><button class="league-btn" type="button" data-league="all" aria-pressed="true"><span class="flag">ALL</span> Todas <span class="cnt">–</span></button></li>
+        <li><button class="league-btn" type="button" data-league="premier" aria-pressed="false"><span class="flag">ENG</span> Premier League <span class="cnt">–</span></button></li>
+        <li><button class="league-btn" type="button" data-league="laliga" aria-pressed="false"><span class="flag">ESP</span> LaLiga <span class="cnt">–</span></button></li>
+        <li><button class="league-btn" type="button" data-league="seriea" aria-pressed="false"><span class="flag">ITA</span> Serie A <span class="cnt">–</span></button></li>
+        <li><button class="league-btn" type="button" data-league="bundes" aria-pressed="false"><span class="flag">GER</span> Bundesliga <span class="cnt">–</span></button></li>
+        <li><button class="league-btn" type="button" data-league="ucl" aria-pressed="false"><span class="flag">UCL</span> Champions League <span class="cnt">–</span></button></li>
+        <li><button class="league-btn" type="button" data-league="uel" aria-pressed="false"><span class="flag">UEL</span> Europa League <span class="cnt">–</span></button></li>
       </ul>
+      <p class="rule-note" id="actualizadoHace">Actualizando datos…</p>
       <p class="rule-note">También en tu radar: Eredivisie, Süper Lig, Ligue 1, Conference League, Nations League, eliminatorias, Concachampions y Leagues Cup. Se activan en la agenda cuando hay jornada.</p>
     </aside>
 
@@ -678,13 +677,12 @@
   <section class="block">
     <div class="sec-head">
       <h2>Tus mercados, todos revisados</h2>
-      <p>Nada de limitarse a ganador y Over 2.5. En cada partido la IA revisa los seis mercados y propone cualquiera que traiga momio bueno y probabilidad de su lado.</p>
+      <p>Nada de limitarse a ganador y Over 2.5. En cada partido la IA revisa los mercados con momio (1X2, hándicap y goles) y la probabilidad de BTTS, y propone cualquiera que traiga momio bueno y probabilidad de su lado.</p>
     </div>
     <div class="markets">
       <article class="market"><span class="tag">1X2</span><h3>Local · Empate · Visita</h3><p>El mercado base. Sale de la matriz de goles del modelo Poisson / Dixon-Coles.</p><p>Clave: comparar siempre contra la probabilidad implícita, nunca entrar “porque es favorito”.</p></article>
       <article class="market"><span class="tag">O/U</span><h3>Over / Under de goles</h3><p>Líneas 1.5, 2.5 y 3.5 según el xG combinado y el ritmo histórico de ambos equipos.</p><p>En vivo es tu mercado fuerte: el ritmo del segundo tiempo dice más que la previa.</p></article>
       <article class="market"><span class="tag">BTTS</span><h3>Ambos equipos anotan</h3><p>Cruza ataque y fragilidad defensiva: equipos que generan mucho y conceden en casi todos sus partidos.</p><p>Ideal en ligas abiertas como Bundesliga y Eredivisie.</p></article>
-      <article class="market"><span class="tag">COR</span><h3>Córners</h3><p>Equipos que atacan por bandas y rematan mucho acumulan córners aunque no anoten.</p><p>Gran ángulo en vivo cuando un equipo va perdiendo y encierra al rival.</p></article>
       <article class="market"><span class="tag">AH</span><h3>Hándicap asiático</h3><p>Protege cuando el favorito es claro pero su momio 1X2 es demasiado bajo para tener valor.</p><p>El −1.0 o −1.5 convierte un “seguro sin valor” en una apuesta con precio justo.</p></article>
       <article class="market"><span class="tag">CS</span><h3>Marcador exacto</h3><p>Los 3 marcadores más probables de la matriz de Poisson, con su probabilidad real.</p><p>Mercado de momios altos y acierto bajo: solo como lectura, nunca como base del parlay.</p></article>
     </div>
@@ -698,7 +696,7 @@
         <ul class="rules">
           <li><span class="n">1</span><div><b>En vivo primero</b><p>Prefieres apostar en vivo sobre la previa: ves el ritmo, el xG y el momento antes de decidir.</p></div></li>
           <li><span class="n">2</span><div><b>Parlay solo si es “seguro”</b><p>Solo armas parlay cuando el pick se ve claro, el momio es bueno y la probabilidad lo respalda — y con equipos que conoces perfecto.</p></div></li>
-          <li><span class="n">3</span><div><b>Todos los mercados cuentan</b><p>Si el valor está en córners, BTTS o hándicap, ahí va la propuesta. El 1X2 no manda.</p></div></li>
+          <li><span class="n">3</span><div><b>Todos los mercados cuentan</b><p>Si el valor está en BTTS, hándicap o goles, ahí va la propuesta. El 1X2 no manda.</p></div></li>
           <li><span class="n">4</span><div><b>La IA propone, tú decides</b><p>El sistema señala “oye, estaría bien entrarle” con números en la mano. La apuesta la pones tú, fuera de esta página.</p></div></li>
         </ul>
       </article>
@@ -715,7 +713,7 @@
   </section>
 
   <footer>
-    <p><strong>Football AI Agenda · Proyecto de Luis Raga.</strong> Diseño original, hecho para Luis; no copia el código, el diseño ni los datos de nadie. Semana 2: partidos reales del 27–29 nov 2026, verificados el 19 nov 2026 con la API pública de ESPN (sin clave); horas de Monterrey (CST), sin momios ni probabilidades inventadas. Las probabilidades Poisson (modelo propio, Semana 2), los momios DraftKings (22 nov 2026) y el valor esperado ya están integrados. El parlay se guarda en este navegador y sobrevive al recargar (Semana 4). La sección Entre semana (24–26 nov) trae los partidos de Champions, Europa League y Liga MX con Poisson, momios y EV.</p>
+    <p><strong>Football AI Agenda · Proyecto de Luis Raga.</strong> Diseño original, hecho para Luis; no copia el código, el diseño ni los datos de nadie. Semana 2: partidos reales del 27–29 nov 2026, verificados el 19 nov 2026 con la API pública de ESPN (sin clave); horas de Monterrey (CST), sin momios ni probabilidades inventadas. Las probabilidades Poisson (modelo propio, Semana 2), los momios DraftKings (22 nov 2026) y el valor esperado ya están integrados. El parlay se guarda en este navegador y sobrevive al recargar. La sección Entre semana (24–26 nov) trae los partidos de Champions, Europa League y Liga MX con Poisson, momios y EV.</p>
     <p>Esta página es una herramienta de análisis. No realiza apuestas, no ejecuta transacciones y ningún momio mostrado es una cuota en vivo de una casa de apuestas.</p>
   </footer>
 </div>
@@ -799,7 +797,6 @@ function __initPagina(){
       var okStatus = true;
       if (currentStatus === "live") okStatus = m.getAttribute("data-status") === "live";
       else if (currentStatus === "upcoming") okStatus = m.getAttribute("data-status") === "upcoming";
-      else if (currentStatus === "value") okStatus = m.getAttribute("data-value") === "1";
       var okValue = (!onlyValue || bestEv(m) >= 0);
       var show = okLeague && okStatus && okDay && okValue;
       m.style.display = show ? "" : "none";
@@ -870,15 +867,19 @@ function __initPagina(){
   }
   document.querySelectorAll(".sort-btn").forEach(function(btn){
     btn.addEventListener("click", function(){
-      document.querySelectorAll(".sort-btn").forEach(function(x){ x.setAttribute("aria-pressed", "false"); });
-      btn.setAttribute("aria-pressed", "true");
       sortMode = btn.getAttribute("data-sort");
+      document.querySelectorAll(".sort-btn").forEach(function(x){ x.setAttribute("aria-pressed", String(!onlyValue && x === btn)); });
       applySort();
     });
   });
   document.getElementById("onlyValueBtn").addEventListener("click", function(){
     onlyValue = !onlyValue;
     this.setAttribute("aria-pressed", String(onlyValue));
+    /* Un solo estado visible: al activar "Solo con valor" ningún botón de
+       ordenar queda presionado; al desactivarlo vuelve el orden activo. */
+    document.querySelectorAll(".sort-btn").forEach(function(x){
+      x.setAttribute("aria-pressed", String(!onlyValue && x.getAttribute("data-sort") === sortMode));
+    });
     applyFilters();
   });
 
@@ -953,6 +954,23 @@ function __initPagina(){
       }
       return "El modelo le da un " + (isNaN(prob) ? "?" : vDec(prob)) + "% al " + mercado + " y el momio paga: " + vCalif(ev) + " (" + evT + ").";
     }
+    // 2b. Mercados no 1X2 (Spread y otros): la probabilidad es la del propio
+    // pick, nunca la 1X2 del local o la visita. El botón del parlay trae la
+    // probabilidad del pick en data-prob; si no hay botón, se deriva del
+    // momio como ya hace la rama de Más/Menos. Sin probabilidad, no se
+    // inventa ninguna.
+    if (mercado.indexOf("Local") !== 0 && mercado.indexOf("Visita") !== 0){
+      var btnS = article.querySelector(".add-btn");
+      var probS = btnS ? parseFloat(btnS.getAttribute("data-prob")) : NaN;
+      if (isNaN(probS)){
+        var odS = vOddsDe(article, mercado);
+        if (odS && odS.odds > 1) probS = (ev / 100 + 1) / odS.odds * 100;
+      }
+      if (isNaN(probS)){
+        return "El modelo ve valor en " + mercado + " (" + evT + "), sin probabilidad publicada para ese mercado.";
+      }
+      return "El modelo le da un " + vDec(probS) + "% al " + mercado + " y el momio paga: " + vCalif(ev) + " (" + evT + ").";
+    }
     // 3. 1X2 (Local / Visita)
     var pickN = (mercado.indexOf("Local") === 0) ? "local" : "visita";
     var pickP = (mercado.indexOf("Local") === 0) ? p1 : p2;
@@ -997,7 +1015,7 @@ function __initPagina(){
       row.className = "slip-item";
       var txt = document.createElement("div");
       var b = document.createElement("b"); b.textContent = item.name;
-      var s = document.createElement("span"); s.textContent = "Momio " + fmt(item.odds,2) + " · Prob. IA " + item.prob + "%";
+      var s = document.createElement("span"); s.textContent = "Momio " + fmt(item.odds,2) + " · Prob. IA " + fmt(item.prob,1) + "%";
       txt.appendChild(b); txt.appendChild(s);
       var btn = document.createElement("button");
       btn.type = "button"; btn.textContent = "×"; btn.setAttribute("aria-label","Quitar " + item.name);
@@ -1062,7 +1080,7 @@ function __initPagina(){
       }
     });
   });
-  /* ---------- Semana 4: parlay persistente (Empleado 2, portado por el jefe) ----------
+  /* ---------- Parlay persistente (Empleado 2, portado por el jefe) ----------
      Los picks se guardan en localStorage (clave faa-parlay-semana-2-v1) y
      sobreviven al recargar. Al restaurar, cada pick se reconstruye desde
      el botón de su tarjeta (data-pick/data-odds/data-prob): nunca se
@@ -1113,7 +1131,7 @@ function __initPagina(){
       row.className = "slip-item";
       var txt = document.createElement("div");
       var b = document.createElement("b"); b.textContent = item.name;
-      var s = document.createElement("span"); s.textContent = "Momio " + fmt(item.odds,2) + " · Prob. IA " + item.prob + "%";
+      var s = document.createElement("span"); s.textContent = "Momio " + fmt(item.odds,2) + " · Prob. IA " + fmt(item.prob,1) + "%";
       txt.appendChild(b); txt.appendChild(s);
       var btn = document.createElement("button");
       btn.type = "button"; btn.textContent = "×"; btn.setAttribute("aria-label","Quitar " + item.name);
@@ -2375,7 +2393,7 @@ var RADIO = {}; /* Integración Semana 7: la Radiografía llega por fetch
       }
       h += '</div>';
       if (sem && sem.value === "1"){
-        h += '<div class="odds-add"><button class="add-btn" type="button" data-pick="' + esc(home) + ' vs ' + esc(away) + ' · ' + esc(m.mejor_pick) + '" data-odds="' + esc(String(m.mejor_decimal)) + '" data-prob="' + fmt1(m.mejor_prob) + '">Sumar al parlay</button></div>';
+        h += '<div class="odds-add"><button class="add-btn" type="button" data-pick="' + esc(home) + ' vs ' + esc(away) + ' · ' + esc(m.mejor_pick) + '" data-odds="' + esc(String(m.mejor_decimal)) + '" data-prob="' + m.mejor_prob + '">Sumar al parlay</button></div>';
       }
     }
     h += '</div></article>';
@@ -2536,6 +2554,8 @@ var RADIO = {}; /* Integración Semana 7: la Radiografía llega por fetch
       h += '<li><button class="league-btn" type="button" data-league="' + c + '" aria-pressed="false"><span class="flag">' + esc(it.flag) + '</span> ' + esc(it.display) + ' <span class="cnt">' + it.n + '</span></button></li>';
     });
     ul.innerHTML = h;
+    var hl = document.getElementById("heroLeagues");
+    if (hl) hl.textContent = String(Object.keys(counts).length);
   }
   function errorHTML(config){
     return '<p class="detail-pending">No se pudieron cargar los partidos de ' + esc(config) + '. Revisa tu conexión y recarga la página.</p>';
@@ -2581,8 +2601,36 @@ var RADIO = {}; /* Integración Semana 7: la Radiografía llega por fetch
       else if (m._cfg === "fs"){ totFS++; if (esVerde) verFS++; }
     });
     b.textContent = "Estado: " + verdes + " de " + total + " partidos con valor (EV+)";
-    p.textContent = "Semáforo encendido con momios DraftKings (ESPN). Cada tarjeta muestra su mejor pick y su EV; el filtro «Con valor EV+» ya filtra las " + verdes + " tarjetas verdes (" + verMW + " de " + totMW + " entre semana y " + verFS + " de " + totFS + " el fin de semana). Hamburg–Bayern usa momios Bet365 porque DraftKings no publicó ese partido en ESPN.";
+    p.textContent = "Semáforo encendido con momios DraftKings (ESPN). Cada tarjeta muestra su mejor pick y su EV; el botón «Solo con valor (EV+)» ya filtra las " + verdes + " tarjetas verdes (" + verMW + " de " + totMW + " entre semana y " + verFS + " de " + totFS + " el fin de semana). Hamburg–Bayern usa momios Bet365 porque DraftKings no publicó ese partido en ESPN.";
   }
+
+  /* ---------- Actualizado hace X (defectos visibles, orden del jefe) ----------
+     La antigüedad se calcula igual que en el módulo de vivo
+     (MarcadorEnVivo._test.edadMin) desde generado_en de data/vivo.json,
+     el JSON que ya carga el índice. Se repinta cada minuto. */
+  var actualizadoTs = null;
+  function edadMinLocal(ts){
+    if (typeof MarcadorEnVivo !== "undefined" && MarcadorEnVivo._test && typeof MarcadorEnVivo._test.edadMin === "function") return MarcadorEnVivo._test.edadMin(ts);
+    if (!ts) return 0;
+    return Math.max(0, Math.floor((Date.now() - ts) / 60000));
+  }
+  function pintarActualizado(){
+    var el = document.getElementById("actualizadoHace");
+    if (!el) return;
+    if (!actualizadoTs){ el.textContent = "Actualización de datos no disponible."; return; }
+    var age = edadMinLocal(actualizadoTs);
+    el.textContent = age < 1 ? "Actualizado hace menos de 1 min" : "Actualizado hace " + age + " min";
+  }
+  function cargarActualizado(){
+    fetchJSON("data/vivo.json").then(function(j){
+      if (j && (j.generado_en || j.actualizado_en)){
+        var t = Date.parse(j.actualizado_en || j.generado_en);
+        if (!isNaN(t)) actualizadoTs = t;
+      }
+      pintarActualizado();
+    });
+  }
+  setInterval(pintarActualizado, 60000);
 
   function cargar(){
     var evP = Promise.all([fetchJSON(URLS.ev.mw), fetchJSON(URLS.ev.fs)]);
@@ -2609,6 +2657,7 @@ var RADIO = {}; /* Integración Semana 7: la Radiografía llega por fetch
       } else { errores.push("ev fin de semana"); }
       renderPartidos(partidos);
       actualizarSemaforo(partidos);
+      cargarActualizado();
       /* REBASE e3a1220: pintar en vivo/final en las tarjetas nuevas. La base
          trae pintarMarcadores() global (fuera del IIFE de s4): lee
          data/vivo.json y ESPN y pone el marcador en cada tarjeta. Al cargar
