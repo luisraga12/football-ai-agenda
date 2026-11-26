@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "generado_en": "2026-11-26T12:21:48Z",
+  "generado_en": "2026-11-26T15:51:06Z",
   "semana": "2",
-  "fuente": "config + ev.json + verified_events.json + teams_last5.json + schedule_*.json + DETAIL embebido en partido.html (preservado) + summary ESPN por evento (estadio + alineacion oficial)",
+  "fuente": "config + ev.json + verified_events.json + teams_last5.json + schedule_*.json + DETAIL embebido en partido.html (preservado) + summary ESPN por evento (estadio + alineacion oficial + standings + h2h; tabla regular MX para Liguilla)",
   "partidos_vivo": {
     "werder-bremen-vs-borussia-monchengladbach": {
       "liga": "ger.1",
@@ -3656,8 +3656,69 @@
           }
         ]
       },
-      "h2h": null,
-      "standings": null,
+      "h2h": {
+        "resumen": "TOL lidera la serie 3-0-2",
+        "etiqueta": "Last 5 Matchups",
+        "partidos": [
+          {
+            "fecha": "26 nov 2026",
+            "local": "Toluca",
+            "visitante": "Atlas",
+            "goles_local": "2",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "12 sep 2026",
+            "local": "Toluca",
+            "visitante": "Atlas",
+            "goles_local": "5",
+            "goles_visitante": "2"
+          },
+          {
+            "fecha": "15 mar 2026",
+            "local": "Toluca",
+            "visitante": "Atlas",
+            "goles_local": "1",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "1 nov 2025",
+            "local": "Atlas",
+            "visitante": "Toluca",
+            "goles_local": "0",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "13 abr 2025",
+            "local": "Atlas",
+            "visitante": "Toluca",
+            "goles_local": "2",
+            "goles_visitante": "3"
+          }
+        ]
+      },
+      "standings": {
+        "home": {
+          "pos": "4",
+          "pts": "28",
+          "pj": "17",
+          "g": "8",
+          "e": "4",
+          "p": "5",
+          "dg": "-3",
+          "récord": "8-4-5"
+        },
+        "away": {
+          "pos": "5",
+          "pts": "27",
+          "pj": "17",
+          "g": "7",
+          "e": "6",
+          "p": "4",
+          "dg": "+12",
+          "récord": "7-6-4"
+        }
+      },
       "lineup": {
         "alineacion_publicada": false,
         "jugadores": {
@@ -3672,7 +3733,7 @@
         "pais": "Mexico"
       },
       "sources": {
-        "standings_header": "Liga MX Standings"
+        "standings_header": "Mexican Liga BBVA MX Standings"
       },
       "fuente_detalle": "generado"
     },
@@ -3789,8 +3850,69 @@
           }
         ]
       },
-      "h2h": null,
-      "standings": null,
+      "h2h": {
+        "resumen": "AME lidera la serie 2-1-2",
+        "etiqueta": "Last 5 Matchups",
+        "partidos": [
+          {
+            "fecha": "26 nov 2026",
+            "local": "Monterrey",
+            "visitante": "América",
+            "goles_local": "0",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "11 oct 2026",
+            "local": "América",
+            "visitante": "Monterrey",
+            "goles_local": "1",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "3 sep 2026",
+            "local": "América",
+            "visitante": "Monterrey",
+            "goles_local": "2",
+            "goles_visitante": "2"
+          },
+          {
+            "fecha": "8 feb 2026",
+            "local": "América",
+            "visitante": "Monterrey",
+            "goles_local": "1",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "29 nov 2025",
+            "local": "América",
+            "visitante": "Monterrey",
+            "goles_local": "2",
+            "goles_visitante": "1"
+          }
+        ]
+      },
+      "standings": {
+        "home": {
+          "pos": "3",
+          "pts": "30",
+          "pj": "17",
+          "g": "8",
+          "e": "6",
+          "p": "3",
+          "dg": "+14",
+          "récord": "8-6-3"
+        },
+        "away": {
+          "pos": "6",
+          "pts": "27",
+          "pj": "17",
+          "g": "8",
+          "e": "3",
+          "p": "6",
+          "dg": "+4",
+          "récord": "8-3-6"
+        }
+      },
       "lineup": {
         "alineacion_publicada": false,
         "jugadores": {
@@ -3805,7 +3927,7 @@
         "pais": "Mexico"
       },
       "sources": {
-        "standings_header": "Liga MX Standings"
+        "standings_header": "Mexican Liga BBVA MX Standings"
       },
       "fuente_detalle": "generado"
     },
@@ -3922,8 +4044,69 @@
           }
         ]
       },
-      "h2h": null,
-      "standings": null,
+      "h2h": {
+        "resumen": "GDL lidera la serie 4-0-1",
+        "etiqueta": "Last 5 Matchups",
+        "partidos": [
+          {
+            "fecha": "29 ago 2026",
+            "local": "Pachuca",
+            "visitante": "Guadalajara",
+            "goles_local": "1",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "10 ene 2026",
+            "local": "Guadalajara",
+            "visitante": "Pachuca",
+            "goles_local": "2",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "3 nov 2025",
+            "local": "Pachuca",
+            "visitante": "Guadalajara",
+            "goles_local": "0",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "23 feb 2025",
+            "local": "Guadalajara",
+            "visitante": "Pachuca",
+            "goles_local": "2",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "19 oct 2024",
+            "local": "Pachuca",
+            "visitante": "Guadalajara",
+            "goles_local": "0",
+            "goles_visitante": "2"
+          }
+        ]
+      },
+      "standings": {
+        "home": {
+          "pos": "1",
+          "pts": "33",
+          "pj": "17",
+          "g": "9",
+          "e": "6",
+          "p": "2",
+          "dg": "+12",
+          "récord": "9-6-2"
+        },
+        "away": {
+          "pos": "8",
+          "pts": "25",
+          "pj": "17",
+          "g": "7",
+          "e": "4",
+          "p": "6",
+          "dg": "+11",
+          "récord": "7-4-6"
+        }
+      },
       "lineup": {
         "alineacion_publicada": false,
         "jugadores": {
@@ -3938,7 +4121,7 @@
         "pais": "Mexico"
       },
       "sources": {
-        "standings_header": "Liga MX Standings"
+        "standings_header": "Mexican Liga BBVA MX Standings"
       },
       "fuente_detalle": "generado"
     },
@@ -4055,8 +4238,69 @@
           }
         ]
       },
-      "h2h": null,
-      "standings": null,
+      "h2h": {
+        "resumen": "CAZ lidera la serie 4-1",
+        "etiqueta": "Last 5 Matchups",
+        "partidos": [
+          {
+            "fecha": "2 nov 2026",
+            "local": "Cruz Azul",
+            "visitante": "León",
+            "goles_local": "2",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "11 ene 2026",
+            "local": "León",
+            "visitante": "Cruz Azul",
+            "goles_local": "2",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "27 jul 2025",
+            "local": "Cruz Azul",
+            "visitante": "León",
+            "goles_local": "4",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "12 may 2025",
+            "local": "Cruz Azul",
+            "visitante": "León",
+            "goles_local": "2",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "9 may 2025",
+            "local": "León",
+            "visitante": "Cruz Azul",
+            "goles_local": "2",
+            "goles_visitante": "3"
+          }
+        ]
+      },
+      "standings": {
+        "home": {
+          "pos": "2",
+          "pts": "32",
+          "pj": "17",
+          "g": "10",
+          "e": "2",
+          "p": "5",
+          "dg": "+10",
+          "récord": "10-2-5"
+        },
+        "away": {
+          "pos": "7",
+          "pts": "26",
+          "pj": "17",
+          "g": "7",
+          "e": "5",
+          "p": "5",
+          "dg": "+3",
+          "récord": "7-5-5"
+        }
+      },
       "lineup": {
         "alineacion_publicada": false,
         "jugadores": {
@@ -4071,7 +4315,7 @@
         "pais": "Mexico"
       },
       "sources": {
-        "standings_header": "Liga MX Standings"
+        "standings_header": "Mexican Liga BBVA MX Standings"
       },
       "fuente_detalle": "generado"
     },
@@ -7207,8 +7451,69 @@
           }
         ]
       },
-      "h2h": null,
-      "standings": null,
+      "h2h": {
+        "resumen": "TOL lidera la serie 3-0-2",
+        "etiqueta": "Last 5 Matchups",
+        "partidos": [
+          {
+            "fecha": "12 sep 2026",
+            "local": "Toluca",
+            "visitante": "Atlas",
+            "goles_local": "5",
+            "goles_visitante": "2"
+          },
+          {
+            "fecha": "15 mar 2026",
+            "local": "Toluca",
+            "visitante": "Atlas",
+            "goles_local": "1",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "1 nov 2025",
+            "local": "Atlas",
+            "visitante": "Toluca",
+            "goles_local": "0",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "13 abr 2025",
+            "local": "Atlas",
+            "visitante": "Toluca",
+            "goles_local": "2",
+            "goles_visitante": "3"
+          },
+          {
+            "fecha": "28 sep 2024",
+            "local": "Toluca",
+            "visitante": "Atlas",
+            "goles_local": "4",
+            "goles_visitante": "1"
+          }
+        ]
+      },
+      "standings": {
+        "home": {
+          "pos": "5",
+          "pts": "27",
+          "pj": "17",
+          "g": "7",
+          "e": "6",
+          "p": "4",
+          "dg": "+12",
+          "récord": "7-6-4"
+        },
+        "away": {
+          "pos": "4",
+          "pts": "28",
+          "pj": "17",
+          "g": "8",
+          "e": "4",
+          "p": "5",
+          "dg": "-3",
+          "récord": "8-4-5"
+        }
+      },
       "lineup": {
         "alineacion_publicada": true,
         "jugadores": {
@@ -7335,7 +7640,7 @@
         "pais": "Mexico"
       },
       "sources": {
-        "standings_header": "Liga MX Standings"
+        "standings_header": "Mexican Liga BBVA MX Standings"
       },
       "fuente_detalle": "generado"
     },
@@ -7452,8 +7757,69 @@
           }
         ]
       },
-      "h2h": null,
-      "standings": null,
+      "h2h": {
+        "resumen": "Serie empatada 2-2-1",
+        "etiqueta": "Last 5 Matchups",
+        "partidos": [
+          {
+            "fecha": "11 oct 2026",
+            "local": "América",
+            "visitante": "Monterrey",
+            "goles_local": "1",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "3 sep 2026",
+            "local": "América",
+            "visitante": "Monterrey",
+            "goles_local": "2",
+            "goles_visitante": "2"
+          },
+          {
+            "fecha": "8 feb 2026",
+            "local": "América",
+            "visitante": "Monterrey",
+            "goles_local": "1",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "29 nov 2025",
+            "local": "América",
+            "visitante": "Monterrey",
+            "goles_local": "2",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "27 nov 2025",
+            "local": "Monterrey",
+            "visitante": "América",
+            "goles_local": "2",
+            "goles_visitante": "0"
+          }
+        ]
+      },
+      "standings": {
+        "home": {
+          "pos": "6",
+          "pts": "27",
+          "pj": "17",
+          "g": "8",
+          "e": "3",
+          "p": "6",
+          "dg": "+4",
+          "récord": "8-3-6"
+        },
+        "away": {
+          "pos": "3",
+          "pts": "30",
+          "pj": "17",
+          "g": "8",
+          "e": "6",
+          "p": "3",
+          "dg": "+14",
+          "récord": "8-6-3"
+        }
+      },
       "lineup": {
         "alineacion_publicada": true,
         "jugadores": {
@@ -7580,7 +7946,7 @@
         "pais": "Mexico"
       },
       "sources": {
-        "standings_header": "Liga MX Standings"
+        "standings_header": "Mexican Liga BBVA MX Standings"
       },
       "fuente_detalle": "generado"
     },
@@ -7697,8 +8063,69 @@
           }
         ]
       },
-      "h2h": null,
-      "standings": null,
+      "h2h": {
+        "resumen": "GDL lidera la serie 4-0-1",
+        "etiqueta": "Last 5 Matchups",
+        "partidos": [
+          {
+            "fecha": "29 ago 2026",
+            "local": "Pachuca",
+            "visitante": "Guadalajara",
+            "goles_local": "1",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "10 ene 2026",
+            "local": "Guadalajara",
+            "visitante": "Pachuca",
+            "goles_local": "2",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "3 nov 2025",
+            "local": "Pachuca",
+            "visitante": "Guadalajara",
+            "goles_local": "0",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "23 feb 2025",
+            "local": "Guadalajara",
+            "visitante": "Pachuca",
+            "goles_local": "2",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "19 oct 2024",
+            "local": "Pachuca",
+            "visitante": "Guadalajara",
+            "goles_local": "0",
+            "goles_visitante": "2"
+          }
+        ]
+      },
+      "standings": {
+        "home": {
+          "pos": "8",
+          "pts": "25",
+          "pj": "17",
+          "g": "7",
+          "e": "4",
+          "p": "6",
+          "dg": "+11",
+          "récord": "7-4-6"
+        },
+        "away": {
+          "pos": "1",
+          "pts": "33",
+          "pj": "17",
+          "g": "9",
+          "e": "6",
+          "p": "2",
+          "dg": "+12",
+          "récord": "9-6-2"
+        }
+      },
       "lineup": {
         "alineacion_publicada": false,
         "jugadores": {
@@ -7713,7 +8140,7 @@
         "pais": "Mexico"
       },
       "sources": {
-        "standings_header": "Liga MX Standings"
+        "standings_header": "Mexican Liga BBVA MX Standings"
       },
       "fuente_detalle": "generado"
     },
@@ -7830,8 +8257,69 @@
           }
         ]
       },
-      "h2h": null,
-      "standings": null,
+      "h2h": {
+        "resumen": "CAZ lidera la serie 4-1",
+        "etiqueta": "Last 5 Matchups",
+        "partidos": [
+          {
+            "fecha": "2 nov 2026",
+            "local": "Cruz Azul",
+            "visitante": "León",
+            "goles_local": "2",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "11 ene 2026",
+            "local": "León",
+            "visitante": "Cruz Azul",
+            "goles_local": "2",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "27 jul 2025",
+            "local": "Cruz Azul",
+            "visitante": "León",
+            "goles_local": "4",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "12 may 2025",
+            "local": "Cruz Azul",
+            "visitante": "León",
+            "goles_local": "2",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "9 may 2025",
+            "local": "León",
+            "visitante": "Cruz Azul",
+            "goles_local": "2",
+            "goles_visitante": "3"
+          }
+        ]
+      },
+      "standings": {
+        "home": {
+          "pos": "7",
+          "pts": "26",
+          "pj": "17",
+          "g": "7",
+          "e": "5",
+          "p": "5",
+          "dg": "+3",
+          "récord": "7-5-5"
+        },
+        "away": {
+          "pos": "2",
+          "pts": "32",
+          "pj": "17",
+          "g": "10",
+          "e": "2",
+          "p": "5",
+          "dg": "+10",
+          "récord": "10-2-5"
+        }
+      },
       "lineup": {
         "alineacion_publicada": false,
         "jugadores": {
@@ -7846,7 +8334,7 @@
         "pais": "Mexico"
       },
       "sources": {
-        "standings_header": "Liga MX Standings"
+        "standings_header": "Mexican Liga BBVA MX Standings"
       },
       "fuente_detalle": "generado"
     },
@@ -7944,7 +8432,28 @@
         ]
       },
       "h2h": null,
-      "standings": null,
+      "standings": {
+        "home": {
+          "pos": "33",
+          "pts": "3",
+          "pj": "5",
+          "g": "1",
+          "e": "0",
+          "p": "4",
+          "dg": "-9",
+          "récord": "1-0-4"
+        },
+        "away": {
+          "pos": "4",
+          "pts": "12",
+          "pj": "5",
+          "g": "4",
+          "e": "0",
+          "p": "1",
+          "dg": "+11",
+          "récord": "4-0-1"
+        }
+      },
       "lineup": {
         "alineacion_publicada": true,
         "jugadores": {
@@ -8071,7 +8580,7 @@
         "pais": "Azerbaijan"
       },
       "sources": {
-        "standings_header": "Champions League Standings"
+        "standings_header": "UEFA Champions League Standings"
       },
       "fuente_detalle": "generado"
     },
@@ -8168,8 +8677,48 @@
           }
         ]
       },
-      "h2h": null,
-      "standings": null,
+      "h2h": {
+        "resumen": "VIL lidera la serie 1-0-1",
+        "etiqueta": "Last 2 Matchups",
+        "partidos": [
+          {
+            "fecha": "2 nov 2017",
+            "local": "Slavia Prague",
+            "visitante": "Villarreal",
+            "goles_local": "0",
+            "goles_visitante": "2"
+          },
+          {
+            "fecha": "19 oct 2017",
+            "local": "Villarreal",
+            "visitante": "Slavia Prague",
+            "goles_local": "2",
+            "goles_visitante": "2"
+          }
+        ]
+      },
+      "standings": {
+        "home": {
+          "pos": "35",
+          "pts": "1",
+          "pj": "5",
+          "g": "0",
+          "e": "1",
+          "p": "4",
+          "dg": "-5",
+          "récord": "0-1-4"
+        },
+        "away": {
+          "pos": "24",
+          "pts": "6",
+          "pj": "5",
+          "g": "2",
+          "e": "0",
+          "p": "3",
+          "dg": "-5",
+          "récord": "2-0-3"
+        }
+      },
       "lineup": {
         "alineacion_publicada": true,
         "jugadores": {
@@ -8296,7 +8845,7 @@
         "pais": "Czechia"
       },
       "sources": {
-        "standings_header": "Champions League Standings"
+        "standings_header": "UEFA Champions League Standings"
       },
       "fuente_detalle": "generado"
     },
@@ -8394,7 +8943,28 @@
         ]
       },
       "h2h": null,
-      "standings": null,
+      "standings": {
+        "home": {
+          "pos": "18",
+          "pts": "7",
+          "pj": "5",
+          "g": "2",
+          "e": "1",
+          "p": "2",
+          "dg": "+1",
+          "récord": "2-1-2"
+        },
+        "away": {
+          "pos": "27",
+          "pts": "4",
+          "pj": "5",
+          "g": "1",
+          "e": "1",
+          "p": "3",
+          "dg": "-3",
+          "récord": "1-1-3"
+        }
+      },
       "lineup": {
         "alineacion_publicada": true,
         "jugadores": {
@@ -8521,7 +9091,7 @@
         "pais": "Spain"
       },
       "sources": {
-        "standings_header": "Champions League Standings"
+        "standings_header": "UEFA Champions League Standings"
       },
       "fuente_detalle": "generado"
     },
@@ -8618,8 +9188,55 @@
           }
         ]
       },
-      "h2h": null,
-      "standings": null,
+      "h2h": {
+        "resumen": "Serie empatada 1-1-1",
+        "etiqueta": "Last 3 Matchups",
+        "partidos": [
+          {
+            "fecha": "19 abr 2022",
+            "local": "Fenerbahce",
+            "visitante": "Shakhtar Donetsk",
+            "goles_local": "1",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "5 ago 2015",
+            "local": "Shakhtar Donetsk",
+            "visitante": "Fenerbahce",
+            "goles_local": "3",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "28 jul 2015",
+            "local": "Fenerbahce",
+            "visitante": "Shakhtar Donetsk",
+            "goles_local": "0",
+            "goles_visitante": "0"
+          }
+        ]
+      },
+      "standings": {
+        "home": {
+          "pos": "26",
+          "pts": "4",
+          "pj": "5",
+          "g": "1",
+          "e": "1",
+          "p": "3",
+          "dg": "-1",
+          "récord": "1-1-3"
+        },
+        "away": {
+          "pos": "16",
+          "pts": "8",
+          "pj": "5",
+          "g": "2",
+          "e": "2",
+          "p": "1",
+          "dg": "-4",
+          "récord": "2-2-1"
+        }
+      },
       "lineup": {
         "alineacion_publicada": true,
         "jugadores": {
@@ -8746,7 +9363,7 @@
         "pais": "England"
       },
       "sources": {
-        "standings_header": "Champions League Standings"
+        "standings_header": "UEFA Champions League Standings"
       },
       "fuente_detalle": "generado"
     },
@@ -8843,8 +9460,48 @@
           }
         ]
       },
-      "h2h": null,
-      "standings": null,
+      "h2h": {
+        "resumen": "BES lidera la serie 2-0",
+        "etiqueta": "Last 2 Matchups",
+        "partidos": [
+          {
+            "fecha": "23 feb 2017",
+            "local": "Besiktas",
+            "visitante": "Hapoel Be'er",
+            "goles_local": "2",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "16 feb 2017",
+            "local": "Hapoel Be'er",
+            "visitante": "Besiktas",
+            "goles_local": "1",
+            "goles_visitante": "3"
+          }
+        ]
+      },
+      "standings": {
+        "home": {
+          "pos": "8",
+          "pts": "7",
+          "pj": "4",
+          "g": "2",
+          "e": "1",
+          "p": "1",
+          "dg": "+3",
+          "récord": "2-1-1"
+        },
+        "away": {
+          "pos": "33",
+          "pts": "1",
+          "pj": "4",
+          "g": "0",
+          "e": "1",
+          "p": "3",
+          "dg": "-7",
+          "récord": "0-1-3"
+        }
+      },
       "lineup": {
         "alineacion_publicada": false,
         "jugadores": {
@@ -8859,7 +9516,7 @@
         "pais": "Georgia"
       },
       "sources": {
-        "standings_header": "Europa League Standings"
+        "standings_header": "UEFA Europa League Standings"
       },
       "fuente_detalle": "generado"
     },
@@ -8956,7 +9613,19 @@
           }
         ]
       },
-      "h2h": null,
+      "h2h": {
+        "resumen": "LEV lidera la serie 1-0",
+        "etiqueta": "Last Matchup",
+        "partidos": [
+          {
+            "fecha": "1 dic 2005",
+            "local": "Levski Sofia",
+            "visitante": "Marseille",
+            "goles_local": "1",
+            "goles_visitante": "0"
+          }
+        ]
+      },
       "standings": null,
       "lineup": {
         "alineacion_publicada": false,
@@ -9070,7 +9739,28 @@
         ]
       },
       "h2h": null,
-      "standings": null,
+      "standings": {
+        "home": {
+          "pos": "26",
+          "pts": "4",
+          "pj": "4",
+          "g": "1",
+          "e": "1",
+          "p": "2",
+          "dg": "-5",
+          "récord": "1-1-2"
+        },
+        "away": {
+          "pos": "36",
+          "pts": "0",
+          "pj": "4",
+          "g": "0",
+          "e": "0",
+          "p": "4",
+          "dg": "-10",
+          "récord": "0-0-4"
+        }
+      },
       "lineup": {
         "alineacion_publicada": false,
         "jugadores": {
@@ -9085,7 +9775,7 @@
         "pais": "Austria"
       },
       "sources": {
-        "standings_header": "Europa League Standings"
+        "standings_header": "UEFA Europa League Standings"
       },
       "fuente_detalle": "generado"
     },
@@ -9183,7 +9873,28 @@
         ]
       },
       "h2h": null,
-      "standings": null,
+      "standings": {
+        "home": {
+          "pos": "4",
+          "pts": "10",
+          "pj": "4",
+          "g": "3",
+          "e": "1",
+          "p": "0",
+          "dg": "+8",
+          "récord": "3-1-0"
+        },
+        "away": {
+          "pos": "35",
+          "pts": "1",
+          "pj": "4",
+          "g": "0",
+          "e": "1",
+          "p": "3",
+          "dg": "-10",
+          "récord": "0-1-3"
+        }
+      },
       "lineup": {
         "alineacion_publicada": false,
         "jugadores": {
@@ -9198,7 +9909,7 @@
         "pais": "Belgium"
       },
       "sources": {
-        "standings_header": "Europa League Standings"
+        "standings_header": "UEFA Europa League Standings"
       },
       "fuente_detalle": "generado"
     },
@@ -9296,7 +10007,28 @@
         ]
       },
       "h2h": null,
-      "standings": null,
+      "standings": {
+        "home": {
+          "pos": "30",
+          "pts": "3",
+          "pj": "4",
+          "g": "1",
+          "e": "0",
+          "p": "3",
+          "dg": "-4",
+          "récord": "1-0-3"
+        },
+        "away": {
+          "pos": "1",
+          "pts": "12",
+          "pj": "4",
+          "g": "4",
+          "e": "0",
+          "p": "0",
+          "dg": "+10",
+          "récord": "4-0-0"
+        }
+      },
       "lineup": {
         "alineacion_publicada": false,
         "jugadores": {
@@ -9311,7 +10043,7 @@
         "pais": "Czechia"
       },
       "sources": {
-        "standings_header": "Europa League Standings"
+        "standings_header": "UEFA Europa League Standings"
       },
       "fuente_detalle": "generado"
     },
@@ -9409,7 +10141,28 @@
         ]
       },
       "h2h": null,
-      "standings": null,
+      "standings": {
+        "home": {
+          "pos": "21",
+          "pts": "5",
+          "pj": "4",
+          "g": "1",
+          "e": "2",
+          "p": "1",
+          "dg": "+3",
+          "récord": "1-2-1"
+        },
+        "away": {
+          "pos": "20",
+          "pts": "5",
+          "pj": "4",
+          "g": "1",
+          "e": "2",
+          "p": "1",
+          "dg": "+5",
+          "récord": "1-2-1"
+        }
+      },
       "lineup": {
         "alineacion_publicada": false,
         "jugadores": {
@@ -9424,7 +10177,7 @@
         "pais": "England"
       },
       "sources": {
-        "standings_header": "Europa League Standings"
+        "standings_header": "UEFA Europa League Standings"
       },
       "fuente_detalle": "generado"
     },
@@ -9522,7 +10275,28 @@
         ]
       },
       "h2h": null,
-      "standings": null,
+      "standings": {
+        "home": {
+          "pos": "3",
+          "pts": "12",
+          "pj": "4",
+          "g": "4",
+          "e": "0",
+          "p": "0",
+          "dg": "+8",
+          "récord": "4-0-0"
+        },
+        "away": {
+          "pos": "25",
+          "pts": "4",
+          "pj": "4",
+          "g": "1",
+          "e": "1",
+          "p": "2",
+          "dg": "-4",
+          "récord": "1-1-2"
+        }
+      },
       "lineup": {
         "alineacion_publicada": false,
         "jugadores": {
@@ -9537,7 +10311,7 @@
         "pais": "Hungary"
       },
       "sources": {
-        "standings_header": "Europa League Standings"
+        "standings_header": "UEFA Europa League Standings"
       },
       "fuente_detalle": "generado"
     },
@@ -9748,7 +10522,28 @@
         ]
       },
       "h2h": null,
-      "standings": null,
+      "standings": {
+        "home": {
+          "pos": "13",
+          "pts": "7",
+          "pj": "4",
+          "g": "2",
+          "e": "1",
+          "p": "1",
+          "dg": "-1",
+          "récord": "2-1-1"
+        },
+        "away": {
+          "pos": "34",
+          "pts": "1",
+          "pj": "4",
+          "g": "0",
+          "e": "1",
+          "p": "3",
+          "dg": "-8",
+          "récord": "0-1-3"
+        }
+      },
       "lineup": {
         "alineacion_publicada": false,
         "jugadores": {
@@ -9763,7 +10558,7 @@
         "pais": "France"
       },
       "sources": {
-        "standings_header": "Europa League Standings"
+        "standings_header": "UEFA Europa League Standings"
       },
       "fuente_detalle": "generado"
     },
@@ -9974,7 +10769,28 @@
         ]
       },
       "h2h": null,
-      "standings": null,
+      "standings": {
+        "home": {
+          "pos": "16",
+          "pts": "6",
+          "pj": "4",
+          "g": "2",
+          "e": "0",
+          "p": "2",
+          "dg": "+1",
+          "récord": "2-0-2"
+        },
+        "away": {
+          "pos": "15",
+          "pts": "6",
+          "pj": "4",
+          "g": "2",
+          "e": "0",
+          "p": "2",
+          "dg": "+3",
+          "récord": "2-0-2"
+        }
+      },
       "lineup": {
         "alineacion_publicada": false,
         "jugadores": {
@@ -9989,7 +10805,7 @@
         "pais": "Greece"
       },
       "sources": {
-        "standings_header": "Europa League Standings"
+        "standings_header": "UEFA Europa League Standings"
       },
       "fuente_detalle": "generado"
     },
@@ -10086,8 +10902,48 @@
           }
         ]
       },
-      "h2h": null,
-      "standings": null,
+      "h2h": {
+        "resumen": "AZ lidera la serie 2-0",
+        "etiqueta": "Last 2 Matchups",
+        "partidos": [
+          {
+            "fecha": "19 mar 2026",
+            "local": "Sparta Prague",
+            "visitante": "AZ Alkmaar",
+            "goles_local": "0",
+            "goles_visitante": "4"
+          },
+          {
+            "fecha": "12 mar 2026",
+            "local": "AZ Alkmaar",
+            "visitante": "Sparta Prague",
+            "goles_local": "2",
+            "goles_visitante": "1"
+          }
+        ]
+      },
+      "standings": {
+        "home": {
+          "pos": "22",
+          "pts": "4",
+          "pj": "4",
+          "g": "1",
+          "e": "1",
+          "p": "2",
+          "dg": "0",
+          "récord": "1-1-2"
+        },
+        "away": {
+          "pos": "14",
+          "pts": "6",
+          "pj": "4",
+          "g": "2",
+          "e": "0",
+          "p": "2",
+          "dg": "+3",
+          "récord": "2-0-2"
+        }
+      },
       "lineup": {
         "alineacion_publicada": false,
         "jugadores": {
@@ -10102,7 +10958,7 @@
         "pais": "Czechia"
       },
       "sources": {
-        "standings_header": "Europa League Standings"
+        "standings_header": "UEFA Europa League Standings"
       },
       "fuente_detalle": "generado"
     },
@@ -10313,7 +11169,28 @@
         ]
       },
       "h2h": null,
-      "standings": null,
+      "standings": {
+        "home": {
+          "pos": "19",
+          "pts": "6",
+          "pj": "4",
+          "g": "2",
+          "e": "0",
+          "p": "2",
+          "dg": "-2",
+          "récord": "2-0-2"
+        },
+        "away": {
+          "pos": "32",
+          "pts": "3",
+          "pj": "4",
+          "g": "1",
+          "e": "0",
+          "p": "3",
+          "dg": "-5",
+          "récord": "1-0-3"
+        }
+      },
       "lineup": {
         "alineacion_publicada": false,
         "jugadores": {
@@ -10328,7 +11205,7 @@
         "pais": "Portugal"
       },
       "sources": {
-        "standings_header": "Europa League Standings"
+        "standings_header": "UEFA Europa League Standings"
       },
       "fuente_detalle": "generado"
     },
@@ -10426,7 +11303,28 @@
         ]
       },
       "h2h": null,
-      "standings": null,
+      "standings": {
+        "home": {
+          "pos": "23",
+          "pts": "4",
+          "pj": "4",
+          "g": "1",
+          "e": "1",
+          "p": "2",
+          "dg": "0",
+          "récord": "1-1-2"
+        },
+        "away": {
+          "pos": "24",
+          "pts": "4",
+          "pj": "4",
+          "g": "1",
+          "e": "1",
+          "p": "2",
+          "dg": "-3",
+          "récord": "1-1-2"
+        }
+      },
       "lineup": {
         "alineacion_publicada": false,
         "jugadores": {
@@ -10441,7 +11339,7 @@
         "pais": "Germany"
       },
       "sources": {
-        "standings_header": "Europa League Standings"
+        "standings_header": "UEFA Europa League Standings"
       },
       "fuente_detalle": "generado"
     }
@@ -10454,6 +11352,33 @@
     "detalle_preservado_embebido": 28,
     "detalle_con_estadio": 55,
     "detalle_con_alineacion_oficial": 15,
-    "avisos": []
+    "detalle_con_standings": 51,
+    "detalle_con_h2h": 35,
+    "avisos": [
+      "Galatasaray vs Aston Villa: sin historial directo ESPN (h2h pendiente)",
+      "Real Madrid vs PSV Eindhoven: sin historial directo ESPN (h2h pendiente)",
+      "Club Brugge vs Liverpool: sin historial directo ESPN (h2h pendiente)",
+      "Internazionale vs VfB Stuttgart: sin historial directo ESPN (h2h pendiente)",
+      "Celta Vigo vs AFC Bournemouth: sin historial directo ESPN (h2h pendiente)",
+      "Dinamo Zagreb vs Bayer Leverkusen: sin historial directo ESPN (h2h pendiente)",
+      "Sabah FK vs Barcelona: sin historial directo ESPN (h2h pendiente)",
+      "Atlético Madrid vs Viking FK: sin historial directo ESPN (h2h pendiente)",
+      "Marseille vs Levski Sofia: sin standings ESPN (tabla pendiente)",
+      "RB Salzburg vs Ararat-Armenia: sin historial directo ESPN (h2h pendiente)",
+      "Union St.-Gilloise vs Lech Poznan: sin historial directo ESPN (h2h pendiente)",
+      "Viktoria Plzen vs Benfica: sin historial directo ESPN (h2h pendiente)",
+      "Crystal Palace vs Real Sociedad: sin historial directo ESPN (h2h pendiente)",
+      "Ferencvaros vs NK Celje: sin historial directo ESPN (h2h pendiente)",
+      "Juventus vs Omonia Nicosia: sin standings ESPN (tabla pendiente)",
+      "Juventus vs Omonia Nicosia: sin historial directo ESPN (h2h pendiente)",
+      "Lyon vs Lillestrom: sin historial directo ESPN (h2h pendiente)",
+      "NEC Nijmegen vs Stade Rennais: sin standings ESPN (tabla pendiente)",
+      "NEC Nijmegen vs Stade Rennais: sin historial directo ESPN (h2h pendiente)",
+      "OFI Crete vs Anderlecht: sin historial directo ESPN (h2h pendiente)",
+      "Sunderland vs Jagiellonia Bialystok: sin standings ESPN (tabla pendiente)",
+      "Sunderland vs Jagiellonia Bialystok: sin historial directo ESPN (h2h pendiente)",
+      "Torreense vs Celtic: sin historial directo ESPN (h2h pendiente)",
+      "TSG Hoffenheim vs SK Sturm Graz: sin historial directo ESPN (h2h pendiente)"
+    ]
   }
 }
