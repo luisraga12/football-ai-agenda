@@ -2622,22 +2622,22 @@ var RADIO = {}; /* Integración Semana 7: la Radiografía llega por fetch
      partidos con valor") que ya no corresponde a 55 partidos. Ahora se
      calcula de los partidos cargados: verdes = semáforo Verde según
      semaforoDe (campo semaforo de ev.json, o EV >= +5% si falta), por
-     configuración. Si la carga falla, queda el texto de "cargando". */
+     configuración. Si la carga falla, queda el texto de "cargando". Arreglo 2 (orden del jefe, buzón 26 nov 06:00): "con valor" = EV > 0; el panel cuenta conValor y los verdes (EV >= +5%) quedan como cifra aparte. */
   function actualizarSemaforo(partidos){
     var b = document.getElementById("semaEstado");
     var p = document.getElementById("semaDetalle");
     if (!b || !p || !Array.isArray(partidos) || partidos.length === 0) return;
-    var total = 0, verdes = 0, totMW = 0, verMW = 0, totFS = 0, verFS = 0;
+    var total = 0, verdes = 0, conValor = 0, totMW = 0, verMW = 0, totFS = 0, verFS = 0;
     partidos.forEach(function(m){
       var sem = semaforoDe(m);
       var esVerde = !!(sem && sem.color === "Verde");
       total++;
-      if (esVerde) verdes++;
+      if (esVerde) verdes++; if (sem && sem.ev > 0) conValor++;
       if (m._cfg === "mw"){ totMW++; if (esVerde) verMW++; }
       else if (m._cfg === "fs"){ totFS++; if (esVerde) verFS++; }
     });
-    b.textContent = "Estado: " + verdes + " de " + total + " partidos con valor (EV+)";
-    p.textContent = "Semáforo encendido con momios DraftKings (ESPN). Cada tarjeta muestra su mejor pick y su EV; el botón «Solo con valor (EV+)» ya filtra las " + verdes + " tarjetas verdes (" + verMW + " de " + totMW + " entre semana y " + verFS + " de " + totFS + " el fin de semana). Hamburg–Bayern usa momios Bet365 porque DraftKings no publicó ese partido en ESPN.";
+    b.textContent = "Estado: " + conValor + " de " + total + " partidos con valor (EV+) · " + verdes + " verdes";
+    p.textContent = "Semáforo encendido con momios DraftKings (ESPN). Cada tarjeta muestra su mejor pick y su EV; el botón «Solo con valor (EV+)» ya filtra las " + conValor + " tarjetas con valor (de ellas, " + verdes + " verdes: " + verMW + " de " + totMW + " entre semana y " + verFS + " de " + totFS + " el fin de semana). Hamburg–Bayern usa momios Bet365 porque DraftKings no publicó ese partido en ESPN.";
   }
 
   /* ---------- Actualizado hace X (defectos visibles, orden del jefe) ----------
