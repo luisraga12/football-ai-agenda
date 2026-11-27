@@ -275,15 +275,15 @@
    "hora": "11:30",
    "liga": "LaLiga",
    "estado": "con_momio",
-   "linea_total": 3.5,
+   "linea_total": 2.5,
    "linea_referencia": false,
    "local": {
     "n": 5,
     "g": 1,
     "e": 2,
     "p": 2,
-    "mas": 0,
-    "menos": 5,
+    "mas": 1,
+    "menos": 4,
     "empuje": 0,
     "btts_si": 0,
     "btts_no": 5,
@@ -291,15 +291,15 @@
     "cubre": 4,
     "no_cubre": 1,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
    "visita": {
     "n": 5,
     "g": 4,
     "e": 0,
     "p": 1,
-    "mas": 0,
-    "menos": 5,
+    "mas": 2,
+    "menos": 3,
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 3,
@@ -307,9 +307,9 @@
     "cubre": 1,
     "no_cubre": 4,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Elche 1G-2E-2P · Más 3.5 0/5 · Menos 3.5 5/5 · BTTS 0/5 · Cubre +1.5 4/5 — Atlético Madrid 4G-0E-1P · Más 3.5 0/5 · Menos 3.5 5/5 · BTTS 2/5 · Cubre -1.5 1/5"
+   "linea_tarjeta": "Tendencias: Elche 1G-2E-2P · Más 2.5 1/5 · Menos 2.5 4/5 · BTTS 0/5 · Cubre +1.5 4/5 — Atlético Madrid 4G-0E-1P · Más 2.5 2/5 · Menos 2.5 3/5 · BTTS 2/5 · Cubre -1.5 1/5"
   },
   {
    "slug": "vfb-stuttgart-vs-eintracht-frankfurt",
@@ -714,8 +714,8 @@
    "fecha": "2026-11-28",
    "hora": "19:00",
    "liga": "Liga MX",
-   "estado": "pendiente",
-   "linea_total": 2.5,
+   "estado": "con_momio",
+   "linea_total": 3.5,
    "linea_referencia": false,
    "local": {
     "n": 5,
@@ -727,11 +727,11 @@
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 2,
-    "spread_linea": null,
-    "cubre": 0,
-    "no_cubre": 0,
+    "spread_linea": 0.5,
+    "cubre": 3,
+    "no_cubre": 2,
     "empuje_spread": 0,
-    "linea_total": 2.5
+    "linea_total": 3.5
    },
    "visita": {
     "n": 5,
@@ -743,13 +743,13 @@
     "empuje": 0,
     "btts_si": 4,
     "btts_no": 1,
-    "spread_linea": null,
-    "cubre": 0,
-    "no_cubre": 0,
+    "spread_linea": -0.5,
+    "cubre": 1,
+    "no_cubre": 4,
     "empuje_spread": 0,
-    "linea_total": 2.5
+    "linea_total": 3.5
    },
-   "linea_tarjeta": "Tendencias: Atlas 3G-0E-2P · Más 2.5 3/5 · Menos 2.5 2/5 · BTTS 3/5 — Toluca 1G-4E-0P · Más 2.5 3/5 · Menos 2.5 2/5 · BTTS 4/5"
+   "linea_tarjeta": "Tendencias: Atlas 3G-0E-2P · Más 3.5 3/5 · Menos 3.5 2/5 · BTTS 3/5 · Cubre +0.5 3/5 — Toluca 1G-4E-0P · Más 3.5 3/5 · Menos 3.5 2/5 · BTTS 4/5 · Cubre -0.5 1/5"
   },
   {
    "slug": "america-vs-monterrey",
