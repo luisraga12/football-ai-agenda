@@ -1976,7 +1976,8 @@ function renderDetalle(m, estDocs){
   }
 
   function main(){
-    if (!slug){
+    if (document.title.indexOf("Preview P1-3") === 0 && !slug) slug = "besiktas-vs-hapoel-be-er";
+  if (!slug){
       errorPage("Falta el partido: abre el detalle desde una tarjeta de la agenda (partido.html?partido=local-vs-visita).");
       return;
     }
