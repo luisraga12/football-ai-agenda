@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preview — Rediseño gamer + FIFA · Football AI Agenda</title>
+<meta name="description" content="Preview visual del rediseño oscuro neón + cartas estilo FIFA. Solo estilos: no cambia index.html ni partido.html ni la lógica de la página.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Archivo:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07090d; --bg2:#0a0e15; --panel:#0e151f; --panel2:#111b28; --panel3:#0b111a;
+  --line:#1f2c3d; --line2:#2a3b4f;
+  --txt:#eef5ea; --mut:#a7b6c2; --mut2:#7e8f9d;
+  --lime:#b6ff2e; --cyan:#2adcf5; --green:#2ee66b; --yel:#ffd60a; --grey:#8a97a3;
+  --red:#ff4655; --redsoft:#ff6b78; --neg:#ff7a7a;
+  --radius:16px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--txt);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.5;
+  background-image:radial-gradient(900px 420px at 85% -10%,rgba(42,220,245,.12),transparent 60%),radial-gradient(800px 380px at -10% 0%,rgba(182,255,46,.09),transparent 55%),radial-gradient(700px 500px at 50% 110%,rgba(46,230,107,.06),transparent 60%);}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:44px 44px;mask-image:radial-gradient(ellipse at 50% 0%,#000 0%,transparent 75%)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px;position:relative;z-index:1}
+a{color:var(--cyan)}
+h1,h2,h3,.display{font-family:"Chakra Petch","Archivo",system-ui,sans-serif;text-transform:uppercase;letter-spacing:.02em;line-height:1.05}
+.eyebrow{font-family:"Chakra Petch",monospace;font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--lime)}
+.mut{color:var(--mut)} .small{font-size:13px} .tiny{font-size:12px}
+/* ---------- Topbar + héroe ---------- */
+.topbar{position:sticky;top:0;z-index:20;background:rgba(7,9,13,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;gap:14px;padding-top:10px;padding-bottom:10px;flex-wrap:wrap}
+.logo{font-family:"Chakra Petch",sans-serif;font-weight:700;font-size:19px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+.logo b{color:var(--lime)} .logo span{color:var(--cyan)}
+.badge{display:inline-flex;align-items:center;gap:7px;font-family:"Chakra Petch",sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 10px;border-radius:999px;border:1px solid var(--line2);color:var(--txt);background:var(--panel)}
+.badge.lime{border-color:rgba(182,255,46,.55);color:#0b0f06;background:var(--lime)}
+.badge.live{border-color:rgba(255,70,85,.6);color:#fff;background:rgba(255,70,85,.16)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,70,85,.7);animation:pulse 1.6s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,70,85,.65)}70%{box-shadow:0 0 0 9px rgba(255,70,85,0)}100%{box-shadow:0 0 0 0 rgba(255,70,85,0)}}
+.hero{padding:44px 0 8px}
+.hero h1{font-family:"Archivo",sans-serif;font-weight:900;font-size:clamp(38px,7.2vw,72px);margin:10px 0 12px}
+.hero h1 .neon{color:var(--lime);text-shadow:0 0 22px rgba(182,255,46,.45)}
+.hero h1 .cyan{color:var(--cyan);text-shadow:0 0 22px rgba(42,220,245,.4)}
+.hero p.lead{font-size:18px;color:var(--mut);max-width:760px;margin:0 0 18px}
+.hero p.lead b{color:var(--txt)}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0 22px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 14px;min-width:118px}
+.stat b{display:block;font-family:"Chakra Petch",sans-serif;font-size:24px;line-height:1;color:var(--txt)}
+.stat span{font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:.08em}
+.stat b.lime{color:var(--lime)} .stat b.red{color:var(--redsoft)}
+.ticker{display:flex;align-items:center;gap:10px;background:linear-gradient(90deg,rgba(255,70,85,.18),rgba(255,70,85,.05));border:1px solid rgba(255,70,85,.45);border-radius:12px;padding:10px 14px;font-weight:600}
+.ticker .min{font-family:"Chakra Petch",sans-serif;color:var(--redsoft)}
+/* ---------- Filtros ---------- */
+.filters{margin:26px 0 6px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:14px}
+.filters h2{font-size:13px;letter-spacing:.18em;color:var(--mut);margin:0 0 10px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font-family:"Chakra Petch",sans-serif;font-weight:600;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--txt);background:var(--panel2);border:1px solid var(--line2);border-radius:999px;padding:8px 14px;cursor:pointer}
+.chip:hover{border-color:var(--cyan)}
+.chip.on{background:var(--lime);border-color:var(--lime);color:#0b0f06}
+.chip.on2{background:var(--cyan);border-color:var(--cyan);color:#04141a}
+.chip .n{opacity:.75;font-size:11px;margin-left:4px}
+/* ---------- Paneles ---------- */
+.panel{background:linear-gradient(180deg,var(--panel2),var(--panel3));border:1px solid var(--line);border-radius:var(--radius);padding:18px;margin:18px 0}
+.panel h2{font-size:17px;margin:0 0 4px}
+.panel h2 .tag{float:right}
+.panel>.sub{color:var(--mut);font-size:14px;margin:0 0 14px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.kv{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.kv:last-child{border-bottom:0}
+.kv b{font-family:"Chakra Petch",sans-serif}
+.ev-pos{color:var(--lime);font-weight:700} .ev-neg{color:var(--neg)}
+.tag{display:inline-block;font-family:"Chakra Petch",sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:6px}
+.tag.green{background:rgba(46,230,107,.16);color:var(--green);border:1px solid rgba(46,230,107,.5)}
+.tag.yellow{background:rgba(255,214,10,.13);color:var(--yel);border:1px solid rgba(255,214,10,.5)}
+.tag.grey{background:rgba(138,151,163,.14);color:#c3ccd4;border:1px solid rgba(138,151,163,.5)}
+.tag.red{background:rgba(255,70,85,.16);color:var(--redsoft);border:1px solid rgba(255,70,85,.5)}
+.tag.cyan{background:rgba(42,220,245,.13);color:var(--cyan);border:1px solid rgba(42,220,245,.5)}
+/* ---------- Tarjetas FIFA ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;margin:8px 0 4px}
+.card{position:relative;background:linear-gradient(150deg,#131e2c 0%,#0c121c 55%,#0a0f16 100%);border:1px solid var(--line2);border-radius:18px 18px 18px 4px;padding:0;overflow:hidden;clip-path:polygon(0 0,calc(100% - 26px) 0,100% 26px,100% 100%,0 100%);transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-3px)}
+.card.val-alta{border-color:rgba(46,230,107,.65);box-shadow:0 0 0 1px rgba(46,230,107,.25),0 10px 34px rgba(46,230,107,.12)}
+.card.val-media{border-color:rgba(255,214,10,.6);box-shadow:0 0 0 1px rgba(255,214,10,.2),0 10px 30px rgba(255,214,10,.09)}
+.card.val-baja{border-color:rgba(138,151,163,.55);box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.card.live{border-color:rgba(255,70,85,.7);box-shadow:0 0 0 1px rgba(255,70,85,.3),0 10px 34px rgba(255,70,85,.14)}
+.card.fin{opacity:.92}
+.card-head{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:12px 14px 0;font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:.1em;font-weight:700}
+.card-body{display:flex;gap:14px;padding:12px 14px 4px}
+.rating{flex:0 0 78px;text-align:center;background:rgba(0,0,0,.35);border:1px solid var(--line2);border-radius:12px;padding:10px 6px;align-self:flex-start}
+.rating .num{font-family:"Archivo",sans-serif;font-weight:900;font-size:40px;line-height:.95}
+.rating .lbl{font-family:"Chakra Petch",sans-serif;font-size:10px;font-weight:700;letter-spacing:.16em;color:var(--mut);text-transform:uppercase}
+.rating .pos{font-family:"Chakra Petch",sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;margin-top:4px;color:var(--txt)}
+.val-alta .rating .num{color:var(--green);text-shadow:0 0 16px rgba(46,230,107,.5)}
+.val-media .rating .num{color:var(--yel);text-shadow:0 0 16px rgba(255,214,10,.45)}
+.val-baja .rating .num{color:#c3ccd4}
+.live .rating .num{color:var(--redsoft)}
+.teams{flex:1;min-width:0}
+.team{display:flex;align-items:center;gap:10px;padding:5px 0}
+.crest{flex:0 0 40px;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Chakra Petch",sans-serif;font-weight:700;font-size:13px;color:#08110a;background:linear-gradient(135deg,var(--lime),var(--cyan));border:2px solid rgba(255,255,255,.25)}
+.crest.away{background:linear-gradient(135deg,#7dd3fc,#a5b4fc);color:#0a1020}
+.crest.grey{background:linear-gradient(135deg,#9aa7b4,#6b7a88);color:#0c1116}
+.team .nm{font-family:"Chakra Petch",sans-serif;font-weight:700;font-size:19px;text-transform:uppercase;line-height:1.05;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.team .sc{margin-left:auto;font-family:"Archivo",sans-serif;font-weight:900;font-size:26px}
+.vs{text-align:center;color:var(--mut2);font-family:"Chakra Petch",sans-serif;font-size:12px;letter-spacing:.3em;padding:2px 0}
+.card-note{padding:0 14px 10px;font-size:13px;color:var(--mut)}
+.probs{padding:10px 14px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.prob b{display:block;font-family:"Chakra Petch",sans-serif;font-size:17px}
+.prob span{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.08em}
+.bar{height:6px;background:#1a2635;border-radius:99px;margin-top:6px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--lime));border-radius:99px}
+.bar.red i{background:linear-gradient(90deg,#ff7a45,var(--red))}
+.odds{padding:0 14px 12px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.odd{background:rgba(0,0,0,.3);border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:13px}
+.odd .o1{display:flex;justify-content:space-between;color:var(--mut)}
+.odd .o2{display:flex;justify-content:space-between;font-family:"Chakra Petch",sans-serif;font-weight:700;font-size:15px;margin-top:2px}
+.card-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:12px 14px;border-top:1px solid var(--line);background:rgba(0,0,0,.28)}
+.btn{display:inline-block;font-family:"Chakra Petch",sans-serif;font-weight:700;font-size:13px;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;color:#0b0f06;background:var(--lime);border-radius:9px;padding:9px 14px}
+.btn.ghost{background:transparent;color:var(--cyan);border:1px solid rgba(42,220,245,.5)}
+.btn.grey{background:transparent;color:#c3ccd4;border:1px solid var(--line2)}
+/* ---------- BSD / barras de comparación ---------- */
+.bsd{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.bsd-box{background:rgba(0,0,0,.28);border:1px solid var(--line);border-radius:12px;padding:12px}
+.bsd-box h3{font-size:12px;letter-spacing:.16em;color:var(--mut);margin:0 0 8px}
+.cmp{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center;margin:10px 0}
+.cmp .side{font-size:13px}.cmp .side.r{text-align:right}
+.cmp .val{font-family:"Chakra Petch",sans-serif;font-weight:700;font-size:17px}
+.cmpbar{height:8px;border-radius:99px;background:#1a2635;display:flex;overflow:hidden}
+.cmpbar i{display:block;height:100%}
+.cmpbar .a{background:var(--cyan)} .cmpbar .b{background:var(--lime)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{font-family:"Chakra Petch",sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);text-align:left;padding:8px 6px;border-bottom:1px solid var(--line2)}
+td{padding:8px 6px;border-bottom:1px solid var(--line)}
+tr.hl td{background:rgba(182,255,46,.07);font-weight:700}
+.xi{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.xi h3{font-size:13px;letter-spacing:.14em;margin:0 0 8px}
+.xi ul{list-style:none;margin:0;padding:0;font-size:14px}
+.xi li{display:flex;justify-content:space-between;gap:8px;padding:6px 0;border-bottom:1px dashed var(--line)}
+.xi li:last-child{border-bottom:0}
+.xi .pos{color:var(--cyan);font-family:"Chakra Petch",sans-serif;font-size:11px;font-weight:700;width:34px}
+.xi .fuerza{color:var(--mut);font-size:12px}
+.hist-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.hist-row:last-child{border-bottom:0}
+.note{border:1px dashed var(--line2);border-radius:12px;padding:12px 14px;font-size:13px;color:var(--mut);background:rgba(42,220,245,.04)}
+.note b{color:var(--cyan)}
+footer{padding:34px 0 46px;color:var(--mut);font-size:13px}
+footer b{color:var(--txt)}
+.section-title{margin:30px 0 4px}
+.section-title h2{font-size:24px;margin:0}
+.section-title p{color:var(--mut);margin:6px 0 0;max-width:760px}
+@media (max-width:720px){
+  body{font-size:15px}
+  .hero{padding-top:30px}
+  .grid2,.xi{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr}
+  .team .nm{font-size:17px}
+  .rating{flex-basis:66px}.rating .num{font-size:32px}
+  .stat{min-width:calc(50% - 5px)}
+  .topbar .wrap{gap:8px}
+  .odds{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){.dot{animation:none}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="wrap">
+  <div class="logo">⚽ Football <b>AI</b> <span>Agenda</span></div>
+  <span class="badge lime">Preview · Rediseño gamer + FIFA</span>
+  <span class="badge">Solo visual — index.html y partido.html no cambian</span>
+  <span style="margin-left:auto"></span>
+  <span class="badge live"><span class="dot"></span> En vivo · 1</span>
+</div></header>
+<main class="wrap">
+<section class="hero">
+  <p class="eyebrow">Preview P2 · Novena ronda · Empleado 2 · 26 nov 2026</p>
+  <h1>Agenda <span class="neon">gamer</span><br><span class="cyan">cartas FIFA</span></h1>
+  <p class="lead">Página oscura neón de base — fondo casi negro, <b>verde lima</b> y <b>cian</b> como acentos, indicadores en vivo con brillo y pulso, tipografía gruesa en mayúsculas estilo videojuego — y tarjetas de partido con la forma y jerarquía de una <b>carta FIFA</b>: el valor manda, el equipo en grande y la cuota bien visible.</p>
+  <div class="stats">
+    <div class="stat"><b>46</b><span>Partidos</span></div>
+    <div class="stat"><b class="red">1</b><span>En vivo</span></div>
+    <div class="stat"><b>23</b><span>Próximos</span></div>
+    <div class="stat"><b>22</b><span>Terminados</span></div>
+    <div class="stat"><b class="lime">+94.2%</b><span>Mejor EV · Chelsea visita</span></div>
+  </div>
+  <div class="ticker"><span class="dot"></span><span>EN VIVO · Liga MX — Pachuca 2–1 Guadalajara</span><span class="min">90'+2'</span><span class="mut small">En el descuento · sin picks pre-partido</span></div>
+</section>
+
+<section class="filters" aria-label="Filtros">
+  <h2>Filtros · Estado y liga</h2>
+  <div class="chips">
+    <span class="chip on">Todos <span class="n">46</span></span>
+    <span class="chip on2">● En vivo <span class="n">1</span></span>
+    <span class="chip">Próximos <span class="n">23</span></span>
+    <span class="chip">Terminados <span class="n">22</span></span>
+    <span class="chip">Liga MX</span><span class="chip">Premier League</span><span class="chip">LaLiga</span><span class="chip">Serie A</span><span class="chip">Bundesliga</span><span class="chip">UCL</span>
+  </div>
+  <p class="small mut" style="margin:10px 0 0">Mostrar: <b style="color:var(--txt)">Próximos y en vivo</b> · Los datos, los filtros, el parlay, la calculadora de EV, los bloques BSD, lo en vivo y el Historial funcionan igual: aquí solo cambia el estilo.</p>
+</section>
+
+<section class="panel">
+  <h2>Constructor de parlay <span class="tag green">Ejemplo con datos reales</span></h2>
+  <p class="sub">Dos selecciones del mismo partido (Nottingham Forest vs Chelsea) para mostrar el panel con el nuevo estilo.</p>
+  <div class="grid2">
+    <div>
+      <div class="kv"><span>🏴󐁧󐁢󐁥󐁮󐁧󐁿 Chelsea — gana (visita)</span><b>2.85 · <span class="ev-pos">EV +94.2%</span></b></div>
+      <div class="kv"><span>Ambos marcan — No</span><b>2.21 · <span class="ev-pos">EV +15.6%</span></b></div>
+      <div class="kv"><span>Selecciones</span><b>2</b></div>
+      <div class="kv"><span>Cuota combinada</span><b style="color:var(--lime)">6.30</b></div>
+    </div>
+    <div>
+      <h3 style="font-size:13px;letter-spacing:.14em;margin:0 0 8px">Calculadora de EV · ejemplo</h3>
+      <div class="kv"><span>Probabilidad del modelo (Chelsea)</span><b>68.1%</b></div>
+      <div class="kv"><span>Momio (DraftKings)</span><b>2.85</b></div>
+      <div class="kv"><span>EV = 0.681 × 2.85 − 1</span><b class="ev-pos">+94.2%</b></div>
+      <p class="tiny mut" style="margin:8px 0 0">EV positivo = el momio paga más de lo que el modelo estima. El semáforo de la carta usa este valor: verde alto, amarillo medio, gris bajo.</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-title"><h2>Tarjetas · estilo carta FIFA</h2>
+<p>El número grande es el EV del mejor pick de la tarjeta, como la media de una carta FIFA. Borde neón según el valor: <b style="color:var(--green)">verde = alto</b>, <b style="color:var(--yel)">amarillo = medio</b>, <b style="color:#c3ccd4">gris = bajo / sin valor</b>. En vivo lleva pulso rojo.</p></div>
+
+<section class="cards" aria-label="Tarjetas de partido">
+<!-- EN VIVO -->
+<article class="card live">
+  <div class="card-head"><span>Liga MX · jue 26 · 19:00</span><span class="tag red">● En vivo · 90'+2'</span></div>
+  <div class="card-body">
+    <div class="rating"><div class="num">+27</div><div class="lbl">EV %</div><div class="pos">MENOS 2.5</div></div>
+    <div class="teams">
+      <div class="team"><span class="crest">PAC</span><span class="nm">Pachuca</span><span class="sc">2</span></div>
+      <div class="team"><span class="crest away">GDL</span><span class="nm">Guadalajara</span><span class="sc">1</span></div>
+    </div>
+  </div>
+  <p class="card-note">En vivo en el descuento: sin picks pre-partido. Menos 2.5 goles, EV <b class="ev-pos">+27%</b> (modelo 70.6%) — DraftKings.</p>
+  <div class="probs">
+    <div class="prob"><b>39.1%</b><span>Local</span><div class="bar"><i style="width:39%"></i></div></div>
+    <div class="prob"><b>31.7%</b><span>Empate</span><div class="bar"><i style="width:32%"></i></div></div>
+    <div class="prob"><b>29.2%</b><span>Visita</span><div class="bar"><i style="width:29%"></i></div></div>
+  </div>
+  <div class="odds">
+    <div class="odd"><div class="o1"><span>+2.5 goles</span><span>29.4%</span></div><div class="o2"><span>BTTS</span><span>37.0%</span></div></div>
+    <div class="odd"><div class="o1"><span>Menos 2.5</span><span>EV</span></div><div class="o2"><span>Modelo 70.6%</span><span class="ev-pos">+27%</span></div></div>
+  </div>
+  <div class="card-foot"><span class="tag red">● En vivo</span><a class="btn ghost" href="#ficha">Ver detalle →</a></div>
+</article>
+<!-- TERMINADA -->
+<article class="card fin val-baja">
+  <div class="card-head"><span>UCL · mar 24 · 14:00</span><span class="tag grey">Final</span></div>
+  <div class="card-body">
+    <div class="rating"><div class="num">—</div><div class="lbl">Sin EV</div><div class="pos">FINAL</div></div>
+    <div class="teams">
+      <div class="team"><span class="crest">RMA</span><span class="nm">Real Madrid</span><span class="sc">5</span></div>
+      <div class="team"><span class="crest away">PSV</span><span class="nm">PSV Eindhoven</span><span class="sc">1</span></div>
+    </div>
+  </div>
+  <p class="card-note">Partido terminado. Sin momios publicados: no hay EV ni pick en esta tarjeta.</p>
+  <div class="probs">
+    <div class="prob"><b>65.2%</b><span>Local</span><div class="bar"><i style="width:65%"></i></div></div>
+    <div class="prob"><b>22.8%</b><span>Empate</span><div class="bar"><i style="width:23%"></i></div></div>
+    <div class="prob"><b>12.0%</b><span>Visita</span><div class="bar"><i style="width:12%"></i></div></div>
+  </div>
+  <div class="odds">
+    <div class="odd"><div class="o1"><span>+2.5 goles</span><span>40.5%</span></div><div class="o2"><span>BTTS</span><span>36.2%</span></div></div>
+    <div class="odd"><div class="o1"><span>Momios</span><span>—</span></div><div class="o2"><span>Sin EV</span><span class="mut">Sin pick</span></div></div>
+  </div>
+  <div class="card-foot"><span class="tag grey">Terminada</span><a class="btn grey" href="#historial">Ver en Historial →</a></div>
+</article>
+<!-- PRÓXIMA · VALOR ALTO -->
+<article class="card val-alta">
+  <div class="card-head"><span>Premier League · vie 27 · 14:00</span><span class="tag green">Valor alto</span></div>
+  <div class="card-body">
+    <div class="rating"><div class="num">94</div><div class="lbl">EV %</div><div class="pos">VISITA</div></div>
+    <div class="teams">
+      <div class="team"><span class="crest grey">NFO</span><span class="nm">Nottm Forest</span></div>
+      <div class="vs">VS</div>
+      <div class="team"><span class="crest">CHE</span><span class="nm">Chelsea</span></div>
+    </div>
+  </div>
+  <p class="card-note">El modelo da a Chelsea <b>68.1%</b> de ganar. Momio <b>2.85</b> (DraftKings) → EV <b class="ev-pos">+94.2%</b>, el mejor de la agenda.</p>
+  <div class="probs">
+    <div class="prob"><b>12.7%</b><span>Local</span><div class="bar"><i style="width:13%"></i></div></div>
+    <div class="prob"><b>19.2%</b><span>Empate</span><div class="bar"><i style="width:19%"></i></div></div>
+    <div class="prob"><b>68.1%</b><span>Visita</span><div class="bar"><i style="width:68%"></i></div></div>
+  </div>
+  <div class="odds">
+    <div class="odd"><div class="o1"><span>Visita · 2.85</span><span>EV</span></div><div class="o2"><span>Chelsea gana</span><span class="ev-pos">+94.2%</span></div></div>
+    <div class="odd"><div class="o1"><span>AH Visita +0.5 · 1.54</span><span>EV</span></div><div class="o2"><span>BTTS No · 2.21</span><span class="ev-pos">+15.6%</span></div></div>
+  </div>
+  <div class="card-foot"><span class="tag green">▲ EV +94.2%</span><a class="btn" href="#ficha">Ver detalle →</a></div>
+</article>
+<!-- PRÓXIMA · VALOR MEDIO -->
+<article class="card val-media">
+  <div class="card-head"><span>Liga MX · jue 26 · 21:10</span><span class="tag yellow">Valor medio</span></div>
+  <div class="card-body">
+    <div class="rating"><div class="num">+9</div><div class="lbl">EV %</div><div class="pos">MENOS 2.5</div></div>
+    <div class="teams">
+      <div class="team"><span class="crest">LEO</span><span class="nm">León</span></div>
+      <div class="vs">VS</div>
+      <div class="team"><span class="crest away">CAZ</span><span class="nm">Cruz Azul</span></div>
+    </div>
+  </div>
+  <p class="card-note">Partido cerrado según el modelo. Mejor valor: <b>Menos 2.5 goles</b>, momio 2.05 → EV <b style="color:var(--yel)">+9.3%</b>.</p>
+  <div class="probs">
+    <div class="prob"><b>—</b><span>Local</span><div class="bar"><i style="width:33%"></i></div></div>
+    <div class="prob"><b>—</b><span>Empate</span><div class="bar"><i style="width:33%"></i></div></div>
+    <div class="prob"><b>—</b><span>Visita</span><div class="bar"><i style="width:34%"></i></div></div>
+  </div>
+  <div class="odds">
+    <div class="odd"><div class="o1"><span>Local · 3.20</span><span>EV</span></div><div class="o2"><span>León gana</span><span class="ev-pos">+8.2%</span></div></div>
+    <div class="odd"><div class="o1"><span>BTTS No · 2.27</span><span>EV</span></div><div class="o2"><span>Menos 2.5 · 2.05</span><span style="color:var(--yel)">+9.3%</span></div></div>
+  </div>
+  <div class="card-foot"><span class="tag yellow">◆ EV +9.3%</span><a class="btn ghost" href="#ficha">Ver detalle →</a></div>
+</article>
+<!-- PRÓXIMA · VALOR BAJO -->
+<article class="card val-baja">
+  <div class="card-head"><span>Liga MX · vie 27 · 19:00</span><span class="tag grey">Sin valor aún</span></div>
+  <div class="card-body">
+    <div class="rating"><div class="num">—</div><div class="lbl">Sin EV</div><div class="pos">PRÓXIMO</div></div>
+    <div class="teams">
+      <div class="team"><span class="crest grey">ATL</span><span class="nm">Atlas</span></div>
+      <div class="vs">VS</div>
+      <div class="team"><span class="crest away grey">TOL</span><span class="nm">Toluca</span></div>
+    </div>
+  </div>
+  <p class="card-note">Momios pendientes de publicar. Cuando lleguen, la carta toma su color según el EV: verde, amarillo o gris.</p>
+  <div class="probs">
+    <div class="prob"><b>—</b><span>Local</span><div class="bar"><i style="width:0%"></i></div></div>
+    <div class="prob"><b>—</b><span>Empate</span><div class="bar"><i style="width:0%"></i></div></div>
+    <div class="prob"><b>—</b><span>Visita</span><div class="bar"><i style="width:0%"></i></div></div>
+  </div>
+  <div class="odds">
+    <div class="odd"><div class="o1"><span>Momios</span><span>—</span></div><div class="o2"><span>Pendientes</span><span class="mut">Sin EV</span></div></div>
+    <div class="odd"><div class="o1"><span>Modelo</span><span>—</span></div><div class="o2"><span>Por publicar</span><span class="mut">—</span></div></div>
+  </div>
+  <div class="card-foot"><span class="tag grey">Momios pendientes</span><a class="btn grey" href="#ficha">Ver detalle →</a></div>
+</article>
+</section>
+
+<section class="panel" id="bsd">
+  <h2>Bloques BSD · Forest vs Chelsea <span class="tag cyan">BTTS · AH · Córners</span></h2>
+  <p class="sub">Los bloques BSD mantienen sus tres mercados. El EV positivo brilla en lima; el negativo queda en texto suave para no saturar.</p>
+  <div class="bsd">
+    <div class="bsd-box"><h3>Ambos anotan (BTTS)</h3>
+      <div class="kv"><span>Sí · 1.61</span><b class="ev-neg">EV −23.0%</b></div>
+      <div class="kv"><span>No · 2.21</span><b class="ev-pos">EV +15.6%</b></div>
+      <div class="kv"><span>Modelo</span><b>Sí 47.8% · No 52.2%</b></div>
+    </div>
+    <div class="bsd-box"><h3>Hándicap asiático (AH)</h3>
+      <div class="kv"><span>Local −0.5 · 2.40</span><b class="ev-neg">EV −69.6%</b></div>
+      <div class="kv"><span>Visita +0.5 · 1.54</span><b class="ev-pos">EV +34.2%</b></div>
+      <div class="kv"><span>Modelo AH</span><b>Visita cubre el +0.5</b></div>
+    </div>
+    <div class="bsd-box"><h3>Córners · línea 9.5</h3>
+      <div class="kv"><span>Más 9.5 · 1.67</span><b class="mut">Sin EV</b></div>
+      <div class="kv"><span>Menos 9.5 · 2.10</span><b class="mut">Sin EV</b></div>
+      <div class="kv"><span>Estado</span><b>Momios sin EV calculado</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="historial">
+  <h2>Historial <span class="tag grey">22 cerrados</span></h2>
+  <p class="sub">Los picks cerrados quedan en un bloque oscuro con el resultado en grande y el EV realizado en lima. Ejemplo con el partido terminado de la agenda.</p>
+  <div class="hist-row">
+    <div><b>Real Madrid 5–1 PSV Eindhoven</b><br><span class="mut small">UCL · mar 24 · 14:00 · Final</span></div>
+    <div style="text-align:right"><span class="tag grey">Sin pick</span><br><span class="mut small">Sin momios: no hay EV ni pick</span></div>
+  </div>
+  <div class="hist-row">
+    <div><b>Pachuca 2–1 Guadalajara</b><br><span class="mut small">Liga MX · jue 26 · 19:00 · En vivo 90'+2'</span></div>
+    <div style="text-align:right"><span class="tag red">● En vivo</span><br><span class="mut small">Menos 2.5 · EV +27% (modelo 70.6%)</span></div>
+  </div>
+  <p style="margin:14px 0 0"><a class="btn ghost" href="#">Ver más (22) →</a></p>
+</section>
+
+<div class="section-title" id="ficha"><h2>Ficha de detalle · estilo gamer</h2>
+<p>La ficha de <b>Nottingham Forest vs Chelsea</b> (Premier League, vie 27 · 14:00) con el nuevo estilo: héroe con el marcador y el semáforo de valor, estadio, momios, BSD, XI probable, últimos 5, H2H, así llegan y tabla. Datos reales tomados de la ficha actual.</p></div>
+
+<section class="panel">
+  <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:flex-start">
+    <div><p class="eyebrow">Premier League · Semana 2 · vie 27 · 14:00</p>
+    <h2 style="font-size:clamp(24px,4.5vw,34px);margin:6px 0">Nottingham Forest <span style="color:var(--cyan)">vs</span> Chelsea</h2>
+    <p class="mut" style="margin:0">🏟️ The City Ground · Nottingham, England</p></div>
+    <div style="text-align:right"><span class="tag green">Valor alto · EV +94.2%</span><br><span class="tiny mut">Mejor pick: Chelsea gana · 2.85</span></div>
+  </div>
+  <div class="probs" style="border:1px solid var(--line);border-radius:12px;margin-top:16px;background:rgba(0,0,0,.25)">
+    <div class="prob"><b>12.7%</b><span>Nottm Forest</span><div class="bar"><i style="width:13%"></i></div></div>
+    <div class="prob"><b>19.2%</b><span>Empate</span><div class="bar"><i style="width:19%"></i></div></div>
+    <div class="prob"><b>68.1%</b><span>Chelsea</span><div class="bar"><i style="width:68%"></i></div></div>
+  </div>
+  <div class="grid2" style="margin-top:14px">
+    <div>
+      <h3 style="font-size:13px;letter-spacing:.14em;margin:0 0 8px">Momios · DraftKings</h3>
+      <div class="kv"><span>Local · 2.50</span><b class="ev-neg">EV −68.3%</b></div>
+      <div class="kv"><span>Empate · 3.35</span><b class="ev-neg">EV −35.7%</b></div>
+      <div class="kv"><span>Visita · 2.85</span><b class="ev-pos">EV +94.2%</b></div>
+      <div class="kv"><span>Más 2.5 · 1.80</span><b class="ev-neg">EV −0.3%</b></div>
+      <div class="kv"><span>Menos 2.5 · 2.00</span><b class="ev-neg">EV −10.8%</b></div>
+      <div class="kv"><span>Doble oportunidad</span><b>DNB Local 15.7% · DNB Visita 84.3%</b></div>
+    </div>
+    <div>
+      <h3 style="font-size:13px;letter-spacing:.14em;margin:0 0 8px">Ambos anotan (BTTS)</h3>
+      <div class="cmp"><span class="side">Sí · 47.8%</span><span class="val">VS</span><span class="side r">No · 52.2%</span></div>
+      <div class="cmpbar"><i class="a" style="width:47.8%"></i><i class="b" style="width:52.2%"></i></div>
+      <div class="kv" style="margin-top:10px"><span>BTTS Sí · 1.61</span><b class="ev-neg">EV −23.0%</b></div>
+      <div class="kv"><span>BTTS No · 2.21</span><b class="ev-pos">EV +15.6%</b></div>
+      <h3 style="font-size:13px;letter-spacing:.14em;margin:16px 0 8px">Así llegan · goles por partido</h3>
+      <div class="cmp"><span class="side">Forest · 1.0</span><span class="val">⚽</span><span class="side r">Chelsea · 1.8</span></div>
+      <div class="cmpbar"><i class="a" style="width:36%"></i><i class="b" style="width:64%"></i></div>
+      <div class="cmp" style="margin-top:10px"><span class="side">Encajados · 1.6</span><span class="val">🛡️</span><span class="side r">Encajados · 0.8</span></div>
+      <div class="cmpbar"><i class="a" style="width:67%"></i><i class="b" style="width:33%"></i></div>
+      <p class="tiny mut" style="margin:10px 0 0">BTTS en 3/5 (Forest) y 1/5 (Chelsea) · Más 2.5 en 2/5 y 1/5 · Racha: Forest W·L·D·L·L · Chelsea L·W·L·W·W</p>
+    </div>
+  </div>
+  <h3 style="font-size:13px;letter-spacing:.14em;margin:20px 0 8px">XI probable <span class="tag grey">Alineación oficial por confirmar</span></h3>
+  <div class="xi">
+    <div><h3>🌳 Nottingham Forest · 3-4-3 <span class="fuerza">· Fuerza 100.0/100</span></h3>
+      <ul>
+        <li><span><span class="pos">POR</span> Sels</span><span class="fuerza">Titular</span></li>
+        <li><span><span class="pos">DEF</span> Murillo · Jair Cunha · Milenkovic</span><span class="fuerza">Línea de 3</span></li>
+        <li><span><span class="pos">MED</span> Neco Williams · McAtee · Daniel Muñoz · Schlager</span><span class="fuerza">Carrileros</span></li>
+        <li><span><span class="pos">DEL</span> Delap · Gibbs-White · Ndoye</span><span class="fuerza">Tridente</span></li>
+      </ul></div>
+    <div><h3>🔵 Chelsea · 4-5-1 <span class="fuerza">· Fuerza 100.0/100</span></h3>
+      <ul>
+        <li><span><span class="pos">POR</span> Penders</span><span class="fuerza">Titular</span></li>
+        <li><span><span class="pos">DEF</span> Colwill · Acheampong · Fofana · Lacroix</span><span class="fuerza">Línea de 4</span></li>
+        <li><span><span class="pos">MED</span> Palmer · Rogers · Caicedo · Lavia · Henderson</span><span class="fuerza">5 en medio</span></li>
+        <li><span><span class="pos">DEL</span> Pedro Neto</span><span class="fuerza">Punta</span></li>
+      </ul></div>
+  </div>
+  <h3 style="font-size:13px;letter-spacing:.14em;margin:20px 0 8px">Últimos 5 · H2H · Tabla</h3>
+  <div class="grid2">
+    <div>
+      <h3 style="font-size:12px;letter-spacing:.12em;color:var(--mut);margin:0 0 6px">Últimos 5 — Forest</h3>
+      <div class="kv"><span>D vs Bournemouth 0–2 (fuera)</span><b>21 nov</b></div>
+      <div class="kv"><span>V vs Man City 3–1 (casa)</span><b>7 nov</b></div>
+      <div class="kv"><span>D vs Brentford 0–2 (fuera)</span><b>31 oct</b></div>
+      <div class="kv"><span>E vs Ipswich 1–1 (fuera)</span><b>23 oct</b></div>
+      <div class="kv"><span>D vs Arsenal 0–1 (casa)</span><b>18 oct</b></div>
+      <h3 style="font-size:12px;letter-spacing:.12em;color:var(--mut);margin:16px 0 6px">Últimos 5 — Chelsea</h3>
+      <div class="kv"><span>D vs Leeds 1–4 (casa)</span><b>21 nov</b></div>
+      <div class="kv"><span>D vs Sunderland 0–1 (fuera)</span><b>8 nov</b></div>
+      <div class="kv"><span>V vs Man Utd 2–0 (casa)</span><b>31 oct</b></div>
+      <div class="kv"><span>D vs Liverpool 1–1 (pen.)</span><b>28 oct · Carabao</b></div>
+      <div class="kv"><span>D vs Tottenham 0–2 (casa)</span><b>24 oct</b></div>
+    </div>
+    <div>
+      <h3 style="font-size:12px;letter-spacing:.12em;color:var(--mut);margin:0 0 6px">Cara a cara · Chelsea lidera 3-1-1</h3>
+      <div class="kv"><span>Chelsea 1–3 Forest</span><b>4 may 2026</b></div>
+      <div class="kv"><span>Forest 0–3 Chelsea</span><b>18 oct 2025</b></div>
+      <div class="kv"><span>Forest 0–1 Chelsea</span><b>25 may 2025</b></div>
+      <div class="kv"><span>Chelsea 1–1 Forest</span><b>6 oct 2024</b></div>
+      <div class="kv"><span>Forest 2–3 Chelsea</span><b>11 may 2024</b></div>
+      <h3 style="font-size:12px;letter-spacing:.12em;color:var(--mut);margin:16px 0 6px">Tabla · Premier League</h3>
+      <table>
+        <tr><th>#</th><th>Equipo</th><th>PJ</th><th>G-E-P</th><th>DG</th><th>Pts</th></tr>
+        <tr class="hl"><td>8.º</td><td>Chelsea</td><td>11</td><td>5-1-5</td><td>0</td><td>16</td></tr>
+        <tr class="hl"><td>17.º</td><td>Nottm Forest</td><td>11</td><td>2-3-6</td><td>−6</td><td>9</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="note" style="margin-top:18px"><b>Estadísticas del partido:</b> en la ficha actual aparecen como pendientes (el JSON del Empleado 1 aún no se publica). En este preview el bloque “Así llegan” muestra la comparación del modelo con los datos disponibles.</div>
+  <p style="margin:16px 0 0"><a class="btn" href="#">＋ Sumar al parlay</a> <a class="btn ghost" href="#">Compartir ficha →</a></p>
+</section>
+
+<section class="panel">
+  <h2>Qué cambia y qué no cambia</h2>
+  <div class="grid2">
+    <div>
+      <h3 style="font-size:13px;letter-spacing:.14em;color:var(--lime);margin:0 0 8px">✓ Cambia (solo estilo)</h3>
+      <p class="small mut" style="margin:0">Fondo oscuro neón, tarjetas estilo carta FIFA con borde según el valor, héroe y paneles oscuros, filtros con chips neón, indicadores en vivo con pulso, tipografía gruesa en mayúsculas, barras y tablas oscuras de alto contraste.</p>
+    </div>
+    <div>
+      <h3 style="font-size:13px;letter-spacing:.14em;color:var(--cyan);margin:0 0 8px">＝ No cambia (lógica y datos)</h3>
+      <p class="small mut" style="margin:0">Cálculos, probabilidades, EV, momios, filtros, parlay builder, calculadora de EV, bloques BSD, lógica en vivo e Historial. <b style="color:var(--txt)">index.html y partido.html no se tocaron.</b> Este archivo es solo el preview, a revisión del jefe y aprobación de Luis antes de aplicarlo.</p>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap">
+  <p><b>Preview del rediseño visual gamer + fútbol — P2 de la novena ronda.</b><br>
+  Rama <b>empleado-2</b> · Archivo: <b>preview-rediseno-gamer.html</b> · Datos reales de la agenda del 26–29 nov 2026 (Pachuca–Guadalajara en vivo, Real Madrid–PSV terminado, Forest–Chelsea, León–Cruz Azul y Atlas–Toluca).<br>
+  Lo que no se pudo hacer solo con estilos: los <b>escudos reales</b> de los equipos — no hay imágenes de escudos en el repo, así que las cartas usan monogramas con las siglas (PAC, CHE, NFO…). Poner escudos reales requiere una fuente de imágenes o subir los archivos, no solo CSS. El resto del rediseño sí es solo estilo.</p>
+  <p style="margin-top:10px"><a class="btn ghost" href="#">↑ Volver arriba</a></p>
+</div></footer>
+</body>
+</html>
