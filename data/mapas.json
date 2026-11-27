@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado_en": "2026-11-27T00:54:56Z",
+  "generado_en": "2026-11-27T09:21:11Z",
   "semana": "2",
   "fuente": "config + ev.json + verified_events.json + teams_last5.json + schedule_*.json + DETAIL embebido en partido.html (preservado) + summary ESPN por evento (estadio + alineacion oficial + standings + h2h; tabla regular MX para Liguilla)",
   "partidos_vivo": {
@@ -4045,9 +4045,16 @@
         ]
       },
       "h2h": {
-        "resumen": "GDL lidera la serie 4-0-1",
+        "resumen": "GDL lidera la serie 3-1-1",
         "etiqueta": "Last 5 Matchups",
         "partidos": [
+          {
+            "fecha": "27 nov 2026",
+            "local": "Pachuca",
+            "visitante": "Guadalajara",
+            "goles_local": "2",
+            "goles_visitante": "1"
+          },
           {
             "fecha": "29 ago 2026",
             "local": "Pachuca",
@@ -4075,13 +4082,6 @@
             "visitante": "Pachuca",
             "goles_local": "2",
             "goles_visitante": "1"
-          },
-          {
-            "fecha": "19 oct 2024",
-            "local": "Pachuca",
-            "visitante": "Guadalajara",
-            "goles_local": "0",
-            "goles_visitante": "2"
           }
         ]
       },
@@ -4243,6 +4243,13 @@
         "etiqueta": "Last 5 Matchups",
         "partidos": [
           {
+            "fecha": "27 nov 2026",
+            "local": "León",
+            "visitante": "Cruz Azul",
+            "goles_local": "0",
+            "goles_visitante": "4"
+          },
+          {
             "fecha": "2 nov 2026",
             "local": "Cruz Azul",
             "visitante": "León",
@@ -4269,13 +4276,6 @@
             "visitante": "León",
             "goles_local": "2",
             "goles_visitante": "1"
-          },
-          {
-            "fecha": "9 may 2025",
-            "local": "León",
-            "visitante": "Cruz Azul",
-            "goles_local": "2",
-            "goles_visitante": "3"
           }
         ]
       },
@@ -8468,58 +8468,58 @@
           "local": [
             {
               "jugador": "Carlos Moreno",
-              "pos": "SUB",
+              "pos": "G",
               "dorsal": "25"
             },
             {
-              "jugador": "Salomón Rondón",
-              "pos": "SUB",
-              "dorsal": "23"
-            },
-            {
-              "jugador": "Christian Rivera",
-              "pos": "SUB",
-              "dorsal": "16"
-            },
-            {
-              "jugador": "Jorge Berlanga",
-              "pos": "SUB",
-              "dorsal": "13"
-            },
-            {
-              "jugador": "Javier Vallejo",
-              "pos": "SUB",
-              "dorsal": "21"
-            },
-            {
-              "jugador": "Alan Bautista",
-              "pos": "SUB",
-              "dorsal": "26"
-            },
-            {
               "jugador": "Sergio Barreto",
-              "pos": "SUB",
+              "pos": "CD-L",
               "dorsal": "2"
             },
             {
-              "jugador": "Oussama Idrissi",
-              "pos": "SUB",
-              "dorsal": "11"
-            },
-            {
-              "jugador": "Rodolfo Pizarro",
-              "pos": "SUB",
-              "dorsal": "7"
+              "jugador": "Eduardo Bauermann",
+              "pos": "CD-R",
+              "dorsal": "4"
             },
             {
               "jugador": "Francisco Venegas",
-              "pos": "SUB",
+              "pos": "LB",
               "dorsal": "15"
             },
             {
-              "jugador": "Eduardo Bauermann",
-              "pos": "SUB",
-              "dorsal": "4"
+              "jugador": "Jorge Berlanga",
+              "pos": "RB",
+              "dorsal": "13"
+            },
+            {
+              "jugador": "Rodolfo Pizarro",
+              "pos": "AM",
+              "dorsal": "7"
+            },
+            {
+              "jugador": "Alan Bautista",
+              "pos": "LM",
+              "dorsal": "26"
+            },
+            {
+              "jugador": "Christian Rivera",
+              "pos": "RM",
+              "dorsal": "16"
+            },
+            {
+              "jugador": "Salomón Rondón",
+              "pos": "F",
+              "dorsal": "23"
+            },
+            {
+              "jugador": "Oussama Idrissi",
+              "pos": "AM-L",
+              "dorsal": "11"
+            },
+            {
+              "jugador": "Javier Vallejo",
+              "pos": "AM-R",
+              "dorsal": "21"
             }
           ],
           "visita": [
@@ -8529,54 +8529,54 @@
               "dorsal": "1"
             },
             {
+              "jugador": "Diego Campillo",
+              "pos": "CD",
+              "dorsal": "3"
+            },
+            {
               "jugador": "José Castillo",
-              "pos": "D",
+              "pos": "CD-L",
               "dorsal": "2"
             },
             {
               "jugador": "Daniel Aguirre",
-              "pos": "D",
+              "pos": "CD-R",
               "dorsal": "23"
             },
             {
-              "jugador": "Diego Campillo",
-              "pos": "D",
-              "dorsal": "3"
-            },
-            {
-              "jugador": "Roberto Alvarado",
-              "pos": "M",
-              "dorsal": "25"
-            },
-            {
-              "jugador": "Efrain Álvarez",
-              "pos": "M",
-              "dorsal": "10"
-            },
-            {
               "jugador": "Omar Govea",
-              "pos": "M",
+              "pos": "CM-L",
               "dorsal": "6"
             },
             {
               "jugador": "Fernando Gonzalez",
-              "pos": "M",
+              "pos": "CM-R",
               "dorsal": "28"
             },
             {
               "jugador": "Bryan González",
-              "pos": "M",
+              "pos": "LM",
               "dorsal": "5"
             },
             {
               "jugador": "Richard Ledezma",
-              "pos": "M",
+              "pos": "RM",
               "dorsal": "37"
             },
             {
               "jugador": "Santiago Sandoval",
               "pos": "F",
               "dorsal": "30"
+            },
+            {
+              "jugador": "Efrain Álvarez",
+              "pos": "CF-L",
+              "dorsal": "10"
+            },
+            {
+              "jugador": "Roberto Alvarado",
+              "pos": "CF-R",
+              "dorsal": "25"
             }
           ]
         },
@@ -8769,12 +8769,124 @@
         }
       },
       "lineup": {
-        "alineacion_publicada": false,
+        "alineacion_publicada": true,
         "jugadores": {
-          "local": [],
-          "visita": []
+          "local": [
+            {
+              "jugador": "Oscar García",
+              "pos": "G",
+              "dorsal": "23"
+            },
+            {
+              "jugador": "Juan Guevara",
+              "pos": "CD-L",
+              "dorsal": "3"
+            },
+            {
+              "jugador": "Jhohan Romaña",
+              "pos": "CD-R",
+              "dorsal": "14"
+            },
+            {
+              "jugador": "Sebastian Vegas",
+              "pos": "LB",
+              "dorsal": "5"
+            },
+            {
+              "jugador": "Iván Moreno",
+              "pos": "RB",
+              "dorsal": "7"
+            },
+            {
+              "jugador": "Daniel Arcila",
+              "pos": "AM",
+              "dorsal": "13"
+            },
+            {
+              "jugador": "Rodrigo Echeverría",
+              "pos": "LM",
+              "dorsal": "20"
+            },
+            {
+              "jugador": "Luis Valadez",
+              "pos": "RM",
+              "dorsal": "35"
+            },
+            {
+              "jugador": "Diber Cambindo",
+              "pos": "F",
+              "dorsal": "27"
+            },
+            {
+              "jugador": "Ismael Díaz",
+              "pos": "AM-L",
+              "dorsal": "11"
+            },
+            {
+              "jugador": "Fernando Beltrán",
+              "pos": "AM-R",
+              "dorsal": "6"
+            }
+          ],
+          "visita": [
+            {
+              "jugador": "Andrés Gudiño",
+              "pos": "G",
+              "dorsal": "1"
+            },
+            {
+              "jugador": "Jesús Orozco",
+              "pos": "CD-L",
+              "dorsal": "5"
+            },
+            {
+              "jugador": "Willer Ditta",
+              "pos": "CD-R",
+              "dorsal": "4"
+            },
+            {
+              "jugador": "Omar Campos",
+              "pos": "LB",
+              "dorsal": "3"
+            },
+            {
+              "jugador": "Ángel Márquez",
+              "pos": "RB",
+              "dorsal": "16"
+            },
+            {
+              "jugador": "Carlos Rodríguez",
+              "pos": "AM",
+              "dorsal": "19"
+            },
+            {
+              "jugador": "Érik Lira",
+              "pos": "LM",
+              "dorsal": "6"
+            },
+            {
+              "jugador": "Gonzalo Piovi",
+              "pos": "RM",
+              "dorsal": "33"
+            },
+            {
+              "jugador": "Nicolás Ibáñez",
+              "pos": "F",
+              "dorsal": "7"
+            },
+            {
+              "jugador": "Agustín Palavecino",
+              "pos": "AM-L",
+              "dorsal": "8"
+            },
+            {
+              "jugador": "José Paradela",
+              "pos": "AM-R",
+              "dorsal": "20"
+            }
+          ]
         },
-        "jugadores_en_roster": 0
+        "jugadores_en_roster": 42
       },
       "estadio": {
         "nombre": "Estadio León",
@@ -13479,7 +13591,7 @@
     "detalle_generado": 27,
     "detalle_preservado_embebido": 28,
     "detalle_con_estadio": 55,
-    "detalle_con_alineacion_oficial": 34,
+    "detalle_con_alineacion_oficial": 35,
     "detalle_con_standings": 51,
     "detalle_con_h2h": 35,
     "avisos": [

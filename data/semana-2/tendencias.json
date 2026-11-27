@@ -1,7 +1,7 @@
 {
  "semana": 2,
  "ventana": "últimos 5 partidos de la competición",
- "fecha_calculo": "2026-11-26",
+ "fecha_calculo": "2026-11-27",
  "partidos": [
   {
    "slug": "werder-bremen-vs-borussia-monchengladbach",
@@ -802,7 +802,7 @@
    "fecha": "2026-11-29",
    "hora": "19:07",
    "liga": "Liga MX",
-   "estado": "pendiente",
+   "estado": "con_momio",
    "linea_total": 2.5,
    "linea_referencia": false,
    "local": {
@@ -815,9 +815,9 @@
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 2,
-    "spread_linea": null,
-    "cubre": 0,
-    "no_cubre": 0,
+    "spread_linea": -0.5,
+    "cubre": 3,
+    "no_cubre": 2,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
@@ -831,13 +831,13 @@
     "empuje": 0,
     "btts_si": 4,
     "btts_no": 1,
-    "spread_linea": null,
-    "cubre": 0,
-    "no_cubre": 0,
+    "spread_linea": 0.5,
+    "cubre": 3,
+    "no_cubre": 2,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Guadalajara 3G-2E-0P · Más 2.5 1/5 · Menos 2.5 4/5 · BTTS 3/5 — Pachuca 3G-0E-2P · Más 2.5 5/5 · Menos 2.5 0/5 · BTTS 4/5"
+   "linea_tarjeta": "Tendencias: Guadalajara 3G-2E-0P · Más 2.5 1/5 · Menos 2.5 4/5 · BTTS 3/5 · Cubre -0.5 3/5 — Pachuca 3G-0E-2P · Más 2.5 5/5 · Menos 2.5 0/5 · BTTS 4/5 · Cubre +0.5 3/5"
   },
   {
    "slug": "cruz-azul-vs-leon",

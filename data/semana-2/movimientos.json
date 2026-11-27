@@ -1,7 +1,7 @@
 {
  "semana": 2,
- "fecha_hoy": "2026-11-26",
- "fecha_ayer": "2026-11-26",
+ "fecha_hoy": "2026-11-27",
+ "fecha_ayer": "2026-11-27",
  "partidos": [
   {
    "slug": "werder-bremen-vs-borussia-monchengladbach",
@@ -13,14 +13,14 @@
    "mejor_pick_ayer": "Local",
    "mejor_pick_hoy": "Local",
    "ev_ayer": 0.21918341036805633,
-   "ev_hoy": 0.21918341036805633,
+   "ev_hoy": 0.20259588097529346,
    "linea_ayer": 3.5,
    "linea_hoy": 3.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": 0.0,
-   "flecha": "→"
+   "delta_ev_pp": -1.6587529392762868,
+   "flecha": "↓"
   },
   {
    "slug": "venezia-vs-bologna",
@@ -30,16 +30,17 @@
    "hora": "13:45",
    "proveedor": "DraftKings",
    "mejor_pick_ayer": "Menos 2.5",
-   "mejor_pick_hoy": "Menos 2.5",
-   "ev_ayer": 0.30839373297672124,
-   "ev_hoy": 0.2653190421791336,
+   "mejor_pick_hoy": "Visita",
+   "ev_ayer": 0.2653190421791336,
+   "ev_hoy": 0.34723975005934093,
    "linea_ayer": 2.5,
    "linea_hoy": 2.5,
    "cambio_linea": false,
    "estado": "con_momio",
-   "cambio_pick": false,
-   "delta_ev_pp": -4.307469079758763,
-   "flecha": "↓"
+   "cambio_pick": true,
+   "delta_ev_pp": 8.192070788020732,
+   "flecha": "↑",
+   "ev_pick_ayer_hoy": 0.24608926950163923
   },
   {
    "slug": "nottingham-forest-vs-chelsea",
@@ -50,15 +51,15 @@
    "proveedor": "DraftKings",
    "mejor_pick_ayer": "Visita",
    "mejor_pick_hoy": "Visita",
-   "ev_ayer": 0.9080149456078999,
-   "ev_hoy": 0.942086641065184,
+   "ev_ayer": 0.942086641065184,
+   "ev_hoy": 0.8739432501506161,
    "linea_ayer": 2.5,
    "linea_hoy": 2.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": 3.407169545728417,
-   "flecha": "↑"
+   "delta_ev_pp": -6.814339091456789,
+   "flecha": "↓"
   },
   {
    "slug": "levante-vs-racing-santander",
@@ -69,15 +70,15 @@
    "proveedor": "DraftKings",
    "mejor_pick_ayer": "Menos 3.5",
    "mejor_pick_hoy": "Menos 3.5",
-   "ev_ayer": 0.15562026177857646,
+   "ev_ayer": 0.23108934009880988,
    "ev_hoy": 0.23108934009880988,
    "linea_ayer": 3.5,
    "linea_hoy": 3.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": 7.546907832023342,
-   "flecha": "↑"
+   "delta_ev_pp": 0.0,
+   "flecha": "→"
   },
   {
    "slug": "hamburg-sv-vs-bayern-munich",
@@ -88,15 +89,15 @@
    "proveedor": "Bet 365",
    "mejor_pick_ayer": "Local",
    "mejor_pick_hoy": "Local",
-   "ev_ayer": 1.844418076077233,
+   "ev_ayer": 1.6947118615468524,
    "ev_hoy": 1.6947118615468524,
    "linea_ayer": null,
    "linea_hoy": null,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": -14.970621453038069,
-   "flecha": "↓"
+   "delta_ev_pp": 0.0,
+   "flecha": "→"
   },
   {
    "slug": "manchester-united-vs-brentford",
@@ -107,15 +108,15 @@
    "proveedor": "DraftKings",
    "mejor_pick_ayer": "Visita",
    "mejor_pick_hoy": "Visita",
-   "ev_ayer": 0.4645463471886393,
+   "ev_ayer": 0.44201486492419884,
    "ev_hoy": 0.44201486492419884,
-   "linea_ayer": 3.5,
+   "linea_ayer": 2.5,
    "linea_hoy": 2.5,
-   "cambio_linea": true,
+   "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": -2.253148226444046,
-   "flecha": "↓"
+   "delta_ev_pp": 0.0,
+   "flecha": "→"
   },
   {
    "slug": "elche-vs-atletico-madrid",
@@ -126,15 +127,15 @@
    "proveedor": "DraftKings",
    "mejor_pick_ayer": "Empate",
    "mejor_pick_hoy": "Empate",
-   "ev_ayer": 1.1804495832990267,
+   "ev_ayer": 1.226842127624538,
    "ev_hoy": 1.226842127624538,
    "linea_ayer": 3.5,
    "linea_hoy": 3.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": 4.639254432551132,
-   "flecha": "↑"
+   "delta_ev_pp": 0.0,
+   "flecha": "→"
   },
   {
    "slug": "vfb-stuttgart-vs-eintracht-frankfurt",
@@ -146,14 +147,14 @@
    "mejor_pick_ayer": "Local",
    "mejor_pick_hoy": "Local",
    "ev_ayer": 0.3537949115665535,
-   "ev_hoy": 0.3537949115665535,
+   "ev_hoy": 0.3971857741167635,
    "linea_ayer": 3.5,
    "linea_hoy": 3.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": 0.0,
-   "flecha": "→"
+   "delta_ev_pp": 4.339086255020996,
+   "flecha": "↑"
   },
   {
    "slug": "internazionale-vs-genoa",
@@ -164,15 +165,15 @@
    "proveedor": "DraftKings",
    "mejor_pick_ayer": "Visita",
    "mejor_pick_hoy": "Visita",
-   "ev_ayer": 0.8055073678972138,
+   "ev_ayer": 0.9183515783907896,
    "ev_hoy": 0.9183515783907896,
    "linea_ayer": 3.5,
    "linea_hoy": 3.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": 11.284421049357585,
-   "flecha": "↑"
+   "delta_ev_pp": 0.0,
+   "flecha": "→"
   },
   {
    "slug": "real-madrid-vs-alaves",
@@ -183,15 +184,15 @@
    "proveedor": "DraftKings",
    "mejor_pick_ayer": "Spread local -2.5",
    "mejor_pick_hoy": "Spread local -2.5",
-   "ev_ayer": 0.7829616423422301,
+   "ev_ayer": 0.740510174667415,
    "ev_hoy": 0.740510174667415,
    "linea_ayer": 3.5,
    "linea_hoy": 3.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": -4.245146767481511,
-   "flecha": "↓"
+   "delta_ev_pp": 0.0,
+   "flecha": "→"
   },
   {
    "slug": "everton-vs-liverpool",
@@ -202,15 +203,15 @@
    "proveedor": "DraftKings",
    "mejor_pick_ayer": "Local",
    "mejor_pick_hoy": "Local",
-   "ev_ayer": 0.5100226409855637,
+   "ev_ayer": 0.6205121025210929,
    "ev_hoy": 0.6205121025210929,
    "linea_ayer": 2.5,
    "linea_hoy": 2.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": 11.048946153552919,
-   "flecha": "↑"
+   "delta_ev_pp": 0.0,
+   "flecha": "→"
   },
   {
    "slug": "sassuolo-vs-napoli",
@@ -219,18 +220,17 @@
    "fecha": "2026-11-29",
    "hora": "08:00",
    "proveedor": "DraftKings",
-   "mejor_pick_ayer": "Visita",
+   "mejor_pick_ayer": "Más 2.5",
    "mejor_pick_hoy": "Más 2.5",
-   "ev_ayer": 0.3439531095717894,
+   "ev_ayer": 0.3439801812923555,
    "ev_hoy": 0.3439801812923555,
    "linea_ayer": 2.5,
    "linea_hoy": 2.5,
    "cambio_linea": false,
    "estado": "con_momio",
-   "cambio_pick": true,
-   "delta_ev_pp": 0.0027071720566151924,
-   "flecha": "→",
-   "ev_pick_ayer_hoy": 0.3439531095717894
+   "cambio_pick": false,
+   "delta_ev_pp": 0.0,
+   "flecha": "→"
   },
   {
    "slug": "deportivo-vs-barcelona",
@@ -241,15 +241,15 @@
    "proveedor": "DraftKings",
    "mejor_pick_ayer": "Local",
    "mejor_pick_hoy": "Local",
-   "ev_ayer": 0.040289397772508284,
+   "ev_ayer": 0.15587710863612037,
    "ev_hoy": 0.15587710863612037,
    "linea_ayer": 3.5,
    "linea_hoy": 3.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": 11.558771086361208,
-   "flecha": "↑"
+   "delta_ev_pp": 0.0,
+   "flecha": "→"
   },
   {
    "slug": "arsenal-vs-manchester-city",
@@ -260,15 +260,15 @@
    "proveedor": "DraftKings",
    "mejor_pick_ayer": "Local",
    "mejor_pick_hoy": "Local",
-   "ev_ayer": 0.6216753117506366,
+   "ev_ayer": 0.6612283681347986,
    "ev_hoy": 0.6612283681347986,
    "linea_ayer": 2.5,
    "linea_hoy": 2.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": 3.9553056384161955,
-   "flecha": "↑"
+   "delta_ev_pp": 0.0,
+   "flecha": "→"
   },
   {
    "slug": "borussia-dortmund-vs-bayer-leverkusen",
@@ -279,15 +279,15 @@
    "proveedor": "DraftKings",
    "mejor_pick_ayer": "Local",
    "mejor_pick_hoy": "Local",
-   "ev_ayer": 0.46937121735409026,
+   "ev_ayer": 0.43438618836946885,
    "ev_hoy": 0.43438618836946885,
    "linea_ayer": 3.5,
    "linea_hoy": 3.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": -3.4985028984621414,
-   "flecha": "↓"
+   "delta_ev_pp": 0.0,
+   "flecha": "→"
   },
   {
    "slug": "como-vs-juventus",
@@ -298,15 +298,15 @@
    "proveedor": "DraftKings",
    "mejor_pick_ayer": "Menos 2.5",
    "mejor_pick_hoy": "Menos 2.5",
-   "ev_ayer": 0.29040857858101665,
+   "ev_ayer": 0.32188195854640744,
    "ev_hoy": 0.32188195854640744,
    "linea_ayer": 2.5,
    "linea_hoy": 2.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": 3.147337996539079,
-   "flecha": "↑"
+   "delta_ev_pp": 0.0,
+   "flecha": "→"
   },
   {
    "slug": "atlas-vs-toluca",
@@ -331,14 +331,17 @@
    "fecha": "2026-11-28",
    "hora": "21:10",
    "proveedor": "DraftKings",
-   "mejor_pick_ayer": null,
+   "mejor_pick_ayer": "Más 2.5",
    "mejor_pick_hoy": "Más 2.5",
-   "ev_ayer": null,
+   "ev_ayer": 0.39277199173249344,
    "ev_hoy": 0.39277199173249344,
    "linea_ayer": 2.5,
    "linea_hoy": 2.5,
    "cambio_linea": false,
-   "estado": "momio_nuevo"
+   "estado": "con_momio",
+   "cambio_pick": false,
+   "delta_ev_pp": 0.0,
+   "flecha": "→"
   },
   {
    "slug": "guadalajara-vs-pachuca",
@@ -346,15 +349,15 @@
    "away": "Pachuca",
    "fecha": "2026-11-29",
    "hora": "19:07",
-   "proveedor": null,
+   "proveedor": "DraftKings",
    "mejor_pick_ayer": null,
-   "mejor_pick_hoy": null,
+   "mejor_pick_hoy": "Visita",
    "ev_ayer": null,
-   "ev_hoy": null,
+   "ev_hoy": 0.4628372056007988,
    "linea_ayer": 2.5,
    "linea_hoy": 2.5,
    "cambio_linea": false,
-   "estado": "sin_momio"
+   "estado": "momio_nuevo"
   },
   {
    "slug": "cruz-azul-vs-leon",

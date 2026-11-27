@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generado_en": "2026-11-27T00:59:15Z",
-  "generado_en_mx": "2026-11-26T18:59:16-06:00",
+  "generado_en": "2026-11-27T07:47:08Z",
+  "generado_en_mx": "2026-11-27T01:47:09-06:00",
   "semana": 2,
   "fuente": "ESPN scoreboard (site.api.espn.com, respaldo site.web.api.espn.com)",
   "partidos": [
@@ -264,12 +264,12 @@
       "away_id": 218,
       "home": "León",
       "away": "Cruz Azul",
-      "estado": "pre",
-      "detalle": "Thu, November 26th at 10:10 PM EST",
-      "minuto": "0'",
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+3'",
       "marcador_local": 0,
-      "marcador_visita": 0,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "marcador_visita": 4,
+      "actualizado_en": "2026-11-27T07:47:08Z"
     },
     {
       "liga": "mex.1",
@@ -278,12 +278,12 @@
       "away_id": 219,
       "home": "Pachuca",
       "away": "Guadalajara",
-      "estado": "pre",
-      "detalle": "Thu, November 26th at 8:00 PM EST",
-      "minuto": "0'",
-      "marcador_local": 0,
-      "marcador_visita": 0,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+11'",
+      "marcador_local": 2,
+      "marcador_visita": 1,
+      "actualizado_en": "2026-11-27T07:47:08Z"
     },
     {
       "liga": "mex.1",

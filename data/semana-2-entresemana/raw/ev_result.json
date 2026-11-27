@@ -666,68 +666,45 @@
    "liga": "Liga MX",
    "home": "Pachuca",
    "away": "Guadalajara",
-   "proveedor": "DraftKings",
-   "estado": "con_momio",
-   "estado_partido": "pre",
-   "marcador": null,
+   "proveedor": null,
+   "estado": "pendiente",
+   "estado_partido": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 1
+   },
    "mercados": {
     "btts": {
      "p_btts": 37.04079633116867,
      "p_no_btts": 62.95920366883133,
      "momios": {
-      "si": 1.69,
-      "no": 2.058
+      "si": 1.67,
+      "no": 2.077
      },
      "ev": {
-      "si": -0.37401054200324946,
-      "no": 0.29570041150454873
+      "si": -0.3814187012694832,
+      "no": 0.3076626602016268
      }
     },
     "1X2": {
-     "momios": {
-      "home": 2.95,
-      "draw": 3.2,
-      "away": 2.45
+     "prob": {
+      "1": 39.123309395614456,
+      "X": 31.724544412361684,
+      "2": 29.15214619202383
      },
-     "ev": {
-      "1": 0.1541376271706265,
-      "X": 0.015185421195573978,
-      "2": -0.2857724182954161
-     }
+     "momios": null,
+     "ev": null
     },
     "total": {
      "linea": 2.5,
-     "momios": {
-      "linea": 2.5,
-      "over": 1.9523809523809523,
-      "under": 1.8
-     },
      "p_over": 29.36626948440997,
-     "ev": {
-      "mas": -0.4266585481615197,
-      "menos": 0.2714071492806207
-     }
-    },
-    "spread": {
-     "home_linea": 0.5,
-     "momios": {
-      "home_linea": 0.5,
-      "home": 1.5405405405405406,
-      "away_linea": -0.5,
-      "away": 2.35
-     },
-     "p_cubre_local": 70.84785380797614,
-     "ev": {
-      "local": 0.09143991001476759,
-      "visitante": -0.3149245644874391
-     }
+     "momios": null,
+     "ev": null
     }
    },
-   "mejor_pick": "Menos 2.5",
-   "mejor_ev": 0.2714071492806207,
-   "semaforo": "verde",
-   "mejor_decimal": 1.8,
-   "mejor_prob": 70.63373051559003
+   "mejor_pick": null,
+   "mejor_ev": null,
+   "semaforo": null
   },
   {
    "fecha": "2026-11-26",
@@ -736,68 +713,45 @@
    "liga": "Liga MX",
    "home": "León",
    "away": "Cruz Azul",
-   "proveedor": "DraftKings",
-   "estado": "con_momio",
-   "estado_partido": "pre",
-   "marcador": null,
+   "proveedor": null,
+   "estado": "pendiente",
+   "estado_partido": "post",
+   "marcador": {
+    "local": 0,
+    "visita": 4
+   },
    "mercados": {
     "btts": {
      "p_btts": 51.671968626447025,
      "p_no_btts": 48.328031373552975,
      "momios": {
-      "si": 1.58,
-      "no": 2.272
+      "si": 1.573,
+      "no": 2.29
      },
      "ev": {
-      "si": -0.18358289570213693,
-      "no": 0.09801287280712345
+      "si": -0.1871999335059883,
+      "no": 0.10671191845436323
      }
     },
     "1X2": {
-     "momios": {
-      "home": 3.2,
-      "draw": 3.6,
-      "away": 2.15
+     "prob": {
+      "1": 33.8272751128613,
+      "X": 26.680264887391274,
+      "2": 39.49245999974739
      },
-     "ev": {
-      "1": 0.08247280361156162,
-      "X": -0.03951046405391412,
-      "2": -0.15091211000543125
-     }
+     "momios": null,
+     "ev": null
     },
     "total": {
      "linea": 2.5,
-     "momios": {
-      "linea": 2.5,
-      "over": 1.7142857142857144,
-      "under": 2.05
-     },
      "p_over": 46.70649539580683,
-     "ev": {
-      "mas": -0.1993172217861685,
-      "menos": 0.09251684438595986
-     }
-    },
-    "spread": {
-     "home_linea": 0.5,
-     "momios": {
-      "home_linea": 0.5,
-      "home": 1.6896551724137931,
-      "away_linea": -0.5,
-      "away": 2.05
-     },
-     "p_cubre_local": 60.50754000025251,
-     "ev": {
-      "local": 0.022368779314611453,
-      "visitante": -0.19040457000517663
-     }
+     "momios": null,
+     "ev": null
     }
    },
-   "mejor_pick": "Menos 2.5",
-   "mejor_ev": 0.09251684438595986,
-   "semaforo": "verde",
-   "mejor_decimal": 2.05,
-   "mejor_prob": 53.29350460419317
+   "mejor_pick": null,
+   "mejor_ev": null,
+   "semaforo": null
   },
   {
    "fecha": "2026-11-25",
