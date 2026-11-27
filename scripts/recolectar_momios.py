@@ -46,14 +46,19 @@ import urllib.parse
 import urllib.request
 from datetime import datetime, timezone, timedelta
 
+# Modulo hermano (scripts/): los scripts siempre se corren como
+# `python3 scripts/*.py` desde la raiz del repo, asi que resuelve.
+from http_resiliente import descargar_json, es_transitorio, ESPERA_BASE
+
 CST = timezone(timedelta(hours=-6))
 BASE = "https://site.api.espn.com/apis/site/v2/sports/soccer"
+INTENTOS_BSD = 3  # BSD es opcional/fail-soft: menos intentos que ESPN
 
 
 def fetch(url):
-    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return json.load(r)
+    """GET con reintentos (ver http_resiliente.py): la corrida #30
+    cayo por un error SSL transitorio bajando de ESPN."""
+    return descargar_json(url)
 
 
 def americano_a_decimal(valor):
@@ -253,21 +258,31 @@ def _bsd_headers():
 
 
 def _bsd_get(path, headers, contador):
-    """GET a BSD. Devuelve (status, json|None). Cuenta las llamadas."""
-    contador[0] += 1
+    """GET a BSD, con reintentos solo para errores transitorios
+    (red, 429, 5xx). Devuelve (status, json|None). Cuenta cada
+    intento real (cuota BSD: 7.500/dia)."""
     url = BSD_BASE + path
-    req = urllib.request.Request(url, headers={
+    for intento in range(1, INTENTOS_BSD + 1):
+        contador[0] += 1
+        req = urllib.request.Request(url, headers={
         "User-Agent": "football-ai-agenda/1.0", **headers})
-    try:
-        with urllib.request.build_opener(_NoRedirect()).open(
-                req, timeout=60) as r:
-            return r.status, json.load(r)
-    except urllib.error.HTTPError as e:
-        print(f"BSD: {path} -> HTTP {e.code}")
-        return e.code, None
-    except Exception as e:
-        print(f"BSD: {path} -> error {e}")
-        return 0, None
+        try:
+            with urllib.request.build_opener(_NoRedirect()).open(
+                    req, timeout=60) as r:
+                return r.status, json.load(r)
+        except urllib.error.HTTPError as e:
+            print(f"BSD: {path} -> HTTP {e.code}")
+            if not es_transitorio(e) or intento == INTENTOS_BSD:
+                return e.code, None
+        except Exception as e:
+            print(f"BSD: {path} -> error {e}")
+            if not es_transitorio(e) or intento == INTENTOS_BSD:
+                return 0, None
+        espera = ESPERA_BASE * (2 ** (intento - 1))
+        print(f"BSD: {path} -> reintento {intento}/{INTENTOS_BSD} "
+              f"en {espera:.0f}s")
+        time.sleep(espera)
+    return 0, None  # inalcanzable en la practica
 
 
 def _bsd_get_all(path, headers, contador):

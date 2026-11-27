@@ -53,10 +53,12 @@ import json
 import os
 import sys
 import tempfile
-import urllib.error
-import urllib.request
 from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
+
+# Modulo hermano (scripts/): los scripts siempre se corren como
+# `python3 scripts/*.py` desde la raiz del repo, asi que resuelve.
+from http_resiliente import descargar_json
 
 MX = ZoneInfo("America/Mexico_City")
 UTC = timezone.utc
@@ -72,10 +74,10 @@ CAMPOS = ("liga", "fecha", "home_id", "away_id", "home", "away",
 
 
 def fetch_json(url):
-    """Pide una URL y devuelve el JSON. Lanza la excepcion si falla."""
-    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return json.load(r)
+    """Pide una URL y devuelve el JSON. Lanza la excepcion si falla.
+    Con reintentos (ver http_resiliente.py): un error transitorio
+    ya no tumba el vivo de un partido."""
+    return descargar_json(url)
 
 
 def scoreboard(liga, fecha):
