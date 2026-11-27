@@ -777,7 +777,7 @@
   "fecha": "2026-11-26",
   "liga": "mex.1",
   "liga_nombre": "Liga MX",
-  "estado": "pre"
+  "estado": "post"
  },
  "228|218|2026-11-26": {
   "home": "León",
@@ -787,7 +787,7 @@
   "fecha": "2026-11-26",
   "liga": "mex.1",
   "liga_nombre": "Liga MX",
-  "estado": "pre"
+  "estado": "post"
  },
  "216|223|2026-11-28": {
   "home": "Atlas",

@@ -1,6 +1,6 @@
 {
  "config": "semana-2-entresemana",
- "fecha_calculo": "2026-11-26",
+ "fecha_calculo": "2026-11-27",
  "partidos": [
   {
    "local": "Galatasaray",
@@ -1095,6 +1095,162 @@
    ]
   },
   {
+   "local": "Pachuca",
+   "visita": "Guadalajara",
+   "slug": "pachuca-vs-guadalajara",
+   "estado": "post",
+   "estadisticas": [
+    {
+     "clave": "posesion",
+     "etiqueta": "Posesión",
+     "local": 45.4,
+     "visita": 54.6,
+     "unidad": "%"
+    },
+    {
+     "clave": "tiros",
+     "etiqueta": "Tiros",
+     "local": 15,
+     "visita": 7,
+     "unidad": ""
+    },
+    {
+     "clave": "tiros_a_puerta",
+     "etiqueta": "Tiros a puerta",
+     "local": 6,
+     "visita": 2,
+     "unidad": ""
+    },
+    {
+     "clave": "corners",
+     "etiqueta": "Córners",
+     "local": 6,
+     "visita": 1,
+     "unidad": ""
+    },
+    {
+     "clave": "faltas",
+     "etiqueta": "Faltas",
+     "local": 18,
+     "visita": 13,
+     "unidad": ""
+    },
+    {
+     "clave": "fueras_de_juego",
+     "etiqueta": "Fueras de juego",
+     "local": 3,
+     "visita": 1,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_amarillas",
+     "etiqueta": "Tarjetas amarillas",
+     "local": 2,
+     "visita": 4,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_rojas",
+     "etiqueta": "Tarjetas rojas",
+     "local": 1,
+     "visita": 0,
+     "unidad": ""
+    },
+    {
+     "clave": "pases_precisos",
+     "etiqueta": "Pases precisos",
+     "local": 342,
+     "visita": 440,
+     "unidad": ""
+    },
+    {
+     "clave": "paradas",
+     "etiqueta": "Paradas",
+     "local": 2,
+     "visita": 4,
+     "unidad": ""
+    }
+   ]
+  },
+  {
+   "local": "León",
+   "visita": "Cruz Azul",
+   "slug": "leon-vs-cruz-azul",
+   "estado": "post",
+   "estadisticas": [
+    {
+     "clave": "posesion",
+     "etiqueta": "Posesión",
+     "local": 59.1,
+     "visita": 40.9,
+     "unidad": "%"
+    },
+    {
+     "clave": "tiros",
+     "etiqueta": "Tiros",
+     "local": 17,
+     "visita": 16,
+     "unidad": ""
+    },
+    {
+     "clave": "tiros_a_puerta",
+     "etiqueta": "Tiros a puerta",
+     "local": 1,
+     "visita": 9,
+     "unidad": ""
+    },
+    {
+     "clave": "corners",
+     "etiqueta": "Córners",
+     "local": 5,
+     "visita": 4,
+     "unidad": ""
+    },
+    {
+     "clave": "faltas",
+     "etiqueta": "Faltas",
+     "local": 11,
+     "visita": 13,
+     "unidad": ""
+    },
+    {
+     "clave": "fueras_de_juego",
+     "etiqueta": "Fueras de juego",
+     "local": 2,
+     "visita": 1,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_amarillas",
+     "etiqueta": "Tarjetas amarillas",
+     "local": 1,
+     "visita": 2,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_rojas",
+     "etiqueta": "Tarjetas rojas",
+     "local": 0,
+     "visita": 0,
+     "unidad": ""
+    },
+    {
+     "clave": "pases_precisos",
+     "etiqueta": "Pases precisos",
+     "local": 459,
+     "visita": 279,
+     "unidad": ""
+    },
+    {
+     "clave": "paradas",
+     "etiqueta": "Paradas",
+     "local": 5,
+     "visita": 1,
+     "unidad": ""
+    }
+   ]
+  },
+  {
    "local": "Sabah FK",
    "visita": "Barcelona",
    "slug": "sabah-fk-vs-barcelona",
@@ -1805,8 +1961,8 @@
     {
      "clave": "posesion",
      "etiqueta": "Posesión",
-     "local": 43.1,
-     "visita": 56.9,
+     "local": 43.4,
+     "visita": 56.6,
      "unidad": "%"
     },
     {
@@ -1862,7 +2018,7 @@
      "clave": "pases_precisos",
      "etiqueta": "Pases precisos",
      "local": 331,
-     "visita": 455,
+     "visita": 454,
      "unidad": ""
     },
     {
@@ -1883,8 +2039,8 @@
     {
      "clave": "posesion",
      "etiqueta": "Posesión",
-     "local": 48.9,
-     "visita": 51.1,
+     "local": 48.8,
+     "visita": 51.2,
      "unidad": "%"
     },
     {
@@ -1961,8 +2117,8 @@
     {
      "clave": "posesion",
      "etiqueta": "Posesión",
-     "local": 60.2,
-     "visita": 39.8,
+     "local": 60.1,
+     "visita": 39.9,
      "unidad": "%"
     },
     {
@@ -2017,7 +2173,7 @@
     {
      "clave": "pases_precisos",
      "etiqueta": "Pases precisos",
-     "local": 572,
+     "local": 570,
      "visita": 353,
      "unidad": ""
     },
@@ -2095,8 +2251,8 @@
     {
      "clave": "pases_precisos",
      "etiqueta": "Pases precisos",
-     "local": 532,
-     "visita": 256,
+     "local": 533,
+     "visita": 257,
      "unidad": ""
     },
     {
@@ -2252,7 +2408,7 @@
      "clave": "pases_precisos",
      "etiqueta": "Pases precisos",
      "local": 372,
-     "visita": 415,
+     "visita": 414,
      "unidad": ""
     },
     {
@@ -2429,8 +2585,8 @@
     {
      "clave": "posesion",
      "etiqueta": "Posesión",
-     "local": 37.9,
-     "visita": 62.1,
+     "local": 38.2,
+     "visita": 61.8,
      "unidad": "%"
     },
     {
@@ -2485,8 +2641,8 @@
     {
      "clave": "pases_precisos",
      "etiqueta": "Pases precisos",
-     "local": 271,
-     "visita": 499,
+     "local": 274,
+     "visita": 496,
      "unidad": ""
     },
     {
@@ -2507,8 +2663,8 @@
     {
      "clave": "posesion",
      "etiqueta": "Posesión",
-     "local": 61.5,
-     "visita": 38.5,
+     "local": 61.6,
+     "visita": 38.4,
      "unidad": "%"
     },
     {
@@ -2563,7 +2719,7 @@
     {
      "clave": "pases_precisos",
      "etiqueta": "Pases precisos",
-     "local": 395,
+     "local": 396,
      "visita": 223,
      "unidad": ""
     },

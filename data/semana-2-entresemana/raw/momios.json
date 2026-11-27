@@ -1,6 +1,6 @@
 {
  "semana": "2-entresemana",
- "fecha_consulta": "2026-11-26",
+ "fecha_consulta": "2026-11-27",
  "partidos": [
   {
    "away": "Aston Villa",
@@ -571,42 +571,27 @@
    "liga": "mex.1",
    "fecha_cst": "2026-11-26 19:00",
    "liga_nombre": "Liga MX",
-   "proveedor": "DraftKings",
-   "estado": "con_momio",
-   "momios": {
-    "proveedor": "DraftKings",
-    "moneyline": {
-     "home": 2.95,
-     "draw": 3.2,
-     "away": 2.45
-    },
-    "total": {
-     "linea": 2.5,
-     "over": 1.9523809523809523,
-     "under": 1.8
-    },
-    "spread": {
-     "home_linea": 0.5,
-     "home": 1.5405405405405406,
-     "away_linea": -0.5,
-     "away": 2.35
-    }
+   "proveedor": null,
+   "estado": "pendiente",
+   "momios": null,
+   "estado_partido": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 1
    },
-   "estado_partido": "pre",
-   "marcador": null,
    "bsd": {
     "proveedor": "BSD-consensus",
     "bsd_event_id": 655525,
     "btts": {
-     "yes": 1.69,
-     "no": 2.058
+     "yes": 1.67,
+     "no": 2.077
     },
     "asian_handicap": {
-     "line": -0.5,
-     "home": 2.7,
-     "away": 1.428,
+     "line": 0.5,
+     "home": 1.562,
+     "away": 2.31,
      "push": "none",
-     "bookmakers": 7
+     "bookmakers": 8
     },
     "corners": {
      "line": 9.5,
@@ -626,40 +611,25 @@
    "liga": "mex.1",
    "fecha_cst": "2026-11-26 21:10",
    "liga_nombre": "Liga MX",
-   "proveedor": "DraftKings",
-   "estado": "con_momio",
-   "momios": {
-    "proveedor": "DraftKings",
-    "moneyline": {
-     "home": 3.2,
-     "draw": 3.6,
-     "away": 2.15
-    },
-    "total": {
-     "linea": 2.5,
-     "over": 1.7142857142857144,
-     "under": 2.05
-    },
-    "spread": {
-     "home_linea": 0.5,
-     "home": 1.6896551724137931,
-     "away_linea": -0.5,
-     "away": 2.05
-    }
+   "proveedor": null,
+   "estado": "pendiente",
+   "momios": null,
+   "estado_partido": "post",
+   "marcador": {
+    "local": 0,
+    "visita": 4
    },
-   "estado_partido": "pre",
-   "marcador": null,
    "bsd": {
     "proveedor": "BSD-consensus",
     "bsd_event_id": 655528,
     "btts": {
-     "yes": 1.58,
-     "no": 2.272
+     "yes": 1.573,
+     "no": 2.29
     },
     "asian_handicap": {
      "line": 0.5,
-     "home": 1.672,
-     "away": 2.083,
+     "home": 1.716,
+     "away": 2.027,
      "push": "none",
      "bookmakers": 6
     },

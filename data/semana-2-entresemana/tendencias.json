@@ -1,7 +1,7 @@
 {
  "semana": "2-entresemana",
  "ventana": "últimos partidos de la competición [4, 5]",
- "fecha_calculo": "2026-11-26",
+ "fecha_calculo": "2026-11-27",
  "partidos": [
   {
    "slug": "galatasaray-vs-aston-villa",
@@ -626,7 +626,7 @@
    "fecha": "2026-11-26",
    "hora": "19:00",
    "liga": "Liga MX",
-   "estado": "con_momio",
+   "estado": "pendiente",
    "linea_total": 2.5,
    "linea_referencia": false,
    "local": {
@@ -639,9 +639,9 @@
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 2,
-    "spread_linea": 0.5,
-    "cubre": 4,
-    "no_cubre": 1,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
@@ -655,13 +655,13 @@
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 3,
-    "spread_linea": -0.5,
-    "cubre": 4,
-    "no_cubre": 1,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Pachuca 4G-0E-1P · Más 2.5 4/5 · Menos 2.5 1/5 · BTTS 3/5 · Cubre +0.5 4/5 — Guadalajara 4G-1E-0P · Más 2.5 1/5 · Menos 2.5 4/5 · BTTS 2/5 · Cubre -0.5 4/5"
+   "linea_tarjeta": "Tendencias: Pachuca 4G-0E-1P · Más 2.5 4/5 · Menos 2.5 1/5 · BTTS 3/5 — Guadalajara 4G-1E-0P · Más 2.5 1/5 · Menos 2.5 4/5 · BTTS 2/5"
   },
   {
    "slug": "leon-vs-cruz-azul",
@@ -670,7 +670,7 @@
    "fecha": "2026-11-26",
    "hora": "21:10",
    "liga": "Liga MX",
-   "estado": "con_momio",
+   "estado": "pendiente",
    "linea_total": 2.5,
    "linea_referencia": false,
    "local": {
@@ -683,9 +683,9 @@
     "empuje": 0,
     "btts_si": 4,
     "btts_no": 1,
-    "spread_linea": 0.5,
-    "cubre": 4,
-    "no_cubre": 1,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
@@ -699,13 +699,13 @@
     "empuje": 0,
     "btts_si": 4,
     "btts_no": 1,
-    "spread_linea": -0.5,
-    "cubre": 4,
-    "no_cubre": 1,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: León 2G-2E-1P · Más 2.5 2/5 · Menos 2.5 3/5 · BTTS 4/5 · Cubre +0.5 4/5 — Cruz Azul 4G-0E-1P · Más 2.5 4/5 · Menos 2.5 1/5 · BTTS 4/5 · Cubre -0.5 4/5"
+   "linea_tarjeta": "Tendencias: León 2G-2E-1P · Más 2.5 2/5 · Menos 2.5 3/5 · BTTS 4/5 — Cruz Azul 4G-0E-1P · Más 2.5 4/5 · Menos 2.5 1/5 · BTTS 4/5"
   },
   {
    "slug": "sabah-fk-vs-barcelona",
