@@ -298,9 +298,9 @@
   .detail-pos .pos-num{font-size:1.5rem;font-weight:900}
   .detail-pos p{color:var(--muted);font-size:.85rem;font-weight:700}
   #vivoLine .partido{padding:.5em .8em;border:1px solid #ccc;border-radius:8px;margin:.2em 0}
-#vivoLine .vivo{border-color:#1a7f37;background:#e6f4ea;font-weight:700}
-#vivoLine .programado{background:#f6f6f6}
-#vivoLine .pendiente{background:#fff4e5}
+#vivoLine .vivo{border-color:#1a7f37;background:#e6f4ea;color:#14532d;font-weight:700}
+#vivoLine .programado{background:#f6f6f6;color:#374151}
+#vivoLine .pendiente{background:#fff4e5;color:#5b3a00}
 .detail-pending{background:var(--amber-soft);border:1px dashed var(--amber);border-radius:12px;padding:12px;font-weight:700;font-size:.9rem}
   .detail-note{color:var(--muted);font-size:.78rem;margin-top:16px}
   /* ---------- Fuerza del XI (Empleado 2, 23 nov 2026) ---------- */
@@ -1683,7 +1683,7 @@ function buildRADIOMap(rawData, tenData, partidos){
       h += '<p><span class="chip ' + sem.cls + '">Semáforo EV · <strong>' + sem.color + ' · ' + esc(m.mejor_pick) + ' ' + fmtEvPct(sem.ev) + '</strong></span></p>';
     }
     if (p12){
-      h += '<p class="detail-note">Probabilidad del modelo (1X2' + ((m.mercados && m.mercados["1X2"] && m.mercados["1X2"].prob) ? "" : ", derivada de EV y momio") + '): Local ' + fmt1(p12.p1) + '% · Empate ' + fmt1(p12.px) + '% · Visita ' + fmt1(p12.p2) + '%.</p>';
+      h += '<p class="detail-note">Probabilidad del modelo (1X2, Poisson): Local ' + fmt1(p12.p1) + '% · Empate ' + fmt1(p12.px) + '% · Visita ' + fmt1(p12.p2) + '%.</p>';
       var dnb = derivarDNB(p12);
       if (dnb){
         h += '<div class="derived" aria-label="Mercados derivados del 1X2: apuesta sin empate y doble oportunidad">';
