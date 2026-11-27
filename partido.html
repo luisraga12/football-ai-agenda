@@ -580,6 +580,48 @@ footer{color:var(--muted)}
    que el preview aprobado no tenía; estilo-gamer.css no la cubría, así que
    sin esta regla la foto seguiría tapando el fondo gamer. Solo visual. */
 .hero img{display:none}
+/* Tarjetas y ficha estilo carta FIFA (prototipo aprobado): número grande de EV, barras 1X2 y cajas de mercados */
+.match-top{flex-wrap:wrap;gap:6px}
+.fifa-badge{margin-left:auto;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border-radius:8px;border:1px solid #334155;color:#e2e8f0;background:#0f172a;white-space:nowrap}
+.fifa-badge.live{color:#fff;background:#dc2626;border-color:#f87171;animation:fifaPulse 1.2s infinite}
+.fifa-badge.final{color:#cbd5e1}
+.fifa-badge.alto{color:#052e16;background:#a3e635;border-color:#a3e635}
+.fifa-badge.medio{color:#422006;background:#facc15;border-color:#facc15}
+.fifa-badge.none{color:#94a3b8}
+@keyframes fifaPulse{0%,100%{box-shadow:0 0 0 0 rgba(220,38,38,.55)}50%{box-shadow:0 0 0 7px rgba(220,38,38,0)}}
+.fifa-hero{display:flex;gap:14px;align-items:stretch;margin:10px 0 4px}
+.fifa-rating{flex:0 0 92px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;background:#0b1220;border:1px solid #1e293b;border-radius:14px;padding:10px 6px;text-align:center}
+.fifa-rating.ev-good,.fifa-rating.verde{border-color:#22c55e;box-shadow:0 0 0 1px #22c55e inset,0 0 18px rgba(34,197,94,.25)}
+.fifa-rating.ev-mid,.fifa-rating.amarillo{border-color:#eab308;box-shadow:0 0 0 1px #eab308 inset}
+.fifa-rating.ev-bad,.fifa-rating.rojo{border-color:#475569}
+.fifa-rating.ev-none{border-color:#334155}
+.fifa-num{font-size:40px;line-height:1;font-weight:900;letter-spacing:-1px}
+.fifa-rating.ev-good .fifa-num,.fifa-rating.verde .fifa-num{color:#4ade80}
+.fifa-rating.ev-mid .fifa-num,.fifa-rating.amarillo .fifa-num{color:#facc15}
+.fifa-rating.ev-bad .fifa-num,.fifa-rating.rojo .fifa-num,.fifa-rating.ev-none .fifa-num{color:#e2e8f0}
+.fifa-ev{font-size:10px;letter-spacing:.14em;color:#94a3b8;font-weight:700}
+.fifa-pick{font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#e2e8f0;text-align:center;line-height:1.25}
+.fifa-hero .teams{flex:1;min-width:0}
+.fifa-probs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+.fifa-prob b{display:block;font-size:19px;line-height:1.1}
+.fifa-prob>span:first-of-type{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#94a3b8}
+.fifa-bar{display:block;height:6px;background:#1e293b;border-radius:99px;overflow:hidden;margin-top:5px}
+.fifa-bar i{display:block;height:100%;background:linear-gradient(90deg,#22d3ee,#a3e635)}
+.fifa-markets{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 10px}
+.fifa-mkt{background:#0b1220;border:1px solid #1e293b;border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.fifa-mkt-t{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#cbd5e1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fifa-mkt b{font-size:19px;line-height:1.15}
+.fifa-mkt-s{font-size:12px;color:#94a3b8}
+article.match[data-value="1"]{border-color:rgba(34,197,94,.65)}
+article.match[data-value="0"]{border-color:rgba(234,179,8,.6)}
+article.match[data-value="-1"]{border-color:rgba(148,163,184,.5)}
+article.match[data-status="live"]{border-color:rgba(220,38,38,.75)}
+.det-fifa{margin:12px 0 4px}
+.det-fifa .fifa-probs{flex:1;min-width:0;margin:0}
+.det-team b{font-size:1.2rem}
+.bsd-block .bsd-h,.bsd-block .derived-h{flex-wrap:wrap;gap:4px 12px}
+.bsd-block .bsd-h span,.bsd-block .derived-h span{white-space:nowrap}
+@media (max-width:640px){.fifa-hero{gap:10px}.fifa-rating{flex-basis:78px}.fifa-num{font-size:32px}.fifa-prob b,.fifa-mkt b{font-size:17px}}
 </style>
 </head>
 <body>
@@ -1341,7 +1383,7 @@ function evBSD(p, momio){
   return (p / 100) * momio - 1;
 }
 function fmtLineaSigno(x){ if (typeof x !== "number" || !isFinite(x)) return ""; return (x > 0 ? "+" : "") + fmtLinea(x); }
-function celdaBSD(label, momio, nota){ return '<div class="cell"><span>' + esc(label) + ' ' + fmtMomio(momio) + '</span> <b class="num">' + esc(nota) + '</b></div>'; }
+function celdaBSD(label, momio, nota){ return '<div class="dcell"><span>' + esc(label) + ' ' + fmtMomio(momio) + '</span> <b class="num">' + esc(nota) + '</b></div>'; }
 function renderBSD(m, b){
   if (!b) return "";
   var mk = (m && m.mercados) ? m.mercados : {};
@@ -1884,12 +1926,24 @@ function buildRADIOMap(rawData, tenData, partidos){
   }
 
   /* ---------- Render principal ---------- */
-  function renderDetalle(m, estDocs){
+  function fifaDetailHead(m){
+  var semD = (typeof semaforoDe === "function") ? semaforoDe(m) : null;
+  var p12d = (typeof derivar1X2 === "function") ? derivar1X2(m) : null;
+  var evD = (semD && typeof semD.ev === "number") ? semD.ev : null;
+  var termD = (m.estado_partido === "post");
+  var numD = termD ? "—" : (evD === null ? "—" : ((evD >= 0 ? "+" : "") + Math.round(evD)));
+  var clsD = termD ? "ev-none" : (semD ? semD.cls : "ev-none");
+  var pickD = termD ? "Final" : (semD && m.mejor_pick ? m.mejor_pick : "Sin EV");
+  var h = '<div class="fifa-hero det-fifa"><div class="fifa-rating ' + clsD + '"><b class="fifa-num">' + numD + '</b><span class="fifa-ev">EV %</span><span class="fifa-pick">' + esc(pickD) + '</span></div>';
+  h += '<div class="fifa-probs det-probs">' + (p12d ? '<div class="fifa-prob"><b class="num">' + fmt1(p12d.p1) + '%</b><span>Local</span><span class="fifa-bar"><i style="width:' + Math.max(0, Math.min(100, Math.round(p12d.p1))) + '%"></i></span></div><div class="fifa-prob"><b class="num">' + fmt1(p12d.px) + '%</b><span>Empate</span><span class="fifa-bar"><i style="width:' + Math.max(0, Math.min(100, Math.round(p12d.px))) + '%"></i></span></div><div class="fifa-prob"><b class="num">' + fmt1(p12d.p2) + '%</b><span>Visita</span><span class="fifa-bar"><i style="width:' + Math.max(0, Math.min(100, Math.round(p12d.p2))) + '%"></i></span></div>' : '<div class="fifa-prob"><b class="num">—</b><span>Local</span><span class="fifa-bar"><i style="width:0%"></i></span></div><div class="fifa-prob"><b class="num">—</b><span>Empate</span><span class="fifa-bar"><i style="width:0%"></i></span></div><div class="fifa-prob"><b class="num">—</b><span>Visita</span><span class="fifa-bar"><i style="width:0%"></i></span></div>') + '</div></div>';
+  return h;
+}
+function renderDetalle(m, estDocs){
     var li = ligaInfo(m.liga);
     var di = dayInfo(m.fecha);
     document.title = m.home + " vs " + m.away + " — Football AI Agenda";
     var h = "";
-    h += headerHTML(m, di, li);
+    h += headerHTML(m, di, li); h += fifaDetailHead(m);
     h += '<div class="detail-body">';
     h += oddsBlock(m);
     if (m.estado_partido !== "post" && !(m.estado_partido === "in" && typeof m._minuto === "string" && /^90/.test(m._minuto.trim()))) h += htmlBSD(m); /* Novena ronda P1-2: un partido terminado o en descuento no muestra EV ni picks en el bloque BSD. */
