@@ -1085,7 +1085,7 @@ function __initPagina(){
      de día y estado, que también son globales): ordena las dos listas
      (#mwList entre semana y #matchList fin de semana) y el interruptor
      "Solo con valor" se combina con día, liga y estado en applyFilters.
-     El EV del mejor pick se lee de la tarjeta misma (chip del semáforo:
+     El EV del mejor pick se lee de la tarjeta misma (caja FIFA del pick: .fifa-markets .fifa-mkt:nth-child(2) b.num; de respaldo, el chip del semáforo:
      .chip.ev, .chip.ev-mid o .chip.ev-bad, el último "+X.X%" del texto). Sin datos nuevos.
      "Por fecha" restaura el orden original de cada lista. */
   var sortMode = "fecha";
@@ -1098,7 +1098,7 @@ function __initPagina(){
     });
   });
   function bestEv(article){
-    var chip = article.querySelector(".chip.ev strong, .chip.ev-mid strong, .chip.ev-bad strong");
+    var chip = article.querySelector(".fifa-markets .fifa-mkt:nth-child(2) b.num, .chip.ev strong, .chip.ev-mid strong, .chip.ev-bad strong");
     if (!chip) return -Infinity;
     var nums = chip.textContent.match(/[+−\-]?\d+(?:[.,]\d+)?\s*%/g);
     if (!nums) return -Infinity;
@@ -1161,16 +1161,16 @@ function __initPagina(){
     return out;
   }
   function veredicto(article){
-    var chip1x2 = null;
+    var chip1x2 = (function(){var ns=article.querySelectorAll(".fifa-probs .fifa-prob b.num");if(ns.length!==3)return null;return "1X2: "+ns[0].textContent+" · "+ns[1].textContent+" · "+ns[2].textContent;})();
     article.querySelectorAll(".chip").forEach(function(c){
       if (c.textContent.indexOf("1X2:") === 0) chip1x2 = c.textContent;
     });
-    var chipEv = article.querySelector(".chip.ev strong, .chip.ev-mid strong, .chip.ev-bad strong");
+    var chipEv = (function(){var m2=article.querySelector(".fifa-markets .fifa-mkt:nth-child(2)");if(!m2)return null;var t=m2.querySelector(".fifa-mkt-t"),n=m2.querySelector("b.num"),s=m2.querySelector(".fifa-mkt-s");if(!t||!n||!s||s.textContent.indexOf("Semáforo ")!==0)return null;return s.textContent.replace("Semáforo ","")+" · "+t.textContent+" "+n.textContent;})()
     if (!chip1x2 || !chipEv) return null;
     var p = chip1x2.match(/([\d.]+)% · ([\d.]+)% · ([\d.]+)%/);
     if (!p) return null;
     var p1 = parseFloat(p[1]), px = parseFloat(p[2]), p2 = parseFloat(p[3]);
-    var m = chipEv.textContent.match(/^(\S+) · (.+) ([+−\-][\d.,]+)%$/);
+    var m = chipEv.match(/^(\S+) · (.+) ([+−\-][\d.,]+)%$/);
     if (!m) return null;
     var mercado = m[2].trim();
     var ev = parseFloat(m[3].replace("−", "-").replace(",", "."));
