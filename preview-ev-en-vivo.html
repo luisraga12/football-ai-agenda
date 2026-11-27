@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preview — Módulo EV en vivo (T1, décima ronda)</title>
+<style>
+/* Preview autocontenido: estilo en línea, sin fetches externos. Los datos son
+   copias literales de data/semana-2/ev.json, data/semana-2-entresemana/ev.json y
+   data/vivo.json (rama empleado-2, consultados 27 nov 2026 ~13:00 CST).
+   Paleta del rediseño gamer/FIFA en main (estilo-gamer.css). */
+:root{--bg:#07090D;--surface:#0D1117;--surface2:#111827;--surface3:#1B2433;--ink:#F8FAFC;--ink2:#E2E8F0;--muted:#94A3B8;--line:#1F2A37;--lime:#A3E635;--lime2:#84CC16;--on-lime:#0B1220;--cyan:#22D3EE;--live:#FF5A70;--amber:#FACC15}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.5}
+.wrap{max-width:1080px;margin:0 auto;padding:20px 16px 64px}
+h1,h2{font-family:"Chakra Petch","Archivo",system-ui,sans-serif;letter-spacing:.02em;line-height:1.2}
+h1{font-size:clamp(26px,4.5vw,40px);margin:10px 0 6px;text-transform:uppercase}
+h2{font-size:clamp(19px,3vw,26px);margin:34px 0 10px;text-transform:uppercase}
+h2 .num{color:var(--lime)}
+p{margin:8px 0}
+a{color:var(--cyan)}
+.hero{border:1px solid var(--line);border-left:5px solid var(--lime);border-radius:16px;background:linear-gradient(180deg,#0D1117,#0B1220);padding:20px}
+.hero p.lead{color:var(--ink2);font-size:17px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.badge{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:5px 10px;color:var(--ink2)}
+.badge.lime{background:var(--lime);color:var(--on-lime);border-color:var(--lime)}
+.badge.cyan{border-color:var(--cyan);color:var(--cyan)}
+.note{border:1px solid var(--line);border-left:4px solid var(--amber);background:#141005;border-radius:10px;padding:10px 14px;color:var(--ink2);font-size:14px}
+.note b{color:var(--amber)}
+table{width:100%;border-collapse:collapse;font-size:14px;margin-top:10px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--surface2);color:var(--lime);text-transform:uppercase;font-size:12px;letter-spacing:.06em}
+td code{color:var(--cyan)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+@media (max-width:640px){.grid2{grid-template-columns:1fr}}
+.mock{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:14px}
+.mock .tag{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan)}
+.card{border:1px solid var(--line);border-top:4px solid var(--lime);border-radius:14px;background:linear-gradient(180deg,#111827,#0D1117);padding:14px;margin-top:10px}
+.card .liga{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.card .teams{font-size:19px;font-weight:800;margin:6px 0 2px}
+.card .meta{color:var(--muted);font-size:13px}
+.card .score{font-size:26px;font-weight:900}
+.chip{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:3px 9px;border:1px solid var(--line);color:var(--ink2)}
+.chip.pre{border-color:var(--cyan);color:var(--cyan)}
+.chip.fin{color:var(--muted)}
+.ev-strip{margin-top:12px;border:1px solid var(--line);border-left:4px solid var(--lime);border-radius:10px;background:#0B1220;padding:10px 12px}
+.ev-strip .row{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline}
+.ev-strip .lbl{font-size:11px;font-weight:800;letter-spacing:.1em;color:var(--lime);text-transform:uppercase}
+.ev-strip .ev{font-size:20px;font-weight:900;color:var(--lime)}
+.ev-strip .sub{font-size:13px;color:var(--ink2)}
+.ev-strip .warn{font-size:13px;color:var(--amber);font-weight:700}
+.ev-live{border:1px solid var(--line);border-left:5px solid var(--lime);border-radius:14px;background:linear-gradient(180deg,#0D1117,#0B1220);padding:16px;margin-top:10px}
+.ev-live.is-live{border-left-color:var(--live)}
+.ev-live.is-final{border-left-color:var(--muted)}
+.ev-head{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
+.ev-title{font-size:13px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+.ev-title span{color:var(--lime)}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--live);margin-right:6px;animation:pulse 1.4s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+.ev-score{display:flex;justify-content:space-between;gap:12px;align-items:center;margin:12px 0 4px;flex-wrap:wrap}
+.ev-score .team{font-size:18px;font-weight:800}
+.ev-score .marcador{font-size:34px;font-weight:900;letter-spacing:.02em;white-space:nowrap}
+.ev-score .minuto{font-size:14px;font-weight:800;color:var(--live)}
+.ev-score .minuto.pre{color:var(--cyan)}
+.ev-score .minuto.fin{color:var(--muted)}
+.ev-main{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:flex-end;border-top:1px solid var(--line);margin-top:10px;padding-top:12px}
+.ev-big{font-size:clamp(30px,7vw,44px);font-weight:900;color:var(--lime);line-height:1}
+.ev-big small{font-size:16px}
+.ev-pick{font-size:15px;font-weight:700}
+.ev-pick .momio{color:var(--cyan)}
+.ev-rows{font-size:14px;color:var(--ink2)}
+.ev-rows b{color:var(--ink)}
+.ev-aviso{margin-top:12px;border:1px dashed var(--amber);border-radius:10px;padding:10px 12px;color:var(--amber);font-weight:700;font-size:14px}
+.ev-aviso.ok{border-color:var(--line);color:var(--muted);font-weight:400}
+.ev-foot{margin-top:12px;font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:8px}
+.demo-tag{display:inline-block;background:var(--amber);color:#111;font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;border-radius:6px;padding:2px 8px;margin-left:8px;vertical-align:middle}
+.switch{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.switch button{cursor:pointer;background:var(--surface2);color:var(--ink2);border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-weight:800;font-size:14px}
+.switch button[aria-pressed="true"]{background:var(--lime);color:var(--on-lime);border-color:var(--lime)}
+.slot{border:1px dashed var(--cyan);border-radius:12px;padding:10px;margin-top:10px}
+.slot .tag{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan)}
+.bar{height:14px;border-radius:6px;background:var(--surface3);margin:8px 0}
+.bar.short{width:55%}
+.flow{counter-reset:paso;list-style:none;padding:0}
+.flow li{counter-increment:paso;position:relative;padding:10px 10px 10px 46px;border:1px solid var(--line);border-radius:12px;margin:8px 0;background:var(--surface)}
+.flow li::before{content:counter(paso);position:absolute;left:10px;top:10px;width:26px;height:26px;border-radius:50%;background:var(--lime);color:var(--on-lime);font-weight:900;text-align:center;line-height:26px}
+.flow code{color:var(--cyan)}
+footer{margin-top:40px;border-top:1px solid var(--line);padding-top:14px;color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+  <div class="badges">
+    <span class="badge lime">Preview · solo diseño</span>
+    <span class="badge">Rama empleado-2</span>
+    <span class="badge">T1 · Décima ronda</span>
+    <span class="badge cyan">27 nov 2026</span>
+  </div>
+  <h1>Módulo EV en vivo</h1>
+  <p class="lead">Diseño del módulo que cruza el <b>EV pre-partido</b> (<code>ev.json</code>) con el <b>estado en vivo</b> (<code>vivo.json</code>: minuto y marcador). No inventa probabilidades live: si no hay momios en vivo, lo dice claro y muestra el EV pre-partido.</p>
+  <p class="lead">Estilo del rediseño ya en <code>main</code>: fondo casi negro (<code>#07090D</code>), verde lima (<code>#A3E635</code>) y cian (<code>#22D3EE</code>). Este archivo es autocontenido: estilo en línea, sin fetches externos.</p>
+</header>
+<section>
+  <h2><span class="num">0.</span> Datos usados (reales, 27 nov 2026 ~13:00 CST)</h2>
+  <p>Leídos de <code>data/semana-2/ev.json</code>, <code>data/semana-2-entresemana/ev.json</code> y <code>data/vivo.json</code> en la rama <code>empleado-2</code> (mismos valores en <code>main</code>). Nada inventado: si un dato no existe en el archivo, el módulo pone «por confirmar» o «no disponible».</p>
+  <table>
+    <tr><th>Partido</th><th>EV pre-partido (ev.json)</th><th>Estado vivo (vivo.json / ev.json)</th></tr>
+    <tr>
+      <td><b>Nottingham Forest vs Chelsea</b><br>vie 27 nov, 14:00 CST · Premier League · DraftKings</td>
+      <td>Mejor pick: <b>Visita (Chelsea) +87.4%</b> · momio 2.75 · prob. 68.1% (1X2: 12.7% / 19.2% / 68.1%)<br>También: Más 2.5 goles +5.8% (1.909) · Spread visita +0.5 +31.0% (1.50) · BTTS No +13.6% (2.175)</td>
+      <td>estado <code>"pre"</code> · minuto <code>"0"</code> · marcador 0-0 · inicia hoy 14:00 CST.<br><code>vivo.json</code> generado 27 nov 07:47 UTC (01:47 CST).</td>
+    </tr>
+    <tr>
+      <td><b>Toluca vs Atlas</b> (ida, Liguilla)<br>mar 25 nov, 19:00 CST · Liga MX</td>
+      <td><code>mejor_pick / mejor_ev / mejor_decimal / mejor_prob: null</code> · <code>estado: "pendiente"</code>, proveedor <code>null</code>.<br>Prob. 1X2: 70.9% / 12.8% / 16.3% · momios 1X2 y total: <code>null</code> (no disponibles).</td>
+      <td><code>estado_partido: "post"</code> · <b>Final 2-0</b> (goles: Vega 43′, Paulinho 69′). Sin EV en vivo.</td>
+    </tr>
+  </table>
+  <p class="note"><b>Nota honesta sobre el EV de Forest–Chelsea:</b> la orden citaba «EV +94.2% visita». El <code>ev.json</code> vigente (main y empleado-2, consultado 27 nov ~13:00 CST) trae <b>+87.4%</b> con momio 2.75 y prob. 68.1% (0.681 × 2.75 − 1 = 0.874). El momio se movió desde que se escribió la orden. Este preview usa el archivo vigente, no el número citado.</p>
+</section>
+<section>
+  <h2><span class="num">1.</span> Dónde va el módulo</h2>
+  <div class="grid2">
+    <div class="mock">
+      <p class="tag">A · En la tarjeta de la agenda (index.html)</p>
+      <p>Debajo del marcador y del bloque de momios, como tira compacta. En la tarjeta solo cabe una línea de EV + el aviso de momios live.</p>
+      <div class="card">
+        <div class="liga">Premier League · Vie 27 nov · 14:00 CST</div>
+        <div class="teams">Nottingham Forest vs Chelsea</div>
+        <div class="meta"><span class="chip pre">Próximo · hoy 14:00</span> &nbsp; <span class="score">0-0</span></div>
+        <div class="ev-strip">
+          <div class="row"><span class="lbl">EV en vivo</span><span class="ev">+87.4%</span></div>
+          <div class="row"><span class="sub">Chelsea (visita) · momio 2.75 · prob. 68.1%</span></div>
+          <div class="row"><span class="warn">Momios en vivo: no disponibles</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="liga">Liga MX · Liguilla (ida) · Mar 25 nov · 19:00 CST</div>
+        <div class="teams">Toluca vs Atlas</div>
+        <div class="meta"><span class="chip fin">Final</span> &nbsp; <span class="score">2-0</span></div>
+        <div class="ev-strip">
+          <div class="row"><span class="lbl">EV en vivo</span><span class="sub">Sin EV en vivo</span></div>
+          <div class="row"><span class="sub">Partido terminado · Final 2-0. El EV pre-partido ya no aplica.</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="mock">
+      <p class="tag">B · En el detalle del partido (partido.html)</p>
+      <p>Justo debajo de la caja de marcador en vivo y antes de «Fuerza del XI». Es el módulo completo: marcador + minuto, EV grande, filas por mercado y aviso de momios live.</p>
+      <div class="card" style="border-top-color:var(--cyan)">
+        <div class="liga">Detalle del partido · ?partido=nottingham-forest-vs-chelsea</div>
+        <div class="teams">Nottingham Forest vs Chelsea</div>
+        <div class="meta">Vie 27 nov · 14:00 CST · Premier League · <span class="chip pre">Próximo</span></div>
+        <div class="slot">
+          <span class="tag">↓ Aquí va el módulo EV en vivo ↓</span>
+          <div class="ev-live">
+            <div class="ev-head"><span class="ev-title">⚡ <span>EV</span> en vivo</span><span class="chip pre">Próximo · 14:00</span></div>
+            <div class="ev-score"><span class="team">Nottingham Forest</span><span class="marcador">0 - 0</span><span class="team">Chelsea</span></div>
+            <div class="ev-score"><span class="minuto pre">vivo.json: pre · minuto 0′</span></div>
+            <div class="ev-main">
+              <div><div class="ev-big">+87.4% <small>EV</small></div><div class="ev-pick">Chelsea (visita) · momio <span class="momio">2.75</span> · prob. 68.1%</div></div>
+              <div class="ev-rows">Más 2.5 goles: <b>+5.8%</b><br>Spread visita +0.5: <b>+31.0%</b></div>
+            </div>
+            <div class="ev-aviso">Momios en vivo: no disponibles — se muestra el EV pre-partido (DraftKings).</div>
+            <div class="ev-foot">Fuente: data/semana-2/ev.json + data/vivo.json · Se actualiza cada 60 s con vivo.json.</div>
+          </div>
+        </div>
+        <div class="bar"></div><div class="bar short"></div>
+        <p class="meta">Fuerza del XI · Últimos 5 · Momios y EV pre-partido (secciones existentes del detalle, sin cambios).</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <h2><span class="num">2.</span> Los tres estados del módulo</h2>
+  <p>Usa los botones para ver cada estado. En producción no hay botones: el estado cambia solo cuando cambia <code>vivo.json</code> (estado <code>pre</code> → <code>in_progress</code> → <code>post</code>).</p>
+  <div class="switch" role="group" aria-label="Estados del módulo">
+    <button type="button" data-estado="proximo" aria-pressed="true">1 · Próximo (ahora)</button>
+    <button type="button" data-estado="envivo" aria-pressed="false">2 · En vivo (demo)</button>
+    <button type="button" data-estado="terminado" aria-pressed="false">3 · Terminado</button>
+  </div>
+  <div id="moduloDemo"></div>
+  <p id="leyendaEstado" class="note"></p>
+</section>
+<section>
+  <h2><span class="num">3.</span> Cuando hay momios live (diseño futuro)</h2>
+  <p>Hoy <b>no hay fuente gratuita de momios en vivo</b> (T2 validada por E1, 27 nov ~12:50 CST: sin fuente libre; la v1 gratis usa probabilidad live + momio pre-partido, etiquetado). Por eso el módulo nunca inventa un momio live: cuando la fuente exista, se llena esta zona; mientras tanto muestra el momio pre-partido etiquetado y el aviso.</p>
+  <div class="ev-live">
+    <div class="ev-head"><span class="ev-title">⚡ <span>EV</span> en vivo</span><span class="chip" style="border-color:var(--live);color:var(--live)"><span class="dot"></span>En vivo · 63′</span></div>
+    <div class="ev-score"><span class="team">Nottingham Forest</span><span class="marcador">1 - 0</span><span class="team">Chelsea</span></div>
+    <div class="ev-main">
+      <div><div class="ev-big">+87.4% <small>EV pre-partido</small></div><div class="ev-pick">Chelsea (visita) · momio pre-partido <span class="momio">2.75</span> · prob. pre-partido 68.1%</div></div>
+      <div class="ev-rows">Probabilidad live del modelo: <b>por confirmar</b><br>Momio live (1X2 visita): <b>—</b><br>EV live: <b>—</b></div>
+    </div>
+    <div class="ev-aviso">Momios en vivo: no disponibles — sin fuente gratuita hoy. El EV que se muestra es el pre-partido, no un EV live.</div>
+    <div class="ev-foot">Cuando haya momios live, las tres filas de arriba se llenan con el momio live, la probabilidad live del modelo (T2) y el EV live calculado. Hasta entonces quedan en «—» / «por confirmar», nunca con un número inventado.</div>
+  </div>
+</section>
+<section>
+  <h2><span class="num">4.</span> Cómo se actualiza con vivo.json</h2>
+  <ol class="flow">
+    <li><b>El workflow escribe el caché.</b> <code>actualizar-vivo.yml</code> corre cada 5 minutos en ventanas de partido y publica <code>data/vivo.json</code> con <code>generado_en</code> / <code>actualizado_en</code>, <code>estado</code> (<code>pre</code> / <code>in_progress</code> / <code>post</code>), <code>minuto</code> y <code>marcador</code> por partido.</li>
+    <li><b>El módulo lee primero el caché.</b> Igual que el módulo de marcador en vivo ya en <code>main</code>: lee <code>data/vivo.json</code> desde GitHub Pages (mismo origen, sin CORS) con timeout de 3 s. De ahí salen el minuto y el marcador que se ven arriba.</li>
+    <li><b>Tick cada 60 s.</b> El módulo relee el caché cada 60 s y solo cambia lo que cambió (minuto, marcador, chip de estado). Si el caché tiene más de ~10 min, marca «caché viejo» y reintenta el fetch directo a ESPN en segundo plano.</li>
+    <li><b>El EV no se recalcula en vivo.</b> El EV que se muestra es el pre-partido de <code>ev.json</code> (DraftKings). Sin momios live no hay EV live: el módulo lo dice (<code>«Momios en vivo: no disponibles»</code>) en vez de inventar uno.</li>
+    <li><b>Al terminar el partido</b> (<code>estado_partido: "post"</code> en <code>ev.json</code>), el módulo pasa al estado Terminado: muestra el Final y retira el EV («Sin EV en vivo»).</li>
+  </ol>
+  <p class="note" id="tickLine">Demo del tick: esta vista se abrió hace 0 s. En producción el tick relee <code>vivo.json</code> cada 60 s y actualiza minuto, marcador y «actualizado hace» sin recargar la página.</p>
+  <p class="note"><b>Prueba de que los campos existen:</b> el 24 nov el <code>vivo.json</code> observado traía Galatasaray–Aston Villa 1-0 al 88′ (JEFE.md, revisión 24 nov). Esos son exactamente los campos (<code>estado</code>, <code>minuto</code>, <code>marcador</code>) que alimentan este módulo.</p>
+</section>
+<section>
+  <h2><span class="num">5.</span> Qué NO hace el módulo</h2>
+  <ul>
+    <li>No inventa probabilidades live ni momios live: sin fuente, pone «no disponibles» / «por confirmar» / «—».</li>
+    <li>No cambia el EV pre-partido mientras el partido está en juego: el EV es de <code>ev.json</code> hasta que exista el modelo live (T2).</li>
+    <li>No marca un partido terminado como apostable: en Final muestra «Sin EV en vivo».</li>
+    <li>No toca <code>index.html</code> ni <code>partido.html</code>: esto es solo el diseño en preview; el port lo hace el jefe cuando lo apruebe.</li>
+  </ul>
+</section>
+<footer>
+  <p><b>Fuentes:</b> <code>data/semana-2/ev.json</code> (Forest–Chelsea: mejor_pick Visita, mejor_ev 0.8739, mejor_decimal 2.75, mejor_prob 68.14) · <code>data/semana-2-entresemana/ev.json</code> (Toluca–Atlas: estado_partido «post», marcador 2-0, mejor_* null) · <code>data/vivo.json</code> (Forest–Chelsea: estado «pre», minuto «0», 0-0; generado 2026-11-27T07:47:08Z) · <code>data/semana-2/tabla-poisson-semana-2.md</code> (1X2 Forest–Chelsea 12.7% / 19.2% / 68.1%) · JEFE.md (Galatasaray 1-0, 88′, vivo.json 24 nov; T2 validada 27 nov ~12:50 CST).</p>
+  <p>Preview de Empleado 2 · T1 décima ronda · 27 nov 2026 · Rama fija <code>empleado-2</code> · Listo para revisión del jefe.</p>
+</footer>
+</div>
+<script>
+/* Sin fetches: los estados son copias literales de los archivos reales.
+   El estado "En vivo" es DEMO DE DISEÑO: el minuto 63′ y el 1-0 son ilustrativos
+   (a las 13:00 CST ningún partido está en vivo en vivo.json); el EV +87.4% sí es real. */
+var ESTADOS = {
+  proximo: {
+    clase: "", chip: '<span class="chip pre">Próximo · hoy 14:00</span>',
+    equipos: ["Nottingham Forest", "Chelsea"], marcador: "0 - 0",
+    minuto: '<span class="minuto pre">vivo.json: estado «pre» · minuto 0′ · aún no empieza</span>',
+    ev: "+87.4%", evLabel: "EV pre-partido", pick: 'Chelsea (visita) · momio <span class="momio">2.75</span> · prob. 68.1% (DraftKings)',
+    filas: 'Más 2.5 goles: <b>+5.8%</b> (1.909)<br>Spread visita +0.5: <b>+31.0%</b> (1.50)<br>BTTS No: <b>+13.6%</b> (2.175)',
+    aviso: 'Momios en vivo: no disponibles — se muestra el EV pre-partido (DraftKings).',
+    avisoClase: "", pie: 'Fuente: data/semana-2/ev.json + data/vivo.json · vivo.json generado 27 nov 07:47 UTC.',
+    leyenda: '<b>Estado 1 · Próximo (AHORA, datos reales).</b> Forest–Chelsea aún no empieza (hoy 14:00 CST). vivo.json dice estado «pre», minuto 0, 0-0. El módulo ya muestra el EV pre-partido (+87.4% visita) y avisa que no hay momios en vivo. Cuando el workflow publique estado «in_progress», el chip pasa a EN VIVO y el minuto/marcador empiezan a moverse solos.'
+  },
+  envivo: {
+    clase: " is-live", chip: '<span class="chip" style="border-color:var(--live);color:var(--live)"><span class="dot"></span>En vivo · 63′</span>',
+    equipos: ["Nottingham Forest", "Chelsea"], marcador: "1 - 0",
+    minuto: '<span class="minuto"><span class="dot"></span>EN VIVO · minuto 63′ · se actualiza con vivo.json</span>',
+    ev: "+87.4%", evLabel: "EV pre-partido", pick: 'Chelsea (visita) · momio pre-partido <span class="momio">2.75</span> · prob. pre-partido 68.1%',
+    filas: 'Probabilidad live del modelo (T2): <b>por confirmar</b><br>Momio live (1X2 visita): <b>—</b><br>EV live: <b>—</b>',
+    aviso: 'Momios en vivo: no disponibles — el EV que se muestra es el pre-partido, no un EV live.',
+    avisoClase: "", pie: 'Fuente: data/semana-2/ev.json + data/vivo.json · Tick 60 s · Caché 5 min.',
+    leyenda: '<b>Estado 2 · En vivo (DEMO DE DISEÑO).</b><span class="demo-tag">Demo</span> El minuto 63′ y el 1-0 son ilustrativos para mostrar el diseño: a las ~13:00 CST ningún partido está en vivo en vivo.json, así que no hay un minuto real que mostrar todavía. Lo real aquí: el EV pre-partido +87.4% y el aviso «Momios en vivo: no disponibles». En producción, minuto y marcador salen de vivo.json (ejemplo real observado: Galatasaray–Aston Villa 1-0 al 88′, vivo.json 24 nov).'
+  },
+  terminado: {
+    clase: " is-final", chip: '<span class="chip fin">Final</span>',
+    equipos: ["Toluca", "Atlas"], marcador: "2 - 0",
+    minuto: '<span class="minuto fin">Final · estado_partido «post» · goles: Vega 43′, Paulinho 69′</span>',
+    ev: "Sin EV", evLabel: "en vivo", pick: 'Partido terminado · el EV pre-partido ya no aplica.',
+    filas: 'Prob. pre-partido (Poisson): <b>70.9% / 12.8% / 16.3%</b><br>Momios 1X2 y total en ev.json: <b>null</b> (no disponibles)<br>BTTS Sí (dato residual): 85.4% @1.607, EV +37.2%',
+    aviso: 'Sin EV en vivo: el partido terminó (Final 2-0). No se muestra como apostable.',
+    avisoClase: " ok", pie: 'Fuente: data/semana-2-entresemana/ev.json (estado_partido «post», marcador 2-0, mejor_* null).',
+    leyenda: '<b>Estado 3 · Terminado (datos reales).</b> Toluca 2-0 Atlas, Final. ev.json trae estado_partido «post» y mejor_ev null: el módulo retira el EV y muestra «Sin EV en vivo». Se conservan, como referencia histórica, las probabilidades pre-partido del Poisson (70.9% / 12.8% / 16.3%) — no son un pick en vivo.'
+  }
+};
+function renderEstado(key){
+  var e = ESTADOS[key];
+  document.getElementById("moduloDemo").innerHTML =
+    '<div class="ev-live' + e.clase + '">' +
+    '<div class="ev-head"><span class="ev-title">⚡ <span>EV</span> en vivo</span>' + e.chip + '</div>' +
+    '<div class="ev-score"><span class="team">' + e.equipos[0] + '</span><span class="marcador">' + e.marcador + '</span><span class="team">' + e.equipos[1] + '</span></div>' +
+    '<div class="ev-score">' + e.minuto + '</div>' +
+    '<div class="ev-main"><div><div class="ev-big">' + e.ev + ' <small>' + e.evLabel + '</small></div><div class="ev-pick">' + e.pick + '</div></div>' +
+    '<div class="ev-rows">' + e.filas + '</div></div>' +
+    '<div class="ev-aviso' + e.avisoClase + '">' + e.aviso + '</div>' +
+    '<div class="ev-foot">' + e.pie + '</div></div>';
+  document.getElementById("leyendaEstado").innerHTML = e.leyenda;
+  var btns = document.querySelectorAll(".switch button");
+  for (var i = 0; i < btns.length; i++) btns[i].setAttribute("aria-pressed", btns[i].getAttribute("data-estado") === key ? "true" : "false");
+}
+var btns = document.querySelectorAll(".switch button");
+for (var i = 0; i < btns.length; i++) btns[i].addEventListener("click", function(){ renderEstado(this.getAttribute("data-estado")); });
+renderEstado("proximo");
+var t0 = Date.now();
+setInterval(function(){
+  var s = Math.floor((Date.now() - t0) / 1000);
+  document.getElementById("tickLine").innerHTML = 'Demo del tick: esta vista se abrió hace ' + s + ' s. En producción el tick relee <code>vivo.json</code> cada 60 s y actualiza minuto, marcador y «actualizado hace» sin recargar la página.';
+}, 1000);
+</script>
+</body>
+</html>
