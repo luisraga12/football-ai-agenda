@@ -45,11 +45,44 @@ h2{font-size:1.05rem;letter-spacing:.06em;text-transform:uppercase;margin:0 0 10
 .dcell span{display:block;font-size:.78rem;color:var(--ink-2)}
 .dcell b{font-size:1.1rem}
 .dcell .sub{display:block;font-size:.72rem;color:var(--muted)}
-.pitch{background:linear-gradient(180deg,#14532d,#166534);border:1px solid #22c55e;border-radius:12px;padding:14px;margin-top:10px}
-.pitch h3{margin:0 0 8px;font-size:.95rem}
-.prow{margin:8px 0}
-.prow b{font-size:.72rem;letter-spacing:.12em;color:#bbf7d0}
-.prow p{margin:2px 0 0;font-size:.92rem}
+.pitch-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pitch{position:relative;background:linear-gradient(180deg,#0b2e1a,#0f3d24);border:1px solid #a3e635;border-radius:14px;padding:12px;color:#fff;overflow:hidden;margin-top:10px}
+.pitch::before{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:rgba(163,230,53,.45)}
+.pitch::after{content:"";position:absolute;left:50%;top:50%;width:90px;height:90px;margin:-45px 0 0 -45px;border:2px solid rgba(163,230,53,.45);border-radius:50%;pointer-events:none}
+.pitch-head{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:.85rem;margin-bottom:4px;position:relative;z-index:1}
+.pitch-head b{font-size:.95rem}
+.pitch-head span{color:#bbf7d0}
+.pitch-row{display:flex;justify-content:space-evenly;gap:6px;padding:10px 0;position:relative;z-index:1}
+.pitch-player{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:0;flex:1}
+.pitch-dot{width:30px;height:30px;border-radius:50%;background:#0b1220;color:#a3e635;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.72rem;border:2px solid #a3e635;flex:0 0 auto}
+.pitch-name{font-size:.72rem;font-weight:700;text-align:center;line-height:1.2;text-shadow:0 1px 2px rgba(0,0,0,.55)}
+.detail-two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.detail-team{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+.detail-team b{font-size:.95rem}
+.detail-team ul{margin:8px 0 0;padding-left:0;list-style:none}
+.detail-team li{margin:6px 0;font-size:.92rem}
+.d-comp{color:var(--muted);font-size:.82rem}
+.detail-pos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pos-box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
+.pos-box b{font-size:.95rem}
+.pos-num{font-size:2rem;font-weight:800;color:#a3e635}
+.pos-box p{margin:6px 0 0;font-size:.88rem;color:var(--ink-2)}
+.radio-head{display:flex;justify-content:space-between;font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.radio-metric{margin:12px 0}
+.radio-row{display:grid;grid-template-columns:52px 1fr 1fr 52px;gap:8px;align-items:center}
+.radio-num{font-size:.95rem;text-align:center}
+.radio-track{height:8px;border-radius:999px;background:#1e293b;overflow:hidden}
+.radio-track-r{height:8px;border-radius:999px;background:#1e293b;overflow:hidden}
+.radio-track-r .radio-fill{margin-left:auto}
+.radio-vs{color:#a3e635;font-weight:800}
+.radio-fill{display:block;height:100%}
+.radio-home{background:#a3e635}
+.radio-away{background:#22d3ee}
+.radio-cap{text-align:center;font-size:.82rem;color:var(--muted);margin-top:3px}
+.radio-dots{display:inline-flex;gap:4px}
+.radio-dots i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.racha{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.88rem;margin:8px 0}
+.detail-list{margin:8px 0}
 .xi{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .xi-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
 .xi-num{font-size:2rem;font-weight:800;color:var(--accent)}
@@ -66,14 +99,8 @@ li{margin:4px 0}
 .tag.v{background:#14532d;color:#bbf7d0}
 .tag.e{background:#713f12;color:#fde68a}
 .tag.d{background:#7f1d1d;color:#fecaca}
-table{width:100%;border-collapse:collapse;font-size:.92rem}
-td,th{padding:6px 4px;border-bottom:1px solid var(--line);text-align:left}
-.stat{display:grid;grid-template-columns:1fr auto auto 1fr;gap:10px;align-items:center;padding:7px 0;border-bottom:1px solid var(--line);font-size:.92rem}
-.stat b:first-child{text-align:right}
-.stat .mid{color:var(--muted);font-size:.8rem;text-align:center}
-.stat b:last-child{text-align:left}
 .foot{margin-top:28px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);padding-top:14px}
-@media (max-width:640px){.grid5{grid-template-columns:repeat(2,1fr)}.xi{grid-template-columns:1fr}.fifa-hero{flex-direction:column}.fifa-rating{flex:none;width:110px}}
+@media (max-width:640px){.grid5{grid-template-columns:repeat(2,1fr)}.xi{grid-template-columns:1fr}.fifa-hero{flex-direction:column}.fifa-rating{flex:none;width:110px}.pitch-grid,.detail-two,.detail-pos{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -121,16 +148,52 @@ td,th{padding:6px 4px;border-bottom:1px solid var(--line);text-align:left}
 <section>
 <h2>Alineación oficial en cancha</h2>
 <p class="note" style="margin-top:0">Alineación oficial publicada por ESPN — los 11 titulares de cada equipo.</p>
-<div class="pitch"><h3>Galatasaray · Formación: 4-5-1</h3>
-<div class="prow"><b>DELANTEROS</b><p>Baris Alper Yilmaz</p></div>
-<div class="prow"><b>MEDIOCAMPISTAS</b><p>Alexey Batrakov · Lucas Torreira · Mario Lemina · Eren Elmali · Yunus Akgün</p></div>
-<div class="prow"><b>DEFENSAS</b><p>Abdülkerim Bardakçi · Davinson Sánchez · Ismail Jakobs · Wilfried Singo</p></div>
-<div class="prow"><b>PORTERO</b><p>Ugurcan Çakir</p></div></div>
-<div class="pitch"><h3>Aston Villa · Formación: 4-5-1</h3>
-<div class="prow"><b>DELANTEROS</b><p>Nicolas Jackson</p></div>
-<div class="prow"><b>MEDIOCAMPISTAS</b><p>John McGinn · João Gomes · Boubacar Kamara · Johan Manzambi · Alysson</p></div>
-<div class="prow"><b>DEFENSAS</b><p>Tyrone Mings · Victor Lindelöf · Ian Maatsen · Taylor Harwood-Bellis</p></div>
-<div class="prow"><b>PORTERO</b><p>Zion Suzuki</p></div></div>
+<div class="pitch-grid">
+  <div class="pitch">
+    <div class="pitch-head"><b>Galatasaray</b><span>4-5-1 · Oficial</span></div>
+    <div class="pitch-row" aria-label="Delanteros: Baris Alper Yilmaz">
+      <div class="pitch-player"><span class="pitch-dot">F</span><span class="pitch-name">Baris Alper Yilmaz</span></div>
+    </div>
+    <div class="pitch-row" aria-label="Medios: Alexey Batrakov, Lucas Torreira, Mario Lemina, Eren Elmali, Yunus Akgün">
+      <div class="pitch-player"><span class="pitch-dot">M</span><span class="pitch-name">Alexey Batrakov</span></div>
+      <div class="pitch-player"><span class="pitch-dot">M</span><span class="pitch-name">Lucas Torreira</span></div>
+      <div class="pitch-player"><span class="pitch-dot">M</span><span class="pitch-name">Mario Lemina</span></div>
+      <div class="pitch-player"><span class="pitch-dot">M</span><span class="pitch-name">Eren Elmali</span></div>
+      <div class="pitch-player"><span class="pitch-dot">M</span><span class="pitch-name">Yunus Akgün</span></div>
+    </div>
+    <div class="pitch-row" aria-label="Defensas: Abdülkerim Bardakçi, Davinson Sánchez, Ismail Jakobs, Wilfried Singo">
+      <div class="pitch-player"><span class="pitch-dot">D</span><span class="pitch-name">Abdülkerim Bardakçi</span></div>
+      <div class="pitch-player"><span class="pitch-dot">D</span><span class="pitch-name">Davinson Sánchez</span></div>
+      <div class="pitch-player"><span class="pitch-dot">D</span><span class="pitch-name">Ismail Jakobs</span></div>
+      <div class="pitch-player"><span class="pitch-dot">D</span><span class="pitch-name">Wilfried Singo</span></div>
+    </div>
+    <div class="pitch-row" aria-label="Portero: Ugurcan Çakir">
+      <div class="pitch-player"><span class="pitch-dot">G</span><span class="pitch-name">Ugurcan Çakir</span></div>
+    </div>
+  </div>
+<div class="pitch">
+    <div class="pitch-head"><b>Aston Villa</b><span>4-5-1 · Oficial</span></div>
+    <div class="pitch-row" aria-label="Delanteros: Nicolas Jackson">
+      <div class="pitch-player"><span class="pitch-dot">F</span><span class="pitch-name">Nicolas Jackson</span></div>
+    </div>
+    <div class="pitch-row" aria-label="Medios: John McGinn, João Gomes, Boubacar Kamara, Johan Manzambi, Alysson">
+      <div class="pitch-player"><span class="pitch-dot">M</span><span class="pitch-name">John McGinn</span></div>
+      <div class="pitch-player"><span class="pitch-dot">M</span><span class="pitch-name">João Gomes</span></div>
+      <div class="pitch-player"><span class="pitch-dot">M</span><span class="pitch-name">Boubacar Kamara</span></div>
+      <div class="pitch-player"><span class="pitch-dot">M</span><span class="pitch-name">Johan Manzambi</span></div>
+      <div class="pitch-player"><span class="pitch-dot">M</span><span class="pitch-name">Alysson</span></div>
+    </div>
+    <div class="pitch-row" aria-label="Defensas: Tyrone Mings, Victor Lindelöf, Ian Maatsen, Taylor Harwood-Bellis">
+      <div class="pitch-player"><span class="pitch-dot">D</span><span class="pitch-name">Tyrone Mings</span></div>
+      <div class="pitch-player"><span class="pitch-dot">D</span><span class="pitch-name">Victor Lindelöf</span></div>
+      <div class="pitch-player"><span class="pitch-dot">D</span><span class="pitch-name">Ian Maatsen</span></div>
+      <div class="pitch-player"><span class="pitch-dot">D</span><span class="pitch-name">Taylor Harwood-Bellis</span></div>
+    </div>
+    <div class="pitch-row" aria-label="Portero: Zion Suzuki">
+      <div class="pitch-player"><span class="pitch-dot">G</span><span class="pitch-name">Zion Suzuki</span></div>
+    </div>
+  </div>
+  </div>
 <p class="note">Los 11 parados por posición (arriba los delanteros, abajo el portero). Sin fotos.</p>
 </section>
 <section>
@@ -161,59 +224,62 @@ td,th{padding:6px 4px;border-bottom:1px solid var(--line);text-align:left}
 <p class="note">Datos: Empleado 1, data/semana-2/alineacion-probable.json y data/semana-2-entresemana/alineacion-probable.json.</p>
 </section>
 <section>
-<h2>Últimos 5 partidos — Galatasaray</h2>
+<h2>Últimos 5 partidos</h2>
+<div class="detail-two">
+<div class="detail-team"><b>Galatasaray</b>
 <ul>
-<li><span class="tag v">V</span>Galatasaray 2–1 Samsunspor · Casa · 21 nov 2026 · Turkish Super Lig</li>
-<li><span class="tag v">V</span>Galatasaray 4–3 Amed SFK · Casa · 7 nov 2026 · Turkish Super Lig</li>
-<li><span class="tag v">V</span>Galatasaray 2–0 VfB Stuttgart · Casa · 3 nov 2026 · UEFA Champions League</li>
-<li><span class="tag v">V</span>Konyaspor 0–4 Galatasaray · Fuera · 30 oct 2026 · Turkish Super Lig</li>
-<li><span class="tag v">V</span>Galatasaray 2–1 Fenerbahce · Casa · 26 oct 2026 · Turkish Super Lig</li>
+<li><span class="tag v">V</span><b>Galatasaray 2–1 Samsunspor</b> · Casa · 21 nov 2026 · <span class="d-comp">Turkish Super Lig</span></li>
+<li><span class="tag v">V</span><b>Galatasaray 4–3 Amed SFK</b> · Casa · 7 nov 2026 · <span class="d-comp">Turkish Super Lig</span></li>
+<li><span class="tag v">V</span><b>Galatasaray 2–0 VfB Stuttgart</b> · Casa · 3 nov 2026 · <span class="d-comp">UEFA Champions League</span></li>
+<li><span class="tag v">V</span><b>Konyaspor 0–4 Galatasaray</b> · Fuera · 30 oct 2026 · <span class="d-comp">Turkish Super Lig</span></li>
+<li><span class="tag v">V</span><b>Galatasaray 2–1 Fenerbahce</b> · Casa · 26 oct 2026 · <span class="d-comp">Turkish Super Lig</span></li>
 </ul>
-<h2>Últimos 5 partidos — Aston Villa</h2>
+</div>
+<div class="detail-team"><b>Aston Villa</b>
 <ul>
-<li><span class="tag e">E</span>Aston Villa 0–0 Sunderland · Casa · 21 nov 2026 · English Premier League</li>
-<li><span class="tag e">E</span>Manchester United 4–4 Aston Villa · Fuera · 8 nov 2026 · English Premier League</li>
-<li><span class="tag d">D</span>Barcelona 3–0 Aston Villa · Fuera · 3 nov 2026 · UEFA Champions League</li>
-<li><span class="tag e">E</span>Aston Villa 1–1 Fulham · Casa · 31 oct 2026 · English Premier League</li>
-<li><span class="tag d">D</span>AFC Bournemouth 3–0 Aston Villa · Fuera · 28 oct 2026 · English Carabao Cup</li>
+<li><span class="tag e">E</span><b>Aston Villa 0–0 Sunderland</b> · Casa · 21 nov 2026 · <span class="d-comp">English Premier League</span></li>
+<li><span class="tag e">E</span><b>Manchester United 4–4 Aston Villa</b> · Fuera · 8 nov 2026 · <span class="d-comp">English Premier League</span></li>
+<li><span class="tag d">D</span><b>Barcelona 3–0 Aston Villa</b> · Fuera · 3 nov 2026 · <span class="d-comp">UEFA Champions League</span></li>
+<li><span class="tag e">E</span><b>Aston Villa 1–1 Fulham</b> · Casa · 31 oct 2026 · <span class="d-comp">English Premier League</span></li>
+<li><span class="tag d">D</span><b>AFC Bournemouth 3–0 Aston Villa</b> · Fuera · 28 oct 2026 · <span class="d-comp">English Carabao Cup</span></li>
 </ul>
+</div>
+</div>
 </section>
 <section>
 <h2>Historial directo</h2>
-<p>Sin enfrentamientos previos registrados en ESPN.</p>
+<div class="detail-team"><p style="margin:0">Sin enfrentamientos previos registrados en ESPN.</p></div>
 </section>
 <section>
 <h2>Así llegan</h2>
-<table>
-<tr><th></th><th>Galatasaray</th><th>Aston Villa</th></tr>
-<tr><td>Goles por partido</td><td>2.0</td><td>3.0</td></tr>
-<tr><td>Goles encajados</td><td>2.3</td><td>1.5</td></tr>
-<tr><td>BTTS</td><td>3/4</td><td>2/4</td></tr>
-<tr><td>Más 2.5</td><td>3/4</td><td>4/4</td></tr>
-<tr><td>Racha</td><td>W W L L</td><td>L W W W</td></tr>
-</table>
+<div class="radio-metric"><div class="radio-row"><b class="radio-num">2.0</b><div class="radio-track"><span class="radio-fill radio-home" style="width:40%"></span></div><div class="radio-track-r"><span class="radio-fill radio-away" style="width:60%"></span></div><b class="radio-num">3.0</b></div><div class="radio-cap">Goles por partido</div></div>
+<div class="radio-metric"><div class="radio-row"><b class="radio-num">2.3</b><div class="radio-track"><span class="radio-fill radio-home" style="width:61%"></span></div><div class="radio-track-r"><span class="radio-fill radio-away" style="width:39%"></span></div><b class="radio-num">1.5</b></div><div class="radio-cap">Goles encajados</div></div>
+<div class="radio-metric"><div class="radio-row"><b class="radio-num">3/4</b><div class="radio-track"><span class="radio-fill radio-home" style="width:60%"></span></div><div class="radio-track-r"><span class="radio-fill radio-away" style="width:40%"></span></div><b class="radio-num">2/4</b></div><div class="radio-cap">BTTS</div></div>
+<div class="radio-metric"><div class="radio-row"><b class="radio-num">3/4</b><div class="radio-track"><span class="radio-fill radio-home" style="width:43%"></span></div><div class="radio-track-r"><span class="radio-fill radio-away" style="width:57%"></span></div><b class="radio-num">4/4</b></div><div class="radio-cap">Más 2.5</div></div>
+<div class="racha"><b>Galatasaray</b><span class="radio-dots"><i style="background:#22c55e"></i><i style="background:#22c55e"></i><i style="background:#ef4444"></i><i style="background:#ef4444"></i></span><span>W W L L</span></div>
+<div class="racha"><b>Aston Villa</b><span class="radio-dots"><i style="background:#ef4444"></i><i style="background:#22c55e"></i><i style="background:#22c55e"></i><i style="background:#22c55e"></i></span><span>L W W W</span></div>
 <p class="note">Últimos 4 partidos de Champions según ESPN (23 nov 2026). Racha: 4 puntos V/E/D, del partido más reciente al más antiguo.</p>
 </section>
 <section>
 <h2>Posición en la tabla</h2>
-<table>
-<tr><th>Equipo</th><th>Pos.</th><th>Competición</th><th>Pts</th><th>PJ</th><th>G-E-P</th><th>DG</th></tr>
-<tr><td>Galatasaray</td><td>18.º</td><td>Champions League</td><td>6</td><td>4</td><td>2-0-2</td><td>-1</td></tr>
-<tr><td>Aston Villa</td><td>6.º</td><td>Champions League</td><td>9</td><td>4</td><td>3-0-1</td><td>+6</td></tr>
-</table>
+<div class="detail-pos">
+<div class="pos-box"><b>Galatasaray</b><div class="pos-num num">18.º</div><p>Champions League · 6 pts · 4 PJ · 2-0-2 · DG -1</p></div>
+<div class="pos-box"><b>Aston Villa</b><div class="pos-num num">6.º</div><p>Champions League · 9 pts · 4 PJ · 3-0-1 · DG +6</p></div>
+</div>
 </section>
 <section>
 <h2>Estadísticas del partido</h2>
-<div class="stat"><b>45.4%</b><span class="mid">Posesión</span><b>54.6%</b></div>
-<div class="stat"><b>9</b><span class="mid">Tiros</span><b>4</b></div>
-<div class="stat"><b>2</b><span class="mid">Tiros a puerta</span><b>0</b></div>
-<div class="stat"><b>5</b><span class="mid">Córners</span><b>1</b></div>
-<div class="stat"><b>13</b><span class="mid">Faltas</span><b>12</b></div>
-<div class="stat"><b>1</b><span class="mid">Fueras de juego</span><b>2</b></div>
-<div class="stat"><b>2</b><span class="mid">Tarjetas amarillas</span><b>4</b></div>
-<div class="stat"><b>0</b><span class="mid">Tarjetas rojas</span><b>0</b></div>
-<div class="stat"><b>290</b><span class="mid">Pases precisos</span><b>385</b></div>
-<div class="stat"><b>0</b><span class="mid">Paradas</span><b>1</b></div>
+<div class="radio-head"><span>Galatasaray</span><span class="radio-vs">vs</span><span>Aston Villa</span></div>
+<div class="radio-metric"><div class="radio-row"><b class="radio-num">45.4%</b><div class="radio-track"><span class="radio-fill radio-home" style="width:45%"></span></div><div class="radio-track-r"><span class="radio-fill radio-away" style="width:55%"></span></div><b class="radio-num">54.6%</b></div><div class="radio-cap">Posesión</div></div>
+<div class="radio-metric"><div class="radio-row"><b class="radio-num">9</b><div class="radio-track"><span class="radio-fill radio-home" style="width:100%"></span></div><div class="radio-track-r"><span class="radio-fill radio-away" style="width:44%"></span></div><b class="radio-num">4</b></div><div class="radio-cap">Tiros</div></div>
+<div class="radio-metric"><div class="radio-row"><b class="radio-num">2</b><div class="radio-track"><span class="radio-fill radio-home" style="width:100%"></span></div><div class="radio-track-r"><span class="radio-fill radio-away" style="width:0%"></span></div><b class="radio-num">0</b></div><div class="radio-cap">Tiros a puerta</div></div>
+<div class="radio-metric"><div class="radio-row"><b class="radio-num">5</b><div class="radio-track"><span class="radio-fill radio-home" style="width:100%"></span></div><div class="radio-track-r"><span class="radio-fill radio-away" style="width:20%"></span></div><b class="radio-num">1</b></div><div class="radio-cap">Córners</div></div>
+<div class="radio-metric"><div class="radio-row"><b class="radio-num">13</b><div class="radio-track"><span class="radio-fill radio-home" style="width:100%"></span></div><div class="radio-track-r"><span class="radio-fill radio-away" style="width:92%"></span></div><b class="radio-num">12</b></div><div class="radio-cap">Faltas</div></div>
+<div class="radio-metric"><div class="radio-row"><b class="radio-num">1</b><div class="radio-track"><span class="radio-fill radio-home" style="width:50%"></span></div><div class="radio-track-r"><span class="radio-fill radio-away" style="width:100%"></span></div><b class="radio-num">2</b></div><div class="radio-cap">Fueras de juego</div></div>
+<div class="radio-metric"><div class="radio-row"><b class="radio-num">2</b><div class="radio-track"><span class="radio-fill radio-home" style="width:50%"></span></div><div class="radio-track-r"><span class="radio-fill radio-away" style="width:100%"></span></div><b class="radio-num">4</b></div><div class="radio-cap">Tarjetas amarillas</div></div>
+<div class="radio-metric"><div class="radio-row"><b class="radio-num">0</b><div class="radio-track"><span class="radio-fill radio-home" style="width:0%"></span></div><div class="radio-track-r"><span class="radio-fill radio-away" style="width:0%"></span></div><b class="radio-num">0</b></div><div class="radio-cap">Tarjetas rojas</div></div>
+<div class="radio-metric"><div class="radio-row"><b class="radio-num">290</b><div class="radio-track"><span class="radio-fill radio-home" style="width:75%"></span></div><div class="radio-track-r"><span class="radio-fill radio-away" style="width:100%"></span></div><b class="radio-num">385</b></div><div class="radio-cap">Pases precisos</div></div>
+<div class="radio-metric"><div class="radio-row"><b class="radio-num">0</b><div class="radio-track"><span class="radio-fill radio-home" style="width:0%"></span></div><div class="radio-track-r"><span class="radio-fill radio-away" style="width:100%"></span></div><b class="radio-num">1</b></div><div class="radio-cap">Paradas</div></div>
 <p class="note">Estadísticas del partido terminado, según ESPN (resumen del partido).</p>
 </section>
 <div class="foot">
