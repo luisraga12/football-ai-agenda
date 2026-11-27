@@ -185,16 +185,16 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding-top:14px;color:v
 </section>
 <section>
   <h2><span class="num">3.</span> Cuando hay momios live (diseño futuro)</h2>
-  <p>Hoy <b>no hay fuente gratuita de momios en vivo</b> (T2 validada por E1, 27 nov ~12:50 CST: sin fuente libre; la v1 gratis usa probabilidad live + momio pre-partido, etiquetado). Por eso el módulo nunca inventa un momio live: cuando la fuente exista, se llena esta zona; mientras tanto muestra el momio pre-partido etiquetado y el aviso.</p>
+  <p>Hoy <b>no hay fuente gratuita de momios en vivo</b> (T2 validada por E1, 27 nov ~12:50 CST: sin fuente libre; la v1 gratis usa probabilidad live + momio pre-partido, etiquetado; aprobada por el jefe ~13:15 CST con el matiz de mostrar los insumos visibles). Por eso el módulo nunca inventa un momio live: cuando la fuente exista, se llena esta zona; mientras tanto muestra el momio pre-partido etiquetado y el aviso. El módulo muestra los insumos visibles del EV live (probabilidad live, stats en vivo y contexto de alineación) y deja claro que el momio base es el pre-partido.</p>
   <div class="ev-live">
     <div class="ev-head"><span class="ev-title">⚡ <span>EV</span> en vivo</span><span class="chip" style="border-color:var(--live);color:var(--live)"><span class="dot"></span>En vivo · 63′</span></div>
     <div class="ev-score"><span class="team">Nottingham Forest</span><span class="marcador">1 - 0</span><span class="team">Chelsea</span></div>
     <div class="ev-main">
       <div><div class="ev-big">+87.4% <small>EV pre-partido</small></div><div class="ev-pick">Chelsea (visita) · momio pre-partido <span class="momio">2.75</span> · prob. pre-partido 68.1%</div></div>
-      <div class="ev-rows">Probabilidad live del modelo: <b>por confirmar</b><br>Momio live (1X2 visita): <b>—</b><br>EV live: <b>—</b></div>
+      <div class="ev-rows">Probabilidad live del modelo: <b>por confirmar</b><br>Momio live (1X2 visita): <b>—</b> (base: pre-partido 2.75)<br>EV live: <b>—</b><br>Stats en vivo (xG, tiros, posesión): <b>por confirmar</b><br>Contexto de alineación (XI oficial): <b>por confirmar</b></div>
     </div>
     <div class="ev-aviso">Momios en vivo: no disponibles — sin fuente gratuita hoy. El EV que se muestra es el pre-partido, no un EV live.</div>
-    <div class="ev-foot">Cuando haya momios live, las tres filas de arriba se llenan con el momio live, la probabilidad live del modelo (T2) y el EV live calculado. Hasta entonces quedan en «—» / «por confirmar», nunca con un número inventado.</div>
+    <div class="ev-foot">Cuando haya momios live, las filas de arriba se llenan con el momio live, la probabilidad live del modelo (T2), el EV live calculado, las stats en vivo y el contexto de alineación. Hasta entonces quedan en «—» / «por confirmar», nunca con un número inventado. El momio base es siempre el pre-partido (2.75), etiquetado.</div>
   </div>
 </section>
 <section>
@@ -203,7 +203,7 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding-top:14px;color:v
     <li><b>El workflow escribe el caché.</b> <code>actualizar-vivo.yml</code> corre cada 5 minutos en ventanas de partido y publica <code>data/vivo.json</code> con <code>generado_en</code> / <code>actualizado_en</code>, <code>estado</code> (<code>pre</code> / <code>in_progress</code> / <code>post</code>), <code>minuto</code> y <code>marcador</code> por partido.</li>
     <li><b>El módulo lee primero el caché.</b> Igual que el módulo de marcador en vivo ya en <code>main</code>: lee <code>data/vivo.json</code> desde GitHub Pages (mismo origen, sin CORS) con timeout de 3 s. De ahí salen el minuto y el marcador que se ven arriba.</li>
     <li><b>Tick cada 60 s.</b> El módulo relee el caché cada 60 s y solo cambia lo que cambió (minuto, marcador, chip de estado). Si el caché tiene más de ~10 min, marca «caché viejo» y reintenta el fetch directo a ESPN en segundo plano.</li>
-    <li><b>El EV no se recalcula en vivo.</b> El EV que se muestra es el pre-partido de <code>ev.json</code> (DraftKings). Sin momios live no hay EV live: el módulo lo dice (<code>«Momios en vivo: no disponibles»</code>) en vez de inventar uno.</li>
+    <li><b>El EV no se recalcula en vivo.</b> El EV que se muestra es el pre-partido de <code>ev.json</code> (DraftKings), con sus insumos visibles (probabilidad live, stats en vivo, alineación); el momio base es el pre-partido. Sin momios live no hay EV live: el módulo lo dice (<code>«Momios en vivo: no disponibles»</code>) en vez de inventar uno.</li>
     <li><b>Al terminar el partido</b> (<code>estado_partido: "post"</code> en <code>ev.json</code>), el módulo pasa al estado Terminado: muestra el Final y retira el EV («Sin EV en vivo»).</li>
   </ol>
   <p class="note" id="tickLine">Demo del tick: esta vista se abrió hace 0 s. En producción el tick relee <code>vivo.json</code> cada 60 s y actualiza minuto, marcador y «actualizado hace» sin recargar la página.</p>
@@ -219,7 +219,7 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding-top:14px;color:v
   </ul>
 </section>
 <footer>
-  <p><b>Fuentes:</b> <code>data/semana-2/ev.json</code> (Forest–Chelsea: mejor_pick Visita, mejor_ev 0.8739, mejor_decimal 2.75, mejor_prob 68.14) · <code>data/semana-2-entresemana/ev.json</code> (Toluca–Atlas: estado_partido «post», marcador 2-0, mejor_* null) · <code>data/vivo.json</code> (Forest–Chelsea: estado «pre», minuto «0», 0-0; generado 2026-11-27T07:47:08Z) · <code>data/semana-2/tabla-poisson-semana-2.md</code> (1X2 Forest–Chelsea 12.7% / 19.2% / 68.1%) · JEFE.md (Galatasaray 1-0, 88′, vivo.json 24 nov; T2 validada 27 nov ~12:50 CST).</p>
+  <p><b>Fuentes:</b> <code>data/semana-2/ev.json</code> (Forest–Chelsea: mejor_pick Visita, mejor_ev 0.8739, mejor_decimal 2.75, mejor_prob 68.14) · <code>data/semana-2-entresemana/ev.json</code> (Toluca–Atlas: estado_partido «post», marcador 2-0, mejor_* null) · <code>data/vivo.json</code> (Forest–Chelsea: estado «pre», minuto «0», 0-0; generado 2026-11-27T07:47:08Z) · <code>data/semana-2/tabla-poisson-semana-2.md</code> (1X2 Forest–Chelsea 12.7% / 19.2% / 68.1%) · JEFE.md (Galatasaray 1-0, 88′, vivo.json 24 nov; T2 validada 27 nov ~12:50 CST; v1 gratis aprobada con matiz 27 nov ~13:15 CST).</p>
   <p>Preview de Empleado 2 · T1 décima ronda · 27 nov 2026 · Rama fija <code>empleado-2</code> · Listo para revisión del jefe.</p>
 </footer>
 </div>
@@ -243,10 +243,10 @@ var ESTADOS = {
     equipos: ["Nottingham Forest", "Chelsea"], marcador: "1 - 0",
     minuto: '<span class="minuto"><span class="dot"></span>EN VIVO · minuto 63′ · se actualiza con vivo.json</span>',
     ev: "+87.4%", evLabel: "EV pre-partido", pick: 'Chelsea (visita) · momio pre-partido <span class="momio">2.75</span> · prob. pre-partido 68.1%',
-    filas: 'Probabilidad live del modelo (T2): <b>por confirmar</b><br>Momio live (1X2 visita): <b>—</b><br>EV live: <b>—</b>',
+    filas: 'Probabilidad live del modelo (T2): <b>por confirmar</b><br>Momio live (1X2 visita): <b>—</b> (base: pre-partido 2.75)<br>EV live: <b>—</b><br>Stats en vivo (xG, tiros, posesión): <b>por confirmar</b><br>Contexto de alineación (XI oficial): <b>por confirmar</b>',
     aviso: 'Momios en vivo: no disponibles — el EV que se muestra es el pre-partido, no un EV live.',
     avisoClase: "", pie: 'Fuente: data/semana-2/ev.json + data/vivo.json · Tick 60 s · Caché 5 min.',
-    leyenda: '<b>Estado 2 · En vivo (DEMO DE DISEÑO).</b><span class="demo-tag">Demo</span> El minuto 63′ y el 1-0 son ilustrativos para mostrar el diseño: a las ~13:00 CST ningún partido está en vivo en vivo.json, así que no hay un minuto real que mostrar todavía. Lo real aquí: el EV pre-partido +87.4% y el aviso «Momios en vivo: no disponibles». En producción, minuto y marcador salen de vivo.json (ejemplo real observado: Galatasaray–Aston Villa 1-0 al 88′, vivo.json 24 nov).'
+    leyenda: '<b>Estado 2 · En vivo (DEMO DE DISEÑO).</b><span class="demo-tag">Demo</span> El minuto 63′ y el 1-0 son ilustrativos para mostrar el diseño: a las ~13:00 CST ningún partido está en vivo en vivo.json, así que no hay un minuto real que mostrar todavía. Lo real aquí: el EV pre-partido +87.4% y el aviso «Momios en vivo: no disponibles». En producción, minuto y marcador salen de vivo.json (ejemplo real observado: Galatasaray–Aston Villa 1-0 al 88′, vivo.json 24 nov). Los insumos del EV live quedan visibles (probabilidad live, stats en vivo y alineación); el momio base es el pre-partido (2.75), etiquetado.'
   },
   terminado: {
     clase: " is-final", chip: '<span class="chip fin">Final</span>',
