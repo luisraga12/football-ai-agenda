@@ -10,8 +10,11 @@
    "away": "Borussia Mönchengladbach",
    "proveedor": "DraftKings",
    "estado": "con_momio",
-   "estado_partido": "pre",
-   "marcador": null,
+   "estado_partido": "in",
+   "marcador": {
+    "local": 1,
+    "visita": 1
+   },
    "mercados": {
     "btts": {
      "p_btts": 54.248616912999516,
@@ -27,26 +30,26 @@
     },
     "1X2": {
      "momios": {
-      "home": 1.6666666666666665,
+      "home": 1.6896551724137931,
       "draw": 4.0,
-      "away": 4.3
+      "away": 4.2
      },
      "ev": {
-      "1": 0.20259588097529346,
+      "1": 0.21918341036805633,
       "X": -0.34575325028263104,
-      "2": -0.506012628864055
+      "2": -0.5175007072625653
      }
     },
     "total": {
      "linea": 3.5,
      "momios": {
       "linea": 3.5,
-      "over": 2.3,
+      "over": 2.35,
       "under": 1.5882352941176472
      },
      "p_over": 43.82265093494816,
      "ev": {
-      "mas": 0.00792097150380755,
+      "mas": 0.02983229697128187,
       "menos": -0.10777151484917658
      }
     },
@@ -54,21 +57,21 @@
      "home_linea": -0.5,
      "momios": {
       "home_linea": -0.5,
-      "home": 1.6451612903225805,
+      "home": 1.6666666666666665,
       "away_linea": 0.5,
       "away": 2.1
      },
      "p_cubre_local": 72.15575285851762,
      "ev": {
-      "local": 0.1870785147691607,
+      "local": 0.20259588097529346,
       "visitante": -0.4152708100288699
      }
     }
    },
    "mejor_pick": "Local",
-   "mejor_ev": 0.20259588097529346,
+   "mejor_ev": 0.21918341036805633,
    "semaforo": "verde",
-   "mejor_decimal": 1.6666666666666665,
+   "mejor_decimal": 1.6896551724137931,
    "mejor_prob": 72.15575285851762
   },
   {
@@ -80,8 +83,11 @@
    "away": "Bologna",
    "proveedor": "DraftKings",
    "estado": "con_momio",
-   "estado_partido": "pre",
-   "marcador": null,
+   "estado_partido": "in",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
    "mercados": {
     "btts": {
      "p_btts": 28.57022132138396,
@@ -97,14 +103,14 @@
     },
     "1X2": {
      "momios": {
-      "home": 2.85,
-      "draw": 3.0,
-      "away": 2.5
+      "home": 2.95,
+      "draw": 3.05,
+      "away": 2.4
      },
      "ev": {
-      "1": -0.6045414609451549,
-      "X": -0.13615267836416933,
-      "2": 0.4332337766588732
+      "1": -0.5906657227327042,
+      "X": -0.12175522300357222,
+      "2": 0.37590442559251813
      }
     },
     "total": {
@@ -124,21 +130,21 @@
      "home_linea": 0.5,
      "momios": {
       "home_linea": 0.5,
-      "home": 1.5,
+      "home": 1.5405405405405406,
       "away_linea": -0.5,
-      "away": 2.4
+      "away": 2.3
      },
      "p_cubre_local": 42.67064893364505,
      "ev": {
-      "local": -0.35994026599532425,
-      "visitante": 0.3759044255925188
+      "local": -0.34264135426546816,
+      "visitante": 0.31857507452616374
      }
     }
    },
    "mejor_pick": "Visita",
-   "mejor_ev": 0.4332337766588732,
+   "mejor_ev": 0.37590442559251813,
    "semaforo": "verde",
-   "mejor_decimal": 2.5,
+   "mejor_decimal": 2.4,
    "mejor_prob": 57.32935106635493
   },
   {
@@ -150,8 +156,11 @@
    "away": "Chelsea",
    "proveedor": "DraftKings",
    "estado": "con_momio",
-   "estado_partido": "pre",
-   "marcador": null,
+   "estado_partido": "in",
+   "marcador": {
+    "local": 1,
+    "visita": 0
+   },
    "mercados": {
     "btts": {
      "p_btts": 47.77979683394982,
@@ -181,27 +190,27 @@
      "linea": 2.5,
      "momios": {
       "linea": 2.5,
-      "over": 1.7407407407407407,
-      "under": 2.1
+      "over": 1.7692307692307692,
+      "under": 2.05
      },
      "p_over": 55.394235764950714,
      "ev": {
-      "mas": -0.03572997001752454,
-      "menos": -0.06327895106396497
+      "mas": -0.019948136466256594,
+      "menos": -0.08558183318148982
      }
     },
     "spread": {
      "home_linea": -0.5,
      "momios": {
       "home_linea": -0.5,
-      "home": 2.3,
+      "home": 2.25,
       "away_linea": 0.5,
-      "away": 1.5405405405405406
+      "away": 1.5555555555555556
      },
      "p_cubre_local": 12.66618262840874,
      "ev": {
-      "local": -0.7086777995465989,
-      "visitante": 0.34541286221100065
+      "local": -0.7150108908608034,
+      "visitante": 0.35852604800253096
      }
     }
    },
@@ -220,8 +229,11 @@
    "away": "Racing Santander",
    "proveedor": "DraftKings",
    "estado": "con_momio",
-   "estado_partido": "pre",
-   "marcador": null,
+   "estado_partido": "in",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
    "mercados": {
     "btts": {
      "p_btts": 54.46520578327011,
@@ -238,26 +250,26 @@
     "1X2": {
      "momios": {
       "home": 2.0,
-      "draw": 3.95,
-      "away": 3.4
+      "draw": 3.9,
+      "away": 3.5
      },
      "ev": {
       "1": 0.07336894106291947,
-      "X": -0.07456642762548416,
-      "2": -0.22130293299009285
+      "X": -0.08628077664288314,
+      "2": -0.19840007807803672
      }
     },
     "total": {
      "linea": 3.5,
      "momios": {
       "linea": 3.5,
-      "over": 2.15,
-      "under": 1.7142857142857144
+      "over": 2.3,
+      "under": 1.625
      },
      "p_over": 31.606147772288335,
      "ev": {
-      "mas": -0.3204678228958009,
-      "menos": 0.1724660381893428
+      "mas": -0.27305860123736836,
+      "menos": 0.11140009870031453
      }
     },
     "spread": {
@@ -266,19 +278,19 @@
       "home_linea": -0.5,
       "home": 1.9090909090909092,
       "away_linea": 0.5,
-      "away": 1.7692307692307692
+      "away": 1.8
      },
      "p_cubre_local": 53.668447053145975,
      "ev": {
       "local": 0.024579443741877816,
-      "visitante": -0.18028790940181338
+      "visitante": -0.16603204695662754
      }
     }
    },
    "mejor_pick": "Menos 3.5",
-   "mejor_ev": 0.1724660381893428,
+   "mejor_ev": 0.11140009870031453,
    "semaforo": "verde",
-   "mejor_decimal": 1.7142857142857144,
+   "mejor_decimal": 1.625,
    "mejor_prob": 68.39385222771166
   },
   {
@@ -1260,13 +1272,13 @@
     },
     "1X2": {
      "momios": {
-      "home": 1.6451612903225805,
-      "draw": 3.95,
+      "home": 1.6896551724137931,
+      "draw": 3.9,
       "away": 4.7
      },
      "ev": {
-      "1": -0.3384869951895557,
-      "X": 0.13231450967140757,
+      "1": -0.32059617693910414,
+      "X": 0.11798141461227574,
       "2": 0.4628372056007988
      }
     },
@@ -1274,13 +1286,13 @@
      "linea": 2.5,
      "momios": {
       "linea": 2.5,
-      "over": 1.606060606060606,
-      "under": 2.2
+      "over": 1.625,
+      "under": 2.15
      },
      "p_over": 38.78954875613464,
      "ev": {
-      "mas": -0.37701633815904967,
-      "menos": 0.34662992736503795
+      "mas": -0.36966983271281206,
+      "menos": 0.31602470174310526
      }
     },
     "spread": {
@@ -1347,6 +1359,1403 @@
    "mejor_pick": null,
    "mejor_ev": null,
    "semaforo": null
+  },
+  {
+   "fecha": "2026-11-28",
+   "fecha_txt": "11/28 nov",
+   "hora": "09:00",
+   "liga": "Premier League",
+   "home": "Leeds United",
+   "away": "Coventry City",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
+   "mercados": {
+    "btts": {
+     "p_btts": 47.88673310134652,
+     "p_no_btts": 52.11326689865348,
+     "momios": {
+      "si": 1.804,
+      "no": 1.93
+     },
+     "ev": {
+      "si": -0.1361233348517087,
+      "no": 0.005786051144011983
+     }
+    },
+    "1X2": {
+     "momios": {
+      "home": 1.4878048780487805,
+      "draw": 4.6,
+      "away": 6.5
+     },
+     "ev": {
+      "1": -0.5560865623541003,
+      "X": 0.2645821489007578,
+      "2": 1.773698128120957
+     }
+    },
+    "total": {
+     "linea": 2.5,
+     "momios": {
+      "linea": 2.5,
+      "over": 1.6666666666666665,
+      "under": 2.2
+     },
+     "p_over": 42.51642873707123,
+     "ev": {
+      "mas": -0.29139285438214624,
+      "menos": 0.26463856778443295
+     }
+    },
+    "spread": {
+     "home_linea": -1.5,
+     "momios": {
+      "home_linea": -1.5,
+      "home": 2.3,
+      "away_linea": 1.5,
+      "away": 1.5555555555555556
+     },
+     "p_cubre_local": 11.406156806972714,
+     "ev": {
+      "local": -0.7376583934396276,
+      "visitante": 0.3781264496693133
+     }
+    }
+   },
+   "mejor_pick": "Visita",
+   "mejor_ev": 1.773698128120957,
+   "semaforo": "verde",
+   "mejor_decimal": 6.5,
+   "mejor_prob": 42.67227889416857
+  },
+  {
+   "fecha": "2026-11-28",
+   "fecha_txt": "11/28 nov",
+   "hora": "11:30",
+   "liga": "Premier League",
+   "home": "Ipswich Town",
+   "away": "Aston Villa",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
+   "mercados": {
+    "btts": {
+     "p_btts": 85.3320556311182,
+     "p_no_btts": 14.667944368881805,
+     "momios": {
+      "si": 1.466,
+      "no": 2.556
+     },
+     "ev": {
+      "si": 0.25096793555219277,
+      "no": -0.625087341931381
+     }
+    },
+    "1X2": {
+     "momios": {
+      "home": 3.5,
+      "draw": 3.8,
+      "away": 2.0
+     },
+     "ev": {
+      "1": 0.3522364075553852,
+      "X": -0.3147457464161564,
+      "2": -0.1333666520714758
+     }
+    },
+    "total": {
+     "linea": 2.5,
+     "momios": {
+      "linea": 2.5,
+      "over": 1.5714285714285714,
+      "under": 2.4
+     },
+     "p_over": 88.76301794373694,
+     "ev": {
+      "mas": 0.3948474248301519,
+      "menos": -0.7303124306496867
+     }
+    },
+    "spread": {
+     "home_linea": 0.5,
+     "momios": {
+      "home_linea": 0.5,
+      "home": 1.8,
+      "away_linea": -0.5,
+      "away": 1.9090909090909092
+     },
+     "p_cubre_local": 56.66833260341293,
+     "ev": {
+      "local": 0.02002998686143287,
+      "visitante": -0.17275907697424686
+     }
+    }
+   },
+   "mejor_pick": "Más 2.5",
+   "mejor_ev": 0.3948474248301519,
+   "semaforo": "verde",
+   "mejor_decimal": 1.5714285714285714,
+   "mejor_prob": 88.76301794373694
+  },
+  {
+   "fecha": "2026-11-28",
+   "fecha_txt": "11/28 nov",
+   "hora": "07:00",
+   "liga": "LaLiga",
+   "home": "Real Betis",
+   "away": "Rayo Vallecano",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
+   "mercados": {
+    "btts": {
+     "p_btts": 64.33051401168576,
+     "p_no_btts": 35.669485988314236,
+     "momios": {
+      "si": 1.615,
+      "no": 2.209
+     },
+     "ev": {
+      "si": 0.03893780128872515,
+      "no": -0.2120610545181385
+     }
+    },
+    "1X2": {
+     "momios": {
+      "home": 1.606060606060606,
+      "draw": 4.4,
+      "away": 5.0
+     },
+     "ev": {
+      "1": 0.08414942015275684,
+      "X": -0.2521754247744056,
+      "2": -0.2249828107487546
+     }
+    },
+    "total": {
+     "linea": 2.5,
+     "momios": {
+      "linea": 2.5,
+      "over": 1.5714285714285714,
+      "under": 2.4
+     },
+     "p_over": 72.76676121137903,
+     "ev": {
+      "mas": 0.14347767617881346,
+      "menos": -0.3464022690730968
+     }
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "momios": {
+      "home_linea": -0.5,
+      "home": 1.5555555555555556,
+      "away_linea": 0.5,
+      "away": 2.3
+     },
+     "p_cubre_local": 67.50364314158675,
+     "ev": {
+      "local": 0.05005667109134948,
+      "visitante": -0.2525837922564953
+     }
+    }
+   },
+   "mejor_pick": "Más 2.5",
+   "mejor_ev": 0.14347767617881346,
+   "semaforo": "verde",
+   "mejor_decimal": 1.5714285714285714,
+   "mejor_prob": 72.76676121137903
+  },
+  {
+   "fecha": "2026-11-28",
+   "fecha_txt": "11/28 nov",
+   "hora": "09:15",
+   "liga": "LaLiga",
+   "home": "Málaga",
+   "away": "Athletic Club",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
+   "mercados": {
+    "btts": {
+     "p_btts": 64.12765033629373,
+     "p_no_btts": 35.872349663706274,
+     "momios": {
+      "si": 1.759,
+      "no": 1.982
+     },
+     "ev": {
+      "si": 0.12800536941540663,
+      "no": -0.28901002966534173
+     }
+    },
+    "1X2": {
+     "momios": {
+      "home": 4.7,
+      "draw": 3.85,
+      "away": 1.7407407407407407
+     },
+     "ev": {
+      "1": -0.2926881549701099,
+      "X": -0.35492389309266437,
+      "2": 0.18710838808592078
+     }
+    },
+    "total": {
+     "linea": 2.5,
+     "momios": {
+      "linea": 2.5,
+      "over": 1.8333333333333335,
+      "under": 2.0
+     },
+     "p_over": 72.99875919209387,
+     "ev": {
+      "mas": 0.33831058518838786,
+      "menos": -0.4599751838418774
+     }
+    },
+    "spread": {
+     "home_linea": 0.5,
+     "momios": {
+      "home_linea": 0.5,
+      "home": 2.1,
+      "away_linea": -0.5,
+      "away": 1.6666666666666665
+     },
+     "p_cubre_local": 31.804411748160017,
+     "ev": {
+      "local": -0.3321073532886396,
+      "visitante": 0.13659313753066615
+     }
+    }
+   },
+   "mejor_pick": "Más 2.5",
+   "mejor_ev": 0.33831058518838786,
+   "semaforo": "verde",
+   "mejor_decimal": 1.8333333333333335,
+   "mejor_prob": 72.99875919209387
+  },
+  {
+   "fecha": "2026-11-28",
+   "fecha_txt": "11/28 nov",
+   "hora": "08:30",
+   "liga": "Bundesliga",
+   "home": "FC Cologne",
+   "away": "SV Elversberg",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
+   "mercados": {
+    "btts": {
+     "p_btts": 45.728930400546666,
+     "p_no_btts": 54.271069599453334,
+     "momios": null,
+     "ev": {
+      "si": null,
+      "no": null
+     }
+    },
+    "1X2": {
+     "momios": {
+      "home": 2.0,
+      "draw": 3.7,
+      "away": 3.3
+     },
+     "ev": {
+      "1": -0.08374077721870865,
+      "X": 0.02086331905421135,
+      "2": -0.1223274345834292
+     }
+    },
+    "total": {
+     "linea": 2.5,
+     "momios": {
+      "linea": 2.5,
+      "over": 1.606060606060606,
+      "under": 2.3
+     },
+     "p_over": 40.699297735894234,
+     "ev": {
+      "mas": -0.3463446121204865,
+      "menos": 0.3639161520744325
+     }
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "momios": {
+      "home_linea": -0.5,
+      "home": 1.9523809523809523,
+      "away_linea": 0.5,
+      "away": 1.7692307692307692
+     },
+     "p_cubre_local": 45.81296113906457,
+     "ev": {
+      "local": -0.10555647299921567,
+      "visitante": -0.041306235537296176
+     }
+    }
+   },
+   "mejor_pick": "Menos 2.5",
+   "mejor_ev": 0.3639161520744325,
+   "semaforo": "verde",
+   "mejor_decimal": 2.3,
+   "mejor_prob": 59.300702264105766
+  },
+  {
+   "fecha": "2026-11-28",
+   "fecha_txt": "11/28 nov",
+   "hora": "08:30",
+   "liga": "Bundesliga",
+   "home": "Mainz",
+   "away": "1. FC Union Berlin",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
+   "mercados": {
+    "btts": {
+     "p_btts": 35.33988329698629,
+     "p_no_btts": 64.66011670301371,
+     "momios": {
+      "si": 1.673,
+      "no": 2.104
+     },
+     "ev": {
+      "si": -0.4087637524414194,
+      "no": 0.3604488554314087
+     }
+    },
+    "1X2": {
+     "momios": {
+      "home": 1.4545454545454546,
+      "draw": 4.5,
+      "away": 5.75
+     },
+     "ev": {
+      "1": -0.44965787968509274,
+      "X": 0.4663721746688281,
+      "2": 0.7007310268866278
+     }
+    },
+    "total": {
+     "linea": 3.5,
+     "momios": {
+      "linea": 3.5,
+      "over": 2.35,
+      "under": 1.5882352941176472
+     },
+     "p_over": 11.109618934006434,
+     "ev": {
+      "mas": -0.7389239550508488,
+      "menos": 0.4117884051657803
+     }
+    },
+    "spread": {
+     "home_linea": -1.5,
+     "momios": {
+      "home_linea": -1.5,
+      "home": 2.15,
+      "away_linea": 1.5,
+      "away": 1.606060606060606
+     },
+     "p_cubre_local": 14.318876850169953,
+     "ev": {
+      "local": -0.692144147721346,
+      "visitante": 0.3760907657396946
+     }
+    }
+   },
+   "mejor_pick": "Visita",
+   "mejor_ev": 0.7007310268866278,
+   "semaforo": "verde",
+   "mejor_decimal": 5.75,
+   "mejor_prob": 29.57793090237614
+  },
+  {
+   "fecha": "2026-11-28",
+   "fecha_txt": "11/28 nov",
+   "hora": "08:30",
+   "liga": "Bundesliga",
+   "home": "SC Paderborn 07",
+   "away": "Schalke 04",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
+   "mercados": {
+    "btts": {
+     "p_btts": 14.873233085713853,
+     "p_no_btts": 85.12676691428615,
+     "momios": {
+      "si": 1.612,
+      "no": 2.214
+     },
+     "ev": {
+      "si": -0.7602434826582927,
+      "no": 0.8847066194822955
+     }
+    },
+    "1X2": {
+     "momios": {
+      "home": 2.45,
+      "draw": 3.35,
+      "away": 2.65
+     },
+     "ev": {
+      "1": 0.39751724991133397,
+      "X": 0.14558259884072733,
+      "2": -0.767807421146669
+     }
+    },
+    "total": {
+     "linea": 2.5,
+     "momios": {
+      "linea": 2.5,
+      "over": 1.7692307692307692,
+      "under": 2.0
+     },
+     "p_over": 15.015642432492982,
+     "ev": {
+      "mas": -0.7343386338866627,
+      "menos": 0.6996871513501404
+     }
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "momios": {
+      "home_linea": -0.5,
+      "home": 2.4,
+      "away_linea": 0.5,
+      "away": 1.5128205128205128
+     },
+     "p_cubre_local": 57.041520404544244,
+     "ev": {
+      "local": 0.36899648970906185,
+      "visitante": -0.3501153086841309
+     }
+    }
+   },
+   "mejor_pick": "Menos 2.5",
+   "mejor_ev": 0.6996871513501404,
+   "semaforo": "verde",
+   "mejor_decimal": 2.0,
+   "mejor_prob": 84.98435756750702
+  },
+  {
+   "fecha": "2026-11-28",
+   "fecha_txt": "11/28 nov",
+   "hora": "08:00",
+   "liga": "Serie A",
+   "home": "Frosinone",
+   "away": "Parma",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
+   "mercados": {
+    "btts": {
+     "p_btts": 56.48942673062257,
+     "p_no_btts": 43.51057326937743,
+     "momios": {
+      "si": 1.513,
+      "no": 2.438
+     },
+     "ev": {
+      "si": -0.14531497356568057,
+      "no": 0.060787776307421826
+     }
+    },
+    "1X2": {
+     "momios": {
+      "home": 1.4651162790697674,
+      "draw": 4.8,
+      "away": 5.25
+     },
+     "ev": {
+      "1": 0.031820369559923956,
+      "X": -0.190595604392797,
+      "2": -0.3326423819535035
+     }
+    },
+    "total": {
+     "linea": 3.5,
+     "momios": {
+      "linea": 3.5,
+      "over": 1.9523809523809523,
+      "under": 1.8333333333333335
+     },
+     "p_over": 44.82445222451418,
+     "ev": {
+      "mas": -0.12485593275948503,
+      "menos": 0.011551709217240136
+     }
+    },
+    "spread": {
+     "home_linea": -1.5,
+     "momios": {
+      "home_linea": -1.5,
+      "home": 2.05,
+      "away_linea": 1.5,
+      "away": 1.6666666666666665
+     },
+     "p_cubre_local": 48.359612491915456,
+     "ev": {
+      "local": -0.008627943915733294,
+      "visitante": -0.13932687486525774
+     }
+    }
+   },
+   "mejor_pick": "Local",
+   "mejor_ev": 0.031820369559923956,
+   "semaforo": "amarillo",
+   "mejor_decimal": 1.4651162790697674,
+   "mejor_prob": 70.42583474774085
+  },
+  {
+   "fecha": "2026-11-28",
+   "fecha_txt": "11/28 nov",
+   "hora": "11:00",
+   "liga": "Serie A",
+   "home": "Torino",
+   "away": "Lazio",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
+   "mercados": {
+    "btts": {
+     "p_btts": 56.83081678769266,
+     "p_no_btts": 43.16918321230734,
+     "momios": {
+      "si": 1.692,
+      "no": 2.081
+     },
+     "ev": {
+      "si": -0.03842257995224019,
+      "no": -0.10164929735188433
+     }
+    },
+    "1X2": {
+     "momios": {
+      "home": 3.25,
+      "draw": 3.3,
+      "away": 2.1
+     },
+     "ev": {
+      "1": -0.6526307393472471,
+      "X": -0.50439744611056,
+      "2": 0.5601625728061057
+     }
+    },
+    "total": {
+     "linea": 2.5,
+     "momios": {
+      "linea": 2.5,
+      "over": 1.8695652173913042,
+      "under": 1.9090909090909092
+     },
+     "p_over": 70.23234327728888,
+     "ev": {
+      "mas": 0.31303946127105275,
+      "menos": -0.4317083716573331
+     }
+    },
+    "spread": {
+     "home_linea": 0.5,
+     "momios": {
+      "home_linea": 0.5,
+      "home": 1.6666666666666665,
+      "away_linea": -0.5,
+      "away": 2.05
+     },
+     "p_cubre_local": 25.70654415193253,
+     "ev": {
+      "local": -0.5715575974677911,
+      "visitante": 0.523015844885383
+     }
+    }
+   },
+   "mejor_pick": "Visita",
+   "mejor_ev": 0.5601625728061057,
+   "semaforo": "verde",
+   "mejor_decimal": 2.1,
+   "mejor_prob": 74.2934558479098
+  },
+  {
+   "fecha": "2026-11-29",
+   "fecha_txt": "11/29 nov",
+   "hora": "08:05",
+   "liga": "Premier League",
+   "home": "Brighton & Hove Albion",
+   "away": "Newcastle United",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
+   "mercados": {
+    "btts": {
+     "p_btts": 19.60202918164143,
+     "p_no_btts": 80.39797081835857,
+     "momios": {
+      "si": 1.576,
+      "no": 2.286
+     },
+     "ev": {
+      "si": -0.691072020097331,
+      "no": 0.8378976129076772
+     }
+    },
+    "1X2": {
+     "momios": {
+      "home": 1.5555555555555556,
+      "draw": 4.5,
+      "away": 5.5
+     },
+     "ev": {
+      "1": 0.38827697673076234,
+      "X": -0.5976853688125356,
+      "2": -0.9002686217302547
+     }
+    },
+    "total": {
+     "linea": 3.5,
+     "momios": {
+      "linea": 3.5,
+      "over": 2.35,
+      "under": 1.606060606060606
+     },
+     "p_over": 34.783018064416396,
+     "ev": {
+      "mas": -0.18259907548621468,
+      "menos": 0.04742425532907002
+     }
+    },
+    "spread": {
+     "home_linea": -1.5,
+     "momios": {
+      "home_linea": -1.5,
+      "home": 2.4,
+      "away_linea": 1.5,
+      "away": 1.5
+     },
+     "p_cubre_local": 70.27442486311948,
+     "ev": {
+      "local": 0.6865861967148674,
+      "visitante": -0.5541163729467922
+     }
+    }
+   },
+   "mejor_pick": "Spread local -1.5",
+   "mejor_ev": 0.6865861967148674,
+   "semaforo": "verde",
+   "mejor_decimal": 2.4,
+   "mejor_prob": 70.27442486311948
+  },
+  {
+   "fecha": "2026-11-29",
+   "fecha_txt": "11/29 nov",
+   "hora": "08:05",
+   "liga": "Premier League",
+   "home": "Crystal Palace",
+   "away": "Hull City",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
+   "mercados": {
+    "btts": {
+     "p_btts": 56.75489531495875,
+     "p_no_btts": 43.24510468504125,
+     "momios": {
+      "si": 1.636,
+      "no": 2.164
+     },
+     "ev": {
+      "si": -0.07148991264727489,
+      "no": -0.06417593461570736
+     }
+    },
+    "1X2": {
+     "momios": {
+      "home": 1.9090909090909092,
+      "draw": 3.75,
+      "away": 3.85
+     },
+     "ev": {
+      "1": -0.5894396912827806,
+      "X": -0.16858883597884444,
+      "2": 1.168454582358545
+     }
+    },
+    "total": {
+     "linea": 2.5,
+     "momios": {
+      "linea": 2.5,
+      "over": 1.7407407407407407,
+      "under": 2.05
+     },
+     "p_over": 57.845392314440694,
+     "ev": {
+      "mas": 0.006938310658782365,
+      "menos": -0.13583054244603432
+     }
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "momios": {
+      "home_linea": -0.5,
+      "home": 1.8333333333333335,
+      "away_linea": 0.5,
+      "away": 1.8695652173913042
+     },
+     "p_cubre_local": 21.505539980425777,
+     "ev": {
+      "local": -0.6057317670255273,
+      "visitante": 0.4675051221050832
+     }
+    }
+   },
+   "mejor_pick": "Visita",
+   "mejor_ev": 1.168454582358545,
+   "semaforo": "verde",
+   "mejor_decimal": 3.85,
+   "mejor_prob": 56.32349564567649
+  },
+  {
+   "fecha": "2026-11-29",
+   "fecha_txt": "11/29 nov",
+   "hora": "08:05",
+   "liga": "Premier League",
+   "home": "Fulham",
+   "away": "AFC Bournemouth",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
+   "mercados": {
+    "btts": {
+     "p_btts": 47.79489780351284,
+     "p_no_btts": 52.20510219648716,
+     "momios": {
+      "si": 1.576,
+      "no": 2.286
+     },
+     "ev": {
+      "si": -0.24675241061663766,
+      "no": 0.19340863621169646
+     }
+    },
+    "1X2": {
+     "momios": {
+      "home": 2.8,
+      "draw": 3.5,
+      "away": 2.5
+     },
+     "ev": {
+      "1": 0.007971693676150693,
+      "X": -0.019929234190379397,
+      "2": -0.10002527350343648
+     }
+    },
+    "total": {
+     "linea": 2.5,
+     "momios": {
+      "linea": 2.5,
+      "over": 1.7692307692307692,
+      "under": 2.05
+     },
+     "p_over": 41.74438993215919,
+     "ev": {
+      "mas": -0.2614454088925683,
+      "menos": 0.19424000639073657
+     }
+    },
+    "spread": {
+     "home_linea": 0.5,
+     "momios": {
+      "home_linea": 0.5,
+      "home": 1.5405405405405406,
+      "away_linea": -0.5,
+      "away": 2.35
+     },
+     "p_cubre_local": 64.00101094013746,
+     "ev": {
+      "local": -0.014038480111395857,
+      "visitante": -0.15402375709323024
+     }
+    }
+   },
+   "mejor_pick": "Menos 2.5",
+   "mejor_ev": 0.19424000639073657,
+   "semaforo": "verde",
+   "mejor_decimal": 2.05,
+   "mejor_prob": 58.25561006784081
+  },
+  {
+   "fecha": "2026-11-29",
+   "fecha_txt": "11/29 nov",
+   "hora": "08:05",
+   "liga": "Premier League",
+   "home": "Sunderland",
+   "away": "Tottenham Hotspur",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
+   "mercados": {
+    "btts": {
+     "p_btts": 16.910066408036318,
+     "p_no_btts": 83.08993359196369,
+     "momios": {
+      "si": 1.752,
+      "no": 2.0
+     },
+     "ev": {
+      "si": -0.7037356365312037,
+      "no": 0.6617986718392737
+     }
+    },
+    "1X2": {
+     "momios": {
+      "home": 3.9,
+      "draw": 3.4,
+      "away": 2.0
+     },
+     "ev": {
+      "1": -0.8111984993932722,
+      "X": -0.26079401076728737,
+      "2": 0.46835166514774396
+     }
+    },
+    "total": {
+     "linea": 2.5,
+     "momios": {
+      "linea": 2.5,
+      "over": 2.0,
+      "under": 1.8333333333333335
+     },
+     "p_over": 29.11033946028904,
+     "ev": {
+      "mas": -0.41779321079421916,
+      "menos": 0.29964377656136776
+     }
+    },
+    "spread": {
+     "home_linea": 0.5,
+     "momios": {
+      "home_linea": 0.5,
+      "home": 1.8,
+      "away_linea": -0.5,
+      "away": 1.9090909090909092
+     },
+     "p_cubre_local": 26.582416742612807,
+     "ev": {
+      "local": -0.5215164986329694,
+      "visitante": 0.40160840764102845
+     }
+    }
+   },
+   "mejor_pick": "Visita",
+   "mejor_ev": 0.46835166514774396,
+   "semaforo": "verde",
+   "mejor_decimal": 2.0,
+   "mejor_prob": 73.4175832573872
+  },
+  {
+   "fecha": "2026-11-29",
+   "fecha_txt": "11/29 nov",
+   "hora": "07:00",
+   "liga": "LaLiga",
+   "home": "Valencia",
+   "away": "Osasuna",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
+   "mercados": {
+    "btts": {
+     "p_btts": 56.46531855589754,
+     "p_no_btts": 43.53468144410246,
+     "momios": {
+      "si": 1.926,
+      "no": 1.824
+     },
+     "ev": {
+      "si": 0.08752203538658643,
+      "no": -0.20592741045957108
+     }
+    },
+    "1X2": {
+     "momios": {
+      "home": 2.15,
+      "draw": 3.2,
+      "away": 3.6
+     },
+     "ev": {
+      "1": -0.03640721105272238,
+      "X": -0.20568468138226992,
+      "2": 0.09293757343402875
+     }
+    },
+    "total": {
+     "linea": 2.5,
+     "momios": {
+      "linea": 2.5,
+      "over": 2.25,
+      "under": 1.625
+     },
+     "p_over": 53.48434837788664,
+     "ev": {
+      "mas": 0.2033978385024493,
+      "menos": -0.2441206611406579
+     }
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "momios": {
+      "home_linea": -0.5,
+      "home": 2.05,
+      "away_linea": 0.5,
+      "away": 1.6896551724137931
+     },
+     "p_cubre_local": 44.818269253361755,
+     "ev": {
+      "local": -0.08122548030608412,
+      "visitante": -0.0676190322119744
+     }
+    }
+   },
+   "mejor_pick": "Más 2.5",
+   "mejor_ev": 0.2033978385024493,
+   "semaforo": "verde",
+   "mejor_decimal": 2.25,
+   "mejor_prob": 53.48434837788664
+  },
+  {
+   "fecha": "2026-11-29",
+   "fecha_txt": "11/29 nov",
+   "hora": "11:30",
+   "liga": "LaLiga",
+   "home": "Celta Vigo",
+   "away": "Villarreal",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
+   "mercados": {
+    "btts": {
+     "p_btts": 7.939941102415453,
+     "p_no_btts": 92.06005889758455,
+     "momios": {
+      "si": 1.594,
+      "no": 2.238
+     },
+     "ev": {
+      "si": -0.8734373388274976,
+      "no": 1.0603041181279425
+     }
+    },
+    "1X2": {
+     "momios": {
+      "home": 2.75,
+      "draw": 3.55,
+      "away": 2.5
+     },
+     "ev": {
+      "1": -0.621832264806027,
+      "X": 0.9442576176564412,
+      "2": -0.2129843555681995
+     }
+    },
+    "total": {
+     "linea": 2.5,
+     "momios": {
+      "linea": 2.5,
+      "over": 1.7692307692307692,
+      "under": 2.05
+     },
+     "p_over": 3.5500767358189376,
+     "ev": {
+      "mas": -0.937190950058588,
+      "menos": 0.9772234269157118
+     }
+    },
+    "spread": {
+     "home_linea": 0.5,
+     "momios": {
+      "home_linea": 0.5,
+      "home": 1.526315789473684,
+      "away_linea": -0.5,
+      "away": 2.35
+     },
+     "p_cubre_local": 68.51937422272796,
+     "ev": {
+      "local": 0.04582202761005827,
+      "visitante": -0.2602052942341071
+     }
+    }
+   },
+   "mejor_pick": "Menos 2.5",
+   "mejor_ev": 0.9772234269157118,
+   "semaforo": "verde",
+   "mejor_decimal": 2.05,
+   "mejor_prob": 96.44992326418107
+  },
+  {
+   "fecha": "2026-11-29",
+   "fecha_txt": "11/29 nov",
+   "hora": "14:00",
+   "liga": "LaLiga",
+   "home": "Real Sociedad",
+   "away": "Sevilla",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
+   "mercados": {
+    "btts": {
+     "p_btts": 76.00570493446118,
+     "p_no_btts": 23.99429506553882,
+     "momios": {
+      "si": 1.622,
+      "no": 2.174
+     },
+     "ev": {
+      "si": 0.23281253403696045,
+      "no": -0.47836402527518607
+     }
+    },
+    "1X2": {
+     "momios": {
+      "home": 2.15,
+      "draw": 3.7,
+      "away": 3.2
+     },
+     "ev": {
+      "1": 0.8764221529970113,
+      "X": -0.7379387558456669,
+      "2": -0.819462026590564
+     }
+    },
+    "total": {
+     "linea": 2.5,
+     "momios": {
+      "linea": 2.5,
+      "over": 1.8,
+      "under": 2.05
+     },
+     "p_over": 94.50120756927335,
+     "ev": {
+      "mas": 0.7010217362469202,
+      "menos": -0.8872747551701037
+     }
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "momios": {
+      "home_linea": -0.5,
+      "home": 2.05,
+      "away_linea": 0.5,
+      "away": 1.6896551724137931
+     },
+     "p_cubre_local": 87.27544897660519,
+     "ev": {
+      "local": 0.7891467040204061,
+      "visitante": -0.7849989654667774
+     }
+    }
+   },
+   "mejor_pick": "Local",
+   "mejor_ev": 0.8764221529970113,
+   "semaforo": "verde",
+   "mejor_decimal": 2.15,
+   "mejor_prob": 87.27544897660519
+  },
+  {
+   "fecha": "2026-11-29",
+   "fecha_txt": "11/29 nov",
+   "hora": "08:30",
+   "liga": "Bundesliga",
+   "home": "SC Freiburg",
+   "away": "RB Leipzig",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
+   "mercados": {
+    "btts": {
+     "p_btts": 80.14703590837738,
+     "p_no_btts": 19.852964091622624,
+     "momios": {
+      "si": 1.406,
+      "no": 2.746
+     },
+     "ev": {
+      "si": 0.12686732487178576,
+      "no": -0.4548376060440428
+     }
+    },
+    "1X2": {
+     "momios": {
+      "home": 2.65,
+      "draw": 3.7,
+      "away": 2.3
+     },
+     "ev": {
+      "1": -0.2533852905639582,
+      "X": -0.3283626600964864,
+      "2": 0.23449048811341622
+     }
+    },
+    "total": {
+     "linea": 3.5,
+     "momios": {
+      "linea": 3.5,
+      "over": 2.15,
+      "under": 1.6896551724137931
+     },
+     "p_over": 68.28538430934319,
+     "ev": {
+      "mas": 0.4681357626508784,
+      "menos": -0.46413235557166077
+     }
+    },
+    "spread": {
+     "home_linea": 0.5,
+     "momios": {
+      "home_linea": 0.5,
+      "home": 1.5714285714285714,
+      "away_linea": -0.5,
+      "away": 2.25
+     },
+     "p_cubre_local": 46.32650051665135,
+     "ev": {
+      "local": -0.27201213473833596,
+      "visitante": 0.20765373837534473
+     }
+    }
+   },
+   "mejor_pick": "Más 3.5",
+   "mejor_ev": 0.4681357626508784,
+   "semaforo": "verde",
+   "mejor_decimal": 2.15,
+   "mejor_prob": 68.28538430934319
+  },
+  {
+   "fecha": "2026-11-29",
+   "fecha_txt": "11/29 nov",
+   "hora": "10:30",
+   "liga": "Bundesliga",
+   "home": "TSG Hoffenheim",
+   "away": "FC Augsburg",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
+   "mercados": {
+    "btts": {
+     "p_btts": 72.36069194263148,
+     "p_no_btts": 27.639308057368524,
+     "momios": {
+      "si": 1.316,
+      "no": 3.23
+     },
+     "ev": {
+      "si": -0.04773329403496973,
+      "no": -0.10725034974699676
+     }
+    },
+    "1X2": {
+     "momios": {
+      "home": 1.6666666666666665,
+      "draw": 4.5,
+      "away": 3.9
+     },
+     "ev": {
+      "1": 0.36130898151804836,
+      "X": -0.5488630121503242,
+      "2": -0.6764484104907467
+     }
+    },
+    "total": {
+     "linea": 3.5,
+     "momios": {
+      "linea": 3.5,
+      "over": 1.8,
+      "under": 2.0
+     },
+     "p_over": 76.38486073766889,
+     "ev": {
+      "mas": 0.37492749327804,
+      "menos": -0.5276972147533778
+     }
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "momios": {
+      "home_linea": -0.5,
+      "home": 1.6451612903225805,
+      "away_linea": 0.5,
+      "away": 2.15
+     },
+     "p_cubre_local": 81.67853889108291,
+     "ev": {
+      "local": 0.3437437043371703,
+      "visitante": -0.6060885861582825
+     }
+    }
+   },
+   "mejor_pick": "Más 3.5",
+   "mejor_ev": 0.37492749327804,
+   "semaforo": "verde",
+   "mejor_decimal": 1.8,
+   "mejor_prob": 76.38486073766889
+  },
+  {
+   "fecha": "2026-11-29",
+   "fecha_txt": "11/29 nov",
+   "hora": "05:30",
+   "liga": "Serie A",
+   "home": "Udinese",
+   "away": "Fiorentina",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
+   "mercados": {
+    "btts": {
+     "p_btts": 50.96203477777973,
+     "p_no_btts": 49.03796522222027,
+     "momios": {
+      "si": 1.564,
+      "no": 2.282
+     },
+     "ev": {
+      "si": -0.202953776075525,
+      "no": 0.11904636637106658
+     }
+    },
+    "1X2": {
+     "momios": {
+      "home": 3.0,
+      "draw": 3.4,
+      "away": 2.2
+     },
+     "ev": {
+      "1": -0.7834572051439901,
+      "X": -0.5745923727901558,
+      "2": 0.7659381916437731
+     }
+    },
+    "total": {
+     "linea": 2.5,
+     "momios": {
+      "linea": 2.5,
+      "over": 1.6896551724137931,
+      "under": 2.1
+     },
+     "p_over": 70.70645996511826,
+     "ev": {
+      "mas": 0.19469535803130844,
+      "menos": -0.3848356592674834
+     }
+    },
+    "spread": {
+     "home_linea": 0.5,
+     "momios": {
+      "home_linea": 0.5,
+      "home": 1.6451612903225805,
+      "away_linea": -0.5,
+      "away": 2.15
+     },
+     "p_cubre_local": 19.73008219745065,
+     "ev": {
+      "local": -0.6754083251387151,
+      "visitante": 0.7258032327548107
+     }
+    }
+   },
+   "mejor_pick": "Visita",
+   "mejor_ev": 0.7659381916437731,
+   "semaforo": "verde",
+   "mejor_decimal": 2.2,
+   "mejor_prob": 80.26991780198968
+  },
+  {
+   "fecha": "2026-11-29",
+   "fecha_txt": "11/29 nov",
+   "hora": "11:00",
+   "liga": "Serie A",
+   "home": "AS Roma",
+   "away": "Monza",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "estado_partido": "pre",
+   "marcador": null,
+   "mercados": {
+    "btts": {
+     "p_btts": 72.56216639065187,
+     "p_no_btts": 27.437833609348132,
+     "momios": {
+      "si": 1.784,
+      "no": 1.948
+     },
+     "ev": {
+      "si": 0.2945090484092294,
+      "no": -0.4655110012898984
+     }
+    },
+    "1X2": {
+     "momios": {
+      "home": 1.2,
+      "draw": 6.5,
+      "away": 10.0
+     },
+     "ev": {
+      "1": -0.005039674266491323,
+      "X": -0.3872901597581345,
+      "2": -0.23396659042641765
+     }
+    },
+    "total": {
+     "linea": 3.5,
+     "momios": {
+      "linea": 3.5,
+      "over": 1.8333333333333335,
+      "under": 1.9090909090909092
+     },
+     "p_over": 77.99245368918129,
+     "ev": {
+      "mas": 0.42986165096832374,
+      "menos": -0.5798559340661882
+     }
+    },
+    "spread": {
+     "home_linea": -2.5,
+     "momios": {
+      "home_linea": -2.5,
+      "home": 2.25,
+      "away_linea": 2.5,
+      "away": 1.5555555555555556
+     },
+     "p_cubre_local": 51.17957175621508,
+     "ev": {
+      "local": 0.15154036451483943,
+      "visitante": -0.24057111620779015
+     }
+    }
+   },
+   "mejor_pick": "Más 3.5",
+   "mejor_ev": 0.42986165096832374,
+   "semaforo": "verde",
+   "mejor_decimal": 1.8333333333333335,
+   "mejor_prob": 77.99245368918129
   }
  ]
 }

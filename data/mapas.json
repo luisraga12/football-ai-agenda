@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado_en": "2026-11-27T19:16:39Z",
+  "generado_en": "2026-11-27T20:18:05Z",
   "semana": "2-entresemana",
   "fuente": "config + ev.json + verified_events.json + teams_last5.json + schedule_*.json + DETAIL embebido en partido.html (preservado) + summary ESPN por evento (estadio + alineacion oficial + standings + h2h; tabla regular MX para Liguilla)",
   "partidos_vivo": {
@@ -443,6 +443,166 @@
       "away_id": "228",
       "home": "Cruz Azul",
       "away": "León"
+    },
+    "leeds-united-vs-coventry-city": {
+      "liga": "eng.1",
+      "fecha": "2026-11-28",
+      "home_id": 357,
+      "away_id": 388,
+      "home": "Leeds United",
+      "away": "Coventry City"
+    },
+    "ipswich-town-vs-aston-villa": {
+      "liga": "eng.1",
+      "fecha": "2026-11-28",
+      "home_id": 373,
+      "away_id": 362,
+      "home": "Ipswich Town",
+      "away": "Aston Villa"
+    },
+    "real-betis-vs-rayo-vallecano": {
+      "liga": "esp.1",
+      "fecha": "2026-11-28",
+      "home_id": 244,
+      "away_id": 101,
+      "home": "Real Betis",
+      "away": "Rayo Vallecano"
+    },
+    "malaga-vs-athletic-club": {
+      "liga": "esp.1",
+      "fecha": "2026-11-28",
+      "home_id": 99,
+      "away_id": 93,
+      "home": "Málaga",
+      "away": "Athletic Club"
+    },
+    "fc-cologne-vs-sv-elversberg": {
+      "liga": "ger.1",
+      "fecha": "2026-11-28",
+      "home_id": 122,
+      "away_id": 10388,
+      "home": "FC Cologne",
+      "away": "SV Elversberg"
+    },
+    "mainz-vs-1-fc-union-berlin": {
+      "liga": "ger.1",
+      "fecha": "2026-11-28",
+      "home_id": 2950,
+      "away_id": 598,
+      "home": "Mainz",
+      "away": "1. FC Union Berlin"
+    },
+    "sc-paderborn-07-vs-schalke-04": {
+      "liga": "ger.1",
+      "fecha": "2026-11-28",
+      "home_id": 3307,
+      "away_id": 133,
+      "home": "SC Paderborn 07",
+      "away": "Schalke 04"
+    },
+    "frosinone-vs-parma": {
+      "liga": "ita.1",
+      "fecha": "2026-11-28",
+      "home_id": 4057,
+      "away_id": 115,
+      "home": "Frosinone",
+      "away": "Parma"
+    },
+    "torino-vs-lazio": {
+      "liga": "ita.1",
+      "fecha": "2026-11-28",
+      "home_id": 239,
+      "away_id": 112,
+      "home": "Torino",
+      "away": "Lazio"
+    },
+    "brighton-hove-albion-vs-newcastle-united": {
+      "liga": "eng.1",
+      "fecha": "2026-11-29",
+      "home_id": 331,
+      "away_id": 361,
+      "home": "Brighton & Hove Albion",
+      "away": "Newcastle United"
+    },
+    "crystal-palace-vs-hull-city": {
+      "liga": "eng.1",
+      "fecha": "2026-11-29",
+      "home_id": 384,
+      "away_id": 306,
+      "home": "Crystal Palace",
+      "away": "Hull City"
+    },
+    "fulham-vs-afc-bournemouth": {
+      "liga": "eng.1",
+      "fecha": "2026-11-29",
+      "home_id": 370,
+      "away_id": 349,
+      "home": "Fulham",
+      "away": "AFC Bournemouth"
+    },
+    "sunderland-vs-tottenham-hotspur": {
+      "liga": "eng.1",
+      "fecha": "2026-11-29",
+      "home_id": 366,
+      "away_id": 367,
+      "home": "Sunderland",
+      "away": "Tottenham Hotspur"
+    },
+    "valencia-vs-osasuna": {
+      "liga": "esp.1",
+      "fecha": "2026-11-29",
+      "home_id": 94,
+      "away_id": 97,
+      "home": "Valencia",
+      "away": "Osasuna"
+    },
+    "celta-vigo-vs-villarreal": {
+      "liga": "esp.1",
+      "fecha": "2026-11-29",
+      "home_id": 85,
+      "away_id": 102,
+      "home": "Celta Vigo",
+      "away": "Villarreal"
+    },
+    "real-sociedad-vs-sevilla": {
+      "liga": "esp.1",
+      "fecha": "2026-11-29",
+      "home_id": 89,
+      "away_id": 243,
+      "home": "Real Sociedad",
+      "away": "Sevilla"
+    },
+    "sc-freiburg-vs-rb-leipzig": {
+      "liga": "ger.1",
+      "fecha": "2026-11-29",
+      "home_id": 126,
+      "away_id": 11420,
+      "home": "SC Freiburg",
+      "away": "RB Leipzig"
+    },
+    "tsg-hoffenheim-vs-fc-augsburg": {
+      "liga": "ger.1",
+      "fecha": "2026-11-29",
+      "home_id": 7911,
+      "away_id": 3841,
+      "home": "TSG Hoffenheim",
+      "away": "FC Augsburg"
+    },
+    "udinese-vs-fiorentina": {
+      "liga": "ita.1",
+      "fecha": "2026-11-29",
+      "home_id": 118,
+      "away_id": 109,
+      "home": "Udinese",
+      "away": "Fiorentina"
+    },
+    "as-roma-vs-monza": {
+      "liga": "ita.1",
+      "fecha": "2026-11-29",
+      "home_id": 104,
+      "away_id": 4007,
+      "home": "AS Roma",
+      "away": "Monza"
     }
   },
   "detalle": {
@@ -9896,54 +10056,54 @@
               "dorsal": "1"
             },
             {
-              "jugador": "Amos Pieper",
-              "pos": "D",
-              "dorsal": "5"
-            },
-            {
               "jugador": "Marco Friedl",
-              "pos": "D",
+              "pos": "CD-L",
               "dorsal": "32"
             },
             {
+              "jugador": "Amos Pieper",
+              "pos": "CD-R",
+              "dorsal": "5"
+            },
+            {
               "jugador": "Olivier Deman",
-              "pos": "D",
+              "pos": "LB",
               "dorsal": "2"
             },
             {
               "jugador": "Arthur",
-              "pos": "D",
+              "pos": "RB",
               "dorsal": "13"
             },
             {
               "jugador": "Chuki",
-              "pos": "M",
+              "pos": "AM",
               "dorsal": "20"
             },
             {
-              "jugador": "Ludovit Reis",
-              "pos": "M",
-              "dorsal": "15"
-            },
-            {
               "jugador": "Youri Regeer",
-              "pos": "M",
+              "pos": "LM",
               "dorsal": "44"
             },
             {
-              "jugador": "Paul Bright Max Erevbenagie",
-              "pos": "M",
-              "dorsal": "38"
-            },
-            {
-              "jugador": "Eren Dinkci",
-              "pos": "M",
-              "dorsal": "18"
+              "jugador": "Ludovit Reis",
+              "pos": "RM",
+              "dorsal": "15"
             },
             {
               "jugador": "Niclas Füllkrug",
               "pos": "F",
               "dorsal": "10"
+            },
+            {
+              "jugador": "Paul Bright Max Erevbenagie",
+              "pos": "AM-L",
+              "dorsal": "38"
+            },
+            {
+              "jugador": "Eren Dinkci",
+              "pos": "AM-R",
+              "dorsal": "18"
             }
           ],
           "visita": [
@@ -9953,54 +10113,54 @@
               "dorsal": "33"
             },
             {
-              "jugador": "Kevin Diks",
-              "pos": "D",
-              "dorsal": "4"
-            },
-            {
-              "jugador": "Fabio Chiarodia",
-              "pos": "D",
-              "dorsal": "2"
-            },
-            {
               "jugador": "Philipp Sander",
-              "pos": "D",
+              "pos": "CD",
               "dorsal": "16"
             },
             {
-              "jugador": "Franck Honorat",
-              "pos": "M",
-              "dorsal": "9"
+              "jugador": "Fabio Chiarodia",
+              "pos": "CD-L",
+              "dorsal": "2"
+            },
+            {
+              "jugador": "Kevin Diks",
+              "pos": "CD-R",
+              "dorsal": "4"
             },
             {
               "jugador": "Florian Neuhaus",
-              "pos": "M",
+              "pos": "CM-L",
               "dorsal": "10"
             },
             {
-              "jugador": "Wael Mohya",
-              "pos": "M",
-              "dorsal": "36"
-            },
-            {
               "jugador": "Zento Uno",
-              "pos": "M",
+              "pos": "CM-R",
               "dorsal": "47"
             },
             {
               "jugador": "Jens Castrop",
-              "pos": "M",
+              "pos": "LM",
               "dorsal": "17"
             },
             {
               "jugador": "Joe Scally",
-              "pos": "M",
+              "pos": "RM",
               "dorsal": "29"
             },
             {
               "jugador": "Shuto Machino",
               "pos": "F",
               "dorsal": "18"
+            },
+            {
+              "jugador": "Wael Mohya",
+              "pos": "CF-L",
+              "dorsal": "36"
+            },
+            {
+              "jugador": "Franck Honorat",
+              "pos": "CF-R",
+              "dorsal": "9"
             }
           ]
         },
@@ -10210,9 +10370,9 @@
               "dorsal": "25"
             },
             {
-              "jugador": "Simon Sohm",
+              "jugador": "Gianluca Busio",
               "pos": "CM-L",
-              "dorsal": "19"
+              "dorsal": "6"
             },
             {
               "jugador": "Enrique Perez",
@@ -10220,9 +10380,9 @@
               "dorsal": "71"
             },
             {
-              "jugador": "Gianluca Busio",
+              "jugador": "Simon Sohm",
               "pos": "AM",
-              "dorsal": "6"
+              "dorsal": "19"
             },
             {
               "jugador": "Ridgeciano Haps",
@@ -10502,53 +10662,53 @@
             },
             {
               "jugador": "Nikola Milenkovic",
-              "pos": "D",
+              "pos": "CD",
               "dorsal": "31"
             },
             {
-              "jugador": "Jair Cunha",
-              "pos": "D",
-              "dorsal": "23"
-            },
-            {
               "jugador": "Murillo",
-              "pos": "D",
+              "pos": "CD-L",
               "dorsal": "5"
             },
             {
+              "jugador": "Jair Cunha",
+              "pos": "CD-R",
+              "dorsal": "23"
+            },
+            {
               "jugador": "Xaver Schlager",
-              "pos": "M",
+              "pos": "CM-L",
               "dorsal": "21"
             },
             {
-              "jugador": "Neco Williams",
-              "pos": "M",
-              "dorsal": "3"
-            },
-            {
               "jugador": "James McAtee",
-              "pos": "M",
+              "pos": "CM-R",
               "dorsal": "24"
             },
             {
-              "jugador": "Morgan Gibbs-White",
-              "pos": "M",
-              "dorsal": "10"
-            },
-            {
-              "jugador": "Igor Jesus",
-              "pos": "M",
-              "dorsal": "11"
+              "jugador": "Neco Williams",
+              "pos": "LM",
+              "dorsal": "3"
             },
             {
               "jugador": "Daniel Muñoz",
-              "pos": "M",
+              "pos": "RM",
               "dorsal": "27"
             },
             {
               "jugador": "Liam Delap",
               "pos": "F",
               "dorsal": "19"
+            },
+            {
+              "jugador": "Morgan Gibbs-White",
+              "pos": "CF-L",
+              "dorsal": "10"
+            },
+            {
+              "jugador": "Igor Jesus",
+              "pos": "CF-R",
+              "dorsal": "11"
             }
           ],
           "visita": [
@@ -10558,54 +10718,54 @@
               "dorsal": "1"
             },
             {
-              "jugador": "Josh Acheampong",
-              "pos": "D",
-              "dorsal": "34"
-            },
-            {
-              "jugador": "Pep Chavarría",
-              "pos": "D",
-              "dorsal": "29"
-            },
-            {
-              "jugador": "Wesley Fofana",
-              "pos": "D",
-              "dorsal": "3"
-            },
-            {
-              "jugador": "Romeo Lavia",
-              "pos": "D",
-              "dorsal": "45"
-            },
-            {
-              "jugador": "Cole Palmer",
-              "pos": "M",
-              "dorsal": "10"
-            },
-            {
               "jugador": "Moisés Caicedo",
-              "pos": "M",
+              "pos": "CD-L",
               "dorsal": "25"
             },
             {
-              "jugador": "Pedro Neto",
-              "pos": "M",
-              "dorsal": "7"
+              "jugador": "Wesley Fofana",
+              "pos": "CD-R",
+              "dorsal": "3"
             },
             {
-              "jugador": "Morgan Rogers",
-              "pos": "M",
-              "dorsal": "17"
+              "jugador": "Pep Chavarría",
+              "pos": "LB",
+              "dorsal": "29"
+            },
+            {
+              "jugador": "Josh Acheampong",
+              "pos": "RB",
+              "dorsal": "34"
+            },
+            {
+              "jugador": "Cole Palmer",
+              "pos": "AM",
+              "dorsal": "10"
             },
             {
               "jugador": "Jordan Henderson",
-              "pos": "M",
+              "pos": "LM",
               "dorsal": "14"
+            },
+            {
+              "jugador": "Romeo Lavia",
+              "pos": "RM",
+              "dorsal": "45"
             },
             {
               "jugador": "Danny Welbeck",
               "pos": "F",
               "dorsal": "18"
+            },
+            {
+              "jugador": "Morgan Rogers",
+              "pos": "AM-L",
+              "dorsal": "17"
+            },
+            {
+              "jugador": "Pedro Neto",
+              "pos": "AM-R",
+              "dorsal": "7"
             }
           ]
         },
@@ -10807,14 +10967,14 @@
               "dorsal": "13"
             },
             {
-              "jugador": "Aïssa Mandi",
+              "jugador": "Adrián de la Fuente",
               "pos": "CD-L",
-              "dorsal": "2"
+              "dorsal": "4"
             },
             {
-              "jugador": "Adrián de la Fuente",
+              "jugador": "Aïssa Mandi",
               "pos": "CD-R",
-              "dorsal": "4"
+              "dorsal": "2"
             },
             {
               "jugador": "Marc Santos Gavilán",
@@ -14030,18 +14190,3787 @@
         "standings_header": "Mexican Liga BBVA MX Standings"
       },
       "fuente_detalle": "generado"
+    },
+    "leeds-united-vs-coventry-city": {
+      "home": "Leeds United",
+      "away": "Coventry City",
+      "league": "Premier League",
+      "day": "sáb",
+      "time": "Nov 28 · 09:00",
+      "espn_event_id": "401879227",
+      "lastFive": {
+        "home": [
+          {
+            "fecha": "7 nov 2026",
+            "rival": "Tottenham Hotspur",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "0",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
+            "fecha": "31 oct 2026",
+            "rival": "AFC Bournemouth",
+            "local": false,
+            "goles_local": "2",
+            "goles_visitante": "0",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
+            "fecha": "25 oct 2026",
+            "rival": "Sunderland",
+            "local": false,
+            "goles_local": "0",
+            "goles_visitante": "0",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
+            "fecha": "18 oct 2026",
+            "rival": "Manchester United",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "1",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
+            "fecha": "10 oct 2026",
+            "rival": "Arsenal",
+            "local": false,
+            "goles_local": "2",
+            "goles_visitante": "1",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          }
+        ],
+        "away": [
+          {
+            "fecha": "6 nov 2026",
+            "rival": "Everton",
+            "local": false,
+            "goles_local": "3",
+            "goles_visitante": "1",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
+            "fecha": "31 oct 2026",
+            "rival": "Sunderland",
+            "local": true,
+            "goles_local": "3",
+            "goles_visitante": "1",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
+            "fecha": "24 oct 2026",
+            "rival": "Fulham",
+            "local": true,
+            "goles_local": "0",
+            "goles_visitante": "1",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
+            "fecha": "19 oct 2026",
+            "rival": "Tottenham Hotspur",
+            "local": false,
+            "goles_local": "3",
+            "goles_visitante": "1",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
+            "fecha": "12 oct 2026",
+            "rival": "Newcastle United",
+            "local": true,
+            "goles_local": "4",
+            "goles_visitante": "1",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          }
+        ]
+      },
+      "h2h": {
+        "resumen": "Serie empatada 2-2-1",
+        "etiqueta": "Last 5 Matchups",
+        "partidos": [
+          {
+            "fecha": "5 feb 2025",
+            "local": "Coventry City",
+            "visitante": "Leeds United",
+            "goles_local": "0",
+            "goles_visitante": "2"
+          },
+          {
+            "fecha": "28 sep 2024",
+            "local": "Leeds United",
+            "visitante": "Coventry City",
+            "goles_local": "3",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "6 abr 2024",
+            "local": "Coventry City",
+            "visitante": "Leeds United",
+            "goles_local": "2",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "16 dic 2023",
+            "local": "Leeds United",
+            "visitante": "Coventry City",
+            "goles_local": "1",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "14 feb 2012",
+            "local": "Coventry City",
+            "visitante": "Leeds United",
+            "goles_local": "2",
+            "goles_visitante": "1"
+          }
+        ]
+      },
+      "standings": {
+        "home": {
+          "pos": "7",
+          "pts": "17",
+          "pj": "11",
+          "g": "4",
+          "e": "5",
+          "p": "2",
+          "dg": "+5",
+          "récord": "4-5-2"
+        },
+        "away": {
+          "pos": "14",
+          "pts": "12",
+          "pj": "11",
+          "g": "4",
+          "e": "0",
+          "p": "7",
+          "dg": "-8",
+          "récord": "4-0-7"
+        }
+      },
+      "lineup": {
+        "alineacion_publicada": false,
+        "jugadores": {
+          "local": [],
+          "visita": []
+        },
+        "jugadores_en_roster": 0
+      },
+      "estadio": {
+        "nombre": "Elland Road",
+        "ciudad": "Leeds",
+        "pais": "England"
+      },
+      "sources": {
+        "standings_header": "English Premier League Standings"
+      },
+      "fuente_detalle": "generado"
+    },
+    "ipswich-town-vs-aston-villa": {
+      "home": "Ipswich Town",
+      "away": "Aston Villa",
+      "league": "Premier League",
+      "day": "sáb",
+      "time": "Nov 28 · 11:30",
+      "espn_event_id": "401878752",
+      "lastFive": {
+        "home": [
+          {
+            "fecha": "8 nov 2026",
+            "rival": "AFC Bournemouth",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "2",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
+            "fecha": "31 oct 2026",
+            "rival": "Hull City",
+            "local": false,
+            "goles_local": "2",
+            "goles_visitante": "2",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
+            "fecha": "23 oct 2026",
+            "rival": "Nottingham Forest",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "1",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
+            "fecha": "17 oct 2026",
+            "rival": "Manchester City",
+            "local": false,
+            "goles_local": "3",
+            "goles_visitante": "2",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
+            "fecha": "10 oct 2026",
+            "rival": "Fulham",
+            "local": true,
+            "goles_local": "2",
+            "goles_visitante": "1",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          }
+        ],
+        "away": [
+          {
+            "fecha": "3 nov 2026",
+            "rival": "Barcelona",
+            "local": false,
+            "goles_local": "3",
+            "goles_visitante": "0",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "UEFA Champions League"
+          },
+          {
+            "fecha": "21 oct 2026",
+            "rival": "Viking FK",
+            "local": true,
+            "goles_local": "3",
+            "goles_visitante": "1",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "UEFA Champions League"
+          },
+          {
+            "fecha": "14 oct 2026",
+            "rival": "Fenerbahce",
+            "local": true,
+            "goles_local": "6",
+            "goles_visitante": "0",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "UEFA Champions League"
+          },
+          {
+            "fecha": "8 sep 2026",
+            "rival": "Club Brugge",
+            "local": false,
+            "goles_local": "2",
+            "goles_visitante": "3",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "UEFA Champions League"
+          }
+        ]
+      },
+      "h2h": {
+        "resumen": "AVL lidera la serie 2-0-3",
+        "etiqueta": "Last 5 Matchups",
+        "partidos": [
+          {
+            "fecha": "15 feb 2025",
+            "local": "Aston Villa",
+            "visitante": "Ipswich Town",
+            "goles_local": "1",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "29 sep 2024",
+            "local": "Ipswich Town",
+            "visitante": "Aston Villa",
+            "goles_local": "2",
+            "goles_visitante": "2"
+          },
+          {
+            "fecha": "26 ene 2019",
+            "local": "Aston Villa",
+            "visitante": "Ipswich Town",
+            "goles_local": "2",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "18 ago 2018",
+            "local": "Ipswich Town",
+            "visitante": "Aston Villa",
+            "goles_local": "1",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "21 abr 2018",
+            "local": "Ipswich Town",
+            "visitante": "Aston Villa",
+            "goles_local": "0",
+            "goles_visitante": "4"
+          }
+        ]
+      },
+      "standings": {
+        "home": {
+          "pos": "16",
+          "pts": "11",
+          "pj": "11",
+          "g": "3",
+          "e": "2",
+          "p": "6",
+          "dg": "-7",
+          "récord": "3-2-6"
+        },
+        "away": {
+          "pos": "12",
+          "pts": "14",
+          "pj": "11",
+          "g": "3",
+          "e": "5",
+          "p": "3",
+          "dg": "-3",
+          "récord": "3-5-3"
+        }
+      },
+      "lineup": {
+        "alineacion_publicada": false,
+        "jugadores": {
+          "local": [],
+          "visita": []
+        },
+        "jugadores_en_roster": 0
+      },
+      "estadio": {
+        "nombre": "Portman Road",
+        "ciudad": "Ipswich",
+        "pais": "England"
+      },
+      "sources": {
+        "standings_header": "English Premier League Standings"
+      },
+      "fuente_detalle": "generado"
+    },
+    "real-betis-vs-rayo-vallecano": {
+      "home": "Real Betis",
+      "away": "Rayo Vallecano",
+      "league": "LaLiga",
+      "day": "sáb",
+      "time": "Nov 28 · 07:00",
+      "espn_event_id": "401882796",
+      "lastFive": {
+        "home": [
+          {
+            "fecha": "8 nov 2026",
+            "rival": "Elche",
+            "local": false,
+            "goles_local": "0",
+            "goles_visitante": "2",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
+          {
+            "fecha": "31 oct 2026",
+            "rival": "Málaga",
+            "local": true,
+            "goles_local": "2",
+            "goles_visitante": "1",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
+          {
+            "fecha": "25 oct 2026",
+            "rival": "Celta Vigo",
+            "local": false,
+            "goles_local": "0",
+            "goles_visitante": "0",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
+          {
+            "fecha": "17 oct 2026",
+            "rival": "Barcelona",
+            "local": true,
+            "goles_local": "2",
+            "goles_visitante": "5",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
+          {
+            "fecha": "11 oct 2026",
+            "rival": "Osasuna",
+            "local": true,
+            "goles_local": "5",
+            "goles_visitante": "2",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          }
+        ],
+        "away": [
+          {
+            "fecha": "8 nov 2026",
+            "rival": "Real Sociedad",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "0",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
+          {
+            "fecha": "31 oct 2026",
+            "rival": "Celta Vigo",
+            "local": true,
+            "goles_local": "3",
+            "goles_visitante": "0",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
+          {
+            "fecha": "24 oct 2026",
+            "rival": "Elche",
+            "local": true,
+            "goles_local": "0",
+            "goles_visitante": "3",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
+          {
+            "fecha": "19 oct 2026",
+            "rival": "Getafe",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "1",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
+          {
+            "fecha": "19 sep 2026",
+            "rival": "Osasuna",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "1",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          }
+        ]
+      },
+      "h2h": {
+        "resumen": "RAY lidera la serie 1-0-4",
+        "etiqueta": "Last 5 Matchups",
+        "partidos": [
+          {
+            "fecha": "21 feb 2026",
+            "local": "Real Betis",
+            "visitante": "Rayo Vallecano",
+            "goles_local": "1",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "15 dic 2025",
+            "local": "Rayo Vallecano",
+            "visitante": "Real Betis",
+            "goles_local": "0",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "15 may 2025",
+            "local": "Rayo Vallecano",
+            "visitante": "Real Betis",
+            "goles_local": "2",
+            "goles_visitante": "2"
+          },
+          {
+            "fecha": "22 dic 2024",
+            "local": "Real Betis",
+            "visitante": "Rayo Vallecano",
+            "goles_local": "1",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "17 mar 2024",
+            "local": "Rayo Vallecano",
+            "visitante": "Real Betis",
+            "goles_local": "2",
+            "goles_visitante": "0"
+          }
+        ]
+      },
+      "standings": {
+        "home": {
+          "pos": "4",
+          "pts": "27",
+          "pj": "13",
+          "g": "8",
+          "e": "3",
+          "p": "2",
+          "dg": "+5",
+          "récord": "8-3-2"
+        },
+        "away": {
+          "pos": "16",
+          "pts": "12",
+          "pj": "12",
+          "g": "3",
+          "e": "3",
+          "p": "6",
+          "dg": "-7",
+          "récord": "3-3-6"
+        }
+      },
+      "lineup": {
+        "alineacion_publicada": false,
+        "jugadores": {
+          "local": [],
+          "visita": []
+        },
+        "jugadores_en_roster": 0
+      },
+      "estadio": {
+        "nombre": "Estadio La Cartuja",
+        "ciudad": "Sevilla",
+        "pais": "Spain"
+      },
+      "sources": {
+        "standings_header": "Spanish LALIGA Standings"
+      },
+      "fuente_detalle": "generado"
+    },
+    "malaga-vs-athletic-club": {
+      "home": "Málaga",
+      "away": "Athletic Club",
+      "league": "LaLiga",
+      "day": "sáb",
+      "time": "Nov 28 · 09:15",
+      "espn_event_id": "401882790",
+      "lastFive": {
+        "home": [
+          {
+            "fecha": "7 nov 2026",
+            "rival": "Racing Santander",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "2",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
+          {
+            "fecha": "31 oct 2026",
+            "rival": "Real Betis",
+            "local": false,
+            "goles_local": "2",
+            "goles_visitante": "1",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
+          {
+            "fecha": "23 oct 2026",
+            "rival": "Alavés",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "1",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
+          {
+            "fecha": "18 oct 2026",
+            "rival": "Real Sociedad",
+            "local": true,
+            "goles_local": "2",
+            "goles_visitante": "5",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
+          {
+            "fecha": "9 oct 2026",
+            "rival": "Espanyol",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "1",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          }
+        ],
+        "away": [
+          {
+            "fecha": "7 nov 2026",
+            "rival": "Osasuna",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "1",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
+          {
+            "fecha": "1 nov 2026",
+            "rival": "Real Sociedad",
+            "local": true,
+            "goles_local": "2",
+            "goles_visitante": "1",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
+          {
+            "fecha": "25 oct 2026",
+            "rival": "Getafe",
+            "local": true,
+            "goles_local": "4",
+            "goles_visitante": "0",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
+          {
+            "fecha": "21 oct 2026",
+            "rival": "Levante",
+            "local": false,
+            "goles_local": "3",
+            "goles_visitante": "1",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
+          {
+            "fecha": "17 oct 2026",
+            "rival": "Valencia",
+            "local": false,
+            "goles_local": "0",
+            "goles_visitante": "0",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          }
+        ]
+      },
+      "h2h": {
+        "resumen": "ATH lidera la serie 3-1-1",
+        "etiqueta": "Last 5 Matchups",
+        "partidos": [
+          {
+            "fecha": "25 feb 2018",
+            "local": "Athletic Club",
+            "visitante": "Málaga",
+            "goles_local": "2",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "23 sep 2017",
+            "local": "Málaga",
+            "visitante": "Athletic Club",
+            "goles_local": "3",
+            "goles_visitante": "3"
+          },
+          {
+            "fecha": "5 mar 2017",
+            "local": "Athletic Club",
+            "visitante": "Málaga",
+            "goles_local": "1",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "2 oct 2016",
+            "local": "Málaga",
+            "visitante": "Athletic Club",
+            "goles_local": "2",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "17 abr 2016",
+            "local": "Málaga",
+            "visitante": "Athletic Club",
+            "goles_local": "0",
+            "goles_visitante": "1"
+          }
+        ]
+      },
+      "standings": {
+        "home": {
+          "pos": "20",
+          "pts": "5",
+          "pj": "13",
+          "g": "0",
+          "e": "5",
+          "p": "8",
+          "dg": "-15",
+          "récord": "0-5-8"
+        },
+        "away": {
+          "pos": "8",
+          "pts": "16",
+          "pj": "12",
+          "g": "4",
+          "e": "4",
+          "p": "4",
+          "dg": "+3",
+          "récord": "4-4-4"
+        }
+      },
+      "lineup": {
+        "alineacion_publicada": false,
+        "jugadores": {
+          "local": [],
+          "visita": []
+        },
+        "jugadores_en_roster": 0
+      },
+      "estadio": {
+        "nombre": "La Rosaleda",
+        "ciudad": "Malaga",
+        "pais": "Spain"
+      },
+      "sources": {
+        "standings_header": "Spanish LALIGA Standings"
+      },
+      "fuente_detalle": "generado"
+    },
+    "fc-cologne-vs-sv-elversberg": {
+      "home": "FC Cologne",
+      "away": "SV Elversberg",
+      "league": "Bundesliga",
+      "day": "sáb",
+      "time": "Nov 28 · 08:30",
+      "espn_event_id": "401884721",
+      "lastFive": {
+        "home": [
+          {
+            "fecha": "8 nov 2026",
+            "rival": "Bayer Leverkusen",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "2",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "1 nov 2026",
+            "rival": "1. FC Union Berlin",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "1",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "24 oct 2026",
+            "rival": "Schalke 04",
+            "local": true,
+            "goles_local": "0",
+            "goles_visitante": "0",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "16 oct 2026",
+            "rival": "Eintracht Frankfurt",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "0",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "11 oct 2026",
+            "rival": "Borussia Mönchengladbach",
+            "local": true,
+            "goles_local": "2",
+            "goles_visitante": "1",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          }
+        ],
+        "away": [
+          {
+            "fecha": "7 nov 2026",
+            "rival": "Borussia Dortmund",
+            "local": false,
+            "goles_local": "2",
+            "goles_visitante": "1",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "30 oct 2026",
+            "rival": "Mainz",
+            "local": true,
+            "goles_local": "4",
+            "goles_visitante": "1",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "24 oct 2026",
+            "rival": "RB Leipzig",
+            "local": false,
+            "goles_local": "4",
+            "goles_visitante": "0",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "17 oct 2026",
+            "rival": "FC Augsburg",
+            "local": true,
+            "goles_local": "4",
+            "goles_visitante": "3",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "10 oct 2026",
+            "rival": "1. FC Union Berlin",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "0",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          }
+        ]
+      },
+      "h2h": {
+        "resumen": "KOE lidera la serie 1-0-1",
+        "etiqueta": "Last 2 Matchups",
+        "partidos": [
+          {
+            "fecha": "25 ene 2025",
+            "local": "FC Cologne",
+            "visitante": "SV Elversberg",
+            "goles_local": "1",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "10 ago 2024",
+            "local": "SV Elversberg",
+            "visitante": "FC Cologne",
+            "goles_local": "2",
+            "goles_visitante": "2"
+          }
+        ]
+      },
+      "standings": {
+        "home": {
+          "pos": "14",
+          "pts": "10",
+          "pj": "10",
+          "g": "2",
+          "e": "4",
+          "p": "4",
+          "dg": "-4",
+          "récord": "2-4-4"
+        },
+        "away": {
+          "pos": "9",
+          "pts": "13",
+          "pj": "10",
+          "g": "4",
+          "e": "1",
+          "p": "5",
+          "dg": "-2",
+          "récord": "4-1-5"
+        }
+      },
+      "lineup": {
+        "alineacion_publicada": false,
+        "jugadores": {
+          "local": [],
+          "visita": []
+        },
+        "jugadores_en_roster": 0
+      },
+      "estadio": {
+        "nombre": "RheinEnergieStadion",
+        "ciudad": "Cologne",
+        "pais": "Germany"
+      },
+      "sources": {
+        "standings_header": "German Bundesliga Standings"
+      },
+      "fuente_detalle": "generado"
+    },
+    "mainz-vs-1-fc-union-berlin": {
+      "home": "Mainz",
+      "away": "1. FC Union Berlin",
+      "league": "Bundesliga",
+      "day": "sáb",
+      "time": "Nov 28 · 08:30",
+      "espn_event_id": "401884723",
+      "lastFive": {
+        "home": [
+          {
+            "fecha": "7 nov 2026",
+            "rival": "Bayern Munich",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "2",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "30 oct 2026",
+            "rival": "SV Elversberg",
+            "local": false,
+            "goles_local": "4",
+            "goles_visitante": "1",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "24 oct 2026",
+            "rival": "Werder Bremen",
+            "local": true,
+            "goles_local": "2",
+            "goles_visitante": "3",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "17 oct 2026",
+            "rival": "Schalke 04",
+            "local": false,
+            "goles_local": "0",
+            "goles_visitante": "1",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "10 oct 2026",
+            "rival": "Bayer Leverkusen",
+            "local": true,
+            "goles_local": "3",
+            "goles_visitante": "4",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          }
+        ],
+        "away": [
+          {
+            "fecha": "8 nov 2026",
+            "rival": "SC Freiburg",
+            "local": false,
+            "goles_local": "2",
+            "goles_visitante": "0",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "1 nov 2026",
+            "rival": "FC Cologne",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "1",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "24 oct 2026",
+            "rival": "FC Augsburg",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "1",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "17 oct 2026",
+            "rival": "Borussia Dortmund",
+            "local": true,
+            "goles_local": "0",
+            "goles_visitante": "0",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "10 oct 2026",
+            "rival": "SV Elversberg",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "0",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          }
+        ]
+      },
+      "h2h": {
+        "resumen": "FCU lidera la serie 2-0-3",
+        "etiqueta": "Last 5 Matchups",
+        "partidos": [
+          {
+            "fecha": "10 may 2026",
+            "local": "Mainz",
+            "visitante": "1. FC Union Berlin",
+            "goles_local": "1",
+            "goles_visitante": "3"
+          },
+          {
+            "fecha": "10 ene 2026",
+            "local": "1. FC Union Berlin",
+            "visitante": "Mainz",
+            "goles_local": "2",
+            "goles_visitante": "2"
+          },
+          {
+            "fecha": "19 ene 2025",
+            "local": "1. FC Union Berlin",
+            "visitante": "Mainz",
+            "goles_local": "2",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "24 ago 2024",
+            "local": "Mainz",
+            "visitante": "1. FC Union Berlin",
+            "goles_local": "1",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "7 feb 2024",
+            "local": "Mainz",
+            "visitante": "1. FC Union Berlin",
+            "goles_local": "1",
+            "goles_visitante": "1"
+          }
+        ]
+      },
+      "standings": {
+        "home": {
+          "pos": "13",
+          "pts": "10",
+          "pj": "10",
+          "g": "3",
+          "e": "1",
+          "p": "6",
+          "dg": "-3",
+          "récord": "3-1-6"
+        },
+        "away": {
+          "pos": "17",
+          "pts": "7",
+          "pj": "10",
+          "g": "1",
+          "e": "4",
+          "p": "5",
+          "dg": "-18",
+          "récord": "1-4-5"
+        }
+      },
+      "lineup": {
+        "alineacion_publicada": false,
+        "jugadores": {
+          "local": [],
+          "visita": []
+        },
+        "jugadores_en_roster": 0
+      },
+      "estadio": {
+        "nombre": "MEWA ARENA",
+        "ciudad": "Mainz",
+        "pais": "Germany"
+      },
+      "sources": {
+        "standings_header": "German Bundesliga Standings"
+      },
+      "fuente_detalle": "generado"
+    },
+    "sc-paderborn-07-vs-schalke-04": {
+      "home": "SC Paderborn 07",
+      "away": "Schalke 04",
+      "league": "Bundesliga",
+      "day": "sáb",
+      "time": "Nov 28 · 08:30",
+      "espn_event_id": "401884719",
+      "lastFive": {
+        "home": [
+          {
+            "fecha": "7 nov 2026",
+            "rival": "Eintracht Frankfurt",
+            "local": true,
+            "goles_local": "2",
+            "goles_visitante": "2",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "31 oct 2026",
+            "rival": "Borussia Mönchengladbach",
+            "local": false,
+            "goles_local": "0",
+            "goles_visitante": "0",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "24 oct 2026",
+            "rival": "Hamburg SV",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "0",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "17 oct 2026",
+            "rival": "Werder Bremen",
+            "local": false,
+            "goles_local": "2",
+            "goles_visitante": "2",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "10 oct 2026",
+            "rival": "VfB Stuttgart",
+            "local": true,
+            "goles_local": "0",
+            "goles_visitante": "2",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          }
+        ],
+        "away": [
+          {
+            "fecha": "8 nov 2026",
+            "rival": "TSG Hoffenheim",
+            "local": false,
+            "goles_local": "2",
+            "goles_visitante": "1",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "31 oct 2026",
+            "rival": "RB Leipzig",
+            "local": true,
+            "goles_local": "0",
+            "goles_visitante": "2",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "24 oct 2026",
+            "rival": "FC Cologne",
+            "local": false,
+            "goles_local": "0",
+            "goles_visitante": "0",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "17 oct 2026",
+            "rival": "Mainz",
+            "local": true,
+            "goles_local": "0",
+            "goles_visitante": "1",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "11 oct 2026",
+            "rival": "SC Freiburg",
+            "local": false,
+            "goles_local": "2",
+            "goles_visitante": "1",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          }
+        ]
+      },
+      "h2h": {
+        "resumen": "S04 lidera la serie 3-2",
+        "etiqueta": "Last 5 Matchups",
+        "partidos": [
+          {
+            "fecha": "26 abr 2026",
+            "local": "SC Paderborn 07",
+            "visitante": "Schalke 04",
+            "goles_local": "2",
+            "goles_visitante": "3"
+          },
+          {
+            "fecha": "28 nov 2025",
+            "local": "Schalke 04",
+            "visitante": "SC Paderborn 07",
+            "goles_local": "2",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "2 may 2025",
+            "local": "Schalke 04",
+            "visitante": "SC Paderborn 07",
+            "goles_local": "0",
+            "goles_visitante": "2"
+          },
+          {
+            "fecha": "6 dic 2024",
+            "local": "SC Paderborn 07",
+            "visitante": "Schalke 04",
+            "goles_local": "2",
+            "goles_visitante": "4"
+          },
+          {
+            "fecha": "29 sep 2023",
+            "local": "SC Paderborn 07",
+            "visitante": "Schalke 04",
+            "goles_local": "3",
+            "goles_visitante": "1"
+          }
+        ]
+      },
+      "standings": {
+        "home": {
+          "pos": "15",
+          "pts": "10",
+          "pj": "10",
+          "g": "2",
+          "e": "4",
+          "p": "4",
+          "dg": "-7",
+          "récord": "2-4-4"
+        },
+        "away": {
+          "pos": "16",
+          "pts": "7",
+          "pj": "10",
+          "g": "1",
+          "e": "4",
+          "p": "5",
+          "dg": "-6",
+          "récord": "1-4-5"
+        }
+      },
+      "lineup": {
+        "alineacion_publicada": false,
+        "jugadores": {
+          "local": [],
+          "visita": []
+        },
+        "jugadores_en_roster": 0
+      },
+      "estadio": {
+        "nombre": "Home Deluxe Arena",
+        "ciudad": "Paderborn",
+        "pais": "Germany"
+      },
+      "sources": {
+        "standings_header": "German Bundesliga Standings"
+      },
+      "fuente_detalle": "generado"
+    },
+    "frosinone-vs-parma": {
+      "home": "Frosinone",
+      "away": "Parma",
+      "league": "Serie A",
+      "day": "sáb",
+      "time": "Nov 28 · 08:00",
+      "espn_event_id": "401875081",
+      "lastFive": {
+        "home": [
+          {
+            "fecha": "7 nov 2026",
+            "rival": "Cagliari",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "0",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
+          {
+            "fecha": "1 nov 2026",
+            "rival": "Torino",
+            "local": true,
+            "goles_local": "2",
+            "goles_visitante": "0",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
+          {
+            "fecha": "29 oct 2026",
+            "rival": "Lecce",
+            "local": true,
+            "goles_local": "5",
+            "goles_visitante": "1",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
+          {
+            "fecha": "25 oct 2026",
+            "rival": "Atalanta",
+            "local": false,
+            "goles_local": "4",
+            "goles_visitante": "4",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
+          {
+            "fecha": "16 oct 2026",
+            "rival": "Sassuolo",
+            "local": true,
+            "goles_local": "4",
+            "goles_visitante": "2",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          }
+        ],
+        "away": [
+          {
+            "fecha": "7 nov 2026",
+            "rival": "Bologna",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "2",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
+          {
+            "fecha": "2 nov 2026",
+            "rival": "Atalanta",
+            "local": false,
+            "goles_local": "0",
+            "goles_visitante": "3",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
+          {
+            "fecha": "28 oct 2026",
+            "rival": "Udinese",
+            "local": true,
+            "goles_local": "0",
+            "goles_visitante": "0",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
+          {
+            "fecha": "24 oct 2026",
+            "rival": "Lazio",
+            "local": false,
+            "goles_local": "2",
+            "goles_visitante": "1",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
+          {
+            "fecha": "19 oct 2026",
+            "rival": "Torino",
+            "local": true,
+            "goles_local": "0",
+            "goles_visitante": "3",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          }
+        ]
+      },
+      "h2h": {
+        "resumen": "PAR lidera la serie 3-1-1",
+        "etiqueta": "Last 5 Matchups",
+        "partidos": [
+          {
+            "fecha": "24 feb 2023",
+            "local": "Frosinone",
+            "visitante": "Parma",
+            "goles_local": "3",
+            "goles_visitante": "4"
+          },
+          {
+            "fecha": "1 oct 2022",
+            "local": "Parma",
+            "visitante": "Frosinone",
+            "goles_local": "2",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "21 ene 2022",
+            "local": "Parma",
+            "visitante": "Frosinone",
+            "goles_local": "0",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "20 ago 2021",
+            "local": "Frosinone",
+            "visitante": "Parma",
+            "goles_local": "2",
+            "goles_visitante": "2"
+          },
+          {
+            "fecha": "5 dic 2019",
+            "local": "Parma",
+            "visitante": "Frosinone",
+            "goles_local": "2",
+            "goles_visitante": "1"
+          }
+        ]
+      },
+      "standings": {
+        "home": {
+          "pos": "7",
+          "pts": "20",
+          "pj": "12",
+          "g": "6",
+          "e": "2",
+          "p": "4",
+          "dg": "+5",
+          "récord": "6-2-4"
+        },
+        "away": {
+          "pos": "17",
+          "pts": "8",
+          "pj": "12",
+          "g": "2",
+          "e": "2",
+          "p": "8",
+          "dg": "-12",
+          "récord": "2-2-8"
+        }
+      },
+      "lineup": {
+        "alineacion_publicada": false,
+        "jugadores": {
+          "local": [],
+          "visita": []
+        },
+        "jugadores_en_roster": 0
+      },
+      "estadio": {
+        "nombre": "Stadio Benito Stirpe",
+        "ciudad": "Frosinone",
+        "pais": "Italy"
+      },
+      "sources": {
+        "standings_header": "Italian Serie A Standings"
+      },
+      "fuente_detalle": "generado"
+    },
+    "torino-vs-lazio": {
+      "home": "Torino",
+      "away": "Lazio",
+      "league": "Serie A",
+      "day": "sáb",
+      "time": "Nov 28 · 11:00",
+      "espn_event_id": "401874826",
+      "lastFive": {
+        "home": [
+          {
+            "fecha": "7 nov 2026",
+            "rival": "Lecce",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "1",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
+          {
+            "fecha": "1 nov 2026",
+            "rival": "Frosinone",
+            "local": false,
+            "goles_local": "2",
+            "goles_visitante": "0",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
+          {
+            "fecha": "27 oct 2026",
+            "rival": "Como",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "3",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
+          {
+            "fecha": "23 oct 2026",
+            "rival": "Monza",
+            "local": true,
+            "goles_local": "3",
+            "goles_visitante": "2",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
+          {
+            "fecha": "19 oct 2026",
+            "rival": "Parma",
+            "local": false,
+            "goles_local": "0",
+            "goles_visitante": "3",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          }
+        ],
+        "away": [
+          {
+            "fecha": "8 nov 2026",
+            "rival": "Napoli",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "1",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
+          {
+            "fecha": "1 nov 2026",
+            "rival": "Cagliari",
+            "local": true,
+            "goles_local": "2",
+            "goles_visitante": "1",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
+          {
+            "fecha": "27 oct 2026",
+            "rival": "Sassuolo",
+            "local": false,
+            "goles_local": "2",
+            "goles_visitante": "6",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
+          {
+            "fecha": "24 oct 2026",
+            "rival": "Parma",
+            "local": true,
+            "goles_local": "2",
+            "goles_visitante": "1",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
+          {
+            "fecha": "18 oct 2026",
+            "rival": "Juventus",
+            "local": false,
+            "goles_local": "0",
+            "goles_visitante": "3",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          }
+        ]
+      },
+      "h2h": {
+        "resumen": "LAZ lidera la serie 2-1-2",
+        "etiqueta": "Last 5 Matchups",
+        "partidos": [
+          {
+            "fecha": "1 mar 2026",
+            "local": "Torino",
+            "visitante": "Lazio",
+            "goles_local": "2",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "4 oct 2025",
+            "local": "Lazio",
+            "visitante": "Torino",
+            "goles_local": "3",
+            "goles_visitante": "3"
+          },
+          {
+            "fecha": "31 mar 2025",
+            "local": "Lazio",
+            "visitante": "Torino",
+            "goles_local": "1",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "29 sep 2024",
+            "local": "Torino",
+            "visitante": "Lazio",
+            "goles_local": "2",
+            "goles_visitante": "3"
+          },
+          {
+            "fecha": "22 feb 2024",
+            "local": "Torino",
+            "visitante": "Lazio",
+            "goles_local": "0",
+            "goles_visitante": "2"
+          }
+        ]
+      },
+      "standings": {
+        "home": {
+          "pos": "13",
+          "pts": "14",
+          "pj": "12",
+          "g": "4",
+          "e": "2",
+          "p": "6",
+          "dg": "-3",
+          "récord": "4-2-6"
+        },
+        "away": {
+          "pos": "1",
+          "pts": "32",
+          "pj": "12",
+          "g": "10",
+          "e": "2",
+          "p": "0",
+          "dg": "+19",
+          "récord": "10-2-0"
+        }
+      },
+      "lineup": {
+        "alineacion_publicada": false,
+        "jugadores": {
+          "local": [],
+          "visita": []
+        },
+        "jugadores_en_roster": 0
+      },
+      "estadio": {
+        "nombre": "Stadio Olimpico Grande Torino",
+        "ciudad": "Torino",
+        "pais": "Italy"
+      },
+      "sources": {
+        "standings_header": "Italian Serie A Standings"
+      },
+      "fuente_detalle": "generado"
+    },
+    "brighton-hove-albion-vs-newcastle-united": {
+      "home": "Brighton & Hove Albion",
+      "away": "Newcastle United",
+      "league": "Premier League",
+      "day": "dom",
+      "time": "Nov 29 · 08:05",
+      "espn_event_id": "401879231",
+      "lastFive": {
+        "home": [
+          {
+            "fecha": "8 nov 2026",
+            "rival": "Brentford",
+            "local": true,
+            "goles_local": "2",
+            "goles_visitante": "0",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
+            "fecha": "31 oct 2026",
+            "rival": "Manchester City",
+            "local": false,
+            "goles_local": "0",
+            "goles_visitante": "1",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
+            "fecha": "25 oct 2026",
+            "rival": "Liverpool",
+            "local": false,
+            "goles_local": "2",
+            "goles_visitante": "0",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
+            "fecha": "18 oct 2026",
+            "rival": "Crystal Palace",
+            "local": true,
+            "goles_local": "5",
+            "goles_visitante": "0",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
+            "fecha": "10 oct 2026",
+            "rival": "Sunderland",
+            "local": false,
+            "goles_local": "0",
+            "goles_visitante": "2",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          }
+        ],
+        "away": [
+          {
+            "fecha": "7 nov 2026",
+            "rival": "Fulham",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "1",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
+            "fecha": "2 nov 2026",
+            "rival": "Everton",
+            "local": true,
+            "goles_local": "0",
+            "goles_visitante": "1",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
+            "fecha": "25 oct 2026",
+            "rival": "Crystal Palace",
+            "local": false,
+            "goles_local": "0",
+            "goles_visitante": "2",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
+            "fecha": "17 oct 2026",
+            "rival": "Aston Villa",
+            "local": true,
+            "goles_local": "0",
+            "goles_visitante": "1",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
+            "fecha": "12 oct 2026",
+            "rival": "Coventry City",
+            "local": false,
+            "goles_local": "4",
+            "goles_visitante": "1",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          }
+        ]
+      },
+      "h2h": {
+        "resumen": "BHA lidera la serie 3-1-1",
+        "etiqueta": "Last 5 Matchups",
+        "partidos": [
+          {
+            "fecha": "2 may 2026",
+            "local": "Newcastle United",
+            "visitante": "Brighton & Hove Albion",
+            "goles_local": "3",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "18 oct 2025",
+            "local": "Brighton & Hove Albion",
+            "visitante": "Newcastle United",
+            "goles_local": "2",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "4 may 2025",
+            "local": "Brighton & Hove Albion",
+            "visitante": "Newcastle United",
+            "goles_local": "1",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "2 mar 2025",
+            "local": "Newcastle United",
+            "visitante": "Brighton & Hove Albion",
+            "goles_local": "1",
+            "goles_visitante": "2"
+          },
+          {
+            "fecha": "19 oct 2024",
+            "local": "Newcastle United",
+            "visitante": "Brighton & Hove Albion",
+            "goles_local": "0",
+            "goles_visitante": "1"
+          }
+        ]
+      },
+      "standings": {
+        "home": {
+          "pos": "2",
+          "pts": "22",
+          "pj": "11",
+          "g": "7",
+          "e": "1",
+          "p": "3",
+          "dg": "+17",
+          "récord": "7-1-3"
+        },
+        "away": {
+          "pos": "13",
+          "pts": "13",
+          "pj": "11",
+          "g": "3",
+          "e": "4",
+          "p": "4",
+          "dg": "-3",
+          "récord": "3-4-4"
+        }
+      },
+      "lineup": {
+        "alineacion_publicada": false,
+        "jugadores": {
+          "local": [],
+          "visita": []
+        },
+        "jugadores_en_roster": 0
+      },
+      "estadio": {
+        "nombre": "American Express Stadium",
+        "ciudad": "Falmer",
+        "pais": "England"
+      },
+      "sources": {
+        "standings_header": "English Premier League Standings"
+      },
+      "fuente_detalle": "generado"
+    },
+    "crystal-palace-vs-hull-city": {
+      "home": "Crystal Palace",
+      "away": "Hull City",
+      "league": "Premier League",
+      "day": "dom",
+      "time": "Nov 29 · 08:05",
+      "espn_event_id": "401879230",
+      "lastFive": {
+        "home": [
+          {
+            "fecha": "5 nov 2026",
+            "rival": "TSG Hoffenheim",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "1",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "UEFA Europa League"
+          },
+          {
+            "fecha": "22 oct 2026",
+            "rival": "Besiktas",
+            "local": false,
+            "goles_local": "2",
+            "goles_visitante": "2",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "UEFA Europa League"
+          },
+          {
+            "fecha": "15 oct 2026",
+            "rival": "Lyon",
+            "local": false,
+            "goles_local": "3",
+            "goles_visitante": "2",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "UEFA Europa League"
+          },
+          {
+            "fecha": "17 sep 2026",
+            "rival": "Lech Poznan",
+            "local": true,
+            "goles_local": "4",
+            "goles_visitante": "0",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "UEFA Europa League"
+          }
+        ],
+        "away": [
+          {
+            "fecha": "7 nov 2026",
+            "rival": "Arsenal",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "0",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
+            "fecha": "31 oct 2026",
+            "rival": "Ipswich Town",
+            "local": true,
+            "goles_local": "2",
+            "goles_visitante": "2",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
+            "fecha": "25 oct 2026",
+            "rival": "Brentford",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "1",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
+            "fecha": "17 oct 2026",
+            "rival": "Fulham",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "0",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
+            "fecha": "11 oct 2026",
+            "rival": "Everton",
+            "local": true,
+            "goles_local": "2",
+            "goles_visitante": "2",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          }
+        ]
+      },
+      "h2h": {
+        "resumen": "Serie empatada 2-2-1",
+        "etiqueta": "Last 5 Matchups",
+        "partidos": [
+          {
+            "fecha": "14 may 2017",
+            "local": "Crystal Palace",
+            "visitante": "Hull City",
+            "goles_local": "4",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "10 dic 2016",
+            "local": "Hull City",
+            "visitante": "Crystal Palace",
+            "goles_local": "3",
+            "goles_visitante": "3"
+          },
+          {
+            "fecha": "25 abr 2015",
+            "local": "Crystal Palace",
+            "visitante": "Hull City",
+            "goles_local": "0",
+            "goles_visitante": "2"
+          },
+          {
+            "fecha": "4 oct 2014",
+            "local": "Hull City",
+            "visitante": "Crystal Palace",
+            "goles_local": "2",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "28 ene 2014",
+            "local": "Crystal Palace",
+            "visitante": "Hull City",
+            "goles_local": "1",
+            "goles_visitante": "0"
+          }
+        ]
+      },
+      "standings": {
+        "home": {
+          "pos": "20",
+          "pts": "7",
+          "pj": "11",
+          "g": "2",
+          "e": "1",
+          "p": "8",
+          "dg": "-15",
+          "récord": "2-1-8"
+        },
+        "away": {
+          "pos": "11",
+          "pts": "14",
+          "pj": "11",
+          "g": "3",
+          "e": "5",
+          "p": "3",
+          "dg": "+2",
+          "récord": "3-5-3"
+        }
+      },
+      "lineup": {
+        "alineacion_publicada": false,
+        "jugadores": {
+          "local": [],
+          "visita": []
+        },
+        "jugadores_en_roster": 0
+      },
+      "estadio": {
+        "nombre": "Selhurst Park",
+        "ciudad": "London",
+        "pais": "England"
+      },
+      "sources": {
+        "standings_header": "English Premier League Standings"
+      },
+      "fuente_detalle": "generado"
+    },
+    "fulham-vs-afc-bournemouth": {
+      "home": "Fulham",
+      "away": "AFC Bournemouth",
+      "league": "Premier League",
+      "day": "dom",
+      "time": "Nov 29 · 08:05",
+      "espn_event_id": "401879228",
+      "lastFive": {
+        "home": [
+          {
+            "fecha": "7 nov 2026",
+            "rival": "Newcastle United",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "1",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
+            "fecha": "31 oct 2026",
+            "rival": "Aston Villa",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "1",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
+            "fecha": "24 oct 2026",
+            "rival": "Coventry City",
+            "local": false,
+            "goles_local": "0",
+            "goles_visitante": "1",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
+            "fecha": "17 oct 2026",
+            "rival": "Hull City",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "0",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
+            "fecha": "10 oct 2026",
+            "rival": "Ipswich Town",
+            "local": false,
+            "goles_local": "2",
+            "goles_visitante": "1",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          }
+        ],
+        "away": [
+          {
+            "fecha": "5 nov 2026",
+            "rival": "Sparta Prague",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "3",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "UEFA Europa League"
+          },
+          {
+            "fecha": "22 oct 2026",
+            "rival": "AC Milan",
+            "local": true,
+            "goles_local": "3",
+            "goles_visitante": "0",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "UEFA Europa League"
+          },
+          {
+            "fecha": "15 oct 2026",
+            "rival": "SK Sturm Graz",
+            "local": true,
+            "goles_local": "3",
+            "goles_visitante": "0",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "UEFA Europa League"
+          },
+          {
+            "fecha": "17 sep 2026",
+            "rival": "Real Sociedad",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "2",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "UEFA Europa League"
+          }
+        ]
+      },
+      "h2h": {
+        "resumen": "BOU lidera la serie 3-1-1",
+        "etiqueta": "Last 5 Matchups",
+        "partidos": [
+          {
+            "fecha": "9 may 2026",
+            "local": "Fulham",
+            "visitante": "AFC Bournemouth",
+            "goles_local": "0",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "3 oct 2025",
+            "local": "AFC Bournemouth",
+            "visitante": "Fulham",
+            "goles_local": "3",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "14 abr 2025",
+            "local": "AFC Bournemouth",
+            "visitante": "Fulham",
+            "goles_local": "1",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "29 dic 2024",
+            "local": "Fulham",
+            "visitante": "AFC Bournemouth",
+            "goles_local": "2",
+            "goles_visitante": "2"
+          },
+          {
+            "fecha": "10 feb 2024",
+            "local": "Fulham",
+            "visitante": "AFC Bournemouth",
+            "goles_local": "3",
+            "goles_visitante": "1"
+          }
+        ]
+      },
+      "standings": {
+        "home": {
+          "pos": "15",
+          "pts": "11",
+          "pj": "11",
+          "g": "2",
+          "e": "5",
+          "p": "4",
+          "dg": "-2",
+          "récord": "2-5-4"
+        },
+        "away": {
+          "pos": "5",
+          "pts": "18",
+          "pj": "11",
+          "g": "5",
+          "e": "3",
+          "p": "3",
+          "dg": "+4",
+          "récord": "5-3-3"
+        }
+      },
+      "lineup": {
+        "alineacion_publicada": false,
+        "jugadores": {
+          "local": [],
+          "visita": []
+        },
+        "jugadores_en_roster": 0
+      },
+      "estadio": {
+        "nombre": "Craven Cottage",
+        "ciudad": "London",
+        "pais": "England"
+      },
+      "sources": {
+        "standings_header": "English Premier League Standings"
+      },
+      "fuente_detalle": "generado"
+    },
+    "sunderland-vs-tottenham-hotspur": {
+      "home": "Sunderland",
+      "away": "Tottenham Hotspur",
+      "league": "Premier League",
+      "day": "dom",
+      "time": "Nov 29 · 08:05",
+      "espn_event_id": "401879224",
+      "lastFive": {
+        "home": [
+          {
+            "fecha": "5 nov 2026",
+            "rival": "Dinamo Zagreb",
+            "local": true,
+            "goles_local": "0",
+            "goles_visitante": "2",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "UEFA Europa League"
+          },
+          {
+            "fecha": "22 oct 2026",
+            "rival": "Lech Poznan",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "1",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "UEFA Europa League"
+          },
+          {
+            "fecha": "15 oct 2026",
+            "rival": "Torreense",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "2",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "UEFA Europa League"
+          },
+          {
+            "fecha": "16 sep 2026",
+            "rival": "AZ Alkmaar",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "0",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "UEFA Europa League"
+          }
+        ],
+        "away": [
+          {
+            "fecha": "7 nov 2026",
+            "rival": "Leeds United",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "0",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
+            "fecha": "31 oct 2026",
+            "rival": "Crystal Palace",
+            "local": true,
+            "goles_local": "2",
+            "goles_visitante": "0",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
+            "fecha": "24 oct 2026",
+            "rival": "Chelsea",
+            "local": false,
+            "goles_local": "0",
+            "goles_visitante": "2",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
+            "fecha": "19 oct 2026",
+            "rival": "Coventry City",
+            "local": true,
+            "goles_local": "3",
+            "goles_visitante": "1",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
+            "fecha": "10 oct 2026",
+            "rival": "Manchester United",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "1",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          }
+        ]
+      },
+      "h2h": {
+        "resumen": "TOT lidera la serie 2-1-2",
+        "etiqueta": "Last 5 Matchups",
+        "partidos": [
+          {
+            "fecha": "12 abr 2026",
+            "local": "Sunderland",
+            "visitante": "Tottenham Hotspur",
+            "goles_local": "1",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "4 ene 2026",
+            "local": "Tottenham Hotspur",
+            "visitante": "Sunderland",
+            "goles_local": "1",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "31 ene 2017",
+            "local": "Sunderland",
+            "visitante": "Tottenham Hotspur",
+            "goles_local": "0",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "18 sep 2016",
+            "local": "Tottenham Hotspur",
+            "visitante": "Sunderland",
+            "goles_local": "1",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "16 ene 2016",
+            "local": "Tottenham Hotspur",
+            "visitante": "Sunderland",
+            "goles_local": "4",
+            "goles_visitante": "1"
+          }
+        ]
+      },
+      "standings": {
+        "home": {
+          "pos": "18",
+          "pts": "9",
+          "pj": "11",
+          "g": "2",
+          "e": "3",
+          "p": "6",
+          "dg": "-9",
+          "récord": "2-3-6"
+        },
+        "away": {
+          "pos": "10",
+          "pts": "15",
+          "pj": "11",
+          "g": "4",
+          "e": "3",
+          "p": "4",
+          "dg": "+1",
+          "récord": "4-3-4"
+        }
+      },
+      "lineup": {
+        "alineacion_publicada": false,
+        "jugadores": {
+          "local": [],
+          "visita": []
+        },
+        "jugadores_en_roster": 0
+      },
+      "estadio": {
+        "nombre": "Stadium of Light",
+        "ciudad": "Sunderland",
+        "pais": "England"
+      },
+      "sources": {
+        "standings_header": "English Premier League Standings"
+      },
+      "fuente_detalle": "generado"
+    },
+    "valencia-vs-osasuna": {
+      "home": "Valencia",
+      "away": "Osasuna",
+      "league": "LaLiga",
+      "day": "dom",
+      "time": "Nov 29 · 07:00",
+      "espn_event_id": "401882787",
+      "lastFive": {
+        "home": [
+          {
+            "fecha": "7 nov 2026",
+            "rival": "Real Madrid",
+            "local": true,
+            "goles_local": "0",
+            "goles_visitante": "3",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
+          {
+            "fecha": "1 nov 2026",
+            "rival": "Elche",
+            "local": false,
+            "goles_local": "0",
+            "goles_visitante": "1",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
+          {
+            "fecha": "24 oct 2026",
+            "rival": "Villarreal",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "2",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
+          {
+            "fecha": "17 oct 2026",
+            "rival": "Athletic Club",
+            "local": true,
+            "goles_local": "0",
+            "goles_visitante": "0",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
+          {
+            "fecha": "11 oct 2026",
+            "rival": "Racing Santander",
+            "local": false,
+            "goles_local": "2",
+            "goles_visitante": "2",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          }
+        ],
+        "away": [
+          {
+            "fecha": "7 nov 2026",
+            "rival": "Athletic Club",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "1",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
+          {
+            "fecha": "2 nov 2026",
+            "rival": "Deportivo",
+            "local": false,
+            "goles_local": "2",
+            "goles_visitante": "1",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
+          {
+            "fecha": "26 oct 2026",
+            "rival": "Sevilla",
+            "local": false,
+            "goles_local": "2",
+            "goles_visitante": "0",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
+          {
+            "fecha": "18 oct 2026",
+            "rival": "Racing Santander",
+            "local": true,
+            "goles_local": "2",
+            "goles_visitante": "0",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
+          {
+            "fecha": "11 oct 2026",
+            "rival": "Real Betis",
+            "local": false,
+            "goles_local": "5",
+            "goles_visitante": "2",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          }
+        ]
+      },
+      "h2h": {
+        "resumen": "VAL lidera la serie 2-1-2",
+        "etiqueta": "Last 5 Matchups",
+        "partidos": [
+          {
+            "fecha": "1 mar 2026",
+            "local": "Valencia",
+            "visitante": "Osasuna",
+            "goles_local": "1",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "24 ago 2025",
+            "local": "Osasuna",
+            "visitante": "Valencia",
+            "goles_local": "1",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "2 mar 2025",
+            "local": "Osasuna",
+            "visitante": "Valencia",
+            "goles_local": "3",
+            "goles_visitante": "3"
+          },
+          {
+            "fecha": "24 sep 2024",
+            "local": "Valencia",
+            "visitante": "Osasuna",
+            "goles_local": "0",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "15 abr 2024",
+            "local": "Osasuna",
+            "visitante": "Valencia",
+            "goles_local": "0",
+            "goles_visitante": "1"
+          }
+        ]
+      },
+      "standings": {
+        "home": {
+          "pos": "17",
+          "pts": "12",
+          "pj": "13",
+          "g": "3",
+          "e": "3",
+          "p": "7",
+          "dg": "-11",
+          "récord": "3-3-7"
+        },
+        "away": {
+          "pos": "13",
+          "pts": "15",
+          "pj": "13",
+          "g": "4",
+          "e": "3",
+          "p": "6",
+          "dg": "-10",
+          "récord": "4-3-6"
+        }
+      },
+      "lineup": {
+        "alineacion_publicada": false,
+        "jugadores": {
+          "local": [],
+          "visita": []
+        },
+        "jugadores_en_roster": 0
+      },
+      "estadio": {
+        "nombre": "Mestalla Stadium",
+        "ciudad": "Manises",
+        "pais": "Spain"
+      },
+      "sources": {
+        "standings_header": "Spanish LALIGA Standings"
+      },
+      "fuente_detalle": "generado"
+    },
+    "celta-vigo-vs-villarreal": {
+      "home": "Celta Vigo",
+      "away": "Villarreal",
+      "league": "LaLiga",
+      "day": "dom",
+      "time": "Nov 29 · 11:30",
+      "espn_event_id": "401882795",
+      "lastFive": {
+        "home": [
+          {
+            "fecha": "5 nov 2026",
+            "rival": "Union St.-Gilloise",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "2",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "UEFA Europa League"
+          },
+          {
+            "fecha": "22 oct 2026",
+            "rival": "Celtic",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "2",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "UEFA Europa League"
+          },
+          {
+            "fecha": "15 oct 2026",
+            "rival": "Juventus",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "2",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "UEFA Europa League"
+          },
+          {
+            "fecha": "16 sep 2026",
+            "rival": "Omonia Nicosia",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "0",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "UEFA Europa League"
+          }
+        ],
+        "away": [
+          {
+            "fecha": "3 nov 2026",
+            "rival": "Paris Saint-Germain",
+            "local": true,
+            "goles_local": "0",
+            "goles_visitante": "6",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "UEFA Champions League"
+          },
+          {
+            "fecha": "20 oct 2026",
+            "rival": "Liverpool",
+            "local": false,
+            "goles_local": "4",
+            "goles_visitante": "3",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "UEFA Champions League"
+          },
+          {
+            "fecha": "13 oct 2026",
+            "rival": "Napoli",
+            "local": true,
+            "goles_local": "3",
+            "goles_visitante": "1",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "UEFA Champions League"
+          },
+          {
+            "fecha": "8 sep 2026",
+            "rival": "Borussia Dortmund",
+            "local": false,
+            "goles_local": "3",
+            "goles_visitante": "2",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "UEFA Champions League"
+          }
+        ]
+      },
+      "h2h": {
+        "resumen": "Serie empatada 2-2-1",
+        "etiqueta": "Last 5 Matchups",
+        "partidos": [
+          {
+            "fecha": "26 abr 2026",
+            "local": "Villarreal",
+            "visitante": "Celta Vigo",
+            "goles_local": "2",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "31 ago 2025",
+            "local": "Celta Vigo",
+            "visitante": "Villarreal",
+            "goles_local": "1",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "23 abr 2025",
+            "local": "Celta Vigo",
+            "visitante": "Villarreal",
+            "goles_local": "3",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "26 ago 2024",
+            "local": "Villarreal",
+            "visitante": "Celta Vigo",
+            "goles_local": "4",
+            "goles_visitante": "3"
+          },
+          {
+            "fecha": "5 may 2024",
+            "local": "Celta Vigo",
+            "visitante": "Villarreal",
+            "goles_local": "3",
+            "goles_visitante": "2"
+          }
+        ]
+      },
+      "standings": {
+        "home": {
+          "pos": "14",
+          "pts": "13",
+          "pj": "13",
+          "g": "2",
+          "e": "7",
+          "p": "4",
+          "dg": "-1",
+          "récord": "2-7-4"
+        },
+        "away": {
+          "pos": "10",
+          "pts": "15",
+          "pj": "13",
+          "g": "4",
+          "e": "3",
+          "p": "6",
+          "dg": "+1",
+          "récord": "4-3-6"
+        }
+      },
+      "lineup": {
+        "alineacion_publicada": false,
+        "jugadores": {
+          "local": [],
+          "visita": []
+        },
+        "jugadores_en_roster": 0
+      },
+      "estadio": {
+        "nombre": "Balaidos",
+        "ciudad": "Vigo",
+        "pais": "Spain"
+      },
+      "sources": {
+        "standings_header": "Spanish LALIGA Standings"
+      },
+      "fuente_detalle": "generado"
+    },
+    "real-sociedad-vs-sevilla": {
+      "home": "Real Sociedad",
+      "away": "Sevilla",
+      "league": "LaLiga",
+      "day": "dom",
+      "time": "Nov 29 · 14:00",
+      "espn_event_id": "401882788",
+      "lastFive": {
+        "home": [
+          {
+            "fecha": "5 nov 2026",
+            "rival": "Lyon",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "1",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "UEFA Europa League"
+          },
+          {
+            "fecha": "22 oct 2026",
+            "rival": "Lillestrom",
+            "local": false,
+            "goles_local": "0",
+            "goles_visitante": "6",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "UEFA Europa League"
+          },
+          {
+            "fecha": "15 oct 2026",
+            "rival": "Union St.-Gilloise",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "1",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "UEFA Europa League"
+          },
+          {
+            "fecha": "17 sep 2026",
+            "rival": "AFC Bournemouth",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "2",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "UEFA Europa League"
+          }
+        ],
+        "away": [
+          {
+            "fecha": "6 nov 2026",
+            "rival": "Alavés",
+            "local": true,
+            "goles_local": "0",
+            "goles_visitante": "0",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
+          {
+            "fecha": "1 nov 2026",
+            "rival": "Getafe",
+            "local": false,
+            "goles_local": "3",
+            "goles_visitante": "1",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
+          {
+            "fecha": "26 oct 2026",
+            "rival": "Osasuna",
+            "local": true,
+            "goles_local": "2",
+            "goles_visitante": "0",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
+          {
+            "fecha": "18 oct 2026",
+            "rival": "Real Madrid",
+            "local": false,
+            "goles_local": "4",
+            "goles_visitante": "1",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
+          {
+            "fecha": "12 oct 2026",
+            "rival": "Levante",
+            "local": false,
+            "goles_local": "3",
+            "goles_visitante": "3",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          }
+        ]
+      },
+      "h2h": {
+        "resumen": "SEV lidera la serie 3-2",
+        "etiqueta": "Last 5 Matchups",
+        "partidos": [
+          {
+            "fecha": "4 may 2026",
+            "local": "Sevilla",
+            "visitante": "Real Sociedad",
+            "goles_local": "1",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "24 oct 2025",
+            "local": "Real Sociedad",
+            "visitante": "Sevilla",
+            "goles_local": "2",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "9 mar 2025",
+            "local": "Real Sociedad",
+            "visitante": "Sevilla",
+            "goles_local": "0",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "3 nov 2024",
+            "local": "Sevilla",
+            "visitante": "Real Sociedad",
+            "goles_local": "0",
+            "goles_visitante": "2"
+          },
+          {
+            "fecha": "2 mar 2024",
+            "local": "Sevilla",
+            "visitante": "Real Sociedad",
+            "goles_local": "3",
+            "goles_visitante": "2"
+          }
+        ]
+      },
+      "standings": {
+        "home": {
+          "pos": "5",
+          "pts": "22",
+          "pj": "13",
+          "g": "7",
+          "e": "1",
+          "p": "5",
+          "dg": "0",
+          "récord": "7-1-5"
+        },
+        "away": {
+          "pos": "6",
+          "pts": "19",
+          "pj": "13",
+          "g": "5",
+          "e": "4",
+          "p": "4",
+          "dg": "-2",
+          "récord": "5-4-4"
+        }
+      },
+      "lineup": {
+        "alineacion_publicada": false,
+        "jugadores": {
+          "local": [],
+          "visita": []
+        },
+        "jugadores_en_roster": 0
+      },
+      "estadio": {
+        "nombre": "Reale Arena",
+        "ciudad": "San Sebastian",
+        "pais": "Spain"
+      },
+      "sources": {
+        "standings_header": "Spanish LALIGA Standings"
+      },
+      "fuente_detalle": "generado"
+    },
+    "sc-freiburg-vs-rb-leipzig": {
+      "home": "SC Freiburg",
+      "away": "RB Leipzig",
+      "league": "Bundesliga",
+      "day": "dom",
+      "time": "Nov 29 · 08:30",
+      "espn_event_id": "401884724",
+      "lastFive": {
+        "home": [
+          {
+            "fecha": "8 nov 2026",
+            "rival": "1. FC Union Berlin",
+            "local": true,
+            "goles_local": "2",
+            "goles_visitante": "0",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "31 oct 2026",
+            "rival": "FC Augsburg",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "2",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "25 oct 2026",
+            "rival": "Bayern Munich",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "3",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "18 oct 2026",
+            "rival": "Bayer Leverkusen",
+            "local": false,
+            "goles_local": "2",
+            "goles_visitante": "1",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "11 oct 2026",
+            "rival": "Schalke 04",
+            "local": true,
+            "goles_local": "2",
+            "goles_visitante": "1",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          }
+        ],
+        "away": [
+          {
+            "fecha": "7 nov 2026",
+            "rival": "FC Augsburg",
+            "local": true,
+            "goles_local": "5",
+            "goles_visitante": "2",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "31 oct 2026",
+            "rival": "Schalke 04",
+            "local": false,
+            "goles_local": "0",
+            "goles_visitante": "2",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "24 oct 2026",
+            "rival": "SV Elversberg",
+            "local": true,
+            "goles_local": "4",
+            "goles_visitante": "0",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "17 oct 2026",
+            "rival": "Bayern Munich",
+            "local": false,
+            "goles_local": "6",
+            "goles_visitante": "1",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "10 oct 2026",
+            "rival": "Eintracht Frankfurt",
+            "local": true,
+            "goles_local": "6",
+            "goles_visitante": "0",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          }
+        ]
+      },
+      "h2h": {
+        "resumen": "RBL lidera la serie 3-1-1",
+        "etiqueta": "Last 5 Matchups",
+        "partidos": [
+          {
+            "fecha": "16 may 2026",
+            "local": "SC Freiburg",
+            "visitante": "RB Leipzig",
+            "goles_local": "4",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "14 ene 2026",
+            "local": "RB Leipzig",
+            "visitante": "SC Freiburg",
+            "goles_local": "2",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "8 mar 2025",
+            "local": "SC Freiburg",
+            "visitante": "RB Leipzig",
+            "goles_local": "0",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "26 oct 2024",
+            "local": "RB Leipzig",
+            "visitante": "SC Freiburg",
+            "goles_local": "3",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "6 abr 2024",
+            "local": "SC Freiburg",
+            "visitante": "RB Leipzig",
+            "goles_local": "1",
+            "goles_visitante": "4"
+          }
+        ]
+      },
+      "standings": {
+        "home": {
+          "pos": "3",
+          "pts": "22",
+          "pj": "10",
+          "g": "7",
+          "e": "1",
+          "p": "2",
+          "dg": "+11",
+          "récord": "7-1-2"
+        },
+        "away": {
+          "pos": "4",
+          "pts": "21",
+          "pj": "10",
+          "g": "7",
+          "e": "0",
+          "p": "3",
+          "dg": "+18",
+          "récord": "7-0-3"
+        }
+      },
+      "lineup": {
+        "alineacion_publicada": false,
+        "jugadores": {
+          "local": [],
+          "visita": []
+        },
+        "jugadores_en_roster": 0
+      },
+      "estadio": {
+        "nombre": "Europa-Park Stadion",
+        "ciudad": "Freiburg im Breisgau",
+        "pais": "Germany"
+      },
+      "sources": {
+        "standings_header": "German Bundesliga Standings"
+      },
+      "fuente_detalle": "generado"
+    },
+    "tsg-hoffenheim-vs-fc-augsburg": {
+      "home": "TSG Hoffenheim",
+      "away": "FC Augsburg",
+      "league": "Bundesliga",
+      "day": "dom",
+      "time": "Nov 29 · 10:30",
+      "espn_event_id": "401884725",
+      "lastFive": {
+        "home": [
+          {
+            "fecha": "5 nov 2026",
+            "rival": "Crystal Palace",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "1",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "UEFA Europa League"
+          },
+          {
+            "fecha": "22 oct 2026",
+            "rival": "Lyon",
+            "local": true,
+            "goles_local": "3",
+            "goles_visitante": "0",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "UEFA Europa League"
+          },
+          {
+            "fecha": "15 oct 2026",
+            "rival": "Besiktas",
+            "local": true,
+            "goles_local": "2",
+            "goles_visitante": "3",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "UEFA Europa League"
+          },
+          {
+            "fecha": "17 sep 2026",
+            "rival": "OFI Crete",
+            "local": false,
+            "goles_local": "2",
+            "goles_visitante": "0",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "UEFA Europa League"
+          }
+        ],
+        "away": [
+          {
+            "fecha": "7 nov 2026",
+            "rival": "RB Leipzig",
+            "local": false,
+            "goles_local": "5",
+            "goles_visitante": "2",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "31 oct 2026",
+            "rival": "SC Freiburg",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "2",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "24 oct 2026",
+            "rival": "1. FC Union Berlin",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "1",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "17 oct 2026",
+            "rival": "SV Elversberg",
+            "local": false,
+            "goles_local": "4",
+            "goles_visitante": "3",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
+            "fecha": "10 oct 2026",
+            "rival": "Bayern Munich",
+            "local": true,
+            "goles_local": "2",
+            "goles_visitante": "2",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          }
+        ]
+      },
+      "h2h": {
+        "resumen": "TSG lidera la serie 2-0-3",
+        "etiqueta": "Last 5 Matchups",
+        "partidos": [
+          {
+            "fecha": "10 abr 2026",
+            "local": "FC Augsburg",
+            "visitante": "TSG Hoffenheim",
+            "goles_local": "2",
+            "goles_visitante": "2"
+          },
+          {
+            "fecha": "29 nov 2025",
+            "local": "TSG Hoffenheim",
+            "visitante": "FC Augsburg",
+            "goles_local": "3",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "29 mar 2025",
+            "local": "TSG Hoffenheim",
+            "visitante": "FC Augsburg",
+            "goles_local": "1",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "10 nov 2024",
+            "local": "FC Augsburg",
+            "visitante": "TSG Hoffenheim",
+            "goles_local": "0",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "7 abr 2024",
+            "local": "TSG Hoffenheim",
+            "visitante": "FC Augsburg",
+            "goles_local": "3",
+            "goles_visitante": "1"
+          }
+        ]
+      },
+      "standings": {
+        "home": {
+          "pos": "11",
+          "pts": "12",
+          "pj": "10",
+          "g": "4",
+          "e": "0",
+          "p": "6",
+          "dg": "-2",
+          "récord": "4-0-6"
+        },
+        "away": {
+          "pos": "10",
+          "pts": "12",
+          "pj": "10",
+          "g": "3",
+          "e": "3",
+          "p": "4",
+          "dg": "+2",
+          "récord": "3-3-4"
+        }
+      },
+      "lineup": {
+        "alineacion_publicada": false,
+        "jugadores": {
+          "local": [],
+          "visita": []
+        },
+        "jugadores_en_roster": 0
+      },
+      "estadio": {
+        "nombre": "PreZero Arena",
+        "ciudad": "Sinsheim",
+        "pais": "Germany"
+      },
+      "sources": {
+        "standings_header": "German Bundesliga Standings"
+      },
+      "fuente_detalle": "generado"
+    },
+    "udinese-vs-fiorentina": {
+      "home": "Udinese",
+      "away": "Fiorentina",
+      "league": "Serie A",
+      "day": "dom",
+      "time": "Nov 29 · 05:30",
+      "espn_event_id": "401875031",
+      "lastFive": {
+        "home": [
+          {
+            "fecha": "6 nov 2026",
+            "rival": "Venezia",
+            "local": false,
+            "goles_local": "2",
+            "goles_visitante": "1",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
+          {
+            "fecha": "31 oct 2026",
+            "rival": "AS Roma",
+            "local": true,
+            "goles_local": "2",
+            "goles_visitante": "5",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
+          {
+            "fecha": "28 oct 2026",
+            "rival": "Parma",
+            "local": false,
+            "goles_local": "0",
+            "goles_visitante": "0",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
+          {
+            "fecha": "25 oct 2026",
+            "rival": "AC Milan",
+            "local": true,
+            "goles_local": "0",
+            "goles_visitante": "2",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
+          {
+            "fecha": "18 oct 2026",
+            "rival": "Lecce",
+            "local": true,
+            "goles_local": "0",
+            "goles_visitante": "3",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          }
+        ],
+        "away": [
+          {
+            "fecha": "8 nov 2026",
+            "rival": "Juventus",
+            "local": true,
+            "goles_local": "2",
+            "goles_visitante": "2",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
+          {
+            "fecha": "2 nov 2026",
+            "rival": "Sassuolo",
+            "local": false,
+            "goles_local": "2",
+            "goles_visitante": "4",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
+          {
+            "fecha": "29 oct 2026",
+            "rival": "Atalanta",
+            "local": true,
+            "goles_local": "2",
+            "goles_visitante": "2",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
+          {
+            "fecha": "25 oct 2026",
+            "rival": "Internazionale",
+            "local": false,
+            "goles_local": "2",
+            "goles_visitante": "1",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
+          {
+            "fecha": "18 oct 2026",
+            "rival": "Como",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "3",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          }
+        ]
+      },
+      "h2h": {
+        "resumen": "Serie empatada 2-2-1",
+        "etiqueta": "Last 5 Matchups",
+        "partidos": [
+          {
+            "fecha": "2 mar 2026",
+            "local": "Udinese",
+            "visitante": "Fiorentina",
+            "goles_local": "3",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "21 dic 2025",
+            "local": "Fiorentina",
+            "visitante": "Udinese",
+            "goles_local": "5",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "25 may 2025",
+            "local": "Udinese",
+            "visitante": "Fiorentina",
+            "goles_local": "2",
+            "goles_visitante": "3"
+          },
+          {
+            "fecha": "23 dic 2024",
+            "local": "Fiorentina",
+            "visitante": "Udinese",
+            "goles_local": "1",
+            "goles_visitante": "2"
+          },
+          {
+            "fecha": "14 ene 2024",
+            "local": "Fiorentina",
+            "visitante": "Udinese",
+            "goles_local": "2",
+            "goles_visitante": "2"
+          }
+        ]
+      },
+      "standings": {
+        "home": {
+          "pos": "19",
+          "pts": "6",
+          "pj": "12",
+          "g": "1",
+          "e": "3",
+          "p": "8",
+          "dg": "-13",
+          "récord": "1-3-8"
+        },
+        "away": {
+          "pos": "16",
+          "pts": "9",
+          "pj": "12",
+          "g": "2",
+          "e": "3",
+          "p": "7",
+          "dg": "-11",
+          "récord": "2-3-7"
+        }
+      },
+      "lineup": {
+        "alineacion_publicada": false,
+        "jugadores": {
+          "local": [],
+          "visita": []
+        },
+        "jugadores_en_roster": 0
+      },
+      "estadio": {
+        "nombre": "Stadio Friuli",
+        "ciudad": "Udine",
+        "pais": "Italy"
+      },
+      "sources": {
+        "standings_header": "Italian Serie A Standings"
+      },
+      "fuente_detalle": "generado"
+    },
+    "as-roma-vs-monza": {
+      "home": "AS Roma",
+      "away": "Monza",
+      "league": "Serie A",
+      "day": "dom",
+      "time": "Nov 29 · 11:00",
+      "espn_event_id": "401874769",
+      "lastFive": {
+        "home": [
+          {
+            "fecha": "3 nov 2026",
+            "rival": "Manchester United",
+            "local": false,
+            "goles_local": "3",
+            "goles_visitante": "2",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "UEFA Champions League"
+          },
+          {
+            "fecha": "20 oct 2026",
+            "rival": "Slovan Bratislava",
+            "local": true,
+            "goles_local": "4",
+            "goles_visitante": "0",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "UEFA Champions League"
+          },
+          {
+            "fecha": "14 oct 2026",
+            "rival": "Real Madrid",
+            "local": true,
+            "goles_local": "3",
+            "goles_visitante": "4",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "UEFA Champions League"
+          },
+          {
+            "fecha": "10 sep 2026",
+            "rival": "Fenerbahce",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "1",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "UEFA Champions League"
+          }
+        ],
+        "away": [
+          {
+            "fecha": "8 nov 2026",
+            "rival": "Atalanta",
+            "local": true,
+            "goles_local": "0",
+            "goles_visitante": "1",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
+          {
+            "fecha": "31 oct 2026",
+            "rival": "Bologna",
+            "local": false,
+            "goles_local": "2",
+            "goles_visitante": "1",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
+          {
+            "fecha": "28 oct 2026",
+            "rival": "Napoli",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "4",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
+          {
+            "fecha": "23 oct 2026",
+            "rival": "Torino",
+            "local": false,
+            "goles_local": "3",
+            "goles_visitante": "2",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
+          {
+            "fecha": "19 oct 2026",
+            "rival": "Cagliari",
+            "local": true,
+            "goles_local": "4",
+            "goles_visitante": "0",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          }
+        ]
+      },
+      "h2h": {
+        "resumen": "ROMA lidera la serie 3-0-2",
+        "etiqueta": "Last 5 Matchups",
+        "partidos": [
+          {
+            "fecha": "24 feb 2025",
+            "local": "AS Roma",
+            "visitante": "Monza",
+            "goles_local": "4",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "6 oct 2024",
+            "local": "Monza",
+            "visitante": "AS Roma",
+            "goles_local": "1",
+            "goles_visitante": "1"
+          },
+          {
+            "fecha": "2 mar 2024",
+            "local": "Monza",
+            "visitante": "AS Roma",
+            "goles_local": "1",
+            "goles_visitante": "4"
+          },
+          {
+            "fecha": "22 oct 2023",
+            "local": "AS Roma",
+            "visitante": "Monza",
+            "goles_local": "1",
+            "goles_visitante": "0"
+          },
+          {
+            "fecha": "3 may 2023",
+            "local": "Monza",
+            "visitante": "AS Roma",
+            "goles_local": "1",
+            "goles_visitante": "1"
+          }
+        ]
+      },
+      "standings": {
+        "home": {
+          "pos": "2",
+          "pts": "30",
+          "pj": "12",
+          "g": "9",
+          "e": "3",
+          "p": "0",
+          "dg": "+25",
+          "récord": "9-3-0"
+        },
+        "away": {
+          "pos": "14",
+          "pts": "10",
+          "pj": "12",
+          "g": "3",
+          "e": "1",
+          "p": "8",
+          "dg": "-5",
+          "récord": "3-1-8"
+        }
+      },
+      "lineup": {
+        "alineacion_publicada": false,
+        "jugadores": {
+          "local": [],
+          "visita": []
+        },
+        "jugadores_en_roster": 0
+      },
+      "estadio": {
+        "nombre": "Olimpico",
+        "ciudad": "Roma",
+        "pais": "Italy"
+      },
+      "sources": {
+        "standings_header": "Italian Serie A Standings"
+      },
+      "fuente_detalle": "generado"
     }
   },
   "resumen": {
-    "partidos": 55,
-    "partidos_vivo": 55,
-    "detalle": 55,
-    "detalle_generado": 27,
+    "partidos": 75,
+    "partidos_vivo": 75,
+    "detalle": 75,
+    "detalle_generado": 47,
     "detalle_preservado_embebido": 28,
-    "detalle_con_estadio": 55,
+    "detalle_con_estadio": 75,
     "detalle_con_alineacion_oficial": 39,
-    "detalle_con_standings": 51,
-    "detalle_con_h2h": 35,
+    "detalle_con_standings": 71,
+    "detalle_con_h2h": 55,
     "avisos": [
       "Galatasaray vs Aston Villa: sin historial directo ESPN (h2h pendiente)",
       "Real Madrid vs PSV Eindhoven: sin historial directo ESPN (h2h pendiente)",
