@@ -381,20 +381,247 @@
   .back-link{color:var(--accent-strong);font-weight:800;text-decoration:none}
   .pitch-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
   @media (max-width:640px){.pitch-grid{grid-template-columns:1fr}}
-  .pitch{position:relative;background:linear-gradient(180deg,#2E7A33,#1E5224);border-radius:14px;padding:12px;color:#fff;overflow:hidden}
-  .pitch::before{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:rgba(255,255,255,.35)}
-  .pitch::after{content:"";position:absolute;left:50%;top:50%;width:90px;height:90px;margin:-45px 0 0 -45px;border:2px solid rgba(255,255,255,.35);border-radius:50%;pointer-events:none}
+  .pitch{position:relative;background:linear-gradient(180deg,#0b2e1a,#0f3d24);border:1px solid #a3e635;border-radius:14px;padding:12px;color:#fff;overflow:hidden}/* Cancha oscura con líneas neón (corrección cliente 27 nov 2026). */
+  .pitch::before{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:rgba(163,230,53,.45)}
+  .pitch::after{content:"";position:absolute;left:50%;top:50%;width:90px;height:90px;margin:-45px 0 0 -45px;border:2px solid rgba(163,230,53,.45);border-radius:50%;pointer-events:none}
   .pitch-head{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:.85rem;margin-bottom:4px;position:relative;z-index:1}
   .pitch-head b{font-size:.95rem}
   .pitch-row{display:flex;justify-content:space-evenly;gap:6px;padding:10px 0;position:relative;z-index:1}
   .pitch-player{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:0;flex:1}
-  .pitch-dot{width:30px;height:30px;border-radius:50%;background:var(--surface);color:var(--ink);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.72rem;border:2px solid #fff;flex:0 0 auto}
+  .pitch-dot{width:30px;height:30px;border-radius:50%;background:#0b1220;color:#a3e635;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.72rem;border:2px solid #a3e635;flex:0 0 auto}
   .pitch-name{font-size:.72rem;font-weight:700;text-align:center;line-height:1.2;text-shadow:0 1px 2px rgba(0,0,0,.55)}
   .pitch-note{color:rgba(255,255,255,.88);font-size:.78rem;margin:8px 0 0;position:relative;z-index:1}
   .det-loading{color:var(--muted);font-weight:700;padding:24px 0}
 
 .bsd-block{border-top:1px dashed var(--line);margin-top:10px;padding-top:4px}
 .bsd-h{color:var(--accent-strong)}
+</style>
+<style>
+/* ==========================================================================
+   Rediseño visual gamer + fútbol — Football AI Agenda
+   SOLO VISUAL (CSS). No toca HTML ni JavaScript: esta hoja se enlaza
+   DESPUÉS del <style> interno de index.html y partido.html, así sus
+   variables y reglas ganan por cascada y nada de la lógica cambia.
+   Paleta del preview aprobado preview-rediseno-gamer.html:
+   fondo casi negro #07090D, verde lima #A3E635, cian #22D3EE, texto #F8FAFC.
+   Contraste: el lima va sobre negro o como texto sobre fondo oscuro;
+   nunca hay texto neón sobre fondo neón. Los escudos siguen siendo
+   monogramas (no hay imágenes de escudos en el repo).
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Archivo:wght@700;800;900&display=swap');
+
+:root{
+  --bg:#07090D; --surface:#0D1117; --surface-2:#111827; --surface-3:#1B2433;
+  --ink:#F8FAFC; --ink-2:#E2E8F0; --muted:#94A3B8; --line:#1F2A37;
+  --accent:#A3E635; --accent-strong:#84CC16; --accent-soft:rgba(163,230,53,.14); --on-accent:#0B1220;
+  --blue:#22D3EE; --blue-soft:rgba(34,211,238,.14);
+  --live:#FF5470; --live-soft:rgba(255,84,112,.14);
+  --amber:#FACC15; --amber-soft:rgba(250,204,21,.14);
+  --hero-ink:#F8FAFC; --shadow:0 18px 40px rgba(0,0,0,.55); --radius:18px;
+}
+/* El modo oscuro del sistema no debe devolver el fondo claro original. */
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#07090D; --surface:#0D1117; --surface-2:#111827; --surface-3:#1B2433;
+    --ink:#F8FAFC; --ink-2:#E2E8F0; --muted:#94A3B8; --line:#1F2A37;
+    --accent:#A3E635; --accent-strong:#84CC16; --accent-soft:rgba(163,230,53,.14); --on-accent:#0B1220;
+    --blue:#22D3EE; --blue-soft:rgba(34,211,238,.14);
+    --live:#FF5470; --live-soft:rgba(255,84,112,.14);
+    --amber:#FACC15; --amber-soft:rgba(250,204,21,.14);
+    --hero-ink:#F8FAFC; --shadow:0 18px 40px rgba(0,0,0,.55);
+  }
+}
+
+body{background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,sans-serif}
+h1,h2,h3,.num{font-family:"Archivo","Chakra Petch",system-ui,sans-serif}
+h2{font-weight:900;text-transform:uppercase;letter-spacing:.02em}
+h3{font-weight:800;text-transform:uppercase;letter-spacing:.03em}
+a{color:var(--ink)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+/* ---------- Héroe y cabecera (estilo del preview) ---------- */
+.hero{background:radial-gradient(1000px 500px at 70% -10%,rgba(163,230,53,.16),transparent 60%),radial-gradient(800px 400px at 10% 0%,rgba(34,211,238,.12),transparent 60%),#07090D;border-bottom:3px solid var(--accent)}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .sub{color:#E2E8F0}
+.hero-date{background:rgba(10,14,7,.72);color:#E2E8F0;border:1px solid rgba(255,255,255,.22)}
+.hero .hstat{background:rgba(10,14,7,.68);border:1px solid rgba(255,255,255,.16)}
+.hero .hstat b{color:#fff}
+.hero .hstat span{color:#CBD5E1}
+.live-dot{background:rgba(10,14,7,.72);color:#fff}
+
+/* ---------- Filtros y chips ---------- */
+.filters{background:var(--bg);border-bottom:1px solid var(--line)}
+.chip{background:var(--surface);border:1px solid var(--line);color:var(--ink-2)}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.chip small{color:inherit;opacity:.75}
+.sort-label{color:var(--muted)}
+
+/* ---------- Ligas ---------- */
+.league-btn{background:var(--surface);border:1px solid var(--line);color:var(--ink)}
+.league-btn:hover{border-color:var(--accent)}
+.league-btn[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--ink)}
+.league-btn .mono{background:var(--surface-3);color:var(--accent)}
+.league-btn .count{background:var(--surface-3);color:var(--muted)}
+
+/* ---------- Tarjetas estilo carta FIFA ---------- */
+.card{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--line);box-shadow:var(--shadow)}
+.card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.card.live{border-top-color:var(--live)}
+/* Borde neón por valor, según el semáforo que ya trae la tarjeta. */
+.card:has(.semaforo.verde){border-top:3px solid var(--accent);box-shadow:0 0 0 1px rgba(163,230,53,.28),var(--shadow)}
+.card:has(.semaforo.amarillo){border-top:3px solid var(--amber)}
+.card:has(.semaforo.rojo){border-top:3px solid var(--live)}
+.card-head .crest{background:#0B1220;border:2px solid var(--blue);color:var(--accent)}
+.card-head .team{color:var(--ink)}
+.card-head .vs{color:var(--muted)}
+.card-head .score{color:var(--ink)}
+.tag{background:var(--surface-3);color:var(--ink-2);border:1px solid var(--line)}
+.tag.live{background:var(--live-soft);color:#FDA4AF;border-color:rgba(255,84,112,.4)}
+.tag.final{background:var(--surface-3);color:var(--muted)}
+.meta{color:var(--muted)}
+.prob{color:var(--ink-2)}
+.prob b{color:var(--ink)}
+.bar{background:var(--surface-3)}
+.bar i{background:linear-gradient(90deg,var(--accent),var(--blue))}
+
+/* ---------- Momios, EV y pick ---------- */
+.odds{background:var(--surface-2);border:1px solid var(--line)}
+.odd{background:var(--surface);border:1px solid var(--line);color:var(--ink)}
+.odd b{color:var(--ink)}
+.odd span{color:var(--muted)}
+.ev.pos{color:var(--accent)}
+.ev.neg{color:var(--live)}
+.pick{background:var(--accent-soft);border:1px dashed var(--accent-strong);color:var(--ink-2)}
+.pick b{color:var(--accent)}
+.note{background:var(--accent-soft);border:1px dashed var(--accent-strong);color:var(--ink-2)}
+.warn{background:var(--amber-soft);color:var(--ink-2)}
+
+/* ---------- Semáforo ---------- */
+.semaforo.verde{background:rgba(163,230,53,.14);border:1px solid rgba(163,230,53,.35);color:#D9F99D}
+.semaforo.amarillo{background:var(--amber-soft);border:1px solid rgba(250,204,21,.35);color:#FEF08A}
+.semaforo.rojo{background:var(--live-soft);border:1px solid rgba(255,84,112,.35);color:#FDA4AF}
+.semaforo b{color:inherit}
+.semaforo p{color:var(--ink-2)}
+.sem-dot{border:1px solid var(--line)}
+
+/* ---------- Paneles, mercados y tablas ---------- */
+.panel{background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow)}
+.panel h2,.panel h3{color:var(--ink)}
+.market{border:1px solid var(--line);background:var(--surface-2)}
+.market-head{color:var(--ink)}
+.market-head span{color:var(--muted)}
+.mrow{border-top:1px solid var(--line);color:var(--ink-2)}
+.mrow b{color:var(--ink)}
+.mrow .ev{color:var(--muted)}
+.mrow .ev.pos{color:var(--accent)}
+.mrow .ev.neg{color:var(--live)}
+table{color:var(--ink-2)}
+th{color:var(--muted);border-bottom:1px solid var(--line)}
+td{border-bottom:1px solid var(--line)}
+.ok{color:#4ADE80}
+.bad{color:#F87171}
+.hit{color:var(--accent-strong)}
+
+/* ---------- Botones, parlay y modal ---------- */
+.btn{background:var(--accent);color:var(--on-accent);border:1px solid var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:.03em}
+.btn:hover{background:#B8F345}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.ghost:hover{border-color:var(--accent);color:var(--accent)}
+.add-btn{background:var(--accent);color:var(--on-accent)}
+.add-btn[aria-pressed="true"]{background:var(--surface-3);color:var(--ink);border-color:var(--accent)}
+.clear-btn{background:transparent;color:var(--ink-2);border:1px solid var(--line)}
+.clear-btn:hover{border-color:var(--live);color:var(--live)}
+.parlay-item{background:var(--surface-2);border:1px solid var(--line);color:var(--ink-2)}
+.parlay-item b{color:var(--ink)}
+.modal-card{background:var(--surface);border:1px solid var(--line);color:var(--ink)}
+.modal-card h3{color:var(--ink)}
+
+/* ---------- Calculadora y formularios ---------- */
+input,select{background:var(--surface-2);color:var(--ink);border:1px solid var(--line)}
+input[type="range"]{accent-color:var(--accent);background:transparent;border:0}
+.calc{background:var(--surface);border:1px solid var(--line)}
+.calc label{color:var(--ink-2)}
+.calc-out{background:var(--surface-2);border:1px solid var(--line)}
+.calc-out .good{color:var(--accent)}
+.calc-out .bad{color:var(--live)}
+.calc-out b{color:var(--ink)}
+
+/* ---------- Secciones del preview (por si se reutilizan) ---------- */
+.topbar{background:#0B1220;border-bottom:1px solid var(--line)}
+.stats .stat{background:var(--surface);border:1px solid var(--line)}
+.stats .stat b{color:var(--accent)}
+.stats .stat span{color:var(--muted)}
+.grid2 .panel{border-top:3px solid var(--blue)}
+.kv b{color:var(--ink)}
+.kv span{color:var(--muted)}
+
+/* ---------- Pie y lectura ---------- */
+footer{color:var(--muted)}
+.read-card{background:var(--surface);border:1px solid var(--line)}
+.read-card h3{color:var(--ink)}
+
+/* ---------- Móvil: nada se sale del ancho ---------- */
+@media (max-width:640px){
+  .wrap{padding:0 14px}
+  .hero-in{padding:36px 0 26px}
+  .hero h1{font-size:clamp(2rem,9vw,2.6rem)}
+  .filters{overflow-x:auto}
+  .chip{white-space:nowrap}
+  .card{padding:14px}
+  .odds{grid-template-columns:repeat(2,1fr)}
+  .hist{overflow-x:auto}
+  table{min-width:640px}
+  .modal-card{margin:12px}
+}
+
+/* ---------- Corrección 27 nov 2026 (Empleado 2): foto del héroe ---------- */
+/* El héroe real trae una foto de estadio embebida (<img class="bg">, base64)
+   que el preview aprobado no tenía; estilo-gamer.css no la cubría, así que
+   sin esta regla la foto seguiría tapando el fondo gamer. Solo visual. */
+.hero img{display:none}
+/* Tarjetas y ficha estilo carta FIFA (prototipo aprobado): número grande de EV, barras 1X2 y cajas de mercados */
+.match-top{flex-wrap:wrap;gap:6px}
+.fifa-badge{margin-left:auto;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border-radius:8px;border:1px solid #334155;color:#e2e8f0;background:#0f172a;white-space:nowrap}
+.fifa-badge.live{color:#fff;background:#dc2626;border-color:#f87171;animation:fifaPulse 1.2s infinite}
+.fifa-badge.final{color:#cbd5e1}
+.fifa-badge.alto{color:#052e16;background:#a3e635;border-color:#a3e635}
+.fifa-badge.medio{color:#422006;background:#facc15;border-color:#facc15}
+.fifa-badge.none{color:#94a3b8}
+@keyframes fifaPulse{0%,100%{box-shadow:0 0 0 0 rgba(220,38,38,.55)}50%{box-shadow:0 0 0 7px rgba(220,38,38,0)}}
+.fifa-hero{display:flex;gap:14px;align-items:stretch;margin:10px 0 4px}
+.fifa-rating{flex:0 0 92px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;background:#0b1220;border:1px solid #1e293b;border-radius:14px;padding:10px 6px;text-align:center}
+.fifa-rating.ev-good,.fifa-rating.verde{border-color:#22c55e;box-shadow:0 0 0 1px #22c55e inset,0 0 18px rgba(34,197,94,.25)}
+.fifa-rating.ev-mid,.fifa-rating.amarillo{border-color:#eab308;box-shadow:0 0 0 1px #eab308 inset}
+.fifa-rating.ev-bad,.fifa-rating.rojo{border-color:#475569}
+.fifa-rating.ev-none{border-color:#334155}
+.fifa-num{font-size:40px;line-height:1;font-weight:900;letter-spacing:-1px}
+.fifa-rating.ev-good .fifa-num,.fifa-rating.verde .fifa-num{color:#4ade80}
+.fifa-rating.ev-mid .fifa-num,.fifa-rating.amarillo .fifa-num{color:#facc15}
+.fifa-rating.ev-bad .fifa-num,.fifa-rating.rojo .fifa-num,.fifa-rating.ev-none .fifa-num{color:#e2e8f0}
+.fifa-ev{font-size:10px;letter-spacing:.14em;color:#94a3b8;font-weight:700}
+.fifa-pick{font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#e2e8f0;text-align:center;line-height:1.25}
+.fifa-hero .teams{flex:1;min-width:0}
+.fifa-probs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+.fifa-prob b{display:block;font-size:19px;line-height:1.1}
+.fifa-prob>span:first-of-type{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#94a3b8}
+.fifa-bar{display:block;height:6px;background:#1e293b;border-radius:99px;overflow:hidden;margin-top:5px}
+.fifa-bar i{display:block;height:100%;background:linear-gradient(90deg,#22d3ee,#a3e635)}
+.fifa-markets{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 10px}
+.fifa-mkt{background:#0b1220;border:1px solid #1e293b;border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.fifa-mkt-t{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#cbd5e1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fifa-mkt b{font-size:19px;line-height:1.15}
+.fifa-mkt-s{font-size:12px;color:#94a3b8}
+article.match[data-value="1"]{border-color:rgba(34,197,94,.65)}
+article.match[data-value="0"]{border-color:rgba(234,179,8,.6)}
+article.match[data-value="-1"]{border-color:rgba(148,163,184,.5)}
+article.match[data-status="live"]{border-color:rgba(220,38,38,.75)}
+.det-fifa{margin:12px 0 4px}
+.det-fifa .fifa-probs{flex:1;min-width:0;margin:0}
+.det-team b{font-size:1.2rem}
+.bsd-block .bsd-h,.bsd-block .derived-h{flex-wrap:wrap;gap:4px 12px}
+.bsd-block .bsd-h span,.bsd-block .derived-h span{white-space:nowrap}
+@media (max-width:640px){.fifa-hero{gap:10px}.fifa-rating{flex-basis:78px}.fifa-num{font-size:32px}.fifa-prob b,.fifa-mkt b{font-size:17px}}
 </style>
 </head>
 <body>
@@ -1096,10 +1323,10 @@ function derivarDNB(p){
     if (!(s > 0)) return null;
     return {dnbH: p.p1 / s * 100, dnbA: p.p2 / s * 100, x1: p.p1 + p.px, x12: p.p1 + p.p2, x2: p.px + p.p2};
   }
-function semaforoDe(m){
-    if (m == null || typeof m.mejor_ev !== "number" || m.mejor_pick == null) return null;
+function nombreEquipo(n){ var mapa = {"Hapoel Be'er": "Hapoel Be'er Sheva"}; return mapa[n] || n; } /* Novena ronda P1-9: nombre completo en pantalla (el dato trae "Hapoel Be'er"). */ function semaforoDe(m){
+    if (m == null || typeof m.mejor_ev !== "number" || m.mejor_pick == null) return null; if (m.estado_partido === "post" || (m.estado_partido === "in" && typeof m._minuto === "string" && /^90/.test(m._minuto.trim()))) return null; // Novena ronda P0-1: terminado o en descuento (90'+) no tiene semáforo ni pick pre-partido.
     var s = (m.semaforo || "").toLowerCase();
-    var evPct = m.mejor_ev * 100;
+    var evPct = m.mejor_ev * 100; var pick = String(m.mejor_pick || ""); if (pick.indexOf("Spread") === 0){ var b = (typeof bsdDePartido === "function") ? bsdDePartido(m) : null; var sp = (m.mercados && m.mercados.spread) ? m.mercados.spread : null; var ah = (b && b.asian_handicap) ? b.asian_handicap : null; if (sp && ah && typeof ah.line === "number" && typeof sp.home_linea === "number" && sp.home_linea === ah.line && ah.push !== true && typeof sp.p_cubre_local === "number"){ var evB = null; if (pick.indexOf("Spread local") === 0 && typeof ah.home === "number") evB = (sp.p_cubre_local / 100) * ah.home - 1; else if (pick.indexOf("Spread visita") === 0 && typeof ah.away === "number") evB = ((100 - sp.p_cubre_local) / 100) * ah.away - 1; if (typeof evB === "number" && isFinite(evB)){ evPct = evB * 100; s = ""; } } } // Novena ronda P1-3: EV del semáforo con el momio BSD (el que muestra la tarjeta) cuando el pick es spread y la línea coincide; s="" para que el color se derive de ese EV.
     if (s === "verde" || (s === "" && evPct >= 5)) return {color: "Verde", cls: "ev", value: "1", ev: evPct};
     if (s === "amarillo" || (s === "" && evPct >= 0)) return {color: "Amarillo", cls: "ev-mid", value: "0", ev: evPct};
     if (s === "rojo" || (s === "" && evPct < 0)) return {color: "Rojo", cls: "ev-bad", value: "0", ev: evPct};
@@ -1156,7 +1383,7 @@ function evBSD(p, momio){
   return (p / 100) * momio - 1;
 }
 function fmtLineaSigno(x){ if (typeof x !== "number" || !isFinite(x)) return ""; return (x > 0 ? "+" : "") + fmtLinea(x); }
-function celdaBSD(label, momio, nota){ return '<div class="cell"><span>' + esc(label) + ' ' + fmtMomio(momio) + '</span><b class="num">' + esc(nota) + '</b></div>'; }
+function celdaBSD(label, momio, nota){ return '<div class="dcell"><span>' + esc(label) + ' ' + fmtMomio(momio) + '</span> <b class="num">' + esc(nota) + '</b></div>'; }
 function renderBSD(m, b){
   if (!b) return "";
   var mk = (m && m.mercados) ? m.mercados : {};
@@ -1202,7 +1429,7 @@ function renderBSD(m, b){
 }
 function htmlBSD(m, datos){ return renderBSD(m, bsdDePartido(m, datos)); }
 /* ---------- Fin del módulo BSD ---------- */
-function celdaMomio(label, momio, ev, prob){ if (typeof prob === "number" && isFinite(prob) && (typeof momio !== "number" || typeof ev !== "number" || !isFinite(momio) || !isFinite(ev))){ return '<div class="dcell"><span>' + esc(label) + '</span><b class="num">' + fmt1(prob) + '%</b><span>prob. del modelo, sin momio</span></div>'; }
+function celdaMomio(label, momio, ev, prob, sinEtiqueta){ if (typeof prob === "number" && isFinite(prob) && (typeof momio !== "number" || typeof ev !== "number" || !isFinite(momio) || !isFinite(ev))){ return '<div class="dcell"><span>' + esc(label) + '</span> <b class="num">' + fmt1(prob) + '%</b>' + (sinEtiqueta ? '' : '<span>prob. del modelo, sin momio</span>') + '</div>'; }
     if (typeof momio !== "number" || typeof ev !== "number" || !isFinite(momio) || !isFinite(ev)){
       return '<div class="dcell"><span>' + esc(label) + '</span><b class="num">pendiente</b></div>';
     }
@@ -1418,9 +1645,9 @@ function buildRADIOMap(rawData, tenData, partidos){
     var h = '<div class="det-head">';
     h += '<p class="det-crumb"><a href="index.html">← Agenda</a> · ' + esc(li.display) + ' · ' + esc(semanaLabel(m._semana)) + '</p>';
     h += '<div class="det-teams">';
-    h += '<div class="det-team"><span class="crest c-a">' + esc(cr.h) + '</span><b>' + esc(m.home) + '</b><span class="det-role">Local</span></div>';
+    h += '<div class="det-team"><span class="crest c-a">' + esc(cr.h) + '</span><b>' + esc(nombreEquipo(m.home)) + '</b><span class="det-role">Local</span></div>';
     h += '<div class="det-vs">vs</div>';
-    h += '<div class="det-team"><span class="crest c-b">' + esc(cr.a) + '</span><b>' + esc(m.away) + '</b><span class="det-role">Visita</span></div>';
+    h += '<div class="det-team"><span class="crest c-b">' + esc(cr.a) + '</span><b>' + esc(nombreEquipo(m.away)) + '</b><span class="det-role">Visita</span></div>';
     h += '</div>';
     h += '<p class="det-meta"><span class="chip">' + esc(di.largo) + ' ' + di.dia + ' · ' + esc((m.hora || "").slice(0, 5)) + '</span>' +
       '<span class="chip">' + esc(estadioTexto(DETAIL[slug])) + '</span></p>';
@@ -1430,7 +1657,7 @@ function buildRADIOMap(rawData, tenData, partidos){
   }
 
   function initVivo(m){
-    var el = document.getElementById("vivoLine");
+    var el = document.getElementById("vivoLine"); if (el && m && (m.estado_partido === "post" || m.estado_partido === "in") && m.marcador && typeof m.marcador.local === "number" && typeof m.marcador.visita === "number"){ var scV = esc(nombreEquipo(m.home)) + " " + m.marcador.local + " – " + m.marcador.visita + " " + esc(nombreEquipo(m.away)); if (m.estado_partido === "post") el.innerHTML = '<div class="partido"><b>' + scV + '</b><br>Final</div>'; else if (typeof m._minuto === "string" && m._minuto) el.innerHTML = '<div class="partido vivo"><b>' + scV + '</b><br>Minuto ' + esc(m._minuto) + ' · En vivo</div>'; else el.innerHTML = '<div class="partido vivo"><b>' + scV + '</b><br>En vivo</div>'; } /* Novena ronda P0-2: el recuadro se inicializa desde ev.json (la misma fuente que el encabezado), para que un partido terminado muestre Final con su marcador real y nunca "— — / En vivo"; el módulo solo actualiza partidos no terminados. */ if (m && m.estado_partido === "post"){ window._detalle.vivo = false; return; }
     if (!el) return;
     var pv = (typeof PARTIDOS_VIVO !== "undefined") ? PARTIDOS_VIVO[slug] : null; var inicio = null; if (m && m.fecha && m.hora) { var t = Date.parse(m.fecha + "T" + m.hora + ":00"); if (isFinite(t)) inicio = t; } /* BUG estado en vivo (26 nov 2026): la hora de inicio (ev.json, hora local) decide si el partido ya empezó. */
     if (pv && typeof MarcadorEnVivo !== "undefined" && MarcadorEnVivo.init){
@@ -1449,7 +1676,7 @@ function buildRADIOMap(rawData, tenData, partidos){
 
   /* ---------- Momios y valor esperado (misma parrilla que la tarjeta) ---------- */
   function oddsBlock(m){
-    var h = "<h4>Momios y valor esperado</h4>"; if (m && m.estado_partido === "post" && m.marcador && typeof m.marcador.local === "number" && typeof m.marcador.visita === "number"){ var hF = "<h4>Momios y valor esperado</h4>"; hF += '<p><b>Final: ' + esc(m.home) + ' ' + m.marcador.local + ' – ' + m.marcador.visita + ' ' + esc(m.away) + '</b></p>'; hF += '<p class="detail-note">Partido terminado sin momios: no hay EV ni pick; las probabilidades son las del modelo antes del partido.</p>'; var pF = derivar1X2(m); var tF = m.mercados && m.mercados.total ? m.mercados.total : null; if (pF || (tF && typeof tF.p_over === "number")){ hF += '<div class="odds"><div class="derived-h"><span>Probabilidad del modelo (sin momio)</span></div><div class="derived-grid">'; if (pF){ hF += celdaMomio("Local", null, null, pF.p1); hF += celdaMomio("Empate", null, null, pF.px); hF += celdaMomio("Visita", null, null, pF.p2); } if (tF && typeof tF.p_over === "number"){ hF += celdaMomio("Más " + fmtLinea(tF.linea), null, null, tF.p_over); hF += celdaMomio("Menos " + fmtLinea(tF.linea), null, null, 100 - tF.p_over); } hF += '</div></div>'; } return hF; }
+    var h = "<h4>Momios y valor esperado</h4>"; if (m && m.estado_partido === "post" && m.marcador && typeof m.marcador.local === "number" && typeof m.marcador.visita === "number"){ var hF = "<h4>Momios y valor esperado</h4>"; hF += '<p><b>Final: ' + esc(nombreEquipo(m.home)) + ' ' + m.marcador.local + ' – ' + m.marcador.visita + ' ' + esc(nombreEquipo(m.away)) + '</b></p>'; hF += '<p class="detail-note">Partido terminado sin momios: no hay EV ni pick; las probabilidades son las del modelo antes del partido.</p>'; var pF = derivar1X2(m); var tF = m.mercados && m.mercados.total ? m.mercados.total : null; if (pF || (tF && typeof tF.p_over === "number")){ hF += '<div class="odds"><div class="derived-h"><span>Probabilidad del modelo (sin momio)</span></div><div class="derived-grid">'; if (pF){ hF += celdaMomio("Local", null, null, pF.p1, true); hF += celdaMomio("Empate", null, null, pF.px, true); hF += celdaMomio("Visita", null, null, pF.p2, true); } if (tF && typeof tF.p_over === "number"){ hF += celdaMomio("Más " + fmtLinea(tF.linea), null, null, tF.p_over, true); hF += celdaMomio("Menos " + fmtLinea(tF.linea), null, null, 100 - tF.p_over, true); } hF += '</div></div>'; } return hF; }
     var sem = semaforoDe(m);
     var p12 = derivar1X2(m);
     if (sem){
@@ -1548,7 +1775,7 @@ function buildRADIOMap(rawData, tenData, partidos){
     if (!xi || !Array.isArray(xi.j) || !xi.j.length){
       return '<div class="detail-pending">pendiente — aún no hay XI probable publicado para este equipo.</div>';
     }
-    var grupos = [["F", "Delanteros"], ["M", "Mediocampistas"], ["D", "Defensas"], ["G", "Portero"], ["?", "Posición por confirmar"]];
+    var sinPos = xi.j.filter(function(p){ return p[1] === "?"; }).length; if (!xi.fm || xi.fm === "—" || sinPos >= 5){ var h2 = '<div class="pitch" aria-label="Alineación: ' + esc(xi.e) + '">'; h2 += '<div class="pitch-head"><b>' + esc(xi.e) + '</b><span>' + esc(rol) + ' · Formación por confirmar</span></div>'; h2 += '<ul class="detail-list">'; xi.j.forEach(function(p){ h2 += '<li>' + esc(p[0]) + '</li>'; }); h2 += '</ul><p class="pitch-note">Alineación oficial: posiciones por confirmar.</p></div>'; return h2; } /* Novena ronda P0-3: sin formación o sin posiciones, la cancha se rompe (los "?" se apilan en una fila); respaldo limpio con la lista de los 11 nombres. */ var grupos = [["F", "Delanteros"], ["M", "Mediocampistas"], ["D", "Defensas"], ["G", "Portero"], ["?", "Posición por confirmar"]];
     var h = '<div class="pitch" aria-label="Alineación en cancha: ' + esc(xi.e) + '">';
     h += '<div class="pitch-head"><b>' + esc(xi.e) + '</b><span>' + esc(rol) + ' · Formación ' + esc(xi.fm) + (xi.of ? ' · Oficial' : ' · Probable') + '</span></div>';
     grupos.forEach(function(g){
@@ -1671,7 +1898,7 @@ function buildRADIOMap(rawData, tenData, partidos){
     var p = buscarStats(estDocs, slug);
     if (!p || !p.estadisticas){
       statsState = "pendiente";
-      return h + '<div class="detail-pending">Estadísticas pendientes — el Empleado 1 aún no publica el JSON de estadísticas (data/&lt;config&gt;/estadisticas.json). Cuando llegue, esta sección muestra posesión, tiros, tiros a puerta, córners y el resto en barras comparadas.</div>';
+      return h + '<div class="detail-pending">Estadísticas pendientes — aún no hay estadísticas publicadas para este partido. Cuando llegue, esta sección muestra posesión, tiros, tiros a puerta, córners y el resto en barras comparadas.</div>';
     }
     var lista = normalizarStats(p.estadisticas);
     if (!lista.length){
@@ -1694,20 +1921,32 @@ function buildRADIOMap(rawData, tenData, partidos){
       }
       h += radioRow(s.etiqueta, fmt(s.local), fmt(s.visita), hw, aw);
     });
-    h += '<p class="detail-note">Estadísticas del partido terminado, según ESPN (resumen del partido). Fuente: data/&lt;config&gt;/estadisticas.json, Empleado 1.</p>';
+    h += '<p class="detail-note">Estadísticas del partido terminado, según ESPN (resumen del partido).</p>';
     return h;
   }
 
   /* ---------- Render principal ---------- */
-  function renderDetalle(m, estDocs){
+  function fifaDetailHead(m){
+  var semD = (typeof semaforoDe === "function") ? semaforoDe(m) : null;
+  var p12d = (typeof derivar1X2 === "function") ? derivar1X2(m) : null;
+  var evD = (semD && typeof semD.ev === "number") ? semD.ev : null;
+  var termD = (m.estado_partido === "post");
+  var numD = termD ? "—" : (evD === null ? "—" : ((evD >= 0 ? "+" : "") + Math.round(evD)));
+  var clsD = termD ? "ev-none" : (semD ? semD.cls : "ev-none");
+  var pickD = termD ? "Final" : (semD && m.mejor_pick ? m.mejor_pick : "Sin EV");
+  var h = '<div class="fifa-hero det-fifa"><div class="fifa-rating ' + clsD + '"><b class="fifa-num">' + numD + '</b><span class="fifa-ev">EV %</span><span class="fifa-pick">' + esc(pickD) + '</span></div>';
+  h += '<div class="fifa-probs det-probs">' + (p12d ? '<div class="fifa-prob"><b class="num">' + fmt1(p12d.p1) + '%</b><span>Local</span><span class="fifa-bar"><i style="width:' + Math.max(0, Math.min(100, Math.round(p12d.p1))) + '%"></i></span></div><div class="fifa-prob"><b class="num">' + fmt1(p12d.px) + '%</b><span>Empate</span><span class="fifa-bar"><i style="width:' + Math.max(0, Math.min(100, Math.round(p12d.px))) + '%"></i></span></div><div class="fifa-prob"><b class="num">' + fmt1(p12d.p2) + '%</b><span>Visita</span><span class="fifa-bar"><i style="width:' + Math.max(0, Math.min(100, Math.round(p12d.p2))) + '%"></i></span></div>' : '<div class="fifa-prob"><b class="num">—</b><span>Local</span><span class="fifa-bar"><i style="width:0%"></i></span></div><div class="fifa-prob"><b class="num">—</b><span>Empate</span><span class="fifa-bar"><i style="width:0%"></i></span></div><div class="fifa-prob"><b class="num">—</b><span>Visita</span><span class="fifa-bar"><i style="width:0%"></i></span></div>') + '</div></div>';
+  return h;
+}
+function renderDetalle(m, estDocs){
     var li = ligaInfo(m.liga);
     var di = dayInfo(m.fecha);
     document.title = m.home + " vs " + m.away + " — Football AI Agenda";
     var h = "";
-    h += headerHTML(m, di, li);
+    h += headerHTML(m, di, li); h += fifaDetailHead(m);
     h += '<div class="detail-body">';
     h += oddsBlock(m);
-    h += htmlBSD(m);
+    if (m.estado_partido !== "post" && !(m.estado_partido === "in" && typeof m._minuto === "string" && /^90/.test(m._minuto.trim()))) h += htmlBSD(m); /* Novena ronda P1-2: un partido terminado o en descuento no muestra EV ni picks en el bloque BSD. */
     h += bttsBlock(m);
     h += pitchBlock(slug);
     h += fuerzaXIBlock(slug, m.home, m.away);
@@ -1743,7 +1982,7 @@ function buildRADIOMap(rawData, tenData, partidos){
       fetchJSON(URLS.xi.mw), fetchJSON(URLS.xi.fs),
       fetchJSON(URLS.raw.mw), fetchJSON(URLS.raw.fs),
       fetchJSON(URLS.tendencias.mw), fetchJSON(URLS.tendencias.fs),
-      fetchJSON(URLS.est.mw), fetchJSON(URLS.est.fs), fetchJSON(URLS.mapas), cargarBSD()
+      fetchJSON(URLS.est.mw), fetchJSON(URLS.est.fs), fetchJSON(URLS.mapas), cargarBSD(), fetchJSON("data/vivo.json") /* Novena ronda P0-1: vivo.json para marcar terminados y en descuento al renderizar la ficha. */
     ]).then(function(res){
       var partidos = [];
       [[res[0], "mw"], [res[1], "fs"]].forEach(function(pair){
@@ -1765,7 +2004,7 @@ function buildRADIOMap(rawData, tenData, partidos){
         errorPage("No hay ningún partido con ese identificador (" + slug + "). Vuelve a la agenda y abre el detalle desde su tarjeta.");
         return;
       }
-      /* Tarea C, 25 nov 2026: data/mapas.json (55 partidos) se fusiona sobre los mapas embebidos (28). DETAIL embebido se conserva: generar_mapas.py lo lee de este archivo. */ if (res[10]){ var mp = res[10]; if (mp.partidos_vivo){ Object.keys(mp.partidos_vivo).forEach(function(k){ PARTIDOS_VIVO[k] = mp.partidos_vivo[k]; }); } if (mp.detalle){ Object.keys(mp.detalle).forEach(function(k){ if (!DETAIL[k]) DETAIL[k] = mp.detalle[k]; }); } } var xiMap = buildXIMap([res[2], res[3]]);
+      /* Novena ronda P0-1/P1-2: superponer vivo.json (ESPN, cada hora) sobre estado_partido de ev.json (corrida diaria). Solo se promueve a "post" o "in"; un "post" de ev.json nunca se degrada. Así la ficha terminada no muestra semáforo, picks ni BSD. */ var vivoD = res[12]; if (vivoD && Array.isArray(vivoD.partidos)){ vivoD.partidos.forEach(function(v){ if (!v || !v.home || !v.away) return; if (norm(v.home) + "|" + norm(v.away) !== norm(m.home) + "|" + norm(m.away)) return; if (v.estado === "post"){ m.estado_partido = "post"; if (typeof v.marcador_local === "number" && typeof v.marcador_visita === "number") m.marcador = {local: v.marcador_local, visita: v.marcador_visita}; } else if (v.estado === "in" && m.estado_partido !== "post"){ m.estado_partido = "in"; if (typeof v.minuto === "string") m._minuto = v.minuto; if (typeof v.marcador_local === "number" && typeof v.marcador_visita === "number") m.marcador = {local: v.marcador_local, visita: v.marcador_visita}; } }); } /* Tarea C, 25 nov 2026: data/mapas.json (55 partidos) se fusiona sobre los mapas embebidos (28). DETAIL embebido se conserva: generar_mapas.py lo lee de este archivo. */ if (res[10]){ var mp = res[10]; if (mp.partidos_vivo){ Object.keys(mp.partidos_vivo).forEach(function(k){ PARTIDOS_VIVO[k] = mp.partidos_vivo[k]; }); } if (mp.detalle){ Object.keys(mp.detalle).forEach(function(k){ if (!DETAIL[k]) DETAIL[k] = mp.detalle[k]; }); } } var xiMap = buildXIMap([res[2], res[3]]);
       /* Semana 10 (E2): estadio y alineación oficial (data/mapas.json, E1) se añaden a DETAIL sin tocar sus campos existentes (h2h, standings y lastFive se conservan); la fusión de arriba solo agrega las entradas nuevas. */ if (res[10] && res[10].detalle){ Object.keys(res[10].detalle).forEach(function(k){ var dd = res[10].detalle[k]; if (!dd) return; if (!DETAIL[k]) DETAIL[k] = {}; if (dd.estadio) DETAIL[k].estadio = dd.estadio; if (dd.lineup) DETAIL[k].lineup = dd.lineup; }); } if (window.__setXI) window.__setXI(xiMap);
       var radioMap = buildRADIOMap(
         {mw: res[4], fs: res[5]},
