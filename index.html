@@ -385,7 +385,191 @@
 .bsd-block{border-top:1px dashed var(--line);margin-top:10px;padding-top:4px}
 .bsd-h{color:var(--accent-strong)}
 </style>
-<link rel="stylesheet" href="estilo-gamer.css" />
+<style>
+/* ==========================================================================
+   Rediseño visual gamer + fútbol — Football AI Agenda
+   SOLO VISUAL (CSS). No toca HTML ni JavaScript: esta hoja se enlaza
+   DESPUÉS del <style> interno de index.html y partido.html, así sus
+   variables y reglas ganan por cascada y nada de la lógica cambia.
+   Paleta del preview aprobado preview-rediseno-gamer.html:
+   fondo casi negro #07090D, verde lima #A3E635, cian #22D3EE, texto #F8FAFC.
+   Contraste: el lima va sobre negro o como texto sobre fondo oscuro;
+   nunca hay texto neón sobre fondo neón. Los escudos siguen siendo
+   monogramas (no hay imágenes de escudos en el repo).
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Archivo:wght@700;800;900&display=swap');
+
+:root{
+  --bg:#07090D; --surface:#0D1117; --surface-2:#111827; --surface-3:#1B2433;
+  --ink:#F8FAFC; --ink-2:#E2E8F0; --muted:#94A3B8; --line:#1F2A37;
+  --accent:#A3E635; --accent-strong:#84CC16; --accent-soft:rgba(163,230,53,.14); --on-accent:#0B1220;
+  --blue:#22D3EE; --blue-soft:rgba(34,211,238,.14);
+  --live:#FF5470; --live-soft:rgba(255,84,112,.14);
+  --amber:#FACC15; --amber-soft:rgba(250,204,21,.14);
+  --hero-ink:#F8FAFC; --shadow:0 18px 40px rgba(0,0,0,.55); --radius:18px;
+}
+/* El modo oscuro del sistema no debe devolver el fondo claro original. */
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#07090D; --surface:#0D1117; --surface-2:#111827; --surface-3:#1B2433;
+    --ink:#F8FAFC; --ink-2:#E2E8F0; --muted:#94A3B8; --line:#1F2A37;
+    --accent:#A3E635; --accent-strong:#84CC16; --accent-soft:rgba(163,230,53,.14); --on-accent:#0B1220;
+    --blue:#22D3EE; --blue-soft:rgba(34,211,238,.14);
+    --live:#FF5470; --live-soft:rgba(255,84,112,.14);
+    --amber:#FACC15; --amber-soft:rgba(250,204,21,.14);
+    --hero-ink:#F8FAFC; --shadow:0 18px 40px rgba(0,0,0,.55);
+  }
+}
+
+body{background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,sans-serif}
+h1,h2,h3,.num{font-family:"Archivo","Chakra Petch",system-ui,sans-serif}
+h2{font-weight:900;text-transform:uppercase;letter-spacing:.02em}
+h3{font-weight:800;text-transform:uppercase;letter-spacing:.03em}
+a{color:var(--ink)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+/* ---------- Héroe y cabecera (estilo del preview) ---------- */
+.hero{background:radial-gradient(1000px 500px at 70% -10%,rgba(163,230,53,.16),transparent 60%),radial-gradient(800px 400px at 10% 0%,rgba(34,211,238,.12),transparent 60%),#07090D;border-bottom:3px solid var(--accent)}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .sub{color:#E2E8F0}
+.hero-date{background:rgba(10,14,7,.72);color:#E2E8F0;border:1px solid rgba(255,255,255,.22)}
+.hero .hstat{background:rgba(10,14,7,.68);border:1px solid rgba(255,255,255,.16)}
+.hero .hstat b{color:#fff}
+.hero .hstat span{color:#CBD5E1}
+.live-dot{background:rgba(10,14,7,.72);color:#fff}
+
+/* ---------- Filtros y chips ---------- */
+.filters{background:var(--bg);border-bottom:1px solid var(--line)}
+.chip{background:var(--surface);border:1px solid var(--line);color:var(--ink-2)}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.chip small{color:inherit;opacity:.75}
+.sort-label{color:var(--muted)}
+
+/* ---------- Ligas ---------- */
+.league-btn{background:var(--surface);border:1px solid var(--line);color:var(--ink)}
+.league-btn:hover{border-color:var(--accent)}
+.league-btn[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--ink)}
+.league-btn .mono{background:var(--surface-3);color:var(--accent)}
+.league-btn .count{background:var(--surface-3);color:var(--muted)}
+
+/* ---------- Tarjetas estilo carta FIFA ---------- */
+.card{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--line);box-shadow:var(--shadow)}
+.card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.card.live{border-top-color:var(--live)}
+/* Borde neón por valor, según el semáforo que ya trae la tarjeta. */
+.card:has(.semaforo.verde){border-top:3px solid var(--accent);box-shadow:0 0 0 1px rgba(163,230,53,.28),var(--shadow)}
+.card:has(.semaforo.amarillo){border-top:3px solid var(--amber)}
+.card:has(.semaforo.rojo){border-top:3px solid var(--live)}
+.card-head .crest{background:#0B1220;border:2px solid var(--blue);color:var(--accent)}
+.card-head .team{color:var(--ink)}
+.card-head .vs{color:var(--muted)}
+.card-head .score{color:var(--ink)}
+.tag{background:var(--surface-3);color:var(--ink-2);border:1px solid var(--line)}
+.tag.live{background:var(--live-soft);color:#FDA4AF;border-color:rgba(255,84,112,.4)}
+.tag.final{background:var(--surface-3);color:var(--muted)}
+.meta{color:var(--muted)}
+.prob{color:var(--ink-2)}
+.prob b{color:var(--ink)}
+.bar{background:var(--surface-3)}
+.bar i{background:linear-gradient(90deg,var(--accent),var(--blue))}
+
+/* ---------- Momios, EV y pick ---------- */
+.odds{background:var(--surface-2);border:1px solid var(--line)}
+.odd{background:var(--surface);border:1px solid var(--line);color:var(--ink)}
+.odd b{color:var(--ink)}
+.odd span{color:var(--muted)}
+.ev.pos{color:var(--accent)}
+.ev.neg{color:var(--live)}
+.pick{background:var(--accent-soft);border:1px dashed var(--accent-strong);color:var(--ink-2)}
+.pick b{color:var(--accent)}
+.note{background:var(--accent-soft);border:1px dashed var(--accent-strong);color:var(--ink-2)}
+.warn{background:var(--amber-soft);color:var(--ink-2)}
+
+/* ---------- Semáforo ---------- */
+.semaforo.verde{background:rgba(163,230,53,.14);border:1px solid rgba(163,230,53,.35);color:#D9F99D}
+.semaforo.amarillo{background:var(--amber-soft);border:1px solid rgba(250,204,21,.35);color:#FEF08A}
+.semaforo.rojo{background:var(--live-soft);border:1px solid rgba(255,84,112,.35);color:#FDA4AF}
+.semaforo b{color:inherit}
+.semaforo p{color:var(--ink-2)}
+.sem-dot{border:1px solid var(--line)}
+
+/* ---------- Paneles, mercados y tablas ---------- */
+.panel{background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow)}
+.panel h2,.panel h3{color:var(--ink)}
+.market{border:1px solid var(--line);background:var(--surface-2)}
+.market-head{color:var(--ink)}
+.market-head span{color:var(--muted)}
+.mrow{border-top:1px solid var(--line);color:var(--ink-2)}
+.mrow b{color:var(--ink)}
+.mrow .ev{color:var(--muted)}
+.mrow .ev.pos{color:var(--accent)}
+.mrow .ev.neg{color:var(--live)}
+table{color:var(--ink-2)}
+th{color:var(--muted);border-bottom:1px solid var(--line)}
+td{border-bottom:1px solid var(--line)}
+.ok{color:#4ADE80}
+.bad{color:#F87171}
+.hit{color:var(--accent-strong)}
+
+/* ---------- Botones, parlay y modal ---------- */
+.btn{background:var(--accent);color:var(--on-accent);border:1px solid var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:.03em}
+.btn:hover{background:#B8F345}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.ghost:hover{border-color:var(--accent);color:var(--accent)}
+.add-btn{background:var(--accent);color:var(--on-accent)}
+.add-btn[aria-pressed="true"]{background:var(--surface-3);color:var(--ink);border-color:var(--accent)}
+.clear-btn{background:transparent;color:var(--ink-2);border:1px solid var(--line)}
+.clear-btn:hover{border-color:var(--live);color:var(--live)}
+.parlay-item{background:var(--surface-2);border:1px solid var(--line);color:var(--ink-2)}
+.parlay-item b{color:var(--ink)}
+.modal-card{background:var(--surface);border:1px solid var(--line);color:var(--ink)}
+.modal-card h3{color:var(--ink)}
+
+/* ---------- Calculadora y formularios ---------- */
+input,select{background:var(--surface-2);color:var(--ink);border:1px solid var(--line)}
+input[type="range"]{accent-color:var(--accent);background:transparent;border:0}
+.calc{background:var(--surface);border:1px solid var(--line)}
+.calc label{color:var(--ink-2)}
+.calc-out{background:var(--surface-2);border:1px solid var(--line)}
+.calc-out .good{color:var(--accent)}
+.calc-out .bad{color:var(--live)}
+.calc-out b{color:var(--ink)}
+
+/* ---------- Secciones del preview (por si se reutilizan) ---------- */
+.topbar{background:#0B1220;border-bottom:1px solid var(--line)}
+.stats .stat{background:var(--surface);border:1px solid var(--line)}
+.stats .stat b{color:var(--accent)}
+.stats .stat span{color:var(--muted)}
+.grid2 .panel{border-top:3px solid var(--blue)}
+.kv b{color:var(--ink)}
+.kv span{color:var(--muted)}
+
+/* ---------- Pie y lectura ---------- */
+footer{color:var(--muted)}
+.read-card{background:var(--surface);border:1px solid var(--line)}
+.read-card h3{color:var(--ink)}
+
+/* ---------- Móvil: nada se sale del ancho ---------- */
+@media (max-width:640px){
+  .wrap{padding:0 14px}
+  .hero-in{padding:36px 0 26px}
+  .hero h1{font-size:clamp(2rem,9vw,2.6rem)}
+  .filters{overflow-x:auto}
+  .chip{white-space:nowrap}
+  .card{padding:14px}
+  .odds{grid-template-columns:repeat(2,1fr)}
+  .hist{overflow-x:auto}
+  table{min-width:640px}
+  .modal-card{margin:12px}
+}
+
+/* ---------- Corrección 27 nov 2026 (Empleado 2): foto del héroe ---------- */
+/* El héroe real trae una foto de estadio embebida (<img class="bg">, base64)
+   que el preview aprobado no tenía; estilo-gamer.css no la cubría, así que
+   sin esta regla la foto seguiría tapando el fondo gamer. Solo visual. */
+.hero img{display:none}
+</style>
 </head>
 <body>
 
