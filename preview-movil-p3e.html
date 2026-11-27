@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Preview movil P3-e — solo verificacion (se borra)</title>
+<style>body{margin:0;background:#111;color:#fff;font-family:system-ui,sans-serif}h1{font-size:18px;padding:12px}p{padding:0 12px;font-size:14px}.marco{display:inline-block;vertical-align:top;margin:0 12px 24px}.marco h2{font-size:14px}.marco iframe{width:360px;height:1500px;border:3px solid #f00;background:#fff;display:block}.ancho500 iframe{width:500px}</style>
+</head>
+<body>
+<h1>Preview movil P3-e (solo verificacion, se borra al final)</h1>
+<p>Cada iframe mide 360 px de ancho (CSS), asi que dentro de el aplican las reglas @media (max-width:640px) de la pagina. Borde rojo = limite de 360 px: lo que se salga del borde es desbordamiento en movil.</p>
+<div class="marco"><h2>1. index.html — 360 px</h2><iframe src="index.html" title="indice 360"></iframe></div>
+<div class="marco"><h2>2. partido.html Werder (previo) — 360 px</h2><iframe src="partido.html?partido=werder-bremen-vs-borussia-monchengladbach" title="detalle Werder 360"></iframe></div>
+<div class="marco"><h2>3. partido.html Galatasaray (terminado) — 360 px</h2><iframe src="partido.html?partido=galatasaray-vs-aston-villa" title="detalle Galatasaray 360"></iframe></div>
+<div class="marco ancho500"><h2>4. index.html — 500 px</h2><iframe src="index.html" title="indice 500"></iframe></div>
+</body>
+</html>
