@@ -1158,7 +1158,15 @@ function __initPagina(){
         out = { odds: parseFloat(t.slice(mercado.length + 1)) };
       }
     });
-    return out;
+    if (!out){
+    var btn = article.querySelector(".add-btn");
+    if (btn){
+      var pick = (btn.getAttribute("data-pick") || "").split("·").pop().trim();
+      var od = parseFloat(btn.getAttribute("data-odds"));
+      if (pick && pick.toLowerCase().indexOf(mercado.toLowerCase()) === 0 && od > 1) out = {odds: od};
+    }
+  }
+  return out;
   }
   function veredicto(article){
     var chip1x2 = (function(){var ns=article.querySelectorAll(".fifa-probs .fifa-prob b.num");if(ns.length!==3)return null;return "1X2: "+ns[0].textContent+" · "+ns[1].textContent+" · "+ns[2].textContent;})();
@@ -2724,62 +2732,11 @@ function celdaMomio(label, momio, ev, prob, sinEtiqueta){
     }
     h += '<div class="match-cta"><span>Ver detalle del partido →</span></div>';
     h += '</a>';
-    h += '<div class="odds" aria-label="Momios reales y valor esperado">';
-    if (terminado || enDescuento){
-      /* Partido terminado sin momios (13 en entresemana): Final + probabilidades
-         del modelo, sin "Momios pendientes", sin semáforo y sin botón de parlay.
-         En los datos actuales ningún post trae momios, así que esta rama solo
-         se alcanza sin momio; si un post trajera momio, manda el Final. */
-      h += '<div class="derived-h"><span>Momios y valor esperado</span></div>';
-      h += '<p><b>' + (terminado ? 'Final: ' : 'En vivo · ' + esc(m._minuto || "descuento") + ': ') + esc(nombreEquipo(home)) + ' ' + (m.marcador && typeof m.marcador.local === "number" ? m.marcador.local : "–") + ' – ' + (m.marcador && typeof m.marcador.visita === "number" ? m.marcador.visita : "–") + ' ' + esc(nombreEquipo(away)) + '</b></p>';
-      h += '<p class="detail-note">' + (terminado ? 'Partido terminado sin momios: no hay EV ni pick; las probabilidades son las del modelo antes del partido.' : 'En vivo en el descuento: sin picks pre-partido; las probabilidades son las del modelo antes del partido.') + '</p>';
-      if (p12 || (tot && typeof tot.p_over === "number")){
-        h += '<div class="derived-h"><span>Probabilidad del modelo (sin momio)</span></div><div class="derived-grid">';
-        if (p12){
-          h += celdaMomio("Local", null, null, p12.p1, true);
-          h += celdaMomio("Empate", null, null, p12.px, true);
-          h += celdaMomio("Visita", null, null, p12.p2, true);
-        }
-        if (tot && typeof tot.p_over === "number"){
-          var linF = (typeof tot.linea === "number") ? " " + fmtLinea(tot.linea) : "";
-          h += celdaMomio("Más" + linF, null, null, tot.p_over, true);
-          h += celdaMomio("Menos" + linF, null, null, 100 - tot.p_over, true);
-        }
-        h += '</div>';
-      }
-    } else if (!mom){
-      h += '<div class="derived-h"><span>Momios pendientes</span><span>EV = prob. × momio − 1</span></div>';
-      h += '<p>pendiente — los momios aún no se publican.</p>';
-    } else {
-      h += '<div class="derived-h"><span>Momios ' + esc(prov || "") + '</span><span>EV = prob. × momio − 1</span></div>';
-      h += '<div class="derived-grid">';
-      var mo12 = mk12 && mk12.momios ? mk12.momios : (mom.moneyline || null);
-      var ev12 = mk12 && mk12.ev ? mk12.ev : null;
-      h += celdaMomio("Local", mo12 ? mo12.home : null, ev12 ? ev12["1"] : null, p12 ? p12.p1 : null);
-      h += celdaMomio("Empate", mo12 ? mo12.draw : null, ev12 ? ev12["X"] : null, p12 ? p12.px : null);
-      h += celdaMomio("Visita", mo12 ? mo12.away : null, ev12 ? ev12["2"] : null, p12 ? p12.p2 : null);
-      var tMom = null, tEv = null, tLin = null;
-      if (tot){
-        if (typeof tot.linea === "number") tLin = tot.linea;
-        if (tot.momios){ tMom = {over: tot.momios.over, under: tot.momios.under}; }
-        if (tot.ev){ tEv = {mas: tot.ev.mas, menos: tot.ev.menos}; }
-      }
-      if (!tMom && mom.total){ tMom = {over: mom.total.over, under: mom.total.under}; if (typeof mom.total.linea === "number") tLin = mom.total.linea; }
-      var labelMas = (tLin == null) ? "Más" : "Más " + fmtLinea(tLin);
-      var labelMenos = (tLin == null) ? "Menos" : "Menos " + fmtLinea(tLin);
-      /* Sin mercado total (ej. Hamburg–Bayern: solo 1X2, momios.total null),
-         las celdas Más/Menos no se muestran: la base tampoco las trae. */
-      if (tMom || tEv || tLin != null){
-        h += celdaMomio(labelMas, tMom ? tMom.over : null, tEv ? tEv.mas : null, (tot && typeof tot.p_over === "number") ? tot.p_over : null);
-        h += celdaMomio(labelMenos, tMom ? tMom.under : null, tEv ? tEv.menos : null, (tot && typeof tot.p_over === "number") ? 100 - tot.p_over : null);
-      }
-      h += '</div>';
-      if (sem && sem.value === "1"){
-        h += '<div class="odds-add"><button class="add-btn" type="button" data-pick="' + esc(home) + ' vs ' + esc(away) + ' · ' + esc(m.mejor_pick) + '" data-odds="' + esc(String(m.mejor_decimal)) + '" data-prob="' + m.mejor_prob + '">Sumar al parlay</button></div>';
-      }
-    }
-    if (!terminado && !enDescuento) h += htmlBSD(m); /* Novena ronda P1-2: un partido terminado o en descuento no muestra EV ni picks en el bloque BSD. */
-    h += '</div></article>';
+    if (!terminado && !enDescuento && mom && sem && sem.value === "1"){
+  h += '<div class="odds-add"><button class="add-btn" type="button" data-pick="' + esc(home) + ' vs ' + esc(away) + ' · ' + esc(m.mejor_pick) + '" data-odds="' + esc(String(m.mejor_decimal)) + '" data-prob="' + m.mejor_prob + '">Sumar al parlay</button></div>';
+}
+/* Corrección cliente 27 nov 2026: momios DraftKings y mercados BSD fuera de la tarjeta; quedan solo en el detalle (partido.html). */
+    h += '</article>';
     return h;
   }
 
