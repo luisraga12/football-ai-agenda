@@ -77,10 +77,13 @@ import os
 import re
 import sys
 import time
-import urllib.request
 from collections import Counter
 from datetime import datetime
 from zoneinfo import ZoneInfo
+
+# Modulo hermano (scripts/): los scripts siempre se corren como
+# `python3 scripts/*.py` desde la raiz del repo, asi que resuelve.
+from http_resiliente import descargar_json
 
 BASES = [
     "https://site.api.espn.com/apis/site/v2/sports/soccer",
@@ -110,14 +113,14 @@ MAPEO = {
 
 
 def fetch_json(url):
-    """GET con respaldo de dos hosts ESPN; None si ambos fallan."""
+    """GET con respaldo de dos hosts ESPN; None si ambos fallan.
+    Cada intento de host reintenta errores transitorios
+    (ver http_resiliente.py)."""
     last_err = None
     for base in BASES:
         u = url.replace(BASES[0], base) if url.startswith(BASES[0]) else url
         try:
-            req = urllib.request.Request(u, headers={"User-Agent": "Mozilla/5.0"})
-            with urllib.request.urlopen(req, timeout=30) as r:
-                return json.load(r)
+            return descargar_json(u)
         except Exception as e:  # noqa: BLE001 - reintento con el otro host
             last_err = e
     print(f"  AVISO: no se pudo bajar {url} ({last_err})", file=sys.stderr)

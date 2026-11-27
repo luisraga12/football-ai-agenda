@@ -71,6 +71,10 @@ import unicodedata
 import urllib.request
 from datetime import date, datetime, timezone
 
+# Modulo hermano (scripts/): los scripts siempre se corren como
+# `python3 scripts/*.py` desde la raiz del repo, asi que resuelve.
+from http_resiliente import descargar_json
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 MESES_ES = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago",
@@ -169,14 +173,13 @@ ESPN_BASES = [
 
 def fetch_summary(liga, event_id):
     """Summary ESPN por evento, con respaldo de host; None si fallan
-    ambos (mismo patron que calcular_alineacion_probable.py)."""
+    ambos (mismo patron que calcular_alineacion_probable.py).
+    Cada intento de host reintenta errores transitorios
+    (ver http_resiliente.py)."""
     for base in ESPN_BASES:
         try:
-            req = urllib.request.Request(
-                f"{base}/{liga}/summary?event={event_id}",
-                headers={"User-Agent": "Mozilla/5.0"})
-            with urllib.request.urlopen(req, timeout=20) as r:
-                return json.load(r)
+            return descargar_json(
+                f"{base}/{liga}/summary?event={event_id}", timeout=20)
         except Exception:
             continue
     return None

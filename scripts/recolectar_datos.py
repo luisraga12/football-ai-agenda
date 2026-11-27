@@ -24,17 +24,20 @@ import json
 import os
 import sys
 import time
-import urllib.request
 from datetime import datetime, timezone, timedelta
+
+# Modulo hermano (scripts/): los scripts siempre se corren como
+# `python3 scripts/*.py` desde la raiz del repo, asi que resuelve.
+from http_resiliente import descargar_json
 
 CST = timezone(timedelta(hours=-6))
 BASE = "https://site.api.espn.com/apis/site/v2/sports/soccer"
 
 
 def fetch(url):
-    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return json.load(r)
+    """GET con reintentos (ver http_resiliente.py): la corrida #30
+    cayo por un error SSL transitorio en el schedule de un equipo."""
+    return descargar_json(url)
 
 
 def score_of(comp):
