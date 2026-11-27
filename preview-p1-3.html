@@ -629,6 +629,8 @@ article.match[data-status="live"]{border-color:rgba(220,38,38,.75)}
 <main class="det-page" id="detalle">
   <p class="det-loading">Cargando el detalle del partido…</p>
 </main>
+<div id="preview-resumen"></div>
+<div id="preview-lista"></div>
 <script>
 /* Semana 9: plantilla única del detalle por partido (Empleado 2, 25 nov 2026).
    Orden del jefe (buzon/JEFE.md, 24 nov ~22:47): una sola plantilla
@@ -1997,7 +1999,36 @@ function renderDetalle(m, estDocs){
           });
         }
       });
-      var m = null;
+    /* Preview P1-3: htmlpreview no pasa ?partido=; el preview renderiza los 3 partidos reales con el mismo renderDetalle y resume la comparacion semaforo vs BSD leida del DOM. Los 3 se muestran en estado pre-partido, como los vio el jefe. */
+if (document.title.indexOf("Preview P1-3") === 0){
+var SLUGS = ["besiktas-vs-hapoel-be-er", "union-st-gilloise-vs-lech-poznan", "ferencvaros-vs-nk-celje"];
+var LISTA = document.getElementById("preview-lista");
+var RES = document.getElementById("preview-resumen");
+var ultimoPct = function(txt){ var t = String(txt || ""); var idx = t.lastIndexOf("%"); if (idx < 0) return null; var ini = idx; while (ini > 0 && /[0-9.]/.test(t.charAt(ini - 1))) ini--; if (ini > 0 && (t.charAt(ini - 1) === "+" || t.charAt(ini - 1) === "-")) ini--; return t.slice(ini, idx + 1); };
+SLUGS.forEach(function(s){
+var mm = null;
+partidos.forEach(function(p){ if (norm(p.home) + "-vs-" + norm(p.away) === s) mm = p; });
+if (!mm) return;
+mm.estado_partido = "pre"; mm.marcador = null; mm._minuto = undefined;
+slug = s;
+renderDetalle(mm, [res[8], res[9]]);
+var sec = document.createElement("section");
+sec.className = "preview-partido";
+sec.setAttribute("data-slug", s);
+while (root.firstChild) sec.appendChild(root.firstChild);
+LISTA.appendChild(sec);
+});
+var filas = "";
+Array.prototype.forEach.call(LISTA.querySelectorAll(".preview-partido"), function(sec){
+var evS = null, evB = null, momB = null;
+Array.prototype.forEach.call(sec.querySelectorAll("strong"), function(st){ if (evS === null && st.textContent.indexOf("Spread") !== -1){ var v = ultimoPct(st.textContent); if (v) evS = v; } });
+Array.prototype.forEach.call(sec.querySelectorAll(".bsd-block .dcell"), function(c){ var sp = c.querySelector("span"), bb = c.querySelector("b"); if (sp && bb && sp.textContent.indexOf("Local -1.5") === 0){ var v = ultimoPct(bb.textContent); if (v) evB = v; momB = sp.textContent.slice(10).trim(); } });
+filas += "<tr><td>" + sec.getAttribute("data-slug") + "</td><td>" + (evS || "sin semaforo") + "</td><td>" + (evB ? evB + " (momio " + momB + ")" : "sin EV BSD") + "</td><td>" + ((evS && evB && evS === evB) ? "COINCIDE" : "NO COINCIDE") + "</td></tr>";
+});
+if (RES) RES.innerHTML = '<h2>Verificacion P1-3: semaforo vs BSD (Spread local -1.5, misma linea)</h2><table border="1" cellpadding="6" cellspacing="0"><tr><th>Partido</th><th>Semaforo EV</th><th>BSD AH local -1.5 EV</th><th>Resultado</th></tr>' + filas + '</table>';
+return;
+}
+  var m = null;
       partidos.forEach(function(p){
         if (norm(p.home) + "-vs-" + norm(p.away) === slug) m = p;
       });
