@@ -10,8 +10,8 @@
    "fecha": "2026-11-27",
    "hora": "13:30",
    "liga": "Bundesliga",
-   "estado": "con_momio",
-   "linea_total": 3.5,
+   "estado": "pendiente",
+   "linea_total": 2.5,
    "linea_referencia": false,
    "local": {
     "n": 5,
@@ -23,29 +23,29 @@
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 2,
-    "spread_linea": -0.5,
-    "cubre": 2,
-    "no_cubre": 3,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
    "visita": {
     "n": 5,
     "g": 1,
     "e": 1,
     "p": 3,
-    "mas": 2,
-    "menos": 3,
+    "mas": 4,
+    "menos": 1,
     "empuje": 0,
     "btts_si": 4,
     "btts_no": 1,
-    "spread_linea": 0.5,
-    "cubre": 2,
-    "no_cubre": 3,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Werder Bremen 2G-2E-1P · Más 3.5 3/5 · Menos 3.5 2/5 · BTTS 3/5 · Cubre -0.5 2/5 — Borussia Mönchengladbach 1G-1E-3P · Más 3.5 2/5 · Menos 3.5 3/5 · BTTS 4/5 · Cubre +0.5 2/5"
+   "linea_tarjeta": "Tendencias: Werder Bremen 2G-2E-1P · Más 2.5 3/5 · Menos 2.5 2/5 · BTTS 3/5 — Borussia Mönchengladbach 1G-1E-3P · Más 2.5 4/5 · Menos 2.5 1/5 · BTTS 4/5"
   },
   {
    "slug": "venezia-vs-bologna",
@@ -54,7 +54,7 @@
    "fecha": "2026-11-27",
    "hora": "13:45",
    "liga": "Serie A",
-   "estado": "con_momio",
+   "estado": "pendiente",
    "linea_total": 2.5,
    "linea_referencia": false,
    "local": {
@@ -67,9 +67,9 @@
     "empuje": 0,
     "btts_si": 1,
     "btts_no": 4,
-    "spread_linea": 0.5,
-    "cubre": 2,
-    "no_cubre": 3,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
@@ -83,13 +83,13 @@
     "empuje": 0,
     "btts_si": 4,
     "btts_no": 1,
-    "spread_linea": -0.5,
-    "cubre": 4,
-    "no_cubre": 1,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Venezia 2G-0E-3P · Más 2.5 1/5 · Menos 2.5 4/5 · BTTS 1/5 · Cubre +0.5 2/5 — Bologna 4G-0E-1P · Más 2.5 4/5 · Menos 2.5 1/5 · BTTS 4/5 · Cubre -0.5 4/5"
+   "linea_tarjeta": "Tendencias: Venezia 2G-0E-3P · Más 2.5 1/5 · Menos 2.5 4/5 · BTTS 1/5 — Bologna 4G-0E-1P · Más 2.5 4/5 · Menos 2.5 1/5 · BTTS 4/5"
   },
   {
    "slug": "nottingham-forest-vs-chelsea",
@@ -98,7 +98,7 @@
    "fecha": "2026-11-27",
    "hora": "14:00",
    "liga": "Premier League",
-   "estado": "con_momio",
+   "estado": "pendiente",
    "linea_total": 2.5,
    "linea_referencia": false,
    "local": {
@@ -111,9 +111,9 @@
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 2,
-    "spread_linea": -0.5,
-    "cubre": 1,
-    "no_cubre": 4,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
@@ -127,13 +127,13 @@
     "empuje": 0,
     "btts_si": 1,
     "btts_no": 4,
-    "spread_linea": 0.5,
-    "cubre": 3,
-    "no_cubre": 2,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Nottingham Forest 1G-1E-3P · Más 2.5 2/5 · Menos 2.5 3/5 · BTTS 3/5 · Cubre -0.5 1/5 — Chelsea 3G-0E-2P · Más 2.5 1/5 · Menos 2.5 4/5 · BTTS 1/5 · Cubre +0.5 3/5"
+   "linea_tarjeta": "Tendencias: Nottingham Forest 1G-1E-3P · Más 2.5 2/5 · Menos 2.5 3/5 · BTTS 3/5 — Chelsea 3G-0E-2P · Más 2.5 1/5 · Menos 2.5 4/5 · BTTS 1/5"
   },
   {
    "slug": "levante-vs-racing-santander",
@@ -142,42 +142,42 @@
    "fecha": "2026-11-27",
    "hora": "14:00",
    "liga": "LaLiga",
-   "estado": "con_momio",
-   "linea_total": 3.5,
+   "estado": "pendiente",
+   "linea_total": 2.5,
    "linea_referencia": false,
    "local": {
     "n": 5,
     "g": 1,
     "e": 2,
     "p": 2,
-    "mas": 1,
-    "menos": 4,
+    "mas": 2,
+    "menos": 3,
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 2,
-    "spread_linea": -0.5,
-    "cubre": 1,
-    "no_cubre": 4,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
    "visita": {
     "n": 5,
     "g": 2,
     "e": 1,
     "p": 2,
-    "mas": 1,
-    "menos": 4,
+    "mas": 4,
+    "menos": 1,
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 2,
-    "spread_linea": 0.5,
-    "cubre": 3,
-    "no_cubre": 2,
+    "spread_linea": null,
+    "cubre": 0,
+    "no_cubre": 0,
     "empuje_spread": 0,
-    "linea_total": 3.5
+    "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: Levante 1G-2E-2P · Más 3.5 1/5 · Menos 3.5 4/5 · BTTS 3/5 · Cubre -0.5 1/5 — Racing Santander 2G-1E-2P · Más 3.5 1/5 · Menos 3.5 4/5 · BTTS 3/5 · Cubre +0.5 3/5"
+   "linea_tarjeta": "Tendencias: Levante 1G-2E-2P · Más 2.5 2/5 · Menos 2.5 3/5 · BTTS 3/5 — Racing Santander 2G-1E-2P · Más 2.5 4/5 · Menos 2.5 1/5 · BTTS 3/5"
   },
   {
    "slug": "hamburg-sv-vs-bayern-munich",
