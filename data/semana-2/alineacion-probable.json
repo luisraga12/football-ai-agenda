@@ -1,7 +1,7 @@
 {
  "semana": "Semana 2",
  "config": "semana-actual.json",
- "fecha_calculo": "2026-11-25",
+ "fecha_calculo": "2026-11-27",
  "metodo": "XI más frecuente por posición de los últimos partidos + formación más usada; siempre PROBABLE (ESPN no publica XI probable). Ventana: últimos 5 de liga doméstica (fin de semana) o últimos 4 de la competición UEFA (entre semana), antes de la fecha del partido. Fuerza por XI: 0.40·goles+asistencias + 0.30·minutos + 0.30·puntos, cada componente en % vs el mejor XI posible en ese componente con la misma formación del XI probable (corrección 25 nov 2026: antes era un solo mejor XI 1-4-4-2 por minutos y el XI podía superarlo, p. ej. Atlas 65/63), con fracciones; calculada con nombres ESPN antes del MAPEO.",
  "verificacion_nombres": "Los ~50 nombres señalados por el jefe el 24 nov 2026 fueron verificados uno por uno: los 60 son jugadores reales del equipo asignado (fichajes del verano 2026, con fuentes en EMPLEADO-1.md). No se añadió ningún reemplazo al MAPEO.",
  "partidos": [
@@ -990,9 +990,7 @@
       "puntos": 50
      }
     },
-    "revisiones": [
-     "Thiago Fernández (M): ESPN lo pone en el XI pero no está en la plantilla de temporada del equipo; nombre por confirmar, no se inventa reemplazo."
-    ],
+    "revisiones": [],
     "fallos_summary": [],
     "probable": true
    },
@@ -4536,6 +4534,15 @@
     "ventana_partidos": 5,
     "ventana": [
      {
+      "fecha": "2026-11-26",
+      "event_id": "401931986",
+      "rivales": [
+       "Toluca",
+       "Atlas"
+      ],
+      "formacion": "4-5-1"
+     },
+     {
       "fecha": "2026-11-21",
       "event_id": "401877053",
       "rivales": [
@@ -4570,30 +4577,15 @@
        "Puebla"
       ],
       "formacion": "4-4-2"
-     },
-     {
-      "fecha": "2026-10-22",
-      "event_id": "401876932",
-      "rivales": [
-       "Atlas",
-       "América"
-      ],
-      "formacion": "4-4-2"
      }
     ],
-    "formacion": "4-4-2",
+    "formacion": "4-5-1",
     "jugadores": [
      {
       "jugador": "Camilo Vargas",
       "pos": "G",
       "titularidades": 5,
       "minutos": 450
-     },
-     {
-      "jugador": "Juanjo Purata",
-      "pos": "D",
-      "titularidades": 4,
-      "minutos": 360
      },
      {
       "jugador": "Adonis Frias",
@@ -4604,8 +4596,8 @@
      {
       "jugador": "Manuel Capasso",
       "pos": "D",
-      "titularidades": 3,
-      "minutos": 270
+      "titularidades": 4,
+      "minutos": 360
      },
      {
       "jugador": "Jorge Sánchez",
@@ -4614,54 +4606,60 @@
       "minutos": 270
      },
      {
+      "jugador": "Juanjo Purata",
+      "pos": "D",
+      "titularidades": 3,
+      "minutos": 270
+     },
+     {
       "jugador": "Luís Esteves",
       "pos": "M",
       "titularidades": 5,
-      "minutos": 448
+      "minutos": 440
      },
      {
       "jugador": "Kevin Zenón",
       "pos": "M",
-      "titularidades": 3,
-      "minutos": 270
+      "titularidades": 4,
+      "minutos": 360
      },
      {
       "jugador": "Elías Montiel",
       "pos": "M",
       "titularidades": 3,
-      "minutos": 265
+      "minutos": 270
      },
      {
-      "jugador": "Paulo Ramírez",
+      "jugador": "Edgar Zaldivar",
       "pos": "M",
       "titularidades": 3,
-      "minutos": 180
+      "minutos": 270
+     },
+     {
+      "jugador": "Aldo Rocha",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 198
      },
      {
       "jugador": "Florián Monzón",
       "pos": "F",
       "titularidades": 5,
       "minutos": 406
-     },
-     {
-      "jugador": "Ryan Mmaee",
-      "pos": "F",
-      "titularidades": 3,
-      "minutos": 206
      }
     ],
     "fuerza": {
-     "valor": 91.5,
-     "A_goles": 82.4,
-     "B_minutos": 99.7,
-     "C_puntos": 95.6,
-     "goles_asist": 14.0,
-     "minutos": 3609,
-     "puntos": 65,
+     "valor": 94.4,
+     "A_goles": 92.3,
+     "B_minutos": 99.4,
+     "C_puntos": 92.3,
+     "goles_asist": 12.0,
+     "minutos": 3750,
+     "puntos": 60,
      "mejor": {
-      "goles_asist": 17.0,
-      "minutos": 3620,
-      "puntos": 68
+      "goles_asist": 13.0,
+      "minutos": 3773,
+      "puntos": 65
      }
     },
     "revisiones": [],
@@ -4673,6 +4671,15 @@
     "liga": "mex.1",
     "ventana_partidos": 5,
     "ventana": [
+     {
+      "fecha": "2026-11-26",
+      "event_id": "401931986",
+      "rivales": [
+       "Toluca",
+       "Atlas"
+      ],
+      "formacion": "4-5-1"
+     },
      {
       "fecha": "2026-11-21",
       "event_id": "401877050",
@@ -4708,15 +4715,6 @@
        "Toluca"
       ],
       "formacion": "4-5-1"
-     },
-     {
-      "fecha": "2026-10-22",
-      "event_id": "401876931",
-      "rivales": [
-       "Toluca",
-       "Tijuana"
-      ],
-      "formacion": "4-5-1"
      }
     ],
     "formacion": "4-5-1",
@@ -4734,13 +4732,13 @@
       "minutos": 450
      },
      {
-      "jugador": "Everardo López",
+      "jugador": "Bruno Méndez",
       "pos": "D",
       "titularidades": 3,
       "minutos": 270
      },
      {
-      "jugador": "Federico Pereira",
+      "jugador": "Santiago Simón",
       "pos": "D",
       "titularidades": 3,
       "minutos": 270
@@ -4748,8 +4746,8 @@
      {
       "jugador": "Luan",
       "pos": "D",
-      "titularidades": 2,
-      "minutos": 180
+      "titularidades": 3,
+      "minutos": 266
      },
      {
       "jugador": "Franco Romero",
@@ -4761,19 +4759,19 @@
       "jugador": "Nicolás Castro",
       "pos": "M",
       "titularidades": 4,
-      "minutos": 312
+      "minutos": 319
      },
      {
       "jugador": "Helinho",
       "pos": "M",
       "titularidades": 4,
-      "minutos": 287
+      "minutos": 275
      },
      {
       "jugador": "Alexis Vega",
       "pos": "M",
       "titularidades": 3,
-      "minutos": 211
+      "minutos": 203
      },
      {
       "jugador": "Érick Gutiérrez",
@@ -4785,21 +4783,21 @@
       "jugador": "Paulinho",
       "pos": "F",
       "titularidades": 3,
-      "minutos": 264
+      "minutos": 249
      }
     ],
     "fuerza": {
-     "valor": 95.9,
+     "valor": 96.7,
      "A_goles": 91.7,
-     "B_minutos": 99.0,
-     "C_puntos": 98.3,
+     "B_minutos": 100,
+     "C_puntos": 100,
      "goles_asist": 11.0,
-     "minutos": 3202,
-     "puntos": 57,
+     "minutos": 3253,
+     "puntos": 73,
      "mejor": {
       "goles_asist": 12.0,
-      "minutos": 3233,
-      "puntos": 58
+      "minutos": 3253,
+      "puntos": 73
      }
     },
     "revisiones": [],
@@ -4817,6 +4815,15 @@
     "liga": "mex.1",
     "ventana_partidos": 5,
     "ventana": [
+     {
+      "fecha": "2026-11-26",
+      "event_id": "401931998",
+      "rivales": [
+       "Monterrey",
+       "América"
+      ],
+      "formacion": "4-3-2"
+     },
      {
       "fecha": "2026-11-22",
       "event_id": "401877048",
@@ -4852,15 +4859,6 @@
        "Tijuana"
       ],
       "formacion": "4-5-1"
-     },
-     {
-      "fecha": "2026-10-26",
-      "event_id": "401876922",
-      "rivales": [
-       "América",
-       "Pachuca"
-      ],
-      "formacion": "4-5-1"
      }
     ],
     "formacion": "4-5-1",
@@ -4868,8 +4866,8 @@
      {
       "jugador": "Ángel Malagón",
       "pos": "G",
-      "titularidades": 4,
-      "minutos": 360
+      "titularidades": 3,
+      "minutos": 270
      },
      {
       "jugador": "Santiago Ramos",
@@ -4878,7 +4876,7 @@
       "minutos": 360
      },
      {
-      "jugador": "Santiago Bueno",
+      "jugador": "Israel Reyes",
       "pos": "D",
       "titularidades": 3,
       "minutos": 270
@@ -4890,60 +4888,60 @@
       "minutos": 269
      },
      {
-      "jugador": "Franco Rossano",
+      "jugador": "Santiago Bueno",
       "pos": "D",
       "titularidades": 3,
-      "minutos": 167
+      "minutos": 249
+     },
+     {
+      "jugador": "Alan Cervantes",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 360
      },
      {
       "jugador": "Óscar Perea",
       "pos": "M",
       "titularidades": 4,
-      "minutos": 306
+      "minutos": 303
      },
      {
-      "jugador": "Carlos Álvarez",
-      "pos": "M",
-      "titularidades": 4,
-      "minutos": 256
-     },
-     {
-      "jugador": "Alan Cervantes",
+      "jugador": "Alejandro Zendejas",
       "pos": "M",
       "titularidades": 3,
       "minutos": 270
      },
      {
+      "jugador": "Edwin Cerrillo",
+      "pos": "M",
+      "titularidades": 3,
+      "minutos": 230
+     },
+     {
       "jugador": "Érick Sánchez",
       "pos": "M",
       "titularidades": 3,
-      "minutos": 269
-     },
-     {
-      "jugador": "Israel Reyes",
-      "pos": "M",
-      "titularidades": 3,
-      "minutos": 239
+      "minutos": 224
      },
      {
       "jugador": "Henry Martín",
       "pos": "F",
-      "titularidades": 4,
-      "minutos": 322
+      "titularidades": 3,
+      "minutos": 241
      }
     ],
     "fuerza": {
-     "valor": 93.0,
-     "A_goles": 85.7,
-     "B_minutos": 99.6,
-     "C_puntos": 96.0,
-     "goles_asist": 6.0,
-     "minutos": 3219,
-     "puntos": 24,
+     "valor": 98.2,
+     "A_goles": 100,
+     "B_minutos": 99.8,
+     "C_puntos": 94.1,
+     "goles_asist": 5.0,
+     "minutos": 3150,
+     "puntos": 32,
      "mejor": {
-      "goles_asist": 7.0,
-      "minutos": 3232,
-      "puntos": 25
+      "goles_asist": 5.0,
+      "minutos": 3157,
+      "puntos": 34
      }
     },
     "revisiones": [],
@@ -4955,6 +4953,15 @@
     "liga": "mex.1",
     "ventana_partidos": 5,
     "ventana": [
+     {
+      "fecha": "2026-11-26",
+      "event_id": "401931998",
+      "rivales": [
+       "Monterrey",
+       "América"
+      ],
+      "formacion": "4-5-1"
+     },
      {
       "fecha": "2026-11-22",
       "event_id": "401877049",
@@ -4990,15 +4997,6 @@
        "Tijuana"
       ],
       "formacion": "4-5-1"
-     },
-     {
-      "fecha": "2026-10-25",
-      "event_id": "401876925",
-      "rivales": [
-       "Monterrey",
-       "Guadalajara"
-      ],
-      "formacion": "4-3-2"
      }
     ],
     "formacion": "4-5-1",
@@ -5006,8 +5004,8 @@
      {
       "jugador": "Esteban Andrada",
       "pos": "G",
-      "titularidades": 4,
-      "minutos": 360
+      "titularidades": 3,
+      "minutos": 270
      },
      {
       "jugador": "Gerardo Arteaga",
@@ -5034,22 +5032,16 @@
       "minutos": 270
      },
      {
-      "jugador": "Cesar Garza",
-      "pos": "M",
-      "titularidades": 5,
-      "minutos": 450
-     },
-     {
       "jugador": "Lucas Ocampos",
       "pos": "M",
       "titularidades": 5,
       "minutos": 405
      },
      {
-      "jugador": "Diego Rossi",
+      "jugador": "Cesar Garza",
       "pos": "M",
-      "titularidades": 5,
-      "minutos": 391
+      "titularidades": 4,
+      "minutos": 360
      },
      {
       "jugador": "Orbelín Pineda",
@@ -5058,10 +5050,16 @@
       "minutos": 327
      },
      {
-      "jugador": "Jesús Corona",
+      "jugador": "Diego Rossi",
+      "pos": "M",
+      "titularidades": 4,
+      "minutos": 301
+     },
+     {
+      "jugador": "Óliver Torres",
       "pos": "M",
       "titularidades": 3,
-      "minutos": 227
+      "minutos": 240
      },
      {
       "jugador": "Hugo Cuypers",
@@ -5075,13 +5073,13 @@
      "A_goles": 100,
      "B_minutos": 100,
      "C_puntos": 100,
-     "goles_asist": 6.0,
-     "minutos": 3931,
-     "puntos": 61,
+     "goles_asist": 8.0,
+     "minutos": 3726,
+     "puntos": 68,
      "mejor": {
-      "goles_asist": 6.0,
-      "minutos": 3931,
-      "puntos": 61
+      "goles_asist": 8.0,
+      "minutos": 3726,
+      "puntos": 68
      }
     },
     "revisiones": [],
@@ -5099,6 +5097,15 @@
     "liga": "mex.1",
     "ventana_partidos": 5,
     "ventana": [
+     {
+      "fecha": "2026-11-27",
+      "event_id": "401931982",
+      "rivales": [
+       "Pachuca",
+       "Guadalajara"
+      ],
+      "formacion": "3-4-3"
+     },
      {
       "fecha": "2026-11-22",
       "event_id": "401877047",
@@ -5134,15 +5141,6 @@
        "Guadalajara"
       ],
       "formacion": "3-4-3"
-     },
-     {
-      "fecha": "2026-10-21",
-      "event_id": "401876934",
-      "rivales": [
-       "Guadalajara",
-       "Necaxa"
-      ],
-      "formacion": "3-4-3"
      }
     ],
     "formacion": "3-4-3",
@@ -5154,19 +5152,19 @@
       "minutos": 450
      },
      {
+      "jugador": "Diego Campillo",
+      "pos": "D",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
       "jugador": "Daniel Aguirre",
       "pos": "D",
       "titularidades": 5,
       "minutos": 433
      },
      {
-      "jugador": "Diego Campillo",
-      "pos": "D",
-      "titularidades": 5,
-      "minutos": 421
-     },
-     {
-      "jugador": "Luis Gabriel Rey",
+      "jugador": "José Castillo",
       "pos": "D",
       "titularidades": 2,
       "minutos": 180
@@ -5178,54 +5176,54 @@
       "minutos": 450
      },
      {
-      "jugador": "Richard Ledezma",
-      "pos": "M",
-      "titularidades": 5,
-      "minutos": 342
-     },
-     {
       "jugador": "Bryan González",
       "pos": "M",
-      "titularidades": 4,
-      "minutos": 349
+      "titularidades": 5,
+      "minutos": 439
      },
      {
       "jugador": "Omar Govea",
       "pos": "M",
-      "titularidades": 4,
-      "minutos": 286
+      "titularidades": 5,
+      "minutos": 357
+     },
+     {
+      "jugador": "Richard Ledezma",
+      "pos": "M",
+      "titularidades": 5,
+      "minutos": 343
      },
      {
       "jugador": "Roberto Alvarado",
       "pos": "F",
       "titularidades": 5,
-      "minutos": 435
+      "minutos": 429
+     },
+     {
+      "jugador": "Santiago Sandoval",
+      "pos": "F",
+      "titularidades": 5,
+      "minutos": 381
      },
      {
       "jugador": "Efrain Álvarez",
       "pos": "F",
       "titularidades": 4,
       "minutos": 360
-     },
-     {
-      "jugador": "Santiago Sandoval",
-      "pos": "F",
-      "titularidades": 4,
-      "minutos": 319
      }
     ],
     "fuerza": {
-     "valor": 93.3,
-     "A_goles": 83.3,
+     "valor": 96.1,
+     "A_goles": 90.9,
      "B_minutos": 100,
-     "C_puntos": 100,
+     "C_puntos": 99.0,
      "goles_asist": 10.0,
-     "minutos": 4162,
-     "puntos": 137,
+     "minutos": 4272,
+     "puntos": 100,
      "mejor": {
-      "goles_asist": 12.0,
-      "minutos": 4162,
-      "puntos": 137
+      "goles_asist": 11.0,
+      "minutos": 4272,
+      "puntos": 101
      }
     },
     "revisiones": [],
@@ -5237,6 +5235,15 @@
     "liga": "mex.1",
     "ventana_partidos": 5,
     "ventana": [
+     {
+      "fecha": "2026-11-27",
+      "event_id": "401931982",
+      "rivales": [
+       "Pachuca",
+       "Guadalajara"
+      ],
+      "formacion": "4-5-1"
+     },
      {
       "fecha": "2026-11-21",
       "event_id": "401877050",
@@ -5272,15 +5279,6 @@
        "Pachuca"
       ],
       "formacion": "4-3-3"
-     },
-     {
-      "fecha": "2026-10-22",
-      "event_id": "401876930",
-      "rivales": [
-       "Pachuca",
-       "Cruz Azul"
-      ],
-      "formacion": "4-5-1"
      }
     ],
     "formacion": "4-5-1",
@@ -5288,6 +5286,12 @@
      {
       "jugador": "Carlos Moreno",
       "pos": "G",
+      "titularidades": 5,
+      "minutos": 450
+     },
+     {
+      "jugador": "Sergio Barreto",
+      "pos": "D",
       "titularidades": 5,
       "minutos": 450
      },
@@ -5301,19 +5305,13 @@
       "jugador": "Francisco Venegas",
       "pos": "D",
       "titularidades": 5,
-      "minutos": 430
+      "minutos": 435
      },
      {
       "jugador": "Jorge Berlanga",
       "pos": "D",
       "titularidades": 5,
-      "minutos": 420
-     },
-     {
-      "jugador": "Sergio Barreto",
-      "pos": "D",
-      "titularidades": 4,
-      "minutos": 360
+      "minutos": 430
      },
      {
       "jugador": "Alan Bautista",
@@ -5337,13 +5335,13 @@
       "jugador": "Oussama Idrissi",
       "pos": "M",
       "titularidades": 5,
-      "minutos": 408
+      "minutos": 431
      },
      {
       "jugador": "Rodolfo Pizarro",
       "pos": "M",
       "titularidades": 5,
-      "minutos": 400
+      "minutos": 423
      },
      {
       "jugador": "Salomón Rondón",
@@ -5357,13 +5355,13 @@
      "A_goles": 100,
      "B_minutos": 100,
      "C_puntos": 100,
-     "goles_asist": 16.0,
-     "minutos": 4713,
-     "puntos": 132,
+     "goles_asist": 18.0,
+     "minutos": 4864,
+     "puntos": 165,
      "mejor": {
-      "goles_asist": 16.0,
-      "minutos": 4713,
-      "puntos": 132
+      "goles_asist": 18.0,
+      "minutos": 4864,
+      "puntos": 165
      }
     },
     "revisiones": [],
@@ -5381,6 +5379,15 @@
     "liga": "mex.1",
     "ventana_partidos": 5,
     "ventana": [
+     {
+      "fecha": "2026-11-27",
+      "event_id": "401931995",
+      "rivales": [
+       "León",
+       "Cruz Azul"
+      ],
+      "formacion": "4-5-1"
+     },
      {
       "fecha": "2026-11-22",
       "event_id": "401877047",
@@ -5416,15 +5423,6 @@
        "Cruz Azul"
       ],
       "formacion": "4-5-1"
-     },
-     {
-      "fecha": "2026-10-22",
-      "event_id": "401876930",
-      "rivales": [
-       "Pachuca",
-       "Cruz Azul"
-      ],
-      "formacion": "3-4-3"
      }
     ],
     "formacion": "4-5-1",
@@ -5445,31 +5443,31 @@
       "jugador": "Omar Campos",
       "pos": "D",
       "titularidades": 5,
-      "minutos": 380
+      "minutos": 409
      },
      {
       "jugador": "Jesús Orozco",
       "pos": "D",
-      "titularidades": 3,
-      "minutos": 270
+      "titularidades": 4,
+      "minutos": 360
      },
      {
-      "jugador": "Amaury García",
+      "jugador": "Willer Ditta",
       "pos": "D",
-      "titularidades": 3,
-      "minutos": 240
+      "titularidades": 2,
+      "minutos": 180
      },
      {
       "jugador": "Érik Lira",
       "pos": "M",
       "titularidades": 5,
-      "minutos": 424
+      "minutos": 399
      },
      {
       "jugador": "Agustín Palavecino",
       "pos": "M",
       "titularidades": 4,
-      "minutos": 290
+      "minutos": 310
      },
      {
       "jugador": "Andres Montaño",
@@ -5481,33 +5479,33 @@
       "jugador": "Carlos Rodríguez",
       "pos": "M",
       "titularidades": 3,
-      "minutos": 262
+      "minutos": 245
      },
      {
       "jugador": "José Paradela",
       "pos": "M",
-      "titularidades": 2,
-      "minutos": 149
+      "titularidades": 3,
+      "minutos": 239
      },
      {
-      "jugador": "Gabriel Fernandez",
+      "jugador": "Nicolás Ibáñez",
       "pos": "F",
       "titularidades": 3,
-      "minutos": 270
+      "minutos": 232
      }
     ],
     "fuerza": {
-     "valor": 89.1,
-     "A_goles": 72.7,
+     "valor": 95.6,
+     "A_goles": 88.9,
      "B_minutos": 100,
      "C_puntos": 100,
-     "goles_asist": 8.0,
-     "minutos": 3383,
-     "puntos": 108,
+     "goles_asist": 16.0,
+     "minutos": 3543,
+     "puntos": 114,
      "mejor": {
-      "goles_asist": 11.0,
-      "minutos": 3383,
-      "puntos": 108
+      "goles_asist": 18.0,
+      "minutos": 3543,
+      "puntos": 114
      }
     },
     "revisiones": [],
@@ -5519,6 +5517,15 @@
     "liga": "mex.1",
     "ventana_partidos": 5,
     "ventana": [
+     {
+      "fecha": "2026-11-27",
+      "event_id": "401931995",
+      "rivales": [
+       "León",
+       "Cruz Azul"
+      ],
+      "formacion": "4-5-1"
+     },
      {
       "fecha": "2026-11-21",
       "event_id": "401877051",
@@ -5554,18 +5561,9 @@
        "Toluca"
       ],
       "formacion": "5-4-1"
-     },
-     {
-      "fecha": "2026-10-21",
-      "event_id": "401876935",
-      "rivales": [
-       "Tigres UANL",
-       "León"
-      ],
-      "formacion": "5-4-1"
      }
     ],
-    "formacion": "5-4-1",
+    "formacion": "4-5-1",
     "jugadores": [
      {
       "jugador": "Oscar García",
@@ -5586,22 +5584,16 @@
       "minutos": 409
      },
      {
-      "jugador": "Sebastian Vegas",
-      "pos": "D",
-      "titularidades": 4,
-      "minutos": 360
-     },
-     {
       "jugador": "Juan Guevara",
       "pos": "D",
       "titularidades": 4,
       "minutos": 360
      },
      {
-      "jugador": "Paul Saracho",
+      "jugador": "Sebastian Vegas",
       "pos": "D",
-      "titularidades": 1,
-      "minutos": 90
+      "titularidades": 4,
+      "minutos": 360
      },
      {
       "jugador": "Daniel Arcila",
@@ -5613,39 +5605,45 @@
       "jugador": "Rodrigo Echeverría",
       "pos": "M",
       "titularidades": 5,
-      "minutos": 378
+      "minutos": 363
      },
      {
       "jugador": "Fernando Beltrán",
       "pos": "M",
       "titularidades": 4,
-      "minutos": 257
+      "minutos": 238
      },
      {
       "jugador": "Ismael Díaz",
       "pos": "M",
       "titularidades": 3,
-      "minutos": 255
+      "minutos": 210
      },
      {
-      "jugador": "José Alvarado",
+      "jugador": "José Rodríguez",
+      "pos": "M",
+      "titularidades": 2,
+      "minutos": 180
+     },
+     {
+      "jugador": "Diber Cambindo",
       "pos": "F",
-      "titularidades": 4,
-      "minutos": 360
+      "titularidades": 3,
+      "minutos": 270
      }
     ],
     "fuerza": {
-     "valor": 100.0,
-     "A_goles": 100,
+     "valor": 84.9,
+     "A_goles": 66.7,
      "B_minutos": 100,
-     "C_puntos": 100,
-     "goles_asist": 8.0,
-     "minutos": 3846,
-     "puntos": 77,
+     "C_puntos": 94.0,
+     "goles_asist": 4.0,
+     "minutos": 3767,
+     "puntos": 47,
      "mejor": {
-      "goles_asist": 8.0,
-      "minutos": 3846,
-      "puntos": 77
+      "goles_asist": 6.0,
+      "minutos": 3767,
+      "puntos": 50
      }
     },
     "revisiones": [],

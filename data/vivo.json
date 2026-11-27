@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generado_en": "2026-11-26T12:07:59Z",
-  "generado_en_mx": "2026-11-26T06:08:02-06:00",
+  "generado_en": "2026-11-27T07:47:08Z",
+  "generado_en_mx": "2026-11-27T01:47:09-06:00",
   "semana": 2,
   "fuente": "ESPN scoreboard (site.api.espn.com, respaldo site.web.api.espn.com)",
   "partidos": [
@@ -264,12 +264,12 @@
       "away_id": 218,
       "home": "León",
       "away": "Cruz Azul",
-      "estado": "pre",
-      "detalle": "Thu, November 26th at 10:10 PM EST",
-      "minuto": "0'",
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+3'",
       "marcador_local": 0,
-      "marcador_visita": 0,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "marcador_visita": 4,
+      "actualizado_en": "2026-11-27T07:47:08Z"
     },
     {
       "liga": "mex.1",
@@ -278,12 +278,12 @@
       "away_id": 219,
       "home": "Pachuca",
       "away": "Guadalajara",
-      "estado": "pre",
-      "detalle": "Thu, November 26th at 8:00 PM EST",
-      "minuto": "0'",
-      "marcador_local": 0,
-      "marcador_visita": 0,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+11'",
+      "marcador_local": 2,
+      "marcador_visita": 1,
+      "actualizado_en": "2026-11-27T07:47:08Z"
     },
     {
       "liga": "mex.1",
@@ -530,12 +530,12 @@
       "away_id": 441,
       "home": "OFI Crete",
       "away": "Anderlecht",
-      "estado": "pre",
-      "detalle": "Thu, November 26th at 3:00 PM EST",
-      "minuto": "0'",
-      "marcador_local": 0,
-      "marcador_visita": 0,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+7'",
+      "marcador_local": 1,
+      "marcador_visita": 3,
+      "actualizado_en": "2026-11-27T00:59:15Z"
     },
     {
       "liga": "uefa.europa",
@@ -544,12 +544,12 @@
       "away_id": 617,
       "home": "Juventus",
       "away": "Omonia Nicosia",
-      "estado": "pre",
-      "detalle": "Thu, November 26th at 3:00 PM EST",
-      "minuto": "0'",
-      "marcador_local": 0,
-      "marcador_visita": 0,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+3'",
+      "marcador_local": 4,
+      "marcador_visita": 1,
+      "actualizado_en": "2026-11-27T00:59:15Z"
     },
     {
       "liga": "uefa.europa",
@@ -558,12 +558,12 @@
       "away_id": 1929,
       "home": "Viktoria Plzen",
       "away": "Benfica",
-      "estado": "pre",
-      "detalle": "Thu, November 26th at 12:45 PM EST",
-      "minuto": "0'",
-      "marcador_local": 0,
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+3'",
+      "marcador_local": 4,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "actualizado_en": "2026-11-27T00:59:15Z"
     },
     {
       "liga": "uefa.europa",
@@ -572,12 +572,12 @@
       "away_id": 169,
       "home": "NEC Nijmegen",
       "away": "Stade Rennais",
-      "estado": "pre",
-      "detalle": "Thu, November 26th at 3:00 PM EST",
-      "minuto": "0'",
-      "marcador_local": 0,
-      "marcador_visita": 0,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+5'",
+      "marcador_local": 3,
+      "marcador_visita": 1,
+      "actualizado_en": "2026-11-27T00:59:15Z"
     },
     {
       "liga": "uefa.europa",
@@ -586,12 +586,12 @@
       "away_id": 987,
       "home": "Lyon",
       "away": "Lillestrom",
-      "estado": "pre",
-      "detalle": "Thu, November 26th at 3:00 PM EST",
-      "minuto": "0'",
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+6'",
       "marcador_local": 0,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "actualizado_en": "2026-11-27T00:59:15Z"
     },
     {
       "liga": "uefa.europa",
@@ -600,12 +600,12 @@
       "away_id": 490,
       "home": "Marseille",
       "away": "Levski Sofia",
-      "estado": "pre",
-      "detalle": "Thu, November 26th at 12:45 PM EST",
-      "minuto": "0'",
-      "marcador_local": 0,
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+4'",
+      "marcador_local": 1,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "actualizado_en": "2026-11-27T00:59:15Z"
     },
     {
       "liga": "uefa.europa",
@@ -614,12 +614,12 @@
       "away_id": 13083,
       "home": "Besiktas",
       "away": "Hapoel Be'er",
-      "estado": "pre",
-      "detalle": "Thu, November 26th at 12:45 PM EST",
-      "minuto": "0'",
-      "marcador_local": 0,
-      "marcador_visita": 0,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+8'",
+      "marcador_local": 2,
+      "marcador_visita": 1,
+      "actualizado_en": "2026-11-27T00:59:15Z"
     },
     {
       "liga": "uefa.europa",
@@ -628,12 +628,12 @@
       "away_id": 256,
       "home": "Torreense",
       "away": "Celtic",
-      "estado": "pre",
-      "detalle": "Thu, November 26th at 3:00 PM EST",
-      "minuto": "0'",
-      "marcador_local": 0,
-      "marcador_visita": 0,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+4'",
+      "marcador_local": 1,
+      "marcador_visita": 2,
+      "actualizado_en": "2026-11-27T00:59:15Z"
     },
     {
       "liga": "uefa.europa",
@@ -642,12 +642,12 @@
       "away_id": 20024,
       "home": "RB Salzburg",
       "away": "Ararat-Armenia",
-      "estado": "pre",
-      "detalle": "Thu, November 26th at 12:45 PM EST",
-      "minuto": "0'",
-      "marcador_local": 0,
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+5'",
+      "marcador_local": 2,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "actualizado_en": "2026-11-27T00:59:15Z"
     },
     {
       "liga": "uefa.europa",
@@ -656,12 +656,12 @@
       "away_id": 11505,
       "home": "Sunderland",
       "away": "Jagiellonia Bialystok",
-      "estado": "pre",
-      "detalle": "Thu, November 26th at 3:00 PM EST",
-      "minuto": "0'",
-      "marcador_local": 0,
-      "marcador_visita": 0,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+3'",
+      "marcador_local": 1,
+      "marcador_visita": 1,
+      "actualizado_en": "2026-11-27T00:59:15Z"
     },
     {
       "liga": "uefa.europa",
@@ -670,12 +670,12 @@
       "away_id": 89,
       "home": "Crystal Palace",
       "away": "Real Sociedad",
-      "estado": "pre",
-      "detalle": "Thu, November 26th at 3:00 PM EST",
-      "minuto": "0'",
-      "marcador_local": 0,
-      "marcador_visita": 0,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+8'",
+      "marcador_local": 2,
+      "marcador_visita": 1,
+      "actualizado_en": "2026-11-27T00:59:15Z"
     },
     {
       "liga": "uefa.europa",
@@ -684,12 +684,12 @@
       "away_id": 140,
       "home": "Sparta Prague",
       "away": "AZ Alkmaar",
-      "estado": "pre",
-      "detalle": "Thu, November 26th at 3:00 PM EST",
-      "minuto": "0'",
-      "marcador_local": 0,
-      "marcador_visita": 0,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+4'",
+      "marcador_local": 2,
+      "marcador_visita": 4,
+      "actualizado_en": "2026-11-27T00:59:15Z"
     },
     {
       "liga": "uefa.europa",
@@ -698,12 +698,12 @@
       "away_id": 103,
       "home": "Olympiacos",
       "away": "AC Milan",
-      "estado": "pre",
-      "detalle": "Thu, November 26th at 12:45 PM EST",
-      "minuto": "0'",
-      "marcador_local": 0,
-      "marcador_visita": 0,
-      "actualizado_en": "2026-11-24T19:29:05Z"
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+6'",
+      "marcador_local": 2,
+      "marcador_visita": 4,
+      "actualizado_en": "2026-11-27T00:59:15Z"
     },
     {
       "liga": "uefa.europa",
@@ -712,12 +712,12 @@
       "away_id": 2990,
       "home": "Union St.-Gilloise",
       "away": "Lech Poznan",
-      "estado": "pre",
-      "detalle": "Thu, November 26th at 12:45 PM EST",
-      "minuto": "0'",
-      "marcador_local": 0,
-      "marcador_visita": 0,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+4'",
+      "marcador_local": 2,
+      "marcador_visita": 2,
+      "actualizado_en": "2026-11-27T00:59:15Z"
     },
     {
       "liga": "uefa.europa",
@@ -726,12 +726,12 @@
       "away_id": 131,
       "home": "Dinamo Zagreb",
       "away": "Bayer Leverkusen",
-      "estado": "pre",
-      "detalle": "Thu, November 26th at 12:45 PM EST",
-      "minuto": "0'",
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+4'",
       "marcador_local": 0,
-      "marcador_visita": 0,
-      "actualizado_en": "2026-11-24T19:29:05Z"
+      "marcador_visita": 2,
+      "actualizado_en": "2026-11-27T00:59:15Z"
     },
     {
       "liga": "uefa.europa",
@@ -740,12 +740,12 @@
       "away_id": 3362,
       "home": "Ferencvaros",
       "away": "NK Celje",
-      "estado": "pre",
-      "detalle": "Thu, November 26th at 3:00 PM EST",
-      "minuto": "0'",
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+3'",
       "marcador_local": 0,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "actualizado_en": "2026-11-27T00:59:15Z"
     },
     {
       "liga": "uefa.europa",
@@ -754,12 +754,12 @@
       "away_id": 3746,
       "home": "TSG Hoffenheim",
       "away": "SK Sturm Graz",
-      "estado": "pre",
-      "detalle": "Thu, November 26th at 3:00 PM EST",
-      "minuto": "0'",
-      "marcador_local": 0,
-      "marcador_visita": 0,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+4'",
+      "marcador_local": 3,
+      "marcador_visita": 1,
+      "actualizado_en": "2026-11-27T00:59:15Z"
     },
     {
       "liga": "uefa.europa",
@@ -768,12 +768,12 @@
       "away_id": 349,
       "home": "Celta Vigo",
       "away": "AFC Bournemouth",
-      "estado": "pre",
-      "detalle": "Thu, November 26th at 12:45 PM EST",
-      "minuto": "0'",
-      "marcador_local": 0,
-      "marcador_visita": 0,
-      "actualizado_en": "2026-11-24T19:29:05Z"
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+4'",
+      "marcador_local": 1,
+      "marcador_visita": 2,
+      "actualizado_en": "2026-11-27T00:59:15Z"
     }
   ],
   "advertencia": null

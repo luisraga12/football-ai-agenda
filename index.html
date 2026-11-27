@@ -382,6 +382,230 @@
   .h-badge.ok{background:var(--accent-soft);color:var(--accent-strong)}
   .h-badge.no{background:var(--live-soft);color:var(--live)}
 
+.bsd-block{border-top:1px dashed var(--line);margin-top:10px;padding-top:4px}
+.bsd-h{color:var(--accent-strong)}
+</style>
+<style>
+/* ==========================================================================
+   Rediseño visual gamer + fútbol — Football AI Agenda
+   SOLO VISUAL (CSS). No toca HTML ni JavaScript: esta hoja se enlaza
+   DESPUÉS del <style> interno de index.html y partido.html, así sus
+   variables y reglas ganan por cascada y nada de la lógica cambia.
+   Paleta del preview aprobado preview-rediseno-gamer.html:
+   fondo casi negro #07090D, verde lima #A3E635, cian #22D3EE, texto #F8FAFC.
+   Contraste: el lima va sobre negro o como texto sobre fondo oscuro;
+   nunca hay texto neón sobre fondo neón. Los escudos siguen siendo
+   monogramas (no hay imágenes de escudos en el repo).
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Archivo:wght@700;800;900&display=swap');
+
+:root{
+  --bg:#07090D; --surface:#0D1117; --surface-2:#111827; --surface-3:#1B2433;
+  --ink:#F8FAFC; --ink-2:#E2E8F0; --muted:#94A3B8; --line:#1F2A37;
+  --accent:#A3E635; --accent-strong:#84CC16; --accent-soft:rgba(163,230,53,.14); --on-accent:#0B1220;
+  --blue:#22D3EE; --blue-soft:rgba(34,211,238,.14);
+  --live:#FF5470; --live-soft:rgba(255,84,112,.14);
+  --amber:#FACC15; --amber-soft:rgba(250,204,21,.14);
+  --hero-ink:#F8FAFC; --shadow:0 18px 40px rgba(0,0,0,.55); --radius:18px;
+}
+/* El modo oscuro del sistema no debe devolver el fondo claro original. */
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#07090D; --surface:#0D1117; --surface-2:#111827; --surface-3:#1B2433;
+    --ink:#F8FAFC; --ink-2:#E2E8F0; --muted:#94A3B8; --line:#1F2A37;
+    --accent:#A3E635; --accent-strong:#84CC16; --accent-soft:rgba(163,230,53,.14); --on-accent:#0B1220;
+    --blue:#22D3EE; --blue-soft:rgba(34,211,238,.14);
+    --live:#FF5470; --live-soft:rgba(255,84,112,.14);
+    --amber:#FACC15; --amber-soft:rgba(250,204,21,.14);
+    --hero-ink:#F8FAFC; --shadow:0 18px 40px rgba(0,0,0,.55);
+  }
+}
+
+body{background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,sans-serif}
+h1,h2,h3,.num{font-family:"Archivo","Chakra Petch",system-ui,sans-serif}
+h2{font-weight:900;text-transform:uppercase;letter-spacing:.02em}
+h3{font-weight:800;text-transform:uppercase;letter-spacing:.03em}
+a{color:var(--ink)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+/* ---------- Héroe y cabecera (estilo del preview) ---------- */
+.hero{background:radial-gradient(1000px 500px at 70% -10%,rgba(163,230,53,.16),transparent 60%),radial-gradient(800px 400px at 10% 0%,rgba(34,211,238,.12),transparent 60%),#07090D;border-bottom:3px solid var(--accent)}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .sub{color:#E2E8F0}
+.hero-date{background:rgba(10,14,7,.72);color:#E2E8F0;border:1px solid rgba(255,255,255,.22)}
+.hero .hstat{background:rgba(10,14,7,.68);border:1px solid rgba(255,255,255,.16)}
+.hero .hstat b{color:#fff}
+.hero .hstat span{color:#CBD5E1}
+.live-dot{background:rgba(10,14,7,.72);color:#fff}
+
+/* ---------- Filtros y chips ---------- */
+.filters{background:var(--bg);border-bottom:1px solid var(--line)}
+.chip{background:var(--surface);border:1px solid var(--line);color:var(--ink-2)}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.chip small{color:inherit;opacity:.75}
+.sort-label{color:var(--muted)}
+
+/* ---------- Ligas ---------- */
+.league-btn{background:var(--surface);border:1px solid var(--line);color:var(--ink)}
+.league-btn:hover{border-color:var(--accent)}
+.league-btn[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--ink)}
+.league-btn .mono{background:var(--surface-3);color:var(--accent)}
+.league-btn .count{background:var(--surface-3);color:var(--muted)}
+
+/* ---------- Tarjetas estilo carta FIFA ---------- */
+.card{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--line);box-shadow:var(--shadow)}
+.card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.card.live{border-top-color:var(--live)}
+/* Borde neón por valor, según el semáforo que ya trae la tarjeta. */
+.card:has(.semaforo.verde){border-top:3px solid var(--accent);box-shadow:0 0 0 1px rgba(163,230,53,.28),var(--shadow)}
+.card:has(.semaforo.amarillo){border-top:3px solid var(--amber)}
+.card:has(.semaforo.rojo){border-top:3px solid var(--live)}
+.card-head .crest{background:#0B1220;border:2px solid var(--blue);color:var(--accent)}
+.card-head .team{color:var(--ink)}
+.card-head .vs{color:var(--muted)}
+.card-head .score{color:var(--ink)}
+.tag{background:var(--surface-3);color:var(--ink-2);border:1px solid var(--line)}
+.tag.live{background:var(--live-soft);color:#FDA4AF;border-color:rgba(255,84,112,.4)}
+.tag.final{background:var(--surface-3);color:var(--muted)}
+.meta{color:var(--muted)}
+.prob{color:var(--ink-2)}
+.prob b{color:var(--ink)}
+.bar{background:var(--surface-3)}
+.bar i{background:linear-gradient(90deg,var(--accent),var(--blue))}
+
+/* ---------- Momios, EV y pick ---------- */
+.odds{background:var(--surface-2);border:1px solid var(--line)}
+.odd{background:var(--surface);border:1px solid var(--line);color:var(--ink)}
+.odd b{color:var(--ink)}
+.odd span{color:var(--muted)}
+.ev.pos{color:var(--accent)}
+.ev.neg{color:var(--live)}
+.pick{background:var(--accent-soft);border:1px dashed var(--accent-strong);color:var(--ink-2)}
+.pick b{color:var(--accent)}
+.note{background:var(--accent-soft);border:1px dashed var(--accent-strong);color:var(--ink-2)}
+.warn{background:var(--amber-soft);color:var(--ink-2)}
+
+/* ---------- Semáforo ---------- */
+.semaforo.verde{background:rgba(163,230,53,.14);border:1px solid rgba(163,230,53,.35);color:#D9F99D}
+.semaforo.amarillo{background:var(--amber-soft);border:1px solid rgba(250,204,21,.35);color:#FEF08A}
+.semaforo.rojo{background:var(--live-soft);border:1px solid rgba(255,84,112,.35);color:#FDA4AF}
+.semaforo b{color:inherit}
+.semaforo p{color:var(--ink-2)}
+.sem-dot{border:1px solid var(--line)}
+
+/* ---------- Paneles, mercados y tablas ---------- */
+.panel{background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow)}
+.panel h2,.panel h3{color:var(--ink)}
+.market{border:1px solid var(--line);background:var(--surface-2)}
+.market-head{color:var(--ink)}
+.market-head span{color:var(--muted)}
+.mrow{border-top:1px solid var(--line);color:var(--ink-2)}
+.mrow b{color:var(--ink)}
+.mrow .ev{color:var(--muted)}
+.mrow .ev.pos{color:var(--accent)}
+.mrow .ev.neg{color:var(--live)}
+table{color:var(--ink-2)}
+th{color:var(--muted);border-bottom:1px solid var(--line)}
+td{border-bottom:1px solid var(--line)}
+.ok{color:#4ADE80}
+.bad{color:#F87171}
+.hit{color:var(--accent-strong)}
+
+/* ---------- Botones, parlay y modal ---------- */
+.btn{background:var(--accent);color:var(--on-accent);border:1px solid var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:.03em}
+.btn:hover{background:#B8F345}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.ghost:hover{border-color:var(--accent);color:var(--accent)}
+.add-btn{background:var(--accent);color:var(--on-accent)}
+.add-btn[aria-pressed="true"]{background:var(--surface-3);color:var(--ink);border-color:var(--accent)}
+.clear-btn{background:transparent;color:var(--ink-2);border:1px solid var(--line)}
+.clear-btn:hover{border-color:var(--live);color:var(--live)}
+.parlay-item{background:var(--surface-2);border:1px solid var(--line);color:var(--ink-2)}
+.parlay-item b{color:var(--ink)}
+.modal-card{background:var(--surface);border:1px solid var(--line);color:var(--ink)}
+.modal-card h3{color:var(--ink)}
+
+/* ---------- Calculadora y formularios ---------- */
+input,select{background:var(--surface-2);color:var(--ink);border:1px solid var(--line)}
+input[type="range"]{accent-color:var(--accent);background:transparent;border:0}
+.calc{background:var(--surface);border:1px solid var(--line)}
+.calc label{color:var(--ink-2)}
+.calc-out{background:var(--surface-2);border:1px solid var(--line)}
+.calc-out .good{color:var(--accent)}
+.calc-out .bad{color:var(--live)}
+.calc-out b{color:var(--ink)}
+
+/* ---------- Secciones del preview (por si se reutilizan) ---------- */
+.topbar{background:#0B1220;border-bottom:1px solid var(--line)}
+.stats .stat{background:var(--surface);border:1px solid var(--line)}
+.stats .stat b{color:var(--accent)}
+.stats .stat span{color:var(--muted)}
+.grid2 .panel{border-top:3px solid var(--blue)}
+.kv b{color:var(--ink)}
+.kv span{color:var(--muted)}
+
+/* ---------- Pie y lectura ---------- */
+footer{color:var(--muted)}
+.read-card{background:var(--surface);border:1px solid var(--line)}
+.read-card h3{color:var(--ink)}
+
+/* ---------- Móvil: nada se sale del ancho ---------- */
+@media (max-width:640px){
+  .wrap{padding:0 14px}
+  .hero-in{padding:36px 0 26px}
+  .hero h1{font-size:clamp(2rem,9vw,2.6rem)}
+  .filters{overflow-x:auto}
+  .chip{white-space:nowrap}
+  .card{padding:14px}
+  .odds{grid-template-columns:repeat(2,1fr)}
+  .hist{overflow-x:auto}
+  table{min-width:640px}
+  .modal-card{margin:12px}
+}
+
+/* ---------- Corrección 27 nov 2026 (Empleado 2): foto del héroe ---------- */
+/* El héroe real trae una foto de estadio embebida (<img class="bg">, base64)
+   que el preview aprobado no tenía; estilo-gamer.css no la cubría, así que
+   sin esta regla la foto seguiría tapando el fondo gamer. Solo visual. */
+.hero img{display:none}
+/* Tarjetas estilo carta FIFA (prototipo aprobado): número grande de EV, barras 1X2 y cajas de mercados */
+.match-top{flex-wrap:wrap;gap:6px}
+.fifa-badge{margin-left:auto;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border-radius:8px;border:1px solid #334155;color:#e2e8f0;background:#0f172a;white-space:nowrap}
+.fifa-badge.live{color:#fff;background:#dc2626;border-color:#f87171;animation:fifaPulse 1.2s infinite}
+.fifa-badge.final{color:#cbd5e1}
+.fifa-badge.alto{color:#052e16;background:#a3e635;border-color:#a3e635}
+.fifa-badge.medio{color:#422006;background:#facc15;border-color:#facc15}
+.fifa-badge.none{color:#94a3b8}
+@keyframes fifaPulse{0%,100%{box-shadow:0 0 0 0 rgba(220,38,38,.55)}50%{box-shadow:0 0 0 7px rgba(220,38,38,0)}}
+.fifa-hero{display:flex;gap:14px;align-items:stretch;margin:10px 0 4px}
+.fifa-rating{flex:0 0 92px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;background:#0b1220;border:1px solid #1e293b;border-radius:14px;padding:10px 6px;text-align:center}
+.fifa-rating.ev-good,.fifa-rating.verde{border-color:#22c55e;box-shadow:0 0 0 1px #22c55e inset,0 0 18px rgba(34,197,94,.25)}
+.fifa-rating.ev-mid,.fifa-rating.amarillo{border-color:#eab308;box-shadow:0 0 0 1px #eab308 inset}
+.fifa-rating.ev-bad,.fifa-rating.rojo{border-color:#475569}
+.fifa-rating.ev-none{border-color:#334155}
+.fifa-num{font-size:40px;line-height:1;font-weight:900;letter-spacing:-1px}
+.fifa-rating.ev-good .fifa-num,.fifa-rating.verde .fifa-num{color:#4ade80}
+.fifa-rating.ev-mid .fifa-num,.fifa-rating.amarillo .fifa-num{color:#facc15}
+.fifa-rating.ev-bad .fifa-num,.fifa-rating.rojo .fifa-num,.fifa-rating.ev-none .fifa-num{color:#e2e8f0}
+.fifa-ev{font-size:10px;letter-spacing:.14em;color:#94a3b8;font-weight:700}
+.fifa-pick{font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#e2e8f0;text-align:center;line-height:1.25}
+.fifa-hero .teams{flex:1;min-width:0}
+.fifa-probs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+.fifa-prob b{display:block;font-size:19px;line-height:1.1}
+.fifa-prob>span:first-of-type{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#94a3b8}
+.fifa-bar{display:block;height:6px;background:#1e293b;border-radius:99px;overflow:hidden;margin-top:5px}
+.fifa-bar i{display:block;height:100%;background:linear-gradient(90deg,#22d3ee,#a3e635)}
+.fifa-markets{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 10px}
+.fifa-mkt{background:#0b1220;border:1px solid #1e293b;border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.fifa-mkt-t{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#cbd5e1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fifa-mkt b{font-size:19px;line-height:1.15}
+.fifa-mkt-s{font-size:12px;color:#94a3b8}
+article.match[data-value="1"]{border-color:rgba(34,197,94,.65)}
+article.match[data-value="0"]{border-color:rgba(234,179,8,.6)}
+article.match[data-value="-1"]{border-color:rgba(148,163,184,.5)}
+article.match[data-status="live"]{border-color:rgba(220,38,38,.75)} article.match[data-status="finished"]{border-color:rgba(148,163,184,.45)}
+@media (max-width:640px){.fifa-hero{gap:10px}.fifa-rating{flex-basis:78px}.fifa-num{font-size:32px}.fifa-prob b,.fifa-mkt b{font-size:17px}}
 </style>
 </head>
 <body>
@@ -392,7 +616,7 @@
   <div class="hero-in wrap">
     <div class="hero-top">
       <span class="live-dot"><i></i> MODO EN VIVO · TU ESTILO</span>
-      <span class="hero-date">27–29 de noviembre de 2026 · Ciudad Victoria, MX</span>
+      <span class="hero-date">24–29 de noviembre de 2026 · Ciudad Victoria, MX</span>
     </div>
     <h1>Tu agenda de fútbol, <em>con cerebro.</em></h1>
     <p class="sub">Una agenda limpia y rápida, con tarjetas que te cuentan por qué importa cada partido y una capa de IA encima que compara probabilidad contra momio y solo te avisa cuando hay valor. Sin streams pirata, sin copiar a nadie: <strong>con tus ligas, tus mercados y tus reglas.</strong></p>
@@ -408,15 +632,15 @@
 <div class="toolbar">
   <div class="wrap toolbar-in">
     <div class="days" role="group" aria-label="Día">
-      <button class="day" type="button" data-day="all" aria-pressed="true">Todos<small>27–29 nov</small></button>
-      <button class="day" type="button" data-day="vie" aria-pressed="false">Viernes<small>Vie 27</small></button>
+      <button class="day" type="button" data-day="all" aria-pressed="true">Todos<small>24–29 nov</small></button>
+      <button class="day" type="button" data-day="mar" aria-pressed="false">Martes<small>Mar 24</small></button><button class="day" type="button" data-day="mie" aria-pressed="false">Miércoles<small>Mié 25</small></button><button class="day" type="button" data-day="jue" aria-pressed="false">Jueves<small>Jue 26</small></button><button class="day" type="button" data-day="vie" aria-pressed="false">Viernes<small>Vie 27</small></button>
       <button class="day" type="button" data-day="sab" aria-pressed="false">Sábado<small>Sáb 28</small></button>
       <button class="day" type="button" data-day="dom" aria-pressed="false">Domingo<small>Dom 29</small></button>
     </div>
     <div class="tabs" role="group" aria-label="Filtrar partidos por estado">
       <button class="tab" type="button" data-status="all" aria-pressed="true">Todos</button>
       <button class="tab" type="button" data-status="live" aria-pressed="false">En vivo</button>
-      <button class="tab" type="button" data-status="upcoming" aria-pressed="false">Próximos</button>
+      <button class="tab" type="button" data-status="upcoming" aria-pressed="false">Próximos</button><button class="tab" type="button" data-status="finished" aria-pressed="false">Finalizados</button>
     </div>
     <div class="sort-ctl" role="group" aria-label="Ordenar tarjetas por valor">
       <span class="sort-label">Ordenar:</span>
@@ -488,9 +712,9 @@
       </div>
       <div class="agenda-head" id="fsHead">
         <h2>Agenda del fin de semana · 27–29 nov</h2>
-        <span class="demo-note">Probabilidades Poisson verificadas por el jefe 19 nov 2026 · Partidos del 27–29 nov · Horas de Monterrey (CST)</span>
+        <span class="demo-note">Probabilidades Poisson · Partidos del 27–29 nov · Horas de Monterrey (CST)</span>
       </div>
-      <p class="rule-note" id="fsNote"><strong>Tablas al 18 nov 2026:</strong> Liga MX Apertura — Cruz Azul líder, 32 pts en 16 partidos, 2 puntos sobre América; Brasileirão — Flamengo 1º 76 pts, Palmeiras 2º 73, Cruzeiro 3º 60 (antes de la jornada 35).</p>
+      <p class="rule-note" id="fsNote"><strong>Tablas al 26 nov 2026:</strong> Liga MX Apertura — Guadalajara líder, 33 pts en 17 partidos.</p>
       <div id="matchList">
 <p class="detail-pending">Cargando partidos…</p>
 
@@ -603,6 +827,36 @@
 </table></div>
 </section>
 <!-- HISTORIAL-FIN:semana-1 -->
+<!-- HISTORIAL-INICIO:semana-2 -->
+<section class="historial">
+<h2>Cómo le fue al modelo — semana-2</h2>
+<p class="historial-resumen"><span class="h-chip">Favorito 1X2: <strong>0/0 (0%)</strong></span><span class="h-chip">Más 2.5: —</span><span class="h-chip">Menos 2.5: —</span><span class="h-chip">BTTS: —</span><span class="h-chip">No-BTTS: —</span><span class="h-chip">Empates: 0 de 0</span></p>
+<p class="historial-fecha">Revisión del jueves, fecha de cálculo 2026-11-26 (México). Semana 2 aún sin jugar: 0 de 20 partidos terminados; se juega 27–29 nov 2026.</p>
+<div class="historial-scroll"><table class="historial-tabla">
+<tr><th>Fecha</th><th>Liga</th><th>Partido</th><th>Resultado</th><th>1X2</th><th>Total</th><th>BTTS</th></tr>
+<tr><td>Vie 27 nov</td><td>Bundesliga</td><td>Werder Bremen vs Borussia Mönchengladbach</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Vie 27 nov</td><td>Serie A</td><td>Venezia vs Bologna</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Vie 27 nov</td><td>Premier League</td><td>Nottingham Forest vs Chelsea</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Vie 27 nov</td><td>LaLiga</td><td>Levante vs Racing Santander</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Sáb 28 nov</td><td>Bundesliga</td><td>Hamburg SV vs Bayern Munich</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Sáb 28 nov</td><td>Premier League</td><td>Manchester United vs Brentford</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Sáb 28 nov</td><td>LaLiga</td><td>Elche vs Atlético Madrid</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Sáb 28 nov</td><td>Bundesliga</td><td>VfB Stuttgart vs Eintracht Frankfurt</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Sáb 28 nov</td><td>Serie A</td><td>Internazionale vs Genoa</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Sáb 28 nov</td><td>LaLiga</td><td>Real Madrid vs Alavés</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Sáb 28 nov</td><td>Liga MX</td><td>Atlas vs Toluca</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Sáb 28 nov</td><td>Liga MX</td><td>América vs Monterrey</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Dom 29 nov</td><td>Premier League</td><td>Everton vs Liverpool</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Dom 29 nov</td><td>Serie A</td><td>Sassuolo vs Napoli</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Dom 29 nov</td><td>LaLiga</td><td>Deportivo vs Barcelona</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Dom 29 nov</td><td>Premier League</td><td>Arsenal vs Manchester City</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Dom 29 nov</td><td>Bundesliga</td><td>Borussia Dortmund vs Bayer Leverkusen</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Dom 29 nov</td><td>Serie A</td><td>Como vs Juventus</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Dom 29 nov</td><td>Liga MX</td><td>Guadalajara vs Pachuca</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Dom 29 nov</td><td>Liga MX</td><td>Cruz Azul vs León</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+</table></div>
+</section>
+<!-- HISTORIAL-FIN:semana-2 -->
   </section>
 
   <!-- EDITORIAL -->
@@ -684,8 +938,7 @@
       <article class="market"><span class="tag">O/U</span><h3>Over / Under de goles</h3><p>Líneas 1.5, 2.5 y 3.5 según el xG combinado y el ritmo histórico de ambos equipos.</p><p>En vivo es tu mercado fuerte: el ritmo del segundo tiempo dice más que la previa.</p></article>
       <article class="market"><span class="tag">BTTS</span><h3>Ambos equipos anotan</h3><p>Cruza ataque y fragilidad defensiva: equipos que generan mucho y conceden en casi todos sus partidos.</p><p>Ideal en ligas abiertas como Bundesliga y Eredivisie.</p></article>
       <article class="market"><span class="tag">AH</span><h3>Hándicap asiático</h3><p>Protege cuando el favorito es claro pero su momio 1X2 es demasiado bajo para tener valor.</p><p>El −1.0 o −1.5 convierte un “seguro sin valor” en una apuesta con precio justo.</p></article>
-      <article class="market"><span class="tag">CS</span><h3>Marcador exacto</h3><p>Los 3 marcadores más probables de la matriz de Poisson, con su probabilidad real.</p><p>Mercado de momios altos y acierto bajo: solo como lectura, nunca como base del parlay.</p></article>
-    </div>
+          </div>
   </section>
 
   <!-- ESTILO + CÓMO DECIDE -->
@@ -705,7 +958,7 @@
         <ul class="steps">
           <li><b>Datos reales</b><p>Resultados y xG de ESPN (API pública sin clave); momios DraftKings vía ESPN. Nada de datos inventados ni señales pirata.</p></li>
           <li><b>Modelo de goles</b><p>Poisson / Dixon-Coles estima los goles esperados de cada equipo y construye la matriz de marcadores.</p></li>
-          <li><b>Probabilidades propias</b><p>De la matriz salen 1X2, Over/Under, BTTS y marcadores exactos, sin mirar todavía el momio.</p></li>
+          <li><b>Probabilidades propias</b><p>De la matriz salen 1X2, Over/Under, BTTS, sin mirar todavía el momio.</p></li>
           <li><b>Comparación y semáforo</b><p>Se cruza tu probabilidad con la implícita de la casa, se calcula el EV y el semáforo marca si hay valor o no.</p></li>
         </ul>
       </article>
@@ -796,7 +1049,7 @@ function __initPagina(){
       var okDay = (currentDay === "all" || m.getAttribute("data-day") === currentDay);
       var okStatus = true;
       if (currentStatus === "live") okStatus = m.getAttribute("data-status") === "live";
-      else if (currentStatus === "upcoming") okStatus = m.getAttribute("data-status") === "upcoming";
+      else if (currentStatus === "upcoming") okStatus = m.getAttribute("data-status") === "upcoming"; else if (currentStatus === "finished") okStatus = m.getAttribute("data-status") === "finished"; /* Novena ronda P1-5: filtro de estado "Finalizados". */
       var okValue = (!onlyValue || bestEv(m) >= 0);
       var show = okLeague && okStatus && okDay && okValue;
       m.style.display = show ? "" : "none";
@@ -832,7 +1085,7 @@ function __initPagina(){
      de día y estado, que también son globales): ordena las dos listas
      (#mwList entre semana y #matchList fin de semana) y el interruptor
      "Solo con valor" se combina con día, liga y estado en applyFilters.
-     El EV del mejor pick se lee de la tarjeta misma (chip del semáforo:
+     El EV del mejor pick se lee de la tarjeta misma (caja FIFA del pick: .fifa-markets .fifa-mkt:nth-child(2) b.num; de respaldo, el chip del semáforo:
      .chip.ev, .chip.ev-mid o .chip.ev-bad, el último "+X.X%" del texto). Sin datos nuevos.
      "Por fecha" restaura el orden original de cada lista. */
   var sortMode = "fecha";
@@ -845,7 +1098,7 @@ function __initPagina(){
     });
   });
   function bestEv(article){
-    var chip = article.querySelector(".chip.ev strong, .chip.ev-mid strong, .chip.ev-bad strong");
+    var chip = article.querySelector(".fifa-markets .fifa-mkt:nth-child(2) b.num, .chip.ev strong, .chip.ev-mid strong, .chip.ev-bad strong");
     if (!chip) return -Infinity;
     var nums = chip.textContent.match(/[+−\-]?\d+(?:[.,]\d+)?\s*%/g);
     if (!nums) return -Infinity;
@@ -905,19 +1158,27 @@ function __initPagina(){
         out = { odds: parseFloat(t.slice(mercado.length + 1)) };
       }
     });
-    return out;
+    if (!out){
+    var btn = article.querySelector(".add-btn");
+    if (btn){
+      var pick = (btn.getAttribute("data-pick") || "").split("·").pop().trim();
+      var od = parseFloat(btn.getAttribute("data-odds"));
+      if (pick && pick.toLowerCase().indexOf(mercado.toLowerCase()) === 0 && od > 1) out = {odds: od};
+    }
+  }
+  return out;
   }
   function veredicto(article){
-    var chip1x2 = null;
+    var chip1x2 = (function(){var ns=article.querySelectorAll(".fifa-probs .fifa-prob b.num");if(ns.length!==3)return null;return "1X2: "+ns[0].textContent+" · "+ns[1].textContent+" · "+ns[2].textContent;})();
     article.querySelectorAll(".chip").forEach(function(c){
       if (c.textContent.indexOf("1X2:") === 0) chip1x2 = c.textContent;
     });
-    var chipEv = article.querySelector(".chip.ev strong, .chip.ev-mid strong, .chip.ev-bad strong");
+    var chipEv = (function(){var m2=article.querySelector(".fifa-markets .fifa-mkt:nth-child(2)");if(!m2)return null;var t=m2.querySelector(".fifa-mkt-t"),n=m2.querySelector("b.num"),s=m2.querySelector(".fifa-mkt-s");if(!t||!n||!s||s.textContent.indexOf("Semáforo ")!==0)return null;return s.textContent.replace("Semáforo ","")+" · "+t.textContent+" "+n.textContent;})()
     if (!chip1x2 || !chipEv) return null;
     var p = chip1x2.match(/([\d.]+)% · ([\d.]+)% · ([\d.]+)%/);
     if (!p) return null;
     var p1 = parseFloat(p[1]), px = parseFloat(p[2]), p2 = parseFloat(p[3]);
-    var m = chipEv.textContent.match(/^(\S+) · (.+) ([+−\-][\d.,]+)%$/);
+    var m = chipEv.match(/^(\S+) · (.+) ([+−\-][\d.,]+)%$/);
     if (!m) return null;
     var mercado = m[2].trim();
     var ev = parseFloat(m[3].replace("−", "-").replace(",", "."));
@@ -1956,7 +2217,7 @@ var RADIO = {}; /* Integración Semana 7: la Radiografía llega por fetch
       .replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
   }
   function pintarMarcadores(){
-    function aplicar(datos){
+    /* Novena ronda P1-9: el nombre en pantalla ("Hapoel Be'er Sheva") se vuelve al dato ("Hapoel Be'er") para buscar el partido en vivo.json. */ function nombreDato(n){ var mapa = {"Hapoel Be'er Sheva": "Hapoel Be'er"}; return mapa[n] || n; } /* Novena ronda P0-1: cuando un partido termina (o entra en descuento) con la página abierta, la tarjeta deja de mostrar picks pre-partido: se ocultan semáforo y derivados, y el bloque de momios/parlay/BSD se sustituye por la línea de terminado/descuento. Idempotente (data-sin-picks). */ function limpiarTarjeta(card, p, estado){ if (!card || card.getAttribute("data-sin-picks")) return; card.setAttribute("data-sin-picks", "1"); card.querySelectorAll(".match-link .chip.ev, .match-link .chip.ev-mid, .match-link .chip.ev-bad, .match-link .derived").forEach(function(el){ el.style.display = "none"; }); var odds = card.querySelector(".odds"); if (odds){ var nb = card.querySelectorAll(".team b"); var home = nb.length >= 2 ? nb[0].textContent : ""; var away = nb.length >= 2 ? nb[1].textContent : ""; var sc = (typeof p.marcador_local === "number" && typeof p.marcador_visita === "number") ? (p.marcador_local + " – " + p.marcador_visita) : "–"; var titulo = (estado === "post") ? ("Final: " + home + " " + sc + " " + away) : ("En vivo · " + (p.minuto || "descuento") + ": " + home + " " + sc + " " + away); var nota = (estado === "post") ? "Partido terminado sin momios: no hay EV ni pick." : "En vivo en el descuento: sin picks pre-partido."; odds.innerHTML = '<div class="derived-h"><span>Momios y valor esperado</span></div><p><b>' + titulo + '</b></p><p class="detail-note">' + nota + '</p>'; } if (estado === "post" && typeof p.marcador_local === "number" && typeof p.marcador_visita === "number"){ var sc2 = "Final: " + p.marcador_local + " – " + p.marcador_visita; card.querySelectorAll(".match-foot .chip").forEach(function(ch){ if (ch.textContent.indexOf("Momios ") === 0) ch.textContent = sc2; }); } } function aplicar(datos){
       var porPartido = {};
       (datos || []).forEach(function(p){
         porPartido[normTxt(p.home) + "|" + normTxt(p.away)] = p;
@@ -1965,7 +2226,7 @@ var RADIO = {}; /* Integración Semana 7: la Radiografía llega por fetch
       document.querySelectorAll(".match").forEach(function(card){
         var nombres = card.querySelectorAll(".team b");
         if (nombres.length < 2) return;
-        var p = porPartido[normTxt(nombres[0].textContent) + "|" + normTxt(nombres[1].textContent)];
+        var p = porPartido[normTxt(nombreDato(nombres[0].textContent)) + "|" + normTxt(nombreDato(nombres[1].textContent))];
         if (!p) return;
         var scores = card.querySelectorAll(".team .score");
         var tiempo = card.querySelector(".m-time");
@@ -1975,7 +2236,7 @@ var RADIO = {}; /* Integración Semana 7: la Radiografía llega por fetch
           scores[1].textContent = p.marcador_visita;
           scores[0].classList.remove("dim");
           scores[1].classList.remove("dim");
-          card.setAttribute("data-status", "live");
+          card.setAttribute("data-status", "live"); if (/^90/.test(String(p.minuto || "").trim())) limpiarTarjeta(card, p, "in"); /* Novena ronda P0-1: en descuento, sin picks pre-partido. */
           if (tiempo){
             if (!tiempo.getAttribute("data-orig")) tiempo.setAttribute("data-orig", tiempo.textContent);
             tiempo.innerHTML = '<span class="pulse-dot"></span>' + (p.minuto || "En vivo");
@@ -1989,7 +2250,7 @@ var RADIO = {}; /* Integración Semana 7: la Radiografía llega por fetch
           scores[1].textContent = p.marcador_visita;
           scores[0].classList.remove("dim");
           scores[1].classList.remove("dim");
-          card.setAttribute("data-status", "finished");
+          card.setAttribute("data-status", "finished"); limpiarTarjeta(card, p, "post"); /* Novena ronda P0-1: terminado, sin picks pre-partido. */
           if (tiempo){
             if (!tiempo.getAttribute("data-orig")) tiempo.setAttribute("data-orig", tiempo.textContent);
             tiempo.textContent = "Final";
@@ -2130,7 +2391,8 @@ var RADIO = {}; /* Integración Semana 7: la Radiografía llega por fetch
     xi: { mw: "data/semana-2-entresemana/alineacion-probable.json", fs: "data/semana-2/alineacion-probable.json" },
     raw: { mw: "data/semana-2-entresemana/raw/teams_last5.json", fs: "data/semana-2/raw/teams_last5.json" },
     tendencias: { mw: "data/semana-2-entresemana/tendencias.json", fs: "data/semana-2/tendencias.json" },
-    mapas: "data/mapas.json"
+    mapas: "data/mapas.json",
+  momios: { mw: "data/semana-2-entresemana/raw/momios.json", fs: "data/semana-2/raw/momios.json" }
   };
 
   /* Escudos de los 55 partidos de data/ (35 + 20): los 28 de la base
@@ -2293,9 +2555,9 @@ var RADIO = {}; /* Integración Semana 7: la Radiografía llega por fetch
   /* Semáforo: manda el campo semaforo de ev.json; si falta, se deriva del EV.
      Verde = EV >= +5% (único con botón de parlay, regla del jefe). */
   function semaforoDe(m){
-    if (m == null || typeof m.mejor_ev !== "number" || m.mejor_pick == null) return null;
+    if (m == null || typeof m.mejor_ev !== "number" || m.mejor_pick == null) return null; if (m.estado_partido === "post" || (m.estado_partido === "in" && typeof m._minuto === "string" && /^90/.test(m._minuto.trim()))) return null; // Novena ronda P0-1/P1-1: terminado o en descuento (90'+) no tiene semáforo ni pick pre-partido.
     var s = (m.semaforo || "").toLowerCase();
-    var evPct = m.mejor_ev * 100;
+    var evPct = m.mejor_ev * 100; var pick = String(m.mejor_pick || ""); if (pick.indexOf("Spread") === 0){ var b = (typeof bsdDePartido === "function") ? bsdDePartido(m) : null; var sp = (m.mercados && m.mercados.spread) ? m.mercados.spread : null; var ah = (b && b.asian_handicap) ? b.asian_handicap : null; if (sp && ah && typeof ah.line === "number" && typeof sp.home_linea === "number" && sp.home_linea === ah.line && ah.push !== true && typeof sp.p_cubre_local === "number"){ var evB = null; if (pick.indexOf("Spread local") === 0 && typeof ah.home === "number") evB = (sp.p_cubre_local / 100) * ah.home - 1; else if (pick.indexOf("Spread visita") === 0 && typeof ah.away === "number") evB = ((100 - sp.p_cubre_local) / 100) * ah.away - 1; if (typeof evB === "number" && isFinite(evB)){ evPct = evB * 100; s = ""; } } } // Novena ronda P1-3: EV del semáforo con el momio BSD (el que muestra la tarjeta) cuando el pick es spread y la línea coincide; s="" para que el color se derive de ese EV.
     if (s === "verde" || (s === "" && evPct >= 5)) return {color: "Verde", cls: "ev", value: "1", ev: evPct};
     if (s === "amarillo" || (s === "" && evPct >= 0)) return {color: "Amarillo", cls: "ev-mid", value: "0", ev: evPct};
     if (s === "rojo" || (s === "" && evPct < 0)) return {color: "Rojo", cls: "ev-bad", value: "0", ev: evPct};
@@ -2306,9 +2568,101 @@ var RADIO = {}; /* Integración Semana 7: la Radiografía llega por fetch
   function evColor(ev){
     return (typeof ev === "number" && ev < 0) ? "var(--live)" : "var(--accent-strong)";
   }
-  function celdaMomio(label, momio, ev, prob){
+  /* ---------- Mercados BSD (Bzzoiro, segunda fuente) · Séptima ronda, Tarea 1 ----------
+   Fuente: momios.json (misma ruta relativa que ev.json). Solo se muestra un mercado
+   BSD cuando ese partido trae la clave "bsd" en momios.json; sin ella no se muestra
+   nada inventado. Esquema (scripts/recolectar_momios.py, docstring de recolectar_bsd):
+     bsd = {proveedor:"BSD-consensus", bsd_event_id:int,
+            btts:{yes,no}|null,
+            asian_handicap:{line,home,away,push,bookmakers}|null,
+            corners:{line,over,under}|null,
+            sin_momio:["btts"|"asian_handicap"|"total_corners"]}
+   EV = probabilidad del modelo × momio decimal − 1.
+   - BTTS: p_btts / p_no_btts de ev.json (mercados.btts).
+   - Hándicap asiático: solo si la línea BSD coincide con la línea spread de
+     ev.json (mercados.spread.home_linea) y no admite devolución (push false);
+     entonces P(cubre local) = p_cubre_local y P(cubre visita) = 1 − p_cubre_local.
+     Con devolución o línea distinta se muestran solo los momios, sin EV.
+   - Córners: el modelo Poisson no estima córners; solo se muestran los momios, sin EV.
+   La carga es fail-soft: si momios.json no se puede leer, simplemente no hay BSD. */
+var BSD_DATOS = {};
+var BSD_CUENTA = {partidos: 0, btts: 0, ah: 0, corners: 0};
+function claveBSD(home, away, fecha){ return norm(home) + "-vs-" + norm(away) + "|" + String(fecha || "").slice(0, 10); }
+function bsdDePartido(m, datos){ if (!m) return null; var mapa = datos || BSD_DATOS; return mapa[claveBSD(m.home, m.away, m.fecha)] || null; }
+function cargarBSD(){
+  var urls = [URLS.momios.mw, URLS.momios.fs];
+  return Promise.all(urls.map(function(u){ return fetchJSON(u); })).then(function(listas){
+    var n = 0, nb = 0, na = 0, nc = 0;
+    listas.forEach(function(j){
+      if (!j || !Array.isArray(j.partidos)) return;
+      j.partidos.forEach(function(p){
+        if (p && p.bsd){
+          BSD_DATOS[claveBSD(p.home, p.away, p.fecha)] = p.bsd;
+          n++;
+          if (p.bsd.btts) nb++;
+          if (p.bsd.asian_handicap) na++;
+          if (p.bsd.corners) nc++;
+        }
+      });
+    });
+    BSD_CUENTA = {partidos: n, btts: nb, ah: na, corners: nc};
+    return BSD_CUENTA;
+  });
+}
+function evBSD(p, momio){
+  if (typeof p !== "number" || !isFinite(p) || typeof momio !== "number" || !isFinite(momio) || momio <= 0) return null;
+  return (p / 100) * momio - 1;
+}
+function fmtLineaSigno(x){ if (typeof x !== "number" || !isFinite(x)) return ""; return (x > 0 ? "+" : "") + fmtLinea(x); }
+function celdaBSD(label, momio, nota){ return '<div class="dcell"><span>' + esc(label) + ' ' + fmtMomio(momio) + '</span> <b class="num">' + esc(nota) + '</b></div>'; }
+function renderBSD(m, b){
+  if (!b) return "";
+  var mk = (m && m.mercados) ? m.mercados : {};
+  var h = "";
+  if (b.btts && typeof b.btts.yes === "number" && typeof b.btts.no === "number" && mk.btts && typeof mk.btts.p_btts === "number" && typeof mk.btts.p_no_btts === "number"){
+    h += '<div class="derived-h"><span>Ambos marcan · BSD</span><span>EV = prob. × momio − 1</span></div>';
+    h += '<div class="derived-grid">';
+    h += celdaMomio("Sí", b.btts.yes, evBSD(mk.btts.p_btts, b.btts.yes), mk.btts.p_btts);
+    h += celdaMomio("No", b.btts.no, evBSD(mk.btts.p_no_btts, b.btts.no), mk.btts.p_no_btts);
+    h += '</div>';
+  }
+  if (b.asian_handicap && typeof b.asian_handicap.line === "number" && typeof b.asian_handicap.home === "number" && typeof b.asian_handicap.away === "number"){
+    var ah = b.asian_handicap;
+    var sp = mk.spread || null;
+    var evL = null, evV = null, pL = null, pV = null, motivo = "sin EV (sin spread del modelo)";
+    if (sp && typeof sp.home_linea === "number" && typeof sp.p_cubre_local === "number"){
+      if (ah.push === true) motivo = "con devolución · sin EV";
+      else if (sp.home_linea !== ah.line) motivo = "línea distinta al spread · sin EV";
+      else { pL = sp.p_cubre_local; pV = 100 - sp.p_cubre_local; evL = evBSD(pL, ah.home); evV = evBSD(pV, ah.away); }
+    }
+    var conEV = (evL !== null && evV !== null);
+    h += '<div class="derived-h"><span>Hándicap asiático ' + fmtLineaSigno(ah.line) + ' · BSD</span><span>' + (conEV ? 'EV = prob. × momio − 1' : motivo) + '</span></div>';
+    h += '<div class="derived-grid">';
+    if (!conEV){
+      h += celdaBSD("Local " + fmtLineaSigno(ah.line), ah.home, "sin EV");
+      h += celdaBSD("Visita " + fmtLineaSigno(-ah.line), ah.away, "sin EV");
+    } else {
+      h += celdaMomio("Local " + fmtLineaSigno(ah.line), ah.home, evL, pL);
+      h += celdaMomio("Visita " + fmtLineaSigno(-ah.line), ah.away, evV, pV);
+    }
+    h += '</div>';
+  }
+  if (b.corners && typeof b.corners.line === "number" && typeof b.corners.over === "number" && typeof b.corners.under === "number"){
+    var co = b.corners;
+    h += '<div class="derived-h"><span>Córners ' + fmtLinea(co.line) + ' · BSD</span><span>sin EV (el modelo no estima córners)</span></div>';
+    h += '<div class="derived-grid">';
+    h += celdaBSD("Más " + fmtLinea(co.line), co.over, "sin EV");
+    h += celdaBSD("Menos " + fmtLinea(co.line), co.under, "sin EV");
+    h += '</div>';
+  }
+  if (!h) return "";
+  return '<div class="bsd-block"><div class="derived-h bsd-h"><span>Mercados BSD (Bzzoiro)</span><span>segunda fuente · consenso</span></div>' + h + '</div>';
+}
+function htmlBSD(m, datos){ return renderBSD(m, bsdDePartido(m, datos)); }
+/* ---------- Fin del módulo BSD ---------- */
+function celdaMomio(label, momio, ev, prob, sinEtiqueta){
     if (typeof prob === "number" && isFinite(prob) && (typeof momio !== "number" || typeof ev !== "number" || !isFinite(momio) || !isFinite(ev))){
-      return '<div class="dcell"><span>' + esc(label) + '</span><b class="num">' + fmt1(prob) + '%</b><span>prob. del modelo, sin momio</span></div>';
+      return '<div class="dcell"><span>' + esc(label) + '</span> <b class="num">' + fmt1(prob) + '%</b>' + (sinEtiqueta ? '' : '<span>prob. del modelo, sin momio</span>') + '</div>';
     }
     if (typeof momio !== "number" || typeof ev !== "number" || !isFinite(momio) || !isFinite(ev)){
       return '<div class="dcell"><span>' + esc(label) + '</span><b class="num">pendiente</b></div>';
@@ -2317,34 +2671,34 @@ var RADIO = {}; /* Integración Semana 7: la Radiografía llega por fetch
   }
 
   /* ---------- Tarjeta (misma maquetación que la base) ---------- */
-  function cardHTML(m, cfg, ventana){
+  function nombreEquipo(n){ var mapa = {"Hapoel Be'er": "Hapoel Be'er Sheva"}; return mapa[n] || n; } /* Novena ronda P1-9: nombre completo en pantalla (el dato trae "Hapoel Be'er"). */ function cardHTML(m, cfg, ventana){
     var home = m.home, away = m.away;
     var key = norm(home) + "-vs-" + norm(away);
     var li = ligaInfo(m.liga);
     var di = dayInfo(m.fecha);
     var sem = semaforoDe(m);
-    var p12 = derivar1X2(m);
+    var p12 = derivar1X2(m); var terminado = (m.estado_partido === "post"); var enDescuento = (m.estado_partido === "in" && typeof m._minuto === "string" && /^90/.test(m._minuto.trim())); /* Novena ronda P0-1: terminado o en descuento (90'+) no muestra picks pre-partido. */
     var dnb = p12 ? derivarDNB(p12) : null;
     var mk12 = m.mercados && m.mercados["1X2"] ? m.mercados["1X2"] : null;
     var tot = m.mercados && m.mercados.total ? m.mercados.total : null;
     var mom = m.momios || null;
     var prov = m.proveedor || (mom && mom.proveedor) || null;
     var cr = crestFor(key, home, away);
-    var hora = (m.hora || "").slice(0, 5);
+    var hora = (m.hora || "").slice(0, 5); var enVivo = (m.estado_partido === "in"); var evNum = (sem && typeof sem.ev === "number") ? sem.ev : null; var badgeTxt = terminado ? "Final" : (enVivo ? ("En vivo" + (m._minuto ? " · " + m._minuto : "")) : (evNum === null ? "Sin valor aún" : (evNum >= 5 ? "Valor alto" : (evNum > 0 ? "Valor medio" : "Sin valor")))); var badgeCls = terminado ? "fifa-badge final" : (enVivo ? "fifa-badge live" : (evNum === null ? "fifa-badge none" : (evNum >= 5 ? "fifa-badge alto" : (evNum > 0 ? "fifa-badge medio" : "fifa-badge none")))); var ratingNum = terminado ? "—" : (evNum === null ? "—" : ((evNum >= 0 ? "+" : "") + Math.round(evNum))); var ratingPick = terminado ? "Final" : (sem ? m.mejor_pick : "Sin EV"); var ratingCls = terminado ? "ev-none" : (sem ? sem.cls : "ev-none");
     var h = "";
-    h += '<article class="match" data-day="' + di.code + '" data-league="' + li.code + '" data-status="upcoming" data-value="' + (sem ? sem.value : "0") + '">';
+    h += '<article class="match" data-day="' + di.code + '" data-league="' + li.code + '" data-status="' + (terminado ? "finished" : (m.estado_partido === "in" ? "live" : "upcoming")) + '" data-value="' + (sem ? sem.value : "0") + '">';
     h += '<a class="match-link" href="partido.html?partido=' + key + '">';
-    h += '<div class="match-top"><span class="m-league">' + esc(li.display) + '</span><span class="m-time num">' + esc(di.corto) + ' ' + di.dia + ' · ' + esc(hora) + '</span></div>';
-    h += '<div class="teams">';
-    h += '<div class="team"><span class="crest c-a">' + esc(cr.h) + '</span><b>' + esc(home) + '</b><span class="score dim num">—</span></div>';
-    h += '<div class="team"><span class="crest c-b">' + esc(cr.a) + '</span><b>' + esc(away) + '</b><span class="score dim num">—</span></div>';
+    h += '<div class="match-top"><span class="m-league">' + esc(li.display) + '</span><span class="m-time num">' + esc(di.corto) + ' ' + di.dia + ' · ' + esc(hora) + '</span><span class="' + badgeCls + '">' + badgeTxt + '</span></div>';
+    h += '<div class="fifa-hero"><div class="fifa-rating ' + ratingCls + '"><b class="fifa-num">' + ratingNum + '</b><span class="fifa-ev">EV %</span><span class="fifa-pick">' + esc(ratingPick) + '</span></div><div class="teams">';
+    h += '<div class="team"><span class="crest c-a">' + esc(cr.h) + '</span><b>' + esc(nombreEquipo(home)) + '</b><span class="score dim num">—</span></div>';
+    h += '<div class="team"><span class="crest c-b">' + esc(cr.a) + '</span><b>' + esc(nombreEquipo(away)) + '</b><span class="score dim num">—</span></div>';
     h += '</div>';
-    h += '<div class="match-foot"><span class="chip">' + esc(ventana || "Datos reales") + '</span>';
+    h += '</div></div>'; h += '<div class="match-foot"><span class="chip">' + esc(ventana || "Datos reales") + '</span>';
     if (prov) h += '<span class="chip">Momios ' + esc(prov) + '</span>';
     else if (m.estado_partido === "post" && m.marcador && typeof m.marcador.local === "number" && typeof m.marcador.visita === "number") h += '<span class="chip">Final: ' + m.marcador.local + ' – ' + m.marcador.visita + '</span>';
     else h += '<span class="chip pending">Momios pendientes</span>';
     h += '</div>';
-    h += '<div class="match-foot"><span class="chip">Modelo Poisson · ' + esc(semanaLabel(m._semana)) + '</span>';
+    var btts = m.mercados && m.mercados.btts ? m.mercados.btts : null; h += '<div class="fifa-probs">' + (p12 ? '<div class="fifa-prob"><b class="num">' + fmt1(p12.p1) + '%</b><span>Local</span><span class="fifa-bar"><i style="width:' + Math.max(0, Math.min(100, Math.round(p12.p1))) + '%"></i></span></div><div class="fifa-prob"><b class="num">' + fmt1(p12.px) + '%</b><span>Empate</span><span class="fifa-bar"><i style="width:' + Math.max(0, Math.min(100, Math.round(p12.px))) + '%"></i></span></div><div class="fifa-prob"><b class="num">' + fmt1(p12.p2) + '%</b><span>Visita</span><span class="fifa-bar"><i style="width:' + Math.max(0, Math.min(100, Math.round(p12.p2))) + '%"></i></span></div>' : '<div class="fifa-prob"><b class="num">—</b><span>Local</span><span class="fifa-bar"><i style="width:0%"></i></span></div><div class="fifa-prob"><b class="num">—</b><span>Empate</span><span class="fifa-bar"><i style="width:0%"></i></span></div><div class="fifa-prob"><b class="num">—</b><span>Visita</span><span class="fifa-bar"><i style="width:0%"></i></span></div>') + '</div>'; h += '<div class="fifa-markets"><div class="fifa-mkt"><span class="fifa-mkt-t">BTTS</span><b class="num">' + (btts && typeof btts.p_btts === "number" ? fmt1(btts.p_btts) + '%' : '—') + '</b><span class="fifa-mkt-s">' + (tot && typeof tot.p_over === "number" && typeof tot.linea === "number" ? fmtLinea(tot.linea) + ' goles: ' + fmt1(tot.p_over) + '%' : (tot && typeof tot.linea === "number" ? fmtLinea(tot.linea) + ' goles: pendiente' : 'Total: pendiente')) + '</span></div><div class="fifa-mkt"><span class="fifa-mkt-t">' + (terminado ? 'Sin pick' : (sem ? esc(m.mejor_pick) : 'Sin pick')) + '</span><b class="num">' + (terminado ? '—' : (sem ? fmtEvPct(sem.ev) : 'Sin EV')) + '</b><span class="fifa-mkt-s">' + (terminado ? 'Partido terminado' : (sem ? ('Semáforo ' + sem.color) : 'Momios pendientes')) + '</span></div></div>'; /*
     if (p12) h += '<span class="chip">1X2: ' + fmt1(p12.p1) + '% · ' + fmt1(p12.px) + '% · ' + fmt1(p12.p2) + '%</span>';
     else h += '<span class="chip pending">1X2: pendiente</span>';
     if (tot && typeof tot.p_over === "number" && typeof tot.linea === "number"){
@@ -2364,7 +2718,7 @@ var RADIO = {}; /* Integración Semana 7: la Radiografía llega por fetch
       h += '<span class="chip ' + sem.cls + '">Semáforo EV · <strong>' + sem.color + ' · ' + esc(m.mejor_pick) + ' ' + fmtEvPct(sem.ev) + '</strong></span>';
     }
     h += '</div>';
-    if (dnb && !(m.estado_partido === "post" && m.marcador && typeof m.marcador.local === "number" && typeof m.marcador.visita === "number")){
+    */ if (dnb && !terminado && !enDescuento){
       /* Derivados no se muestran en partidos terminados (paridad con partido.html: la rama post no lleva DNB). */
       h += '<div class="derived" aria-label="Mercados derivados del 1X2: apuesta sin empate y doble oportunidad">';
       h += '<div class="derived-h"><span>Derivados del 1X2</span><span>DNB · Doble oportunidad</span></div>';
@@ -2378,61 +2732,11 @@ var RADIO = {}; /* Integración Semana 7: la Radiografía llega por fetch
     }
     h += '<div class="match-cta"><span>Ver detalle del partido →</span></div>';
     h += '</a>';
-    h += '<div class="odds" aria-label="Momios reales y valor esperado">';
-    if (m.estado_partido === "post" && m.marcador && typeof m.marcador.local === "number" && typeof m.marcador.visita === "number"){
-      /* Partido terminado sin momios (13 en entresemana): Final + probabilidades
-         del modelo, sin "Momios pendientes", sin semáforo y sin botón de parlay.
-         En los datos actuales ningún post trae momios, así que esta rama solo
-         se alcanza sin momio; si un post trajera momio, manda el Final. */
-      h += '<div class="derived-h"><span>Momios y valor esperado</span></div>';
-      h += '<p><b>Final: ' + esc(home) + ' ' + m.marcador.local + ' – ' + m.marcador.visita + ' ' + esc(away) + '</b></p>';
-      h += '<p class="detail-note">Partido terminado sin momios: no hay EV ni pick; las probabilidades son las del modelo antes del partido.</p>';
-      if (p12 || (tot && typeof tot.p_over === "number")){
-        h += '<div class="derived-h"><span>Probabilidad del modelo (sin momio)</span></div><div class="derived-grid">';
-        if (p12){
-          h += celdaMomio("Local", null, null, p12.p1);
-          h += celdaMomio("Empate", null, null, p12.px);
-          h += celdaMomio("Visita", null, null, p12.p2);
-        }
-        if (tot && typeof tot.p_over === "number"){
-          var linF = (typeof tot.linea === "number") ? " " + fmtLinea(tot.linea) : "";
-          h += celdaMomio("Más" + linF, null, null, tot.p_over);
-          h += celdaMomio("Menos" + linF, null, null, 100 - tot.p_over);
-        }
-        h += '</div>';
-      }
-    } else if (!mom){
-      h += '<div class="derived-h"><span>Momios pendientes</span><span>EV = prob. × momio − 1</span></div>';
-      h += '<p>pendiente — los momios aún no se publican.</p>';
-    } else {
-      h += '<div class="derived-h"><span>Momios ' + esc(prov || "") + '</span><span>EV = prob. × momio − 1</span></div>';
-      h += '<div class="derived-grid">';
-      var mo12 = mk12 && mk12.momios ? mk12.momios : (mom.moneyline || null);
-      var ev12 = mk12 && mk12.ev ? mk12.ev : null;
-      h += celdaMomio("Local", mo12 ? mo12.home : null, ev12 ? ev12["1"] : null, p12 ? p12.p1 : null);
-      h += celdaMomio("Empate", mo12 ? mo12.draw : null, ev12 ? ev12["X"] : null, p12 ? p12.px : null);
-      h += celdaMomio("Visita", mo12 ? mo12.away : null, ev12 ? ev12["2"] : null, p12 ? p12.p2 : null);
-      var tMom = null, tEv = null, tLin = null;
-      if (tot){
-        if (typeof tot.linea === "number") tLin = tot.linea;
-        if (tot.momios){ tMom = {over: tot.momios.over, under: tot.momios.under}; }
-        if (tot.ev){ tEv = {mas: tot.ev.mas, menos: tot.ev.menos}; }
-      }
-      if (!tMom && mom.total){ tMom = {over: mom.total.over, under: mom.total.under}; if (typeof mom.total.linea === "number") tLin = mom.total.linea; }
-      var labelMas = (tLin == null) ? "Más" : "Más " + fmtLinea(tLin);
-      var labelMenos = (tLin == null) ? "Menos" : "Menos " + fmtLinea(tLin);
-      /* Sin mercado total (ej. Hamburg–Bayern: solo 1X2, momios.total null),
-         las celdas Más/Menos no se muestran: la base tampoco las trae. */
-      if (tMom || tEv || tLin != null){
-        h += celdaMomio(labelMas, tMom ? tMom.over : null, tEv ? tEv.mas : null, (tot && typeof tot.p_over === "number") ? tot.p_over : null);
-        h += celdaMomio(labelMenos, tMom ? tMom.under : null, tEv ? tEv.menos : null, (tot && typeof tot.p_over === "number") ? 100 - tot.p_over : null);
-      }
-      h += '</div>';
-      if (sem && sem.value === "1"){
-        h += '<div class="odds-add"><button class="add-btn" type="button" data-pick="' + esc(home) + ' vs ' + esc(away) + ' · ' + esc(m.mejor_pick) + '" data-odds="' + esc(String(m.mejor_decimal)) + '" data-prob="' + m.mejor_prob + '">Sumar al parlay</button></div>';
-      }
-    }
-    h += '</div></article>';
+    if (!terminado && !enDescuento && mom && sem && sem.value === "1"){
+  h += '<div class="odds-add"><button class="add-btn" type="button" data-pick="' + esc(home) + ' vs ' + esc(away) + ' · ' + esc(m.mejor_pick) + '" data-odds="' + esc(String(m.mejor_decimal)) + '" data-prob="' + m.mejor_prob + '">Sumar al parlay</button></div>';
+}
+/* Corrección cliente 27 nov 2026: momios DraftKings y mercados BSD fuera de la tarjeta; quedan solo en el detalle (partido.html). */
+    h += '</article>';
     return h;
   }
 
@@ -2629,7 +2933,7 @@ var RADIO = {}; /* Integración Semana 7: la Radiografía llega por fetch
     if (!b || !p || !Array.isArray(partidos) || partidos.length === 0) return;
     var total = 0, verdes = 0, conValor = 0, totMW = 0, verMW = 0, totFS = 0, verFS = 0;
     partidos.forEach(function(m){
-      var sem = semaforoDe(m);
+      var sem = semaforoDe(m); var terminado = (m.estado_partido === "post"); var enDescuento = (m.estado_partido === "in" && typeof m._minuto === "string" && /^90/.test(m._minuto.trim())); // Novena ronda P0-1: terminado o en descuento (90'+) no muestra picks pre-partido.
       var esVerde = !!(sem && sem.color === "Verde");
       total++;
       if (esVerde) verdes++; if (sem && sem.ev > 0) conValor++;
@@ -2674,7 +2978,8 @@ var RADIO = {}; /* Integración Semana 7: la Radiografía llega por fetch
     var rawP = Promise.all([fetchJSON(URLS.raw.mw), fetchJSON(URLS.raw.fs)]);
     var tenP = Promise.all([fetchJSON(URLS.tendencias.mw), fetchJSON(URLS.tendencias.fs)]);
     var mapasP = fetchJSON(URLS.mapas);
-    Promise.all([evP, xiP, rawP, tenP, mapasP]).then(function(res){
+  var bsdP = cargarBSD(); var vivoP = fetchJSON("data/vivo.json"); /* Novena ronda P0-1: vivo.json para marcar terminados y en descuento al renderizar. */
+    Promise.all([evP, xiP, rawP, tenP, mapasP, bsdP, vivoP]).then(function(res){
       /* data/mapas.json (55 partidos) se fusiona sobre los mapas embebidos (28):
          PARTIDOS_VIVO se completa (ya no se embebe a mano) y DETAIL solo suma
          las claves que le faltan; el DETAIL embebido se conserva intacto.
@@ -2701,7 +3006,7 @@ var RADIO = {}; /* Integración Semana 7: la Radiografía llega por fetch
           partidos.push(p);
         });
       } else { errores.push("ev fin de semana"); }
-      renderPartidos(partidos);
+      /* Novena ronda P0-1/P1-1: superponer vivo.json (ESPN, cada hora) sobre estado_partido de ev.json (corrida diaria). Solo se promueve a "post" o "in"; un "post" de ev.json nunca se degrada. Así los terminados no muestran semáforo, picks, parlay ni BSD, y el panel cuenta solo los vigentes. */ var vivo = res[6]; if (vivo && Array.isArray(vivo.partidos)){ var porVivo = {}; vivo.partidos.forEach(function(v){ if (!v || !v.home || !v.away) return; porVivo[norm(v.home) + "|" + norm(v.away)] = v; }); partidos.forEach(function(p){ var v = porVivo[norm(p.home) + "|" + norm(p.away)]; if (!v) return; if (v.estado === "post"){ p.estado_partido = "post"; if (typeof v.marcador_local === "number" && typeof v.marcador_visita === "number") p.marcador = {local: v.marcador_local, visita: v.marcador_visita}; } else if (v.estado === "in" && p.estado_partido !== "post"){ p.estado_partido = "in"; if (typeof v.minuto === "string") p._minuto = v.minuto; if (typeof v.marcador_local === "number" && typeof v.marcador_visita === "number") p.marcador = {local: v.marcador_local, visita: v.marcador_visita}; } }); } renderPartidos(partidos);
       actualizarSemaforo(partidos);
       cargarActualizado();
       /* REBASE e3a1220: pintar en vivo/final en las tarjetas nuevas. La base

@@ -577,7 +577,7 @@
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
   "liga_nombre": "Europa League",
-  "estado": "pre"
+  "estado": "post"
  },
  "85|349|2026-11-26": {
   "home": "Celta Vigo",
@@ -587,7 +587,7 @@
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
   "liga_nombre": "Europa League",
-  "estado": "pre"
+  "estado": "post"
  },
  "597|131|2026-11-26": {
   "home": "Dinamo Zagreb",
@@ -597,7 +597,7 @@
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
   "liga_nombre": "Europa League",
-  "estado": "pre"
+  "estado": "post"
  },
  "176|490|2026-11-26": {
   "home": "Marseille",
@@ -607,7 +607,7 @@
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
   "liga_nombre": "Europa League",
-  "estado": "pre"
+  "estado": "post"
  },
  "435|103|2026-11-26": {
   "home": "Olympiacos",
@@ -617,7 +617,7 @@
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
   "liga_nombre": "Europa League",
-  "estado": "pre"
+  "estado": "post"
  },
  "2790|20024|2026-11-26": {
   "home": "RB Salzburg",
@@ -627,7 +627,7 @@
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
   "liga_nombre": "Europa League",
-  "estado": "pre"
+  "estado": "post"
  },
  "5807|2990|2026-11-26": {
   "home": "Union St.-Gilloise",
@@ -637,7 +637,7 @@
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
   "liga_nombre": "Europa League",
-  "estado": "pre"
+  "estado": "post"
  },
  "11706|1929|2026-11-26": {
   "home": "Viktoria Plzen",
@@ -647,7 +647,7 @@
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
   "liga_nombre": "Europa League",
-  "estado": "pre"
+  "estado": "post"
  },
  "384|89|2026-11-26": {
   "home": "Crystal Palace",
@@ -657,7 +657,7 @@
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
   "liga_nombre": "Europa League",
-  "estado": "pre"
+  "estado": "post"
  },
  "622|3362|2026-11-26": {
   "home": "Ferencvaros",
@@ -667,7 +667,7 @@
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
   "liga_nombre": "Europa League",
-  "estado": "pre"
+  "estado": "post"
  },
  "111|617|2026-11-26": {
   "home": "Juventus",
@@ -677,7 +677,7 @@
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
   "liga_nombre": "Europa League",
-  "estado": "pre"
+  "estado": "post"
  },
  "167|987|2026-11-26": {
   "home": "Lyon",
@@ -687,7 +687,7 @@
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
   "liga_nombre": "Europa League",
-  "estado": "pre"
+  "estado": "post"
  },
  "147|169|2026-11-26": {
   "home": "NEC Nijmegen",
@@ -697,7 +697,7 @@
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
   "liga_nombre": "Europa League",
-  "estado": "pre"
+  "estado": "post"
  },
  "1010|441|2026-11-26": {
   "home": "OFI Crete",
@@ -707,7 +707,7 @@
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
   "liga_nombre": "Europa League",
-  "estado": "pre"
+  "estado": "post"
  },
  "433|140|2026-11-26": {
   "home": "Sparta Prague",
@@ -717,7 +717,7 @@
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
   "liga_nombre": "Europa League",
-  "estado": "pre"
+  "estado": "post"
  },
  "366|11505|2026-11-26": {
   "home": "Sunderland",
@@ -727,7 +727,7 @@
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
   "liga_nombre": "Europa League",
-  "estado": "pre"
+  "estado": "post"
  },
  "21615|256|2026-11-26": {
   "home": "Torreense",
@@ -737,7 +737,7 @@
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
   "liga_nombre": "Europa League",
-  "estado": "pre"
+  "estado": "post"
  },
  "7911|3746|2026-11-26": {
   "home": "TSG Hoffenheim",
@@ -747,7 +747,7 @@
   "fecha": "2026-11-26",
   "liga": "uefa.europa",
   "liga_nombre": "Europa League",
-  "estado": "pre"
+  "estado": "post"
  },
  "223|216|2026-11-25": {
   "home": "Toluca",
@@ -757,7 +757,7 @@
   "fecha": "2026-11-25",
   "liga": "mex.1",
   "liga_nombre": "Liga MX",
-  "estado": "pre"
+  "estado": "post"
  },
  "220|227|2026-11-25": {
   "home": "Monterrey",
@@ -767,7 +767,7 @@
   "fecha": "2026-11-25",
   "liga": "mex.1",
   "liga_nombre": "Liga MX",
-  "estado": "pre"
+  "estado": "post"
  },
  "234|219|2026-11-26": {
   "home": "Pachuca",
@@ -777,7 +777,7 @@
   "fecha": "2026-11-26",
   "liga": "mex.1",
   "liga_nombre": "Liga MX",
-  "estado": "pre"
+  "estado": "post"
  },
  "228|218|2026-11-26": {
   "home": "León",
@@ -787,7 +787,7 @@
   "fecha": "2026-11-26",
   "liga": "mex.1",
   "liga_nombre": "Liga MX",
-  "estado": "pre"
+  "estado": "post"
  },
  "216|223|2026-11-28": {
   "home": "Atlas",
