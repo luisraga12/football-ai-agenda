@@ -16,24 +16,27 @@
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 1.6666666666666665,
+     "home": 1.6896551724137931,
      "draw": 4.0,
-     "away": 4.3
+     "away": 4.2
     },
     "total": {
      "linea": 3.5,
-     "over": 2.3,
+     "over": 2.35,
      "under": 1.5882352941176472
     },
     "spread": {
      "home_linea": -0.5,
-     "home": 1.6451612903225805,
+     "home": 1.6666666666666665,
      "away_linea": 0.5,
      "away": 2.1
     }
    },
-   "estado_partido": "pre",
-   "marcador": null,
+   "estado_partido": "in",
+   "marcador": {
+    "local": 1,
+    "visita": 1
+   },
    "bsd": {
     "proveedor": "BSD-consensus",
     "bsd_event_id": 213764,
@@ -71,9 +74,9 @@
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 2.85,
-     "draw": 3.0,
-     "away": 2.5
+     "home": 2.95,
+     "draw": 3.05,
+     "away": 2.4
     },
     "total": {
      "linea": 2.5,
@@ -82,13 +85,16 @@
     },
     "spread": {
      "home_linea": 0.5,
-     "home": 1.5,
+     "home": 1.5405405405405406,
      "away_linea": -0.5,
-     "away": 2.4
+     "away": 2.3
     }
    },
-   "estado_partido": "pre",
-   "marcador": null,
+   "estado_partido": "in",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
    "bsd": {
     "proveedor": "BSD-consensus",
     "bsd_event_id": 210186,
@@ -132,18 +138,21 @@
     },
     "total": {
      "linea": 2.5,
-     "over": 1.7407407407407407,
-     "under": 2.1
+     "over": 1.7692307692307692,
+     "under": 2.05
     },
     "spread": {
      "home_linea": -0.5,
-     "home": 2.3,
+     "home": 2.25,
      "away_linea": 0.5,
-     "away": 1.5405405405405406
+     "away": 1.5555555555555556
     }
    },
-   "estado_partido": "pre",
-   "marcador": null,
+   "estado_partido": "in",
+   "marcador": {
+    "local": 1,
+    "visita": 0
+   },
    "bsd": {
     "proveedor": "BSD-consensus",
     "bsd_event_id": 209653,
@@ -182,23 +191,26 @@
     "proveedor": "DraftKings",
     "moneyline": {
      "home": 2.0,
-     "draw": 3.95,
-     "away": 3.4
+     "draw": 3.9,
+     "away": 3.5
     },
     "total": {
      "linea": 3.5,
-     "over": 2.15,
-     "under": 1.7142857142857144
+     "over": 2.3,
+     "under": 1.625
     },
     "spread": {
      "home_linea": -0.5,
      "home": 1.9090909090909092,
      "away_linea": 0.5,
-     "away": 1.7692307692307692
+     "away": 1.8
     }
    },
-   "estado_partido": "pre",
-   "marcador": null,
+   "estado_partido": "in",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
    "bsd": {
     "proveedor": "BSD-consensus",
     "bsd_event_id": 213654,
@@ -949,14 +961,14 @@
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 1.6451612903225805,
-     "draw": 3.95,
+     "home": 1.6896551724137931,
+     "draw": 3.9,
      "away": 4.7
     },
     "total": {
      "linea": 2.5,
-     "over": 1.606060606060606,
-     "under": 2.2
+     "over": 1.625,
+     "under": 2.15
     },
     "spread": {
      "home_linea": -0.5,
@@ -1012,6 +1024,1037 @@
     "sin_momio": [
      "asian_handicap",
      "corners"
+    ]
+   }
+  },
+  {
+   "away": "Coventry City",
+   "away_id": 388,
+   "fecha": "2026-11-28",
+   "home": "Leeds United",
+   "home_id": 357,
+   "liga": "eng.1",
+   "fecha_cst": "2026-11-28 09:00",
+   "liga_nombre": "Premier League",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 1.4878048780487805,
+     "draw": 4.6,
+     "away": 6.5
+    },
+    "total": {
+     "linea": 2.5,
+     "over": 1.6666666666666665,
+     "under": 2.2
+    },
+    "spread": {
+     "home_linea": -1.5,
+     "home": 2.3,
+     "away_linea": 1.5,
+     "away": 1.5555555555555556
+    }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 209651,
+    "btts": {
+     "yes": 1.804,
+     "no": 1.93
+    },
+    "asian_handicap": {
+     "line": -1.5,
+     "home": 2.296,
+     "away": 1.59,
+     "push": "none",
+     "bookmakers": 11
+    },
+    "corners": {
+     "line": 9.5,
+     "over": 1.927,
+     "under": 1.83,
+     "bookmakers": 3
+    },
+    "sin_momio": []
+   }
+  },
+  {
+   "away": "Aston Villa",
+   "away_id": 362,
+   "fecha": "2026-11-28",
+   "home": "Ipswich Town",
+   "home_id": 373,
+   "liga": "eng.1",
+   "fecha_cst": "2026-11-28 11:30",
+   "liga_nombre": "Premier League",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 3.5,
+     "draw": 3.8,
+     "away": 2.0
+    },
+    "total": {
+     "linea": 2.5,
+     "over": 1.5714285714285714,
+     "under": 2.4
+    },
+    "spread": {
+     "home_linea": 0.5,
+     "home": 1.8,
+     "away_linea": -0.5,
+     "away": 1.9090909090909092
+    }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 209650,
+    "btts": {
+     "yes": 1.466,
+     "no": 2.556
+    },
+    "asian_handicap": null,
+    "corners": {
+     "line": 9.5,
+     "over": 2.02,
+     "under": 1.743,
+     "bookmakers": 3
+    },
+    "sin_momio": [
+     "asian_handicap"
+    ]
+   }
+  },
+  {
+   "away": "Rayo Vallecano",
+   "away_id": 101,
+   "fecha": "2026-11-28",
+   "home": "Real Betis",
+   "home_id": 244,
+   "liga": "esp.1",
+   "fecha_cst": "2026-11-28 07:00",
+   "liga_nombre": "LaLiga",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 1.606060606060606,
+     "draw": 4.4,
+     "away": 5.0
+    },
+    "total": {
+     "linea": 2.5,
+     "over": 1.5714285714285714,
+     "under": 2.4
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "home": 1.5555555555555556,
+     "away_linea": 0.5,
+     "away": 2.3
+    }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 213656,
+    "btts": {
+     "yes": 1.615,
+     "no": 2.209
+    },
+    "asian_handicap": {
+     "line": -0.5,
+     "home": 1.572,
+     "away": 2.343,
+     "push": "none",
+     "bookmakers": 7
+    },
+    "corners": {
+     "line": 9.5,
+     "over": 1.64,
+     "under": 2.137,
+     "bookmakers": 3
+    },
+    "sin_momio": []
+   }
+  },
+  {
+   "away": "Athletic Club",
+   "away_id": 93,
+   "fecha": "2026-11-28",
+   "home": "Málaga",
+   "home_id": 99,
+   "liga": "esp.1",
+   "fecha_cst": "2026-11-28 09:15",
+   "liga_nombre": "LaLiga",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 4.7,
+     "draw": 3.85,
+     "away": 1.7407407407407407
+    },
+    "total": {
+     "linea": 2.5,
+     "over": 1.8333333333333335,
+     "under": 2.0
+    },
+    "spread": {
+     "home_linea": 0.5,
+     "home": 2.1,
+     "away_linea": -0.5,
+     "away": 1.6666666666666665
+    }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 213655,
+    "btts": {
+     "yes": 1.759,
+     "no": 1.982
+    },
+    "asian_handicap": {
+     "line": 0.5,
+     "home": 2.078,
+     "away": 1.698,
+     "push": "none",
+     "bookmakers": 9
+    },
+    "corners": {
+     "line": 9.5,
+     "over": 1.89,
+     "under": 1.853,
+     "bookmakers": 3
+    },
+    "sin_momio": []
+   }
+  },
+  {
+   "away": "SV Elversberg",
+   "away_id": 10388,
+   "fecha": "2026-11-28",
+   "home": "FC Cologne",
+   "home_id": 122,
+   "liga": "ger.1",
+   "fecha_cst": "2026-11-28 08:30",
+   "liga_nombre": "Bundesliga",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 2.0,
+     "draw": 3.7,
+     "away": 3.3
+    },
+    "total": {
+     "linea": 2.5,
+     "over": 1.606060606060606,
+     "under": 2.3
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "home": 1.9523809523809523,
+     "away_linea": 0.5,
+     "away": 1.7692307692307692
+    }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": null
+  },
+  {
+   "away": "1. FC Union Berlin",
+   "away_id": 598,
+   "fecha": "2026-11-28",
+   "home": "Mainz",
+   "home_id": 2950,
+   "liga": "ger.1",
+   "fecha_cst": "2026-11-28 08:30",
+   "liga_nombre": "Bundesliga",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 1.4545454545454546,
+     "draw": 4.5,
+     "away": 5.75
+    },
+    "total": {
+     "linea": 3.5,
+     "over": 2.35,
+     "under": 1.5882352941176472
+    },
+    "spread": {
+     "home_linea": -1.5,
+     "home": 2.15,
+     "away_linea": 1.5,
+     "away": 1.606060606060606
+    }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 213759,
+    "btts": {
+     "yes": 1.673,
+     "no": 2.104
+    },
+    "asian_handicap": {
+     "line": -1.5,
+     "home": 2.258,
+     "away": 1.608,
+     "push": "none",
+     "bookmakers": 12
+    },
+    "corners": {
+     "line": 9.5,
+     "over": 1.68,
+     "under": 2.075,
+     "bookmakers": 2
+    },
+    "sin_momio": []
+   }
+  },
+  {
+   "away": "Schalke 04",
+   "away_id": 133,
+   "fecha": "2026-11-28",
+   "home": "SC Paderborn 07",
+   "home_id": 3307,
+   "liga": "ger.1",
+   "fecha_cst": "2026-11-28 08:30",
+   "liga_nombre": "Bundesliga",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 2.45,
+     "draw": 3.35,
+     "away": 2.65
+    },
+    "total": {
+     "linea": 2.5,
+     "over": 1.7692307692307692,
+     "under": 2.0
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "home": 2.4,
+     "away_linea": 0.5,
+     "away": 1.5128205128205128
+    }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 213763,
+    "btts": {
+     "yes": 1.612,
+     "no": 2.214
+    },
+    "asian_handicap": {
+     "line": -0.5,
+     "home": 2.437,
+     "away": 1.518,
+     "push": "none",
+     "bookmakers": 10
+    },
+    "corners": {
+     "line": 9.5,
+     "over": 1.875,
+     "under": 1.885,
+     "bookmakers": 2
+    },
+    "sin_momio": []
+   }
+  },
+  {
+   "away": "Parma",
+   "away_id": 115,
+   "fecha": "2026-11-28",
+   "home": "Frosinone",
+   "home_id": 4057,
+   "liga": "ita.1",
+   "fecha_cst": "2026-11-28 08:00",
+   "liga_nombre": "Serie A",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 1.4651162790697674,
+     "draw": 4.8,
+     "away": 5.25
+    },
+    "total": {
+     "linea": 3.5,
+     "over": 1.9523809523809523,
+     "under": 1.8333333333333335
+    },
+    "spread": {
+     "home_linea": -1.5,
+     "home": 2.05,
+     "away_linea": 1.5,
+     "away": 1.6666666666666665
+    }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 210180,
+    "btts": {
+     "yes": 1.513,
+     "no": 2.438
+    },
+    "asian_handicap": {
+     "line": -1.5,
+     "home": 2.164,
+     "away": 1.655,
+     "push": "none",
+     "bookmakers": 12
+    },
+    "corners": {
+     "line": 9.5,
+     "over": 1.483,
+     "under": 2.447,
+     "bookmakers": 3
+    },
+    "sin_momio": []
+   }
+  },
+  {
+   "away": "Lazio",
+   "away_id": 112,
+   "fecha": "2026-11-28",
+   "home": "Torino",
+   "home_id": 239,
+   "liga": "ita.1",
+   "fecha_cst": "2026-11-28 11:00",
+   "liga_nombre": "Serie A",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 3.25,
+     "draw": 3.3,
+     "away": 2.1
+    },
+    "total": {
+     "linea": 2.5,
+     "over": 1.8695652173913042,
+     "under": 1.9090909090909092
+    },
+    "spread": {
+     "home_linea": 0.5,
+     "home": 1.6666666666666665,
+     "away_linea": -0.5,
+     "away": 2.05
+    }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 210184,
+    "btts": {
+     "yes": 1.692,
+     "no": 2.081
+    },
+    "asian_handicap": {
+     "line": 0.5,
+     "home": 1.685,
+     "away": 2.083,
+     "push": "none",
+     "bookmakers": 9
+    },
+    "corners": {
+     "line": 9.5,
+     "over": 2.26,
+     "under": 1.573,
+     "bookmakers": 3
+    },
+    "sin_momio": []
+   }
+  },
+  {
+   "away": "Newcastle United",
+   "away_id": 361,
+   "fecha": "2026-11-29",
+   "home": "Brighton & Hove Albion",
+   "home_id": 331,
+   "liga": "eng.1",
+   "fecha_cst": "2026-11-29 08:05",
+   "liga_nombre": "Premier League",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 1.5555555555555556,
+     "draw": 4.5,
+     "away": 5.5
+    },
+    "total": {
+     "linea": 3.5,
+     "over": 2.35,
+     "under": 1.606060606060606
+    },
+    "spread": {
+     "home_linea": -1.5,
+     "home": 2.4,
+     "away_linea": 1.5,
+     "away": 1.5
+    }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 209646,
+    "btts": {
+     "yes": 1.576,
+     "no": 2.286
+    },
+    "asian_handicap": null,
+    "corners": {
+     "line": 9.5,
+     "over": 1.64,
+     "under": 2.137,
+     "bookmakers": 3
+    },
+    "sin_momio": [
+     "asian_handicap"
+    ]
+   }
+  },
+  {
+   "away": "Hull City",
+   "away_id": 306,
+   "fecha": "2026-11-29",
+   "home": "Crystal Palace",
+   "home_id": 384,
+   "liga": "eng.1",
+   "fecha_cst": "2026-11-29 08:05",
+   "liga_nombre": "Premier League",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 1.9090909090909092,
+     "draw": 3.75,
+     "away": 3.85
+    },
+    "total": {
+     "linea": 2.5,
+     "over": 1.7407407407407407,
+     "under": 2.05
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "home": 1.8333333333333335,
+     "away_linea": 0.5,
+     "away": 1.8695652173913042
+    }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 209647,
+    "btts": {
+     "yes": 1.636,
+     "no": 2.164
+    },
+    "asian_handicap": null,
+    "corners": {
+     "line": 9.5,
+     "over": 1.683,
+     "under": 2.077,
+     "bookmakers": 3
+    },
+    "sin_momio": [
+     "asian_handicap"
+    ]
+   }
+  },
+  {
+   "away": "AFC Bournemouth",
+   "away_id": 349,
+   "fecha": "2026-11-29",
+   "home": "Fulham",
+   "home_id": 370,
+   "liga": "eng.1",
+   "fecha_cst": "2026-11-29 08:05",
+   "liga_nombre": "Premier League",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 2.8,
+     "draw": 3.5,
+     "away": 2.5
+    },
+    "total": {
+     "linea": 2.5,
+     "over": 1.7692307692307692,
+     "under": 2.05
+    },
+    "spread": {
+     "home_linea": 0.5,
+     "home": 1.5405405405405406,
+     "away_linea": -0.5,
+     "away": 2.35
+    }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 209649,
+    "btts": {
+     "yes": 1.576,
+     "no": 2.286
+    },
+    "asian_handicap": null,
+    "corners": {
+     "line": 9.5,
+     "over": 1.633,
+     "under": 2.153,
+     "bookmakers": 3
+    },
+    "sin_momio": [
+     "asian_handicap"
+    ]
+   }
+  },
+  {
+   "away": "Tottenham Hotspur",
+   "away_id": 367,
+   "fecha": "2026-11-29",
+   "home": "Sunderland",
+   "home_id": 366,
+   "liga": "eng.1",
+   "fecha_cst": "2026-11-29 08:05",
+   "liga_nombre": "Premier League",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 3.9,
+     "draw": 3.4,
+     "away": 2.0
+    },
+    "total": {
+     "linea": 2.5,
+     "over": 2.0,
+     "under": 1.8333333333333335
+    },
+    "spread": {
+     "home_linea": 0.5,
+     "home": 1.8,
+     "away_linea": -0.5,
+     "away": 1.9090909090909092
+    }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 209654,
+    "btts": {
+     "yes": 1.752,
+     "no": 2.0
+    },
+    "asian_handicap": null,
+    "corners": {
+     "line": 9.5,
+     "over": 1.897,
+     "under": 1.857,
+     "bookmakers": 3
+    },
+    "sin_momio": [
+     "asian_handicap"
+    ]
+   }
+  },
+  {
+   "away": "Osasuna",
+   "away_id": 97,
+   "fecha": "2026-11-29",
+   "home": "Valencia",
+   "home_id": 94,
+   "liga": "esp.1",
+   "fecha_cst": "2026-11-29 07:00",
+   "liga_nombre": "LaLiga",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 2.15,
+     "draw": 3.2,
+     "away": 3.6
+    },
+    "total": {
+     "linea": 2.5,
+     "over": 2.25,
+     "under": 1.625
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "home": 2.05,
+     "away_linea": 0.5,
+     "away": 1.6896551724137931
+    }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 215659,
+    "btts": {
+     "yes": 1.926,
+     "no": 1.824
+    },
+    "asian_handicap": null,
+    "corners": {
+     "line": 9.5,
+     "over": 1.96,
+     "under": 1.783,
+     "bookmakers": 3
+    },
+    "sin_momio": [
+     "asian_handicap"
+    ]
+   }
+  },
+  {
+   "away": "Villarreal",
+   "away_id": 102,
+   "fecha": "2026-11-29",
+   "home": "Celta Vigo",
+   "home_id": 85,
+   "liga": "esp.1",
+   "fecha_cst": "2026-11-29 11:30",
+   "liga_nombre": "LaLiga",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 2.75,
+     "draw": 3.55,
+     "away": 2.5
+    },
+    "total": {
+     "linea": 2.5,
+     "over": 1.7692307692307692,
+     "under": 2.05
+    },
+    "spread": {
+     "home_linea": 0.5,
+     "home": 1.526315789473684,
+     "away_linea": -0.5,
+     "away": 2.35
+    }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 213650,
+    "btts": {
+     "yes": 1.594,
+     "no": 2.238
+    },
+    "asian_handicap": null,
+    "corners": {
+     "line": 9.5,
+     "over": 2.163,
+     "under": 1.63,
+     "bookmakers": 3
+    },
+    "sin_momio": [
+     "asian_handicap"
+    ]
+   }
+  },
+  {
+   "away": "Sevilla",
+   "away_id": 243,
+   "fecha": "2026-11-29",
+   "home": "Real Sociedad",
+   "home_id": 89,
+   "liga": "esp.1",
+   "fecha_cst": "2026-11-29 14:00",
+   "liga_nombre": "LaLiga",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 2.15,
+     "draw": 3.7,
+     "away": 3.2
+    },
+    "total": {
+     "linea": 2.5,
+     "over": 1.8,
+     "under": 2.05
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "home": 2.05,
+     "away_linea": 0.5,
+     "away": 1.6896551724137931
+    }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 215658,
+    "btts": {
+     "yes": 1.622,
+     "no": 2.174
+    },
+    "asian_handicap": null,
+    "corners": {
+     "line": 9.5,
+     "over": 1.94,
+     "under": 1.81,
+     "bookmakers": 3
+    },
+    "sin_momio": [
+     "asian_handicap"
+    ]
+   }
+  },
+  {
+   "away": "RB Leipzig",
+   "away_id": 11420,
+   "fecha": "2026-11-29",
+   "home": "SC Freiburg",
+   "home_id": 126,
+   "liga": "ger.1",
+   "fecha_cst": "2026-11-29 08:30",
+   "liga_nombre": "Bundesliga",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 2.65,
+     "draw": 3.7,
+     "away": 2.3
+    },
+    "total": {
+     "linea": 3.5,
+     "over": 2.15,
+     "under": 1.6896551724137931
+    },
+    "spread": {
+     "home_linea": 0.5,
+     "home": 1.5714285714285714,
+     "away_linea": -0.5,
+     "away": 2.25
+    }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 213762,
+    "btts": {
+     "yes": 1.406,
+     "no": 2.746
+    },
+    "asian_handicap": null,
+    "corners": {
+     "line": 9.5,
+     "over": 1.83,
+     "under": 1.93,
+     "bookmakers": 2
+    },
+    "sin_momio": [
+     "asian_handicap"
+    ]
+   }
+  },
+  {
+   "away": "FC Augsburg",
+   "away_id": 3841,
+   "fecha": "2026-11-29",
+   "home": "TSG Hoffenheim",
+   "home_id": 7911,
+   "liga": "ger.1",
+   "fecha_cst": "2026-11-29 10:30",
+   "liga_nombre": "Bundesliga",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 1.6666666666666665,
+     "draw": 4.5,
+     "away": 3.9
+    },
+    "total": {
+     "linea": 3.5,
+     "over": 1.8,
+     "under": 2.0
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "home": 1.6451612903225805,
+     "away_linea": 0.5,
+     "away": 2.15
+    }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 213765,
+    "btts": {
+     "yes": 1.316,
+     "no": 3.23
+    },
+    "asian_handicap": null,
+    "corners": {
+     "line": 9.5,
+     "over": 1.5,
+     "under": 2.375,
+     "bookmakers": 2
+    },
+    "sin_momio": [
+     "asian_handicap"
+    ]
+   }
+  },
+  {
+   "away": "Fiorentina",
+   "away_id": 109,
+   "fecha": "2026-11-29",
+   "home": "Udinese",
+   "home_id": 118,
+   "liga": "ita.1",
+   "fecha_cst": "2026-11-29 05:30",
+   "liga_nombre": "Serie A",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 3.0,
+     "draw": 3.4,
+     "away": 2.2
+    },
+    "total": {
+     "linea": 2.5,
+     "over": 1.6896551724137931,
+     "under": 2.1
+    },
+    "spread": {
+     "home_linea": 0.5,
+     "home": 1.6451612903225805,
+     "away_linea": -0.5,
+     "away": 2.15
+    }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 210185,
+    "btts": {
+     "yes": 1.564,
+     "no": 2.282
+    },
+    "asian_handicap": null,
+    "corners": {
+     "line": 9.5,
+     "over": 1.94,
+     "under": 1.81,
+     "bookmakers": 3
+    },
+    "sin_momio": [
+     "asian_handicap"
+    ]
+   }
+  },
+  {
+   "away": "Monza",
+   "away_id": 4007,
+   "fecha": "2026-11-29",
+   "home": "AS Roma",
+   "home_id": 104,
+   "liga": "ita.1",
+   "fecha_cst": "2026-11-29 11:00",
+   "liga_nombre": "Serie A",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 1.2,
+     "draw": 6.5,
+     "away": 10.0
+    },
+    "total": {
+     "linea": 3.5,
+     "over": 1.8333333333333335,
+     "under": 1.9090909090909092
+    },
+    "spread": {
+     "home_linea": -2.5,
+     "home": 2.25,
+     "away_linea": 2.5,
+     "away": 1.5555555555555556
+    }
+   },
+   "estado_partido": "pre",
+   "marcador": null,
+   "bsd": {
+    "proveedor": "BSD-consensus",
+    "bsd_event_id": 210177,
+    "btts": {
+     "yes": 1.784,
+     "no": 1.948
+    },
+    "asian_handicap": null,
+    "corners": {
+     "line": 9.5,
+     "over": 1.763,
+     "under": 1.973,
+     "bookmakers": 3
+    },
+    "sin_momio": [
+     "asian_handicap"
     ]
    }
   }
