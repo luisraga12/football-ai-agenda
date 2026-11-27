@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>P1-8 — Preview temporal del semáforo (datos reales)</title>
+<style>
+body{font-family:system-ui,Arial,sans-serif;background:#0d1117;color:#e6edf3;margin:0;padding:24px}
+ h1{font-size:22px} p,li{line-height:1.5}
+.badge{display:inline-block;padding:4px 12px;border-radius:999px;font-weight:700}
+.verde{background:#238636;color:#fff}.amarillo{background:#9e6a03;color:#fff}.rojo{background:#da3633;color:#fff}.gris{background:#6e7681;color:#fff}
+table{border-collapse:collapse;margin:12px 0} td,th{border:1px solid #30363d;padding:6px 12px;text-align:center} th{background:#161b22}
+.card{border:1px solid #30363d;border-radius:12px;padding:16px;margin:12px 0;background:#161b22}
+.small{color:#8b949e;font-size:14px}
+</style>
+</head>
+<body>
+<h1>P1-8 — El semáforo nunca es amarillo ni rojo (preview temporal)</h1>
+<p class="small">Preview temporal de verificación, Empleado 2, vie 27 nov 2026 ~15:35 CST. Datos reales de <code>data/semana-2/ev.json</code>, commit <code>ae5d39</code> (27 nov 2026 14:18 CST), rama <code>empleado-2</code>. Regla en <code>scripts/calcular_ev.py</code> (<code>semaforo(ev)</code>): verde EV ≥ +5 %, amarillo 0 % ≤ EV &lt; +5 %, rojo EV &lt; 0 %, sobre <code>mejor_ev</code> (el mayor EV entre hasta 7 mercados: 1X2, total y spread; BTTS excluido).</p>
+<h2>Conteos reales por color</h2>
+<table>
+<tr><th>Fecha</th><th>Partidos</th><th>Verde</th><th>Amarillo</th><th>Rojo</th><th>Sin semáforo</th></tr>
+<tr><td>27 nov 2026 (hoy)</td><td>4</td><td>4</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>28 nov 2026 (beta, mañana)</td><td>17</td><td>16</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>29 nov 2026</td><td>19</td><td>18</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td><b>Total semana-2</b></td><td><b>40</b></td><td><b>38</b></td><td><b>1</b></td><td><b>0</b></td><td><b>1</b></td></tr>
+</table>
+<p>De los 39 partidos con momio: <b>38 verdes (97,4 %), 1 amarillo (2,6 %), 0 rojos (0 %)</b>. El mejor EV va de +3,2 % a +177,4 %; mediana +43,4 %; 16 de 39 (41,0 %) tienen mejor EV ≥ +50 % y 34 de 39 (87,2 %) ≥ +20 %.</p>
+<h2>Partidos reales verificados</h2>
+<div class="card">
+<h3>Werder Bremen vs Borussia Mönchengladbach — 27 nov 2026 13:30, Bundesliga</h3>
+<p>Mejor pick: Local · mejor_ev 0,21918 (+21,9 %) · <span class="badge verde">VERDE</span></p>
+</div>
+<div class="card">
+<h3>Levante vs Racing Santander — 27 nov 2026 14:00, LaLiga</h3>
+<p>Mejor pick: Menos 3.5 · mejor_ev 0,11140 (+11,1 %) · <span class="badge verde">VERDE</span> — es el verde más bajo de hoy.</p>
+</div>
+<div class="card">
+<h3>Frosinone vs Parma — 28 nov 2026 08:00, Serie A</h3>
+<p>Mejor pick: Local · mejor_ev 0,03182 (+3,2 %) · p 70,4258 % · momio 1,4651 · <span class="badge amarillo">AMARILLO</span> — el único amarillo de toda la semana.</p>
+</div>
+<div class="card">
+<h3>Cruz Azul vs León — 29 nov 2026 21:00, Liga MX</h3>
+<p>Proveedor null, mejor_ev null · <span class="badge gris">SIN SEMÁFORO</span> — el único partido sin semáforo.</p>
+</div>
+<p><b>No existe ningún partido rojo hoy, mañana ni en toda la semana-2 (0 de 39).</b></p>
+<h2>Por qué el mejor EV casi siempre es ≥ +5 %</h2>
+<ul>
+<li>El semáforo se calcula sobre <code>mejor_ev</code> = el <b>máximo</b> de hasta 7 EV de mercados distintos. El máximo de 7 valores casi siempre supera el umbral aunque la mayoría de los mercados sea negativa.</li>
+<li>Contando los 269 EV individuales de los mercados candidatos (1X2, total y spread) de los 39 partidos con momio: <b>103 verdes (38,3 %), 13 amarillos (4,8 %), 153 rojos (56,9 %)</b>. Al tomar solo el máximo por partido, el verde pasa de 38,3 % a 97,4 % y el rojo de 56,9 % a 0 %.</li>
+<li>Con la misma regla pero sobre un solo mercado fijo (el 1X2 local, EV de “1”): <b>18 verdes, 2 amarillos y 19 rojos</b> de 39. Ahí sí aparecen los tres colores.</li>
+<li>Las probabilidades del modelo (Poisson) se alejan mucho de la probabilidad implícita del momio, por ejemplo Leeds vs Coventry: p visita 42,67 % frente a implícita 1/6,5 = 15,4 % → mejor EV +177,4 %; Hamburg vs Bayern: p local 29,94 % frente a implícita 1/8,0 = 12,5 % → +139,5 %.</li>
+</ul>
+<p><b>Conclusión del preview: la regla SÍ se aplica (verde ≥ +5 %, amarillo ≥ 0 %, rojo &lt; 0 % en <code>calcular_ev.py</code> y el campo <code>semaforo</code> de <code>ev.json</code>), pero el diseño —semáforo sobre el máximo de 7 mercados— hace que casi nunca haya amarillo ni rojo. Cualquier corrección (cambiar el EV sobre el que se calcula el semáforo o los umbrales) vive en <code>calcular_ev.py</code>, es decir, es cambio de modelo y NO se implementa en P1-8: queda propuesta para que el jefe decida.</b></p>
+<p class="small">Este archivo es temporal, solo para verificar en el navegador; se borra tras la verificación, como en P1-3.</p>
+</body>
+</html>
