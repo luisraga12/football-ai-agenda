@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado_en": "2026-11-27T20:18:05Z",
+  "generado_en": "2026-11-27T22:07:42Z",
   "semana": "2-entresemana",
   "fuente": "config + ev.json + verified_events.json + teams_last5.json + schedule_*.json + DETAIL embebido en partido.html (preservado) + summary ESPN por evento (estadio + alineacion oficial + standings + h2h; tabla regular MX para Liguilla)",
   "partidos_vivo": {
@@ -10992,14 +10992,14 @@
               "dorsal": "20"
             },
             {
-              "jugador": "Dani Requena",
+              "jugador": "Jon Ander Olasagasti",
               "pos": "LM",
-              "dorsal": "6"
+              "dorsal": "8"
             },
             {
-              "jugador": "Jon Ander Olasagasti",
+              "jugador": "Dani Requena",
               "pos": "RM",
-              "dorsal": "8"
+              "dorsal": "6"
             },
             {
               "jugador": "Iván Romero",
@@ -11044,19 +11044,19 @@
               "dorsal": "5"
             },
             {
-              "jugador": "Sergio Canales",
-              "pos": "AM",
-              "dorsal": "20"
-            },
-            {
               "jugador": "Iván Martín",
-              "pos": "LM",
+              "pos": "AM",
               "dorsal": "23"
             },
             {
               "jugador": "Matteo Prati",
-              "pos": "RM",
+              "pos": "LM",
               "dorsal": "18"
+            },
+            {
+              "jugador": "Sergio Canales",
+              "pos": "RM",
+              "dorsal": "20"
             },
             {
               "jugador": "Yassir Zabiri",
@@ -14357,7 +14357,7 @@
           "récord": "4-5-2"
         },
         "away": {
-          "pos": "14",
+          "pos": "15",
           "pts": "12",
           "pj": "11",
           "g": "4",
@@ -14531,7 +14531,7 @@
       },
       "standings": {
         "home": {
-          "pos": "16",
+          "pos": "17",
           "pts": "11",
           "pj": "11",
           "g": "3",
@@ -16430,7 +16430,7 @@
       },
       "standings": {
         "home": {
-          "pos": "15",
+          "pos": "16",
           "pts": "11",
           "pj": "11",
           "g": "2",
@@ -17176,7 +17176,7 @@
           "récord": "7-1-5"
         },
         "away": {
-          "pos": "6",
+          "pos": "7",
           "pts": "19",
           "pj": "13",
           "g": "5",
@@ -17738,7 +17738,7 @@
       },
       "standings": {
         "home": {
-          "pos": "19",
+          "pos": "20",
           "pts": "6",
           "pj": "12",
           "g": "1",

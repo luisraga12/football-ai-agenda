@@ -17,7 +17,7 @@
   "fecha": "2026-11-27",
   "liga": "eng.1",
   "liga_nombre": "Premier League",
-  "estado": "in"
+  "estado": "post"
  },
  "357|388|2026-11-28": {
   "home": "Leeds United",
@@ -127,7 +127,7 @@
   "fecha": "2026-11-27",
   "liga": "esp.1",
   "liga_nombre": "LaLiga",
-  "estado": "in"
+  "estado": "post"
  },
  "244|101|2026-11-28": {
   "home": "Real Betis",
@@ -217,7 +217,7 @@
   "fecha": "2026-11-27",
   "liga": "ger.1",
   "liga_nombre": "Bundesliga",
-  "estado": "in"
+  "estado": "post"
  },
  "122|10388|2026-11-28": {
   "home": "FC Cologne",
@@ -317,7 +317,7 @@
   "fecha": "2026-11-27",
   "liga": "ita.1",
   "liga_nombre": "Serie A",
-  "estado": "in"
+  "estado": "post"
  },
  "4057|115|2026-11-28": {
   "home": "Frosinone",

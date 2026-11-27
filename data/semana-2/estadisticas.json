@@ -1,5 +1,318 @@
 {
  "config": "semana-2",
  "fecha_calculo": "2026-11-27",
- "partidos": []
+ "partidos": [
+  {
+   "local": "Werder Bremen",
+   "visita": "Borussia Mönchengladbach",
+   "slug": "werder-bremen-vs-borussia-monchengladbach",
+   "estado": "post",
+   "estadisticas": [
+    {
+     "clave": "posesion",
+     "etiqueta": "Posesión",
+     "local": 59.1,
+     "visita": 40.9,
+     "unidad": "%"
+    },
+    {
+     "clave": "tiros",
+     "etiqueta": "Tiros",
+     "local": 20,
+     "visita": 20,
+     "unidad": ""
+    },
+    {
+     "clave": "tiros_a_puerta",
+     "etiqueta": "Tiros a puerta",
+     "local": 8,
+     "visita": 6,
+     "unidad": ""
+    },
+    {
+     "clave": "corners",
+     "etiqueta": "Córners",
+     "local": 7,
+     "visita": 4,
+     "unidad": ""
+    },
+    {
+     "clave": "faltas",
+     "etiqueta": "Faltas",
+     "local": 10,
+     "visita": 11,
+     "unidad": ""
+    },
+    {
+     "clave": "fueras_de_juego",
+     "etiqueta": "Fueras de juego",
+     "local": 3,
+     "visita": 2,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_amarillas",
+     "etiqueta": "Tarjetas amarillas",
+     "local": 2,
+     "visita": 3,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_rojas",
+     "etiqueta": "Tarjetas rojas",
+     "local": 0,
+     "visita": 0,
+     "unidad": ""
+    },
+    {
+     "clave": "pases_precisos",
+     "etiqueta": "Pases precisos",
+     "local": 464,
+     "visita": 297,
+     "unidad": ""
+    },
+    {
+     "clave": "paradas",
+     "etiqueta": "Paradas",
+     "local": 3,
+     "visita": 5,
+     "unidad": ""
+    }
+   ]
+  },
+  {
+   "local": "Venezia",
+   "visita": "Bologna",
+   "slug": "venezia-vs-bologna",
+   "estado": "post",
+   "estadisticas": [
+    {
+     "clave": "posesion",
+     "etiqueta": "Posesión",
+     "local": 49.9,
+     "visita": 50.1,
+     "unidad": "%"
+    },
+    {
+     "clave": "tiros",
+     "etiqueta": "Tiros",
+     "local": 14,
+     "visita": 13,
+     "unidad": ""
+    },
+    {
+     "clave": "tiros_a_puerta",
+     "etiqueta": "Tiros a puerta",
+     "local": 5,
+     "visita": 6,
+     "unidad": ""
+    },
+    {
+     "clave": "corners",
+     "etiqueta": "Córners",
+     "local": 3,
+     "visita": 6,
+     "unidad": ""
+    },
+    {
+     "clave": "faltas",
+     "etiqueta": "Faltas",
+     "local": 11,
+     "visita": 11,
+     "unidad": ""
+    },
+    {
+     "clave": "fueras_de_juego",
+     "etiqueta": "Fueras de juego",
+     "local": 4,
+     "visita": 1,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_amarillas",
+     "etiqueta": "Tarjetas amarillas",
+     "local": 3,
+     "visita": 3,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_rojas",
+     "etiqueta": "Tarjetas rojas",
+     "local": 0,
+     "visita": 0,
+     "unidad": ""
+    },
+    {
+     "clave": "pases_precisos",
+     "etiqueta": "Pases precisos",
+     "local": 356,
+     "visita": 335,
+     "unidad": ""
+    },
+    {
+     "clave": "paradas",
+     "etiqueta": "Paradas",
+     "local": 5,
+     "visita": 5,
+     "unidad": ""
+    }
+   ]
+  },
+  {
+   "local": "Nottingham Forest",
+   "visita": "Chelsea",
+   "slug": "nottingham-forest-vs-chelsea",
+   "estado": "post",
+   "estadisticas": [
+    {
+     "clave": "posesion",
+     "etiqueta": "Posesión",
+     "local": 35.2,
+     "visita": 64.8,
+     "unidad": "%"
+    },
+    {
+     "clave": "tiros",
+     "etiqueta": "Tiros",
+     "local": 10,
+     "visita": 9,
+     "unidad": ""
+    },
+    {
+     "clave": "tiros_a_puerta",
+     "etiqueta": "Tiros a puerta",
+     "local": 7,
+     "visita": 3,
+     "unidad": ""
+    },
+    {
+     "clave": "corners",
+     "etiqueta": "Córners",
+     "local": 1,
+     "visita": 2,
+     "unidad": ""
+    },
+    {
+     "clave": "faltas",
+     "etiqueta": "Faltas",
+     "local": 15,
+     "visita": 11,
+     "unidad": ""
+    },
+    {
+     "clave": "fueras_de_juego",
+     "etiqueta": "Fueras de juego",
+     "local": 1,
+     "visita": 0,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_amarillas",
+     "etiqueta": "Tarjetas amarillas",
+     "local": 2,
+     "visita": 3,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_rojas",
+     "etiqueta": "Tarjetas rojas",
+     "local": 0,
+     "visita": 0,
+     "unidad": ""
+    },
+    {
+     "clave": "pases_precisos",
+     "etiqueta": "Pases precisos",
+     "local": 244,
+     "visita": 505,
+     "unidad": ""
+    },
+    {
+     "clave": "paradas",
+     "etiqueta": "Paradas",
+     "local": 1,
+     "visita": 4,
+     "unidad": ""
+    }
+   ]
+  },
+  {
+   "local": "Levante",
+   "visita": "Racing Santander",
+   "slug": "levante-vs-racing-santander",
+   "estado": "post",
+   "estadisticas": [
+    {
+     "clave": "posesion",
+     "etiqueta": "Posesión",
+     "local": 56.2,
+     "visita": 43.8,
+     "unidad": "%"
+    },
+    {
+     "clave": "tiros",
+     "etiqueta": "Tiros",
+     "local": 23,
+     "visita": 15,
+     "unidad": ""
+    },
+    {
+     "clave": "tiros_a_puerta",
+     "etiqueta": "Tiros a puerta",
+     "local": 3,
+     "visita": 8,
+     "unidad": ""
+    },
+    {
+     "clave": "corners",
+     "etiqueta": "Córners",
+     "local": 9,
+     "visita": 5,
+     "unidad": ""
+    },
+    {
+     "clave": "faltas",
+     "etiqueta": "Faltas",
+     "local": 16,
+     "visita": 11,
+     "unidad": ""
+    },
+    {
+     "clave": "fueras_de_juego",
+     "etiqueta": "Fueras de juego",
+     "local": 2,
+     "visita": 0,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_amarillas",
+     "etiqueta": "Tarjetas amarillas",
+     "local": 2,
+     "visita": 2,
+     "unidad": ""
+    },
+    {
+     "clave": "tarjetas_rojas",
+     "etiqueta": "Tarjetas rojas",
+     "local": 0,
+     "visita": 0,
+     "unidad": ""
+    },
+    {
+     "clave": "pases_precisos",
+     "etiqueta": "Pases precisos",
+     "local": 376,
+     "visita": 291,
+     "unidad": ""
+    },
+    {
+     "clave": "paradas",
+     "etiqueta": "Paradas",
+     "local": 5,
+     "visita": 2,
+     "unidad": ""
+    }
+   ]
+  }
+ ]
 }
