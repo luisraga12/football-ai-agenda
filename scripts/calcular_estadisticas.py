@@ -43,9 +43,12 @@ import re
 import sys
 import time
 import unicodedata
-import urllib.request
 from datetime import datetime
 from zoneinfo import ZoneInfo
+
+# Modulo hermano (scripts/): los scripts siempre se corren como
+# `python3 scripts/*.py` desde la raiz del repo, asi que resuelve.
+from http_resiliente import descargar_json
 
 CST = ZoneInfo("America/Mexico_City")
 BASE = "https://site.api.espn.com/apis/site/v2/sports/soccer"
@@ -66,9 +69,8 @@ MAPEO = [
 
 
 def fetch(url):
-    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return json.load(r)
+    """GET con reintentos (ver http_resiliente.py)."""
+    return descargar_json(url)
 
 
 def norm(s):
