@@ -15,6 +15,7 @@
 <div class="marco"><h2>3. partido.html Galatasaray (terminado) — 360 px</h2><iframe src="partido.html?partido=galatasaray-vs-aston-villa" title="detalle Galatasaray 360" data-nombre="partido Galatasaray 360"></iframe></div>
 <div class="marco ancho500"><h2>4. index.html — 500 px</h2><iframe src="index.html" title="indice 500" data-nombre="index 500"></iframe></div>
 <script>
+function geo(el){var r=el.getBoundingClientRect();return el.tagName.toLowerCase()+'.'+(el.className&&el.className.baseVal===undefined?String(el.className).split(' ')[0]:'')+' ['+r.left.toFixed(0)+'..'+r.right.toFixed(0)+' w='+r.width.toFixed(0)+' sw='+el.scrollWidth+'] :: '+(el.textContent||'').trim().slice(0,50);}
 function medir(){
   var out=[];
   document.querySelectorAll('iframe').forEach(function(f){
@@ -25,14 +26,18 @@ function medir(){
       st.textContent='html{scrollbar-width:none!important}::-webkit-scrollbar{width:0!important;height:0!important}';
       if(!d.getElementById('p3e-med')){st.id='p3e-med';d.head.appendChild(st);}
       var sw=de.scrollWidth, cw=de.clientWidth;
-      var mal=[];
+      var todos=[];
       d.querySelectorAll('*').forEach(function(el){
         var r=el.getBoundingClientRect();
-        if(r.right>cw+1 && mal.length<8){
-          mal.push(el.tagName.toLowerCase()+'.'+(el.className&&el.className.baseVal===undefined?String(el.className).split(' ')[0]:'')+' sobra '+(r.right-cw).toFixed(0)+'px :: '+(el.textContent||'').trim().slice(0,60));
-        }
+        if(r.right>cw+1){var prof=0,p=el;while(p.parentElement){prof++;p=p.parentElement;}todos.push({el:el,prof:prof});}
       });
-      out.push(n+': scrollWidth='+sw+' clientWidth='+cw+' '+(sw>cw?'DESBORDA '+(sw-cw)+'px':'sin scroll horizontal')+' | sobrantes: '+(mal.join(' ; ')||'ninguno'));
+      todos.sort(function(a,b){return b.prof-a.prof;});
+      var mal=todos.slice(0,10).map(function(o){return geo(o.el);});
+      var claves=['.wrap','.layout','aside.panel','main','.parlay','.panel-h','.leagues','.rule-note','.agenda-head','.filters','.cards','.hist','.calc','.markets'];
+      var cl=claves.map(function(s){var e=d.querySelector(s);return e?s+' '+geo(e):s+' (ausente)';});
+      out.push(n+': scrollWidth='+sw+' clientWidth='+cw+' '+(sw>cw?'DESBORDA '+(sw-cw)+'px':'sin scroll horizontal'));
+      out.push('  mas profundos: '+(mal.join('\n  ')||'ninguno'));
+      out.push('  claves:\n  '+cl.join('\n  '));
     }catch(e){out.push(n+': no se pudo medir ('+e.message+')');}
   });
   document.getElementById('mediciones').textContent=out.join('\n');
