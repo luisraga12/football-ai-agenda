@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Preview · Recomendación, Parlay del día y Marcador — Football AI Agenda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Manrope:wght@400;600;700;800&family=Archivo+Narrow:wght@600;700&display=swap" rel="stylesheet" />
+<style>
+:root{--bg:#07090D;--surface:#0D1117;--surface-2:#121826;--ink:#F8FAFC;--ink-2:#CBD5E1;--muted:#94A3B8;--line:#28331F;--accent:#A3E635;--blue:#22D3EE;--live:#FF5470;--amber:#FACC15;--radius:16px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,sans-serif;font-size:16px;line-height:1.55}
+h1,h2,h3{font-family:"Archivo",system-ui,sans-serif;line-height:1.08;margin:0}
+a{color:var(--accent)}
+code{font-family:ui-monospace,monospace;font-size:.86em}
+.wrap{max-width:1020px;margin:0 auto;padding:0 18px 64px}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(163,230,53,.12);border:1px solid rgba(163,230,53,.4);color:var(--accent);padding:6px 12px;border-radius:999px;font-weight:800;font-size:.8rem}
+header{padding:34px 0 10px}
+header h1{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:900;letter-spacing:-.02em}
+header p.sub{color:var(--ink-2);max-width:68ch;margin-top:10px}
+.muted{color:var(--muted)}
+.small{font-size:.85rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;margin-top:18px}
+.sec{margin-top:34px}
+.sec h2{font-size:1.5rem}
+.sec h2 .count{color:var(--accent);font-size:1rem}
+.sec>p{color:var(--ink-2);max-width:72ch}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-top:14px}
+.mcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.mcard .liga{font-size:.75rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--blue)}
+.mcard .teams{font-family:"Archivo",sans-serif;font-weight:800;font-size:1.08rem;line-height:1.25}
+.mcard .fecha{color:var(--muted);font-size:.86rem}
+.tag{display:inline-block;padding:3px 10px;border-radius:999px;font-size:.78rem;font-weight:800}
+.tag.pre{background:rgba(148,163,184,.14);border:1px solid rgba(148,163,184,.4);color:var(--ink-2)}
+.tag.live{background:rgba(255,84,112,.12);border:1px solid rgba(255,84,112,.45);color:var(--live)}
+.tag.final{background:rgba(163,230,53,.12);border:1px solid rgba(163,230,53,.4);color:var(--accent)}
+.tag.ok{background:rgba(163,230,53,.14);border:1px solid rgba(163,230,53,.5);color:var(--accent)}
+.tag.bad{background:rgba(255,84,112,.14);border:1px solid rgba(255,84,112,.5);color:var(--live)}
+.tag.pend{background:rgba(250,204,21,.1);border:1px solid rgba(250,204,21,.4);color:var(--amber)}
+.rec{font-size:.92rem}
+.rec b{color:var(--accent)}
+.rec .sin{color:var(--muted)}
+.btn{margin-top:auto;align-self:flex-start;background:var(--accent);color:#0B1206;border:0;border-radius:999px;padding:8px 16px;font-weight:800;font-family:"Manrope",sans-serif;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(163,230,53,.5)}
+.num{font-family:"Archivo Narrow","Archivo",sans-serif;font-variant-numeric:tabular-nums}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{border-bottom:1px solid var(--line);padding:8px;text-align:left;vertical-align:top}
+th{color:var(--muted);font-size:.76rem;text-transform:uppercase;letter-spacing:.05em}
+td.num,th.num{text-align:right}
+.big{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
+.big>div{background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:12px}
+.big b{display:block;font-size:1.7rem;font-family:"Archivo",sans-serif}
+.big .lbl{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:800}
+.mini{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:baseline}
+.mini b{font-family:"Archivo",sans-serif;font-size:1.15rem}
+.mini .lbl{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:800}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;align-items:flex-start;justify-content:center;padding:40px 16px;z-index:50;overflow:auto}
+.modal.open{display:flex}
+.modal-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;max-width:640px;width:100%;padding:22px}
+.modal-card h3{font-size:1.35rem}
+.kv{display:grid;grid-template-columns:150px 1fr;gap:6px 12px;margin-top:12px;font-size:.94rem}
+.kv dt{color:var(--muted)}
+.kv dd{margin:0}
+.recline{margin-top:14px;background:var(--surface-2);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:12px 14px;font-size:1rem}
+.recline .sin{color:var(--muted)}
+footer{margin-top:40px;color:var(--muted);font-size:.86rem}
+.error{color:var(--live)}
+@media (max-width:640px){.big{grid-template-columns:1fr}.kv{grid-template-columns:1fr;gap:2px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<span class="badge">SOLO PREVIEW · RAMA empleado-2 · NO VA A main</span>
+<h1>Recomendación, Parlay del día y Marcador</h1>
+<p class="sub">Preview de las 5 funcionalidades, en el orden pre-partido → en vivo → resultado → parlay → marcador. Datos reales de <code>data/resultados.json</code> y <code>data/parlay-del-dia.json</code> de esta misma rama. El EV en vivo sigue en pausa: no se toca <code>partido.html</code> ni <code>index.html</code>. Nada inventado: cuando no hay registro, dice «sin datos».</p>
+<p class="muted small" id="fuentes">Cargando datos…</p>
+</header>
+
+<section class="card" id="marcadorMini" aria-label="Marcador compacto">
+<div class="mini"><span class="lbl">Marcador</span><span id="miniPre">…</span><span id="miniVivo">…</span><span id="miniTotal" class="muted small"></span></div>
+</section>
+
+<section class="sec" id="secPre">
+<h2>1 · Pre-partido <span class="count" id="countPre"></span></h2>
+<p>Cada tarjeta muestra el mejor pick del semáforo. El detalle del partido trae la línea completa «Recomendación: [pick]» con momio y EV; si ningún EV es positivo, dice «Sin recomendación».</p>
+<div class="grid" id="gridPre"></div>
+</section>
+
+<section class="sec" id="secVivo">
+<h2>2 · En vivo <span class="count" id="countVivo"></span></h2>
+<p>Marcador y minuto del último snapshot publicado, más la predicción en vivo del archivo. El EV en vivo sigue en pausa: el módulo no recalcula EV en vivo.</p>
+<div class="grid" id="gridVivo"></div>
+</section>
+
+<section class="sec" id="secRes">
+<h2>3 · Resultado <span class="count" id="countRes"></span></h2>
+<p>Partidos terminados: la recomendación pre-partido junto a su resultado, «Acertó» o «Falló».</p>
+<div id="tablaResWrap"></div>
+</section>
+
+<section class="sec" id="secParlay">
+<h2>4 · Parlay del día</h2>
+<p>Las piernas publicadas en <code>data/parlay-del-dia.json</code>, con momio, probabilidad y EV combinados. Cuando terminen los partidos del día, el parlay dirá «Acertó» o «Falló» y cuál pierna falló.</p>
+<div class="card" id="parlayCard"></div>
+</section>
+
+<section class="sec" id="secMarcador">
+<h2>5 · Marcador</h2>
+<p>% de acierto pre-partido contra en vivo, solo con resultados reales. Si una columna no tiene registro en Historial, muestra «sin datos».</p>
+<div class="big" id="marcadorBig"></div>
+<p class="muted small" id="marcadorNota"></p>
+</section>
+
+<footer>
+<p>Preview solo en la rama empleado-2. No se tocó <code>index.html</code> ni <code>partido.html</code>. Fuentes: <code>data/resultados.json</code> y <code>data/parlay-del-dia.json</code> de esta rama.</p>
+</footer>
+</div>
+
+<div class="modal" id="modal"><div class="modal-card" id="modalCard"></div></div>
+
+<script>
+var RES = null, PARLAY = null;
+var DIAS = ['dom','lun','mar','mié','jue','vie','sáb'];
+var MESES = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+
+function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+function fmtNum(x, dec){ var v = Number(x); if(!isFinite(v)) return '—'; return v.toFixed(dec).replace('.', ','); }
+function fmtMomio(m){ return fmtNum(m, 2); }
+function fmtPct(x){ return fmtNum(x, 1) + '%'; }
+function fmtEv(ev){ var v = Number(ev) * 100; if(!isFinite(v)) return '—'; return (v >= 0 ? '+' : '') + fmtNum(v, 1) + '%'; }
+function slug(s){ return String(s).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
+function slugPartido(p){ return slug(p.home + '-vs-' + p.away); }
+function fechaCorta(f){ if(!f) return '—'; var p = String(f).split('-'); if(p.length < 3) return esc(f); var d = new Date(Date.UTC(+p[0], +p[1]-1, +p[2])); return DIAS[d.getUTCDay()] + ' ' + (+p[2]) + ' ' + MESES[+p[1]-1]; }
+function fmtFechaHoraMX(iso){ if(!iso) return '—'; try { return new Intl.DateTimeFormat('es-MX', {timeZone:'America/Monterrey', day:'2-digit', month:'short', year:'numeric', hour:'2-digit', minute:'2-digit', hour12:false}).format(new Date(iso)); } catch(e){ return iso; } }
+function fmtHoraUTC(iso){ if(!iso) return '—'; var d = new Date(iso); if(isNaN(d)) return '—'; return ('0' + d.getUTCHours()).slice(-2) + ':' + ('0' + d.getUTCMinutes()).slice(-2) + ' UTC'; }
+
+function tieneRec(p){ var r = p.recomendacion; return !!(r && isFinite(r.ev) && r.ev > 0); }
+function recTexto(p){ var r = p.recomendacion; if(!tieneRec(p)) return 'Sin recomendación'; return esc(r.pick) + ' · momio ' + fmtMomio(r.momio) + ' · EV ' + fmtEv(r.ev); }
+function recLinea(p){
+  var r = p.recomendacion;
+  if(!tieneRec(p)) return '<span class="sin">Sin recomendación</span>';
+  var sem = r.semaforo === 'verde' ? '🟢 Verde' : (r.semaforo === 'amarillo' ? '🟡 Amarillo' : (r.semaforo === 'rojo' ? '🔴 Rojo' : esc(r.semaforo || '')));
+  return 'Recomendación: <b>' + esc(r.pick) + '</b> · momio <span class="num">' + fmtMomio(r.momio) + '</span> · EV <span class="num">' + fmtEv(r.ev) + '</span> · ' + sem;
+}
+function aciertoTag(p){
+  if(p.acierto === true) return '<span class="tag ok">✅ Acertó</span>';
+  if(p.acierto === false) return '<span class="tag bad">❌ Falló</span>';
+  if(p.acierto_texto) return '<span class="tag pend">' + esc(p.acierto_texto) + '</span>';
+  return '';
+}
+function estadoTag(p){
+  if(p.estado === 'post'){
+    if(p.marcador && typeof p.marcador.local === 'number' && typeof p.marcador.visita === 'number') return '<span class="tag final">Final ' + p.marcador.local + '–' + p.marcador.visita + '</span>';
+    return '<span class="tag final">Final</span>';
+  }
+  if(p.estado === 'in'){
+    var m = (p.marcador && typeof p.marcador.local === 'number') ? p.marcador.local + '–' + p.marcador.visita : '—';
+    var min = (p.vivo && p.vivo.ultimo_snapshot && p.vivo.ultimo_snapshot.minuto) ? ' · ' + esc(p.vivo.ultimo_snapshot.minuto) : '';
+    return '<span class="tag live">EN VIVO ' + m + min + '</span>';
+  }
+  return '<span class="tag pre">Por jugar</span>';
+}
+
+function cardPre(p, i){
+  var rec = tieneRec(p)
+    ? 'Pick: <b>' + esc(p.recomendacion.pick) + '</b> · <span class="num">' + fmtMomio(p.recomendacion.momio) + '</span> · EV <span class="num">' + fmtEv(p.recomendacion.ev) + '</span>'
+    : '<span class="sin">Sin recomendación</span>';
+  return '<article class="mcard"><div class="liga">' + esc(p.liga || '') + '</div>' +
+    '<div class="teams">' + esc(p.home) + ' vs ' + esc(p.away) + '</div>' +
+    '<div class="fecha">' + fechaCorta(p.fecha) + '</div>' +
+    '<div>' + estadoTag(p) + '</div>' +
+    '<div class="rec">' + rec + '</div>' +
+    '<button class="btn" onclick="abrirDetalle(' + i + ')">Ver detalle</button></article>';
+}
+
+function cardVivo(p, i){
+  var v = p.vivo || {};
+  var snap = '';
+  if(v.tiene_datos && v.ultimo_snapshot){
+    var s = v.ultimo_snapshot;
+    snap = '<div class="small">Último snapshot: ' + fmtHoraUTC(s.cuando) + (s.minuto ? ' · ' + esc(s.minuto) : '') + '</div>';
+  } else {
+    snap = '<div class="small">En vivo: sin datos' + (v.motivo ? ' — ' + esc(v.motivo) : '') + '</div>';
+  }
+  var pred = '';
+  if(v.prediccion){
+    pred = '<div class="small">Predicción en vivo: <b>' + esc(v.prediccion.favorito) + '</b> · L <span class="num">' + fmtPct(v.prediccion.p1) + '</span> · E <span class="num">' + fmtPct(v.prediccion.px) + '</span> · V <span class="num">' + fmtPct(v.prediccion.p2) + '</span></div>';
+  }
+  var rec = tieneRec(p)
+    ? '<div class="rec">Pick pre-partido: <b>' + esc(p.recomendacion.pick) + '</b> · <span class="num">' + fmtMomio(p.recomendacion.momio) + '</span> · EV <span class="num">' + fmtEv(p.recomendacion.ev) + '</span></div>'
+    : '<div class="rec"><span class="sin">Sin recomendación</span></div>';
+  return '<article class="mcard"><div class="liga">' + esc(p.liga || '') + '</div>' +
+    '<div class="teams">' + esc(p.home) + ' vs ' + esc(p.away) + '</div>' +
+    '<div>' + estadoTag(p) + '</div>' + snap + pred + rec +
+    '<button class="btn" onclick="abrirDetalle(' + i + ')">Ver detalle</button></article>';
+}
+
+function renderPre(){
+  var items = [];
+  RES.partidos.forEach(function(p, idx){ if(p.estado === 'pre') items.push({p: p, i: idx}); });
+  document.getElementById('gridPre').innerHTML = items.length ? items.map(function(o){ return cardPre(o.p, o.i); }).join('') : '<p class="muted">Sin partidos pre-partido ahora mismo.</p>';
+}
+
+function renderVivo(){
+  var items = [];
+  RES.partidos.forEach(function(p, idx){ if(p.estado === 'in') items.push({p: p, i: idx}); });
+  document.getElementById('gridVivo').innerHTML = items.length ? items.map(function(o){ return cardVivo(o.p, o.i); }).join('') : '<p class="muted">Sin partidos en vivo ahora mismo.</p>';
+}
+
+function renderResultado(){
+  var posts = [];
+  RES.partidos.forEach(function(p, idx){ if(p.estado === 'post') posts.push({p: p, i: idx}); });
+  document.getElementById('countRes').textContent = '· ' + posts.length + ' terminados';
+  if(!posts.length){ document.getElementById('tablaResWrap').innerHTML = '<p class="muted">Sin partidos terminados todavía.</p>'; return; }
+  var h = '<div style="overflow-x:auto"><table><thead><tr><th>Partido</th><th>Fecha</th><th>Marcador</th><th>Recomendación</th><th>Resultado</th><th></th></tr></thead><tbody>';
+  posts.forEach(function(o){
+    var p = o.p;
+    var marc = (p.marcador && typeof p.marcador.local === 'number') ? '<span class="num">' + p.marcador.local + '–' + p.marcador.visita + '</span>' : '—';
+    h += '<tr><td><b>' + esc(p.home) + ' vs ' + esc(p.away) + '</b><br/><span class="muted small">' + esc(p.liga || '') + '</span></td>' +
+      '<td>' + fechaCorta(p.fecha) + '</td><td>' + marc + '</td>' +
+      '<td>' + recTexto(p) + '</td>' +
+      '<td>' + aciertoTag(p) + '</td>' +
+      '<td><button class="btn ghost" onclick="abrirDetalle(' + o.i + ')">Detalle</button></td></tr>';
+  });
+  h += '</tbody></table></div>';
+  document.getElementById('tablaResWrap').innerHTML = h;
+}
+
+function renderParlay(){
+  var el = document.getElementById('parlayCard');
+  if(!PARLAY || !PARLAY.piernas){ el.innerHTML = '<p class="error">Sin datos: no se pudo cargar data/parlay-del-dia.json.</p>'; return; }
+  var legs = PARLAY.piernas;
+  var filas = legs.map(function(leg){
+    var p = null;
+    for(var k = 0; k < RES.partidos.length; k++){ if(slugPartido(RES.partidos[k]) === leg.slug){ p = RES.partidos[k]; break; } }
+    var estado = 'sin datos', cls = 'pend';
+    if(p){
+      if(p.estado === 'post'){
+        if(p.recomendacion && p.recomendacion.pick === leg.pick){
+          if(p.acierto === true){ estado = 'Acertó'; cls = 'ok'; }
+          else if(p.acierto === false){ estado = 'Falló'; cls = 'bad'; }
+          else { estado = 'Sin recomendación'; cls = 'pend'; }
+        }
+      } else { estado = 'Pendiente'; cls = 'pend'; }
+    }
+    return {leg: leg, p: p, estado: estado, cls: cls};
+  });
+  var decididas = filas.filter(function(f){ return f.estado === 'Acertó' || f.estado === 'Falló'; }).length;
+  var fallidas = filas.filter(function(f){ return f.estado === 'Falló'; });
+  var general = '', gcls = 'pend';
+  if(filas.length && decididas === filas.length){
+    if(fallidas.length === 0){ general = '✅ Acertó'; gcls = 'ok'; }
+    else { general = '❌ Falló'; gcls = 'bad'; }
+  } else {
+    general = 'Pendiente — ' + decididas + ' de ' + filas.length + ' piernas decididas';
+  }
+  var h = '<p><b>Parlay del día · ' + fechaCorta(PARLAY.fecha) + '</b> <span class="tag ' + gcls + '">' + esc(general) + '</span></p>';
+  if(fallidas.length){ h += '<p>Falló la pierna: ' + fallidas.map(function(f){ return '<b>' + esc(f.leg.partido) + '</b> (' + esc(f.leg.pick) + ')'; }).join(', ') + '.</p>'; }
+  h += '<div style="overflow-x:auto"><table><thead><tr><th>Pierna</th><th>Partido</th><th>Pick</th><th class="num">Momio</th><th class="num">Prob.</th><th class="num">EV</th><th>Estado</th></tr></thead><tbody>';
+  filas.forEach(function(f, idx){
+    var leg = f.leg;
+    var partidoTxt = esc(leg.partido) + '<br/><span class="muted small">' + esc(leg.liga || '') + (leg.hora ? ' · ' + esc(leg.hora) + ' CST' : '') + '</span>';
+    h += '<tr><td class="num">' + (idx + 1) + '</td><td>' + partidoTxt + '</td><td><b>' + esc(leg.pick) + '</b></td>' +
+      '<td class="num">' + fmtMomio(leg.momio) + '</td><td class="num">' + fmtPct(leg.prob) + '</td><td class="num">' + fmtEv(leg.ev) + '</td>' +
+      '<td><span class="tag ' + f.cls + '">' + esc(f.estado) + '</span></td></tr>';
+  });
+  h += '</tbody></table></div>';
+  var momiosTxt = legs.map(function(l){ return fmtMomio(l.momio); }).join(' × ');
+  h += '<div class="big"><div><span class="lbl">Momio combinado</span><b class="num">' + fmtMomio(PARLAY.momio_combinado) + '</b><span class="small muted">' + momiosTxt + '</span></div>' +
+    '<div><span class="lbl">Prob. combinada</span><b class="num">' + fmtNum(PARLAY.prob_combinada, 2) + '%</b><span class="small muted">producto de las probabilidades de las piernas</span></div>' +
+    '<div><span class="lbl">EV combinado</span><b class="num">' + fmtEv(PARLAY.ev_combinado) + '</b><span class="small muted">prob. combinada × momio combinado − 1</span></div>' +
+    '<div><span class="lbl">Piernas</span><b class="num">' + legs.length + '</b><span class="small muted">' + esc(PARLAY.nota || '') + '</span></div></div>';
+  h += '<p class="muted small" style="margin-top:12px">Acertó si las ' + legs.length + ' piernas aciertan. Si alguna falla, se marca cuál pierna falló. Generado: ' + fmtFechaHoraMX(PARLAY.generado_en) + '.</p>';
+  el.innerHTML = h;
+}
+
+function renderMarcador(){
+  var rp = (RES.resumen && RES.resumen.pre_partido) || {};
+  var rv = (RES.resumen && RES.resumen.en_vivo) || {};
+  var nPred = 0;
+  RES.partidos.forEach(function(p){ if(p.vivo && p.vivo.tiene_datos && p.vivo.prediccion) nPred++; });
+  var preHtml, vivoHtml;
+  if(rp.con_resultado > 0){
+    preHtml = '<b class="num">' + rp.aciertos + '/' + rp.con_resultado + ' · ' + fmtNum(rp.pct_acierto, 1) + '%</b><span class="small muted">Aciertos ' + rp.aciertos + ' · Fallos ' + rp.fallos + '</span>';
+  } else {
+    preHtml = '<b>sin datos</b><span class="small muted">Sin registro en Historial todavía</span>';
+  }
+  if(rv.con_resultado > 0){
+    vivoHtml = '<b class="num">' + rv.aciertos + '/' + rv.con_resultado + ' · ' + fmtNum(rv.pct_acierto, 1) + '%</b><span class="small muted">Aciertos ' + rv.aciertos + ' · Fallos ' + rv.fallos + '</span>';
+  } else {
+    vivoHtml = '<b>sin datos</b><span class="small muted">0 con resultado · ' + nPred + ' predicciones en vivo registradas, pendientes</span>';
+  }
+  document.getElementById('marcadorBig').innerHTML =
+    '<div><span class="lbl">Pre-partido</span>' + preHtml + '</div>' +
+    '<div><span class="lbl">En vivo</span>' + vivoHtml + '</div>';
+  document.getElementById('marcadorNota').textContent = 'Resumen publicado en data/resultados.json: pre-partido ' + rp.aciertos + '/' + rp.con_resultado + ' (' + fmtNum(rp.pct_acierto, 1) + '%); en vivo ' + (rv.con_resultado || 0) + ' con resultado. La columna en vivo se completa cuando terminen los partidos con predicción registrada (datos del Empleado 1 al terminar los partidos).';
+  document.getElementById('miniPre').innerHTML = '<span class="lbl">Pre-partido</span> <b class="num">' + (rp.con_resultado > 0 ? rp.aciertos + '/' + rp.con_resultado + ' (' + fmtNum(rp.pct_acierto, 1) + '%)' : 'sin datos') + '</b>';
+  document.getElementById('miniVivo').innerHTML = '<span class="lbl">En vivo</span> <b>' + (rv.con_resultado > 0 ? rv.aciertos + '/' + rv.con_resultado + ' (' + fmtNum(rv.pct_acierto, 1) + '%)' : 'sin datos') + '</b>';
+}
+
+function renderFuentes(){
+  var nPre = 0, nIn = 0, nPost = 0;
+  RES.partidos.forEach(function(p){ if(p.estado === 'pre') nPre++; else if(p.estado === 'in') nIn++; else if(p.estado === 'post') nPost++; });
+  document.getElementById('fuentes').textContent = 'Datos: data/resultados.json · fecha de cálculo ' + (RES.fecha_calculo || '—') + ' · generado ' + fmtFechaHoraMX(RES.generado_en_mx) + ' · ' + RES.partidos.length + ' partidos (' + nPre + ' pre-partido · ' + nIn + ' en vivo · ' + nPost + ' terminados) · Parlay del día: ' + fechaCorta(PARLAY.fecha) + ', ' + (PARLAY.piernas ? PARLAY.piernas.length : 0) + ' piernas.';
+  document.getElementById('miniTotal').textContent = RES.partidos.length + ' partidos · ' + nPre + ' pre · ' + nIn + ' en vivo · ' + nPost + ' terminados';
+  document.getElementById('countPre').textContent = '· ' + nPre + ' por jugar';
+  document.getElementById('countVivo').textContent = '· ' + nIn + ' en juego';
+}
+
+function abrirDetalle(i){
+  var p = RES.partidos[i]; if(!p) return;
+  var h = '';
+  h += '<h3>' + esc(p.home) + ' vs ' + esc(p.away) + '</h3>';
+  h += '<p class="muted small">' + esc(p.liga || '') + ' · ' + fechaCorta(p.fecha) + ' · ' + esc(p.config || '') + '</p>';
+  h += '<p>' + estadoTag(p) + '</p>';
+  h += '<div class="recline">' + recLinea(p) + (p.estado === 'post' ? ' ' + aciertoTag(p) : '') + '</div>';
+  h += '<dl class="kv">';
+  var r = p.recomendacion;
+  if(tieneRec(p)){
+    h += '<dt>Pick</dt><dd><b>' + esc(r.pick) + '</b></dd>';
+    h += '<dt>Momio</dt><dd class="num">' + fmtMomio(r.momio) + '</dd>';
+    h += '<dt>Prob. del modelo</dt><dd class="num">' + fmtPct(r.prob) + '</dd>';
+    h += '<dt>EV</dt><dd class="num">' + fmtEv(r.ev) + '</dd>';
+    h += '<dt>Semáforo</dt><dd>' + esc(r.semaforo || '—') + '</dd>';
+  } else {
+    h += '<dt>Pick</dt><dd>Sin recomendación (ningún EV positivo o sin recomendación publicada)</dd>';
+  }
+  if(p.estado === 'post'){
+    h += '<dt>Resultado</dt><dd>' + esc(p.acierto_texto || (p.acierto === true ? 'Acertó' : (p.acierto === false ? 'Falló' : 'Pendiente'))) + '</dd>';
+  }
+  h += '</dl>';
+  h += '<h3 style="margin-top:18px">En vivo</h3>';
+  var v = p.vivo || {};
+  if(v.tiene_datos && v.ultimo_snapshot){
+    var s = v.ultimo_snapshot;
+    h += '<p class="small">Último snapshot: ' + fmtHoraUTC(s.cuando) + (s.minuto ? ' · minuto ' + esc(s.minuto) : '') + (s.marcador ? ' · marcador ' + s.marcador[0] + '–' + s.marcador[1] : '') + (s.tda ? ' · TDA ' + s.tda[0] + '–' + s.tda[1] : '') + '</p>';
+    if(s.rojas && s.rojas.length){
+      h += '<p class="small">Rojas: ' + s.rojas.length + ' — ' + s.rojas.map(function(rj){ return esc(rj.jugador) + ' (' + esc(rj.minuto) + ')'; }).join(', ') + '</p>';
+    } else { h += '<p class="small">Rojas: 0</p>'; }
+  } else {
+    h += '<p class="small">En vivo: sin datos' + (v.motivo ? ' — ' + esc(v.motivo) : '') + '.</p>';
+  }
+  if(v.prediccion){
+    h += '<p class="small">Predicción en vivo: favorito <b>' + esc(v.prediccion.favorito) + '</b> · Local <span class="num">' + fmtPct(v.prediccion.p1) + '</span> · Empate <span class="num">' + fmtPct(v.prediccion.px) + '</span> · Visita <span class="num">' + fmtPct(v.prediccion.p2) + '</span>' + (v.acierto === null || typeof v.acierto === 'undefined' ? ' · pendiente de resultado' : (v.acierto ? ' · Acertó' : ' · Falló')) + '</p>';
+  }
+  h += '<p class="muted small">Fuente: data/resultados.json. El EV en vivo sigue en pausa: la predicción en vivo es la publicada en el archivo, no un EV recalculado.</p>';
+  h += '<p style="margin-top:16px"><button class="btn ghost" onclick="cerrarDetalle()">Cerrar</button></p>';
+  document.getElementById('modalCard').innerHTML = h;
+  document.getElementById('modal').classList.add('open');
+}
+function cerrarDetalle(){ document.getElementById('modal').classList.remove('open'); }
+
+function mostrarError(msg){
+  ['fuentes','gridPre','gridVivo','tablaResWrap','parlayCard','marcadorBig'].forEach(function(id){ var el = document.getElementById(id); if(el) el.innerHTML = '<p class="error">No se pudieron cargar los datos: ' + esc(msg) + '. Sin datos, sin inventar.</p>'; });
+}
+
+function cargar(){
+  Promise.all([
+    fetch('data/resultados.json', {cache:'no-store'}).then(function(r){ if(!r.ok) throw new Error('resultados.json: HTTP ' + r.status); return r.json(); }),
+    fetch('data/parlay-del-dia.json', {cache:'no-store'}).then(function(r){ if(!r.ok) throw new Error('parlay-del-dia.json: HTTP ' + r.status); return r.json(); })
+  ]).then(function(res){
+    RES = res[0]; PARLAY = res[1];
+    renderFuentes(); renderPre(); renderVivo(); renderResultado(); renderParlay(); renderMarcador();
+  }).catch(function(e){ mostrarError(e.message || String(e)); });
+}
+
+document.getElementById('modal').addEventListener('click', function(e){ if(e.target === this) cerrarDetalle(); });
+document.addEventListener('keydown', function(e){ if(e.key === 'Escape') cerrarDetalle(); });
+cargar();
+</script>
+</body>
+</html>
