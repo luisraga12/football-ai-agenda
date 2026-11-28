@@ -1,7 +1,7 @@
 {
  "semana": "2-entresemana",
- "fecha_hoy": "2026-11-27",
- "fecha_ayer": "2026-11-27",
+ "fecha_hoy": "2026-11-28",
+ "fecha_ayer": "2026-11-28",
  "partidos": [
   {
    "slug": "galatasaray-vs-aston-villa",
@@ -234,9 +234,9 @@
    "fecha": "2026-11-26",
    "hora": "19:00",
    "proveedor": null,
-   "mejor_pick_ayer": "Menos 2.5",
+   "mejor_pick_ayer": null,
    "mejor_pick_hoy": null,
-   "ev_ayer": 0.2714071492806207,
+   "ev_ayer": null,
    "ev_hoy": null,
    "linea_ayer": 2.5,
    "linea_hoy": 2.5,
@@ -250,9 +250,9 @@
    "fecha": "2026-11-26",
    "hora": "21:10",
    "proveedor": null,
-   "mejor_pick_ayer": "Menos 2.5",
+   "mejor_pick_ayer": null,
    "mejor_pick_hoy": null,
-   "ev_ayer": 0.09251684438595986,
+   "ev_ayer": null,
    "ev_hoy": null,
    "linea_ayer": 2.5,
    "linea_hoy": 2.5,

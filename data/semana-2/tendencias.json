@@ -231,15 +231,15 @@
    "hora": "09:00",
    "liga": "Premier League",
    "estado": "con_momio",
-   "linea_total": 2.5,
+   "linea_total": 3.5,
    "linea_referencia": false,
    "local": {
     "n": 5,
     "g": 0,
     "e": 3,
     "p": 2,
-    "mas": 2,
-    "menos": 3,
+    "mas": 1,
+    "menos": 4,
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 2,
@@ -247,15 +247,15 @@
     "cubre": 0,
     "no_cubre": 5,
     "empuje_spread": 0,
-    "linea_total": 2.5
+    "linea_total": 3.5
    },
    "visita": {
     "n": 5,
     "g": 1,
     "e": 2,
     "p": 2,
-    "mas": 2,
-    "menos": 3,
+    "mas": 1,
+    "menos": 4,
     "empuje": 0,
     "btts_si": 3,
     "btts_no": 2,
@@ -263,9 +263,9 @@
     "cubre": 3,
     "no_cubre": 2,
     "empuje_spread": 0,
-    "linea_total": 2.5
+    "linea_total": 3.5
    },
-   "linea_tarjeta": "Tendencias: Manchester United 0G-3E-2P · Más 2.5 2/5 · Menos 2.5 3/5 · BTTS 3/5 · Cubre -0.5 0/5 — Brentford 1G-2E-2P · Más 2.5 2/5 · Menos 2.5 3/5 · BTTS 3/5 · Cubre +0.5 3/5"
+   "linea_tarjeta": "Tendencias: Manchester United 0G-3E-2P · Más 3.5 1/5 · Menos 3.5 4/5 · BTTS 3/5 · Cubre -0.5 0/5 — Brentford 1G-2E-2P · Más 3.5 1/5 · Menos 3.5 4/5 · BTTS 3/5 · Cubre +0.5 3/5"
   },
   {
    "slug": "elche-vs-atletico-madrid",
