@@ -1859,7 +1859,58 @@ function buildRADIOMap(rawData, tenData, partidos){
 
   /* ---------- Momios y valor esperado (misma parrilla que la tarjeta) ---------- */
   function oddsBlock(m){
-    var h = "<h4>Momios y valor esperado</h4>"; if (m && m.estado_partido === "post" && m.marcador && typeof m.marcador.local === "number" && typeof m.marcador.visita === "number"){ var hF = "<h4>Momios y valor esperado</h4>"; hF += '<p><b>Final: ' + esc(nombreEquipo(m.home)) + ' ' + m.marcador.local + ' – ' + m.marcador.visita + ' ' + esc(nombreEquipo(m.away)) + '</b></p>'; var pF = derivar1X2(m); var ajF = ajustar1X2XI(pF, slug); if (ajF && ajF.ajustado) pF = ajF; hF += '<p class="detail-note">Partido terminado sin momios: no hay EV ni pick; las probabilidades son las del modelo antes del partido.' + ((ajF && ajF.ajustado) ? ' Ajustadas por XI oficial.' : '') + '</p>'; var tF = m.mercados && m.mercados.total ? m.mercados.total : null; if (pF || (tF && typeof tF.p_over === "number")){ hF += '<div class="odds"><div class="derived-h"><span>Probabilidad del modelo (sin momio)</span></div><div class="derived-grid">'; if (pF){ hF += celdaMomio("Local", null, null, pF.p1, true); hF += celdaMomio("Empate", null, null, pF.px, true); hF += celdaMomio("Visita", null, null, pF.p2, true); } if (tF && typeof tF.p_over === "number"){ hF += celdaMomio("Más " + fmtLinea(tF.linea), null, null, tF.p_over, true); hF += celdaMomio("Menos " + fmtLinea(tF.linea), null, null, 100 - tF.p_over, true); } hF += '</div></div>'; } return hF; }
+    var h = "<h4>Momios y valor esperado</h4>";
+    /* Partido terminado: muestra el resultado final y, cuando el
+       partido tiene momios (recuperados o publicados), los momios y
+       el EV pre-partido; sin momios, solo las probabilidades del
+       modelo (28 nov 2026, E1: los momios restaurados por el fix de
+       recolectar_momios.py no se veían porque esta rama nunca los
+       pedía). */
+    if (m && m.estado_partido === "post" && m.marcador && typeof m.marcador.local === "number" && typeof m.marcador.visita === "number"){
+      var hF = "<h4>Momios y valor esperado</h4>";
+      hF += '<p><b>Final: ' + esc(nombreEquipo(m.home)) + ' ' + m.marcador.local + ' \u2013 ' + m.marcador.visita + ' ' + esc(nombreEquipo(m.away)) + '</b></p>';
+      var pF = derivar1X2(m);
+      var ajF = ajustar1X2XI(pF, slug);
+      if (ajF && ajF.ajustado) pF = ajF;
+      var moF = (m.mercados && m.mercados["1X2"] && m.mercados["1X2"].momios) ? m.mercados["1X2"].momios : (m.momios && m.momios.moneyline ? m.momios.moneyline : null);
+      var evF = (m.mercados && m.mercados["1X2"] && m.mercados["1X2"].ev) ? m.mercados["1X2"].ev : null;
+      if (ajF && ajF.ajustado && moF){
+        evF = {"1": (typeof moF.home === "number") ? (pF.p1 / 100) * moF.home - 1 : null, "X": (typeof moF.draw === "number") ? (pF.px / 100) * moF.draw - 1 : null, "2": (typeof moF.away === "number") ? (pF.p2 / 100) * moF.away - 1 : null};
+      }
+      var tF = m.mercados && m.mercados.total ? m.mercados.total : null;
+      var tMomF = null, tEvF = null, tLinF = null;
+      if (tF){
+        if (typeof tF.linea === "number") tLinF = tF.linea;
+        if (tF.momios) tMomF = {over: tF.momios.over, under: tF.momios.under};
+        if (tF.ev) tEvF = {mas: tF.ev.mas, menos: tF.ev.menos};
+      }
+      if (!tMomF && m.momios && m.momios.total){ tMomF = {over: m.momios.total.over, under: m.momios.total.under}; if (typeof m.momios.total.linea === "number") tLinF = m.momios.total.linea; }
+      if (moF){
+        hF += '<p class="detail-note">Momios pre-partido: estos momios y su EV son los de antes del partido; ya termin\u00f3 y no se puede apostar. Las probabilidades son las del modelo antes del partido.' + ((ajF && ajF.ajustado) ? ' Ajustadas por XI oficial.' : '') + '</p>';
+        hF += '<div class="odds"><div class="derived-h"><span>Momios pre-partido ' + esc(m.proveedor || (m.momios && m.momios.proveedor) || "") + '</span><span>EV = prob. \u00d7 momio \u2212 1' + ((ajF && ajF.ajustado) ? ' \u00b7 1X2 ajustado por XI oficial' : '') + '</span></div><div class="derived-grid">';
+        if (pF){
+          hF += celdaMomio("Local", moF.home, evF ? evF["1"] : null, pF.p1);
+          hF += celdaMomio("Empate", moF.draw, evF ? evF["X"] : null, pF.px);
+          hF += celdaMomio("Visita", moF.away, evF ? evF["2"] : null, pF.p2);
+        }
+        if (tMomF || tEvF || tLinF != null){
+          var labelMasF = (tLinF == null) ? "M\u00e1s" : "M\u00e1s " + fmtLinea(tLinF);
+          var labelMenosF = (tLinF == null) ? "Menos" : "Menos " + fmtLinea(tLinF);
+          hF += celdaMomio(labelMasF, tMomF ? tMomF.over : null, tEvF ? tEvF.mas : null, (tF && typeof tF.p_over === "number") ? tF.p_over : null);
+          hF += celdaMomio(labelMenosF, tMomF ? tMomF.under : null, tEvF ? tEvF.menos : null, (tF && typeof tF.p_over === "number") ? 100 - tF.p_over : null);
+        }
+        hF += '</div></div>';
+      } else {
+        hF += '<p class="detail-note">Partido terminado sin momios: no hay EV ni pick; las probabilidades son las del modelo antes del partido.' + ((ajF && ajF.ajustado) ? ' Ajustadas por XI oficial.' : '') + '</p>';
+        if (pF || (tF && typeof tF.p_over === "number")){
+          hF += '<div class="odds"><div class="derived-h"><span>Probabilidad del modelo (sin momio)</span></div><div class="derived-grid">';
+          if (pF){ hF += celdaMomio("Local", null, null, pF.p1, true); hF += celdaMomio("Empate", null, null, pF.px, true); hF += celdaMomio("Visita", null, null, pF.p2, true); }
+          if (tF && typeof tF.p_over === "number"){ hF += celdaMomio("M\u00e1s " + fmtLinea(tF.linea), null, null, tF.p_over, true); hF += celdaMomio("Menos " + fmtLinea(tF.linea), null, null, 100 - tF.p_over, true); }
+          hF += '</div></div>';
+        }
+      }
+      return hF;
+    }
     /* Explicacion del EV en palabras simples (28 nov 2026, orden de Luis):
        que es el EV, que significa el porcentaje y que la pagina no
        recomienda apostar. */

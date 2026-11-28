@@ -575,6 +575,23 @@ def main():
                 }
             time.sleep(0.3)
 
+    # Momios previos (28 nov 2026, E1): ESPN quita el bloque `odds`
+    # cuando el partido termina (o sale de la ventana del scoreboard).
+    # Sin esto, cada corrida pone en null los momios de los terminados
+    # y se pierde el momio pre-partido historico. Se conservan los
+    # momios ya publicados; nunca se inventa uno nuevo.
+    previos = {}
+    prev_path = os.path.join(rawdir, 'momios.json')
+    if os.path.exists(prev_path):
+        try:
+            prev_doc = json.load(open(prev_path))
+            for pr in prev_doc.get('partidos') or []:
+                if pr.get('momios'):
+                    previos[(str(pr.get('home_id')), str(pr.get('away_id')),
+                             pr.get('fecha'))] = pr
+        except (ValueError, OSError):
+            previos = {}
+
     faltantes = []
     resultados = []
     for p in partidos:
@@ -591,14 +608,31 @@ def main():
             if v['estado_partido'] == 'post' and v['marcador']:
                 final_txt = (f" | Final {v['marcador']['local']}–"
                              f"{v['marcador']['visita']}")
-            print(f"PENDIENTE {v['date_cst']} CST | {v['home']} vs {v['away']} "
-                  f"| {ligas[v['league']]} | sin momio en ESPN{final_txt}")
-            resultados.append({**p, 'fecha_cst': v['date_cst'],
-                               'liga_nombre': ligas[v['league']],
-                               'proveedor': None, 'estado': 'pendiente',
-                               'momios': None,
-                               'estado_partido': v['estado_partido'],
-                               'marcador': v['marcador']})
+            prev = previos.get(key)
+            if prev is not None:
+                # ESPN ya no publica el momio: se conserva el momio
+                # pre-partido de la corrida anterior (es el historico
+                # que usa el EV y el historial; no es un dato nuevo).
+                print(f"RECUPERADO {v['date_cst']} CST | {v['home']} vs "
+                      f"{v['away']} | {prev.get('proveedor')} | momio "
+                      f"pre-partido conservado{final_txt}")
+                resultados.append({**p, 'fecha_cst': v['date_cst'],
+                                   'liga_nombre': ligas[v['league']],
+                                   'proveedor': prev.get('proveedor'),
+                                   'estado': 'con_momio',
+                                   'momios': prev['momios'],
+                                   'momio_recuperado': True,
+                                   'estado_partido': v['estado_partido'],
+                                   'marcador': v['marcador']})
+            else:
+                print(f"PENDIENTE {v['date_cst']} CST | {v['home']} vs {v['away']} "
+                      f"| {ligas[v['league']]} | sin momio en ESPN{final_txt}")
+                resultados.append({**p, 'fecha_cst': v['date_cst'],
+                                   'liga_nombre': ligas[v['league']],
+                                   'proveedor': None, 'estado': 'pendiente',
+                                   'momios': None,
+                                   'estado_partido': v['estado_partido'],
+                                   'marcador': v['marcador']})
         else:
             ml = momios['moneyline']
             tot = momios['total']
@@ -625,6 +659,7 @@ def main():
     n_post_sin_momio = sum(1 for r in resultados
                            if r['estado'] != 'con_momio'
                            and r.get('estado_partido') == 'post')
+    n_rec = sum(1 for r in resultados if r.get('momio_recuperado'))
 
     # ---- Segunda fuente (BSD): no toca la parte ESPN ----
     resumen_bsd = recolectar_bsd(resultados, ligas, fechas)
@@ -641,7 +676,8 @@ def main():
                    'partidos': resultados},
                   f, indent=1, ensure_ascii=False)
     print(f"\nOK - momios en {rawdir}/momios.json: "
-          f"{n_momio} con momio, {n_pend} pendientes, "
+          f"{n_momio} con momio ({n_rec} recuperados de la corrida "
+          f"anterior), {n_pend} pendientes, "
           f"{n_post_sin_momio} terminados sin momio (sin inventar).")
 
 

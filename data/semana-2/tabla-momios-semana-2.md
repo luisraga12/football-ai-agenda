@@ -6,10 +6,10 @@
 
 | Fecha | Partido | 1X2 (decimal) | EV 1 / X / 2 | Total (línea) | EV Más / Menos | Spread (línea local) | EV Spread local / visitante | P(BTTS) | Mejor pick | EV | Semáforo |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 11/27 nov | Werder Bremen vs Borussia Mönchengladbach (Final 3–3) | pendiente | — | — | — | — | — | 54.2% | — | — | 🏁 Terminado sin momio |
-| 11/27 nov | Venezia vs Bologna (Final 0–0) | pendiente | — | — | — | — | — | 28.6% | — | — | 🏁 Terminado sin momio |
-| 11/27 nov | Nottingham Forest vs Chelsea (Final 3–2) | pendiente | — | — | — | — | — | 47.8% | — | — | 🏁 Terminado sin momio |
-| 11/27 nov | Levante vs Racing Santander (Final 1–3) | pendiente | — | — | — | — | — | 54.5% | — | — | 🏁 Terminado sin momio |
+| 11/27 nov | Werder Bremen vs Borussia Mönchengladbach | 1.69 / 4.00 / 4.20 | +21.9% / -34.6% / -51.8% | 3.5 (2.35 / 1.59) | +3.0% / -10.8% | -0.5 (1.67 / 2.10) | +20.3% / -41.5% | 54.2% | Local | +21.9% | 🟢 Verde |
+| 11/27 nov | Venezia vs Bologna | 2.95 / 3.05 / 2.40 | -59.1% / -12.2% / +37.6% | 2.5 (2.20 / 1.65) | -39.9% / +19.6% | +0.5 (1.54 / 2.30) | -34.3% / +31.9% | 28.6% | Visita | +37.6% | 🟢 Verde |
+| 11/27 nov | Nottingham Forest vs Chelsea | 2.45 / 3.45 / 2.85 | -69.0% / -33.8% / +94.2% | 2.5 (1.77 / 2.05) | -2.0% / -8.6% | -0.5 (2.25 / 1.56) | -71.5% / +35.9% | 47.8% | Visita | +94.2% | 🟢 Verde |
+| 11/27 nov | Levante vs Racing Santander | 2.00 / 3.90 / 3.50 | +7.3% / -8.6% / -19.8% | 3.5 (2.30 / 1.62) | -27.3% / +11.1% | -0.5 (1.91 / 1.80) | +2.5% / -16.6% | 54.5% | Menos 3.5 | +11.1% | 🟢 Verde |
 | 11/28 nov | Hamburg SV vs Bayern Munich (Bet 365) | 8.00 / 5.75 / 1.30 | +139.5% / +16.2% / -35.2% | — | — | — | — | 73.4% | Local | +139.5% | 🟢 Verde |
 | 11/28 nov | Manchester United vs Brentford | 2.35 / 3.70 / 2.85 | -22.0% / -19.5% / +28.4% | 3.5 (2.35 / 1.59) | +13.2% / -17.7% | -0.5 (2.20 / 1.59) | -27.0% / +6.1% | 69.1% | Visita | +28.4% | 🟢 Verde |
 | 11/28 nov | Elche vs Atlético Madrid | 6.00 / 4.60 / 1.50 | +5.9% / +113.4% / -46.1% | 2.5 (1.65 / 2.25) | -87.5% / +107.9% | +1.5 (1.56 / 2.30) | +40.3% / -77.5% | 13.8% | Empate | +113.4% | 🟢 Verde |
@@ -47,6 +47,6 @@
 | 11/29 nov | Udinese vs Fiorentina | 3.00 / 3.40 / 2.20 | -78.3% / -57.5% / +76.6% | 2.5 (1.69 / 2.10) | +19.5% / -38.5% | +0.5 (1.65 / 2.15) | -67.5% / +72.6% | 51.0% | Visita | +76.6% | 🟢 Verde |
 | 11/29 nov | AS Roma vs Monza | 1.18 / 7.00 / 11.00 | -2.0% / -34.0% / -15.7% | 3.5 (1.80 / 1.95) | +40.4% / -57.0% | -2.5 (2.20 / 1.59) | +12.6% / -22.5% | 72.6% | Más 3.5 | +40.4% | 🟢 Verde |
 
-**Resumen:** 35 verdes, 0 amarillos, 0 rojos, 1 pendientes, 4 terminados sin momio.
+**Resumen:** 39 verdes, 0 amarillos, 0 rojos, 1 pendientes, 0 terminados sin momio.
 
 **Advertencia:** el modelo Poisson usa solo los últimos partidos por equipo y puede exagerar rachas; los EV extremos reflejan desacuerdo fuerte entre el modelo y el mercado, no una certeza.
