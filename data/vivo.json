@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generado_en": "2026-11-27T20:51:30Z",
-  "generado_en_mx": "2026-11-27T14:51:31-06:00",
+  "generado_en": "2026-11-28T03:00:02Z",
+  "generado_en_mx": "2026-11-27T21:00:03-06:00",
   "semana": 2,
   "fuente": "ESPN scoreboard (site.api.espn.com, respaldo site.web.api.espn.com)",
   "partidos": [
@@ -12,12 +12,13 @@
       "away_id": 363,
       "home": "Nottingham Forest",
       "away": "Chelsea",
-      "estado": "in",
-      "detalle": "HT",
-      "minuto": "45'+1'",
-      "marcador_local": 1,
-      "marcador_visita": 0,
-      "actualizado_en": "2026-11-27T20:51:30Z"
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+6'",
+      "marcador_local": 3,
+      "marcador_visita": 2,
+      "actualizado_en": "2026-11-28T03:00:02Z",
+      "evento_id": "401879225"
     },
     {
       "liga": "eng.1",
@@ -32,7 +33,8 @@
       "marcador_local": null,
       "marcador_visita": null,
       "actualizado_en": "2026-11-27T20:51:30Z",
-      "origen": "config"
+      "origen": "config",
+      "evento_id": null
     },
     {
       "liga": "eng.1",
@@ -46,7 +48,8 @@
       "minuto": "0'",
       "marcador_local": 0,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-24T19:29:05Z"
+      "actualizado_en": "2026-11-24T19:29:05Z",
+      "evento_id": null
     },
     {
       "liga": "eng.1",
@@ -61,7 +64,8 @@
       "marcador_local": null,
       "marcador_visita": null,
       "actualizado_en": "2026-11-27T20:51:30Z",
-      "origen": "config"
+      "origen": "config",
+      "evento_id": null
     },
     {
       "liga": "eng.1",
@@ -76,7 +80,8 @@
       "marcador_local": null,
       "marcador_visita": null,
       "actualizado_en": "2026-11-27T20:51:30Z",
-      "origen": "config"
+      "origen": "config",
+      "evento_id": null
     },
     {
       "liga": "eng.1",
@@ -90,7 +95,8 @@
       "minuto": "0'",
       "marcador_local": 0,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-24T19:29:05Z"
+      "actualizado_en": "2026-11-24T19:29:05Z",
+      "evento_id": null
     },
     {
       "liga": "eng.1",
@@ -105,7 +111,8 @@
       "marcador_local": null,
       "marcador_visita": null,
       "actualizado_en": "2026-11-27T20:51:30Z",
-      "origen": "config"
+      "origen": "config",
+      "evento_id": null
     },
     {
       "liga": "eng.1",
@@ -119,7 +126,8 @@
       "minuto": "0'",
       "marcador_local": 0,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-24T19:29:05Z"
+      "actualizado_en": "2026-11-24T19:29:05Z",
+      "evento_id": null
     },
     {
       "liga": "eng.1",
@@ -134,7 +142,8 @@
       "marcador_local": null,
       "marcador_visita": null,
       "actualizado_en": "2026-11-27T20:51:30Z",
-      "origen": "config"
+      "origen": "config",
+      "evento_id": null
     },
     {
       "liga": "eng.1",
@@ -149,7 +158,8 @@
       "marcador_local": null,
       "marcador_visita": null,
       "actualizado_en": "2026-11-27T20:51:30Z",
-      "origen": "config"
+      "origen": "config",
+      "evento_id": null
     },
     {
       "liga": "esp.1",
@@ -158,12 +168,13 @@
       "away_id": 87,
       "home": "Levante",
       "away": "Racing Santander",
-      "estado": "in",
-      "detalle": "HT",
-      "minuto": "45'+1'",
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+7'",
       "marcador_local": 1,
-      "marcador_visita": 0,
-      "actualizado_en": "2026-11-27T20:51:30Z"
+      "marcador_visita": 3,
+      "actualizado_en": "2026-11-28T03:00:02Z",
+      "evento_id": "401882791"
     },
     {
       "liga": "esp.1",
@@ -178,7 +189,8 @@
       "marcador_local": null,
       "marcador_visita": null,
       "actualizado_en": "2026-11-27T20:51:30Z",
-      "origen": "config"
+      "origen": "config",
+      "evento_id": null
     },
     {
       "liga": "esp.1",
@@ -192,7 +204,8 @@
       "minuto": "0'",
       "marcador_local": 0,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-24T19:29:05Z"
+      "actualizado_en": "2026-11-24T19:29:05Z",
+      "evento_id": null
     },
     {
       "liga": "esp.1",
@@ -206,7 +219,8 @@
       "minuto": "0'",
       "marcador_local": 0,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-24T19:29:05Z"
+      "actualizado_en": "2026-11-24T19:29:05Z",
+      "evento_id": null
     },
     {
       "liga": "esp.1",
@@ -221,7 +235,8 @@
       "marcador_local": null,
       "marcador_visita": null,
       "actualizado_en": "2026-11-27T20:51:30Z",
-      "origen": "config"
+      "origen": "config",
+      "evento_id": null
     },
     {
       "liga": "esp.1",
@@ -236,7 +251,8 @@
       "marcador_local": null,
       "marcador_visita": null,
       "actualizado_en": "2026-11-27T20:51:30Z",
-      "origen": "config"
+      "origen": "config",
+      "evento_id": null
     },
     {
       "liga": "esp.1",
@@ -251,7 +267,8 @@
       "marcador_local": null,
       "marcador_visita": null,
       "actualizado_en": "2026-11-27T20:51:30Z",
-      "origen": "config"
+      "origen": "config",
+      "evento_id": null
     },
     {
       "liga": "esp.1",
@@ -265,7 +282,8 @@
       "minuto": "0'",
       "marcador_local": 0,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-24T19:29:05Z"
+      "actualizado_en": "2026-11-24T19:29:05Z",
+      "evento_id": null
     },
     {
       "liga": "esp.1",
@@ -280,7 +298,8 @@
       "marcador_local": null,
       "marcador_visita": null,
       "actualizado_en": "2026-11-27T20:51:30Z",
-      "origen": "config"
+      "origen": "config",
+      "evento_id": null
     },
     {
       "liga": "ger.1",
@@ -289,12 +308,13 @@
       "away_id": 268,
       "home": "Werder Bremen",
       "away": "Borussia Mönchengladbach",
-      "estado": "in",
-      "detalle": "60'",
-      "minuto": "60'",
-      "marcador_local": 1,
-      "marcador_visita": 2,
-      "actualizado_en": "2026-11-27T20:51:30Z"
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+6'",
+      "marcador_local": 3,
+      "marcador_visita": 3,
+      "actualizado_en": "2026-11-28T03:00:02Z",
+      "evento_id": "401884720"
     },
     {
       "liga": "ger.1",
@@ -309,7 +329,8 @@
       "marcador_local": null,
       "marcador_visita": null,
       "actualizado_en": "2026-11-27T20:51:30Z",
-      "origen": "config"
+      "origen": "config",
+      "evento_id": null
     },
     {
       "liga": "ger.1",
@@ -323,7 +344,8 @@
       "minuto": "0'",
       "marcador_local": 0,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-24T19:29:05Z"
+      "actualizado_en": "2026-11-24T19:29:05Z",
+      "evento_id": null
     },
     {
       "liga": "ger.1",
@@ -337,7 +359,8 @@
       "minuto": "0'",
       "marcador_local": 0,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-24T19:29:05Z"
+      "actualizado_en": "2026-11-24T19:29:05Z",
+      "evento_id": null
     },
     {
       "liga": "ger.1",
@@ -352,7 +375,8 @@
       "marcador_local": null,
       "marcador_visita": null,
       "actualizado_en": "2026-11-27T20:51:30Z",
-      "origen": "config"
+      "origen": "config",
+      "evento_id": null
     },
     {
       "liga": "ger.1",
@@ -367,7 +391,8 @@
       "marcador_local": null,
       "marcador_visita": null,
       "actualizado_en": "2026-11-27T20:51:30Z",
-      "origen": "config"
+      "origen": "config",
+      "evento_id": null
     },
     {
       "liga": "ger.1",
@@ -381,7 +406,8 @@
       "minuto": "0'",
       "marcador_local": 0,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-24T19:29:05Z"
+      "actualizado_en": "2026-11-24T19:29:05Z",
+      "evento_id": null
     },
     {
       "liga": "ger.1",
@@ -396,7 +422,8 @@
       "marcador_local": null,
       "marcador_visita": null,
       "actualizado_en": "2026-11-27T20:51:30Z",
-      "origen": "config"
+      "origen": "config",
+      "evento_id": null
     },
     {
       "liga": "ger.1",
@@ -411,7 +438,8 @@
       "marcador_local": null,
       "marcador_visita": null,
       "actualizado_en": "2026-11-27T20:51:30Z",
-      "origen": "config"
+      "origen": "config",
+      "evento_id": null
     },
     {
       "liga": "ita.1",
@@ -420,12 +448,13 @@
       "away_id": 107,
       "home": "Venezia",
       "away": "Bologna",
-      "estado": "in",
-      "detalle": "46'",
-      "minuto": "46'",
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+3'",
       "marcador_local": 0,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-27T20:51:30Z"
+      "actualizado_en": "2026-11-28T03:00:02Z",
+      "evento_id": "401875004"
     },
     {
       "liga": "ita.1",
@@ -439,7 +468,8 @@
       "minuto": "0'",
       "marcador_local": 0,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-24T19:29:05Z"
+      "actualizado_en": "2026-11-24T19:29:05Z",
+      "evento_id": null
     },
     {
       "liga": "ita.1",
@@ -454,7 +484,8 @@
       "marcador_local": null,
       "marcador_visita": null,
       "actualizado_en": "2026-11-27T20:51:30Z",
-      "origen": "config"
+      "origen": "config",
+      "evento_id": null
     },
     {
       "liga": "ita.1",
@@ -469,7 +500,8 @@
       "marcador_local": null,
       "marcador_visita": null,
       "actualizado_en": "2026-11-27T20:51:30Z",
-      "origen": "config"
+      "origen": "config",
+      "evento_id": null
     },
     {
       "liga": "ita.1",
@@ -484,7 +516,8 @@
       "marcador_local": null,
       "marcador_visita": null,
       "actualizado_en": "2026-11-27T20:51:30Z",
-      "origen": "config"
+      "origen": "config",
+      "evento_id": null
     },
     {
       "liga": "ita.1",
@@ -499,7 +532,8 @@
       "marcador_local": null,
       "marcador_visita": null,
       "actualizado_en": "2026-11-27T20:51:30Z",
-      "origen": "config"
+      "origen": "config",
+      "evento_id": null
     },
     {
       "liga": "ita.1",
@@ -513,7 +547,8 @@
       "minuto": "0'",
       "marcador_local": 0,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-24T19:29:05Z"
+      "actualizado_en": "2026-11-24T19:29:05Z",
+      "evento_id": null
     },
     {
       "liga": "ita.1",
@@ -527,7 +562,8 @@
       "minuto": "0'",
       "marcador_local": 0,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-24T19:29:05Z"
+      "actualizado_en": "2026-11-24T19:29:05Z",
+      "evento_id": null
     },
     {
       "liga": "mex.1",
@@ -541,7 +577,8 @@
       "minuto": "90'+7'",
       "marcador_local": 0,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-26T12:07:59Z"
+      "actualizado_en": "2026-11-26T12:07:59Z",
+      "evento_id": null
     },
     {
       "liga": "mex.1",
@@ -555,7 +592,8 @@
       "minuto": "90'+6'",
       "marcador_local": 2,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-26T12:07:59Z"
+      "actualizado_en": "2026-11-26T12:07:59Z",
+      "evento_id": null
     },
     {
       "liga": "mex.1",
@@ -569,7 +607,8 @@
       "minuto": "90'+3'",
       "marcador_local": 0,
       "marcador_visita": 4,
-      "actualizado_en": "2026-11-27T07:47:08Z"
+      "actualizado_en": "2026-11-27T07:47:08Z",
+      "evento_id": null
     },
     {
       "liga": "mex.1",
@@ -583,7 +622,8 @@
       "minuto": "90'+11'",
       "marcador_local": 2,
       "marcador_visita": 1,
-      "actualizado_en": "2026-11-27T07:47:08Z"
+      "actualizado_en": "2026-11-27T07:47:08Z",
+      "evento_id": null
     },
     {
       "liga": "mex.1",
@@ -597,7 +637,8 @@
       "minuto": "0'",
       "marcador_local": 0,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "actualizado_en": "2026-11-26T00:10:57Z",
+      "evento_id": null
     },
     {
       "liga": "mex.1",
@@ -611,7 +652,8 @@
       "minuto": "0'",
       "marcador_local": 0,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "actualizado_en": "2026-11-26T00:10:57Z",
+      "evento_id": null
     },
     {
       "liga": "mex.1",
@@ -625,7 +667,8 @@
       "minuto": "0'",
       "marcador_local": 0,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "actualizado_en": "2026-11-26T00:10:57Z",
+      "evento_id": null
     },
     {
       "liga": "mex.1",
@@ -639,7 +682,8 @@
       "minuto": "0'",
       "marcador_local": 0,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "actualizado_en": "2026-11-26T00:10:57Z",
+      "evento_id": null
     },
     {
       "liga": "uefa.champions",
@@ -653,7 +697,8 @@
       "minuto": "90'+4'",
       "marcador_local": 1,
       "marcador_visita": 1,
-      "actualizado_en": "2026-11-25T04:15:21Z"
+      "actualizado_en": "2026-11-25T04:15:21Z",
+      "evento_id": null
     },
     {
       "liga": "uefa.champions",
@@ -667,7 +712,8 @@
       "minuto": "90'+2'",
       "marcador_local": 2,
       "marcador_visita": 2,
-      "actualizado_en": "2026-11-25T04:15:21Z"
+      "actualizado_en": "2026-11-25T04:15:21Z",
+      "evento_id": null
     },
     {
       "liga": "uefa.champions",
@@ -681,7 +727,8 @@
       "minuto": "90'+7'",
       "marcador_local": 1,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-25T04:15:21Z"
+      "actualizado_en": "2026-11-25T04:15:21Z",
+      "evento_id": null
     },
     {
       "liga": "uefa.champions",
@@ -695,7 +742,8 @@
       "minuto": "90'+3'",
       "marcador_local": 5,
       "marcador_visita": 1,
-      "actualizado_en": "2026-11-25T04:15:21Z"
+      "actualizado_en": "2026-11-25T04:15:21Z",
+      "evento_id": null
     },
     {
       "liga": "uefa.champions",
@@ -709,7 +757,8 @@
       "minuto": "90'+4'",
       "marcador_local": 2,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "actualizado_en": "2026-11-26T00:10:57Z",
+      "evento_id": null
     },
     {
       "liga": "uefa.champions",
@@ -723,7 +772,8 @@
       "minuto": "90'+4'",
       "marcador_local": 2,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "actualizado_en": "2026-11-26T00:10:57Z",
+      "evento_id": null
     },
     {
       "liga": "uefa.champions",
@@ -737,7 +787,8 @@
       "minuto": "90'+5'",
       "marcador_local": 2,
       "marcador_visita": 2,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "actualizado_en": "2026-11-26T00:10:57Z",
+      "evento_id": null
     },
     {
       "liga": "uefa.champions",
@@ -751,7 +802,8 @@
       "minuto": "90'+4'",
       "marcador_local": 2,
       "marcador_visita": 1,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "actualizado_en": "2026-11-26T00:10:57Z",
+      "evento_id": null
     },
     {
       "liga": "uefa.champions",
@@ -765,7 +817,8 @@
       "minuto": "90'+2'",
       "marcador_local": 1,
       "marcador_visita": 4,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "actualizado_en": "2026-11-26T00:10:57Z",
+      "evento_id": null
     },
     {
       "liga": "uefa.champions",
@@ -779,7 +832,8 @@
       "minuto": "90'+6'",
       "marcador_local": 2,
       "marcador_visita": 2,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "actualizado_en": "2026-11-26T00:10:57Z",
+      "evento_id": null
     },
     {
       "liga": "uefa.champions",
@@ -793,7 +847,8 @@
       "minuto": "90'+4'",
       "marcador_local": 0,
       "marcador_visita": 1,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "actualizado_en": "2026-11-26T00:10:57Z",
+      "evento_id": null
     },
     {
       "liga": "uefa.champions",
@@ -807,7 +862,8 @@
       "minuto": "90'+5'",
       "marcador_local": 0,
       "marcador_visita": 1,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "actualizado_en": "2026-11-26T00:10:57Z",
+      "evento_id": null
     },
     {
       "liga": "uefa.champions",
@@ -821,7 +877,8 @@
       "minuto": "90'+3'",
       "marcador_local": 0,
       "marcador_visita": 3,
-      "actualizado_en": "2026-11-26T00:10:57Z"
+      "actualizado_en": "2026-11-26T00:10:57Z",
+      "evento_id": null
     },
     {
       "liga": "uefa.europa",
@@ -835,7 +892,8 @@
       "minuto": "90'+7'",
       "marcador_local": 1,
       "marcador_visita": 3,
-      "actualizado_en": "2026-11-27T00:59:15Z"
+      "actualizado_en": "2026-11-27T00:59:15Z",
+      "evento_id": null
     },
     {
       "liga": "uefa.europa",
@@ -849,7 +907,8 @@
       "minuto": "90'+3'",
       "marcador_local": 4,
       "marcador_visita": 1,
-      "actualizado_en": "2026-11-27T00:59:15Z"
+      "actualizado_en": "2026-11-27T00:59:15Z",
+      "evento_id": null
     },
     {
       "liga": "uefa.europa",
@@ -863,7 +922,8 @@
       "minuto": "90'+3'",
       "marcador_local": 4,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-27T00:59:15Z"
+      "actualizado_en": "2026-11-27T00:59:15Z",
+      "evento_id": null
     },
     {
       "liga": "uefa.europa",
@@ -877,7 +937,8 @@
       "minuto": "90'+5'",
       "marcador_local": 3,
       "marcador_visita": 1,
-      "actualizado_en": "2026-11-27T00:59:15Z"
+      "actualizado_en": "2026-11-27T00:59:15Z",
+      "evento_id": null
     },
     {
       "liga": "uefa.europa",
@@ -891,7 +952,8 @@
       "minuto": "90'+6'",
       "marcador_local": 0,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-27T00:59:15Z"
+      "actualizado_en": "2026-11-27T00:59:15Z",
+      "evento_id": null
     },
     {
       "liga": "uefa.europa",
@@ -905,7 +967,8 @@
       "minuto": "90'+4'",
       "marcador_local": 1,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-27T00:59:15Z"
+      "actualizado_en": "2026-11-27T00:59:15Z",
+      "evento_id": null
     },
     {
       "liga": "uefa.europa",
@@ -919,7 +982,8 @@
       "minuto": "90'+8'",
       "marcador_local": 2,
       "marcador_visita": 1,
-      "actualizado_en": "2026-11-27T00:59:15Z"
+      "actualizado_en": "2026-11-27T00:59:15Z",
+      "evento_id": null
     },
     {
       "liga": "uefa.europa",
@@ -933,7 +997,8 @@
       "minuto": "90'+4'",
       "marcador_local": 1,
       "marcador_visita": 2,
-      "actualizado_en": "2026-11-27T00:59:15Z"
+      "actualizado_en": "2026-11-27T00:59:15Z",
+      "evento_id": null
     },
     {
       "liga": "uefa.europa",
@@ -947,7 +1012,8 @@
       "minuto": "90'+5'",
       "marcador_local": 2,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-27T00:59:15Z"
+      "actualizado_en": "2026-11-27T00:59:15Z",
+      "evento_id": null
     },
     {
       "liga": "uefa.europa",
@@ -961,7 +1027,8 @@
       "minuto": "90'+3'",
       "marcador_local": 1,
       "marcador_visita": 1,
-      "actualizado_en": "2026-11-27T00:59:15Z"
+      "actualizado_en": "2026-11-27T00:59:15Z",
+      "evento_id": null
     },
     {
       "liga": "uefa.europa",
@@ -975,7 +1042,8 @@
       "minuto": "90'+8'",
       "marcador_local": 2,
       "marcador_visita": 1,
-      "actualizado_en": "2026-11-27T00:59:15Z"
+      "actualizado_en": "2026-11-27T00:59:15Z",
+      "evento_id": null
     },
     {
       "liga": "uefa.europa",
@@ -989,7 +1057,8 @@
       "minuto": "90'+4'",
       "marcador_local": 2,
       "marcador_visita": 4,
-      "actualizado_en": "2026-11-27T00:59:15Z"
+      "actualizado_en": "2026-11-27T00:59:15Z",
+      "evento_id": null
     },
     {
       "liga": "uefa.europa",
@@ -1003,7 +1072,8 @@
       "minuto": "90'+6'",
       "marcador_local": 2,
       "marcador_visita": 4,
-      "actualizado_en": "2026-11-27T00:59:15Z"
+      "actualizado_en": "2026-11-27T00:59:15Z",
+      "evento_id": null
     },
     {
       "liga": "uefa.europa",
@@ -1017,7 +1087,8 @@
       "minuto": "90'+4'",
       "marcador_local": 2,
       "marcador_visita": 2,
-      "actualizado_en": "2026-11-27T00:59:15Z"
+      "actualizado_en": "2026-11-27T00:59:15Z",
+      "evento_id": null
     },
     {
       "liga": "uefa.europa",
@@ -1031,7 +1102,8 @@
       "minuto": "90'+4'",
       "marcador_local": 0,
       "marcador_visita": 2,
-      "actualizado_en": "2026-11-27T00:59:15Z"
+      "actualizado_en": "2026-11-27T00:59:15Z",
+      "evento_id": null
     },
     {
       "liga": "uefa.europa",
@@ -1045,7 +1117,8 @@
       "minuto": "90'+3'",
       "marcador_local": 0,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-27T00:59:15Z"
+      "actualizado_en": "2026-11-27T00:59:15Z",
+      "evento_id": null
     },
     {
       "liga": "uefa.europa",
@@ -1059,7 +1132,8 @@
       "minuto": "90'+4'",
       "marcador_local": 3,
       "marcador_visita": 1,
-      "actualizado_en": "2026-11-27T00:59:15Z"
+      "actualizado_en": "2026-11-27T00:59:15Z",
+      "evento_id": null
     },
     {
       "liga": "uefa.europa",
@@ -1073,7 +1147,8 @@
       "minuto": "90'+4'",
       "marcador_local": 1,
       "marcador_visita": 2,
-      "actualizado_en": "2026-11-27T00:59:15Z"
+      "actualizado_en": "2026-11-27T00:59:15Z",
+      "evento_id": null
     }
   ],
   "advertencia": null
