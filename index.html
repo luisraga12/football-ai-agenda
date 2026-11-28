@@ -2257,6 +2257,7 @@ var RADIO = {}; /* Integración Semana 7: la Radiografía llega por fetch
         if (!p) return;
         var scores = card.querySelectorAll(".team .score");
         var tiempo = card.querySelector(".m-time");
+        var badge = card.querySelector(".match-top .fifa-badge");
         if (scores.length < 2) return;
         if (p.estado === "in"){
           scores[0].textContent = p.marcador_local;
@@ -2271,6 +2272,7 @@ var RADIO = {}; /* Integración Semana 7: la Radiografía llega por fetch
             tiempo.classList.remove("final");
             tiempo.title = tiempo.getAttribute("data-orig");
           }
+          if (badge){ badge.textContent = "En vivo"; badge.className = "fifa-badge live"; }
           cambio = true;
         } else if (p.estado === "post"){
           scores[0].textContent = p.marcador_local;
@@ -2285,6 +2287,7 @@ var RADIO = {}; /* Integración Semana 7: la Radiografía llega por fetch
             tiempo.classList.add("final");
             tiempo.title = tiempo.getAttribute("data-orig");
           }
+          if (badge){ badge.textContent = "Final"; badge.className = "fifa-badge final"; }
           cambio = true;
         }
       });
