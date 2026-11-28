@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generado_en": "2026-11-28T14:18:56Z",
+ "generado_en": "2026-11-28T17:12:38Z",
  "semana": "2",
  "k": 1.0,
  "tope_puntos": 12,
@@ -727,28 +727,54 @@
    "fecha": "2026-11-28",
    "home": "Elche",
    "away": "Atlético Madrid",
-   "alineacion_publicada": false,
+   "alineacion_publicada": true,
    "local": {
     "f_prob": 100.0,
-    "f_of": null,
-    "f_of_efectiva": null,
-    "r": null,
-    "casados": 0,
+    "f_of": 92.5,
+    "f_of_efectiva": 92.5,
+    "r": 0.925,
+    "casados": 11,
     "sin_casar": [],
     "tope_aplicado": false,
-    "motivo": "sin alineación oficial publicada",
-    "f_of_detalle": null
+    "motivo": null,
+    "f_of_detalle": {
+     "valor": 92.5,
+     "A_goles": 83.3,
+     "B_minutos": 97.3,
+     "C_puntos": 100,
+     "goles_asist": 5.0,
+     "minutos": 4099,
+     "puntos": 55,
+     "mejor": {
+      "goles_asist": 6.0,
+      "minutos": 4214,
+      "puntos": 55
+     }
+    }
    },
    "visita": {
     "f_prob": 96.9,
-    "f_of": null,
-    "f_of_efectiva": null,
-    "r": null,
-    "casados": 0,
+    "f_of": 96.9,
+    "f_of_efectiva": 96.9,
+    "r": 1.0,
+    "casados": 11,
     "sin_casar": [],
     "tope_aplicado": false,
-    "motivo": "sin alineación oficial publicada",
-    "f_of_detalle": null
+    "motivo": null,
+    "f_of_detalle": {
+     "valor": 96.9,
+     "A_goles": 92.3,
+     "B_minutos": 100,
+     "C_puntos": 100,
+     "goles_asist": 12.0,
+     "minutos": 4081,
+     "puntos": 123,
+     "mejor": {
+      "goles_asist": 13.0,
+      "minutos": 4081,
+      "puntos": 123
+     }
+    }
    }
   },
   "everton-vs-liverpool": {
@@ -1210,28 +1236,54 @@
    "fecha": "2026-11-28",
    "home": "Ipswich Town",
    "away": "Aston Villa",
-   "alineacion_publicada": false,
+   "alineacion_publicada": true,
    "local": {
     "f_prob": 100.0,
-    "f_of": null,
-    "f_of_efectiva": null,
-    "r": null,
-    "casados": 0,
+    "f_of": 83.1,
+    "f_of_efectiva": 88.0,
+    "r": 0.88,
+    "casados": 11,
     "sin_casar": [],
-    "tope_aplicado": false,
-    "motivo": "sin alineación oficial publicada",
-    "f_of_detalle": null
+    "tope_aplicado": true,
+    "motivo": null,
+    "f_of_detalle": {
+     "valor": 83.1,
+     "A_goles": 71.4,
+     "B_minutos": 91.0,
+     "C_puntos": 90.9,
+     "goles_asist": 5.0,
+     "minutos": 3740,
+     "puntos": 20,
+     "mejor": {
+      "goles_asist": 7.0,
+      "minutos": 4110,
+      "puntos": 22
+     }
+    }
    },
    "visita": {
     "f_prob": 100.0,
-    "f_of": null,
-    "f_of_efectiva": null,
-    "r": null,
-    "casados": 0,
+    "f_of": 93.9,
+    "f_of_efectiva": 93.9,
+    "r": 0.939,
+    "casados": 11,
     "sin_casar": [],
     "tope_aplicado": false,
-    "motivo": "sin alineación oficial publicada",
-    "f_of_detalle": null
+    "motivo": null,
+    "f_of_detalle": {
+     "valor": 93.9,
+     "A_goles": 92.3,
+     "B_minutos": 96.3,
+     "C_puntos": 93.5,
+     "goles_asist": 12.0,
+     "minutos": 3763,
+     "puntos": 87,
+     "mejor": {
+      "goles_asist": 13.0,
+      "minutos": 3906,
+      "puntos": 93
+     }
+    }
    }
   },
   "juventus-vs-omonia-nicosia": {
@@ -3006,28 +3058,54 @@
    "fecha": "2026-11-28",
    "home": "Torino",
    "away": "Lazio",
-   "alineacion_publicada": false,
+   "alineacion_publicada": true,
    "local": {
     "f_prob": 100.0,
-    "f_of": null,
-    "f_of_efectiva": null,
-    "r": null,
-    "casados": 0,
+    "f_of": 70.9,
+    "f_of_efectiva": 88.0,
+    "r": 0.88,
+    "casados": 11,
     "sin_casar": [],
-    "tope_aplicado": false,
-    "motivo": "sin alineación oficial publicada",
-    "f_of_detalle": null
+    "tope_aplicado": true,
+    "motivo": null,
+    "f_of_detalle": {
+     "valor": 70.9,
+     "A_goles": 57.1,
+     "B_minutos": 78.3,
+     "C_puntos": 81.8,
+     "goles_asist": 4.0,
+     "minutos": 3340,
+     "puntos": 36,
+     "mejor": {
+      "goles_asist": 7.0,
+      "minutos": 4268,
+      "puntos": 44
+     }
+    }
    },
    "visita": {
     "f_prob": 99.8,
-    "f_of": null,
-    "f_of_efectiva": null,
-    "r": null,
-    "casados": 0,
+    "f_of": 85.4,
+    "f_of_efectiva": 87.8,
+    "r": 0.88,
+    "casados": 11,
     "sin_casar": [],
-    "tope_aplicado": false,
-    "motivo": "sin alineación oficial publicada",
-    "f_of_detalle": null
+    "tope_aplicado": true,
+    "motivo": null,
+    "f_of_detalle": {
+     "valor": 85.4,
+     "A_goles": 81.8,
+     "B_minutos": 83.9,
+     "C_puntos": 91.8,
+     "goles_asist": 18.0,
+     "minutos": 3450,
+     "puntos": 123,
+     "mejor": {
+      "goles_asist": 22.0,
+      "minutos": 4111,
+      "puntos": 134
+     }
+    }
    }
   },
   "torreense-vs-celtic": {
@@ -3348,28 +3426,54 @@
    "fecha": "2026-11-28",
    "home": "VfB Stuttgart",
    "away": "Eintracht Frankfurt",
-   "alineacion_publicada": false,
+   "alineacion_publicada": true,
    "local": {
     "f_prob": 100.0,
-    "f_of": null,
-    "f_of_efectiva": null,
-    "r": null,
-    "casados": 0,
+    "f_of": 87.7,
+    "f_of_efectiva": 88.0,
+    "r": 0.88,
+    "casados": 11,
     "sin_casar": [],
-    "tope_aplicado": false,
-    "motivo": "sin alineación oficial publicada",
-    "f_of_detalle": null
+    "tope_aplicado": true,
+    "motivo": null,
+    "f_of_detalle": {
+     "valor": 87.7,
+     "A_goles": 81.8,
+     "B_minutos": 85.9,
+     "C_puntos": 97.4,
+     "goles_asist": 9.0,
+     "minutos": 3297,
+     "puntos": 75,
+     "mejor": {
+      "goles_asist": 11.0,
+      "minutos": 3838,
+      "puntos": 77
+     }
+    }
    },
    "visita": {
     "f_prob": 95.6,
-    "f_of": null,
-    "f_of_efectiva": null,
-    "r": null,
-    "casados": 0,
+    "f_of": 88.6,
+    "f_of_efectiva": 88.6,
+    "r": 0.927,
+    "casados": 11,
     "sin_casar": [],
     "tope_aplicado": false,
-    "motivo": "sin alineación oficial publicada",
-    "f_of_detalle": null
+    "motivo": null,
+    "f_of_detalle": {
+     "valor": 88.6,
+     "A_goles": 80.0,
+     "B_minutos": 94.1,
+     "C_puntos": 94.5,
+     "goles_asist": 8.0,
+     "minutos": 3926,
+     "puntos": 103,
+     "mejor": {
+      "goles_asist": 10.0,
+      "minutos": 4172,
+      "puntos": 109
+     }
+    }
    }
   },
   "viktoria-plzen-vs-benfica": {
