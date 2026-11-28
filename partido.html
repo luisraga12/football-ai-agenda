@@ -158,6 +158,7 @@
   .dcell{background:var(--surface);border-radius:10px;padding:8px 6px;text-align:center}
   .dcell span{display:block;font-size:.66rem;font-weight:800;letter-spacing:.04em;color:var(--muted);text-transform:uppercase}
   .dcell b{display:block;font-family:"Archivo",sans-serif;font-size:1.02rem;font-weight:900;margin-top:2px}
+  .dcell .ev-sub{display:block;font-size:.68rem;font-weight:800;margin-top:1px}
   .chip.pending{background:var(--amber-soft);color:var(--amber)}
   .chip.pending strong{color:var(--amber)}
   .badge-pending{background:var(--amber-soft);color:var(--amber)}
@@ -891,6 +892,7 @@ const MarcadorEnVivo = (() => {
   const DIRECTO_MIN = 5;  // a partir de aquí se intenta el directo en segundo plano
 
   let timer = null;
+  let onLiveCb = null; /* Callback opcional (28 nov 2026): avisa al detalle cuando cambia el estado en vivo, para actualizar el panel de probabilidad en vivo. */
   let elActual = null;
   let partido = null;      // {liga, fecha, home_id, away_id, home, away}
   let estado = null;       // {fuente:'cache'|'directo', hs, as, min, ts, estadoPartido:'in'}
@@ -1209,9 +1211,10 @@ const MarcadorEnVivo = (() => {
       return;
     }
     elActual.innerHTML = textoEstado(estado, terminal, partido.home, partido.away);
+    if (onLiveCb) { try { onLiveCb(estado, terminal); } catch (e) {} }
   }
 
-  function init(partidos, el, ms = 60000, inicio = null) {
+  function init(partidos, el, ms = 60000, inicio = null, onLive = null) {
     stop();
     if (!partidos || !partidos.length || !el) return { stop };
     partido = partidos[0];
@@ -1221,6 +1224,7 @@ const MarcadorEnVivo = (() => {
     listo = false;
     abierto = true; inicioMs = (typeof inicio === 'number' && isFinite(inicio)) ? inicio : null; /* BUG estado en vivo (26 nov 2026): ms del inicio (fecha+hora de ev.json). */
     directoEnCurso = false;
+    onLiveCb = (typeof onLive === 'function') ? onLive : null;
     render();
     timer = setInterval(tick, ms);
     actualizar();
@@ -1232,6 +1236,7 @@ const MarcadorEnVivo = (() => {
     abierto = false; inicioMs = null;
     elActual = null;
     directoEnCurso = false;
+    onLiveCb = null;
   }
 
   return {
@@ -1243,6 +1248,92 @@ const MarcadorEnVivo = (() => {
 if (typeof module !== 'undefined') module.exports = MarcadorEnVivo;
 
 var PARTIDOS_VIVO = {};
+
+/* ---------- Probabilidad y EV en vivo (28 nov 2026, E1) ----------
+   Port del preview de E2 (preview-ev-en-vivo-v1.html, rama empleado-2,
+   ceaf40b) con la formula aprobada por el jefe (JEFE.md 27 nov ~13:45):
+   slots tiempo+marcador, TDA gamma=0.25 (0.301 goles/TDA), rojas/cambios
+   peso 0, SIN posesion (no predice goles). EV en vivo = P en vivo x
+   momio pre-partido - 1.
+   La xG pre-partido NO esta en ev.json: se invierte del Poisson
+   publicado (p1/px/p2) por busqueda en rejilla; validado: Malaga
+   1.17/2.61 (tabla 1.18/2.62), Hamburg 1.72/2.24 (tabla 1.72/2.24),
+   Bremen 2.49/0.89 (tabla 2.49/0.90); el slot Bremen 11' reproduce el
+   69.4% publicado por E1. El ajuste en vivo se aplica como cambio
+   relativo sobre la P publicada, asi que al 0' coincide exacto.
+   TDA y rojas: vivo.json NO los trae (solo minuto y marcador); el TDA
+   queda en 0-0 (sin efecto) hasta que se publiquen. Fail-soft: sin
+   xG, sin momios o sin estado en vivo, no hay panel en vivo. */
+var LIVE_FACT = [1,1,2,6,24,120,720,5040,40320,362880,3628800,39916800,479001600];
+function livePois(k, lam){ if (lam <= 0) return k === 0 ? 1 : 0; return Math.exp(-lam) * Math.pow(lam, k) / LIVE_FACT[k]; }
+function liveP1x2(xgH, xgA, gh, ga){
+  var p1 = 0, px = 0, p2 = 0;
+  for (var i = 0; i <= 12; i++) for (var j = 0; j <= 12; j++){
+    var p = livePois(i, xgH) * livePois(j, xgA), th = gh + i, ta = ga + j;
+    if (th > ta) p1 += p; else if (th === ta) px += p; else p2 += p;
+  }
+  var s = p1 + px + p2;
+  return {p1: p1/s*100, px: px/s*100, p2: p2/s*100};
+}
+function livePOver(xgH, xgA, gh, ga, linea){
+  var t = 0;
+  for (var i = 0; i <= 12; i++) for (var j = 0; j <= 12; j++){
+    if (gh + i + ga + j > linea) t += livePois(i, xgH) * livePois(j, xgA);
+  }
+  return t * 100;
+}
+function livePBtts(xgH, xgA, gh, ga){
+  var ph = (gh > 0) ? 1 : (1 - livePois(0, xgH));
+  var pa = (ga > 0) ? 1 : (1 - livePois(0, xgA));
+  return ph * pa * 100;
+}
+function liveInvertirXG(p1, px, p2){
+  function err(lh, la){ var q = liveP1x2(lh, la, 0, 0); return Math.pow(q.p1-p1,2) + Math.pow(q.px-px,2) + Math.pow(q.p2-p2,2); }
+  var best = [1.5, 1.5], be = 1e9, lh, la;
+  for (lh = 0.1; lh <= 4.6; lh += 0.1) for (la = 0.1; la <= 4.6; la += 0.1){ var e = err(lh, la); if (e < be){ be = e; best = [lh, la]; } }
+  for (var st = 0.05; st >= 0.005; st /= 2){
+    var improved = true;
+    while (improved){ improved = false;
+      for (var dh = -1; dh <= 1; dh++) for (var da = -1; da <= 1; da++){
+        if (!dh && !da) continue;
+        var nh = best[0] + dh*st, na = best[1] + da*st;
+        if (nh < 0.05 || na < 0.05) continue;
+        var e2 = err(nh, na);
+        if (e2 < be){ be = e2; best = [nh, na]; improved = true; }
+      }
+    }
+  }
+  return {lh: best[0], la: best[1]};
+}
+var LIVE_GAMMA = 0.25, LIVE_GOL_TDA = 0.301;
+function liveCalc(xg, pPre, pOverPub, pBttsPub, linea, min, gh, ga, tdaH, tdaA){
+  if (!xg || !pPre) return null;
+  var rem = Math.max(0, (90 - min) / 90);
+  var eff = LIVE_GAMMA * LIVE_GOL_TDA * ((tdaH || 0) - (tdaA || 0)) * rem;
+  var xgH = Math.max(0, xg.lh * rem + eff), xgA = Math.max(0, xg.la * rem - eff);
+  var base = liveP1x2(xg.lh, xg.la, 0, 0), now = liveP1x2(xgH, xgA, gh, ga);
+  function rel(nw, bs, pub){ if (!(bs > 0.05)) return pub; return pub * (nw / bs); }
+  var p1 = rel(now.p1, base.p1, pPre.p1), px = rel(now.px, base.px, pPre.px), p2 = rel(now.p2, base.p2, pPre.p2);
+  var s = p1 + px + p2;
+  if (!(s > 0)) return null;
+  var r = {p1: p1/s*100, px: px/s*100, p2: p2/s*100};
+  if (typeof pOverPub === "number"){
+    var over0 = livePOver(xg.lh, xg.la, 0, 0, linea), overNow = livePOver(xgH, xgA, gh, ga, linea);
+    r.over = (over0 > 0.05) ? Math.max(0, Math.min(100, pOverPub * (overNow / over0))) : pOverPub;
+    r.under = 100 - r.over;
+  }
+  if (typeof pBttsPub === "number"){
+    var b0 = livePBtts(xg.lh, xg.la, 0, 0), bNow = livePBtts(xgH, xgA, gh, ga);
+    r.btts = (b0 > 0.05) ? Math.max(0, Math.min(100, pBttsPub * (bNow / b0))) : pBttsPub;
+    r.noBtts = 100 - r.btts;
+  }
+  return r;
+}
+function liveEv(p, momio){
+  if (typeof p !== "number" || !isFinite(p) || typeof momio !== "number" || !isFinite(momio) || momio <= 0) return null;
+  return (p / 100) * momio - 1;
+}
+
 
 </script>
 <script>
@@ -1516,7 +1607,15 @@ function celdaMomio(label, momio, ev, prob, sinEtiqueta){ if (typeof prob === "n
     if (typeof momio !== "number" || typeof ev !== "number" || !isFinite(momio) || !isFinite(ev)){
       return '<div class="dcell"><span>' + esc(label) + '</span><b class="num">pendiente</b></div>';
     }
-    return '<div class="dcell"><span>' + esc(label) + ' ' + fmtMomio(momio) + '</span><b class="num" style="color:' + evColor(ev * 100) + '">' + fmtEvPct(ev * 100) + '</b></div>';
+    /* EV mas entendible (28 nov 2026, orden de Luis): la celda muestra la
+       probabilidad del modelo Y el EV juntos; el EV lleva el veredicto en
+       palabras simples (Conviene / No conviene). */
+    var evPct100 = ev * 100;
+    var veredicto = (evPct100 > 0) ? " · Conviene" : (evPct100 < 0) ? " · No conviene" : " · Sin valor";
+    if (typeof prob === "number" && isFinite(prob)){
+      return '<div class="dcell"><span>' + esc(label) + ' ' + fmtMomio(momio) + '</span><b class="num">' + fmt1(prob) + '%</b><span class="ev-sub" style="color:' + evColor(evPct100) + '">EV ' + fmtEvPct(evPct100) + veredicto + '</span></div>';
+    }
+    return '<div class="dcell"><span>' + esc(label) + ' ' + fmtMomio(momio) + '</span><b class="num" style="color:' + evColor(evPct100) + '">' + fmtEvPct(evPct100) + '</b></div>';
   }
 function xiEmbebido(xi){
     if (!xi || !xi.fuerza) return null;
@@ -1712,6 +1811,7 @@ function buildRADIOMap(rawData, tenData, partidos){
   var params = new URLSearchParams(window.location.search);
   var slug = (params.get("partido") || "").trim().toLowerCase();
   var statsState = "pendiente";
+  var LIVE_M = null, LIVE_ESTADO = {min: null, gh: null, ga: null}, LIVE_XG = null, LIVE_P12 = null;
 
   window.__detalle = {slug: slug, ok: false};
 
@@ -1740,12 +1840,12 @@ function buildRADIOMap(rawData, tenData, partidos){
   }
 
   function initVivo(m){
-    var el = document.getElementById("vivoLine"); if (el && m && (m.estado_partido === "post" || m.estado_partido === "in") && m.marcador && typeof m.marcador.local === "number" && typeof m.marcador.visita === "number"){ var scV = esc(nombreEquipo(m.home)) + " " + m.marcador.local + " – " + m.marcador.visita + " " + esc(nombreEquipo(m.away)); if (m.estado_partido === "post") el.innerHTML = '<div class="partido"><b>' + scV + '</b><br>Final</div>'; else if (typeof m._minuto === "string" && m._minuto) el.innerHTML = '<div class="partido vivo"><b>' + scV + '</b><br>Minuto ' + esc(m._minuto) + ' · En vivo</div>'; else el.innerHTML = '<div class="partido vivo"><b>' + scV + '</b><br>En vivo</div>'; } /* Novena ronda P0-2: el recuadro se inicializa desde ev.json (la misma fuente que el encabezado), para que un partido terminado muestre Final con su marcador real y nunca "— — / En vivo"; el módulo solo actualiza partidos no terminados. */ if (m && m.estado_partido === "post"){ window._detalle.vivo = false; return; }
+    var el = document.getElementById("vivoLine"); if (el && m && (m.estado_partido === "post" || m.estado_partido === "in") && m.marcador && typeof m.marcador.local === "number" && typeof m.marcador.visita === "number"){ var scV = esc(nombreEquipo(m.home)) + " " + m.marcador.local + " – " + m.marcador.visita + " " + esc(nombreEquipo(m.away)); if (m.estado_partido === "post") el.innerHTML = '<div class="partido"><b>' + scV + '</b><br>Final</div>'; else if (typeof m._minuto === "string" && m._minuto) el.innerHTML = '<div class="partido vivo"><b>' + scV + '</b><br>Minuto ' + esc(m._minuto) + ' · En vivo</div>'; else el.innerHTML = '<div class="partido vivo"><b>' + scV + '</b><br>En vivo</div>'; } /* Novena ronda P0-2: el recuadro se inicializa desde ev.json (la misma fuente que el encabezado), para que un partido terminado muestre Final con su marcador real y nunca "— — / En vivo"; el módulo solo actualiza partidos no terminados. */ if (m && m.estado_partido === "post"){ window.__detalle.vivo = false; /* 28 nov 2026: typo latente (era _detalle, undefined: rompía renderDetalle en partidos terminados después de pintar; el visible seguía bien porque innerHTML ya estaba puesto). */ return; }
     if (!el) return;
     var pv = (typeof PARTIDOS_VIVO !== "undefined") ? PARTIDOS_VIVO[slug] : null; var inicio = null; if (m && m.fecha && m.hora) { var t = Date.parse(m.fecha + "T" + m.hora + ":00"); if (isFinite(t)) inicio = t; } /* BUG estado en vivo (26 nov 2026): la hora de inicio (ev.json, hora local) decide si el partido ya empezó. */
     if (pv && typeof MarcadorEnVivo !== "undefined" && MarcadorEnVivo.init){
       try {
-        MarcadorEnVivo.init([pv], el, 60000, inicio);
+        MarcadorEnVivo.init([pv], el, 60000, inicio, onVivoUpdate);
         window.__detalle.vivo = true;
       } catch (e){
         el.textContent = "Sin marcador en vivo por ahora.";
@@ -1760,6 +1860,10 @@ function buildRADIOMap(rawData, tenData, partidos){
   /* ---------- Momios y valor esperado (misma parrilla que la tarjeta) ---------- */
   function oddsBlock(m){
     var h = "<h4>Momios y valor esperado</h4>"; if (m && m.estado_partido === "post" && m.marcador && typeof m.marcador.local === "number" && typeof m.marcador.visita === "number"){ var hF = "<h4>Momios y valor esperado</h4>"; hF += '<p><b>Final: ' + esc(nombreEquipo(m.home)) + ' ' + m.marcador.local + ' – ' + m.marcador.visita + ' ' + esc(nombreEquipo(m.away)) + '</b></p>'; var pF = derivar1X2(m); var ajF = ajustar1X2XI(pF, slug); if (ajF && ajF.ajustado) pF = ajF; hF += '<p class="detail-note">Partido terminado sin momios: no hay EV ni pick; las probabilidades son las del modelo antes del partido.' + ((ajF && ajF.ajustado) ? ' Ajustadas por XI oficial.' : '') + '</p>'; var tF = m.mercados && m.mercados.total ? m.mercados.total : null; if (pF || (tF && typeof tF.p_over === "number")){ hF += '<div class="odds"><div class="derived-h"><span>Probabilidad del modelo (sin momio)</span></div><div class="derived-grid">'; if (pF){ hF += celdaMomio("Local", null, null, pF.p1, true); hF += celdaMomio("Empate", null, null, pF.px, true); hF += celdaMomio("Visita", null, null, pF.p2, true); } if (tF && typeof tF.p_over === "number"){ hF += celdaMomio("Más " + fmtLinea(tF.linea), null, null, tF.p_over, true); hF += celdaMomio("Menos " + fmtLinea(tF.linea), null, null, 100 - tF.p_over, true); } hF += '</div></div>'; } return hF; }
+    /* Explicacion del EV en palabras simples (28 nov 2026, orden de Luis):
+       que es el EV, que significa el porcentaje y que la pagina no
+       recomienda apostar. */
+    h += '<p class="detail-note">El EV no dice quién va a ganar, dice si el momio vale la pena. EV positivo: en promedio ganas a la larga. EV negativo: en promedio pierdes. Un 30% significa que, según el modelo, ese resultado pasa unas 3 de cada 10 veces. La página no recomienda apostar: solo muestra la matemática del modelo.</p>';
     var sem = semaforoDe(m);
     var p12 = derivar1X2(m);
     /* Ajuste 1X2 por XI oficial (piloto topado, 27 nov 2026): p12
@@ -1769,6 +1873,17 @@ function buildRADIOMap(rawData, tenData, partidos){
     if (aj && aj.ajustado) p12 = aj;
     if (sem){
       h += '<p><span class="chip ' + sem.cls + '">Semáforo EV · <strong>' + sem.color + ' · ' + esc(m.mejor_pick) + ' ' + fmtEvPct(sem.ev) + '</strong></span></p>';
+    }
+    /* En palabras simples (28 nov 2026, orden de Luis): el mejor pick
+       explicado con su probabilidad y su momio, para que el verde no se
+       lea como "apuesta segura". */
+    if (sem && m.mejor_pick && typeof m.mejor_prob === "number" && typeof m.mejor_decimal === "number"){
+      var n10 = Math.max(0, Math.round(m.mejor_prob / 10));
+      if (sem.ev > 0){
+        h += '<p class="detail-note">En palabras simples: ' + esc(m.mejor_pick) + ' tiene valor porque el modelo le da ' + fmt1(m.mejor_prob) + '% (unas ' + n10 + ' de cada 10 veces) y la casa paga ' + fmtMomio(m.mejor_decimal) + '. No es una recomendación: el modelo se puede equivocar y el resultado puede no darse.</p>';
+      } else {
+        h += '<p class="detail-note">En palabras simples: ningún pick tiene valor en este partido: todos los EV son negativos, así que no conviene apostar a ninguno.</p>';
+      }
     }
     if (p12){
       h += '<p class="detail-note">Probabilidad del modelo (1X2, Poisson): Local ' + fmt1(p12.p1) + '% · Empate ' + fmt1(p12.px) + '% · Visita ' + fmt1(p12.p2) + '%' + ((aj && aj.ajustado) ? ' · Ajustado por XI oficial' : '') + '.</p>';
@@ -2034,13 +2149,106 @@ function buildRADIOMap(rawData, tenData, partidos){
   h += '<div class="fifa-probs det-probs">' + (p12d ? '<div class="fifa-prob"><b class="num">' + fmt1(p12d.p1) + '%</b><span>Local</span><span class="fifa-bar"><i style="width:' + Math.max(0, Math.min(100, Math.round(p12d.p1))) + '%"></i></span></div><div class="fifa-prob"><b class="num">' + fmt1(p12d.px) + '%</b><span>Empate</span><span class="fifa-bar"><i style="width:' + Math.max(0, Math.min(100, Math.round(p12d.px))) + '%"></i></span></div><div class="fifa-prob"><b class="num">' + fmt1(p12d.p2) + '%</b><span>Visita</span><span class="fifa-bar"><i style="width:' + Math.max(0, Math.min(100, Math.round(p12d.p2))) + '%"></i></span></div>' : '<div class="fifa-prob"><b class="num">—</b><span>Local</span><span class="fifa-bar"><i style="width:0%"></i></span></div><div class="fifa-prob"><b class="num">—</b><span>Empate</span><span class="fifa-bar"><i style="width:0%"></i></span></div><div class="fifa-prob"><b class="num">—</b><span>Visita</span><span class="fifa-bar"><i style="width:0%"></i></span></div>') + '</div></div>';
   return h;
 }
+
+  /* ---------- Panel de probabilidad y EV en vivo (28 nov 2026, E1) ---------- */
+  function liveEstadoActual(){
+    if (!LIVE_M) return null;
+    if (LIVE_M.estado_partido === "post") return {tipo: "post"};
+    if (LIVE_M.estado_partido === "in"){
+      if (typeof LIVE_ESTADO.min === "number" && typeof LIVE_ESTADO.gh === "number" && typeof LIVE_ESTADO.ga === "number"){
+        return {tipo: "in", min: LIVE_ESTADO.min, gh: LIVE_ESTADO.gh, ga: LIVE_ESTADO.ga};
+      }
+      if (typeof LIVE_ESTADO.gh === "number" && typeof LIVE_ESTADO.ga === "number"){
+        return {tipo: "in-sin-minuto", gh: LIVE_ESTADO.gh, ga: LIVE_ESTADO.ga};
+      }
+    }
+    return {tipo: "pre"};
+  }
+  function livePanelInner(){
+    var m = LIVE_M;
+    if (!m || m.estado_partido === "post" || !LIVE_XG || !LIVE_P12) return "";
+    var st = liveEstadoActual();
+    if (st.tipo === "pre"){
+      return '<div class="detail-pending">El partido aún no empieza — la probabilidad en vivo aparece cuando empiece.</div>';
+    }
+    if (st.tipo === "in-sin-minuto"){
+      return '<div class="detail-pending">En vivo · ' + esc(nombreEquipo(m.home)) + ' ' + st.gh + ' – ' + st.ga + ' ' + esc(nombreEquipo(m.away)) + ' · el minuto aún no está publicado; la probabilidad en vivo aparece en cuanto llegue.</div>';
+    }
+    var tot = m.mercados && m.mercados.total ? m.mercados.total : null;
+    var linea = (tot && typeof tot.linea === "number") ? tot.linea : 2.5;
+    var pOverPub = (tot && typeof tot.p_over === "number") ? tot.p_over : null;
+    var bk = m.mercados && m.mercados.btts ? m.mercados.btts : null;
+    var pBttsPub = (bk && typeof bk.p_btts === "number") ? bk.p_btts : null;
+    var r = liveCalc(LIVE_XG, LIVE_P12, pOverPub, pBttsPub, linea, st.min, st.gh, st.ga, 0, 0);
+    if (!r) return '<div class="detail-pending">Sin probabilidad en vivo por ahora.</div>';
+    var mo12 = (m.mercados && m.mercados["1X2"] && m.mercados["1X2"].momios) ? m.mercados["1X2"].momios : (m.momios && m.momios.moneyline ? m.momios.moneyline : null);
+    var h = '<div class="derived-h"><span>EN VIVO · Minuto ' + st.min + "' · " + esc(nombreEquipo(m.home)) + " " + st.gh + " – " + st.ga + " " + esc(nombreEquipo(m.away)) + '</span><span>Prob. en vivo + momio pre-partido</span></div>';
+    h += '<div class="derived-grid">';
+    h += celdaMomio("Local", mo12 ? mo12.home : null, liveEv(r.p1, mo12 ? mo12.home : null), r.p1);
+    h += celdaMomio("Empate", mo12 ? mo12.draw : null, liveEv(r.px, mo12 ? mo12.draw : null), r.px);
+    h += celdaMomio("Visita", mo12 ? mo12.away : null, liveEv(r.p2, mo12 ? mo12.away : null), r.p2);
+    if (tot && pOverPub !== null){
+      var tMom = tot.momios || (m.momios && m.momios.total ? m.momios.total : null);
+      h += celdaMomio("Más " + fmtLinea(linea), tMom ? tMom.over : null, liveEv(r.over, tMom ? tMom.over : null), r.over);
+      h += celdaMomio("Menos " + fmtLinea(linea), tMom ? tMom.under : null, liveEv(r.under, tMom ? tMom.under : null), r.under);
+    }
+    h += '</div>';
+    if (bk && pBttsPub !== null){
+      var b = bsdDePartido(m);
+      h += '<div class="derived-h"><span>Ambos marcan · en vivo</span><span>EV = prob. en vivo × momio pre-partido − 1</span></div>';
+      h += '<div class="derived-grid">';
+      h += celdaMomio("Sí", (b && b.btts) ? b.btts.yes : null, (b && b.btts) ? liveEv(r.btts, b.btts.yes) : null, r.btts);
+      h += celdaMomio("No", (b && b.btts) ? b.btts.no : null, (b && b.btts) ? liveEv(r.noBtts, b.btts.no) : null, r.noBtts);
+      h += '</div>';
+    }
+    h += '<p class="detail-note">Sin posesión: no predice goles. TDA: sin datos aún (vivo.json no trae tiros a puerta). EV en vivo = prob. en vivo × momio pre-partido − 1.</p>';
+    return h;
+  }
+  function actualizarPanelVivo(){
+    var el = document.getElementById("livePanel");
+    if (!el) return;
+    var inner = livePanelInner();
+    el.innerHTML = inner;
+    el.style.display = inner ? "" : "none";
+  }
+  function onVivoUpdate(estado, terminal){
+    if (!LIVE_M) return;
+    if (terminal && terminal.tipo === "post"){
+      LIVE_M.estado_partido = "post";
+      if (typeof terminal.hs === "number" && typeof terminal.as === "number") LIVE_M.marcador = {local: terminal.hs, visita: terminal.as};
+    } else if (estado && estado.estadoPartido === "in"){
+      LIVE_M.estado_partido = "in";
+      if (typeof estado.min === "number") LIVE_ESTADO.min = estado.min;
+      if (typeof estado.hs === "number" && typeof estado.as === "number"){ LIVE_ESTADO.gh = estado.hs; LIVE_ESTADO.ga = estado.as; }
+    } else if (terminal && terminal.tipo === "pre"){
+      LIVE_M.estado_partido = "pre";
+    }
+    actualizarPanelVivo();
+  }
 function renderDetalle(m, estDocs){
     var li = ligaInfo(m.liga);
     var di = dayInfo(m.fecha);
     document.title = m.home + " vs " + m.away + " — Football AI Agenda";
+    /* Probabilidad en vivo (28 nov 2026, E1): estado inicial desde
+       ev.json+vivo.json; la xG se invierte de la P publicada (ajustada
+       por XI si la hay). */
+    LIVE_M = m;
+    LIVE_ESTADO = {min: null, gh: null, ga: null};
+    if (m.estado_partido === "in" && typeof m._minuto === "string"){
+      var mm0 = parseInt(m._minuto, 10);
+      if (isFinite(mm0)) LIVE_ESTADO.min = mm0;
+      if (m.marcador && typeof m.marcador.local === "number" && typeof m.marcador.visita === "number"){ LIVE_ESTADO.gh = m.marcador.local; LIVE_ESTADO.ga = m.marcador.visita; }
+    }
+    var p12live = derivar1X2(m);
+    var ajLive = (p12live) ? ajustar1X2XI(p12live, slug) : null;
+    if (ajLive && ajLive.ajustado) p12live = ajLive;
+    LIVE_XG = (p12live) ? liveInvertirXG(p12live.p1, p12live.px, p12live.p2) : null;
+    LIVE_P12 = p12live;
     var h = "";
     h += headerHTML(m, di, li); h += fifaDetailHead(m);
     h += '<div class="detail-body">';
+    var lp = livePanelInner();
+    if (lp) h += '<div class="odds" id="livePanel">' + lp + '</div>';
     h += oddsBlock(m);
     if (m.estado_partido !== "post" && !(m.estado_partido === "in" && typeof m._minuto === "string" && /^90/.test(m._minuto.trim()))) h += htmlBSD(m); /* Novena ronda P1-2: un partido terminado o en descuento no muestra EV ni picks en el bloque BSD. */
     h += bttsBlock(m);
