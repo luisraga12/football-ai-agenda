@@ -1,7 +1,7 @@
 {
  "semana": 2,
  "ventana": "últimos 5 partidos de la competición",
- "fecha_calculo": "2026-11-27",
+ "fecha_calculo": "2026-11-28",
  "partidos": [
   {
    "slug": "werder-bremen-vs-borussia-monchengladbach",
@@ -1167,9 +1167,9 @@
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 3,
-    "spread_linea": -0.5,
-    "cubre": 1,
-    "no_cubre": 4,
+    "spread_linea": 0.5,
+    "cubre": 4,
+    "no_cubre": 1,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
@@ -1183,13 +1183,13 @@
     "empuje": 0,
     "btts_si": 2,
     "btts_no": 3,
-    "spread_linea": 0.5,
-    "cubre": 1,
-    "no_cubre": 4,
+    "spread_linea": -0.5,
+    "cubre": 0,
+    "no_cubre": 5,
     "empuje_spread": 0,
     "linea_total": 2.5
    },
-   "linea_tarjeta": "Tendencias: SC Paderborn 07 1G-3E-1P · Más 2.5 2/5 · Menos 2.5 3/5 · BTTS 2/5 · Cubre -0.5 1/5 — Schalke 04 0G-1E-4P · Más 2.5 2/5 · Menos 2.5 3/5 · BTTS 2/5 · Cubre +0.5 1/5"
+   "linea_tarjeta": "Tendencias: SC Paderborn 07 1G-3E-1P · Más 2.5 2/5 · Menos 2.5 3/5 · BTTS 2/5 · Cubre +0.5 4/5 — Schalke 04 0G-1E-4P · Más 2.5 2/5 · Menos 2.5 3/5 · BTTS 2/5 · Cubre -0.5 0/5"
   },
   {
    "slug": "frosinone-vs-parma",
