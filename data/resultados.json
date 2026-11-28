@@ -1,6 +1,6 @@
 {
  "fecha_calculo": "2026-11-28",
- "generado_en_mx": "2026-11-28T12:25:55-06:00",
+ "generado_en_mx": "2026-11-28T13:40:18-06:00",
  "nota": "Recomendación: el pick con más probabilidad entre los de EV ≥ +5% en todos los mercados; color por riesgo/ganancia: verde (prob ≥ 60% y EV ≥ +5%), amarillo (30% ≤ prob < 60% y EV ≥ +5%, un 50/50) o rojo (prob < 30% o EV < +5%: mucho riesgo y mucha ganancia, o poco riesgo aparente y poca ganancia). Alternativa amarilla: mayor EV entre EV ≥ +5% y 30% ≤ prob < 60%, distinto de la recomendación y con EV ≥ +50%. La columna en vivo usa el último snapshot del log (data/live-log); sin snapshots es 'sin datos', nunca inventada. La predicción en vivo invierte el xG de las probabilidades publicadas (no las ajustadas por XI).",
  "partidos": [
   {
@@ -15,34 +15,27 @@
     "visita": 3
    },
    "recomendacion": {
-    "pick": "Local",
-    "mercado": "1X2",
-    "momio": 1.6896551724137931,
-    "prob": 72.2,
-    "ev": 0.21918341036805633,
-    "color": "verde",
-    "semaforo": "verde",
+    "pick": "AH visitante +0.5",
+    "mercado": "AH",
+    "momio": 2.18,
+    "prob": 51.1,
+    "ev": 0.11366360568951084,
+    "color": "amarillo",
+    "semaforo": "amarillo",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "Local",
-     "mercado": "1X2",
-     "momio": 1.6896551724137931,
-     "prob": 72.2,
-     "ev": 0.21918341036805633,
-     "color": "verde"
+     "pick": "AH visitante +0.5",
+     "mercado": "AH",
+     "momio": 2.18,
+     "prob": 51.1,
+     "ev": 0.11366360568951084,
+     "color": "amarillo"
     },
-    "mejor_verde": {
-     "pick": "Local",
-     "mercado": "1X2",
-     "momio": 1.6896551724137931,
-     "prob": 72.2,
-     "ev": 0.21918341036805633,
-     "color": "verde"
-    }
+    "mejor_verde": null
    },
-   "acierto": false,
-   "acierto_texto": "Falló",
+   "acierto": true,
+   "acierto_texto": "Acertó",
    "vivo": {
     "tiene_datos": false,
     "motivo": "sin snapshots en data/live-log",
@@ -63,34 +56,34 @@
     "visita": 0
    },
    "recomendacion": {
-    "pick": "Menos 2.5",
-    "mercado": "Total",
-    "momio": 1.6451612903225805,
-    "prob": 72.7,
-    "ev": 0.19584373444108905,
+    "pick": "AH visitante -0.5",
+    "mercado": "AH",
+    "momio": 2.381,
+    "prob": 61.4,
+    "ev": 0.462059547111469,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "BTTS No",
-     "mercado": "BTTS",
-     "momio": 1.957,
-     "prob": 71.4,
-     "ev": 0.3978807687405157,
+     "pick": "AH visitante -0.5",
+     "mercado": "AH",
+     "momio": 2.381,
+     "prob": 61.4,
+     "ev": 0.462059547111469,
      "color": "verde"
     },
     "mejor_verde": {
-     "pick": "BTTS No",
-     "mercado": "BTTS",
-     "momio": 1.957,
-     "prob": 71.4,
-     "ev": 0.3978807687405157,
+     "pick": "AH visitante -0.5",
+     "mercado": "AH",
+     "momio": 2.381,
+     "prob": 61.4,
+     "ev": 0.462059547111469,
      "color": "verde"
     }
    },
-   "acierto": true,
-   "acierto_texto": "Acertó",
+   "acierto": false,
+   "acierto_texto": "Falló",
    "vivo": {
     "tiene_datos": false,
     "motivo": "sin snapshots en data/live-log",
@@ -111,11 +104,11 @@
     "visita": 2
    },
    "recomendacion": {
-    "pick": "Spread visitante +0.5",
-    "mercado": "Spread",
-    "momio": 1.5555555555555556,
-    "prob": 87.3,
-    "ev": 0.35852604800253096,
+    "pick": "AH visitante +0.5",
+    "mercado": "AH",
+    "momio": 1.558,
+    "prob": 71.9,
+    "ev": 0.12030850612728705,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
@@ -124,16 +117,16 @@
      "pick": "Visita",
      "mercado": "1X2",
      "momio": 2.85,
-     "prob": 68.1,
-     "ev": 0.942086641065184,
-     "color": "verde"
+     "prob": 40.9,
+     "ev": 0.1658431224023833,
+     "color": "amarillo"
     },
     "mejor_verde": {
-     "pick": "Visita",
-     "mercado": "1X2",
-     "momio": 2.85,
-     "prob": 68.1,
-     "ev": 0.942086641065184,
+     "pick": "AH visitante +0.5",
+     "mercado": "AH",
+     "momio": 1.558,
+     "prob": 71.9,
+     "ev": 0.12030850612728705,
      "color": "verde"
     }
    },
@@ -172,8 +165,8 @@
      "pick": "BTTS No",
      "mercado": "BTTS",
      "momio": 2.824,
-     "prob": 45.5,
-     "ev": 0.28590258868045204,
+     "prob": 44.7,
+     "ev": 0.26323670603815796,
      "color": "amarillo"
     },
     "mejor_verde": {
@@ -207,31 +200,24 @@
     "visita": 0
    },
    "recomendacion": {
-    "pick": "BTTS Sí",
-    "mercado": "BTTS",
-    "momio": 1.656,
-    "prob": 73.4,
-    "ev": 0.2147435461179048,
-    "color": "verde",
-    "semaforo": "verde",
+    "pick": "Local",
+    "mercado": "1X2",
+    "momio": 8.0,
+    "prob": 38.2,
+    "ev": 2.0555409029571106,
+    "color": "amarillo",
+    "semaforo": "amarillo",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
      "pick": "Local",
      "mercado": "1X2",
      "momio": 8.0,
-     "prob": 29.9,
-     "ev": 1.395299432486091,
-     "color": "rojo"
+     "prob": 38.2,
+     "ev": 2.0555409029571106,
+     "color": "amarillo"
     },
-    "mejor_verde": {
-     "pick": "AH local +1.5",
-     "mercado": "AH",
-     "momio": 1.775,
-     "prob": 70.0,
-     "ev": 0.24247767817660892,
-     "color": "verde"
-    }
+    "mejor_verde": null
    },
    "acierto": false,
    "acierto_texto": "Falló",
@@ -259,9 +245,9 @@
     },
     "prediccion": {
      "favorito": "Empate",
-     "p1": 29.8,
-     "px": 35.5,
-     "p2": 34.7
+     "p1": 31.7,
+     "px": 46.9,
+     "p2": 21.4
     },
     "acierto": true
    }
@@ -272,40 +258,40 @@
    "liga": "Premier League",
    "home": "Manchester United",
    "away": "Brentford",
-   "estado": "in",
+   "estado": "post",
    "marcador": {
     "local": 0,
-    "visita": 2
+    "visita": 4
    },
    "recomendacion": {
-    "pick": "Spread visitante +0.5",
-    "mercado": "Spread",
-    "momio": 1.5882352941176472,
-    "prob": 66.8,
-    "ev": 0.06132752268968922,
+    "pick": "AH visitante +0.5",
+    "mercado": "AH",
+    "momio": 1.642,
+    "prob": 64.7,
+    "ev": 0.06284219866392582,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "Visita",
-     "mercado": "1X2",
-     "momio": 2.85,
-     "prob": 45.1,
-     "ev": 0.2842944890731145,
+     "pick": "Más 3.5",
+     "mercado": "Total",
+     "momio": 2.35,
+     "prob": 48.2,
+     "ev": 0.13189651688092852,
      "color": "amarillo"
     },
     "mejor_verde": {
      "pick": "AH visitante +0.5",
      "mercado": "AH",
      "momio": 1.642,
-     "prob": 66.8,
-     "ev": 0.09725542475407334,
+     "prob": 64.7,
+     "ev": 0.06284219866392582,
      "color": "verde"
     }
    },
-   "acierto": null,
-   "acierto_texto": "Pendiente",
+   "acierto": true,
+   "acierto_texto": "Acertó",
    "vivo": {
     "tiene_datos": true,
     "motivo": null,
@@ -324,11 +310,11 @@
     },
     "prediccion": {
      "favorito": "Visita",
-     "p1": 0.3,
-     "px": 2.8,
-     "p2": 96.9
+     "p1": 0.2,
+     "px": 2.0,
+     "p2": 97.8
     },
-    "acierto": null
+    "acierto": true
    }
   },
   {
@@ -337,51 +323,61 @@
    "liga": "LaLiga",
    "home": "Elche",
    "away": "Atlético Madrid",
-   "estado": "pre",
+   "estado": "in",
    "marcador": {
-    "local": 0,
-    "visita": 0
+    "local": 2,
+    "visita": 3
    },
    "recomendacion": {
     "pick": "Menos 2.5",
     "mercado": "Total",
     "momio": 2.25,
-    "prob": 92.4,
-    "ev": 1.0785655333691264,
-    "color": "verde",
-    "semaforo": "verde",
+    "prob": 59.4,
+    "ev": 0.33736043667919446,
+    "color": "amarillo",
+    "semaforo": "amarillo",
     "cumple_regla": true,
     "alternativa_amarilla": {
-     "pick": "Empate",
+     "pick": "Local",
      "mercado": "1X2",
-     "momio": 4.7,
-     "prob": 46.4,
-     "ev": 1.1804495832990267
+     "momio": 7.0,
+     "prob": 33.9,
+     "ev": 1.3722911808059854
     },
     "mejor_valor": {
-     "pick": "Empate",
+     "pick": "Local",
      "mercado": "1X2",
-     "momio": 4.7,
-     "prob": 46.4,
-     "ev": 1.1804495832990267,
+     "momio": 7.0,
+     "prob": 33.9,
+     "ev": 1.3722911808059854,
      "color": "amarillo"
     },
-    "mejor_verde": {
-     "pick": "Menos 2.5",
-     "mercado": "Total",
-     "momio": 2.25,
-     "prob": 92.4,
-     "ev": 1.0785655333691264,
-     "color": "verde"
-    }
+    "mejor_verde": null
    },
    "acierto": null,
    "acierto_texto": "Pendiente",
    "vivo": {
-    "tiene_datos": false,
-    "motivo": "sin snapshots en data/live-log",
-    "ultimo_snapshot": null,
-    "prediccion": null,
+    "tiene_datos": true,
+    "motivo": null,
+    "ultimo_snapshot": {
+     "cuando": "2026-11-28T18:42:09Z",
+     "minuto": "52'",
+     "marcador": [
+      2,
+      3
+     ],
+     "tda": [
+      2,
+      4
+     ],
+     "rojas": []
+    },
+    "prediccion": {
+     "favorito": "Visita",
+     "p1": 2.2,
+     "px": 15.0,
+     "p2": 82.8
+    },
     "acierto": null
    }
   },
@@ -391,51 +387,55 @@
    "liga": "Bundesliga",
    "home": "VfB Stuttgart",
    "away": "Eintracht Frankfurt",
-   "estado": "pre",
+   "estado": "in",
    "marcador": {
-    "local": 0,
-    "visita": 0
+    "local": 1,
+    "visita": 1
    },
    "recomendacion": {
-    "pick": "Local",
-    "mercado": "1X2",
-    "momio": 1.7692307692307692,
-    "prob": 79.0,
-    "ev": 0.3971857741167635,
-    "color": "verde",
-    "semaforo": "verde",
+    "pick": "BTTS No",
+    "mercado": "BTTS",
+    "momio": 3.277,
+    "prob": 46.2,
+    "ev": 0.5146528984063292,
+    "color": "amarillo",
+    "semaforo": "amarillo",
     "cumple_regla": true,
-    "alternativa_amarilla": {
-     "pick": "BTTS No",
-     "mercado": "BTTS",
-     "momio": 3.277,
-     "prob": 49.8,
-     "ev": 0.6315449954466554
-    },
+    "alternativa_amarilla": null,
     "mejor_valor": {
      "pick": "BTTS No",
      "mercado": "BTTS",
      "momio": 3.277,
-     "prob": 49.8,
-     "ev": 0.6315449954466554,
+     "prob": 46.2,
+     "ev": 0.5146528984063292,
      "color": "amarillo"
     },
-    "mejor_verde": {
-     "pick": "Local",
-     "mercado": "1X2",
-     "momio": 1.7692307692307692,
-     "prob": 79.0,
-     "ev": 0.3971857741167635,
-     "color": "verde"
-    }
+    "mejor_verde": null
    },
    "acierto": null,
    "acierto_texto": "Pendiente",
    "vivo": {
-    "tiene_datos": false,
-    "motivo": "sin snapshots en data/live-log",
-    "ultimo_snapshot": null,
-    "prediccion": null,
+    "tiene_datos": true,
+    "motivo": null,
+    "ultimo_snapshot": {
+     "cuando": "2026-11-28T18:42:09Z",
+     "minuto": "51'",
+     "marcador": [
+      1,
+      1
+     ],
+     "tda": [
+      2,
+      4
+     ],
+     "rojas": []
+    },
+    "prediccion": {
+     "favorito": "Empate",
+     "p1": 34.3,
+     "px": 44.5,
+     "p2": 21.2
+    },
     "acierto": null
    }
   },
@@ -453,33 +453,33 @@
    "recomendacion": {
     "pick": "Menos 3.5",
     "mercado": "Total",
-    "momio": 1.6666666666666665,
+    "momio": 1.7407407407407407,
     "prob": 87.5,
-    "ev": 0.4588946367611353,
+    "ev": 0.5237343983949636,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
     "alternativa_amarilla": {
      "pick": "Empate",
      "mercado": "1X2",
-     "momio": 5.5,
-     "prob": 30.7,
-     "ev": 0.6877060970118392
+     "momio": 6.0,
+     "prob": 31.0,
+     "ev": 0.8585049015905541
     },
     "mejor_valor": {
      "pick": "Visita",
      "mercado": "1X2",
-     "momio": 9.0,
-     "prob": 22.6,
-     "ev": 1.0311957888843657,
+     "momio": 11.0,
+     "prob": 24.9,
+     "ev": 1.7439840104072992,
      "color": "rojo"
     },
     "mejor_verde": {
-     "pick": "Spread visitante +1.5",
-     "mercado": "Spread",
-     "momio": 1.9523809523809523,
-     "prob": 79.5,
-     "ev": 0.5526473243712704,
+     "pick": "Menos 3.5",
+     "mercado": "Total",
+     "momio": 1.7407407407407407,
+     "prob": 87.5,
+     "ev": 0.5237343983949636,
      "color": "verde"
     }
    },
@@ -505,29 +505,29 @@
     "visita": 0
    },
    "recomendacion": {
-    "pick": "Local",
-    "mercado": "1X2",
-    "momio": 1.1333333333333333,
-    "prob": 99.0,
-    "ev": 0.12244069101139798,
+    "pick": "Más 3.5",
+    "mercado": "Total",
+    "momio": 1.7142857142857144,
+    "prob": 83.5,
+    "ev": 0.43109075726069146,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "AH local -2.5",
-     "mercado": "AH",
-     "momio": 2.083,
-     "prob": 89.1,
-     "ev": 0.8569545504994327,
-     "color": "verde"
+     "pick": "Visita",
+     "mercado": "1X2",
+     "momio": 17.0,
+     "prob": 17.1,
+     "ev": 1.9052633470838405,
+     "color": "rojo"
     },
     "mejor_verde": {
-     "pick": "AH local -2.5",
-     "mercado": "AH",
-     "momio": 2.083,
-     "prob": 89.1,
-     "ev": 0.8569545504994327,
+     "pick": "Más 3.5",
+     "mercado": "Total",
+     "momio": 1.7142857142857144,
+     "prob": 83.5,
+     "ev": 0.43109075726069146,
      "color": "verde"
     }
    },
@@ -553,37 +553,24 @@
     "visita": 0
    },
    "recomendacion": {
-    "pick": "Spread local +0.5",
-    "mercado": "Spread",
-    "momio": 2.05,
-    "prob": 61.8,
-    "ev": 0.2678820850896195,
-    "color": "verde",
-    "semaforo": "verde",
+    "pick": "Local",
+    "mercado": "1X2",
+    "momio": 4.6,
+    "prob": 40.6,
+    "ev": 0.8679142545061016,
+    "color": "amarillo",
+    "semaforo": "amarillo",
     "cumple_regla": true,
-    "alternativa_amarilla": {
-     "pick": "Local",
-     "mercado": "1X2",
-     "momio": 4.6,
-     "prob": 36.8,
-     "ev": 0.6941717435447787
-    },
+    "alternativa_amarilla": null,
     "mejor_valor": {
      "pick": "Local",
      "mercado": "1X2",
      "momio": 4.6,
-     "prob": 36.8,
-     "ev": 0.6941717435447787,
+     "prob": 40.6,
+     "ev": 0.8679142545061016,
      "color": "amarillo"
     },
-    "mejor_verde": {
-     "pick": "Spread local +0.5",
-     "mercado": "Spread",
-     "momio": 2.05,
-     "prob": 61.8,
-     "ev": 0.2678820850896195,
-     "color": "verde"
-    }
+    "mejor_verde": null
    },
    "acierto": null,
    "acierto_texto": "Pendiente",
@@ -607,29 +594,29 @@
     "visita": 0
    },
    "recomendacion": {
-    "pick": "Más 2.5",
-    "mercado": "Total",
-    "momio": 1.5714285714285714,
-    "prob": 85.5,
-    "ev": 0.3439801812923555,
+    "pick": "AH visitante -0.5",
+    "mercado": "AH",
+    "momio": 1.633,
+    "prob": 70.3,
+    "ev": 0.1477815231601487,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "AH visitante -0.5",
-     "mercado": "AH",
-     "momio": 1.633,
-     "prob": 82.7,
-     "ev": 0.3505694947432816,
-     "color": "verde"
+     "pick": "Local",
+     "mercado": "1X2",
+     "momio": 4.4,
+     "prob": 30.3,
+     "ev": 0.33129294582189406,
+     "color": "amarillo"
     },
     "mejor_verde": {
      "pick": "AH visitante -0.5",
      "mercado": "AH",
      "momio": 1.633,
-     "prob": 82.7,
-     "ev": 0.3505694947432816,
+     "prob": 70.3,
+     "ev": 0.1477815231601487,
      "color": "verde"
     }
    },
@@ -655,22 +642,28 @@
     "visita": 0
    },
    "recomendacion": {
-    "pick": "Local",
-    "mercado": "1X2",
-    "momio": 10.0,
-    "prob": 11.6,
-    "ev": 0.15587710863612037,
-    "color": "rojo",
-    "semaforo": "rojo",
+    "pick": "Spread visitante -2.5",
+    "mercado": "Spread",
+    "momio": 2.25,
+    "prob": 52.5,
+    "ev": 0.18098005115287608,
+    "color": "amarillo",
+    "semaforo": "amarillo",
     "cumple_regla": true,
-    "alternativa_amarilla": null,
+    "alternativa_amarilla": {
+     "pick": "Local",
+     "mercado": "1X2",
+     "momio": 10.0,
+     "prob": 31.8,
+     "ev": 2.175621141780696
+    },
     "mejor_valor": {
      "pick": "Local",
      "mercado": "1X2",
      "momio": 10.0,
-     "prob": 11.6,
-     "ev": 0.15587710863612037,
-     "color": "rojo"
+     "prob": 31.8,
+     "ev": 2.175621141780696,
+     "color": "amarillo"
     },
     "mejor_verde": null
    },
@@ -696,31 +689,24 @@
     "visita": 0
    },
    "recomendacion": {
-    "pick": "Local",
-    "mercado": "1X2",
-    "momio": 2.05,
-    "prob": 83.1,
-    "ev": 0.7027590773381684,
-    "color": "verde",
-    "semaforo": "verde",
+    "pick": "BTTS No",
+    "mercado": "BTTS",
+    "momio": 2.188,
+    "prob": 57.3,
+    "ev": 0.2532714078983336,
+    "color": "amarillo",
+    "semaforo": "amarillo",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
      "pick": "BTTS No",
      "mercado": "BTTS",
      "momio": 2.188,
-     "prob": 81.4,
-     "ev": 0.7806765939952391,
-     "color": "verde"
+     "prob": 57.3,
+     "ev": 0.2532714078983336,
+     "color": "amarillo"
     },
-    "mejor_verde": {
-     "pick": "BTTS No",
-     "mercado": "BTTS",
-     "momio": 2.188,
-     "prob": 81.4,
-     "ev": 0.7806765939952391,
-     "color": "verde"
-    }
+    "mejor_verde": null
    },
    "acierto": null,
    "acierto_texto": "Pendiente",
@@ -747,28 +733,21 @@
     "pick": "Local",
     "mercado": "1X2",
     "momio": 2.05,
-    "prob": 70.0,
-    "ev": 0.43438618836946885,
-    "color": "verde",
-    "semaforo": "verde",
+    "prob": 52.2,
+    "ev": 0.07037591027126999,
+    "color": "amarillo",
+    "semaforo": "amarillo",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "Local",
-     "mercado": "1X2",
-     "momio": 2.05,
-     "prob": 70.0,
-     "ev": 0.43438618836946885,
-     "color": "verde"
+     "pick": "BTTS No",
+     "mercado": "BTTS",
+     "momio": 2.73,
+     "prob": 42.6,
+     "ev": 0.16256370009481547,
+     "color": "amarillo"
     },
-    "mejor_verde": {
-     "pick": "Local",
-     "mercado": "1X2",
-     "momio": 2.05,
-     "prob": 70.0,
-     "ev": 0.43438618836946885,
-     "color": "verde"
-    }
+    "mejor_verde": null
    },
    "acierto": null,
    "acierto_texto": "Pendiente",
@@ -795,28 +774,21 @@
     "pick": "BTTS No",
     "mercado": "BTTS",
     "momio": 2.136,
-    "prob": 66.2,
-    "ev": 0.4132204513490789,
-    "color": "verde",
-    "semaforo": "verde",
+    "prob": 52.0,
+    "ev": 0.10968835797217769,
+    "color": "amarillo",
+    "semaforo": "amarillo",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
      "pick": "BTTS No",
      "mercado": "BTTS",
      "momio": 2.136,
-     "prob": 66.2,
-     "ev": 0.4132204513490789,
-     "color": "verde"
+     "prob": 52.0,
+     "ev": 0.10968835797217769,
+     "color": "amarillo"
     },
-    "mejor_verde": {
-     "pick": "BTTS No",
-     "mercado": "BTTS",
-     "momio": 2.136,
-     "prob": 66.2,
-     "ev": 0.4132204513490789,
-     "color": "verde"
-    }
+    "mejor_verde": null
    },
    "acierto": null,
    "acierto_texto": "Pendiente",
@@ -840,29 +812,29 @@
     "visita": 0
    },
    "recomendacion": {
-    "pick": "Spread visitante -0.5",
-    "mercado": "Spread",
-    "momio": 2.15,
-    "prob": 64.5,
-    "ev": 0.3871900314713952,
+    "pick": "AH visitante -0.5",
+    "mercado": "AH",
+    "momio": 2.155,
+    "prob": 63.9,
+    "ev": 0.3775226191801395,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "Visita",
-     "mercado": "1X2",
-     "momio": 2.25,
-     "prob": 64.5,
-     "ev": 0.4517104980436435,
+     "pick": "AH visitante -0.5",
+     "mercado": "AH",
+     "momio": 2.155,
+     "prob": 63.9,
+     "ev": 0.3775226191801395,
      "color": "verde"
     },
     "mejor_verde": {
-     "pick": "Visita",
-     "mercado": "1X2",
-     "momio": 2.25,
-     "prob": 64.5,
-     "ev": 0.4517104980436435,
+     "pick": "AH visitante -0.5",
+     "mercado": "AH",
+     "momio": 2.155,
+     "prob": 63.9,
+     "ev": 0.3775226191801395,
      "color": "verde"
     }
    },
@@ -891,8 +863,8 @@
     "pick": "Más 2.5",
     "mercado": "Total",
     "momio": 1.7692307692307692,
-    "prob": 78.7,
-    "ev": 0.39277199173249344,
+    "prob": 65.4,
+    "ev": 0.15792019710637284,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
@@ -901,16 +873,16 @@
      "pick": "Más 2.5",
      "mercado": "Total",
      "momio": 1.7692307692307692,
-     "prob": 78.7,
-     "ev": 0.39277199173249344,
+     "prob": 65.4,
+     "ev": 0.15792019710637284,
      "color": "verde"
     },
     "mejor_verde": {
      "pick": "Más 2.5",
      "mercado": "Total",
      "momio": 1.7692307692307692,
-     "prob": 78.7,
-     "ev": 0.39277199173249344,
+     "prob": 65.4,
+     "ev": 0.15792019710637284,
      "color": "verde"
     }
    },
@@ -936,35 +908,29 @@
     "visita": 0
    },
    "recomendacion": {
-    "pick": "Menos 2.5",
-    "mercado": "Total",
+    "pick": "Spread visitante +0.5",
+    "mercado": "Spread",
     "momio": 2.15,
-    "prob": 61.2,
-    "ev": 0.31602470174310526,
+    "prob": 60.8,
+    "ev": 0.30798765451537946,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
-    "alternativa_amarilla": {
-     "pick": "Visita",
-     "mercado": "1X2",
-     "momio": 4.9,
-     "prob": 31.1,
-     "ev": 0.5250855973284925
-    },
+    "alternativa_amarilla": null,
     "mejor_valor": {
      "pick": "Visita",
      "mercado": "1X2",
      "momio": 4.9,
-     "prob": 31.1,
-     "ev": 0.5250855973284925,
-     "color": "amarillo"
+     "prob": 27.9,
+     "ev": 0.36913989999997243,
+     "color": "rojo"
     },
     "mejor_verde": {
-     "pick": "Menos 2.5",
-     "mercado": "Total",
+     "pick": "Spread visitante +0.5",
+     "mercado": "Spread",
      "momio": 2.15,
-     "prob": 61.2,
-     "ev": 0.31602470174310526,
+     "prob": 60.8,
+     "ev": 0.30798765451537946,
      "color": "verde"
     }
    },
@@ -993,8 +959,8 @@
     "pick": "BTTS No",
     "mercado": "BTTS",
     "momio": 2.3,
-    "prob": 41.3,
-    "ev": -0.050893936814863094,
+    "prob": 43.2,
+    "ev": -0.005527877885202148,
     "color": "rojo",
     "semaforo": "rojo",
     "cumple_regla": false,
@@ -1003,8 +969,8 @@
      "pick": "BTTS No",
      "mercado": "BTTS",
      "momio": 2.3,
-     "prob": 41.3,
-     "ev": -0.050893936814863094,
+     "prob": 43.2,
+     "ev": -0.005527877885202148,
      "color": "rojo"
     },
     "mejor_verde": null
@@ -1025,17 +991,17 @@
    "liga": "Premier League",
    "home": "Leeds United",
    "away": "Coventry City",
-   "estado": "in",
+   "estado": "post",
    "marcador": {
     "local": 3,
     "visita": 0
    },
    "recomendacion": {
-    "pick": "Spread visitante +1.5",
-    "mercado": "Spread",
-    "momio": 1.606060606060606,
-    "prob": 88.6,
-    "ev": 0.4228708149183169,
+    "pick": "AH visitante +1.5",
+    "mercado": "AH",
+    "momio": 1.588,
+    "prob": 72.3,
+    "ev": 0.14888378046684592,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
@@ -1043,28 +1009,28 @@
      "pick": "Visita",
      "mercado": "1X2",
      "momio": 6.5,
-     "prob": 42.7,
-     "ev": 1.773698128120957
+     "prob": 32.0,
+     "ev": 1.0790957570844402
     },
     "mejor_valor": {
      "pick": "Visita",
      "mercado": "1X2",
      "momio": 6.5,
-     "prob": 42.7,
-     "ev": 1.773698128120957,
+     "prob": 32.0,
+     "ev": 1.0790957570844402,
      "color": "amarillo"
     },
     "mejor_verde": {
-     "pick": "Spread visitante +1.5",
-     "mercado": "Spread",
-     "momio": 1.606060606060606,
-     "prob": 88.6,
-     "ev": 0.4228708149183169,
+     "pick": "AH visitante +1.5",
+     "mercado": "AH",
+     "momio": 1.588,
+     "prob": 72.3,
+     "ev": 0.14888378046684592,
      "color": "verde"
     }
    },
-   "acierto": null,
-   "acierto_texto": "Pendiente",
+   "acierto": false,
+   "acierto_texto": "Falló",
    "vivo": {
     "tiene_datos": true,
     "motivo": null,
@@ -1083,11 +1049,11 @@
     },
     "prediccion": {
      "favorito": "Local",
-     "p1": 99.9,
-     "px": 0.1,
+     "p1": 100.0,
+     "px": 0.0,
      "p2": 0.0
     },
-    "acierto": null
+    "acierto": true
    }
   },
   {
@@ -1096,45 +1062,62 @@
    "liga": "Premier League",
    "home": "Ipswich Town",
    "away": "Aston Villa",
-   "estado": "pre",
+   "estado": "in",
    "marcador": {
-    "local": 0,
-    "visita": 0
+    "local": 1,
+    "visita": 2
    },
    "recomendacion": {
     "pick": "Más 2.5",
     "mercado": "Total",
     "momio": 1.606060606060606,
-    "prob": 88.8,
-    "ev": 0.42558786394486603,
+    "prob": 69.0,
+    "ev": 0.10757241904736947,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "Más 2.5",
-     "mercado": "Total",
-     "momio": 1.606060606060606,
-     "prob": 88.8,
-     "ev": 0.42558786394486603,
-     "color": "verde"
+     "pick": "Local",
+     "mercado": "1X2",
+     "momio": 3.35,
+     "prob": 41.2,
+     "ev": 0.3815121794484735,
+     "color": "amarillo"
     },
     "mejor_verde": {
      "pick": "Más 2.5",
      "mercado": "Total",
      "momio": 1.606060606060606,
-     "prob": 88.8,
-     "ev": 0.42558786394486603,
+     "prob": 69.0,
+     "ev": 0.10757241904736947,
      "color": "verde"
     }
    },
    "acierto": null,
    "acierto_texto": "Pendiente",
    "vivo": {
-    "tiene_datos": false,
-    "motivo": "sin snapshots en data/live-log",
-    "ultimo_snapshot": null,
-    "prediccion": null,
+    "tiene_datos": true,
+    "motivo": null,
+    "ultimo_snapshot": {
+     "cuando": "2026-11-28T18:42:09Z",
+     "minuto": "54'",
+     "marcador": [
+      1,
+      2
+     ],
+     "tda": [
+      2,
+      6
+     ],
+     "rojas": []
+    },
+    "prediccion": {
+     "favorito": "Visita",
+     "p1": 4.2,
+     "px": 17.5,
+     "p2": 78.3
+    },
     "acierto": null
    }
   },
@@ -1150,34 +1133,27 @@
     "visita": 1
    },
    "recomendacion": {
-    "pick": "Más 2.5",
-    "mercado": "Total",
-    "momio": 1.5882352941176472,
-    "prob": 72.8,
-    "ev": 0.15570738394543193,
-    "color": "verde",
-    "semaforo": "verde",
+    "pick": "AH visitante +0.5",
+    "mercado": "AH",
+    "momio": 2.305,
+    "prob": 52.7,
+    "ev": 0.21505135895524896,
+    "color": "amarillo",
+    "semaforo": "amarillo",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "Más 2.5",
-     "mercado": "Total",
-     "momio": 1.5882352941176472,
-     "prob": 72.8,
-     "ev": 0.15570738394543193,
-     "color": "verde"
+     "pick": "AH visitante +0.5",
+     "mercado": "AH",
+     "momio": 2.305,
+     "prob": 52.7,
+     "ev": 0.21505135895524896,
+     "color": "amarillo"
     },
-    "mejor_verde": {
-     "pick": "Más 2.5",
-     "mercado": "Total",
-     "momio": 1.5882352941176472,
-     "prob": 72.8,
-     "ev": 0.15570738394543193,
-     "color": "verde"
-    }
+    "mejor_verde": null
    },
-   "acierto": false,
-   "acierto_texto": "Falló",
+   "acierto": true,
+   "acierto_texto": "Acertó",
    "vivo": {
     "tiene_datos": false,
     "motivo": "sin snapshots en data/live-log",
@@ -1192,40 +1168,46 @@
    "liga": "LaLiga",
    "home": "Málaga",
    "away": "Athletic Club",
-   "estado": "in",
+   "estado": "post",
    "marcador": {
-    "local": 2,
+    "local": 3,
     "visita": 4
    },
    "recomendacion": {
-    "pick": "Más 2.5",
-    "mercado": "Total",
-    "momio": 1.8,
-    "prob": 73.0,
-    "ev": 0.3139776654576898,
+    "pick": "AH visitante -0.5",
+    "mercado": "AH",
+    "momio": 1.674,
+    "prob": 65.2,
+    "ev": 0.09158955156753046,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
-    "alternativa_amarilla": null,
+    "alternativa_amarilla": {
+     "pick": "Local",
+     "mercado": "1X2",
+     "momio": 4.7,
+     "prob": 33.0,
+     "ev": 0.5499966435793069
+    },
     "mejor_valor": {
-     "pick": "Más 2.5",
-     "mercado": "Total",
-     "momio": 1.8,
-     "prob": 73.0,
-     "ev": 0.3139776654576898,
-     "color": "verde"
+     "pick": "Local",
+     "mercado": "1X2",
+     "momio": 4.7,
+     "prob": 33.0,
+     "ev": 0.5499966435793069,
+     "color": "amarillo"
     },
     "mejor_verde": {
      "pick": "Más 2.5",
      "mercado": "Total",
      "momio": 1.8,
-     "prob": 73.0,
-     "ev": 0.3139776654576898,
+     "prob": 63.4,
+     "ev": 0.1420021829101914,
      "color": "verde"
     }
    },
-   "acierto": null,
-   "acierto_texto": "Pendiente",
+   "acierto": true,
+   "acierto_texto": "Acertó",
    "vivo": {
     "tiene_datos": true,
     "motivo": null,
@@ -1244,11 +1226,11 @@
     },
     "prediccion": {
      "favorito": "Visita",
-     "p1": 0.2,
-     "px": 1.4,
-     "p2": 98.4
+     "p1": 0.3,
+     "px": 2.4,
+     "p2": 97.3
     },
-    "acierto": null
+    "acierto": true
    }
   },
   {
@@ -1266,8 +1248,8 @@
     "pick": "Menos 2.5",
     "mercado": "Total",
     "momio": 2.3,
-    "prob": 59.3,
-    "ev": 0.3639161520744325,
+    "prob": 47.9,
+    "ev": 0.1007856532260516,
     "color": "amarillo",
     "semaforo": "amarillo",
     "cumple_regla": true,
@@ -1276,8 +1258,8 @@
      "pick": "Menos 2.5",
      "mercado": "Total",
      "momio": 2.3,
-     "prob": 59.3,
-     "ev": 0.3639161520744325,
+     "prob": 47.9,
+     "ev": 0.1007856532260516,
      "color": "amarillo"
     },
     "mejor_verde": null
@@ -1302,8 +1284,8 @@
     },
     "prediccion": {
      "favorito": "Local",
-     "p1": 99.6,
-     "px": 0.4,
+     "p1": 99.7,
+     "px": 0.3,
      "p2": 0.0
     },
     "acierto": true
@@ -1334,8 +1316,8 @@
      "pick": "Visita",
      "mercado": "1X2",
      "momio": 5.75,
-     "prob": 29.6,
-     "ev": 0.7007310268866278,
+     "prob": 27.4,
+     "ev": 0.5755049376197727,
      "color": "rojo"
     },
     "mejor_verde": {
@@ -1367,9 +1349,9 @@
     },
     "prediccion": {
      "favorito": "Visita",
-     "p1": 2.1,
-     "px": 14.2,
-     "p2": 83.7
+     "p1": 2.7,
+     "px": 15.6,
+     "p2": 81.7
     },
     "acierto": false
    }
@@ -1386,34 +1368,27 @@
     "visita": 1
    },
    "recomendacion": {
-    "pick": "Spread local +0.5",
-    "mercado": "Spread",
-    "momio": 1.5,
-    "prob": 91.2,
-    "ev": 0.3685702383849072,
-    "color": "verde",
-    "semaforo": "verde",
+    "pick": "BTTS No",
+    "mercado": "BTTS",
+    "momio": 2.54,
+    "prob": 58.6,
+    "ev": 0.4881699578680039,
+    "color": "amarillo",
+    "semaforo": "amarillo",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
      "pick": "BTTS No",
      "mercado": "BTTS",
      "momio": 2.54,
-     "prob": 85.1,
-     "ev": 1.1622198796228682,
-     "color": "verde"
+     "prob": 58.6,
+     "ev": 0.4881699578680039,
+     "color": "amarillo"
     },
-    "mejor_verde": {
-     "pick": "BTTS No",
-     "mercado": "BTTS",
-     "momio": 2.54,
-     "prob": 85.1,
-     "ev": 1.1622198796228682,
-     "color": "verde"
-    }
+    "mejor_verde": null
    },
-   "acierto": true,
-   "acierto_texto": "Acertó",
+   "acierto": false,
+   "acierto_texto": "Falló",
    "vivo": {
     "tiene_datos": true,
     "motivo": null,
@@ -1432,8 +1407,8 @@
     },
     "prediccion": {
      "favorito": "Local",
-     "p1": 100.0,
-     "px": 0.0,
+     "p1": 99.9,
+     "px": 0.1,
      "p2": 0.0
     },
     "acierto": true
@@ -1451,27 +1426,27 @@
     "visita": 0
    },
    "recomendacion": {
-    "pick": "Menos 3.5",
-    "mercado": "Total",
-    "momio": 1.9090909090909092,
-    "prob": 55.2,
-    "ev": 0.05335136662291129,
+    "pick": "AH visitante +1.5",
+    "mercado": "AH",
+    "momio": 1.808,
+    "prob": 59.4,
+    "ev": 0.07420757215115903,
     "color": "amarillo",
     "semaforo": "amarillo",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "BTTS No",
-     "mercado": "BTTS",
-     "momio": 2.44,
-     "prob": 43.5,
-     "ev": 0.0616579877728094,
-     "color": "amarillo"
+     "pick": "Empate",
+     "mercado": "1X2",
+     "momio": 5.0,
+     "prob": 26.1,
+     "ev": 0.30669470412295685,
+     "color": "rojo"
     },
     "mejor_verde": null
    },
-   "acierto": true,
-   "acierto_texto": "Acertó",
+   "acierto": false,
+   "acierto_texto": "Falló",
    "vivo": {
     "tiene_datos": true,
     "motivo": null,
@@ -1503,17 +1478,17 @@
    "liga": "Serie A",
    "home": "Torino",
    "away": "Lazio",
-   "estado": "pre",
+   "estado": "in",
    "marcador": {
-    "local": 0,
-    "visita": 0
+    "local": 1,
+    "visita": 2
    },
    "recomendacion": {
-    "pick": "Spread visitante -0.5",
-    "mercado": "Spread",
-    "momio": 1.9523809523809523,
-    "prob": 74.3,
-    "ev": 0.450491280843222,
+    "pick": "AH visitante -0.5",
+    "mercado": "AH",
+    "momio": 2.002,
+    "prob": 67.3,
+    "ev": 0.34820104512740846,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
@@ -1522,26 +1497,43 @@
      "pick": "AH visitante -0.5",
      "mercado": "AH",
      "momio": 2.002,
-     "prob": 74.3,
-     "ev": 0.4873549860783106,
+     "prob": 67.3,
+     "ev": 0.34820104512740846,
      "color": "verde"
     },
     "mejor_verde": {
      "pick": "AH visitante -0.5",
      "mercado": "AH",
      "momio": 2.002,
-     "prob": 74.3,
-     "ev": 0.4873549860783106,
+     "prob": 67.3,
+     "ev": 0.34820104512740846,
      "color": "verde"
     }
    },
    "acierto": null,
    "acierto_texto": "Pendiente",
    "vivo": {
-    "tiene_datos": false,
-    "motivo": "sin snapshots en data/live-log",
-    "ultimo_snapshot": null,
-    "prediccion": null,
+    "tiene_datos": true,
+    "motivo": null,
+    "ultimo_snapshot": {
+     "cuando": "2026-11-28T18:42:09Z",
+     "minuto": "82'",
+     "marcador": [
+      1,
+      2
+     ],
+     "tda": [
+      7,
+      3
+     ],
+     "rojas": []
+    },
+    "prediccion": {
+     "favorito": "Visita",
+     "p1": 0.8,
+     "px": 10.8,
+     "p2": 88.4
+    },
     "acierto": null
    }
   },
@@ -1554,31 +1546,24 @@
    "estado": "pre",
    "marcador": null,
    "recomendacion": {
-    "pick": "Local",
-    "mercado": "1X2",
-    "momio": 1.5555555555555556,
-    "prob": 89.2,
-    "ev": 0.38827697673076234,
-    "color": "verde",
-    "semaforo": "verde",
+    "pick": "BTTS No",
+    "mercado": "BTTS",
+    "momio": 2.232,
+    "prob": 56.9,
+    "ev": 0.2707733480330172,
+    "color": "amarillo",
+    "semaforo": "amarillo",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
      "pick": "BTTS No",
      "mercado": "BTTS",
      "momio": 2.232,
-     "prob": 80.4,
-     "ev": 0.7944827086657635,
-     "color": "verde"
+     "prob": 56.9,
+     "ev": 0.2707733480330172,
+     "color": "amarillo"
     },
-    "mejor_verde": {
-     "pick": "BTTS No",
-     "mercado": "BTTS",
-     "momio": 2.232,
-     "prob": 80.4,
-     "ev": 0.7944827086657635,
-     "color": "verde"
-    }
+    "mejor_verde": null
    },
    "acierto": null,
    "acierto_texto": "Pendiente",
@@ -1599,35 +1584,29 @@
    "estado": "pre",
    "marcador": null,
    "recomendacion": {
-    "pick": "Spread visitante +0.5",
-    "mercado": "Spread",
-    "momio": 1.8333333333333335,
-    "prob": 78.5,
-    "ev": 0.4390651003588608,
+    "pick": "AH visitante +0.5",
+    "mercado": "AH",
+    "momio": 1.925,
+    "prob": 68.8,
+    "ev": 0.3246514243818812,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
-    "alternativa_amarilla": {
-     "pick": "Visita",
-     "mercado": "1X2",
-     "momio": 3.85,
-     "prob": 56.3,
-     "ev": 1.168454582358545
-    },
+    "alternativa_amarilla": null,
     "mejor_valor": {
      "pick": "Visita",
      "mercado": "1X2",
      "momio": 3.85,
-     "prob": 56.3,
-     "ev": 1.168454582358545,
+     "prob": 36.8,
+     "ev": 0.41553420105617844,
      "color": "amarillo"
     },
     "mejor_verde": {
      "pick": "AH visitante +0.5",
      "mercado": "AH",
      "momio": 1.925,
-     "prob": 78.5,
-     "ev": 0.5110183553768037,
+     "prob": 68.8,
+     "ev": 0.3246514243818812,
      "color": "verde"
     }
    },
@@ -1650,21 +1629,21 @@
    "estado": "pre",
    "marcador": null,
    "recomendacion": {
-    "pick": "Menos 2.5",
-    "mercado": "Total",
-    "momio": 2.0,
-    "prob": 58.3,
-    "ev": 0.16511220135681626,
+    "pick": "AH visitante -0.5",
+    "mercado": "AH",
+    "momio": 2.398,
+    "prob": 53.9,
+    "ev": 0.2934727151794265,
     "color": "amarillo",
     "semaforo": "amarillo",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "Menos 2.5",
-     "mercado": "Total",
-     "momio": 2.0,
-     "prob": 58.3,
-     "ev": 0.16511220135681626,
+     "pick": "AH visitante -0.5",
+     "mercado": "AH",
+     "momio": 2.398,
+     "prob": 53.9,
+     "ev": 0.2934727151794265,
      "color": "amarillo"
     },
     "mejor_verde": null
@@ -1688,29 +1667,29 @@
    "estado": "pre",
    "marcador": null,
    "recomendacion": {
-    "pick": "BTTS No",
-    "mercado": "BTTS",
-    "momio": 1.955,
-    "prob": 83.1,
-    "ev": 0.62440820172289,
+    "pick": "AH visitante -0.5",
+    "mercado": "AH",
+    "momio": 1.954,
+    "prob": 67.0,
+    "ev": 0.3098864518972708,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "BTTS No",
-     "mercado": "BTTS",
-     "momio": 1.955,
-     "prob": 83.1,
-     "ev": 0.62440820172289,
+     "pick": "AH visitante -0.5",
+     "mercado": "AH",
+     "momio": 1.954,
+     "prob": 67.0,
+     "ev": 0.3098864518972708,
      "color": "verde"
     },
     "mejor_verde": {
-     "pick": "BTTS No",
-     "mercado": "BTTS",
-     "momio": 1.955,
-     "prob": 83.1,
-     "ev": 0.62440820172289,
+     "pick": "AH visitante -0.5",
+     "mercado": "AH",
+     "momio": 1.954,
+     "prob": 67.0,
+     "ev": 0.3098864518972708,
      "color": "verde"
     }
    },
@@ -1733,11 +1712,11 @@
    "estado": "pre",
    "marcador": null,
    "recomendacion": {
-    "pick": "BTTS Sí",
-    "mercado": "BTTS",
-    "momio": 1.932,
-    "prob": 56.5,
-    "ev": 0.09090995449994033,
+    "pick": "Más 2.5",
+    "mercado": "Total",
+    "momio": 2.25,
+    "prob": 56.6,
+    "ev": 0.2738267434758572,
     "color": "amarillo",
     "semaforo": "amarillo",
     "cumple_regla": true,
@@ -1746,8 +1725,8 @@
      "pick": "Más 2.5",
      "mercado": "Total",
      "momio": 2.25,
-     "prob": 53.5,
-     "ev": 0.2033978385024493,
+     "prob": 56.6,
+     "ev": 0.2738267434758572,
      "color": "amarillo"
     },
     "mejor_verde": null
@@ -1771,35 +1750,29 @@
    "estado": "pre",
    "marcador": null,
    "recomendacion": {
-    "pick": "Menos 2.5",
-    "mercado": "Total",
-    "momio": 2.05,
-    "prob": 96.4,
-    "ev": 0.9772234269157118,
+    "pick": "BTTS No",
+    "mercado": "BTTS",
+    "momio": 2.248,
+    "prob": 61.0,
+    "ev": 0.37164014340619533,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
-    "alternativa_amarilla": {
+    "alternativa_amarilla": null,
+    "mejor_valor": {
      "pick": "Empate",
      "mercado": "1X2",
      "momio": 3.55,
-     "prob": 54.8,
-     "ev": 0.9442576176564412
-    },
-    "mejor_valor": {
-     "pick": "BTTS No",
-     "mercado": "BTTS",
-     "momio": 2.248,
-     "prob": 92.1,
-     "ev": 1.0695101240177007,
-     "color": "verde"
+     "prob": 39.4,
+     "ev": 0.39903203700380674,
+     "color": "amarillo"
     },
     "mejor_verde": {
      "pick": "BTTS No",
      "mercado": "BTTS",
      "momio": 2.248,
-     "prob": 92.1,
-     "ev": 1.0695101240177007,
+     "prob": 61.0,
+     "ev": 0.37164014340619533,
      "color": "verde"
     }
    },
@@ -1825,26 +1798,26 @@
     "pick": "Más 2.5",
     "mercado": "Total",
     "momio": 1.7692307692307692,
-    "prob": 94.5,
-    "ev": 0.6719444416102207,
+    "prob": 71.0,
+    "ev": 0.2556305545635771,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "Local",
-     "mercado": "1X2",
-     "momio": 2.15,
-     "prob": 87.3,
-     "ev": 0.8764221529970113,
+     "pick": "Más 2.5",
+     "mercado": "Total",
+     "momio": 1.7692307692307692,
+     "prob": 71.0,
+     "ev": 0.2556305545635771,
      "color": "verde"
     },
     "mejor_verde": {
-     "pick": "Local",
-     "mercado": "1X2",
-     "momio": 2.15,
-     "prob": 87.3,
-     "ev": 0.8764221529970113,
+     "pick": "Más 2.5",
+     "mercado": "Total",
+     "momio": 1.7692307692307692,
+     "prob": 71.0,
+     "ev": 0.2556305545635771,
      "color": "verde"
     }
    },
@@ -1867,11 +1840,11 @@
    "estado": "pre",
    "marcador": null,
    "recomendacion": {
-    "pick": "BTTS Sí",
-    "mercado": "BTTS",
-    "momio": 1.421,
-    "prob": 80.1,
-    "ev": 0.13888938025804243,
+    "pick": "Más 3.5",
+    "mercado": "Total",
+    "momio": 2.2,
+    "prob": 68.3,
+    "ev": 0.5022784548055503,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
@@ -1912,29 +1885,29 @@
    "estado": "pre",
    "marcador": null,
    "recomendacion": {
-    "pick": "Local",
-    "mercado": "1X2",
-    "momio": 1.6666666666666665,
-    "prob": 81.7,
-    "ev": 0.36130898151804836,
+    "pick": "Más 3.5",
+    "mercado": "Total",
+    "momio": 1.7692307692307692,
+    "prob": 76.4,
+    "ev": 0.35142445920491117,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "AH local -0.5",
-     "mercado": "AH",
-     "momio": 1.683,
-     "prob": 81.7,
-     "ev": 0.3746498095369253,
+     "pick": "Más 3.5",
+     "mercado": "Total",
+     "momio": 1.7692307692307692,
+     "prob": 76.4,
+     "ev": 0.35142445920491117,
      "color": "verde"
     },
     "mejor_verde": {
-     "pick": "AH local -0.5",
-     "mercado": "AH",
-     "momio": 1.683,
-     "prob": 81.7,
-     "ev": 0.3746498095369253,
+     "pick": "Más 3.5",
+     "mercado": "Total",
+     "momio": 1.7692307692307692,
+     "prob": 76.4,
+     "ev": 0.35142445920491117,
      "color": "verde"
     }
    },
@@ -1957,29 +1930,29 @@
    "estado": "pre",
    "marcador": null,
    "recomendacion": {
-    "pick": "Spread visitante -0.5",
-    "mercado": "Spread",
-    "momio": 2.15,
-    "prob": 80.3,
-    "ev": 0.7258032327548107,
+    "pick": "AH visitante -0.5",
+    "mercado": "AH",
+    "momio": 2.172,
+    "prob": 69.4,
+    "ev": 0.5081167151349801,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "Visita",
-     "mercado": "1X2",
-     "momio": 2.2,
-     "prob": 80.3,
-     "ev": 0.7659381916437731,
+     "pick": "AH visitante -0.5",
+     "mercado": "AH",
+     "momio": 2.172,
+     "prob": 69.4,
+     "ev": 0.5081167151349801,
      "color": "verde"
     },
     "mejor_verde": {
-     "pick": "Visita",
-     "mercado": "1X2",
-     "momio": 2.2,
-     "prob": 80.3,
-     "ev": 0.7659381916437731,
+     "pick": "AH visitante -0.5",
+     "mercado": "AH",
+     "momio": 2.172,
+     "prob": 69.4,
+     "ev": 0.5081167151349801,
      "color": "verde"
     }
    },
@@ -2012,12 +1985,12 @@
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "Más 3.5",
-     "mercado": "Total",
-     "momio": 1.8333333333333335,
-     "prob": 78.0,
-     "ev": 0.42986165096832374,
-     "color": "verde"
+     "pick": "Visita",
+     "mercado": "1X2",
+     "momio": 11.0,
+     "prob": 19.7,
+     "ev": 1.1696331256753716,
+     "color": "rojo"
     },
     "mejor_verde": {
      "pick": "Más 3.5",
@@ -2050,29 +2023,29 @@
     "visita": 0
    },
    "recomendacion": {
-    "pick": "BTTS Sí",
-    "mercado": "BTTS",
-    "momio": 1.472,
-    "prob": 75.6,
-    "ev": 0.1130409972203863,
+    "pick": "Más 3.5",
+    "mercado": "Total",
+    "momio": 1.9523809523809523,
+    "prob": 67.1,
+    "ev": 0.3097326585095084,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "Visita",
-     "mercado": "1X2",
-     "momio": 2.25,
-     "prob": 66.0,
-     "ev": 0.48473446202557313,
+     "pick": "Spread visitante -0.5",
+     "mercado": "Spread",
+     "momio": 2.15,
+     "prob": 63.0,
+     "ev": 0.3546261923079106,
      "color": "verde"
     },
     "mejor_verde": {
-     "pick": "Visita",
-     "mercado": "1X2",
-     "momio": 2.25,
-     "prob": 66.0,
-     "ev": 0.48473446202557313,
+     "pick": "Spread visitante -0.5",
+     "mercado": "Spread",
+     "momio": 2.15,
+     "prob": 63.0,
+     "ev": 0.3546261923079106,
      "color": "verde"
     }
    },
@@ -2098,29 +2071,29 @@
     "visita": 1
    },
    "recomendacion": {
-    "pick": "Spread visitante +1.5",
-    "mercado": "Spread",
-    "momio": 1.6666666666666665,
-    "prob": 73.3,
-    "ev": 0.22210161641159742,
+    "pick": "AH visitante +1.5",
+    "mercado": "AH",
+    "momio": 1.601,
+    "prob": 67.0,
+    "ev": 0.07273618445374308,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "Menos 2.5",
-     "mercado": "Total",
-     "momio": 2.35,
-     "prob": 70.2,
-     "ev": 0.6494437892817462,
-     "color": "verde"
+     "pick": "Visita",
+     "mercado": "1X2",
+     "momio": 7.5,
+     "prob": 22.8,
+     "ev": 0.7063856057872995,
+     "color": "rojo"
     },
     "mejor_verde": {
-     "pick": "Menos 2.5",
-     "mercado": "Total",
-     "momio": 2.35,
-     "prob": 70.2,
-     "ev": 0.6494437892817462,
+     "pick": "Spread visitante +1.5",
+     "mercado": "Spread",
+     "momio": 1.6666666666666665,
+     "prob": 65.6,
+     "ev": 0.09290223241072537,
      "color": "verde"
     }
    },
@@ -2146,22 +2119,22 @@
     "visita": 2
    },
    "recomendacion": {
-    "pick": "Local",
-    "mercado": "1X2",
-    "momio": 1.2857142857142856,
-    "prob": 88.4,
-    "ev": 0.13613263701586686,
+    "pick": "Más 3.5",
+    "mercado": "Total",
+    "momio": 1.8,
+    "prob": 80.2,
+    "ev": 0.4444396537200779,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "Más 3.5",
-     "mercado": "Total",
-     "momio": 1.8,
-     "prob": 80.2,
-     "ev": 0.4444396537200779,
-     "color": "verde"
+     "pick": "Visita",
+     "mercado": "1X2",
+     "momio": 9.0,
+     "prob": 18.7,
+     "ev": 0.6816066173355173,
+     "color": "rojo"
     },
     "mejor_verde": {
      "pick": "Más 3.5",
@@ -2172,8 +2145,8 @@
      "color": "verde"
     }
    },
-   "acierto": false,
-   "acierto_texto": "Falló",
+   "acierto": true,
+   "acierto_texto": "Acertó",
    "vivo": {
     "tiene_datos": false,
     "motivo": "sin snapshots en data/live-log",
@@ -2204,11 +2177,11 @@
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "Empate",
+     "pick": "Visita",
      "mercado": "1X2",
-     "momio": 9.0,
-     "prob": 22.8,
-     "ev": 1.049606735953093,
+     "momio": 12.0,
+     "prob": 21.3,
+     "ev": 1.5506222775891088,
      "color": "rojo"
     },
     "mejor_verde": {
@@ -2242,11 +2215,11 @@
     "visita": 3
    },
    "recomendacion": {
-    "pick": "BTTS Sí",
-    "mercado": "BTTS",
-    "momio": 1.361,
-    "prob": 90.9,
-    "ev": 0.23740110815212745,
+    "pick": "Más 3.5",
+    "mercado": "Total",
+    "momio": 1.7407407407407407,
+    "prob": 87.8,
+    "ev": 0.5282629682570479,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
@@ -2254,23 +2227,23 @@
      "pick": "Local",
      "mercado": "1X2",
      "momio": 4.5,
-     "prob": 56.6,
-     "ev": 1.5480166398706658
+     "prob": 47.5,
+     "ev": 1.1392463343608505
     },
     "mejor_valor": {
      "pick": "Local",
      "mercado": "1X2",
      "momio": 4.5,
-     "prob": 56.6,
-     "ev": 1.5480166398706658,
+     "prob": 47.5,
+     "ev": 1.1392463343608505,
      "color": "amarillo"
     },
     "mejor_verde": {
-     "pick": "Spread local +0.5",
-     "mercado": "Spread",
-     "momio": 2.25,
-     "prob": 71.8,
-     "ev": 0.6154458514044716,
+     "pick": "Más 3.5",
+     "mercado": "Total",
+     "momio": 1.7407407407407407,
+     "prob": 87.8,
+     "ev": 0.5282629682570479,
      "color": "verde"
     }
    },
@@ -2296,11 +2269,11 @@
     "visita": 0
    },
    "recomendacion": {
-    "pick": "Spread visitante +1.5",
-    "mercado": "Spread",
-    "momio": 1.8,
-    "prob": 87.2,
-    "ev": 0.5691320519907075,
+    "pick": "Menos 3.5",
+    "mercado": "Total",
+    "momio": 2.25,
+    "prob": 81.5,
+    "ev": 0.8334997471322885,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
@@ -2308,16 +2281,16 @@
      "pick": "Visita",
      "mercado": "1X2",
      "momio": 6.0,
-     "prob": 38.1,
-     "ev": 1.2851721411943697
+     "prob": 30.4,
+     "ev": 0.8227950662110664
     },
     "mejor_valor": {
-     "pick": "Visita",
-     "mercado": "1X2",
-     "momio": 6.0,
-     "prob": 38.1,
-     "ev": 1.2851721411943697,
-     "color": "amarillo"
+     "pick": "Menos 3.5",
+     "mercado": "Total",
+     "momio": 2.25,
+     "prob": 81.5,
+     "ev": 0.8334997471322885,
+     "color": "verde"
     },
     "mejor_verde": {
      "pick": "Menos 3.5",
@@ -2328,8 +2301,8 @@
      "color": "verde"
     }
    },
-   "acierto": false,
-   "acierto_texto": "Falló",
+   "acierto": true,
+   "acierto_texto": "Acertó",
    "vivo": {
     "tiene_datos": false,
     "motivo": "sin snapshots en data/live-log",
@@ -2350,29 +2323,29 @@
     "visita": 1
    },
    "recomendacion": {
-    "pick": "Spread visitante -0.5",
-    "mercado": "Spread",
-    "momio": 1.5555555555555556,
-    "prob": 87.0,
-    "ev": 0.35280176226699433,
+    "pick": "AH visitante -0.5",
+    "mercado": "AH",
+    "momio": 1.627,
+    "prob": 71.8,
+    "ev": 0.16782870512188985,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "AH visitante -0.5",
-     "mercado": "AH",
-     "momio": 1.627,
-     "prob": 87.0,
-     "ev": 0.4149340146339713,
-     "color": "verde"
+     "pick": "Local",
+     "mercado": "1X2",
+     "momio": 5.25,
+     "prob": 29.2,
+     "ev": 0.5315179302542894,
+     "color": "rojo"
     },
     "mejor_verde": {
      "pick": "AH visitante -0.5",
      "mercado": "AH",
      "momio": 1.627,
-     "prob": 87.0,
-     "ev": 0.4149340146339713,
+     "prob": 71.8,
+     "ev": 0.16782870512188985,
      "color": "verde"
     }
    },
@@ -2398,34 +2371,34 @@
     "visita": 2
    },
    "recomendacion": {
-    "pick": "Local",
-    "mercado": "1X2",
-    "momio": 1.4444444444444444,
-    "prob": 91.6,
-    "ev": 0.32251814925028377,
+    "pick": "Más 3.5",
+    "mercado": "Total",
+    "momio": 1.8,
+    "prob": 90.0,
+    "ev": 0.6206347242777268,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "AH local -1.5",
-     "mercado": "AH",
-     "momio": 2.201,
-     "prob": 82.8,
-     "ev": 0.823051069423504,
+     "pick": "Más 3.5",
+     "mercado": "Total",
+     "momio": 1.8,
+     "prob": 90.0,
+     "ev": 0.6206347242777268,
      "color": "verde"
     },
     "mejor_verde": {
-     "pick": "AH local -1.5",
-     "mercado": "AH",
-     "momio": 2.201,
-     "prob": 82.8,
-     "ev": 0.823051069423504,
+     "pick": "Más 3.5",
+     "mercado": "Total",
+     "momio": 1.8,
+     "prob": 90.0,
+     "ev": 0.6206347242777268,
      "color": "verde"
     }
    },
-   "acierto": false,
-   "acierto_texto": "Falló",
+   "acierto": true,
+   "acierto_texto": "Acertó",
    "vivo": {
     "tiene_datos": false,
     "motivo": "sin snapshots en data/live-log",
@@ -2449,28 +2422,21 @@
     "pick": "Local",
     "mercado": "1X2",
     "momio": 2.55,
-    "prob": 65.8,
-    "ev": 0.6776558269562842,
-    "color": "verde",
-    "semaforo": "verde",
+    "prob": 50.7,
+    "ev": 0.29411571464923036,
+    "color": "amarillo",
+    "semaforo": "amarillo",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
      "pick": "Local",
      "mercado": "1X2",
      "momio": 2.55,
-     "prob": 65.8,
-     "ev": 0.6776558269562842,
-     "color": "verde"
+     "prob": 50.7,
+     "ev": 0.29411571464923036,
+     "color": "amarillo"
     },
-    "mejor_verde": {
-     "pick": "Local",
-     "mercado": "1X2",
-     "momio": 2.55,
-     "prob": 65.8,
-     "ev": 0.6776558269562842,
-     "color": "verde"
-    }
+    "mejor_verde": null
    },
    "acierto": false,
    "acierto_texto": "Falló",
@@ -2494,29 +2460,29 @@
     "visita": 2
    },
    "recomendacion": {
-    "pick": "Spread visitante -0.5",
-    "mercado": "Spread",
-    "momio": 1.9090909090909092,
-    "prob": 88.8,
-    "ev": 0.6955976135833415,
+    "pick": "AH visitante -0.5",
+    "mercado": "AH",
+    "momio": 1.953,
+    "prob": 72.4,
+    "ev": 0.4144789255435155,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "Visita",
-     "mercado": "1X2",
-     "momio": 2.0,
-     "prob": 88.8,
-     "ev": 0.7763403570761362,
+     "pick": "AH visitante -0.5",
+     "mercado": "AH",
+     "momio": 1.953,
+     "prob": 72.4,
+     "ev": 0.4144789255435155,
      "color": "verde"
     },
     "mejor_verde": {
-     "pick": "Visita",
-     "mercado": "1X2",
-     "momio": 2.0,
-     "prob": 88.8,
-     "ev": 0.7763403570761362,
+     "pick": "AH visitante -0.5",
+     "mercado": "AH",
+     "momio": 1.953,
+     "prob": 72.4,
+     "ev": 0.4144789255435155,
      "color": "verde"
     }
    },
@@ -2552,19 +2518,19 @@
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "BTTS No",
-     "mercado": "BTTS",
-     "momio": 2.394,
-     "prob": 86.2,
-     "ev": 1.0639080853070655,
+     "pick": "Menos 3.5",
+     "mercado": "Total",
+     "momio": 1.6451612903225805,
+     "prob": 92.1,
+     "ev": 0.5158348830536679,
      "color": "verde"
     },
     "mejor_verde": {
-     "pick": "BTTS No",
-     "mercado": "BTTS",
-     "momio": 2.394,
-     "prob": 86.2,
-     "ev": 1.0639080853070655,
+     "pick": "Menos 3.5",
+     "mercado": "Total",
+     "momio": 1.6451612903225805,
+     "prob": 92.1,
+     "ev": 0.5158348830536679,
      "color": "verde"
     }
    },
@@ -2590,31 +2556,24 @@
     "visita": 4
    },
    "recomendacion": {
-    "pick": "Spread local +0.5",
-    "mercado": "Spread",
-    "momio": 1.5128205128205128,
-    "prob": 94.3,
-    "ev": 0.4271056583711368,
-    "color": "verde",
-    "semaforo": "verde",
+    "pick": "BTTS No",
+    "mercado": "BTTS",
+    "momio": 1.98,
+    "prob": 60.0,
+    "ev": 0.1878890190188367,
+    "color": "amarillo",
+    "semaforo": "amarillo",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "BTTS No",
-     "mercado": "BTTS",
-     "momio": 1.98,
-     "prob": 89.1,
-     "ev": 0.7649943400538199,
-     "color": "verde"
+     "pick": "Local",
+     "mercado": "1X2",
+     "momio": 2.85,
+     "prob": 49.3,
+     "ev": 0.4053511967079859,
+     "color": "amarillo"
     },
-    "mejor_verde": {
-     "pick": "BTTS No",
-     "mercado": "BTTS",
-     "momio": 1.98,
-     "prob": 89.1,
-     "ev": 0.7649943400538199,
-     "color": "verde"
-    }
+    "mejor_verde": null
    },
    "acierto": false,
    "acierto_texto": "Falló",
@@ -2641,26 +2600,26 @@
     "pick": "Más 2.5",
     "mercado": "Total",
     "momio": 1.5555555555555556,
-    "prob": 93.5,
-    "ev": 0.4551857737748892,
+    "prob": 70.6,
+    "ev": 0.09879279859898893,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "Más 2.5",
-     "mercado": "Total",
-     "momio": 1.5555555555555556,
-     "prob": 93.5,
-     "ev": 0.4551857737748892,
-     "color": "verde"
+     "pick": "Visita",
+     "mercado": "1X2",
+     "momio": 6.0,
+     "prob": 22.7,
+     "ev": 0.3649082347667818,
+     "color": "rojo"
     },
     "mejor_verde": {
      "pick": "Más 2.5",
      "mercado": "Total",
      "momio": 1.5555555555555556,
-     "prob": 93.5,
-     "ev": 0.4551857737748892,
+     "prob": 70.6,
+     "ev": 0.09879279859898893,
      "color": "verde"
     }
    },
@@ -2686,22 +2645,22 @@
     "visita": 0
    },
    "recomendacion": {
-    "pick": "Visita",
-    "mercado": "1X2",
-    "momio": 3.15,
-    "prob": 34.5,
-    "ev": 0.0879778377563234,
-    "color": "amarillo",
-    "semaforo": "amarillo",
-    "cumple_regla": true,
+    "pick": "Más 2.5",
+    "mercado": "Total",
+    "momio": 1.8695652173913042,
+    "prob": 55.3,
+    "ev": 0.03376140744125422,
+    "color": "rojo",
+    "semaforo": "rojo",
+    "cumple_regla": false,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "Visita",
-     "mercado": "1X2",
-     "momio": 3.15,
-     "prob": 34.5,
-     "ev": 0.0879778377563234,
-     "color": "amarillo"
+     "pick": "Más 2.5",
+     "mercado": "Total",
+     "momio": 1.8695652173913042,
+     "prob": 55.3,
+     "ev": 0.03376140744125422,
+     "color": "rojo"
     },
     "mejor_verde": null
    },
@@ -2727,34 +2686,27 @@
     "visita": 1
    },
    "recomendacion": {
-    "pick": "Spread local +0.5",
-    "mercado": "Spread",
-    "momio": 1.5405405405405406,
-    "prob": 70.8,
-    "ev": 0.09143991001476759,
-    "color": "verde",
-    "semaforo": "verde",
+    "pick": "AH visitante -0.5",
+    "mercado": "AH",
+    "momio": 2.31,
+    "prob": 51.5,
+    "ev": 0.19064910196251295,
+    "color": "amarillo",
+    "semaforo": "amarillo",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "BTTS No",
-     "mercado": "BTTS",
-     "momio": 2.077,
-     "prob": 63.0,
-     "ev": 0.3076626602016268,
-     "color": "verde"
+     "pick": "Local",
+     "mercado": "1X2",
+     "momio": 2.95,
+     "prob": 41.4,
+     "ev": 0.22159720769472102,
+     "color": "amarillo"
     },
-    "mejor_verde": {
-     "pick": "BTTS No",
-     "mercado": "BTTS",
-     "momio": 2.077,
-     "prob": 63.0,
-     "ev": 0.3076626602016268,
-     "color": "verde"
-    }
+    "mejor_verde": null
    },
-   "acierto": true,
-   "acierto_texto": "Acertó",
+   "acierto": false,
+   "acierto_texto": "Falló",
    "vivo": {
     "tiene_datos": false,
     "motivo": "sin snapshots en data/live-log",
@@ -2775,27 +2727,27 @@
     "visita": 4
    },
    "recomendacion": {
-    "pick": "Menos 2.5",
-    "mercado": "Total",
-    "momio": 2.05,
-    "prob": 53.3,
-    "ev": 0.09251684438595986,
+    "pick": "AH visitante -0.5",
+    "mercado": "AH",
+    "momio": 2.027,
+    "prob": 55.2,
+    "ev": 0.11814105746820891,
     "color": "amarillo",
     "semaforo": "amarillo",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "BTTS No",
-     "mercado": "BTTS",
-     "momio": 2.29,
-     "prob": 48.3,
-     "ev": 0.10671191845436323,
+     "pick": "Local",
+     "mercado": "1X2",
+     "momio": 3.2,
+     "prob": 39.6,
+     "ev": 0.26576823061394594,
      "color": "amarillo"
     },
     "mejor_verde": null
    },
-   "acierto": false,
-   "acierto_texto": "Falló",
+   "acierto": true,
+   "acierto_texto": "Acertó",
    "vivo": {
     "tiene_datos": false,
     "motivo": "sin snapshots en data/live-log",
@@ -2816,21 +2768,21 @@
     "visita": 4
    },
    "recomendacion": {
-    "pick": "Empate",
-    "mercado": "1X2",
-    "momio": 14.0,
-    "prob": 7.0,
-    "ev": -0.021988382020637465,
-    "color": "rojo",
-    "semaforo": "rojo",
-    "cumple_regla": false,
+    "pick": "Spread visitante -3.5",
+    "mercado": "Spread",
+    "momio": 2.2,
+    "prob": 53.9,
+    "ev": 0.18656692541730324,
+    "color": "amarillo",
+    "semaforo": "amarillo",
+    "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "Empate",
+     "pick": "Local",
      "mercado": "1X2",
-     "momio": 14.0,
-     "prob": 7.0,
-     "ev": -0.021988382020637465,
+     "momio": 23.0,
+     "prob": 29.0,
+     "ev": 5.663297240743676,
      "color": "rojo"
     },
     "mejor_verde": null
@@ -2857,22 +2809,22 @@
     "visita": 1
    },
    "recomendacion": {
-    "pick": "BTTS Sí",
-    "mercado": "BTTS",
-    "momio": 1.494,
-    "prob": 77.9,
-    "ev": 0.16340325863098926,
+    "pick": "Más 3.5",
+    "mercado": "Total",
+    "momio": 2.3,
+    "prob": 62.5,
+    "ev": 0.4375361336723993,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "Local",
-     "mercado": "1X2",
-     "momio": 3.15,
-     "prob": 46.3,
-     "ev": 0.45732301834093847,
-     "color": "amarillo"
+     "pick": "Más 3.5",
+     "mercado": "Total",
+     "momio": 2.3,
+     "prob": 62.5,
+     "ev": 0.4375361336723993,
+     "color": "verde"
     },
     "mejor_verde": {
      "pick": "Más 3.5",
@@ -2905,35 +2857,29 @@
     "visita": 0
    },
    "recomendacion": {
-    "pick": "Spread visitante +2.5",
-    "mercado": "Spread",
-    "momio": 1.9090909090909092,
-    "prob": 93.8,
-    "ev": 0.7906031313798418,
+    "pick": "Menos 3.5",
+    "mercado": "Total",
+    "momio": 2.2,
+    "prob": 74.2,
+    "ev": 0.6331656866953772,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
-    "alternativa_amarilla": {
-     "pick": "Visita",
-     "mercado": "1X2",
-     "momio": 20.0,
-     "prob": 34.8,
-     "ev": 5.965566068383509
-    },
+    "alternativa_amarilla": null,
     "mejor_valor": {
      "pick": "Visita",
      "mercado": "1X2",
      "momio": 20.0,
-     "prob": 34.8,
-     "ev": 5.965566068383509,
-     "color": "amarillo"
+     "prob": 29.2,
+     "ev": 4.847749160888807,
+     "color": "rojo"
     },
     "mejor_verde": {
-     "pick": "AH visitante +2.5",
-     "mercado": "AH",
-     "momio": 1.913,
-     "prob": 93.8,
-     "ev": 0.7942696044583815,
+     "pick": "Menos 3.5",
+     "mercado": "Total",
+     "momio": 2.2,
+     "prob": 74.2,
+     "ev": 0.6331656866953772,
      "color": "verde"
     }
    },
@@ -2959,40 +2905,27 @@
     "visita": 1
    },
    "recomendacion": {
-    "pick": "Spread local +0.5",
-    "mercado": "Spread",
-    "momio": 1.5882352941176472,
-    "prob": 83.0,
-    "ev": 0.31900979336385027,
-    "color": "verde",
-    "semaforo": "verde",
+    "pick": "BTTS No",
+    "mercado": "BTTS",
+    "momio": 2.237,
+    "prob": 50.8,
+    "ev": 0.13557134315786046,
+    "color": "amarillo",
+    "semaforo": "amarillo",
     "cumple_regla": true,
-    "alternativa_amarilla": {
-     "pick": "Local",
-     "mercado": "1X2",
-     "momio": 2.95,
-     "prob": 56.3,
-     "ev": 0.6623194575614215
-    },
+    "alternativa_amarilla": null,
     "mejor_valor": {
      "pick": "Local",
      "mercado": "1X2",
      "momio": 2.95,
-     "prob": 56.3,
-     "ev": 0.6623194575614215,
+     "prob": 47.4,
+     "ev": 0.39957653489417866,
      "color": "amarillo"
     },
-    "mejor_verde": {
-     "pick": "BTTS No",
-     "mercado": "BTTS",
-     "momio": 2.237,
-     "prob": 62.8,
-     "ev": 0.4040776947367448,
-     "color": "verde"
-    }
+    "mejor_verde": null
    },
-   "acierto": false,
-   "acierto_texto": "Falló",
+   "acierto": true,
+   "acierto_texto": "Acertó",
    "vivo": {
     "tiene_datos": false,
     "motivo": "sin snapshots en data/live-log",
@@ -3013,34 +2946,27 @@
     "visita": 1
    },
    "recomendacion": {
-    "pick": "Local",
-    "mercado": "1X2",
-    "momio": 1.4,
-    "prob": 93.2,
-    "ev": 0.3046334074290673,
-    "color": "verde",
-    "semaforo": "verde",
+    "pick": "Más 3.5",
+    "mercado": "Total",
+    "momio": 2.1,
+    "prob": 54.9,
+    "ev": 0.1530535794285759,
+    "color": "amarillo",
+    "semaforo": "amarillo",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "Spread local -1.5",
-     "mercado": "Spread",
-     "momio": 2.0,
-     "prob": 80.6,
-     "ev": 0.6121710706609911,
-     "color": "verde"
+     "pick": "Visita",
+     "mercado": "1X2",
+     "momio": 7.0,
+     "prob": 17.5,
+     "ev": 0.22803616756919443,
+     "color": "rojo"
     },
-    "mejor_verde": {
-     "pick": "Spread local -1.5",
-     "mercado": "Spread",
-     "momio": 2.0,
-     "prob": 80.6,
-     "ev": 0.6121710706609911,
-     "color": "verde"
-    }
+    "mejor_verde": null
    },
-   "acierto": true,
-   "acierto_texto": "Acertó",
+   "acierto": false,
+   "acierto_texto": "Falló",
    "vivo": {
     "tiene_datos": false,
     "motivo": "sin snapshots en data/live-log",
@@ -3061,11 +2987,11 @@
     "visita": 0
    },
    "recomendacion": {
-    "pick": "Spread visitante +1.5",
-    "mercado": "Spread",
-    "momio": 1.6896551724137931,
-    "prob": 99.0,
-    "ev": 0.6734746997535817,
+    "pick": "AH visitante +1.5",
+    "mercado": "AH",
+    "momio": 1.725,
+    "prob": 76.0,
+    "ev": 0.3110833703940923,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
@@ -3073,23 +2999,23 @@
      "pick": "Visita",
      "mercado": "1X2",
      "momio": 8.0,
-     "prob": 56.5,
-     "ev": 3.5185456768610157
+     "prob": 36.8,
+     "ev": 1.9458057606457762
     },
     "mejor_valor": {
      "pick": "Visita",
      "mercado": "1X2",
      "momio": 8.0,
-     "prob": 56.5,
-     "ev": 3.5185456768610157,
+     "prob": 36.8,
+     "ev": 1.9458057606457762,
      "color": "amarillo"
     },
     "mejor_verde": {
-     "pick": "Menos 2.5",
-     "mercado": "Total",
-     "momio": 2.05,
-     "prob": 85.9,
-     "ev": 0.7617973662850801,
+     "pick": "AH visitante +1.5",
+     "mercado": "AH",
+     "momio": 1.725,
+     "prob": 76.0,
+     "ev": 0.3110833703940923,
      "color": "verde"
     }
    },
@@ -3115,35 +3041,29 @@
     "visita": 0
    },
    "recomendacion": {
-    "pick": "Spread visitante +2.5",
-    "mercado": "Spread",
-    "momio": 1.606060606060606,
-    "prob": 90.0,
-    "ev": 0.4446928094111404,
+    "pick": "AH visitante +2.5",
+    "mercado": "AH",
+    "momio": 1.651,
+    "prob": 72.8,
+    "ev": 0.2023143324019152,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
-    "alternativa_amarilla": {
-     "pick": "Visita",
-     "mercado": "1X2",
-     "momio": 13.0,
-     "prob": 31.6,
-     "ev": 3.113066291349744
-    },
+    "alternativa_amarilla": null,
     "mejor_valor": {
      "pick": "Visita",
      "mercado": "1X2",
      "momio": 13.0,
-     "prob": 31.6,
-     "ev": 3.113066291349744,
-     "color": "amarillo"
+     "prob": 28.1,
+     "ev": 2.655849504150109,
+     "color": "rojo"
     },
     "mejor_verde": {
-     "pick": "AH visitante +2.5",
-     "mercado": "AH",
-     "momio": 1.651,
-     "prob": 90.0,
-     "ev": 0.48511694971975783,
+     "pick": "Menos 3.5",
+     "mercado": "Total",
+     "momio": 2.1,
+     "prob": 62.6,
+     "ev": 0.31384199647559075,
      "color": "verde"
     }
    },
@@ -3169,34 +3089,34 @@
     "visita": 2
    },
    "recomendacion": {
-    "pick": "Local",
-    "mercado": "1X2",
-    "momio": 1.3389830508474576,
-    "prob": 98.5,
-    "ev": 0.3186687072377423,
+    "pick": "Más 3.5",
+    "mercado": "Total",
+    "momio": 2.3,
+    "prob": 74.0,
+    "ev": 0.7008903575087242,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "AH local -1.5",
-     "mercado": "AH",
-     "momio": 1.958,
-     "prob": 93.8,
-     "ev": 0.8359692955922438,
+     "pick": "Más 3.5",
+     "mercado": "Total",
+     "momio": 2.3,
+     "prob": 74.0,
+     "ev": 0.7008903575087242,
      "color": "verde"
     },
     "mejor_verde": {
-     "pick": "AH local -1.5",
-     "mercado": "AH",
-     "momio": 1.958,
-     "prob": 93.8,
-     "ev": 0.8359692955922438,
+     "pick": "Más 3.5",
+     "mercado": "Total",
+     "momio": 2.3,
+     "prob": 74.0,
+     "ev": 0.7008903575087242,
      "color": "verde"
     }
    },
-   "acierto": false,
-   "acierto_texto": "Falló",
+   "acierto": true,
+   "acierto_texto": "Acertó",
    "vivo": {
     "tiene_datos": false,
     "motivo": "sin snapshots en data/live-log",
@@ -3220,8 +3140,8 @@
     "pick": "Spread visitante -0.5",
     "mercado": "Spread",
     "momio": 1.526315789473684,
-    "prob": 94.9,
-    "ev": 0.4487139134049507,
+    "prob": 73.1,
+    "ev": 0.11620250127067977,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
@@ -3230,16 +3150,16 @@
      "pick": "AH visitante -1.5",
      "mercado": "AH",
      "momio": 2.291,
-     "prob": 84.9,
-     "ev": 0.945572445204582,
+     "prob": 71.1,
+     "ev": 0.6280497558216036,
      "color": "verde"
     },
     "mejor_verde": {
      "pick": "AH visitante -1.5",
      "mercado": "AH",
      "momio": 2.291,
-     "prob": 84.9,
-     "ev": 0.945572445204582,
+     "prob": 71.1,
+     "ev": 0.6280497558216036,
      "color": "verde"
     }
    },
@@ -3265,35 +3185,29 @@
     "visita": 1
    },
    "recomendacion": {
-    "pick": "Spread visitante +0.5",
-    "mercado": "Spread",
-    "momio": 1.8333333333333335,
-    "prob": 76.9,
-    "ev": 0.4106789982140038,
+    "pick": "AH visitante +0.5",
+    "mercado": "AH",
+    "momio": 1.698,
+    "prob": 68.3,
+    "ev": 0.1592440338028629,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
-    "alternativa_amarilla": {
-     "pick": "Visita",
-     "mercado": "1X2",
-     "momio": 3.5,
-     "prob": 57.6,
-     "ev": 1.0145264442969086
-    },
+    "alternativa_amarilla": null,
     "mejor_valor": {
      "pick": "Visita",
      "mercado": "1X2",
      "momio": 3.5,
-     "prob": 57.6,
-     "ev": 1.0145264442969086,
+     "prob": 37.2,
+     "ev": 0.3019805428568372,
      "color": "amarillo"
     },
     "mejor_verde": {
      "pick": "Spread visitante +0.5",
      "mercado": "Spread",
      "momio": 1.8333333333333335,
-     "prob": 76.9,
-     "ev": 0.4106789982140038,
+     "prob": 66.8,
+     "ev": 0.22542098270823452,
      "color": "verde"
     }
    },
@@ -3319,29 +3233,29 @@
     "visita": 0
    },
    "recomendacion": {
-    "pick": "Local",
-    "mercado": "1X2",
-    "momio": 1.3773584905660377,
-    "prob": 92.0,
-    "ev": 0.26688182220012324,
+    "pick": "Más 3.5",
+    "mercado": "Total",
+    "momio": 2.25,
+    "prob": 68.4,
+    "ev": 0.5397811872450842,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "AH local -1.5",
-     "mercado": "AH",
-     "momio": 1.989,
-     "prob": 80.5,
-     "ev": 0.6014913687343526,
+     "pick": "Más 3.5",
+     "mercado": "Total",
+     "momio": 2.25,
+     "prob": 68.4,
+     "ev": 0.5397811872450842,
      "color": "verde"
     },
     "mejor_verde": {
-     "pick": "AH local -1.5",
-     "mercado": "AH",
-     "momio": 1.989,
-     "prob": 80.5,
-     "ev": 0.6014913687343526,
+     "pick": "Más 3.5",
+     "mercado": "Total",
+     "momio": 2.25,
+     "prob": 68.4,
+     "ev": 0.5397811872450842,
      "color": "verde"
     }
    },
@@ -3367,31 +3281,24 @@
     "visita": 1
    },
    "recomendacion": {
-    "pick": "Más 2.5",
-    "mercado": "Total",
-    "momio": 1.5555555555555556,
-    "prob": 78.5,
-    "ev": 0.22111272814581295,
-    "color": "verde",
-    "semaforo": "verde",
+    "pick": "BTTS Sí",
+    "mercado": "BTTS",
+    "momio": 2.032,
+    "prob": 57.9,
+    "ev": 0.17684296250041998,
+    "color": "amarillo",
+    "semaforo": "amarillo",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
      "pick": "Visita",
      "mercado": "1X2",
      "momio": 14.0,
-     "prob": 9.3,
-     "ev": 0.2958866323237206,
+     "prob": 20.3,
+     "ev": 1.83960606527919,
      "color": "rojo"
     },
-    "mejor_verde": {
-     "pick": "BTTS Sí",
-     "mercado": "BTTS",
-     "momio": 2.032,
-     "prob": 62.0,
-     "ev": 0.2604496071440572,
-     "color": "verde"
-    }
+    "mejor_verde": null
    },
    "acierto": true,
    "acierto_texto": "Acertó",
@@ -3425,12 +3332,12 @@
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "Menos 3.5",
-     "mercado": "Total",
-     "momio": 1.6451612903225805,
-     "prob": 63.8,
-     "ev": 0.050121837582088435,
-     "color": "verde"
+     "pick": "Visita",
+     "mercado": "1X2",
+     "momio": 11.0,
+     "prob": 19.6,
+     "ev": 1.1605121446841178,
+     "color": "rojo"
     },
     "mejor_verde": {
      "pick": "Menos 3.5",
@@ -3476,8 +3383,8 @@
      "pick": "BTTS No",
      "mercado": "BTTS",
      "momio": 2.705,
-     "prob": 50.8,
-     "ev": 0.37332326513578074,
+     "prob": 46.6,
+     "ev": 0.2595678927975229,
      "color": "amarillo"
     },
     "mejor_verde": {
@@ -3514,28 +3421,27 @@
     "pick": "Menos 2.5",
     "mercado": "Total",
     "momio": 2.0,
-    "prob": 76.9,
-    "ev": 0.5384519249474633,
-    "color": "verde",
-    "semaforo": "verde",
+    "prob": 54.0,
+    "ev": 0.08055817373161211,
+    "color": "amarillo",
+    "semaforo": "amarillo",
     "cumple_regla": true,
-    "alternativa_amarilla": null,
-    "mejor_valor": {
-     "pick": "Menos 2.5",
-     "mercado": "Total",
-     "momio": 2.0,
-     "prob": 76.9,
-     "ev": 0.5384519249474633,
-     "color": "verde"
+    "alternativa_amarilla": {
+     "pick": "Local",
+     "mercado": "1X2",
+     "momio": 4.5,
+     "prob": 35.1,
+     "ev": 0.5782181792590537
     },
-    "mejor_verde": {
-     "pick": "Menos 2.5",
-     "mercado": "Total",
-     "momio": 2.0,
-     "prob": 76.9,
-     "ev": 0.5384519249474633,
-     "color": "verde"
-    }
+    "mejor_valor": {
+     "pick": "Local",
+     "mercado": "1X2",
+     "momio": 4.5,
+     "prob": 35.1,
+     "ev": 0.5782181792590537,
+     "color": "amarillo"
+    },
+    "mejor_verde": null
    },
    "acierto": false,
    "acierto_texto": "Falló",
@@ -3559,29 +3465,29 @@
     "visita": 4
    },
    "recomendacion": {
-    "pick": "Spread visitante +0.5",
-    "mercado": "Spread",
-    "momio": 1.4878048780487805,
-    "prob": 80.3,
-    "ev": 0.19444550552658324,
+    "pick": "AH visitante -0.5",
+    "mercado": "AH",
+    "momio": 2.289,
+    "prob": 61.5,
+    "ev": 0.40757406074712055,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "Visita",
-     "mercado": "1X2",
-     "momio": 2.6,
-     "prob": 57.6,
-     "ev": 0.4970776982369207,
-     "color": "amarillo"
+     "pick": "AH visitante -0.5",
+     "mercado": "AH",
+     "momio": 2.289,
+     "prob": 61.5,
+     "ev": 0.40757406074712055,
+     "color": "verde"
     },
     "mejor_verde": {
-     "pick": "Spread visitante +0.5",
-     "mercado": "Spread",
-     "momio": 1.4878048780487805,
-     "prob": 80.3,
-     "ev": 0.19444550552658324,
+     "pick": "AH visitante -0.5",
+     "mercado": "AH",
+     "momio": 2.289,
+     "prob": 61.5,
+     "ev": 0.40757406074712055,
      "color": "verde"
     }
    },
@@ -3607,11 +3513,11 @@
     "visita": 1
    },
    "recomendacion": {
-    "pick": "Spread visitante +1.5",
-    "mercado": "Spread",
-    "momio": 1.9523809523809523,
-    "prob": 80.4,
-    "ev": 0.5688844828682305,
+    "pick": "AH visitante +1.5",
+    "mercado": "AH",
+    "momio": 1.966,
+    "prob": 69.5,
+    "ev": 0.3656843430705907,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
@@ -3619,23 +3525,23 @@
      "pick": "Empate",
      "mercado": "1X2",
      "momio": 5.75,
-     "prob": 31.4,
-     "ev": 0.8070596472144553
+     "prob": 31.2,
+     "ev": 0.7960007770301287
     },
     "mejor_valor": {
      "pick": "Visita",
      "mercado": "1X2",
      "momio": 11.0,
-     "prob": 22.6,
-     "ev": 1.4839012944645331,
+     "prob": 24.9,
+     "ev": 1.7444493451369256,
      "color": "rojo"
     },
     "mejor_verde": {
-     "pick": "Menos 2.5",
-     "mercado": "Total",
-     "momio": 2.25,
-     "prob": 72.2,
-     "ev": 0.6248258543346337,
+     "pick": "AH visitante +1.5",
+     "mercado": "AH",
+     "momio": 1.966,
+     "prob": 69.5,
+     "ev": 0.3656843430705907,
      "color": "verde"
     }
    },
@@ -3661,11 +3567,11 @@
     "visita": 2
    },
    "recomendacion": {
-    "pick": "BTTS Sí",
-    "mercado": "BTTS",
-    "momio": 1.47,
-    "prob": 86.5,
-    "ev": 0.27171732590336206,
+    "pick": "Más 3.5",
+    "mercado": "Total",
+    "momio": 2.15,
+    "prob": 79.5,
+    "ev": 0.7097736167931339,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
@@ -3673,15 +3579,15 @@
      "pick": "Local",
      "mercado": "1X2",
      "momio": 4.5,
-     "prob": 54.2,
-     "ev": 1.4369794304272796
+     "prob": 46.7,
+     "ev": 1.1003580333887015
     },
     "mejor_valor": {
      "pick": "Local",
      "mercado": "1X2",
      "momio": 4.5,
-     "prob": 54.2,
-     "ev": 1.4369794304272796,
+     "prob": 46.7,
+     "ev": 1.1003580333887015,
      "color": "amarillo"
     },
     "mejor_verde": {
@@ -3693,8 +3599,8 @@
      "color": "verde"
     }
    },
-   "acierto": true,
-   "acierto_texto": "Acertó",
+   "acierto": false,
+   "acierto_texto": "Falló",
    "vivo": {
     "tiene_datos": false,
     "motivo": "sin snapshots en data/live-log",
@@ -3728,8 +3634,8 @@
      "pick": "Visita",
      "mercado": "1X2",
      "momio": 9.0,
-     "prob": 20.2,
-     "ev": 0.8185168730653165,
+     "prob": 24.1,
+     "ev": 1.1705917902365144,
      "color": "rojo"
     },
     "mejor_verde": {
@@ -3754,17 +3660,17 @@
  ],
  "resumen": {
   "pre_partido": {
-   "con_resultado": 45,
-   "aciertos": 17,
-   "fallos": 28,
-   "pct_acierto": 37.8,
+   "con_resultado": 48,
+   "aciertos": 21,
+   "fallos": 27,
+   "pct_acierto": 43.8,
    "sin_datos": 0
   },
   "en_vivo": {
-   "con_resultado": 5,
-   "aciertos": 4,
+   "con_resultado": 8,
+   "aciertos": 7,
    "fallos": 1,
-   "pct_acierto": 80.0,
+   "pct_acierto": 87.5,
    "sin_datos": 40
   }
  }
