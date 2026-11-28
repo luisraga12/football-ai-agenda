@@ -33,6 +33,19 @@ Reglas (orden del jefe, 22 nov 2026):
   (consenso BSD), se publica mercados['asian_handicap'] con la probabilidad
   de cubrir (p_spread_cover, la línea es del local; las líneas son .5, sin
   push) y el EV por lado; el AH sí entra al mejor pick.
+  Calibración (E1, 28 nov 2026; diseño en
+  ~/workspace/e1-calibracion/CALIBRACION-2026-11-28.md): el modelo Poisson
+  es muy sobreconfiado — en 61 partidos terminados (semana 1 + 2) dice
+  78.9% de probabilidad media en su recomendación y acierta 37.8%; Brier
+  1X2 0.783. Las probabilidades se encogen hacia las tasas base reales
+  (ALFA_CAL = 0.35 de modelo + 0.65 de tasa base) antes de calcular el EV:
+  1X2 hacia (42.6, 31.1, 26.2), Más 2.5 hacia 58.3%, BTTS hacia 55.7%,
+  spread local hacia 38.6% y AH local hacia 36.4%. El total solo se calibra
+  con línea 2.5 (la base medida); otras líneas quedan crudas. La
+  probabilidad cruda se guarda en prob_cruda para diagnóstico y reajuste.
+  Brier con calibración (validación cruzada entre semanas): 1X2 0.657,
+  binarios 0.24-0.27. Reajustar ALFA y las bases cada semana con los
+  partidos nuevos; no fijarlas para siempre.
 
 Uso:
     python3 scripts/calcular_ev.py --config scripts/config/semana-2.json
@@ -61,6 +74,31 @@ def ev(prob_pct, decimal):
     if prob_pct is None or decimal is None:
         return None
     return prob_pct / 100.0 * decimal - 1
+
+
+# ---- Calibración (E1, 28 nov 2026) ----
+# El modelo Poisson es sobreconfiado: encoger cada probabilidad hacia su
+# tasa base real antes de calcular el EV. ALFA_CAL = peso del modelo.
+ALFA_CAL = 0.35
+BASE_1X2 = (42.6, 31.1, 26.2)  # local, empate, visita (61 partidos)
+BASE_OVER25 = 58.3
+BASE_BTTS = 55.7
+BASE_SPREAD = 38.6  # cubre el local, promedio global de líneas (n=44)
+BASE_AH = 36.4  # cubre el local, promedio global de líneas (n=44)
+
+
+def cal(prob_pct, base_pct):
+    """Encoge una probabilidad (%) hacia su tasa base (%)."""
+    if prob_pct is None:
+        return None
+    return ALFA_CAL * prob_pct + (1 - ALFA_CAL) * base_pct
+
+
+def cal_1x2(p1, px, p2):
+    """Encoge el triplete 1X2 hacia BASE_1X2 y renormaliza a 100."""
+    q = [cal(p1, BASE_1X2[0]), cal(px, BASE_1X2[1]), cal(p2, BASE_1X2[2])]
+    s = sum(q)
+    return [x / s * 100 for x in q]
 
 
 def fmt_pct(valor):
@@ -99,10 +137,17 @@ def main():
     for m in momios['partidos']:
         home, away = m['home'], m['away']
         r = xg_por_partido[(home, away)]
+        # Probabilidades CALIBRADAS (ver docstring): se usan en todos los
+        # mercados y en el EV; la cruda queda en prob_cruda para diagnóstico.
+        p1c, pxc, p2c = cal_1x2(r['p1'], r['px'], r['p2'])
+        bttsc = cal(r['btts'], BASE_BTTS)
+        over25c = cal(r['over25'], BASE_OVER25)
         fila = {'fecha': m['fecha'], 'fecha_txt': DIAS.get(m['fecha'], m['fecha']),
                 'hora': m['fecha_cst'][11:], 'liga': m['liga_nombre'],
                 'home': home, 'away': away, 'proveedor': m['proveedor'],
                 'estado': m['estado'],
+                'prob_cruda': {'1': r['p1'], 'X': r['px'], '2': r['p2'],
+                               'over25': r['over25'], 'btts': r['btts']},
                 # Estado real del partido en ESPN y marcador final (si lo
                 # hay): un partido terminado sin momio sigue siendo
                 # 'pendiente' en momios/EV, pero ya no se muestra como
@@ -118,7 +163,7 @@ def main():
         # que la pagina la muestre en vez de "pendiente". Sin momio ni EV:
         # ESPN/DraftKings no trae ese momio en esta fuente (salvo momio BSD: ver bloque siguiente).
         fila['mercados']['btts'] = {
-            'p_btts': r['btts'], 'p_no_btts': 100 - r['btts'],
+            'p_btts': bttsc, 'p_no_btts': 100 - bttsc,
             'momios': None, 'ev': {'si': None, 'no': None}}
         # BTTS con momio BSD (octava ronda, lado E1): si momios.json
         # trae la llave 'bsd' con btts {yes, no} decimales (consenso
@@ -137,8 +182,8 @@ def main():
                 fila['mercados']['btts']['momios'] = {
                     'si': float(momio_si), 'no': float(momio_no)}
                 fila['mercados']['btts']['ev'] = {
-                    'si': ev(r['btts'], float(momio_si)),
-                    'no': ev(100 - r['btts'], float(momio_no))}
+                    'si': ev(bttsc, float(momio_si)),
+                    'no': ev(100 - bttsc, float(momio_no))}
         # Hándicap asiático con momio BSD (E1, 28 nov 2026; ejemplo del
         # jefe: Hamburg/empate, local +1.5 cubre ganar, empatar y perder
         # por 1): si momios.json trae la llave 'bsd' con asian_handicap
@@ -158,7 +203,8 @@ def main():
                         and round(linea_ah * 2) % 2 != 0)
             if (es_media and momio_ah_local is not None
                     and momio_ah_visitante is not None):
-                p_cubre_ah = p_spread_cover(r['xgh'], r['xga'], linea_ah)
+                p_cubre_ah = cal(p_spread_cover(r['xgh'], r['xga'], linea_ah),
+                                 BASE_AH)
                 fila['mercados']['asian_handicap'] = {
                     'linea': linea_ah,
                     'momios': {'local': float(momio_ah_local),
@@ -185,10 +231,10 @@ def main():
             # los escribe el bloque de abajo con momios y EV, y la
             # tabla .md supone momios dict; no se toca ese camino.)
             fila['mercados']['1X2'] = {
-                'prob': {'1': r['p1'], 'X': r['px'], '2': r['p2']},
+                'prob': {'1': p1c, 'X': pxc, '2': p2c},
                 'momios': None, 'ev': None}
             fila['mercados']['total'] = {
-                'linea': 2.5, 'p_over': r['over25'],
+                'linea': 2.5, 'p_over': over25c,
                 'momios': None, 'ev': None}
             filas.append(fila)
             print(f"PENDIENTE {home} vs {away}: sin momio, sin EV.")
@@ -199,9 +245,9 @@ def main():
         # pero no moneyline; en ese caso no se calcula 1X2, no se rompe).
         ml = mm['moneyline']
         if ml is not None:
-            evs_1x2 = {'1': ev(r['p1'], ml['home']),
-                       'X': ev(r['px'], ml['draw']),
-                       '2': ev(r['p2'], ml['away'])}
+            evs_1x2 = {'1': ev(p1c, ml['home']),
+                       'X': ev(pxc, ml['draw']),
+                       '2': ev(p2c, ml['away'])}
             fila['mercados']['1X2'] = {'momios': ml, 'ev': evs_1x2}
             candidatos += [('Local', evs_1x2['1']), ('Empate', evs_1x2['X']),
                            ('Visita', evs_1x2['2'])]
@@ -211,7 +257,11 @@ def main():
         # Total: P(over) para la linea publicada
         tot = mm['total']
         if tot:
-            p_over_linea = p_over(r['xgh'], r['xga'], tot['linea'])
+            # Calibración solo con línea 2.5 (la base medida, 58.3%);
+            # otras líneas quedan crudas (sin base medida para ellas).
+            p_over_raw = p_over(r['xgh'], r['xga'], tot['linea'])
+            p_over_linea = (cal(p_over_raw, BASE_OVER25)
+                            if tot['linea'] == 2.5 else p_over_raw)
             ev_mas = ev(p_over_linea, tot['over'])
             ev_menos = ev(100 - p_over_linea, tot['under'])
             fila['mercados']['total'] = {
@@ -224,8 +274,9 @@ def main():
         # Spread
         spr = mm['spread']
         if spr:
-            p_cubre_local = p_spread_cover(r['xgh'], r['xga'],
-                                           spr['home_linea'])
+            p_cubre_local = cal(p_spread_cover(r['xgh'], r['xga'],
+                                              spr['home_linea']),
+                                BASE_SPREAD)
             ev_spr_local = ev(p_cubre_local, spr['home'])
             ev_spr_away = ev(100 - p_cubre_local, spr['away'])
             fila['mercados']['spread'] = {
@@ -266,13 +317,13 @@ def main():
         # mercados ya calculados, no se inventan.
         if mejor_nombre == 'Local':
             fila['mejor_decimal'] = ml['home'] if ml is not None else None
-            fila['mejor_prob'] = r['p1']
+            fila['mejor_prob'] = p1c
         elif mejor_nombre == 'Empate':
             fila['mejor_decimal'] = ml['draw'] if ml is not None else None
-            fila['mejor_prob'] = r['px']
+            fila['mejor_prob'] = pxc
         elif mejor_nombre == 'Visita':
             fila['mejor_decimal'] = ml['away'] if ml is not None else None
-            fila['mejor_prob'] = r['p2']
+            fila['mejor_prob'] = p2c
         elif mejor_nombre.startswith('Más '):
             # Aqui tot es el total crudo {linea, over, under}, sin 'momios'.
             fila['mejor_decimal'] = tot['over'] if tot else None
@@ -326,6 +377,7 @@ def main():
          'mejor_pick': f['mejor_pick'], 'mejor_ev': f['mejor_ev'],
          'mejor_decimal': f.get('mejor_decimal'),
          'mejor_prob': f.get('mejor_prob'),
+         'prob_cruda': f.get('prob_cruda'),
          'semaforo': f['semaforo'], 'mercados': f['mercados'],
          'momios': (momios['partidos'][i]['momios']
                     if filas[i]['estado'] == 'con_momio' else None)}
@@ -346,6 +398,9 @@ def main():
     L.append("")
     L.append("**Método:** EV = probabilidad Poisson "
              f"(tabla-poisson-semana-{semana}.md) × momio decimal − 1. "
+             "Probabilidades calibradas (28 nov 2026): se encogen hacia las "
+             "tasas base reales (α=0.35) antes de calcular el EV; la "
+             "probabilidad cruda queda en prob_cruda de ev.json. "
              "Semáforo: verde EV ≥ +5%, amarillo 0–+5%, rojo < 0%. La línea "
              "del total varía por partido (la publicada por DraftKings: "
              "2.5, 3.5 o 4.5); el P(over) se calculó para esa línea desde los "
