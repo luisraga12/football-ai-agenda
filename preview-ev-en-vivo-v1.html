@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>EV en vivo V1 — Preview · Football AI Agenda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Manrope:wght@400;600;700;800&family=Archivo+Narrow:wght@600;700&display=swap" rel="stylesheet" />
+<style>
+:root{--bg:#07090D;--surface:#0D1117;--surface-2:#121826;--ink:#F8FAFC;--ink-2:#CBD5E1;--muted:#94A3B8;--line:#28331F;--accent:#A3E635;--blue:#22D3EE;--live:#FF5470;--amber:#FACC15;--radius:16px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,sans-serif;font-size:16px;line-height:1.55}
+h1,h2,h3{font-family:"Archivo",system-ui,sans-serif;line-height:1.08;margin:0}
+a{color:var(--accent)}
+.wrap{max-width:1020px;margin:0 auto;padding:0 18px 64px}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(163,230,53,.12);border:1px solid rgba(163,230,53,.4);color:var(--accent);padding:6px 12px;border-radius:999px;font-weight:800;font-size:.8rem;letter-spacing:.04em}
+.badge.live{background:rgba(255,84,112,.12);border-color:rgba(255,84,112,.45);color:var(--live)}
+.badge.warn{background:rgba(250,204,21,.1);border-color:rgba(250,204,21,.4);color:var(--amber)}
+header{padding:34px 0 10px}
+header h1{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:900;letter-spacing:-.02em}
+header p.sub{color:var(--ink-2);max-width:64ch;margin-top:10px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;margin-top:18px}
+.card h2{font-size:1.25rem;margin-bottom:8px}
+.card h3{font-size:1.02rem;margin:18px 0 6px}
+.muted{color:var(--muted)}
+.small{font-size:.86rem}
+.num{font-family:"Archivo Narrow","Archivo",sans-serif;font-variant-numeric:tabular-nums}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{border-bottom:1px solid var(--line);padding:8px 8px;text-align:left}
+th{color:var(--muted);font-size:.76rem;text-transform:uppercase;letter-spacing:.05em}
+td.num,th.num{text-align:right}
+.big{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.big>div{background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:12px}
+.big b{display:block;font-size:1.7rem;font-family:"Archivo",sans-serif}
+.big span{color:var(--muted);font-size:.82rem}
+.pos{color:var(--accent);font-weight:800}
+.neg{color:var(--live);font-weight:800}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}.big{grid-template-columns:1fr 1fr}}
+label{display:block;font-size:.82rem;color:var(--muted);margin:10px 0 4px}
+input[type=number]{width:100%;background:var(--surface-2);border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:10px 12px;font-size:1rem;font-family:"Manrope",sans-serif}
+button{font-family:"Manrope",sans-serif;font-weight:800;cursor:pointer;min-height:44px;border-radius:10px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);padding:10px 16px}
+button.primary{background:var(--accent);border-color:var(--accent);color:#141C06}
+ul{margin:8px 0;padding-left:20px}
+li{margin:4px 0}
+.note{border-left:3px solid var(--amber);background:rgba(250,204,21,.06);padding:10px 12px;border-radius:0 10px 10px 0;margin-top:12px}
+.okbox{border-left:3px solid var(--accent);background:rgba(163,230,53,.06);padding:10px 12px;border-radius:0 10px 10px 0;margin-top:12px}
+code{background:var(--surface-2);padding:1px 6px;border-radius:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<span class="badge">PREVIEW · PARA REVISIÓN DEL JEFE</span>
+<h1>EV en vivo · V1</h1>
+<p class="sub">Probabilidad en vivo + momio pre-partido, etiquetado, calculado en el navegador. Sin posesión (no predice goles). Con TDA (γ = 0.25) y contexto (rojas, cambios, marcador, minuto). Archivo nuevo en <b>empleado-2</b>; no está en <code>index.html</code> ni en <code>partido.html</code>.</p>
+<p class="small muted">Empleado 2 · 27 nov 2026 · Rama <code>empleado-2</code> · V1 gratis ($0/mes). La v1 entra a la beta solo si está implementada y verificada hoy; si no, la beta sale con la página corregida + datos frescos (orden del jefe, 27 nov ~13:45).</p>
+</header>
+
+<section class="card">
+<span class="badge live">AÚN NO EMPIEZA · vivo.json: pre</span>
+<h2 style="margin-top:10px">Caso de demostración — Hamburg SV vs Bayern Munich</h2>
+<p class="muted">Sábado 28 nov 2026 · 08:30 CST · Bundesliga · Partido real del fin de semana, con los datos reales publicados.</p>
+<table>
+<tr><th></th><th class="num">Local (Hamburg)</th><th class="num">Empate</th><th class="num">Visita (Bayern)</th></tr>
+<tr><td>Probabilidad pre-partido (Poisson)</td><td class="num"><b>29.9%</b></td><td class="num"><b>20.2%</b></td><td class="num"><b>49.8%</b></td></tr>
+<tr><td>Momio pre-partido · Bet365</td><td class="num"><b>8.00</b></td><td class="num"><b>6.50</b></td><td class="num"><b>1.29</b></td></tr>
+<tr><td>EV pre-partido</td><td class="num pos"><b>+139.5%</b></td><td class="num pos"><b>+31.4%</b></td><td class="num neg"><b>−35.9%</b></td></tr>
+</table>
+<p class="small">Mejor pick pre-partido: <b class="pos">Local (+139.5%)</b> · Semáforo: verde · xG Poisson: Hamburg 1.72 – Bayern 2.24 · P(+2.5) 75.6% · P(BTTS) 73.4%.</p>
+<p class="small muted">El momio de visita es 1.29 en la tabla de momios; <code>ev.json</code> trae 1.286 exacto y el cálculo usa 1.286. Las probabilidades exactas en <code>ev.json</code> son 29.9412% / 20.2146% / 49.8442% (la tabla Poisson las muestra a 1 decimal).</p>
+<h3>Fuerza del XI — piloto (T1)</h3>
+<p>Hamburg: F_prob <b>93.3</b> · F_of <b>sin publicar</b> · Bayern: F_prob <b>94.8</b> · F_of <b>sin publicar</b> · Alineación oficial: <b>aún no publicada</b> (sale ~1 h antes del partido; la publica E1). Sin alineación oficial, <code>ajustar1X2XI</code> devuelve las probabilidades tal cual: <b>sin ajuste XI</b> en este demo.</p>
+<h3>En vivo ahora (vivo.json, 21:00 CST 27 nov)</h3>
+<p>Estado: <b>pre</b> · Marcador: — · Minuto: — · Rojas: — · TDA: sin datos · Cambios: —</p>
+<div class="okbox"><b>Probabilidad en vivo ahora = probabilidad pre-partido.</b> Al minuto 0', 0-0 y sin tiros a puerta, no hay nada que ajustar: P en vivo 29.9% / 20.2% / 49.8% y EV en vivo +139.5% / +31.4% / −35.9%. Nada inventado: es la identidad del arranque.</div>
+<p class="small" id="autocheck">Autocomprobación del Poisson del módulo: …</p>
+</section>
+
+<section class="card">
+<h2>Probabilidad en vivo — calculada en el navegador</h2>
+<p class="muted">Estado actual del partido (datos reales publicados): minuto 0' · 0-0 · TDA sin datos · rojas 0-0.</p>
+<div class="big">
+<div><span>Local · Hamburg</span><b class="num" id="lv-p1">—</b><span id="lv-ev1">—</span></div>
+<div><span>Empate</span><b class="num" id="lv-px">—</b><span id="lv-evx">—</span></div>
+<div><span>Visita · Bayern</span><b class="num" id="lv-p2">—</b><span id="lv-ev2">—</span></div>
+</div>
+<p id="lv-pick">—</p>
+<p class="small muted">EV en vivo = P en vivo × momio <b>pre-partido</b> − 1. El momio es el de antes del partido y va etiquetado como tal: la v1 gratis no trae momios en vivo (no hay momios live gratis; el momio live real es BSD Unlimited, $5/mes, sin verificar).</p>
+</section>
+
+<section class="card">
+<h2>Probador de escenarios</h2>
+<p>Valores <b>introducidos a mano para probar la fórmula</b>; no son datos en vivo del partido. Cambia minuto, marcador o TDA y el módulo recalcula en el navegador.</p>
+<div class="grid2">
+<div>
+<label>Minuto</label><input type="number" id="sc-min" value="0" min="0" max="120" />
+<label>Goles local (Hamburg)</label><input type="number" id="sc-gh" value="0" min="0" max="9" />
+<label>Goles visita (Bayern)</label><input type="number" id="sc-ga" value="0" min="0" max="9" />
+</div>
+<div>
+<label>Tiros a puerta local (TDA local)</label><input type="number" id="sc-th" value="0" min="0" max="20" />
+<label>Tiros a puerta visita (TDA visita)</label><input type="number" id="sc-ta" value="0" min="0" max="20" />
+<label>Rojas local / visita (peso 0 en v1)</label>
+<div class="grid2"><input type="number" id="sc-rh" value="0" min="0" max="2" /><input type="number" id="sc-ra" value="0" min="0" max="2" /></div>
+</div>
+</div>
+<p style="margin-top:14px"><button class="primary" id="sc-reset">Restablecer al arranque (0', 0-0, TDA 0-0)</button> <button id="sc-bremen">Cargar slot Bremen 11' (0-0, TDA 0-0)</button></p>
+<div class="big">
+<div><span>Local · Hamburg</span><b class="num" id="sc-p1">—</b><span id="sc-ev1">—</span></div>
+<div><span>Empate</span><b class="num" id="sc-px">—</b><span id="sc-evx">—</span></div>
+<div><span>Visita · Bayern</span><b class="num" id="sc-p2">—</b><span id="sc-ev2">—</span></div>
+</div>
+<p id="sc-pick">—</p>
+<p class="small muted" id="sc-detalle">—</p>
+</section>
+
+<section class="card">
+<h2>Cómo calcula (fórmula v1, aprobada por el jefe 27 nov ~13:45)</h2>
+<ul>
+<li><b>Base:</b> probabilidad pre-partido Poisson (xG Hamburg 1.72 – Bayern 2.24). El ajuste en vivo se aplica como <b>cambio relativo</b> sobre esa P publicada, para que al minuto 0' la P en vivo sea exactamente la publicada.</li>
+<li><b>Tiempo + marcador:</b> xG restante = xG pre-partido × (90 − minuto) / 90; los goles ya marcados se suman; la P 1X2 sale por Poisson con esos xG restantes. <b>Nota honesta:</b> la tabla de slots calibrada de T2 no está publicada en el repo ni en el buzón; el preview usa esta formulación Poisson con xG restante (el mismo Poisson del modelo) y el jefe / E1 la pueden sustituir por la tabla cuando se publique.</li>
+<li><b>TDA (tiros a puerta):</b> xG restante local += γ · 0.301 · (TDA local − TDA visita); xG restante visita −= lo mismo. γ = <b>0.25</b> (prior conservador, NO calibración: no hay histórico minuto a minuto) y <b>0.301 goles por TDA</b> (E1, 35 partidos). Solo el TDA predice goles (corr 0.632); el caso de Luis existe 11 veces: el no favorito con ventaja TDA ≥ 2 no perdió en ninguno (10V + 1E).</li>
+<li><b>Rojas:</b> peso 0 en v1 (aprobado). Se muestran porque <code>vivo.json</code> las publica, pero no mueven la probabilidad.</li>
+<li><b>Cambios:</b> peso 0 en v1 (aprobado). Se muestran cuando <code>vivo.json</code> los trae.</li>
+<li><b>Posesión: NO se usa.</b> No predice goles (corr 0.172). Tampoco los córners (corr 0.027).</li>
+<li><b>Momio:</b> pre-partido, fijo y etiquetado. EV en vivo = P en vivo × momio pre-partido − 1.</li>
+<li><b>Validación T2 (E1, 27 nov ~12:50):</b> el modelo live mejora el Brier 27% (0.60 vs 0.83) en 35 partidos terminados.</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>Caso verificado — Werder Bremen vs Borussia Mönchengladbach (vie 27 nov)</h2>
+<p>El caso de prueba que ordenó el jefe. Lo que publicó E1 (27 nov ~13:45):</p>
+<ul>
+<li>Pre-partido: P(local) <b>72.2%</b> (Poisson; xG 2.49 – 0.90) · EV local <b>+20.3%</b> con momio pre-partido local ≈ 1.67 (deducido de P 72.2% y EV +20.3%; en <code>ev.json</code> el momio está en null por el bug de la corrida diaria que pone en null los momios de los partidos terminados — lo corrige E1 en esta ronda).</li>
+<li>A los 11': el slot tiempo+marcador baja P(local) <b>69.4%</b> y la TDA la baja a <b>66.9%</b>; EV local <b>+11.4%</b>.</li>
+<li>Final real: <b>3-3 (X)</b> · TDA final 8-6 (+2 Bremen) · posesión final 59.1% / 40.9% (la posesión no se usó).</li>
+<li>Fuerza del XI: Bremen F_prob 94.1 → F_of <b>84.3</b> (r 0.896) · Gladbach F_prob 95.8 → F_of <b>83.4</b> (r 0.875) · alineación oficial publicada. El detalle (<code>partido.html</code>, <code>ajustar1X2XI</code>) ajusta el Poisson a 71.0% / 18.0% / 11.0%; la verificación live de E1 partió del Poisson 72.2%, no del ajustado por XI. La v1 hace lo mismo y lo deja anotado: el jefe decide si la v1.1 pliega el ajuste XI en la P en vivo.</li>
+</ul>
+<p id="bremen-check">Comparación del módulo con el caso Bremen 11': …</p>
+<div class="note"><b>Hueco honesto:</b> el slot del 11' no se puede reproducir desde lo publicado. Falta la TDA al minuto 11' (el log de snapshots <code>data/live-log/</code> no existe aún — 404 — y el marcador de ese minuto tampoco está publicado). El módulo muestra su propio cálculo del slot (Poisson con xG restante) para ese minuto y la diferencia con el 69.4% de E1; la calibración de γ con el log queda para las semanas 3-4, como ya ordenó el jefe.</div>
+</section>
+
+<section class="card">
+<h2>Fuentes (todo publicado, nada inventado)</h2>
+<ul>
+<li><code>data/semana-2/ev.json</code> (empleado-2): Hamburg P 29.9412% / EV +139.5% / momios Bet365 8.00 / 6.50 / 1.286 · Bremen P 72.156% / EV null (momio en null).</li>
+<li><code>data/semana-2/tabla-poisson-semana-2.md</code>: xG Hamburg 1.72 / Bayern 2.24 · P 29.9% / 20.2% / 49.8% · P(+2.5) 75.6% · P(BTTS) 73.4% · xG Bremen 2.49 / Gladbach 0.90.</li>
+<li><code>data/fuerza_xi.json</code> (generado 2026-11-28T01:25:10Z = 19:25 CST 27 nov): Hamburg F_prob 93.3 / 94.8, F_of null (sin alineación oficial) · Bremen 94.1 → 84.3 / 95.8 → 83.4.</li>
+<li><code>data/vivo.json</code> (generado 2026-11-28T03:00:02Z = 21:00 CST 27 nov): Hamburg estado “pre” · Bremen estado “post”, 3-3.</li>
+<li><code>data/semana-2/estadisticas.json</code>: Bremen final, tiros a puerta 8-6, posesión 59.1% / 40.9%.</li>
+<li><code>buzon/JEFE.md</code> (27 nov ~12:50 y ~13:45): validación T2 (Brier 0.60 vs 0.83), fórmula aprobada (slots tiempo+marcador, TDA γ=0.25, 0.301 goles por TDA, rojas/momentum/cambios peso 0), caso Bremen 69.4% → 66.9% y EV +20.3% → +11.4%.</li>
+</ul>
+<h3>Pendiente (fuera de este preview)</h3>
+<ul>
+<li>Tabla de slots calibrada de T2: no publicada en el repo ni en el buzón.</li>
+<li>Log de snapshots <code>data/live-log/</code>: no existe aún (404); hace falta para calibrar γ en semanas 3-4.</li>
+<li>F_of de Hamburg–Bayern: la alineación oficial sale ~1 h antes del partido (E1).</li>
+<li>Momios en null de los 4 partidos terminados del viernes (Bremen, Venezia, Forest, Levante): bug de la corrida diaria; lo corrige E1 en esta ronda.</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>Verificación (Empleado 2)</h2>
+<ul id="verif">
+<li>Escritorio (githack, empleado-2): el preview carga y el cálculo corre en el navegador.</li>
+<li>Arranque Hamburg (0', 0-0, sin TDA): P en vivo = P pre-partido (29.9% / 20.2% / 49.8%) y EV en vivo = EV pre-partido (+139.5% / +31.4% / −35.9%).</li>
+<li>Probador: al cambiar minuto, marcador o TDA, la P y el EV en vivo se recalculan; las rojas no mueven la probabilidad (peso 0); la posesión no aparece en el cálculo.</li>
+<li>Caso Bremen 11': comparado con lo publicado por E1 (69.4% → 66.9%; EV +20.3% → +11.4%) — ver el cuadro de arriba.</li>
+<li>El archivo no toca <code>index.html</code> ni <code>partido.html</code>; queda solo para revisión del jefe.</li>
+</ul>
+</section>
+</div>
+<script>
+var FACT=[1,1,2,6,24,120,720,5040,40320,362880,3628800,39916800,479001600];
+function pois(k,lam){if(lam<=0)return k===0?1:0;return Math.exp(-lam)*Math.pow(lam,k)/FACT[k];}
+function p1x2(xgH,xgA,gh,ga){var p1=0,px=0,p2=0;for(var i=0;i<=12;i++){for(var j=0;j<=12;j++){var p=pois(i,xgH)*pois(j,xgA),th=gh+i,ta=ga+j;if(th>ta)p1+=p;else if(th===ta)px+=p;else p2+=p;}}var s=p1+px+p2;return{p1:p1/s*100,px:px/s*100,p2:p2/s*100};}
+var GAMMA=0.25,GOL_TDA=0.301;
+var DEMO={home:"Hamburg SV",away:"Bayern Munich",xgH:1.72,xgA:2.24,pPre:{p1:29.9412,px:20.2146,p2:49.8442},momio:{h:8.0,d:6.5,a:1.286}};
+var BREMEN={home:"Werder Bremen",away:"Borussia Mönchengladbach",xgH:2.49,xgA:0.90,pPre:{p1:72.156,px:16.359,p2:11.486},momioLocal:1.667};
+function liveCalc(D,min,gh,ga,tdaH,tdaA){
+  min=Math.max(0,Math.min(120,min));
+  var rem=Math.max(0,(90-min)/90);
+  var tdaDif=tdaH-tdaA;
+  var eff=GAMMA*GOL_TDA*tdaDif*rem;
+  var xgH=Math.max(0,D.xgH*rem+eff), xgA=Math.max(0,D.xgA*rem-eff);
+  var base=p1x2(D.xgH,D.xgA,0,0), now=p1x2(xgH,xgA,gh,ga);
+  var p1=D.pPre.p1*(now.p1/base.p1), px=D.pPre.px*(now.px/base.px), p2=D.pPre.p2*(now.p2/base.p2);
+  var s=p1+px+p2; p1=p1/s*100; px=px/s*100; p2=p2/s*100;
+  return {p1:p1,px:px,p2:p2,xgH:xgH,xgA:xgA,rem:rem,eff:eff};
+}
+function evPct(p,momio){return (p/100*momio-1)*100;}
+function fmtP(x){return x.toFixed(1)+"%";}
+function fmtEV(x){return (x>=0?"+":"")+x.toFixed(1)+"%";}
+function pickLine(r,m){
+  var evs=[{n:"Local",v:evPct(r.p1,m.h)},{n:"Empate",v:evPct(r.px,m.d)},{n:"Visita",v:evPct(r.p2,m.a)}];
+  evs.sort(function(a,b){return b.v-a.v;});
+  return evs[0].v>0?("Mejor EV en vivo: "+evs[0].n+" ("+fmtEV(evs[0].v)+"), con momio pre-partido."):"Sin valor en vivo: ningún EV &gt; 0 con el momio pre-partido.";
+}
+function renderLive(){
+  var r=liveCalc(DEMO,0,0,0,0,0);
+  document.getElementById("lv-p1").textContent=fmtP(r.p1);
+  document.getElementById("lv-px").textContent=fmtP(r.px);
+  document.getElementById("lv-p2").textContent=fmtP(r.p2);
+  var e1=evPct(r.p1,DEMO.momio.h), ex=evPct(r.px,DEMO.momio.d), e2=evPct(r.p2,DEMO.momio.a);
+  document.getElementById("lv-ev1").textContent="EV en vivo "+fmtEV(e1)+" · momio pre 8.00";
+  document.getElementById("lv-evx").textContent="EV en vivo "+fmtEV(ex)+" · momio pre 6.50";
+  document.getElementById("lv-ev2").textContent="EV en vivo "+fmtEV(e2)+" · momio pre 1.29";
+  document.getElementById("lv-pick").innerHTML=pickLine(r,DEMO.momio);
+}
+function renderScenario(){
+  var min=+document.getElementById("sc-min").value||0;
+  var gh=+document.getElementById("sc-gh").value||0;
+  var ga=+document.getElementById("sc-ga").value||0;
+  var th=+document.getElementById("sc-th").value||0;
+  var ta=+document.getElementById("sc-ta").value||0;
+  var r=liveCalc(DEMO,min,gh,ga,th,ta);
+  document.getElementById("sc-p1").textContent=fmtP(r.p1);
+  document.getElementById("sc-px").textContent=fmtP(r.px);
+  document.getElementById("sc-p2").textContent=fmtP(r.p2);
+  document.getElementById("sc-ev1").textContent="EV en vivo "+fmtEV(evPct(r.p1,DEMO.momio.h));
+  document.getElementById("sc-evx").textContent="EV en vivo "+fmtEV(evPct(r.px,DEMO.momio.d));
+  document.getElementById("sc-ev2").textContent="EV en vivo "+fmtEV(evPct(r.p2,DEMO.momio.a));
+  document.getElementById("sc-pick").innerHTML=pickLine(r,DEMO.momio);
+  document.getElementById("sc-detalle").textContent="Escenario: minuto "+min+"' · marcador "+gh+"-"+ga+" · TDA "+th+"-"+ta+" (dif. "+(th-ta)+") · xG restante local "+r.xgH.toFixed(2)+" / visita "+r.xgA.toFixed(2)+" (efecto TDA: "+(r.eff>=0?"+":"")+r.eff.toFixed(3)+" goles). Rojas: peso 0, no mueven la probabilidad.";
+}
+function renderChecks(){
+  var self=p1x2(DEMO.xgH,DEMO.xgA,0,0);
+  document.getElementById("autocheck").textContent="Autocomprobación del Poisson del módulo: con xG 1.72 / 2.24 calcula P = "+fmtP(self.p1)+" / "+fmtP(self.px)+" / "+fmtP(self.p2)+" (publicado: 29.9% / 20.2% / 49.8%). El ajuste en vivo se aplica como cambio relativo sobre la P publicada, así que al 0' coincide exacto.";
+  var slot=liveCalc(BREMEN,11,0,0,0,0);
+  var slotTda2=liveCalc(BREMEN,11,0,0,0,2);
+  var slotTda3=liveCalc(BREMEN,11,0,0,0,3);
+  document.getElementById("bremen-check").innerHTML="El módulo, con xG restante al 11' y marcador 0-0 (la TDA y el marcador de ese minuto no están publicados): slot sin TDA → P(local) <b>"+fmtP(slot.p1)+"</b> (E1 publicó 69.4%; Δ "+(slot.p1-69.4>=0?"+":"")+(slot.p1-69.4).toFixed(1)+" pp). Con TDA −2 (Gladbach +2 tiros a puerta) → P(local) <b>"+fmtP(slotTda2.p1)+"</b>; con TDA −3 → <b>"+fmtP(slotTda3.p1)+"</b> (E1 publicó 66.9% con la TDA real). EV local con momio pre ≈ 1.67: al 11' con P 66.9% → "+fmtEV(evPct(66.9,1.667))+" (E1 publicó +11.4%).";
+}
+["sc-min","sc-gh","sc-ga","sc-th","sc-ta","sc-rh","sc-ra"].forEach(function(id){document.getElementById(id).addEventListener("input",renderScenario);});
+document.getElementById("sc-reset").addEventListener("click",function(){document.getElementById("sc-min").value=0;document.getElementById("sc-gh").value=0;document.getElementById("sc-ga").value=0;document.getElementById("sc-th").value=0;document.getElementById("sc-ta").value=0;document.getElementById("sc-rh").value=0;document.getElementById("sc-ra").value=0;renderScenario();});
+document.getElementById("sc-bremen").addEventListener("click",function(){document.getElementById("sc-min").value=11;document.getElementById("sc-gh").value=0;document.getElementById("sc-ga").value=0;document.getElementById("sc-th").value=0;document.getElementById("sc-ta").value=0;renderScenario();});
+renderLive();renderScenario();renderChecks();
+</script>
+</body>
+</html>

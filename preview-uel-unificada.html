@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Preview — Tabla UEL unificada · Football AI Agenda</title>
+<style>
+:root{--bg:#0d1117;--surface:#161b22;--surface-2:#1c2330;--ink:#e6edf3;--muted:#8b949e;--accent:#7ee787}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.5;padding:24px 16px}
+.wrap{max-width:860px;margin:0 auto}
+h1{font-size:1.4rem;margin:0 0 4px}
+.sub{color:var(--muted);margin:0 0 20px}
+h2{font-size:1.1rem;margin:28px 0 8px}
+h3{font-size:1rem;margin:0 0 8px}
+h4{font-size:.95rem;margin:0 0 8px;color:var(--muted)}
+.partido{border:1px solid #30363d;border-radius:12px;padding:16px;margin:0 0 16px;background:var(--surface)}
+.partido .meta{color:var(--muted);font-size:.9rem;margin:0 0 12px}
+.detail-pos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:560px){.detail-pos{grid-template-columns:1fr}}
+.detail-pos .pos-box{background:var(--surface-2);border-radius:12px;padding:12px}
+.detail-pos .pos-num{font-size:1.5rem;font-weight:900}
+.detail-pos p{color:var(--muted);font-size:.85rem;font-weight:700;margin:4px 0 0}
+.nota{color:var(--muted);font-size:.85rem;margin:8px 0 0}
+.ok{color:var(--accent)}
+.err{color:#ff7b72}
+table{border-collapse:collapse;width:100%;margin-top:8px}
+th,td{border-bottom:1px solid #30363d;padding:6px 8px;text-align:left;font-size:.92rem}
+th{color:var(--muted)}
+a{color:#58a6ff}
+code{font-size:.9em}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Preview — Tabla UEL unificada</h1>
+<p class="sub">Ronda 7:30, sábado 28 nov 2026 (Empleado 2). Los 4 partidos UEL sin tabla en partido.html, con la tabla unificada de la UEFA Europa League 2026-27 (36 equipos) del endpoint ESPN <code>site.api.espn.com/apis/v2/sports/soccer/uefa.europa/standings</code>. Nada de esta página es inventado: cada posición sale del endpoint en vivo.</p>
+<div id="estado"><p>Cargando la tabla unificada desde ESPN…</p></div>
+<div id="partidos"></div>
+<h2>Verificación — los 8 equipos</h2>
+<div id="verificacion"><p>Cargando…</p></div>
+<p class="nota">Fuente: ESPN (apis/v2, sin «site») · contraste: <a href="https://www.uefa.com/uefaeuropaleague/standings/">UEFA.com — League phase table 2026/27</a>. Tramos: 1–8 octavos directos · 9–16 playoff (cabezas de serie) · 17–24 playoff · 25–36 eliminados. Tabla provisional hasta que se jueguen y validen todos los partidos de la fase de liga.</p>
+<p class="nota"><a href="partido.html?partido=marseille-vs-levski-sofia">Marseille vs Levski Sofia</a> · <a href="partido.html?partido=juventus-vs-omonia-nicosia">Juventus vs Omonia Nicosia</a> · <a href="partido.html?partido=nec-nijmegen-vs-stade-rennais">NEC Nijmegen vs Stade Rennais</a> · <a href="partido.html?partido=sunderland-vs-jagiellonia-bialystok">Sunderland vs Jagiellonia Bialystok</a></p>
+</div>
+<script>
+(function(){
+  'use strict';
+  var URL_TABLA_UEL = '/apis/v2/sports/soccer/uefa.europa/standings';
+  var HOSTS_UEL = ['https://site.api.espn.com', 'https://site.web.api.espn.com'];
+  var PARTIDOS = [
+    {slug:'marseille-vs-levski-sofia', home:'Marseille', away:'Levski Sofia'},
+    {slug:'juventus-vs-omonia-nicosia', home:'Juventus', away:'Omonia Nicosia'},
+    {slug:'nec-nijmegen-vs-stade-rennais', home:'NEC Nijmegen', away:'Stade Rennais'},
+    {slug:'sunderland-vs-jagiellonia-bialystok', home:'Sunderland', away:'Jagiellonia Bialystok'}
+  ];
+  var ALIAS_UEL = {olm:'marseille', lev:'levskisofia', juv:'juventus', omon:'omonianicosia', nec:'necnijmegen', ren:'staderennais', sun:'sunderland', jag:'jagielloniabialystok'};
+  function normUEL(s){ return String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]/g, ''); }
+  function escUEL(s){ return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+  function statUEL(entry, nombre){ var a = (entry && entry.stats) || []; for(var i = 0; i < a.length; i++){ if(a[i] && a[i].name === nombre) return a[i].value; } return null; }
+  function buscarEquipoUEL(entries, nombrePagina){
+    var n = normUEL(nombrePagina);
+    for(var i = 0; i < entries.length; i++){
+      var t = entries[i].team || {};
+      var cands = [t.location, t.name, t.shortDisplayName, t.displayName, t.abbreviation];
+      for(var j = 0; j < cands.length; j++){ if(cands[j] && normUEL(cands[j]) === n) return entries[i]; }
+      if(t.abbreviation && ALIAS_UEL[String(t.abbreviation).toLowerCase()] === n) return entries[i];
+    }
+    return null;
+  }
+  function stDeUEL(entry){
+    var g = statUEL(entry, 'wins'), e = statUEL(entry, 'ties'), p = statUEL(entry, 'losses');
+    return {pos:statUEL(entry, 'rank'), pts:statUEL(entry, 'points'), pj:statUEL(entry, 'gamesPlayed'), g:g, e:e, p:p, dg:statUEL(entry, 'pointDifferential'), 'récord':g + '-' + e + '-' + p};
+  }
+  function cajaPosUEL(nombre, st){
+    var dg = (st.dg == null ? '–' : String(st.dg));
+    return '<div class="pos-box"><b>' + escUEL(nombre) + '</b>' +
+      '<div class="pos-num num">' + escUEL(st.pos) + '.º</div>' +
+      '<p>Europa League · ' + escUEL(st.pts) + ' pts · ' + escUEL(st.pj) + ' PJ · ' + escUEL(st['récord']) + ' · DG ' + escUEL(dg) + '</p></div>';
+  }
+  function tramoUEL(pos){
+    if(pos <= 8) return 'Octavos directos';
+    if(pos <= 16) return 'Playoff (cabeza de serie)';
+    if(pos <= 24) return 'Playoff';
+    return 'Eliminado';
+  }
+  function renderUEL(entries){
+    var html = '', filas = '', encontrados = 0, total = 0, i, h, a, sh, sa;
+    for(i = 0; i < PARTIDOS.length; i++){
+      h = buscarEquipoUEL(entries, PARTIDOS[i].home);
+      a = buscarEquipoUEL(entries, PARTIDOS[i].away);
+      sh = h ? stDeUEL(h) : null;
+      sa = a ? stDeUEL(a) : null;
+      total += 2;
+      if(sh) encontrados++;
+      if(sa) encontrados++;
+      html += '<div class="partido"><h3>' + escUEL(PARTIDOS[i].home) + ' vs ' + escUEL(PARTIDOS[i].away) + '</h3>' +
+        '<p class="meta">J5 · Jue 26 nov 2026 · Europa League · <a href="partido.html?partido=' + escUEL(PARTIDOS[i].slug) + '">Ver en partido.html</a></p>' +
+        '<h4>Posición en la tabla</h4><div class="detail-pos">' +
+        (sh ? cajaPosUEL(PARTIDOS[i].home, sh) : '<div class="pos-box"><b>' + escUEL(PARTIDOS[i].home) + '</b><p>pendiente</p></div>') +
+        (sa ? cajaPosUEL(PARTIDOS[i].away, sa) : '<div class="pos-box"><b>' + escUEL(PARTIDOS[i].away) + '</b><p>pendiente</p></div>') +
+        '</div>' +
+        '<p class="nota">Tabla unificada UEFA Europa League 2026-27 · 36 equipos · 5 PJ · ESPN (en vivo, al abrir la página)</p></div>';
+      if(sh) filas += '<tr><td>' + escUEL(PARTIDOS[i].home) + '</td><td>' + escUEL(sh.pos) + 'º</td><td>' + escUEL(sh.pj) + '</td><td>' + escUEL(sh['récord']) + '</td><td>' + escUEL(sh.dg) + '</td><td>' + escUEL(sh.pts) + '</td><td>' + escUEL(tramoUEL(sh.pos)) + '</td></tr>';
+      if(sa) filas += '<tr><td>' + escUEL(PARTIDOS[i].away) + '</td><td>' + escUEL(sa.pos) + 'º</td><td>' + escUEL(sa.pj) + '</td><td>' + escUEL(sa['récord']) + '</td><td>' + escUEL(sa.dg) + '</td><td>' + escUEL(sa.pts) + '</td><td>' + escUEL(tramoUEL(sa.pos)) + '</td></tr>';
+    }
+    document.getElementById('partidos').innerHTML = html;
+    document.getElementById('estado').innerHTML = '<p class="ok">Tabla cargada: ' + encontrados + ' de ' + total + ' equipos encontrados en el endpoint.</p>';
+    document.getElementById('verificacion').innerHTML = '<table><tr><th>Equipo</th><th>Pos</th><th>PJ</th><th>G-E-P</th><th>DG</th><th>Pts</th><th>Tramo</th></tr>' + filas + '</table>' +
+      (encontrados === total ? '<p class="ok">Los 8 equipos están en la tabla. Ninguna posición es inventada: todas salen del endpoint.</p>' : '<p class="err">Faltan ' + (total - encontrados) + ' equipos: revisa el endpoint antes de aplicar el cambio a partido.html.</p>');
+  }
+  function pedirUEL(idx){
+    if(idx >= HOSTS_UEL.length) return Promise.reject(new Error('ESPN no responde'));
+    return fetch(HOSTS_UEL[idx] + URL_TABLA_UEL).then(function(r){ if(!r.ok) throw new Error('ESPN ' + r.status); return r.json(); }).catch(function(){ if(idx + 1 < HOSTS_UEL.length) return pedirUEL(idx + 1); throw new Error('ESPN no responde'); });
+  }
+  pedirUEL(0).then(function(j){
+    var entries = [];
+    try{ entries = (j.children[0].standings.entries) || []; }catch(e){ entries = []; }
+    if(!entries.length) throw new Error('sin entradas');
+    renderUEL(entries);
+  }).catch(function(err){
+    document.getElementById('estado').innerHTML = '<p class="err">No se pudo cargar la tabla de ESPN (' + escUEL(err && err.message ? err.message : 'error') + '). La tabla queda pendiente; no se muestra nada inventado.</p>';
+    document.getElementById('verificacion').innerHTML = '<p class="err">Sin datos del endpoint, no hay verificación.</p>';
+  });
+})();
+</script>
+</body>
+</html>
