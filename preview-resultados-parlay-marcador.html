@@ -326,7 +326,7 @@ function abrirDetalle(i){
     h += '<dt>EV</dt><dd class="num">' + fmtEv(r.ev) + '</dd>';
     h += '<dt>Color</dt><dd>' + esc(r.color || r.semaforo || '—') + '</dd>';
   } else {
-    h += '<dt>Pick</dt><dd>Sin recomendación (ningún EV positivo o sin recomendación publicada)</dd>';
+    h += '<dt>Pick</dt><dd>Sin recomendación (sin recomendación publicada o sin datos para calcularla)</dd>';
   }
   if(p.estado === 'post'){
     h += '<dt>Resultado</dt><dd>' + esc(p.acierto_texto || (p.acierto === true ? 'Acertó' : (p.acierto === false ? 'Falló' : 'Pendiente'))) + '</dd>';
