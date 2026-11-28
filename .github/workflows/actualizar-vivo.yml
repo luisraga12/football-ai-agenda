@@ -56,5 +56,8 @@ jobs:
           # vivo-log.json solo existe cuando el script registra fallos;
           # si no existe, git add fallaba (exit 128) y no se publicaba nada.
           [ -f data/vivo-log.json ] && git add data/vivo-log.json
+          # data/live-log/ solo existe cuando hay snapshots de partidos
+          # en juego con stats; misma guarda que vivo-log.json.
+          [ -d data/live-log ] && git add data/live-log
           git diff --cached --quiet || git commit -m "Actualizar marcador en vivo (auto)"
           git push
