@@ -362,7 +362,7 @@ function cargar(){
     fetch('data/resultados.json', {cache:'no-store'}).then(function(r){ if(!r.ok) throw new Error('resultados.json: HTTP ' + r.status); return r.json(); }),
     fetch('data/parlay-del-dia.json', {cache:'no-store'}).then(function(r){ if(!r.ok) throw new Error('parlay-del-dia.json: HTTP ' + r.status); return r.json(); }),    fetchJSON('data/vivo.json'),    fetchJSON('data/semana-2/estadisticas.json'),    fetchJSON('data/semana-2-entresemana/estadisticas.json')
   ]).then(function(res){
-    RES = res[0]; PARLAY = res[1];
+    RES = res[0]; PARLAY = res[1]; VIVO = (res[2] && Array.isArray(res[2].partidos)) ? res[2].partidos : []; ESTS = {'semana-2': res[3], 'entresemana': res[4]};
     renderFuentes(); renderPre(); renderVivo(); renderResultado(); renderParlay(); renderMarcador();
   }).catch(function(e){ mostrarError(e.message || String(e)); });
 }
