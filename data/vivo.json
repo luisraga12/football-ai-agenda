@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generado_en": "2026-11-28T16:33:39Z",
-  "generado_en_mx": "2026-11-28T10:33:40-06:00",
+  "generado_en": "2026-11-28T18:42:09Z",
+  "generado_en_mx": "2026-11-28T12:42:10-06:00",
   "semana": 2,
   "fuente": "ESPN scoreboard (site.api.espn.com, respaldo site.web.api.espn.com)",
   "partidos": [
@@ -27,12 +27,12 @@
       "away_id": 388,
       "home": "Leeds United",
       "away": "Coventry City",
-      "estado": "in",
-      "detalle": "76'",
-      "minuto": "76'",
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+3'",
       "marcador_local": 3,
       "marcador_visita": 0,
-      "actualizado_en": "2026-11-28T16:33:39Z",
+      "actualizado_en": "2026-11-28T18:42:09Z",
       "evento_id": "401879227",
       "rojas": [],
       "stats": {
@@ -67,12 +67,12 @@
       "away_id": 337,
       "home": "Manchester United",
       "away": "Brentford",
-      "estado": "in",
-      "detalle": "75'",
-      "minuto": "75'",
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+5'",
       "marcador_local": 0,
-      "marcador_visita": 2,
-      "actualizado_en": "2026-11-28T16:33:39Z",
+      "marcador_visita": 4,
+      "actualizado_en": "2026-11-28T18:42:09Z",
       "evento_id": "401879226",
       "rojas": [],
       "stats": {
@@ -106,13 +106,29 @@
       "away_id": 362,
       "home": "Ipswich Town",
       "away": "Aston Villa",
-      "estado": "pre",
-      "detalle": "Sat, November 28th at 12:30 PM EST",
-      "minuto": "0'",
-      "marcador_local": 0,
-      "marcador_visita": 0,
-      "actualizado_en": "2026-11-28T07:15:27Z",
-      "evento_id": "401878752"
+      "estado": "in",
+      "detalle": "54'",
+      "minuto": "54'",
+      "marcador_local": 1,
+      "marcador_visita": 2,
+      "actualizado_en": "2026-11-28T18:42:09Z",
+      "evento_id": "401878752",
+      "rojas": [],
+      "stats": {
+        "min": "54'",
+        "pos_h": 35.6,
+        "pos_a": 64.4,
+        "tiros_h": 7,
+        "tiros_a": 13,
+        "tda_h": 2,
+        "tda_a": 6,
+        "corn_h": 2,
+        "corn_a": 3
+      },
+      "cambios": {
+        "local": [],
+        "visita": []
+      }
     },
     {
       "liga": "eng.1",
@@ -245,13 +261,29 @@
       "away_id": 1068,
       "home": "Elche",
       "away": "Atlético Madrid",
-      "estado": "pre",
-      "detalle": "Sat, November 28th at 12:30 PM EST",
-      "minuto": "0'",
-      "marcador_local": 0,
-      "marcador_visita": 0,
-      "actualizado_en": "2026-11-24T19:29:05Z",
-      "evento_id": null
+      "estado": "in",
+      "detalle": "52'",
+      "minuto": "52'",
+      "marcador_local": 2,
+      "marcador_visita": 3,
+      "actualizado_en": "2026-11-28T18:42:09Z",
+      "evento_id": "401882793",
+      "rojas": [],
+      "stats": {
+        "min": "52'",
+        "pos_h": 48.2,
+        "pos_a": 51.8,
+        "tiros_h": 4,
+        "tiros_a": 7,
+        "tda_h": 2,
+        "tda_a": 4,
+        "corn_h": 1,
+        "corn_a": 0
+      },
+      "cambios": {
+        "local": [],
+        "visita": []
+      }
     },
     {
       "liga": "esp.1",
@@ -275,12 +307,12 @@
       "away_id": 93,
       "home": "Málaga",
       "away": "Athletic Club",
-      "estado": "in",
-      "detalle": "57'",
-      "minuto": "57'",
-      "marcador_local": 2,
+      "estado": "post",
+      "detalle": "FT",
+      "minuto": "90'+6'",
+      "marcador_local": 3,
       "marcador_visita": 4,
-      "actualizado_en": "2026-11-28T16:33:39Z",
+      "actualizado_en": "2026-11-28T18:42:09Z",
       "evento_id": "401882790",
       "rojas": [],
       "stats": {
@@ -460,13 +492,29 @@
       "away_id": 125,
       "home": "VfB Stuttgart",
       "away": "Eintracht Frankfurt",
-      "estado": "pre",
-      "detalle": "Sat, November 28th at 12:30 PM EST",
-      "minuto": "0'",
-      "marcador_local": 0,
-      "marcador_visita": 0,
-      "actualizado_en": "2026-11-24T19:29:05Z",
-      "evento_id": null
+      "estado": "in",
+      "detalle": "51'",
+      "minuto": "51'",
+      "marcador_local": 1,
+      "marcador_visita": 1,
+      "actualizado_en": "2026-11-28T18:42:09Z",
+      "evento_id": "401884726",
+      "rojas": [],
+      "stats": {
+        "min": "51'",
+        "pos_h": 49.2,
+        "pos_a": 50.8,
+        "tiros_h": 8,
+        "tiros_a": 12,
+        "tda_h": 2,
+        "tda_a": 4,
+        "corn_h": 1,
+        "corn_a": 7
+      },
+      "cambios": {
+        "local": [],
+        "visita": []
+      }
     },
     {
       "liga": "ger.1",
@@ -618,13 +666,39 @@
       "away_id": 112,
       "home": "Torino",
       "away": "Lazio",
-      "estado": "pre",
-      "detalle": "Sat, November 28th at 12:00 PM EST",
-      "minuto": "0'",
-      "marcador_local": 0,
-      "marcador_visita": 0,
-      "actualizado_en": "2026-11-28T07:15:27Z",
-      "evento_id": "401874826"
+      "estado": "in",
+      "detalle": "83'",
+      "minuto": "82'",
+      "marcador_local": 1,
+      "marcador_visita": 2,
+      "actualizado_en": "2026-11-28T18:42:09Z",
+      "evento_id": "401874826",
+      "rojas": [],
+      "stats": {
+        "min": "82'",
+        "pos_h": 40.1,
+        "pos_a": 59.9,
+        "tiros_h": 11,
+        "tiros_a": 16,
+        "tda_h": 7,
+        "tda_a": 3,
+        "corn_h": 3,
+        "corn_a": 7
+      },
+      "cambios": {
+        "local": [
+          58,
+          58,
+          74,
+          80,
+          80
+        ],
+        "visita": [
+          70,
+          70,
+          76
+        ]
+      }
     },
     {
       "liga": "ita.1",
