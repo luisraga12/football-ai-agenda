@@ -56,7 +56,7 @@
   "liga": "ger.1",
   "league": "ger.1",
   "date_cst": "2026-11-28 08:30",
-  "status": "STATUS_SCHEDULED",
+  "status": "STATUS_FULL_TIME",
   "espn_id": "401884722"
  },
  {
@@ -68,7 +68,7 @@
   "liga": "eng.1",
   "league": "eng.1",
   "date_cst": "2026-11-28 09:00",
-  "status": "STATUS_SCHEDULED",
+  "status": "STATUS_FULL_TIME",
   "espn_id": "401879226"
  },
  {
@@ -80,7 +80,7 @@
   "liga": "esp.1",
   "league": "esp.1",
   "date_cst": "2026-11-28 11:30",
-  "status": "STATUS_SCHEDULED",
+  "status": "STATUS_FIRST_HALF",
   "espn_id": "401882793"
  },
  {
@@ -92,7 +92,7 @@
   "liga": "ger.1",
   "league": "ger.1",
   "date_cst": "2026-11-28 11:30",
-  "status": "STATUS_SCHEDULED",
+  "status": "STATUS_IN_PROGRESS",
   "espn_id": "401884726"
  },
  {
@@ -248,7 +248,7 @@
   "liga": "eng.1",
   "league": "eng.1",
   "date_cst": "2026-11-28 09:00",
-  "status": "STATUS_SCHEDULED",
+  "status": "STATUS_FULL_TIME",
   "espn_id": "401879227"
  },
  {
@@ -260,7 +260,7 @@
   "liga": "eng.1",
   "league": "eng.1",
   "date_cst": "2026-11-28 11:30",
-  "status": "STATUS_SCHEDULED",
+  "status": "STATUS_FIRST_HALF",
   "espn_id": "401878752"
  },
  {
@@ -272,7 +272,7 @@
   "liga": "esp.1",
   "league": "esp.1",
   "date_cst": "2026-11-28 07:00",
-  "status": "STATUS_SCHEDULED",
+  "status": "STATUS_FULL_TIME",
   "espn_id": "401882796"
  },
  {
@@ -284,7 +284,7 @@
   "liga": "esp.1",
   "league": "esp.1",
   "date_cst": "2026-11-28 09:15",
-  "status": "STATUS_SCHEDULED",
+  "status": "STATUS_FULL_TIME",
   "espn_id": "401882790"
  },
  {
@@ -296,7 +296,7 @@
   "liga": "ger.1",
   "league": "ger.1",
   "date_cst": "2026-11-28 08:30",
-  "status": "STATUS_SCHEDULED",
+  "status": "STATUS_FULL_TIME",
   "espn_id": "401884721"
  },
  {
@@ -308,7 +308,7 @@
   "liga": "ger.1",
   "league": "ger.1",
   "date_cst": "2026-11-28 08:30",
-  "status": "STATUS_SCHEDULED",
+  "status": "STATUS_FULL_TIME",
   "espn_id": "401884723"
  },
  {
@@ -320,7 +320,7 @@
   "liga": "ger.1",
   "league": "ger.1",
   "date_cst": "2026-11-28 08:30",
-  "status": "STATUS_SCHEDULED",
+  "status": "STATUS_FULL_TIME",
   "espn_id": "401884719"
  },
  {
@@ -332,7 +332,7 @@
   "liga": "ita.1",
   "league": "ita.1",
   "date_cst": "2026-11-28 08:00",
-  "status": "STATUS_SCHEDULED",
+  "status": "STATUS_FULL_TIME",
   "espn_id": "401875081"
  },
  {
@@ -344,7 +344,7 @@
   "liga": "ita.1",
   "league": "ita.1",
   "date_cst": "2026-11-28 11:00",
-  "status": "STATUS_SCHEDULED",
+  "status": "STATUS_FIRST_HALF",
   "espn_id": "401874826"
  },
  {

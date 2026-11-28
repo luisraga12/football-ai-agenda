@@ -27,7 +27,7 @@
   "fecha": "2026-11-28",
   "liga": "eng.1",
   "liga_nombre": "Premier League",
-  "estado": "pre"
+  "estado": "post"
  },
  "360|337|2026-11-28": {
   "home": "Manchester United",
@@ -37,7 +37,7 @@
   "fecha": "2026-11-28",
   "liga": "eng.1",
   "liga_nombre": "Premier League",
-  "estado": "pre"
+  "estado": "post"
  },
  "373|362|2026-11-28": {
   "home": "Ipswich Town",
@@ -47,7 +47,7 @@
   "fecha": "2026-11-28",
   "liga": "eng.1",
   "liga_nombre": "Premier League",
-  "estado": "pre"
+  "estado": "in"
  },
  "368|364|2026-11-29": {
   "home": "Everton",
@@ -137,7 +137,7 @@
   "fecha": "2026-11-28",
   "liga": "esp.1",
   "liga_nombre": "LaLiga",
-  "estado": "pre"
+  "estado": "post"
  },
  "99|93|2026-11-28": {
   "home": "Málaga",
@@ -147,7 +147,7 @@
   "fecha": "2026-11-28",
   "liga": "esp.1",
   "liga_nombre": "LaLiga",
-  "estado": "pre"
+  "estado": "post"
  },
  "3751|1068|2026-11-28": {
   "home": "Elche",
@@ -157,7 +157,7 @@
   "fecha": "2026-11-28",
   "liga": "esp.1",
   "liga_nombre": "LaLiga",
-  "estado": "pre"
+  "estado": "in"
  },
  "86|96|2026-11-28": {
   "home": "Real Madrid",
@@ -227,7 +227,7 @@
   "fecha": "2026-11-28",
   "liga": "ger.1",
   "liga_nombre": "Bundesliga",
-  "estado": "pre"
+  "estado": "post"
  },
  "127|132|2026-11-28": {
   "home": "Hamburg SV",
@@ -237,7 +237,7 @@
   "fecha": "2026-11-28",
   "liga": "ger.1",
   "liga_nombre": "Bundesliga",
-  "estado": "pre"
+  "estado": "post"
  },
  "2950|598|2026-11-28": {
   "home": "Mainz",
@@ -247,7 +247,7 @@
   "fecha": "2026-11-28",
   "liga": "ger.1",
   "liga_nombre": "Bundesliga",
-  "estado": "pre"
+  "estado": "post"
  },
  "3307|133|2026-11-28": {
   "home": "SC Paderborn 07",
@@ -257,7 +257,7 @@
   "fecha": "2026-11-28",
   "liga": "ger.1",
   "liga_nombre": "Bundesliga",
-  "estado": "pre"
+  "estado": "post"
  },
  "134|125|2026-11-28": {
   "home": "VfB Stuttgart",
@@ -267,7 +267,7 @@
   "fecha": "2026-11-28",
   "liga": "ger.1",
   "liga_nombre": "Bundesliga",
-  "estado": "pre"
+  "estado": "in"
  },
  "126|11420|2026-11-29": {
   "home": "SC Freiburg",
@@ -327,7 +327,7 @@
   "fecha": "2026-11-28",
   "liga": "ita.1",
   "liga_nombre": "Serie A",
-  "estado": "pre"
+  "estado": "post"
  },
  "239|112|2026-11-28": {
   "home": "Torino",
@@ -337,7 +337,7 @@
   "fecha": "2026-11-28",
   "liga": "ita.1",
   "liga_nombre": "Serie A",
-  "estado": "pre"
+  "estado": "in"
  },
  "110|3263|2026-11-28": {
   "home": "Internazionale",
