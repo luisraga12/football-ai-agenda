@@ -183,7 +183,7 @@
    "cambio_pick": true,
    "delta_ev_pp": 120.33454157571661,
    "flecha": "↑",
-   "ev_pick_ayer_hoy": 0.1258365748197805
+   "ev_pick_ayer_hoy": 0.09903094208597607
   },
   {
    "slug": "everton-vs-liverpool",
@@ -195,13 +195,13 @@
    "mejor_pick_ayer": "Local",
    "mejor_pick_hoy": "Local",
    "ev_ayer": 0.6941717435447787,
-   "ev_hoy": 0.8679142545061016,
+   "ev_hoy": 0.8273074228864039,
    "linea_ayer": 2.5,
    "linea_hoy": 2.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": 17.374251096132287,
+   "delta_ev_pp": 13.313567934162517,
    "flecha": "↑"
   },
   {
@@ -331,13 +331,13 @@
    "mejor_pick_ayer": "Más 2.5",
    "mejor_pick_hoy": "Más 2.5",
    "ev_ayer": 0.39277199173249344,
-   "ev_hoy": 0.15792019710637284,
+   "ev_hoy": 0.13927413918195453,
    "linea_ayer": 2.5,
    "linea_hoy": 2.5,
    "cambio_linea": false,
    "estado": "con_momio",
    "cambio_pick": false,
-   "delta_ev_pp": -23.48517946261206,
+   "delta_ev_pp": -25.34978525505389,
    "flecha": "↓"
   },
   {

@@ -1,6 +1,6 @@
 {
  "fecha_calculo": "2026-11-28",
- "generado_en_mx": "2026-11-28T13:40:18-06:00",
+ "generado_en_mx": "2026-11-28T14:12:18-06:00",
  "nota": "Recomendación: el pick con más probabilidad entre los de EV ≥ +5% en todos los mercados; color por riesgo/ganancia: verde (prob ≥ 60% y EV ≥ +5%), amarillo (30% ≤ prob < 60% y EV ≥ +5%, un 50/50) o rojo (prob < 30% o EV < +5%: mucho riesgo y mucha ganancia, o poco riesgo aparente y poca ganancia). Alternativa amarilla: mayor EV entre EV ≥ +5% y 30% ≤ prob < 60%, distinto de la recomendación y con EV ≥ +50%. La columna en vivo usa el último snapshot del log (data/live-log); sin snapshots es 'sin datos', nunca inventada. La predicción en vivo invierte el xG de las probabilidades publicadas (no las ajustadas por XI).",
  "partidos": [
   {
@@ -323,7 +323,7 @@
    "liga": "LaLiga",
    "home": "Elche",
    "away": "Atlético Madrid",
-   "estado": "in",
+   "estado": "post",
    "marcador": {
     "local": 2,
     "visita": 3
@@ -354,8 +354,8 @@
     },
     "mejor_verde": null
    },
-   "acierto": null,
-   "acierto_texto": "Pendiente",
+   "acierto": false,
+   "acierto_texto": "Falló",
    "vivo": {
     "tiene_datos": true,
     "motivo": null,
@@ -378,7 +378,7 @@
      "px": 15.0,
      "p2": 82.8
     },
-    "acierto": null
+    "acierto": true
    }
   },
   {
@@ -387,10 +387,10 @@
    "liga": "Bundesliga",
    "home": "VfB Stuttgart",
    "away": "Eintracht Frankfurt",
-   "estado": "in",
+   "estado": "post",
    "marcador": {
-    "local": 1,
-    "visita": 1
+    "local": 2,
+    "visita": 2
    },
    "recomendacion": {
     "pick": "BTTS No",
@@ -412,8 +412,8 @@
     },
     "mejor_verde": null
    },
-   "acierto": null,
-   "acierto_texto": "Pendiente",
+   "acierto": false,
+   "acierto_texto": "Falló",
    "vivo": {
     "tiene_datos": true,
     "motivo": null,
@@ -436,7 +436,7 @@
      "px": 44.5,
      "p2": 21.2
     },
-    "acierto": null
+    "acierto": true
    }
   },
   {
@@ -555,9 +555,9 @@
    "recomendacion": {
     "pick": "Local",
     "mercado": "1X2",
-    "momio": 4.6,
+    "momio": 4.5,
     "prob": 40.6,
-    "ev": 0.8679142545061016,
+    "ev": 0.8273074228864039,
     "color": "amarillo",
     "semaforo": "amarillo",
     "cumple_regla": true,
@@ -565,9 +565,9 @@
     "mejor_valor": {
      "pick": "Local",
      "mercado": "1X2",
-     "momio": 4.6,
+     "momio": 4.5,
      "prob": 40.6,
-     "ev": 0.8679142545061016,
+     "ev": 0.8273074228864039,
      "color": "amarillo"
     },
     "mejor_verde": null
@@ -862,9 +862,9 @@
    "recomendacion": {
     "pick": "Más 2.5",
     "mercado": "Total",
-    "momio": 1.7692307692307692,
+    "momio": 1.7407407407407407,
     "prob": 65.4,
-    "ev": 0.15792019710637284,
+    "ev": 0.13927413918195453,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
@@ -872,17 +872,17 @@
     "mejor_valor": {
      "pick": "Más 2.5",
      "mercado": "Total",
-     "momio": 1.7692307692307692,
+     "momio": 1.7407407407407407,
      "prob": 65.4,
-     "ev": 0.15792019710637284,
+     "ev": 0.13927413918195453,
      "color": "verde"
     },
     "mejor_verde": {
      "pick": "Más 2.5",
      "mercado": "Total",
-     "momio": 1.7692307692307692,
+     "momio": 1.7407407407407407,
      "prob": 65.4,
-     "ev": 0.15792019710637284,
+     "ev": 0.13927413918195453,
      "color": "verde"
     }
    },
@@ -1062,9 +1062,9 @@
    "liga": "Premier League",
    "home": "Ipswich Town",
    "away": "Aston Villa",
-   "estado": "in",
+   "estado": "post",
    "marcador": {
-    "local": 1,
+    "local": 2,
     "visita": 2
    },
    "recomendacion": {
@@ -1094,8 +1094,8 @@
      "color": "verde"
     }
    },
-   "acierto": null,
-   "acierto_texto": "Pendiente",
+   "acierto": true,
+   "acierto_texto": "Acertó",
    "vivo": {
     "tiene_datos": true,
     "motivo": null,
@@ -1118,7 +1118,7 @@
      "px": 17.5,
      "p2": 78.3
     },
-    "acierto": null
+    "acierto": false
    }
   },
   {
@@ -1478,7 +1478,7 @@
    "liga": "Serie A",
    "home": "Torino",
    "away": "Lazio",
-   "estado": "in",
+   "estado": "post",
    "marcador": {
     "local": 1,
     "visita": 2
@@ -1510,8 +1510,8 @@
      "color": "verde"
     }
    },
-   "acierto": null,
-   "acierto_texto": "Pendiente",
+   "acierto": true,
+   "acierto_texto": "Acertó",
    "vivo": {
     "tiene_datos": true,
     "motivo": null,
@@ -1534,7 +1534,7 @@
      "px": 10.8,
      "p2": 88.4
     },
-    "acierto": null
+    "acierto": true
    }
   },
   {
@@ -3660,17 +3660,17 @@
  ],
  "resumen": {
   "pre_partido": {
-   "con_resultado": 48,
-   "aciertos": 21,
-   "fallos": 27,
-   "pct_acierto": 43.8,
+   "con_resultado": 52,
+   "aciertos": 23,
+   "fallos": 29,
+   "pct_acierto": 44.2,
    "sin_datos": 0
   },
   "en_vivo": {
-   "con_resultado": 8,
-   "aciertos": 7,
-   "fallos": 1,
-   "pct_acierto": 87.5,
+   "con_resultado": 12,
+   "aciertos": 10,
+   "fallos": 2,
+   "pct_acierto": 83.3,
    "sin_datos": 40
   }
  }

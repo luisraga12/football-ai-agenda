@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado_en": "2026-11-28T19:40:15Z",
+  "generado_en": "2026-11-28T20:12:15Z",
   "semana": "2-entresemana",
   "fuente": "config + ev.json + verified_events.json + teams_last5.json + schedule_*.json + DETAIL embebido en partido.html (preservado) + summary ESPN por evento (estadio + alineacion oficial + standings + h2h; tabla regular MX para Liguilla)",
   "partidos_vivo": {
@@ -12493,58 +12493,58 @@
           "local": [
             {
               "jugador": "Ivan Provedel",
-              "pos": "SUB",
+              "pos": "G",
               "dorsal": "49"
             },
             {
-              "jugador": "Nicolò Barella",
-              "pos": "SUB",
-              "dorsal": "23"
-            },
-            {
-              "jugador": "Andy Diouf",
-              "pos": "SUB",
-              "dorsal": "17"
-            },
-            {
               "jugador": "Manuel Akanji",
-              "pos": "SUB",
+              "pos": "CD",
               "dorsal": "25"
             },
             {
-              "jugador": "Lautaro Martínez",
-              "pos": "SUB",
-              "dorsal": "10"
-            },
-            {
-              "jugador": "Federico Dimarco",
-              "pos": "SUB",
-              "dorsal": "32"
-            },
-            {
-              "jugador": "Petar Sucic",
-              "pos": "SUB",
-              "dorsal": "8"
+              "jugador": "Carlos Augusto",
+              "pos": "CD-L",
+              "dorsal": "30"
             },
             {
               "jugador": "Yann Bisseck",
-              "pos": "SUB",
+              "pos": "CD-R",
               "dorsal": "31"
             },
             {
-              "jugador": "Marcus Thuram",
-              "pos": "SUB",
-              "dorsal": "9"
-            },
-            {
               "jugador": "Curtis Jones",
-              "pos": "SUB",
+              "pos": "CM-L",
               "dorsal": "21"
             },
             {
-              "jugador": "Carlos Augusto",
-              "pos": "SUB",
-              "dorsal": "30"
+              "jugador": "Nicolò Barella",
+              "pos": "CM-R",
+              "dorsal": "23"
+            },
+            {
+              "jugador": "Petar Sucic",
+              "pos": "AM",
+              "dorsal": "8"
+            },
+            {
+              "jugador": "Federico Dimarco",
+              "pos": "LM",
+              "dorsal": "32"
+            },
+            {
+              "jugador": "Andy Diouf",
+              "pos": "RM",
+              "dorsal": "17"
+            },
+            {
+              "jugador": "Lautaro Martínez",
+              "pos": "CF-L",
+              "dorsal": "10"
+            },
+            {
+              "jugador": "Marcus Thuram",
+              "pos": "CF-R",
+              "dorsal": "9"
             }
           ],
           "visita": [
@@ -12554,54 +12554,54 @@
               "dorsal": "1"
             },
             {
-              "jugador": "Alessandro Marcandalli",
-              "pos": "D",
-              "dorsal": "27"
-            },
-            {
               "jugador": "Sebastian Otoa",
-              "pos": "D",
+              "pos": "CD",
               "dorsal": "34"
             },
             {
               "jugador": "Johan Vásquez",
-              "pos": "D",
+              "pos": "CD-L",
               "dorsal": "22"
             },
             {
-              "jugador": "Mikael Ellertsson",
-              "pos": "M",
-              "dorsal": "77"
-            },
-            {
-              "jugador": "Mario Mitaj",
-              "pos": "M",
-              "dorsal": "2"
-            },
-            {
-              "jugador": "Junior Messias",
-              "pos": "M",
-              "dorsal": "10"
-            },
-            {
-              "jugador": "Samuel Wiafe",
-              "pos": "M",
-              "dorsal": "71"
-            },
-            {
-              "jugador": "Kingsley Ehizibue",
-              "pos": "M",
-              "dorsal": "3"
+              "jugador": "Alessandro Marcandalli",
+              "pos": "CD-R",
+              "dorsal": "27"
             },
             {
               "jugador": "Hamed Traoré",
-              "pos": "M",
+              "pos": "CM-L",
               "dorsal": "25"
+            },
+            {
+              "jugador": "Samuel Wiafe",
+              "pos": "CM-R",
+              "dorsal": "71"
+            },
+            {
+              "jugador": "Mario Mitaj",
+              "pos": "LM",
+              "dorsal": "2"
+            },
+            {
+              "jugador": "Kingsley Ehizibue",
+              "pos": "RM",
+              "dorsal": "3"
             },
             {
               "jugador": "Milutin Osmajic",
               "pos": "F",
               "dorsal": "18"
+            },
+            {
+              "jugador": "Mikael Ellertsson",
+              "pos": "CF-L",
+              "dorsal": "77"
+            },
+            {
+              "jugador": "Junior Messias",
+              "pos": "CF-R",
+              "dorsal": "10"
             }
           ]
         },
@@ -12804,53 +12804,53 @@
             },
             {
               "jugador": "Dean Huijsen",
-              "pos": "D",
+              "pos": "CD-L",
               "dorsal": "4"
             },
             {
+              "jugador": "Ibrahima Konaté",
+              "pos": "CD-R",
+              "dorsal": "16"
+            },
+            {
               "jugador": "Marc Cucurella",
-              "pos": "D",
+              "pos": "LB",
               "dorsal": "17"
             },
             {
               "jugador": "Federico Valverde",
-              "pos": "D",
+              "pos": "RB",
               "dorsal": "8"
             },
             {
-              "jugador": "Ibrahima Konaté",
-              "pos": "D",
-              "dorsal": "16"
-            },
-            {
-              "jugador": "Vinícius Júnior",
-              "pos": "M",
-              "dorsal": "7"
-            },
-            {
-              "jugador": "Arda Güler",
-              "pos": "M",
-              "dorsal": "15"
+              "jugador": "Jude Bellingham",
+              "pos": "AM",
+              "dorsal": "5"
             },
             {
               "jugador": "Aurélien Tchouaméni",
-              "pos": "M",
+              "pos": "LM",
               "dorsal": "14"
             },
             {
-              "jugador": "Brahim Díaz",
-              "pos": "M",
-              "dorsal": "21"
-            },
-            {
-              "jugador": "Jude Bellingham",
-              "pos": "M",
-              "dorsal": "5"
+              "jugador": "Arda Güler",
+              "pos": "RM",
+              "dorsal": "15"
             },
             {
               "jugador": "Kylian Mbappé",
               "pos": "F",
               "dorsal": "10"
+            },
+            {
+              "jugador": "Vinícius Júnior",
+              "pos": "AM-L",
+              "dorsal": "7"
+            },
+            {
+              "jugador": "Brahim Díaz",
+              "pos": "AM-R",
+              "dorsal": "21"
             }
           ],
           "visita": [
@@ -12860,53 +12860,53 @@
               "dorsal": "1"
             },
             {
-              "jugador": "Abde Rebbach",
-              "pos": "D",
-              "dorsal": "21"
-            },
-            {
-              "jugador": "Nahuel Tenaglia",
-              "pos": "D",
-              "dorsal": "14"
-            },
-            {
-              "jugador": "Ángel Pérez",
-              "pos": "D",
-              "dorsal": "7"
-            },
-            {
-              "jugador": "Jonny",
-              "pos": "D",
-              "dorsal": "17"
-            },
-            {
               "jugador": "Ville Koski",
-              "pos": "D",
+              "pos": "CD",
               "dorsal": "16"
             },
             {
-              "jugador": "Denis Suárez",
-              "pos": "M",
-              "dorsal": "4"
+              "jugador": "Jonny",
+              "pos": "CD-L",
+              "dorsal": "17"
+            },
+            {
+              "jugador": "Nahuel Tenaglia",
+              "pos": "CD-R",
+              "dorsal": "14"
+            },
+            {
+              "jugador": "Abde Rebbach",
+              "pos": "LB",
+              "dorsal": "21"
+            },
+            {
+              "jugador": "Ángel Pérez",
+              "pos": "RB",
+              "dorsal": "7"
             },
             {
               "jugador": "Antonio Blanco",
-              "pos": "M",
+              "pos": "CM",
               "dorsal": "8"
             },
             {
+              "jugador": "Denis Suárez",
+              "pos": "CM-L",
+              "dorsal": "4"
+            },
+            {
               "jugador": "Pablo Ibáñez",
-              "pos": "M",
+              "pos": "CM-R",
               "dorsal": "19"
             },
             {
               "jugador": "Mariano Díaz",
-              "pos": "F",
+              "pos": "CF-L",
               "dorsal": "9"
             },
             {
               "jugador": "Toni Martínez",
-              "pos": "F",
+              "pos": "CF-R",
               "dorsal": "11"
             }
           ]

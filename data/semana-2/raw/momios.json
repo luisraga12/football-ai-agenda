@@ -495,8 +495,11 @@
      "away": 2.1
     }
    },
-   "estado_partido": "pre",
-   "marcador": null,
+   "estado_partido": "in",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
    "bsd": {
     "proveedor": "BSD-consensus",
     "bsd_event_id": 210181,
@@ -535,23 +538,26 @@
     "proveedor": "DraftKings",
     "moneyline": {
      "home": 1.1333333333333333,
-     "draw": 9.0,
+     "draw": 9.5,
      "away": 17.0
     },
     "total": {
      "linea": 3.5,
      "over": 1.7142857142857144,
-     "under": 2.1
+     "under": 2.15
     },
     "spread": {
      "home_linea": -2.5,
-     "home": 2.0,
+     "home": 1.9523809523809523,
      "away_linea": 2.5,
-     "away": 1.7142857142857144
+     "away": 1.7407407407407407
     }
    },
-   "estado_partido": "pre",
-   "marcador": null,
+   "estado_partido": "in",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
    "bsd": {
     "proveedor": "BSD-consensus",
     "bsd_event_id": 213657,
@@ -589,14 +595,14 @@
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 4.6,
-     "draw": 3.85,
+     "home": 4.5,
+     "draw": 4.0,
      "away": 1.7407407407407407
     },
     "total": {
      "linea": 2.5,
-     "over": 1.606060606060606,
-     "under": 2.35
+     "over": 1.5714285714285714,
+     "under": 2.4
     },
     "spread": {
      "home_linea": 0.5,
@@ -966,20 +972,20 @@
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 2.0,
-     "draw": 3.3,
-     "away": 3.9
+     "home": 1.9523809523809523,
+     "draw": 3.35,
+     "away": 4.0
     },
     "total": {
      "linea": 2.5,
-     "over": 1.7692307692307692,
-     "under": 2.0
+     "over": 1.7407407407407407,
+     "under": 2.05
     },
     "spread": {
      "home_linea": -0.5,
-     "home": 1.9090909090909092,
+     "home": 1.8695652173913042,
      "away_linea": 0.5,
-     "away": 1.7692307692307692
+     "away": 1.8
     }
    },
    "estado_partido": "pre",
