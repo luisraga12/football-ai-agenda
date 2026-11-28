@@ -1,5 +1,5 @@
 {
- "cutoff": "2026-11-19T23:59:59Z",
+ "cutoff": "2026-11-26T23:59:59Z",
  "fechas": [
   "2026-11-27",
   "2026-11-28",
@@ -174,166 +174,166 @@
    "fecha": "2026-11-29",
    "liga": "mex.1"
   },
-    {
-      "away": "Coventry City",
-      "away_id": 388,
-      "fecha": "2026-11-28",
-      "home": "Leeds United",
-      "home_id": 357,
-      "liga": "eng.1"
-    },
-    {
-      "away": "Aston Villa",
-      "away_id": 362,
-      "fecha": "2026-11-28",
-      "home": "Ipswich Town",
-      "home_id": 373,
-      "liga": "eng.1"
-    },
-    {
-      "away": "Rayo Vallecano",
-      "away_id": 101,
-      "fecha": "2026-11-28",
-      "home": "Real Betis",
-      "home_id": 244,
-      "liga": "esp.1"
-    },
-    {
-      "away": "Athletic Club",
-      "away_id": 93,
-      "fecha": "2026-11-28",
-      "home": "Málaga",
-      "home_id": 99,
-      "liga": "esp.1"
-    },
-    {
-      "away": "SV Elversberg",
-      "away_id": 10388,
-      "fecha": "2026-11-28",
-      "home": "FC Cologne",
-      "home_id": 122,
-      "liga": "ger.1"
-    },
-    {
-      "away": "1. FC Union Berlin",
-      "away_id": 598,
-      "fecha": "2026-11-28",
-      "home": "Mainz",
-      "home_id": 2950,
-      "liga": "ger.1"
-    },
-    {
-      "away": "Schalke 04",
-      "away_id": 133,
-      "fecha": "2026-11-28",
-      "home": "SC Paderborn 07",
-      "home_id": 3307,
-      "liga": "ger.1"
-    },
-    {
-      "away": "Parma",
-      "away_id": 115,
-      "fecha": "2026-11-28",
-      "home": "Frosinone",
-      "home_id": 4057,
-      "liga": "ita.1"
-    },
-    {
-      "away": "Lazio",
-      "away_id": 112,
-      "fecha": "2026-11-28",
-      "home": "Torino",
-      "home_id": 239,
-      "liga": "ita.1"
-    },
-    {
-      "away": "Newcastle United",
-      "away_id": 361,
-      "fecha": "2026-11-29",
-      "home": "Brighton & Hove Albion",
-      "home_id": 331,
-      "liga": "eng.1"
-    },
-    {
-      "away": "Hull City",
-      "away_id": 306,
-      "fecha": "2026-11-29",
-      "home": "Crystal Palace",
-      "home_id": 384,
-      "liga": "eng.1"
-    },
-    {
-      "away": "AFC Bournemouth",
-      "away_id": 349,
-      "fecha": "2026-11-29",
-      "home": "Fulham",
-      "home_id": 370,
-      "liga": "eng.1"
-    },
-    {
-      "away": "Tottenham Hotspur",
-      "away_id": 367,
-      "fecha": "2026-11-29",
-      "home": "Sunderland",
-      "home_id": 366,
-      "liga": "eng.1"
-    },
-    {
-      "away": "Osasuna",
-      "away_id": 97,
-      "fecha": "2026-11-29",
-      "home": "Valencia",
-      "home_id": 94,
-      "liga": "esp.1"
-    },
-    {
-      "away": "Villarreal",
-      "away_id": 102,
-      "fecha": "2026-11-29",
-      "home": "Celta Vigo",
-      "home_id": 85,
-      "liga": "esp.1"
-    },
-    {
-      "away": "Sevilla",
-      "away_id": 243,
-      "fecha": "2026-11-29",
-      "home": "Real Sociedad",
-      "home_id": 89,
-      "liga": "esp.1"
-    },
-    {
-      "away": "RB Leipzig",
-      "away_id": 11420,
-      "fecha": "2026-11-29",
-      "home": "SC Freiburg",
-      "home_id": 126,
-      "liga": "ger.1"
-    },
-    {
-      "away": "FC Augsburg",
-      "away_id": 3841,
-      "fecha": "2026-11-29",
-      "home": "TSG Hoffenheim",
-      "home_id": 7911,
-      "liga": "ger.1"
-    },
-    {
-      "away": "Fiorentina",
-      "away_id": 109,
-      "fecha": "2026-11-29",
-      "home": "Udinese",
-      "home_id": 118,
-      "liga": "ita.1"
-    },
-    {
-      "away": "Monza",
-      "away_id": 4007,
-      "fecha": "2026-11-29",
-      "home": "AS Roma",
-      "home_id": 104,
-      "liga": "ita.1"
-    }
-  ],
-  "semana": 2
+  {
+   "away": "Coventry City",
+   "away_id": 388,
+   "fecha": "2026-11-28",
+   "home": "Leeds United",
+   "home_id": 357,
+   "liga": "eng.1"
+  },
+  {
+   "away": "Aston Villa",
+   "away_id": 362,
+   "fecha": "2026-11-28",
+   "home": "Ipswich Town",
+   "home_id": 373,
+   "liga": "eng.1"
+  },
+  {
+   "away": "Rayo Vallecano",
+   "away_id": 101,
+   "fecha": "2026-11-28",
+   "home": "Real Betis",
+   "home_id": 244,
+   "liga": "esp.1"
+  },
+  {
+   "away": "Athletic Club",
+   "away_id": 93,
+   "fecha": "2026-11-28",
+   "home": "Málaga",
+   "home_id": 99,
+   "liga": "esp.1"
+  },
+  {
+   "away": "SV Elversberg",
+   "away_id": 10388,
+   "fecha": "2026-11-28",
+   "home": "FC Cologne",
+   "home_id": 122,
+   "liga": "ger.1"
+  },
+  {
+   "away": "1. FC Union Berlin",
+   "away_id": 598,
+   "fecha": "2026-11-28",
+   "home": "Mainz",
+   "home_id": 2950,
+   "liga": "ger.1"
+  },
+  {
+   "away": "Schalke 04",
+   "away_id": 133,
+   "fecha": "2026-11-28",
+   "home": "SC Paderborn 07",
+   "home_id": 3307,
+   "liga": "ger.1"
+  },
+  {
+   "away": "Parma",
+   "away_id": 115,
+   "fecha": "2026-11-28",
+   "home": "Frosinone",
+   "home_id": 4057,
+   "liga": "ita.1"
+  },
+  {
+   "away": "Lazio",
+   "away_id": 112,
+   "fecha": "2026-11-28",
+   "home": "Torino",
+   "home_id": 239,
+   "liga": "ita.1"
+  },
+  {
+   "away": "Newcastle United",
+   "away_id": 361,
+   "fecha": "2026-11-29",
+   "home": "Brighton & Hove Albion",
+   "home_id": 331,
+   "liga": "eng.1"
+  },
+  {
+   "away": "Hull City",
+   "away_id": 306,
+   "fecha": "2026-11-29",
+   "home": "Crystal Palace",
+   "home_id": 384,
+   "liga": "eng.1"
+  },
+  {
+   "away": "AFC Bournemouth",
+   "away_id": 349,
+   "fecha": "2026-11-29",
+   "home": "Fulham",
+   "home_id": 370,
+   "liga": "eng.1"
+  },
+  {
+   "away": "Tottenham Hotspur",
+   "away_id": 367,
+   "fecha": "2026-11-29",
+   "home": "Sunderland",
+   "home_id": 366,
+   "liga": "eng.1"
+  },
+  {
+   "away": "Osasuna",
+   "away_id": 97,
+   "fecha": "2026-11-29",
+   "home": "Valencia",
+   "home_id": 94,
+   "liga": "esp.1"
+  },
+  {
+   "away": "Villarreal",
+   "away_id": 102,
+   "fecha": "2026-11-29",
+   "home": "Celta Vigo",
+   "home_id": 85,
+   "liga": "esp.1"
+  },
+  {
+   "away": "Sevilla",
+   "away_id": 243,
+   "fecha": "2026-11-29",
+   "home": "Real Sociedad",
+   "home_id": 89,
+   "liga": "esp.1"
+  },
+  {
+   "away": "RB Leipzig",
+   "away_id": 11420,
+   "fecha": "2026-11-29",
+   "home": "SC Freiburg",
+   "home_id": 126,
+   "liga": "ger.1"
+  },
+  {
+   "away": "FC Augsburg",
+   "away_id": 3841,
+   "fecha": "2026-11-29",
+   "home": "TSG Hoffenheim",
+   "home_id": 7911,
+   "liga": "ger.1"
+  },
+  {
+   "away": "Fiorentina",
+   "away_id": 109,
+   "fecha": "2026-11-29",
+   "home": "Udinese",
+   "home_id": 118,
+   "liga": "ita.1"
+  },
+  {
+   "away": "Monza",
+   "away_id": 4007,
+   "fecha": "2026-11-29",
+   "home": "AS Roma",
+   "home_id": 104,
+   "liga": "ita.1"
+  }
+ ],
+ "semana": 2
 }
