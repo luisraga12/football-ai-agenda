@@ -66,7 +66,7 @@ td.num,th.num{text-align:right}
 .recline .sin{color:var(--muted)}
 footer{margin-top:40px;color:var(--muted);font-size:.86rem}
 .error{color:var(--live)}
-.stats h4{margin:18px 0 4px;font-size:1rem} .radio-head{display:flex;justify-content:space-between;font-size:.85rem;color:var(--muted);margin-top:8px} .radio-metric{margin:10px 0} .radio-row{display:grid;grid-template-columns:52px 1fr 1fr 52px;gap:8px;align-items:center} .radio-num{font-weight:700;text-align:center;font-variant-numeric:tabular-nums} .radio-track{height:8px;background:var(--surface-2);border-radius:99px;overflow:hidden} .radio-track-r .radio-fill{margin-left:auto} .radio-fill{height:100%;background:var(--accent)} .radio-track-r .radio-fill{background:var(--blue)} .radio-cap{text-align:center;color:var(--muted);font-size:.82rem;margin-top:4px} .detail-pending{margin-top:10px;color:var(--muted);font-size:.9rem} .detail-note{margin-top:10px;color:var(--muted);font-size:.82rem} .xi h4{margin:18px 0 4px;font-size:1rem} .pitch-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px} .pitch{background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:12px} .pitch-head{display:flex;justify-content:space-between;gap:8px;font-size:.85rem;margin-bottom:6px} .pitch-head span{color:var(--muted);text-align:right} .pitch-row{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:8px 0} .pitch-player{display:flex;flex-direction:column;align-items:center;gap:3px;min-width:64px;max-width:110px;text-align:center} .pitch-dot{width:26px;height:26px;border-radius:50%;background:var(--accent);color:#0b1206;font-weight:800;font-size:.72rem;display:flex;align-items:center;justify-content:center} .pitch-name{font-size:.8rem;line-height:1.2} .pitch-note{color:var(--muted);font-size:.8rem;margin:8px 0 0} .detail-list{margin:6px 0 0;padding-left:18px} .detail-list li{font-size:.85rem;line-height:1.5} @media (max-width:640px){.pitch-grid{grid-template-columns:1fr}} @media (max-width:640px){.big{grid-template-columns:1fr}.kv{grid-template-columns:1fr;gap:2px}}
+.stats h4{margin:18px 0 4px;font-size:1rem} .radio-head{display:flex;justify-content:space-between;font-size:.85rem;color:var(--muted);margin-top:8px} .radio-metric{margin:10px 0} .radio-row{display:grid;grid-template-columns:52px 1fr 1fr 52px;gap:8px;align-items:center} .radio-num{font-weight:700;text-align:center;font-variant-numeric:tabular-nums} .radio-track{height:8px;background:var(--surface-2);border-radius:99px;overflow:hidden} .radio-track-r .radio-fill{margin-left:auto} .radio-fill{height:100%;background:var(--accent)} .radio-track-r .radio-fill{background:var(--blue)} .radio-cap{text-align:center;color:var(--muted);font-size:.82rem;margin-top:4px} .detail-pending{margin-top:10px;color:var(--muted);font-size:.9rem} .detail-note{margin-top:10px;color:var(--muted);font-size:.82rem} .xi h4{margin:18px 0 4px;font-size:1rem} .pitch-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px} .pitch{background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:12px} .pitch-head{display:flex;justify-content:space-between;gap:8px;font-size:.85rem;margin-bottom:6px} .pitch-head span{color:var(--muted);text-align:right} .pitch-row{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:8px 0} .pitch-player{display:flex;flex-direction:column;align-items:center;gap:3px;min-width:64px;max-width:110px;text-align:center} .pitch-dot{width:26px;height:26px;border-radius:50%;background:var(--accent);color:#0b1206;font-weight:800;font-size:.72rem;display:flex;align-items:center;justify-content:center} .pitch-name{font-size:.8rem;line-height:1.2} .pitch-note{color:var(--muted);font-size:.8rem;margin:8px 0 0} .detail-list{margin:6px 0 0;padding-left:18px} .detail-list li{font-size:.85rem;line-height:1.5} .dias{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px} .dias button{background:var(--surface);border:1px solid var(--line);color:var(--ink-2);border-radius:999px;padding:8px 14px;font-weight:800;font-family:"Manrope",sans-serif;cursor:pointer;font-size:.9rem} .dias button.activo{background:var(--accent);color:#0B1206;border-color:var(--accent)} @media (max-width:640px){.pitch-grid{grid-template-columns:1fr}} @media (max-width:640px){.big{grid-template-columns:1fr}.kv{grid-template-columns:1fr;gap:2px}}
 </style>
 </head>
 <body>
@@ -82,7 +82,7 @@ footer{margin-top:40px;color:var(--muted);font-size:.86rem}
 <div class="mini"><span class="lbl">Marcador</span><span id="miniPre">…</span><span id="miniVivo">…</span><span id="miniTotal" class="muted small"></span></div>
 </section>
 
-<section class="sec" id="secPre">
+<nav class="dias" id="dias" aria-label="Filtrar por día"></nav><section class="sec" id="secPre">
 <h2>1 · Pre-partido <span class="count" id="countPre"></span></h2>
 <p>Cada tarjeta muestra el pick de la recomendación (con ajuste del XI oficial cuando la alineación está publicada), con un punto de su color: verde (prob. ≥ 60% y EV ≥ +5%), amarillo (30–60% y EV ≥ +5%) o rojo (prob. < 30% o EV < +5%); debajo, la línea 1X2. El detalle trae la recomendación completa con momio, probabilidad y EV; si no cumple la regla, se queda en rojo con «No cumple la regla».</p>
 <div class="grid" id="gridPre"></div>
@@ -121,7 +121,7 @@ footer{margin-top:40px;color:var(--muted);font-size:.86rem}
 <div class="modal" id="modal"><div class="modal-card" id="modalCard"></div></div>
 
 <script>
-var RES = null, PARLAY = null, MAPAS = null, XI_PROB = {};
+var RES = null, PARLAY = null, MAPAS = null, XI_PROB = {}, DIA_SEL = 'todos';
 var DIAS = ['dom','lun','mar','mié','jue','vie','sáb'];
 var MESES = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
 
@@ -198,21 +198,21 @@ function cardVivo(p, i){
     '<button class="btn" onclick="abrirDetalle(' + i + ')">Ver detalle</button></article>';
 }
 
-function renderPre(){
+function enDia(p){ return DIA_SEL === 'todos' || p.fecha === DIA_SEL; } function diasSemana(){ var seen = {}; var lista = []; RES.partidos.forEach(function(p){ if(!p.fecha || seen[p.fecha]) return; seen[p.fecha] = true; lista.push(p.fecha); }); lista.sort(); return lista; } function diaHoy(){ var hoy = new Date(); var iso = hoy.getFullYear() + '-' + ('0' + (hoy.getMonth() + 1)).slice(-2) + '-' + ('0' + hoy.getDate()).slice(-2); return diasSemana().indexOf(iso) >= 0 ? iso : 'todos'; } function renderDias(){ var el = document.getElementById('dias'); if(!el || !RES) return; var h = '<button data-dia="todos" class="' + (DIA_SEL === 'todos' ? 'activo' : '') + '" onclick="selDia(\'todos\')">Todos</button>'; diasSemana().forEach(function(f){ h += '<button data-dia="' + esc(f) + '" class="' + (DIA_SEL === f ? 'activo' : '') + '" onclick="selDia(\'' + esc(f) + '\')">' + esc(fechaCorta(f)) + '</button>'; }); el.innerHTML = h; } function selDia(d){ DIA_SEL = d; renderDias(); renderFuentes(); renderPre(); renderVivo(); renderResultado(); } function renderPre(){
   var items = [];
-  RES.partidos.forEach(function(p, idx){ if(p.estado === 'pre') items.push({p: p, i: idx}); });
+  RES.partidos.forEach(function(p, idx){ if(p.estado === 'pre' && enDia(p)) items.push({p: p, i: idx}); });
   document.getElementById('gridPre').innerHTML = items.length ? items.map(function(o){ return cardPre(o.p, o.i); }).join('') : '<p class="muted">Sin partidos pre-partido ahora mismo.</p>';
 }
 
 function renderVivo(){
   var items = [];
-  RES.partidos.forEach(function(p, idx){ if(p.estado === 'in') items.push({p: p, i: idx}); });
+  RES.partidos.forEach(function(p, idx){ if(p.estado === 'in' && enDia(p)) items.push({p: p, i: idx}); });
   document.getElementById('gridVivo').innerHTML = items.length ? items.map(function(o){ return cardVivo(o.p, o.i); }).join('') : '<p class="muted">Sin partidos en vivo ahora mismo.</p>';
 }
 
 function renderResultado(){
   var posts = [];
-  RES.partidos.forEach(function(p, idx){ if(p.estado === 'post') posts.push({p: p, i: idx}); });
+  RES.partidos.forEach(function(p, idx){ if(p.estado === 'post' && enDia(p)) posts.push({p: p, i: idx}); });
   document.getElementById('countRes').textContent = '· ' + posts.length + ' terminados';
   if(!posts.length){ document.getElementById('tablaResWrap').innerHTML = '<p class="muted">Sin partidos terminados todavía.</p>'; return; }
   var h = '<div style="overflow-x:auto"><table><thead><tr><th>Partido</th><th>Fecha</th><th>Marcador</th><th>Recomendación</th><th>Resultado</th><th></th></tr></thead><tbody>';
@@ -306,8 +306,8 @@ function renderFuentes(){
   RES.partidos.forEach(function(p){ if(p.estado === 'pre') nPre++; else if(p.estado === 'in') nIn++; else if(p.estado === 'post') nPost++; });
   document.getElementById('fuentes').textContent = 'Datos: data/resultados.json · fecha de cálculo ' + (RES.fecha_calculo || '—') + ' · generado ' + fmtFechaHoraMX(RES.generado_en_mx) + ' · ' + RES.partidos.length + ' partidos (' + nPre + ' pre-partido · ' + nIn + ' en vivo · ' + nPost + ' terminados) · Parlay del día: ' + fechaCorta(PARLAY.fecha) + ', ' + (PARLAY.piernas ? PARLAY.piernas.length : 0) + ' piernas. · Stats: data/vivo.json (en vivo) y data/<config>/estadisticas.json (terminado) · XI: data/fuerza_xi.json y data/<config>/ev.json · vivo: ' + (Array.isArray(VIVO) ? VIVO.length : 0) + ' partidos en data/vivo.json';
   document.getElementById('miniTotal').textContent = RES.partidos.length + ' partidos · ' + nPre + ' pre · ' + nIn + ' en vivo · ' + nPost + ' terminados';
-  document.getElementById('countPre').textContent = '· ' + nPre + ' por jugar';
-  document.getElementById('countVivo').textContent = '· ' + nIn + ' en juego';
+  document.getElementById('countPre').textContent = '· ' + RES.partidos.filter(function(p){ return p.estado === 'pre' && enDia(p); }).length + ' por jugar';
+  document.getElementById('countVivo').textContent = '· ' + RES.partidos.filter(function(p){ return p.estado === 'in' && enDia(p); }).length + ' en juego';
 }
 
 function abrirDetalle(i){
@@ -363,7 +363,7 @@ function cargar(){
     fetch('data/parlay-del-dia.json', {cache:'no-store'}).then(function(r){ if(!r.ok) throw new Error('parlay-del-dia.json: HTTP ' + r.status); return r.json(); }),    fetchJSON('data/vivo.json'),    fetchJSON('data/semana-2/estadisticas.json'),    fetchJSON('data/semana-2-entresemana/estadisticas.json'), fetchJSON('data/fuerza_xi.json'), fetchJSON('data/semana-2/ev.json'), fetchJSON('data/semana-2-entresemana/ev.json'), fetchJSON('data/mapas.json'), fetchJSON('data/semana-2/alineacion-probable.json'), fetchJSON('data/semana-2-entresemana/alineacion-probable.json')
   ]).then(function(res){
     RES = res[0]; PARLAY = res[1]; VIVO = (res[2] && Array.isArray(res[2].partidos)) ? res[2].partidos : []; ESTS = {'semana-2': res[3], 'entresemana': res[4]}; FUERZA_XI = (res[5] && res[5].partidos)? res[5].partidos: {}; EVS = {'semana-2': (res[6] && res[6].partidos)? res[6].partidos: null, 'entresemana': (res[7] && res[7].partidos)? res[7].partidos: null};
-    MAPAS = res[8] || null; XI_PROB = {}; [res[9], res[10]].forEach(function(doc){ var lista = (doc && doc.partidos) ? doc.partidos : (Array.isArray(doc) ? doc : []); lista.forEach(function(e){ if(!e || !e.local || !e.visita || !e.local_xi || !e.visita_xi) return; XI_PROB[slug(e.local + '-vs-' + e.visita)] = {local: e.local_xi, visita: e.visita_xi}; }); }); renderFuentes(); renderPre(); renderVivo(); renderResultado(); renderParlay(); renderMarcador();
+    MAPAS = res[8] || null; XI_PROB = {}; [res[9], res[10]].forEach(function(doc){ var lista = (doc && doc.partidos) ? doc.partidos : (Array.isArray(doc) ? doc : []); lista.forEach(function(e){ if(!e || !e.local || !e.visita || !e.local_xi || !e.visita_xi) return; XI_PROB[slug(e.local + '-vs-' + e.visita)] = {local: e.local_xi, visita: e.visita_xi}; }); }); DIA_SEL = diaHoy(); renderDias(); renderFuentes(); renderPre(); renderVivo(); renderResultado(); renderParlay(); renderMarcador();
   }).catch(function(e){ mostrarError(e.message || String(e)); });
 }
 
