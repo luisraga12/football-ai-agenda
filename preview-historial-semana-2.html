@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cómo le fue al modelo — Semana-2 (corrección) · Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Manrope:wght@400;600;700;800&family=Archivo+Narrow:wght@600;700&display=swap" rel="stylesheet" />
+<style>
+:root{--bg:#07090D;--surface:#0D1117;--surface-2:#121826;--ink:#F8FAFC;--ink-2:#CBD5E1;--muted:#94A3B8;--line:#28331F;--accent:#A3E635;--blue:#22D3EE;--live:#FF5470;--amber:#FACC15;--radius:16px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,sans-serif;font-size:16px;line-height:1.55}
+h1,h2,h3{font-family:"Archivo",system-ui,sans-serif;line-height:1.08;margin:0}
+a{color:var(--accent)}
+.wrap{max-width:1020px;margin:0 auto;padding:0 18px 64px}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(163,230,53,.12);border:1px solid rgba(163,230,53,.4);color:var(--accent);padding:6px 12px;border-radius:999px;font-weight:800;font-size:.8rem;letter-spacing:.04em}
+.badge.warn{background:rgba(250,204,21,.1);border-color:rgba(250,204,21,.4);color:var(--amber)}
+header{padding:34px 0 10px}
+header h1{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:900;letter-spacing:-.02em}
+header p.sub{color:var(--ink-2);max-width:64ch;margin-top:10px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;margin-top:18px}
+.card h2{font-size:1.25rem;margin-bottom:8px}
+.muted{color:var(--muted)}
+.small{font-size:.86rem}
+code{background:var(--surface-2);padding:1px 6px;border-radius:6px}
+ul{margin:8px 0;padding-left:20px}
+li{margin:4px 0}
+.note{border-left:3px solid var(--amber);background:rgba(250,204,21,.06);padding:10px 12px;border-radius:0 10px 10px 0;margin-top:12px}
+.okbox{border-left:3px solid var(--accent);background:rgba(163,230,53,.06);padding:10px 12px;border-radius:0 10px 10px 0;margin-top:12px}
+/* --- El Historial, con el CSS exacto de index.html (P3-e) --- */
+.historial h2{font-size:1.15rem;margin-bottom:6px}
+.historial p{margin:4px 0}
+.historial-fecha{color:var(--muted);font-size:.84rem}
+.historial-scroll{overflow-x:auto;margin:0 -6px;padding:0 6px}
+.historial-tabla{width:100%;border-collapse:collapse;font-size:.86rem;min-width:640px}
+.historial-tabla th,.historial-tabla td{border-bottom:1px solid var(--line);padding:7px 8px;text-align:left}
+.historial-tabla th{color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}
+.historial-tabla td:first-child{white-space:nowrap}
+/* --- Marco de teléfono 360 px --- */
+.phone{width:360px;max-width:100%;margin:14px auto 0;border:2px solid #334155;border-radius:28px;padding:16px 10px 20px;background:#0B0F16}
+.phone-label{text-align:center;color:var(--muted);font-size:.8rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
+.phone .historial h2{font-size:1.05rem}
+.phone .historial p{font-size:.9rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<span class="badge">PREVIEW · PARA REVISIÓN DEL JEFE</span>
+<h1>Cómo le fue al modelo — Semana-2 (corrección)</h1>
+<p class="sub">La tabla debe reflejar los <b>40 partidos reales</b> del fin de semana, no «0 de 20». Este preview muestra la tabla corregida y su verificación móvil a 360 px. Archivos corregidos: <code>data/semana-2/historial.json</code> y <code>data/semana-2/historial.html</code> en <b>empleado-2</b>. El fragmento lo coloca el jefe en <code>index.html</code> entre los marcadores; yo no toco <code>index.html</code>.</p>
+<p class="small muted">Empleado 2 · 27 nov 2026 · Rama <code>empleado-2</code> · Conteo con las reglas de <code>scripts/calcular_historial.py</code>.</p>
+</header>
+
+<section class="card">
+<h2>Qué estaba mal</h2>
+<ul>
+<li><code>data/semana-2/historial.json</code> tenía <b>fecha de cálculo 2026-11-26</b> (antes de que se jugara el fin de semana) y <b>n = 20</b>: solo los 20 partidos originales (4 por liga × 5 ligas).</li>
+<li>El 27 nov E1 agregó <b>20 partidos más</b> al fin de semana (PR #94, «20 partidos en main»): <code>ev.json</code> y la tabla Poisson tienen <b>40</b>. El historial nunca se recalculó: los 20 nuevos no existen en él.</li>
+<li>Los <b>4 terminados del viernes</b> (Bremen 3-3, Venezia 0-0, Forest 3-2, Levante 1-3) seguían con <code>fuente_resultado: null</code> y resultado «sin resultado», aunque sus resultados están en <code>data/semana-2/raw/</code> (scoreboards 20261127) y en <code>vivo.json</code>. El script solo cuenta partidos con resultado, así que el conteo era <b>0/0</b>.</li>
+<li>Por eso la página mostraba <b>«0 de 20»</b>: 0 aciertos de 20 partidos, ninguno con resultado.</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>Qué se corrigió</h2>
+<ul>
+<li><b>n = 40</b> (los 40 de <code>ev.json</code> / <code>tabla-poisson-semana-2.md</code>) · <b>con resultado: 4</b> · <b>sin resultado: 36</b> · fecha de cálculo <b>2026-11-27 (México)</b>.</li>
+<li><b>Favorito 1X2: 0/4 (0.0%)</b> — los 4 favoritos fallaron: 2 empates (Bremen y Venezia), Forest ganó cuando el favorito era Chelsea y Levante perdió cuando el favorito era el local. <b>Más 2.5: 3/3 · Menos 2.5: 1/1 · BTTS: 2/2 · No-BTTS: 1/2.</b></li>
+<li><b>Empates: 2 de 4</b> (favorito empate: 0). El modelo casi no caza el empate: nunca lo pone de favorito y los empates lo tumban.</li>
+<li>Por liga (de los 40): Bundesliga 0/9 · Serie A 0/8 · Premier League 0/10 · LaLiga 0/9 · Liga MX 0/4.</li>
+<li>Los 4 con resultado (fuente: <code>raw</code>): Bremen 3-3 (X), favorito 1, Más 2.5 acierto, BTTS acierto · Venezia 0-0 (X), favorito 2, Menos 2.5 acierto, No-BTTS acierto · Forest 3-2 (1), favorito 2, Más 2.5 acierto, No-BTTS fallo · Levante 1-3 (2), favorito 1, Más 2.5 acierto, BTTS acierto.</li>
+<li>Reglas aplicadas, las del script: favorito = mayor P · Más 2.5 solo si P(+2.5) &gt; 50% · BTTS solo si P &gt; 50% · resultados solo de <code>raw/</code> con status completed.</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>La tabla corregida (escritorio)</h2>
+<p class="small muted">Fragmento exacto como lo genera <code>calcular_historial.py</code> (el <code>&lt;div class="historial-scroll"&gt;</code> es el que pone <code>index.html</code> al colocarlo).</p>
+<div id="frag-desktop"><!-- HISTORIAL-INICIO:semana-2 -->
+<section class="historial">
+<h2>Cómo le fue al modelo — semana-2</h2>
+<p>Favorito 1X2: <strong>0/4 (0.0%)</strong>
+· Más 2.5: 3/3
+· Menos 2.5: 1/1
+· BTTS: 2/2
+· No-BTTS: 1/2</p>
+<p>Empates: 2 de 4 (favorito empate: 0)</p>
+<p class="historial-fecha">Revisión del lunes, fecha de cálculo 2026-11-27 (México).</p>
+<div class="historial-scroll"><table class="historial-tabla">
+<tr><th>Fecha</th><th>Liga</th><th>Partido</th><th>Resultado</th><th>1X2</th><th>Total</th><th>BTTS</th></tr>
+<tr><td>Vie 27 nov</td><td>Bundesliga</td><td>Werder Bremen vs Borussia Mönchengladbach</td><td>3-3 (X)</td><td>×</td><td>acierto</td><td>acierto</td></tr>
+<tr><td>Vie 27 nov</td><td>Serie A</td><td>Venezia vs Bologna</td><td>0-0 (X)</td><td>×</td><td>acierto</td><td>acierto</td></tr>
+<tr><td>Vie 27 nov</td><td>Premier League</td><td>Nottingham Forest vs Chelsea</td><td>3-2 (1)</td><td>×</td><td>acierto</td><td>fallo</td></tr>
+<tr><td>Vie 27 nov</td><td>LaLiga</td><td>Levante vs Racing Santander</td><td>1-3 (2)</td><td>×</td><td>acierto</td><td>acierto</td></tr>
+<tr><td>Sáb 28 nov</td><td>LaLiga</td><td>Real Betis vs Rayo Vallecano</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Sáb 28 nov</td><td>Serie A</td><td>Frosinone vs Parma</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Sáb 28 nov</td><td>Bundesliga</td><td>Hamburg SV vs Bayern Munich</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Sáb 28 nov</td><td>Bundesliga</td><td>FC Cologne vs SV Elversberg</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Sáb 28 nov</td><td>Bundesliga</td><td>Mainz vs 1. FC Union Berlin</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Sáb 28 nov</td><td>Bundesliga</td><td>SC Paderborn 07 vs Schalke 04</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Sáb 28 nov</td><td>Premier League</td><td>Manchester United vs Brentford</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Sáb 28 nov</td><td>Premier League</td><td>Leeds United vs Coventry City</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Sáb 28 nov</td><td>LaLiga</td><td>Málaga vs Athletic Club</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Sáb 28 nov</td><td>Serie A</td><td>Torino vs Lazio</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Sáb 28 nov</td><td>LaLiga</td><td>Elche vs Atlético Madrid</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Sáb 28 nov</td><td>Bundesliga</td><td>VfB Stuttgart vs Eintracht Frankfurt</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Sáb 28 nov</td><td>Premier League</td><td>Ipswich Town vs Aston Villa</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Sáb 28 nov</td><td>Serie A</td><td>Internazionale vs Genoa</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Sáb 28 nov</td><td>LaLiga</td><td>Real Madrid vs Alavés</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Sáb 28 nov</td><td>Liga MX</td><td>Atlas vs Toluca</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Sáb 28 nov</td><td>Liga MX</td><td>América vs Monterrey</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Dom 29 nov</td><td>Serie A</td><td>Udinese vs Fiorentina</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Dom 29 nov</td><td>Premier League</td><td>Everton vs Liverpool</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Dom 29 nov</td><td>LaLiga</td><td>Valencia vs Osasuna</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Dom 29 nov</td><td>Serie A</td><td>Sassuolo vs Napoli</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Dom 29 nov</td><td>Premier League</td><td>Brighton &amp; Hove Albion vs Newcastle United</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Dom 29 nov</td><td>Premier League</td><td>Crystal Palace vs Hull City</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Dom 29 nov</td><td>Premier League</td><td>Fulham vs AFC Bournemouth</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Dom 29 nov</td><td>Premier League</td><td>Sunderland vs Tottenham Hotspur</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Dom 29 nov</td><td>Bundesliga</td><td>SC Freiburg vs RB Leipzig</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Dom 29 nov</td><td>LaLiga</td><td>Deportivo vs Barcelona</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Dom 29 nov</td><td>Premier League</td><td>Arsenal vs Manchester City</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Dom 29 nov</td><td>Bundesliga</td><td>TSG Hoffenheim vs FC Augsburg</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Dom 29 nov</td><td>Serie A</td><td>AS Roma vs Monza</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Dom 29 nov</td><td>LaLiga</td><td>Celta Vigo vs Villarreal</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Dom 29 nov</td><td>Bundesliga</td><td>Borussia Dortmund vs Bayer Leverkusen</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Dom 29 nov</td><td>Serie A</td><td>Como vs Juventus</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Dom 29 nov</td><td>LaLiga</td><td>Real Sociedad vs Sevilla</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Dom 29 nov</td><td>Liga MX</td><td>Guadalajara vs Pachuca</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Dom 29 nov</td><td>Liga MX</td><td>Cruz Azul vs León</td><td>sin resultado</td><td>—</td><td>—</td><td>—</td></tr>
+</table></div>
+</section>
+<!-- HISTORIAL-FIN:semana-2 --></div>
+</section>
+
+<section class="card">
+<h2>Verificación móvil — 360 px (P3-e)</h2>
+<p>El mismo fragmento, dentro de un marco de <b>360 px</b> de ancho (ancho de teléfono), con el CSS exacto de <code>index.html</code>: la tabla tiene <code>min-width: 640px</code> y va dentro de <code>.historial-scroll</code> (<code>overflow-x: auto</code>), así que en teléfono se desplaza horizontalmente en lugar de aplastarse.</p>
+<div class="phone">
+<div class="phone-label">Teléfono · 360 px</div>
+<div id="frag-phone"></div>
+</div>
+<div class="okbox"><b>Qué se verificó en este preview (escritorio):</b> la tabla no ensancha la página; las columnas Fecha, Liga, Partido y Resultado se leen sin desplazar; 1X2, Total y BTTS se alcanzan con scroll horizontal dentro del marco; ningún texto se corta ni se parte en las celdas; el resumen (0/4…) y la fecha se leen completos sin scroll.</div>
+<div class="note"><b>Qué queda para el teléfono de Luis (mañana):</b> la verificación final en un teléfono real — abrir la página en el móvil, comprobar el scroll horizontal de la tabla del Historial con el dedo, que nada se corte y que la página no se mueva de lado. Este preview a 360 px no sustituye esa prueba.</div>
+</section>
+
+<section class="card">
+<h2>Archivos y verificación</h2>
+<ul>
+<li>Preview (este archivo): <code>preview-historial-semana-2.html</code> en empleado-2, verificado en escritorio vía githack.</li>
+<li>Corrección aplicada: <code>data/semana-2/historial.json</code> y <code>data/semana-2/historial.html</code> en empleado-2 (mismo contenido que este preview, generado con las reglas de <code>calcular_historial.py</code>).</li>
+<li>El fragmento lo coloca el jefe en <code>index.html</code> entre los marcadores <code>HISTORIAL-INICIO:semana-2</code> / <code>HISTORIAL-FIN:semana-2</code>; yo no toco <code>index.html</code>.</li>
+<li>La tabla se actualiza sola conforme se jueguen sábado y domingo: cada partido terminado entra al conteo con su resultado real de <code>raw/</code> (hay que volver a correr el cálculo; si no, el «sin resultado» vuelve a quedarse viejo).</li>
+</ul>
+</section>
+</div>
+<script>
+var src=document.querySelector("#frag-desktop section.historial");
+if(src){document.getElementById("frag-phone").appendChild(src.cloneNode(true));}
+</script>
+</body>
+</html>
