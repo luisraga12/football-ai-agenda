@@ -5,7 +5,26 @@ y Marcador (pre-partido vs en vivo) para las nuevas funcionalidades
 
 Lee los dos ev.json (semana-2 y entresemana) + vivo.json + el log en vivo
 (data/live-log/*.jsonl, si existe). NO inventa nada:
-- Sin momios o sin EV positivo no hay recomendación ("Sin recomendación").
+- REGLA DE RECOMENDACIÓN (Luis, 28 nov 11:16, corregida 11:21): el pick
+  con MÁS PROBABILIDAD entre los que tienen VALOR (EV ≥ +5%), buscando
+  en TODOS los mercados (1X2, Más/Menos X.5, Spread, BTTS). Color del
+  semáforo (Luis 11:20, 11:35, 11:37-11:39, calibre final): VERDE =
+  poco (o muy poco) riesgo y buena ganancia (prob ≥ 60% y EV ≥ +5%);
+  AMARILLO = un 50/50 (30% ≤ prob < 60% y EV ≥ +5%); ROJO = los dos
+  extremos: mucho riesgo pero mucha ganancia (prob < 30%, aunque tenga
+  el EV más alto) o muy poco riesgo aparente y poca ganancia (EV < +5%,
+  como el favorito a momio bajo con EV negativo). Si ningún pick llega
+  a EV +5%, la recomendación NO desaparece: es el pick de mayor EV
+  disponible en ROJO marcado "No cumple la regla", y Luis decide si
+  apuesta. El mejor valor (EV+ máximo) queda como señal aparte, con
+  su color por riesgo/ganancia. ALTERNATIVA AMARILLA (Luis 11:33,
+  corregida 11:35): además se publica el pick arriesgado que vale la
+  pena por lo que se gana: mayor EV entre los de EV ≥ +5% y 30% ≤ prob
+  < 60%, distinto de la recomendación y con EV ≥ +50% (el premio debe
+  justificar el riesgo). En el Inter–Genoa la amarilla es el EMPATE
+  (30.7% @5.5, EV +68.8%), no la Visita @9.0 (22.6%: rojo); la doble
+  oportunidad a favor del Genoa sería otra amarilla, pero hoy no hay
+  momio para ella en los datos (pendiente: ver si BSD la trae).
 - Sin resultado final publicado el acierto es null ("Pendiente").
 - Sin snapshots en el log en vivo, la columna en vivo es "sin datos".
 
@@ -158,6 +177,93 @@ def _prob_1x2(m):
     return out if len(out) == 3 else None
 
 
+def _linea_txt(linea):
+    return ("%.1f" % float(linea)).rstrip("0").rstrip(".")
+
+
+def _color_por_prob_ev(prob, ev):
+    """Color del semáforo por riesgo/ganancia (calibre final de Luis,
+    28 nov 11:37-11:39, con el ejemplo Inter–Genoa):
+    - VERDE: poco (o muy poco) riesgo y buena ganancia: prob ≥ 60% y
+      EV ≥ +5%.
+    - AMARILLO: un 50/50 (la zona incierta, donde puede pasar o no):
+      30% ≤ prob < 60% y EV ≥ +5%.
+    - ROJO: los dos extremos: (a) mucho riesgo pero mucha ganancia
+      (prob < 30%, longshot, aunque tenga el EV más alto) o (b) muy
+      poco riesgo APARENTE y poca ganancia (EV < +5%, como el favorito
+      a momio bajo: se arriesga mucho para ganar poco y el EV es
+      negativo; Luis: las de poco riesgo son las de mayor riesgo)."""
+    if ev < 0.05:
+        return "rojo"
+    if prob >= 60:
+        return "verde"
+    if prob >= 30:
+        return "amarillo"
+    return "rojo"
+
+
+def _candidatos(p):
+    """Todos los picks de todos los mercados con momio, EV y probabilidad
+    del modelo. Nombres idénticos a calcular_ev.py (y a _evaluar_pick):
+    1X2 Local/Empate/Visita; Total Más/Menos X.5; Spread local/visitante
+    ±X.5; BTTS Sí/No (solo cuando BSD trae sus momios; si no, momios y
+    EV son None y el pick no entra). Sin momio no hay EV: el pick no
+    entra (nada inventado)."""
+    mercados = p.get("mercados") or {}
+    picks = []
+
+    def agregar(mercado, nombre, momio, ev, prob):
+        if momio is None or ev is None or prob is None:
+            return
+        try:
+            momio = float(momio)
+            ev = float(ev)
+            prob = float(prob)
+        except (TypeError, ValueError):
+            return
+        picks.append({"mercado": mercado, "pick": nombre,
+                      "momio": momio, "ev": ev, "prob": prob})
+
+    x12 = mercados.get("1X2") or {}
+    if isinstance(x12.get("momios"), dict) and isinstance(x12.get("ev"), dict):
+        for nombre, mk, ek in (("Local", "home", "1"),
+                               ("Empate", "draw", "X"),
+                               ("Visita", "away", "2")):
+            momio = x12["momios"].get(mk)
+            evv = x12["ev"].get(ek)
+            prob = ((evv + 1) / momio * 100
+                    if momio and evv is not None else None)
+            agregar("1X2", nombre, momio, evv, prob)
+    tot = mercados.get("total") or {}
+    if isinstance(tot.get("momios"), dict) and isinstance(tot.get("ev"), dict):
+        linea = tot.get("linea")
+        p_over = tot.get("p_over")
+        if linea is not None and p_over is not None:
+            lt = _linea_txt(linea)
+            agregar("Total", f"Más {lt}", tot["momios"].get("over"),
+                    tot["ev"].get("mas"), p_over)
+            agregar("Total", f"Menos {lt}", tot["momios"].get("under"),
+                    tot["ev"].get("menos"), 100 - p_over)
+    spr = mercados.get("spread") or {}
+    if isinstance(spr.get("momios"), dict) and isinstance(spr.get("ev"), dict):
+        pc = spr.get("p_cubre_local")
+        hl = spr["momios"].get("home_linea")
+        al = spr["momios"].get("away_linea")
+        if pc is not None and hl is not None and al is not None:
+            agregar("Spread", f"Spread local {hl:+.1f}",
+                    spr["momios"].get("home"), spr["ev"].get("local"), pc)
+            agregar("Spread", f"Spread visitante {al:+.1f}",
+                    spr["momios"].get("away"), spr["ev"].get("visitante"),
+                    100 - pc)
+    btts = mercados.get("btts") or {}
+    if isinstance(btts.get("momios"), dict) and isinstance(btts.get("ev"), dict):
+        agregar("BTTS", "BTTS Sí", btts["momios"].get("si"),
+                btts["ev"].get("si"), btts.get("p_btts"))
+        agregar("BTTS", "BTTS No", btts["momios"].get("no"),
+                btts["ev"].get("no"), btts.get("p_no_btts"))
+    return picks
+
+
 def _evaluar_pick(pick, gl, ga):
     """True si el pick acertó con el marcador final, False si falló,
     None si el formato no se reconoce (nunca se inventa un acierto)."""
@@ -169,7 +275,7 @@ def _evaluar_pick(pick, gl, ga):
         linea = float(m.group(2).replace(",", "."))
         total = gl + ga
         return total > linea if m.group(1) == "Más" else total < linea
-    m = re.match(r"^Spread\s+(local|visita)\s+([+-]?\d+[.,]\d+)$", pick or "")
+    m = re.match(r"^Spread\s+(local|visita|visitante)\s+([+-]?\d+[.,]\d+)$", pick or "")
     if m:
         linea = float(m.group(2).replace(",", "."))
         margen = (gl - ga) if m.group(1) == "local" else (ga - gl)
@@ -241,23 +347,82 @@ def main():
                 ga = p["marcador"].get("visita")
             final = estado == "post" and gl is not None and ga is not None
 
-            pick = p.get("mejor_pick")
-            ev_pick = p.get("mejor_ev")
-            # Recomendación solo si el pick tiene valor (EV > 0).
-            if pick and ev_pick is not None and ev_pick > 0:
+            # REGLA FINAL (Luis 11:16 + 11:20 + 11:21, calibre final
+            # 11:37-11:39): la recomendación es el pick con MÁS
+            # PROBABILIDAD entre los que tienen VALOR (EV ≥ +5%), en
+            # TODOS los mercados. Color por riesgo/ganancia: VERDE poco
+            # riesgo y buena ganancia (prob ≥ 60% y EV ≥ +5%); AMARILLO
+            # un 50/50 (30% ≤ prob < 60% y EV ≥ +5%); ROJO los dos
+            # extremos (prob < 30% o EV < +5%). Si ningún pick llega a
+            # +5%, la recomendación NO desaparece: es el pick de mayor
+            # EV disponible en ROJO ("No cumple la regla"). El mejor
+            # valor (EV+ máximo) queda como señal aparte, con su color.
+            picks = _candidatos(p)
+            if not picks and p.get("mejor_pick") and p.get("mejor_ev") is not None \
+                    and p.get("mejor_decimal") is not None \
+                    and p.get("mejor_prob") is not None:
+                # Respaldo: ev.json viejo sin mercados (no debería pasar).
+                picks = [{"mercado": "1X2", "pick": p["mejor_pick"],
+                          "momio": p["mejor_decimal"],
+                          "ev": p["mejor_ev"], "prob": p["mejor_prob"]}]
+            con_valor = [c for c in picks if c["ev"] >= 0.05]
+            mejor_valor = (max(picks, key=lambda c: c["ev"])
+                           if picks else None)
+            if con_valor:
+                elegido = max(con_valor, key=lambda c: c["prob"])
+                color = _color_por_prob_ev(elegido["prob"], elegido["ev"])
+                cumple = True
+            elif picks:
+                elegido = max(picks, key=lambda c: c["ev"])
+                color = "rojo"
+                cumple = False
+            else:
+                elegido = None
+            if elegido is not None:
+                # ALTERNATIVA AMARILLA (Luis 11:33, corregida 11:35 y
+                # 11:37): el pick arriesgado que vale la pena por lo que
+                # se gana: mayor EV entre los de EV ≥ +5% y 30% ≤ prob <
+                # 60%, distinto de la recomendación y con EV ≥ +50%.
+                alternativa = None
+                amarillos = [c for c in picks
+                             if c["ev"] >= 0.05
+                             and 30 <= c["prob"] < 60]
+                if amarillos:
+                    alt = max(amarillos, key=lambda c: c["ev"])
+                    if alt["pick"] != elegido["pick"] and alt["ev"] >= 0.50:
+                        alternativa = {
+                            "pick": alt["pick"],
+                            "mercado": alt["mercado"],
+                            "momio": alt["momio"],
+                            "prob": round(alt["prob"], 1),
+                            "ev": alt["ev"],
+                        }
                 recomendacion = {
-                    "pick": pick,
-                    "momio": p.get("mejor_decimal"),
-                    "prob": p.get("mejor_prob"),
-                    "ev": ev_pick,
-                    "semaforo": p.get("semaforo"),
+                    "pick": elegido["pick"],
+                    "mercado": elegido["mercado"],
+                    "momio": elegido["momio"],
+                    "prob": round(elegido["prob"], 1),
+                    "ev": elegido["ev"],
+                    "color": color,
+                    "semaforo": color,
+                    "cumple_regla": cumple,
+                    "alternativa_amarilla": alternativa,
+                    "mejor_valor": ({
+                        "pick": mejor_valor["pick"],
+                        "mercado": mejor_valor["mercado"],
+                        "momio": mejor_valor["momio"],
+                        "prob": round(mejor_valor["prob"], 1),
+                        "ev": mejor_valor["ev"],
+                        "color": _color_por_prob_ev(mejor_valor["prob"],
+                                                     mejor_valor["ev"]),
+                    } if mejor_valor is not None else None),
                 }
             else:
                 recomendacion = None
 
             acierto = None
             if recomendacion is not None and final:
-                acierto = _evaluar_pick(pick, gl, ga)
+                acierto = _evaluar_pick(recomendacion["pick"], gl, ga)
 
             # Columna en vivo: último snapshot del log, si existe.
             snap = log.get(clave)
@@ -343,7 +508,15 @@ def main():
     salida = {
         "fecha_calculo": datetime.now(MX).strftime("%Y-%m-%d"),
         "generado_en_mx": datetime.now(MX).isoformat(timespec="seconds"),
-        "nota": ("La columna en vivo usa el último snapshot del log "
+        "nota": ("Recomendación: el pick con más probabilidad entre los "
+                 "de EV ≥ +5% en todos los mercados; color por "
+                 "riesgo/ganancia: verde (prob ≥ 60% y EV ≥ +5%), "
+                 "amarillo (30% ≤ prob < 60% y EV ≥ +5%, un 50/50) o "
+                 "rojo (prob < 30% o EV < +5%: mucho riesgo y mucha "
+                 "ganancia, o poco riesgo aparente y poca ganancia). "
+                 "Alternativa amarilla: mayor EV entre EV ≥ +5% y 30% ≤ "
+                 "prob < 60%, distinto de la recomendación y con EV ≥ "
+                 "+50%. La columna en vivo usa el último snapshot del log "
                  "(data/live-log); sin snapshots es 'sin datos', nunca "
                  "inventada. La predicción en vivo invierte el xG de las "
                  "probabilidades publicadas (no las ajustadas por XI)."),
