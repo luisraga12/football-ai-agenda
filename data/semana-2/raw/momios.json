@@ -11,9 +11,27 @@
    "liga": "ger.1",
    "fecha_cst": "2026-11-27 13:30",
    "liga_nombre": "Bundesliga",
-   "proveedor": null,
-   "estado": "pendiente",
-   "momios": null,
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 1.6896551724137931,
+     "draw": 4.0,
+     "away": 4.2
+    },
+    "total": {
+     "linea": 3.5,
+     "over": 2.35,
+     "under": 1.5882352941176472
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "home": 1.6666666666666665,
+     "away_linea": 0.5,
+     "away": 2.1
+    }
+   },
    "estado_partido": "post",
    "marcador": {
     "local": 3,
@@ -40,7 +58,9 @@
      "bookmakers": 2
     },
     "sin_momio": []
-   }
+   },
+   "momio_recuperado": true,
+   "momio_recuperado_de": "ae45d39"
   },
   {
    "away": "Bologna",
@@ -51,9 +71,27 @@
    "liga": "ita.1",
    "fecha_cst": "2026-11-27 13:45",
    "liga_nombre": "Serie A",
-   "proveedor": null,
-   "estado": "pendiente",
-   "momios": null,
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 2.95,
+     "draw": 3.05,
+     "away": 2.4
+    },
+    "total": {
+     "linea": 2.5,
+     "over": 2.2,
+     "under": 1.6451612903225805
+    },
+    "spread": {
+     "home_linea": 0.5,
+     "home": 1.5405405405405406,
+     "away_linea": -0.5,
+     "away": 2.3
+    }
+   },
    "estado_partido": "post",
    "marcador": {
     "local": 0,
@@ -80,7 +118,9 @@
      "bookmakers": 3
     },
     "sin_momio": []
-   }
+   },
+   "momio_recuperado": true,
+   "momio_recuperado_de": "ae45d39"
   },
   {
    "away": "Chelsea",
@@ -91,9 +131,27 @@
    "liga": "eng.1",
    "fecha_cst": "2026-11-27 14:00",
    "liga_nombre": "Premier League",
-   "proveedor": null,
-   "estado": "pendiente",
-   "momios": null,
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 2.45,
+     "draw": 3.45,
+     "away": 2.85
+    },
+    "total": {
+     "linea": 2.5,
+     "over": 1.7692307692307692,
+     "under": 2.05
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "home": 2.25,
+     "away_linea": 0.5,
+     "away": 1.5555555555555556
+    }
+   },
    "estado_partido": "post",
    "marcador": {
     "local": 3,
@@ -120,7 +178,9 @@
      "bookmakers": 3
     },
     "sin_momio": []
-   }
+   },
+   "momio_recuperado": true,
+   "momio_recuperado_de": "ae45d39"
   },
   {
    "away": "Racing Santander",
@@ -131,9 +191,27 @@
    "liga": "esp.1",
    "fecha_cst": "2026-11-27 14:00",
    "liga_nombre": "LaLiga",
-   "proveedor": null,
-   "estado": "pendiente",
-   "momios": null,
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
+   "momios": {
+    "proveedor": "DraftKings",
+    "moneyline": {
+     "home": 2.0,
+     "draw": 3.9,
+     "away": 3.5
+    },
+    "total": {
+     "linea": 3.5,
+     "over": 2.3,
+     "under": 1.625
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "home": 1.9090909090909092,
+     "away_linea": 0.5,
+     "away": 1.8
+    }
+   },
    "estado_partido": "post",
    "marcador": {
     "local": 1,
@@ -160,7 +238,9 @@
      "bookmakers": 3
     },
     "sin_momio": []
-   }
+   },
+   "momio_recuperado": true,
+   "momio_recuperado_de": "ae45d39"
   },
   {
    "away": "Bayern Munich",

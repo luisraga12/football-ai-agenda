@@ -8,8 +8,8 @@
    "liga": "Bundesliga",
    "home": "Werder Bremen",
    "away": "Borussia Mönchengladbach",
-   "proveedor": null,
-   "estado": "pendiente",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
    "estado_partido": "post",
    "marcador": {
     "local": 3,
@@ -29,24 +29,50 @@
      }
     },
     "1X2": {
-     "prob": {
-      "1": 72.15575285851762,
-      "X": 16.356168742934223,
-      "2": 11.488078398510352
+     "momios": {
+      "home": 1.6896551724137931,
+      "draw": 4.0,
+      "away": 4.2
      },
-     "momios": null,
-     "ev": null
+     "ev": {
+      "1": 0.21918341036805633,
+      "X": -0.34575325028263104,
+      "2": -0.5175007072625653
+     }
     },
     "total": {
-     "linea": 2.5,
-     "p_over": 65.72386651376635,
-     "momios": null,
-     "ev": null
+     "linea": 3.5,
+     "momios": {
+      "linea": 3.5,
+      "over": 2.35,
+      "under": 1.5882352941176472
+     },
+     "p_over": 43.82265093494816,
+     "ev": {
+      "mas": 0.02983229697128187,
+      "menos": -0.10777151484917658
+     }
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "momios": {
+      "home_linea": -0.5,
+      "home": 1.6666666666666665,
+      "away_linea": 0.5,
+      "away": 2.1
+     },
+     "p_cubre_local": 72.15575285851762,
+     "ev": {
+      "local": 0.20259588097529346,
+      "visitante": -0.4152708100288699
+     }
     }
    },
-   "mejor_pick": null,
-   "mejor_ev": null,
-   "semaforo": null
+   "mejor_pick": "Local",
+   "mejor_ev": 0.21918341036805633,
+   "semaforo": "verde",
+   "mejor_decimal": 1.6896551724137931,
+   "mejor_prob": 72.15575285851762
   },
   {
    "fecha": "2026-11-27",
@@ -55,8 +81,8 @@
    "liga": "Serie A",
    "home": "Venezia",
    "away": "Bologna",
-   "proveedor": null,
-   "estado": "pendiente",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
    "estado_partido": "post",
    "marcador": {
     "local": 0,
@@ -76,24 +102,50 @@
      }
     },
     "1X2": {
-     "prob": {
-      "1": 13.875738212450702,
-      "X": 28.794910721194356,
-      "2": 57.32935106635493
+     "momios": {
+      "home": 2.95,
+      "draw": 3.05,
+      "away": 2.4
      },
-     "momios": null,
-     "ev": null
+     "ev": {
+      "1": -0.5906657227327042,
+      "X": -0.12175522300357222,
+      "2": 0.37590442559251813
+     }
     },
     "total": {
      "linea": 2.5,
+     "momios": {
+      "linea": 2.5,
+      "over": 2.2,
+      "under": 1.6451612903225805
+     },
      "p_over": 27.311459279071045,
-     "momios": null,
-     "ev": null
+     "ev": {
+      "mas": -0.399147895860437,
+      "menos": 0.19584373444108905
+     }
+    },
+    "spread": {
+     "home_linea": 0.5,
+     "momios": {
+      "home_linea": 0.5,
+      "home": 1.5405405405405406,
+      "away_linea": -0.5,
+      "away": 2.3
+     },
+     "p_cubre_local": 42.67064893364505,
+     "ev": {
+      "local": -0.34264135426546816,
+      "visitante": 0.31857507452616374
+     }
     }
    },
-   "mejor_pick": null,
-   "mejor_ev": null,
-   "semaforo": null
+   "mejor_pick": "Visita",
+   "mejor_ev": 0.37590442559251813,
+   "semaforo": "verde",
+   "mejor_decimal": 2.4,
+   "mejor_prob": 57.32935106635493
   },
   {
    "fecha": "2026-11-27",
@@ -102,8 +154,8 @@
    "liga": "Premier League",
    "home": "Nottingham Forest",
    "away": "Chelsea",
-   "proveedor": null,
-   "estado": "pendiente",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
    "estado_partido": "post",
    "marcador": {
     "local": 3,
@@ -123,24 +175,50 @@
      }
     },
     "1X2": {
-     "prob": {
-      "1": 12.66618262840874,
-      "X": 19.190426457021633,
-      "2": 68.14339091456786
+     "momios": {
+      "home": 2.45,
+      "draw": 3.45,
+      "away": 2.85
      },
-     "momios": null,
-     "ev": null
+     "ev": {
+      "1": -0.6896785256039859,
+      "X": -0.33793028723275365,
+      "2": 0.942086641065184
+     }
     },
     "total": {
      "linea": 2.5,
+     "momios": {
+      "linea": 2.5,
+      "over": 1.7692307692307692,
+      "under": 2.05
+     },
      "p_over": 55.394235764950714,
-     "momios": null,
-     "ev": null
+     "ev": {
+      "mas": -0.019948136466256594,
+      "menos": -0.08558183318148982
+     }
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "momios": {
+      "home_linea": -0.5,
+      "home": 2.25,
+      "away_linea": 0.5,
+      "away": 1.5555555555555556
+     },
+     "p_cubre_local": 12.66618262840874,
+     "ev": {
+      "local": -0.7150108908608034,
+      "visitante": 0.35852604800253096
+     }
     }
    },
-   "mejor_pick": null,
-   "mejor_ev": null,
-   "semaforo": null
+   "mejor_pick": "Visita",
+   "mejor_ev": 0.942086641065184,
+   "semaforo": "verde",
+   "mejor_decimal": 2.85,
+   "mejor_prob": 68.14339091456786
   },
   {
    "fecha": "2026-11-27",
@@ -149,8 +227,8 @@
    "liga": "LaLiga",
    "home": "Levante",
    "away": "Racing Santander",
-   "proveedor": null,
-   "estado": "pendiente",
+   "proveedor": "DraftKings",
+   "estado": "con_momio",
    "estado_partido": "post",
    "marcador": {
     "local": 1,
@@ -170,24 +248,50 @@
      }
     },
     "1X2": {
-     "prob": {
-      "1": 53.668447053145975,
-      "X": 23.42869803479787,
-      "2": 22.902854912056096
+     "momios": {
+      "home": 2.0,
+      "draw": 3.9,
+      "away": 3.5
      },
-     "momios": null,
-     "ev": null
+     "ev": {
+      "1": 0.07336894106291947,
+      "X": -0.08628077664288314,
+      "2": -0.19840007807803672
+     }
     },
     "total": {
-     "linea": 2.5,
-     "p_over": 53.90620657637864,
-     "momios": null,
-     "ev": null
+     "linea": 3.5,
+     "momios": {
+      "linea": 3.5,
+      "over": 2.3,
+      "under": 1.625
+     },
+     "p_over": 31.606147772288335,
+     "ev": {
+      "mas": -0.27305860123736836,
+      "menos": 0.11140009870031453
+     }
+    },
+    "spread": {
+     "home_linea": -0.5,
+     "momios": {
+      "home_linea": -0.5,
+      "home": 1.9090909090909092,
+      "away_linea": 0.5,
+      "away": 1.8
+     },
+     "p_cubre_local": 53.668447053145975,
+     "ev": {
+      "local": 0.024579443741877816,
+      "visitante": -0.16603204695662754
+     }
     }
    },
-   "mejor_pick": null,
-   "mejor_ev": null,
-   "semaforo": null
+   "mejor_pick": "Menos 3.5",
+   "mejor_ev": 0.11140009870031453,
+   "semaforo": "verde",
+   "mejor_decimal": 1.625,
+   "mejor_prob": 68.39385222771166
   },
   {
    "fecha": "2026-11-28",
