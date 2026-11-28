@@ -8,15 +8,23 @@ Lee los dos ev.json (semana-2 y entresemana) + vivo.json + el log en vivo
 - REGLA DE RECOMENDACIÓN (Luis, 28 nov 11:16, corregida 11:21): el pick
   con MÁS PROBABILIDAD entre los que tienen VALOR (EV ≥ +5%), buscando
   en TODOS los mercados (1X2, Más/Menos X.5, Spread, BTTS). Color del
-  semáforo (Luis 11:20): VERDE si prob ≥ 50% y EV ≥ +5%; AMARILLO si
-  EV ≥ +5% pero prob < 50%; ROJO si ningún pick llega a EV +5%: la
-  recomendación NO desaparece, es el pick de mayor EV disponible en
-  ROJO marcado "No cumple la regla", y Luis decide si apuesta. El
-  mejor valor (EV+ máximo) queda como señal aparte. ALTERNATIVA
-  AMARILLA (Luis 11:33): además se publica el pick arriesgado que
-  vale la pena por lo que se gana: mayor EV entre los de EV ≥ +5% y
-  prob < 50%, distinto de la recomendación y con EV ≥ +50% (el premio
-  debe justificar el riesgo).
+  semáforo (Luis 11:20, 11:35, 11:37-11:39, calibre final): VERDE =
+  poco (o muy poco) riesgo y buena ganancia (prob ≥ 60% y EV ≥ +5%);
+  AMARILLO = un 50/50 (30% ≤ prob < 60% y EV ≥ +5%); ROJO = los dos
+  extremos: mucho riesgo pero mucha ganancia (prob < 30%, aunque tenga
+  el EV más alto) o muy poco riesgo aparente y poca ganancia (EV < +5%,
+  como el favorito a momio bajo con EV negativo). Si ningún pick llega
+  a EV +5%, la recomendación NO desaparece: es el pick de mayor EV
+  disponible en ROJO marcado "No cumple la regla", y Luis decide si
+  apuesta. El mejor valor (EV+ máximo) queda como señal aparte, con
+  su color por riesgo/ganancia. ALTERNATIVA AMARILLA (Luis 11:33,
+  corregida 11:35): además se publica el pick arriesgado que vale la
+  pena por lo que se gana: mayor EV entre los de EV ≥ +5% y 30% ≤ prob
+  < 60%, distinto de la recomendación y con EV ≥ +50% (el premio debe
+  justificar el riesgo). En el Inter–Genoa la amarilla es el EMPATE
+  (30.7% @5.5, EV +68.8%), no la Visita @9.0 (22.6%: rojo); la doble
+  oportunidad a favor del Genoa sería otra amarilla, pero hoy no hay
+  momio para ella en los datos (pendiente: ver si BSD la trae).
 - Sin resultado final publicado el acierto es null ("Pendiente").
 - Sin snapshots en el log en vivo, la columna en vivo es "sin datos".
 
@@ -173,6 +181,27 @@ def _linea_txt(linea):
     return ("%.1f" % float(linea)).rstrip("0").rstrip(".")
 
 
+def _color_por_prob_ev(prob, ev):
+    """Color del semáforo por riesgo/ganancia (calibre final de Luis,
+    28 nov 11:37-11:39, con el ejemplo Inter–Genoa):
+    - VERDE: poco (o muy poco) riesgo y buena ganancia: prob ≥ 60% y
+      EV ≥ +5%.
+    - AMARILLO: un 50/50 (la zona incierta, donde puede pasar o no):
+      30% ≤ prob < 60% y EV ≥ +5%.
+    - ROJO: los dos extremos: (a) mucho riesgo pero mucha ganancia
+      (prob < 30%, longshot, aunque tenga el EV más alto) o (b) muy
+      poco riesgo APARENTE y poca ganancia (EV < +5%, como el favorito
+      a momio bajo: se arriesga mucho para ganar poco y el EV es
+      negativo; Luis: las de poco riesgo son las de mayor riesgo)."""
+    if ev < 0.05:
+        return "rojo"
+    if prob >= 60:
+        return "verde"
+    if prob >= 30:
+        return "amarillo"
+    return "rojo"
+
+
 def _candidatos(p):
     """Todos los picks de todos los mercados con momio, EV y probabilidad
     del modelo. Nombres idénticos a calcular_ev.py (y a _evaluar_pick):
@@ -318,13 +347,16 @@ def main():
                 ga = p["marcador"].get("visita")
             final = estado == "post" and gl is not None and ga is not None
 
-            # REGLA FINAL (Luis 11:16 + 11:20 + 11:21): la recomendación
-            # es el pick con MÁS PROBABILIDAD entre los que tienen VALOR
-            # (EV ≥ +5%), en TODOS los mercados. Color: VERDE si prob ≥
-            # 50%, AMARILLO si prob < 50%. Si ningún pick llega a +5%,
-            # la recomendación NO desaparece: es el pick de mayor EV
-            # disponible en ROJO ("No cumple la regla"). El mejor valor
-            # (EV+ máximo) queda como señal aparte.
+            # REGLA FINAL (Luis 11:16 + 11:20 + 11:21, calibre final
+            # 11:37-11:39): la recomendación es el pick con MÁS
+            # PROBABILIDAD entre los que tienen VALOR (EV ≥ +5%), en
+            # TODOS los mercados. Color por riesgo/ganancia: VERDE poco
+            # riesgo y buena ganancia (prob ≥ 60% y EV ≥ +5%); AMARILLO
+            # un 50/50 (30% ≤ prob < 60% y EV ≥ +5%); ROJO los dos
+            # extremos (prob < 30% o EV < +5%). Si ningún pick llega a
+            # +5%, la recomendación NO desaparece: es el pick de mayor
+            # EV disponible en ROJO ("No cumple la regla"). El mejor
+            # valor (EV+ máximo) queda como señal aparte, con su color.
             picks = _candidatos(p)
             if not picks and p.get("mejor_pick") and p.get("mejor_ev") is not None \
                     and p.get("mejor_decimal") is not None \
@@ -338,7 +370,7 @@ def main():
                            if picks else None)
             if con_valor:
                 elegido = max(con_valor, key=lambda c: c["prob"])
-                color = "verde" if elegido["prob"] >= 50 else "amarillo"
+                color = _color_por_prob_ev(elegido["prob"], elegido["ev"])
                 cumple = True
             elif picks:
                 elegido = max(picks, key=lambda c: c["ev"])
@@ -347,13 +379,14 @@ def main():
             else:
                 elegido = None
             if elegido is not None:
-                # ALTERNATIVA AMARILLA (Luis 11:33): el pick arriesgado
-                # que vale la pena por lo que se gana: mayor EV entre
-                # los de EV ≥ +5% y prob < 50%, distinto de la
-                # recomendación y con EV ≥ +50%.
+                # ALTERNATIVA AMARILLA (Luis 11:33, corregida 11:35 y
+                # 11:37): el pick arriesgado que vale la pena por lo que
+                # se gana: mayor EV entre los de EV ≥ +5% y 30% ≤ prob <
+                # 60%, distinto de la recomendación y con EV ≥ +50%.
                 alternativa = None
                 amarillos = [c for c in picks
-                             if c["ev"] >= 0.05 and c["prob"] < 50]
+                             if c["ev"] >= 0.05
+                             and 30 <= c["prob"] < 60]
                 if amarillos:
                     alt = max(amarillos, key=lambda c: c["ev"])
                     if alt["pick"] != elegido["pick"] and alt["ev"] >= 0.50:
@@ -380,6 +413,8 @@ def main():
                         "momio": mejor_valor["momio"],
                         "prob": round(mejor_valor["prob"], 1),
                         "ev": mejor_valor["ev"],
+                        "color": _color_por_prob_ev(mejor_valor["prob"],
+                                                     mejor_valor["ev"]),
                     } if mejor_valor is not None else None),
                 }
             else:
@@ -392,8 +427,8 @@ def main():
             # Columna en vivo: último snapshot del log, si existe.
             snap = log.get(clave)
             vivo_info = {"tiene_datos": False, "motivo": "sin snapshots en data/live-log",
-                        "ultimo_snapshot": None, "prediccion": None,
-                        "acierto": None}
+                         "ultimo_snapshot": None, "prediccion": None,
+                         "acierto": None}
             if snap is not None:
                 minuto = _parse_minuto(snap.get("minuto"))
                 tda = snap.get("tda") or [None, None]
@@ -474,10 +509,14 @@ def main():
         "fecha_calculo": datetime.now(MX).strftime("%Y-%m-%d"),
         "generado_en_mx": datetime.now(MX).isoformat(timespec="seconds"),
         "nota": ("Recomendación: el pick con más probabilidad entre los "
-                 "de EV ≥ +5% en todos los mercados; color verde (prob ≥ "
-                 "50%), amarillo (prob < 50%) o rojo (ningún pick llega "
-                 "a +5%: el de mayor EV, 'No cumple la regla'). La columna "
-                 "en vivo usa el último snapshot del log "
+                 "de EV ≥ +5% en todos los mercados; color por "
+                 "riesgo/ganancia: verde (prob ≥ 60% y EV ≥ +5%), "
+                 "amarillo (30% ≤ prob < 60% y EV ≥ +5%, un 50/50) o "
+                 "rojo (prob < 30% o EV < +5%: mucho riesgo y mucha "
+                 "ganancia, o poco riesgo aparente y poca ganancia). "
+                 "Alternativa amarilla: mayor EV entre EV ≥ +5% y 30% ≤ "
+                 "prob < 60%, distinto de la recomendación y con EV ≥ "
+                 "+50%. La columna en vivo usa el último snapshot del log "
                  "(data/live-log); sin snapshots es 'sin datos', nunca "
                  "inventada. La predicción en vivo invierte el xG de las "
                  "probabilidades publicadas (no las ajustadas por XI)."),
