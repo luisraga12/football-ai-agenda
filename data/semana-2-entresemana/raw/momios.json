@@ -32,6 +32,7 @@
      "away": 2.15
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 1,
@@ -58,9 +59,7 @@
      "bookmakers": 3
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "0051202"
+   }
   },
   {
    "away": "Borussia Dortmund",
@@ -92,6 +91,7 @@
      "away": 1.6666666666666665
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 1,
@@ -118,9 +118,7 @@
      "bookmakers": 3
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "0051202"
+   }
   },
   {
    "away": "Napoli",
@@ -152,6 +150,7 @@
      "away": 2.05
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 2,
@@ -178,9 +177,7 @@
      "bookmakers": 3
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "0051202"
+   }
   },
   {
    "away": "PSV Eindhoven",
@@ -212,6 +209,7 @@
      "away": 1.7692307692307692
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 5,
@@ -238,9 +236,7 @@
      "bookmakers": 3
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "0051202"
+   }
   },
   {
    "away": "Liverpool",
@@ -272,6 +268,7 @@
      "away": 1.5882352941176472
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 0,
@@ -298,9 +295,7 @@
      "bookmakers": 3
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "eed2363"
+   }
   },
   {
    "away": "VfB Stuttgart",
@@ -332,6 +327,7 @@
      "away": 1.8
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 2,
@@ -358,9 +354,7 @@
      "bookmakers": 3
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "eed2363"
+   }
   },
   {
    "away": "Bayern Munich",
@@ -392,6 +386,7 @@
      "away": 1.5555555555555556
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 2,
@@ -418,9 +413,7 @@
      "bookmakers": 3
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "eed2363"
+   }
   },
   {
    "away": "AS Roma",
@@ -452,6 +445,7 @@
      "away": 1.6896551724137931
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 2,
@@ -478,9 +472,7 @@
      "bookmakers": 3
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "eed2363"
+   }
   },
   {
    "away": "Manchester United",
@@ -512,6 +504,7 @@
      "away": 1.5128205128205128
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 2,
@@ -538,9 +531,7 @@
      "bookmakers": 3
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "eed2363"
+   }
   },
   {
    "away": "AFC Bournemouth",
@@ -572,6 +563,7 @@
      "away": 1.9090909090909092
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 1,
@@ -598,9 +590,7 @@
      "bookmakers": 3
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "5237b95"
+   }
   },
   {
    "away": "Bayer Leverkusen",
@@ -632,6 +622,7 @@
      "away": 1.5555555555555556
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 0,
@@ -658,9 +649,7 @@
      "bookmakers": 3
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "5237b95"
+   }
   },
   {
    "away": "AC Milan",
@@ -692,6 +681,7 @@
      "away": 2.4
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 2,
@@ -718,9 +708,7 @@
      "bookmakers": 3
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "5237b95"
+   }
   },
   {
    "home": "Toluca",
@@ -752,6 +740,7 @@
      "away": 1.6451612903225805
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 2,
@@ -778,9 +767,7 @@
      "bookmakers": 2
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "6c38b3e"
+   }
   },
   {
    "home": "Monterrey",
@@ -812,6 +799,7 @@
      "away": 1.625
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 0,
@@ -838,9 +826,7 @@
      "bookmakers": 2
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "6c38b3e"
+   }
   },
   {
    "home": "Pachuca",
@@ -872,6 +858,7 @@
      "away": 2.35
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 2,
@@ -898,9 +885,7 @@
      "bookmakers": 2
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "3460153"
+   }
   },
   {
    "home": "León",
@@ -932,6 +917,7 @@
      "away": 2.05
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 0,
@@ -958,9 +944,7 @@
      "bookmakers": 2
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "3460153"
+   }
   },
   {
    "home": "Sabah FK",
@@ -992,6 +976,7 @@
      "away": 2.2
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 1,
@@ -1018,9 +1003,7 @@
      "bookmakers": 3
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "eed2363"
+   }
   },
   {
    "home": "Slavia Prague",
@@ -1052,6 +1035,7 @@
      "away": 2.0
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 0,
@@ -1078,9 +1062,7 @@
      "bookmakers": 3
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "eed2363"
+   }
   },
   {
    "home": "Atlético Madrid",
@@ -1112,6 +1094,7 @@
      "away": 1.9090909090909092
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 2,
@@ -1138,9 +1121,7 @@
      "bookmakers": 3
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "eed2363"
+   }
   },
   {
    "home": "Shakhtar Donetsk",
@@ -1172,6 +1153,7 @@
      "away": 2.2
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 0,
@@ -1198,9 +1180,7 @@
      "bookmakers": 3
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "eed2363"
+   }
   },
   {
    "home": "Besiktas",
@@ -1232,6 +1212,7 @@
      "away": 1.7142857142857144
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 2,
@@ -1258,9 +1239,7 @@
      "bookmakers": 3
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "5237b95"
+   }
   },
   {
    "home": "Marseille",
@@ -1292,6 +1271,7 @@
      "away": 1.6896551724137931
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 1,
@@ -1318,9 +1298,7 @@
      "bookmakers": 3
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "5237b95"
+   }
   },
   {
    "home": "RB Salzburg",
@@ -1352,6 +1330,7 @@
      "away": 1.606060606060606
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 2,
@@ -1378,9 +1357,7 @@
      "bookmakers": 3
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "5237b95"
+   }
   },
   {
    "home": "Union St.-Gilloise",
@@ -1412,6 +1389,7 @@
      "away": 1.8695652173913042
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 2,
@@ -1435,9 +1413,7 @@
     "sin_momio": [
      "corners"
     ]
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "5237b95"
+   }
   },
   {
    "home": "Viktoria Plzen",
@@ -1469,6 +1445,7 @@
      "away": 1.526315789473684
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 4,
@@ -1495,9 +1472,7 @@
      "bookmakers": 3
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "5237b95"
+   }
   },
   {
    "home": "Crystal Palace",
@@ -1529,6 +1504,7 @@
      "away": 1.8333333333333335
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 2,
@@ -1555,9 +1531,7 @@
      "bookmakers": 3
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "5237b95"
+   }
   },
   {
    "home": "Ferencvaros",
@@ -1589,6 +1563,7 @@
      "away": 1.7692307692307692
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 0,
@@ -1615,9 +1590,7 @@
      "bookmakers": 3
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "5237b95"
+   }
   },
   {
    "home": "Juventus",
@@ -1649,6 +1622,7 @@
      "away": 2.2
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 4,
@@ -1675,9 +1649,7 @@
      "bookmakers": 3
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "5237b95"
+   }
   },
   {
    "home": "Lyon",
@@ -1709,6 +1681,7 @@
      "away": 2.05
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 0,
@@ -1735,9 +1708,7 @@
      "bookmakers": 3
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "5237b95"
+   }
   },
   {
    "home": "NEC Nijmegen",
@@ -1769,6 +1740,7 @@
      "away": 2.05
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 3,
@@ -1795,9 +1767,7 @@
      "bookmakers": 3
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "5237b95"
+   }
   },
   {
    "home": "OFI Crete",
@@ -1829,6 +1799,7 @@
      "away": 1.7142857142857144
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 1,
@@ -1855,9 +1826,7 @@
      "bookmakers": 3
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "5237b95"
+   }
   },
   {
    "home": "Sparta Prague",
@@ -1889,6 +1858,7 @@
      "away": 1.4878048780487805
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 2,
@@ -1915,9 +1885,7 @@
      "bookmakers": 3
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "5237b95"
+   }
   },
   {
    "home": "Sunderland",
@@ -1949,6 +1917,7 @@
      "away": 1.9523809523809523
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 1,
@@ -1972,9 +1941,7 @@
     "sin_momio": [
      "corners"
     ]
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "5237b95"
+   }
   },
   {
    "home": "Torreense",
@@ -2006,6 +1973,7 @@
      "away": 1.625
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 1,
@@ -2032,9 +2000,7 @@
      "bookmakers": 3
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "5237b95"
+   }
   },
   {
    "home": "TSG Hoffenheim",
@@ -2066,6 +2032,7 @@
      "away": 2.05
     }
    },
+   "momio_recuperado": true,
    "estado_partido": "post",
    "marcador": {
     "local": 3,
@@ -2092,9 +2059,7 @@
      "bookmakers": 3
     },
     "sin_momio": []
-   },
-   "momio_recuperado": true,
-   "momio_recuperado_de": "5237b95"
+   }
   }
  ]
 }
