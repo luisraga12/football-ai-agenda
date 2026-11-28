@@ -1389,10 +1389,10 @@ function derivarDNB(p){
    posesión. Solo afecta a lo que muestra el detalle (probabilidades
    1X2 y EV 1X2); ev.json, el modelo y el semáforo no se tocan. Sin
    alineación oficial, devuelve las probabilidades tal cual. */
-function ajustar1X2XI(p12){
+function ajustar1X2XI(p12, key){
     if (!p12 || typeof p12.p1 !== "number" || typeof p12.px !== "number" || typeof p12.p2 !== "number") return null;
     var sinAjuste = {p1: p12.p1, px: p12.px, p2: p12.p2, ajustado: false};
-    var fx = (typeof FUERZA_XI !== "undefined") ? FUERZA_XI[slug] : null;
+    var fx = (typeof FUERZA_XI !== "undefined") ? FUERZA_XI[key] : null;
     if (!fx || fx.alineacion_publicada !== true) return sinAjuste;
     var rH = (fx.local && typeof fx.local.r === "number" && isFinite(fx.local.r) && fx.local.r > 0) ? fx.local.r : null;
     var rA = (fx.visita && typeof fx.visita.r === "number" && isFinite(fx.visita.r) && fx.visita.r > 0) ? fx.visita.r : null;
@@ -1757,13 +1757,13 @@ function buildRADIOMap(rawData, tenData, partidos){
 
   /* ---------- Momios y valor esperado (misma parrilla que la tarjeta) ---------- */
   function oddsBlock(m){
-    var h = "<h4>Momios y valor esperado</h4>"; if (m && m.estado_partido === "post" && m.marcador && typeof m.marcador.local === "number" && typeof m.marcador.visita === "number"){ var hF = "<h4>Momios y valor esperado</h4>"; hF += '<p><b>Final: ' + esc(nombreEquipo(m.home)) + ' ' + m.marcador.local + ' – ' + m.marcador.visita + ' ' + esc(nombreEquipo(m.away)) + '</b></p>'; var pF = derivar1X2(m); var ajF = ajustar1X2XI(pF); if (ajF && ajF.ajustado) pF = ajF; hF += '<p class="detail-note">Partido terminado sin momios: no hay EV ni pick; las probabilidades son las del modelo antes del partido.' + ((ajF && ajF.ajustado) ? ' Ajustadas por XI oficial.' : '') + '</p>'; var tF = m.mercados && m.mercados.total ? m.mercados.total : null; if (pF || (tF && typeof tF.p_over === "number")){ hF += '<div class="odds"><div class="derived-h"><span>Probabilidad del modelo (sin momio)</span></div><div class="derived-grid">'; if (pF){ hF += celdaMomio("Local", null, null, pF.p1, true); hF += celdaMomio("Empate", null, null, pF.px, true); hF += celdaMomio("Visita", null, null, pF.p2, true); } if (tF && typeof tF.p_over === "number"){ hF += celdaMomio("Más " + fmtLinea(tF.linea), null, null, tF.p_over, true); hF += celdaMomio("Menos " + fmtLinea(tF.linea), null, null, 100 - tF.p_over, true); } hF += '</div></div>'; } return hF; }
+    var h = "<h4>Momios y valor esperado</h4>"; if (m && m.estado_partido === "post" && m.marcador && typeof m.marcador.local === "number" && typeof m.marcador.visita === "number"){ var hF = "<h4>Momios y valor esperado</h4>"; hF += '<p><b>Final: ' + esc(nombreEquipo(m.home)) + ' ' + m.marcador.local + ' – ' + m.marcador.visita + ' ' + esc(nombreEquipo(m.away)) + '</b></p>'; var pF = derivar1X2(m); var ajF = ajustar1X2XI(pF, slug); if (ajF && ajF.ajustado) pF = ajF; hF += '<p class="detail-note">Partido terminado sin momios: no hay EV ni pick; las probabilidades son las del modelo antes del partido.' + ((ajF && ajF.ajustado) ? ' Ajustadas por XI oficial.' : '') + '</p>'; var tF = m.mercados && m.mercados.total ? m.mercados.total : null; if (pF || (tF && typeof tF.p_over === "number")){ hF += '<div class="odds"><div class="derived-h"><span>Probabilidad del modelo (sin momio)</span></div><div class="derived-grid">'; if (pF){ hF += celdaMomio("Local", null, null, pF.p1, true); hF += celdaMomio("Empate", null, null, pF.px, true); hF += celdaMomio("Visita", null, null, pF.p2, true); } if (tF && typeof tF.p_over === "number"){ hF += celdaMomio("Más " + fmtLinea(tF.linea), null, null, tF.p_over, true); hF += celdaMomio("Menos " + fmtLinea(tF.linea), null, null, 100 - tF.p_over, true); } hF += '</div></div>'; } return hF; }
     var sem = semaforoDe(m);
     var p12 = derivar1X2(m);
     /* Ajuste 1X2 por XI oficial (piloto topado, 27 nov 2026): p12
        pasa a ser la probabilidad ajustada; el semáforo (sem) sigue
        siendo el publicado en ev.json y no se toca. */
-    var aj = ajustar1X2XI(p12);
+    var aj = ajustar1X2XI(p12, slug);
     if (aj && aj.ajustado) p12 = aj;
     if (sem){
       h += '<p><span class="chip ' + sem.cls + '">Semáforo EV · <strong>' + sem.color + ' · ' + esc(m.mejor_pick) + ' ' + fmtEvPct(sem.ev) + '</strong></span></p>';
@@ -2021,7 +2021,7 @@ function buildRADIOMap(rawData, tenData, partidos){
   /* Ajuste 1X2 por XI oficial (piloto topado, 27 nov 2026): las
      barras FIFA usan la probabilidad ajustada cuando hay alineación
      oficial; el EV% del héroe sigue siendo el publicado (semáforo). */
-  var ajD = (typeof ajustar1X2XI === "function") ? ajustar1X2XI(p12d) : null;
+  var ajD = (typeof ajustar1X2XI === "function") ? ajustar1X2XI(p12d, slug) : null;
   if (ajD && ajD.ajustado) p12d = ajD;
   var evD = (semD && typeof semD.ev === "number") ? semD.ev : null;
   var termD = (m.estado_partido === "post");
