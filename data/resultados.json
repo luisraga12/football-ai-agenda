@@ -1,0 +1,2078 @@
+{
+ "fecha_calculo": "2026-11-28",
+ "generado_en_mx": "2026-11-28T09:41:21-06:00",
+ "nota": "La columna en vivo usa el último snapshot del log (data/live-log); sin snapshots es 'sin datos', nunca inventada. La predicción en vivo invierte el xG de las probabilidades publicadas (no las ajustadas por XI).",
+ "partidos": [
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-27",
+   "liga": "Bundesliga",
+   "home": "Werder Bremen",
+   "away": "Borussia Mönchengladbach",
+   "estado": "post",
+   "marcador": {
+    "local": 3,
+    "visita": 3
+   },
+   "recomendacion": {
+    "pick": "Local",
+    "momio": 1.6896551724137931,
+    "prob": 72.15575285851762,
+    "ev": 0.21918341036805633,
+    "semaforo": "verde"
+   },
+   "acierto": false,
+   "acierto_texto": "Falló",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-27",
+   "liga": "Serie A",
+   "home": "Venezia",
+   "away": "Bologna",
+   "estado": "post",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Visita",
+    "momio": 2.4,
+    "prob": 57.32935106635493,
+    "ev": 0.37590442559251813,
+    "semaforo": "verde"
+   },
+   "acierto": false,
+   "acierto_texto": "Falló",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-27",
+   "liga": "Premier League",
+   "home": "Nottingham Forest",
+   "away": "Chelsea",
+   "estado": "post",
+   "marcador": {
+    "local": 3,
+    "visita": 2
+   },
+   "recomendacion": {
+    "pick": "Visita",
+    "momio": 2.85,
+    "prob": 68.14339091456786,
+    "ev": 0.942086641065184,
+    "semaforo": "verde"
+   },
+   "acierto": false,
+   "acierto_texto": "Falló",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-27",
+   "liga": "LaLiga",
+   "home": "Levante",
+   "away": "Racing Santander",
+   "estado": "post",
+   "marcador": {
+    "local": 1,
+    "visita": 3
+   },
+   "recomendacion": {
+    "pick": "Menos 3.5",
+    "momio": 1.625,
+    "prob": 68.39385222771166,
+    "ev": 0.11140009870031453,
+    "semaforo": "verde"
+   },
+   "acierto": false,
+   "acierto_texto": "Falló",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-28",
+   "liga": "Bundesliga",
+   "home": "Hamburg SV",
+   "away": "Bayern Munich",
+   "estado": "pre",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Local",
+    "momio": 8.0,
+    "prob": 29.941242906076138,
+    "ev": 1.395299432486091,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-28",
+   "liga": "Premier League",
+   "home": "Manchester United",
+   "away": "Brentford",
+   "estado": "pre",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Visita",
+    "momio": 2.85,
+    "prob": 45.06296452888121,
+    "ev": 0.2842944890731145,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-28",
+   "liga": "LaLiga",
+   "home": "Elche",
+   "away": "Atlético Madrid",
+   "estado": "pre",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Empate",
+    "momio": 4.6,
+    "prob": 46.39254432551121,
+    "ev": 1.1340570389735154,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-28",
+   "liga": "Bundesliga",
+   "home": "VfB Stuttgart",
+   "away": "Eintracht Frankfurt",
+   "estado": "pre",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Local",
+    "momio": 1.7692307692307692,
+    "prob": 78.97136984138228,
+    "ev": 0.3971857741167635,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-28",
+   "liga": "Serie A",
+   "home": "Internazionale",
+   "away": "Genoa",
+   "estado": "pre",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Visita",
+    "momio": 9.0,
+    "prob": 22.568842098715173,
+    "ev": 1.0311957888843657,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-28",
+   "liga": "LaLiga",
+   "home": "Real Madrid",
+   "away": "Alavés",
+   "estado": "pre",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Spread local -2.5",
+    "momio": 2.1,
+    "prob": 89.1480821171115,
+    "ev": 0.8721097244593417,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-29",
+   "liga": "Premier League",
+   "home": "Everton",
+   "away": "Liverpool",
+   "estado": "pre",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Local",
+    "momio": 4.6,
+    "prob": 36.82982051184302,
+    "ev": 0.6941717435447787,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-29",
+   "liga": "Serie A",
+   "home": "Sassuolo",
+   "away": "Napoli",
+   "estado": "pre",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Más 2.5",
+    "momio": 1.5714285714285714,
+    "prob": 85.52601153678626,
+    "ev": 0.3439801812923555,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-29",
+   "liga": "LaLiga",
+   "home": "Deportivo",
+   "away": "Barcelona",
+   "estado": "pre",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Local",
+    "momio": 10.0,
+    "prob": 11.558771086361205,
+    "ev": 0.15587710863612037,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-29",
+   "liga": "Premier League",
+   "home": "Arsenal",
+   "away": "Manchester City",
+   "estado": "pre",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Local",
+    "momio": 2.05,
+    "prob": 83.06141840673993,
+    "ev": 0.7027590773381684,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-29",
+   "liga": "Bundesliga",
+   "home": "Borussia Dortmund",
+   "away": "Bayer Leverkusen",
+   "estado": "pre",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Local",
+    "momio": 2.05,
+    "prob": 69.97005796924239,
+    "ev": 0.43438618836946885,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-29",
+   "liga": "Serie A",
+   "home": "Como",
+   "away": "Juventus",
+   "estado": "pre",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Menos 2.5",
+    "momio": 1.9523809523809523,
+    "prob": 66.09409792732038,
+    "ev": 0.29040857858101665,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-28",
+   "liga": "Liga MX",
+   "home": "Atlas",
+   "away": "Toluca",
+   "estado": "pre",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Visita",
+    "momio": 2.25,
+    "prob": 64.52046657971748,
+    "ev": 0.4517104980436435,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-28",
+   "liga": "Liga MX",
+   "home": "América",
+   "away": "Monterrey",
+   "estado": "pre",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Más 2.5",
+    "momio": 1.7692307692307692,
+    "prob": 78.72189518488007,
+    "ev": 0.39277199173249344,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-29",
+   "liga": "Liga MX",
+   "home": "Guadalajara",
+   "away": "Pachuca",
+   "estado": "pre",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Visita",
+    "momio": 4.9,
+    "prob": 31.124195863846783,
+    "ev": 0.5250855973284925,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-29",
+   "liga": "Liga MX",
+   "home": "Cruz Azul",
+   "away": "León",
+   "estado": "pre",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
+   "recomendacion": null,
+   "acierto": null,
+   "acierto_texto": "Sin recomendación",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-28",
+   "liga": "Premier League",
+   "home": "Leeds United",
+   "away": "Coventry City",
+   "estado": "pre",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Visita",
+    "momio": 6.5,
+    "prob": 42.67227889416857,
+    "ev": 1.773698128120957,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-28",
+   "liga": "Premier League",
+   "home": "Ipswich Town",
+   "away": "Aston Villa",
+   "estado": "pre",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Más 2.5",
+    "momio": 1.5882352941176472,
+    "prob": 88.76301794373694,
+    "ev": 0.4097655791064103,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-28",
+   "liga": "LaLiga",
+   "home": "Real Betis",
+   "away": "Rayo Vallecano",
+   "estado": "pre",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Más 2.5",
+    "momio": 1.5882352941176472,
+    "prob": 72.76676121137903,
+    "ev": 0.15570738394543193,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-28",
+   "liga": "LaLiga",
+   "home": "Málaga",
+   "away": "Athletic Club",
+   "estado": "pre",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Más 2.5",
+    "momio": 1.8,
+    "prob": 72.99875919209387,
+    "ev": 0.3139776654576898,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-28",
+   "liga": "Bundesliga",
+   "home": "FC Cologne",
+   "away": "SV Elversberg",
+   "estado": "pre",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Menos 2.5",
+    "momio": 2.3,
+    "prob": 59.300702264105766,
+    "ev": 0.3639161520744325,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-28",
+   "liga": "Bundesliga",
+   "home": "Mainz",
+   "away": "1. FC Union Berlin",
+   "estado": "pre",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Visita",
+    "momio": 5.75,
+    "prob": 29.57793090237614,
+    "ev": 0.7007310268866278,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-28",
+   "liga": "Bundesliga",
+   "home": "SC Paderborn 07",
+   "away": "Schalke 04",
+   "estado": "pre",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Menos 2.5",
+    "momio": 2.25,
+    "prob": 84.98435756750702,
+    "ev": 0.9121480452689079,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-28",
+   "liga": "Serie A",
+   "home": "Frosinone",
+   "away": "Parma",
+   "estado": "pre",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Menos 3.5",
+    "momio": 1.9090909090909092,
+    "prob": 55.17554777548582,
+    "ev": 0.05335136662291129,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-28",
+   "liga": "Serie A",
+   "home": "Torino",
+   "away": "Lazio",
+   "estado": "pre",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Visita",
+    "momio": 2.1,
+    "prob": 74.2934558479098,
+    "ev": 0.5601625728061057,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-29",
+   "liga": "Premier League",
+   "home": "Brighton & Hove Albion",
+   "away": "Newcastle United",
+   "estado": "pre",
+   "marcador": null,
+   "recomendacion": {
+    "pick": "Spread local -1.5",
+    "momio": 2.4,
+    "prob": 70.27442486311948,
+    "ev": 0.6865861967148674,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-29",
+   "liga": "Premier League",
+   "home": "Crystal Palace",
+   "away": "Hull City",
+   "estado": "pre",
+   "marcador": null,
+   "recomendacion": {
+    "pick": "Visita",
+    "momio": 3.85,
+    "prob": 56.32349564567649,
+    "ev": 1.168454582358545,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-29",
+   "liga": "Premier League",
+   "home": "Fulham",
+   "away": "AFC Bournemouth",
+   "estado": "pre",
+   "marcador": null,
+   "recomendacion": {
+    "pick": "Menos 2.5",
+    "momio": 2.0,
+    "prob": 58.25561006784081,
+    "ev": 0.16511220135681626,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-29",
+   "liga": "Premier League",
+   "home": "Sunderland",
+   "away": "Tottenham Hotspur",
+   "estado": "pre",
+   "marcador": null,
+   "recomendacion": {
+    "pick": "Visita",
+    "momio": 1.9523809523809523,
+    "prob": 73.4175832573872,
+    "ev": 0.4333909112156549,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-29",
+   "liga": "LaLiga",
+   "home": "Valencia",
+   "away": "Osasuna",
+   "estado": "pre",
+   "marcador": null,
+   "recomendacion": {
+    "pick": "Más 2.5",
+    "momio": 2.25,
+    "prob": 53.48434837788664,
+    "ev": 0.2033978385024493,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-29",
+   "liga": "LaLiga",
+   "home": "Celta Vigo",
+   "away": "Villarreal",
+   "estado": "pre",
+   "marcador": null,
+   "recomendacion": {
+    "pick": "Menos 2.5",
+    "momio": 2.05,
+    "prob": 96.44992326418107,
+    "ev": 0.9772234269157118,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-29",
+   "liga": "LaLiga",
+   "home": "Real Sociedad",
+   "away": "Sevilla",
+   "estado": "pre",
+   "marcador": null,
+   "recomendacion": {
+    "pick": "Local",
+    "momio": 2.15,
+    "prob": 87.27544897660519,
+    "ev": 0.8764221529970113,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-29",
+   "liga": "Bundesliga",
+   "home": "SC Freiburg",
+   "away": "RB Leipzig",
+   "estado": "pre",
+   "marcador": null,
+   "recomendacion": {
+    "pick": "Más 3.5",
+    "momio": 2.15,
+    "prob": 68.28538430934319,
+    "ev": 0.4681357626508784,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-29",
+   "liga": "Bundesliga",
+   "home": "TSG Hoffenheim",
+   "away": "FC Augsburg",
+   "estado": "pre",
+   "marcador": null,
+   "recomendacion": {
+    "pick": "Local",
+    "momio": 1.6666666666666665,
+    "prob": 81.67853889108291,
+    "ev": 0.36130898151804836,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-29",
+   "liga": "Serie A",
+   "home": "Udinese",
+   "away": "Fiorentina",
+   "estado": "pre",
+   "marcador": null,
+   "recomendacion": {
+    "pick": "Visita",
+    "momio": 2.2,
+    "prob": 80.26991780198968,
+    "ev": 0.7659381916437731,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "semana-2",
+   "fecha": "2026-11-29",
+   "liga": "Serie A",
+   "home": "AS Roma",
+   "away": "Monza",
+   "estado": "pre",
+   "marcador": null,
+   "recomendacion": {
+    "pick": "Más 3.5",
+    "momio": 1.8,
+    "prob": 77.99245368918129,
+    "ev": 0.4038641664052631,
+    "semaforo": "verde"
+   },
+   "acierto": null,
+   "acierto_texto": "Pendiente",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-24",
+   "liga": "Champions League",
+   "home": "Galatasaray",
+   "away": "Aston Villa",
+   "estado": "post",
+   "marcador": {
+    "local": 1,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Visita",
+    "momio": 2.25,
+    "prob": 65.98819831224769,
+    "ev": 0.48473446202557313,
+    "semaforo": "verde"
+   },
+   "acierto": false,
+   "acierto_texto": "Falló",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-24",
+   "liga": "Champions League",
+   "home": "Arsenal",
+   "away": "Borussia Dortmund",
+   "estado": "post",
+   "marcador": {
+    "local": 1,
+    "visita": 1
+   },
+   "recomendacion": {
+    "pick": "Menos 2.5",
+    "momio": 2.35,
+    "prob": 70.18909741624452,
+    "ev": 0.6494437892817462,
+    "semaforo": "verde"
+   },
+   "acierto": true,
+   "acierto_texto": "Acertó",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-24",
+   "liga": "Champions League",
+   "home": "Manchester City",
+   "away": "Napoli",
+   "estado": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 2
+   },
+   "recomendacion": {
+    "pick": "Más 3.5",
+    "momio": 1.8,
+    "prob": 80.24664742889321,
+    "ev": 0.4444396537200779,
+    "semaforo": "verde"
+   },
+   "acierto": true,
+   "acierto_texto": "Acertó",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-24",
+   "liga": "Champions League",
+   "home": "Real Madrid",
+   "away": "PSV Eindhoven",
+   "estado": "post",
+   "marcador": {
+    "local": 5,
+    "visita": 1
+   },
+   "recomendacion": {
+    "pick": "Empate",
+    "momio": 9.0,
+    "prob": 22.77340817725659,
+    "ev": 1.049606735953093,
+    "semaforo": "verde"
+   },
+   "acierto": false,
+   "acierto_texto": "Falló",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-25",
+   "liga": "Champions League",
+   "home": "Club Brugge",
+   "away": "Liverpool",
+   "estado": "post",
+   "marcador": {
+    "local": 0,
+    "visita": 3
+   },
+   "recomendacion": {
+    "pick": "Local",
+    "momio": 4.5,
+    "prob": 56.6225919971259,
+    "ev": 1.5480166398706658,
+    "semaforo": "verde"
+   },
+   "acierto": false,
+   "acierto_texto": "Falló",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-25",
+   "liga": "Champions League",
+   "home": "Internazionale",
+   "away": "VfB Stuttgart",
+   "estado": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Visita",
+    "momio": 6.0,
+    "prob": 38.08620235323949,
+    "ev": 1.2851721411943697,
+    "semaforo": "verde"
+   },
+   "acierto": false,
+   "acierto_texto": "Falló",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-25",
+   "liga": "Champions League",
+   "home": "Lille",
+   "away": "Bayern Munich",
+   "estado": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 1
+   },
+   "recomendacion": {
+    "pick": "Visita",
+    "momio": 1.606060606060606,
+    "prob": 86.96582756699488,
+    "ev": 0.39672389728809954,
+    "semaforo": "verde"
+   },
+   "acierto": false,
+   "acierto_texto": "Falló",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-25",
+   "liga": "Champions League",
+   "home": "Paris Saint-Germain",
+   "away": "AS Roma",
+   "estado": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 2
+   },
+   "recomendacion": {
+    "pick": "Spread local -1.5",
+    "momio": 2.05,
+    "prob": 82.82830846994565,
+    "ev": 0.6979803236338857,
+    "semaforo": "verde"
+   },
+   "acierto": false,
+   "acierto_texto": "Falló",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-25",
+   "liga": "Champions League",
+   "home": "Sporting CP",
+   "away": "Manchester United",
+   "estado": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 2
+   },
+   "recomendacion": {
+    "pick": "Local",
+    "momio": 2.55,
+    "prob": 65.79042458652096,
+    "ev": 0.6776558269562842,
+    "semaforo": "verde"
+   },
+   "acierto": false,
+   "acierto_texto": "Falló",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-26",
+   "liga": "Europa League",
+   "home": "Celta Vigo",
+   "away": "AFC Bournemouth",
+   "estado": "post",
+   "marcador": {
+    "local": 1,
+    "visita": 2
+   },
+   "recomendacion": {
+    "pick": "Visita",
+    "momio": 2.0,
+    "prob": 88.81701785380682,
+    "ev": 0.7763403570761362,
+    "semaforo": "verde"
+   },
+   "acierto": true,
+   "acierto_texto": "Acertó",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-26",
+   "liga": "Europa League",
+   "home": "Dinamo Zagreb",
+   "away": "Bayer Leverkusen",
+   "estado": "post",
+   "marcador": {
+    "local": 0,
+    "visita": 2
+   },
+   "recomendacion": {
+    "pick": "Menos 3.5",
+    "momio": 1.6451612903225805,
+    "prob": 92.1389830875759,
+    "ev": 0.5158348830536679,
+    "semaforo": "verde"
+   },
+   "acierto": true,
+   "acierto_texto": "Acertó",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-26",
+   "liga": "Europa League",
+   "home": "Olympiacos",
+   "away": "AC Milan",
+   "estado": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 4
+   },
+   "recomendacion": {
+    "pick": "Local",
+    "momio": 2.85,
+    "prob": 61.68147553184215,
+    "ev": 0.7579220526575015,
+    "semaforo": "verde"
+   },
+   "acierto": false,
+   "acierto_texto": "Falló",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-25",
+   "liga": "Liga MX",
+   "home": "Toluca",
+   "away": "Atlas",
+   "estado": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Más 2.5",
+    "momio": 1.5555555555555556,
+    "prob": 93.54765688552858,
+    "ev": 0.4551857737748892,
+    "semaforo": "verde"
+   },
+   "acierto": false,
+   "acierto_texto": "Falló",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-25",
+   "liga": "Liga MX",
+   "home": "Monterrey",
+   "away": "América",
+   "estado": "post",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Visita",
+    "momio": 3.15,
+    "prob": 34.53897897639122,
+    "ev": 0.0879778377563234,
+    "semaforo": "verde"
+   },
+   "acierto": false,
+   "acierto_texto": "Falló",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-26",
+   "liga": "Liga MX",
+   "home": "Pachuca",
+   "away": "Guadalajara",
+   "estado": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 1
+   },
+   "recomendacion": {
+    "pick": "Menos 2.5",
+    "momio": 1.8,
+    "prob": 70.63373051559003,
+    "ev": 0.2714071492806207,
+    "semaforo": "verde"
+   },
+   "acierto": false,
+   "acierto_texto": "Falló",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-26",
+   "liga": "Liga MX",
+   "home": "León",
+   "away": "Cruz Azul",
+   "estado": "post",
+   "marcador": {
+    "local": 0,
+    "visita": 4
+   },
+   "recomendacion": {
+    "pick": "Menos 2.5",
+    "momio": 2.05,
+    "prob": 53.29350460419317,
+    "ev": 0.09251684438595986,
+    "semaforo": "verde"
+   },
+   "acierto": false,
+   "acierto_texto": "Falló",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-25",
+   "liga": "Champions League",
+   "home": "Sabah FK",
+   "away": "Barcelona",
+   "estado": "post",
+   "marcador": {
+    "local": 1,
+    "visita": 4
+   },
+   "recomendacion": null,
+   "acierto": null,
+   "acierto_texto": "Sin recomendación",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-25",
+   "liga": "Champions League",
+   "home": "Slavia Prague",
+   "away": "Villarreal",
+   "estado": "post",
+   "marcador": {
+    "local": 0,
+    "visita": 1
+   },
+   "recomendacion": {
+    "pick": "Local",
+    "momio": 3.15,
+    "prob": 46.26422280447424,
+    "ev": 0.45732301834093847,
+    "semaforo": "verde"
+   },
+   "acierto": false,
+   "acierto_texto": "Falló",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-25",
+   "liga": "Champions League",
+   "home": "Atlético Madrid",
+   "away": "Viking FK",
+   "estado": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Visita",
+    "momio": 20.0,
+    "prob": 34.82783034191754,
+    "ev": 5.965566068383509,
+    "semaforo": "verde"
+   },
+   "acierto": false,
+   "acierto_texto": "Falló",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-25",
+   "liga": "Champions League",
+   "home": "Shakhtar Donetsk",
+   "away": "Fenerbahce",
+   "estado": "post",
+   "marcador": {
+    "local": 0,
+    "visita": 1
+   },
+   "recomendacion": {
+    "pick": "Local",
+    "momio": 2.95,
+    "prob": 56.34981212072615,
+    "ev": 0.6623194575614215,
+    "semaforo": "verde"
+   },
+   "acierto": false,
+   "acierto_texto": "Falló",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-26",
+   "liga": "Europa League",
+   "home": "Besiktas",
+   "away": "Hapoel Be'er",
+   "estado": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 1
+   },
+   "recomendacion": {
+    "pick": "Spread local -1.5",
+    "momio": 2.0,
+    "prob": 80.60855353304956,
+    "ev": 0.6121710706609911,
+    "semaforo": "verde"
+   },
+   "acierto": false,
+   "acierto_texto": "Falló",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-26",
+   "liga": "Europa League",
+   "home": "Marseille",
+   "away": "Levski Sofia",
+   "estado": "post",
+   "marcador": {
+    "local": 1,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Visita",
+    "momio": 8.0,
+    "prob": 56.4818209607627,
+    "ev": 3.5185456768610157,
+    "semaforo": "verde"
+   },
+   "acierto": false,
+   "acierto_texto": "Falló",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-26",
+   "liga": "Europa League",
+   "home": "RB Salzburg",
+   "away": "Ararat-Armenia",
+   "estado": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Visita",
+    "momio": 13.0,
+    "prob": 31.638971471921113,
+    "ev": 3.113066291349744,
+    "semaforo": "verde"
+   },
+   "acierto": false,
+   "acierto_texto": "Falló",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-26",
+   "liga": "Europa League",
+   "home": "Union St.-Gilloise",
+   "away": "Lech Poznan",
+   "estado": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 2
+   },
+   "recomendacion": {
+    "pick": "Spread local -1.5",
+    "momio": 1.8333333333333335,
+    "prob": 93.76758404454769,
+    "ev": 0.7190723741500411,
+    "semaforo": "verde"
+   },
+   "acierto": false,
+   "acierto_texto": "Falló",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-26",
+   "liga": "Europa League",
+   "home": "Viktoria Plzen",
+   "away": "Benfica",
+   "estado": "post",
+   "marcador": {
+    "local": 4,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Visita",
+    "momio": 1.5555555555555556,
+    "prob": 94.91573898508133,
+    "ev": 0.47646705087904295,
+    "semaforo": "verde"
+   },
+   "acierto": false,
+   "acierto_texto": "Falló",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-26",
+   "liga": "Europa League",
+   "home": "Crystal Palace",
+   "away": "Real Sociedad",
+   "estado": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 1
+   },
+   "recomendacion": {
+    "pick": "Visita",
+    "momio": 3.5,
+    "prob": 57.55789840848311,
+    "ev": 1.0145264442969086,
+    "semaforo": "verde"
+   },
+   "acierto": false,
+   "acierto_texto": "Falló",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-26",
+   "liga": "Europa League",
+   "home": "Ferencvaros",
+   "away": "NK Celje",
+   "estado": "post",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Spread local -1.5",
+    "momio": 1.9523809523809523,
+    "prob": 80.51741421489957,
+    "ev": 0.5720066584813726,
+    "semaforo": "verde"
+   },
+   "acierto": false,
+   "acierto_texto": "Falló",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-26",
+   "liga": "Europa League",
+   "home": "Juventus",
+   "away": "Omonia Nicosia",
+   "estado": "post",
+   "marcador": {
+    "local": 4,
+    "visita": 1
+   },
+   "recomendacion": {
+    "pick": "Visita",
+    "momio": 14.0,
+    "prob": 9.256333088026576,
+    "ev": 0.2958866323237206,
+    "semaforo": "verde"
+   },
+   "acierto": false,
+   "acierto_texto": "Falló",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-26",
+   "liga": "Europa League",
+   "home": "Lyon",
+   "away": "Lillestrom",
+   "estado": "post",
+   "marcador": {
+    "local": 0,
+    "visita": 0
+   },
+   "recomendacion": {
+    "pick": "Menos 3.5",
+    "momio": 1.6451612903225805,
+    "prob": 63.83093522557794,
+    "ev": 0.050121837582088435,
+    "semaforo": "verde"
+   },
+   "acierto": true,
+   "acierto_texto": "Acertó",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-26",
+   "liga": "Europa League",
+   "home": "NEC Nijmegen",
+   "away": "Stade Rennais",
+   "estado": "post",
+   "marcador": {
+    "local": 3,
+    "visita": 1
+   },
+   "recomendacion": {
+    "pick": "Menos 3.5",
+    "momio": 1.6666666666666665,
+    "prob": 74.85118122263246,
+    "ev": 0.24751968704387428,
+    "semaforo": "verde"
+   },
+   "acierto": false,
+   "acierto_texto": "Falló",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-26",
+   "liga": "Europa League",
+   "home": "OFI Crete",
+   "away": "Anderlecht",
+   "estado": "post",
+   "marcador": {
+    "local": 1,
+    "visita": 3
+   },
+   "recomendacion": {
+    "pick": "Menos 2.5",
+    "momio": 2.0,
+    "prob": 76.92259624737316,
+    "ev": 0.5384519249474633,
+    "semaforo": "verde"
+   },
+   "acierto": false,
+   "acierto_texto": "Falló",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-26",
+   "liga": "Europa League",
+   "home": "Sparta Prague",
+   "away": "AZ Alkmaar",
+   "estado": "post",
+   "marcador": {
+    "local": 2,
+    "visita": 4
+   },
+   "recomendacion": {
+    "pick": "Visita",
+    "momio": 2.6,
+    "prob": 57.57991147065079,
+    "ev": 0.4970776982369207,
+    "semaforo": "verde"
+   },
+   "acierto": true,
+   "acierto_texto": "Acertó",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-26",
+   "liga": "Europa League",
+   "home": "Sunderland",
+   "away": "Jagiellonia Bialystok",
+   "estado": "post",
+   "marcador": {
+    "local": 1,
+    "visita": 1
+   },
+   "recomendacion": {
+    "pick": "Visita",
+    "momio": 11.0,
+    "prob": 22.580920858768483,
+    "ev": 1.4839012944645331,
+    "semaforo": "verde"
+   },
+   "acierto": false,
+   "acierto_texto": "Falló",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-26",
+   "liga": "Europa League",
+   "home": "Torreense",
+   "away": "Celtic",
+   "estado": "post",
+   "marcador": {
+    "local": 1,
+    "visita": 2
+   },
+   "recomendacion": {
+    "pick": "Local",
+    "momio": 4.5,
+    "prob": 54.155098453939544,
+    "ev": 1.4369794304272796,
+    "semaforo": "verde"
+   },
+   "acierto": false,
+   "acierto_texto": "Falló",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  },
+  {
+   "config": "entresemana",
+   "fecha": "2026-11-26",
+   "liga": "Europa League",
+   "home": "TSG Hoffenheim",
+   "away": "SK Sturm Graz",
+   "estado": "post",
+   "marcador": {
+    "local": 3,
+    "visita": 1
+   },
+   "recomendacion": {
+    "pick": "Visita",
+    "momio": 9.0,
+    "prob": 20.205743034059072,
+    "ev": 0.8185168730653165,
+    "semaforo": "verde"
+   },
+   "acierto": false,
+   "acierto_texto": "Falló",
+   "vivo": {
+    "tiene_datos": false,
+    "motivo": "sin snapshots en data/live-log",
+    "ultimo_snapshot": null,
+    "prediccion": null,
+    "acierto": null
+   }
+  }
+ ],
+ "resumen": {
+  "pre_partido": {
+   "con_resultado": 38,
+   "aciertos": 6,
+   "fallos": 32,
+   "pct_acierto": 15.8,
+   "sin_datos": 0
+  },
+  "en_vivo": {
+   "con_resultado": 0,
+   "aciertos": 0,
+   "fallos": 0,
+   "pct_acierto": null,
+   "sin_datos": 39
+  }
+ }
+}
