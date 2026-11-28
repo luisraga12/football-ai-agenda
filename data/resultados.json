@@ -1,6 +1,6 @@
 {
  "fecha_calculo": "2026-11-28",
- "generado_en_mx": "2026-11-28T09:41:21-06:00",
+ "generado_en_mx": "2026-11-28T09:47:33-06:00",
  "nota": "La columna en vivo usa el último snapshot del log (data/live-log); sin snapshots es 'sin datos', nunca inventada. La predicción en vivo invierte el xG de las probabilidades publicadas (no las ajustadas por XI).",
  "partidos": [
   {
@@ -121,7 +121,7 @@
    "liga": "Bundesliga",
    "home": "Hamburg SV",
    "away": "Bayern Munich",
-   "estado": "pre",
+   "estado": "in",
    "marcador": {
     "local": 0,
     "visita": 0
@@ -136,10 +136,33 @@
    "acierto": null,
    "acierto_texto": "Pendiente",
    "vivo": {
-    "tiene_datos": false,
-    "motivo": "sin snapshots en data/live-log",
-    "ultimo_snapshot": null,
-    "prediccion": null,
+    "tiene_datos": true,
+    "motivo": null,
+    "ultimo_snapshot": {
+     "cuando": "2026-11-28T15:42:36Z",
+     "minuto": "54'",
+     "marcador": [
+      0,
+      0
+     ],
+     "tda": [
+      2,
+      0
+     ],
+     "rojas": [
+      {
+       "equipo": "A",
+       "minuto": "44'",
+       "jugador": "Joshua Kimmich"
+      }
+     ]
+    },
+    "prediccion": {
+     "favorito": "Empate",
+     "p1": 29.8,
+     "px": 35.5,
+     "p2": 34.7
+    },
     "acierto": null
    }
   },
@@ -149,10 +172,10 @@
    "liga": "Premier League",
    "home": "Manchester United",
    "away": "Brentford",
-   "estado": "pre",
+   "estado": "in",
    "marcador": {
     "local": 0,
-    "visita": 0
+    "visita": 2
    },
    "recomendacion": {
     "pick": "Visita",
@@ -164,10 +187,27 @@
    "acierto": null,
    "acierto_texto": "Pendiente",
    "vivo": {
-    "tiene_datos": false,
-    "motivo": "sin snapshots en data/live-log",
-    "ultimo_snapshot": null,
-    "prediccion": null,
+    "tiene_datos": true,
+    "motivo": null,
+    "ultimo_snapshot": {
+     "cuando": "2026-11-28T15:42:36Z",
+     "minuto": "42'",
+     "marcador": [
+      0,
+      2
+     ],
+     "tda": [
+      3,
+      2
+     ],
+     "rojas": []
+    },
+    "prediccion": {
+     "favorito": "Visita",
+     "p1": 3.0,
+     "px": 8.3,
+     "p2": 88.7
+    },
     "acierto": null
    }
   },
@@ -563,9 +603,9 @@
    "liga": "Premier League",
    "home": "Leeds United",
    "away": "Coventry City",
-   "estado": "pre",
+   "estado": "in",
    "marcador": {
-    "local": 0,
+    "local": 1,
     "visita": 0
    },
    "recomendacion": {
@@ -578,10 +618,27 @@
    "acierto": null,
    "acierto_texto": "Pendiente",
    "vivo": {
-    "tiene_datos": false,
-    "motivo": "sin snapshots en data/live-log",
-    "ultimo_snapshot": null,
-    "prediccion": null,
+    "tiene_datos": true,
+    "motivo": null,
+    "ultimo_snapshot": {
+     "cuando": "2026-11-28T15:42:36Z",
+     "minuto": "42'",
+     "marcador": [
+      1,
+      0
+     ],
+     "tda": [
+      2,
+      0
+     ],
+     "rojas": []
+    },
+    "prediccion": {
+     "favorito": "Local",
+     "p1": 71.0,
+     "px": 21.3,
+     "p2": 7.7
+    },
     "acierto": null
    }
   },
@@ -619,10 +676,10 @@
    "liga": "LaLiga",
    "home": "Real Betis",
    "away": "Rayo Vallecano",
-   "estado": "pre",
+   "estado": "post",
    "marcador": {
     "local": 0,
-    "visita": 0
+    "visita": 1
    },
    "recomendacion": {
     "pick": "Más 2.5",
@@ -631,8 +688,8 @@
     "ev": 0.15570738394543193,
     "semaforo": "verde"
    },
-   "acierto": null,
-   "acierto_texto": "Pendiente",
+   "acierto": false,
+   "acierto_texto": "Falló",
    "vivo": {
     "tiene_datos": false,
     "motivo": "sin snapshots en data/live-log",
@@ -647,7 +704,7 @@
    "liga": "LaLiga",
    "home": "Málaga",
    "away": "Athletic Club",
-   "estado": "pre",
+   "estado": "in",
    "marcador": {
     "local": 0,
     "visita": 0
@@ -662,10 +719,27 @@
    "acierto": null,
    "acierto_texto": "Pendiente",
    "vivo": {
-    "tiene_datos": false,
-    "motivo": "sin snapshots en data/live-log",
-    "ultimo_snapshot": null,
-    "prediccion": null,
+    "tiene_datos": true,
+    "motivo": null,
+    "ultimo_snapshot": {
+     "cuando": "2026-11-28T15:42:36Z",
+     "minuto": "27'",
+     "marcador": [
+      0,
+      0
+     ],
+     "tda": [
+      1,
+      3
+     ],
+     "rojas": []
+    },
+    "prediccion": {
+     "favorito": "Visita",
+     "p1": 13.0,
+     "px": 20.8,
+     "p2": 66.2
+    },
     "acierto": null
    }
   },
@@ -675,9 +749,9 @@
    "liga": "Bundesliga",
    "home": "FC Cologne",
    "away": "SV Elversberg",
-   "estado": "pre",
+   "estado": "in",
    "marcador": {
-    "local": 0,
+    "local": 3,
     "visita": 0
    },
    "recomendacion": {
@@ -690,10 +764,27 @@
    "acierto": null,
    "acierto_texto": "Pendiente",
    "vivo": {
-    "tiene_datos": false,
-    "motivo": "sin snapshots en data/live-log",
-    "ultimo_snapshot": null,
-    "prediccion": null,
+    "tiene_datos": true,
+    "motivo": null,
+    "ultimo_snapshot": {
+     "cuando": "2026-11-28T15:42:36Z",
+     "minuto": "54'",
+     "marcador": [
+      3,
+      0
+     ],
+     "tda": [
+      4,
+      4
+     ],
+     "rojas": []
+    },
+    "prediccion": {
+     "favorito": "Local",
+     "p1": 99.6,
+     "px": 0.4,
+     "p2": 0.0
+    },
     "acierto": null
    }
   },
@@ -703,10 +794,10 @@
    "liga": "Bundesliga",
    "home": "Mainz",
    "away": "1. FC Union Berlin",
-   "estado": "pre",
+   "estado": "in",
    "marcador": {
     "local": 0,
-    "visita": 0
+    "visita": 1
    },
    "recomendacion": {
     "pick": "Visita",
@@ -718,10 +809,27 @@
    "acierto": null,
    "acierto_texto": "Pendiente",
    "vivo": {
-    "tiene_datos": false,
-    "motivo": "sin snapshots en data/live-log",
-    "ultimo_snapshot": null,
-    "prediccion": null,
+    "tiene_datos": true,
+    "motivo": null,
+    "ultimo_snapshot": {
+     "cuando": "2026-11-28T15:42:36Z",
+     "minuto": "53'",
+     "marcador": [
+      0,
+      1
+     ],
+     "tda": [
+      0,
+      4
+     ],
+     "rojas": []
+    },
+    "prediccion": {
+     "favorito": "Visita",
+     "p1": 2.1,
+     "px": 14.2,
+     "p2": 83.7
+    },
     "acierto": null
    }
   },
@@ -731,9 +839,9 @@
    "liga": "Bundesliga",
    "home": "SC Paderborn 07",
    "away": "Schalke 04",
-   "estado": "pre",
+   "estado": "in",
    "marcador": {
-    "local": 0,
+    "local": 3,
     "visita": 0
    },
    "recomendacion": {
@@ -746,10 +854,27 @@
    "acierto": null,
    "acierto_texto": "Pendiente",
    "vivo": {
-    "tiene_datos": false,
-    "motivo": "sin snapshots en data/live-log",
-    "ultimo_snapshot": null,
-    "prediccion": null,
+    "tiene_datos": true,
+    "motivo": null,
+    "ultimo_snapshot": {
+     "cuando": "2026-11-28T15:42:36Z",
+     "minuto": "51'",
+     "marcador": [
+      3,
+      0
+     ],
+     "tda": [
+      3,
+      2
+     ],
+     "rojas": []
+    },
+    "prediccion": {
+     "favorito": "Local",
+     "p1": 100.0,
+     "px": 0.0,
+     "p2": 0.0
+    },
     "acierto": null
    }
   },
@@ -759,9 +884,9 @@
    "liga": "Serie A",
    "home": "Frosinone",
    "away": "Parma",
-   "estado": "pre",
+   "estado": "in",
    "marcador": {
-    "local": 0,
+    "local": 3,
     "visita": 0
    },
    "recomendacion": {
@@ -774,10 +899,27 @@
    "acierto": null,
    "acierto_texto": "Pendiente",
    "vivo": {
-    "tiene_datos": false,
-    "motivo": "sin snapshots en data/live-log",
-    "ultimo_snapshot": null,
-    "prediccion": null,
+    "tiene_datos": true,
+    "motivo": null,
+    "ultimo_snapshot": {
+     "cuando": "2026-11-28T15:42:36Z",
+     "minuto": "84'",
+     "marcador": [
+      3,
+      0
+     ],
+     "tda": [
+      10,
+      3
+     ],
+     "rojas": []
+    },
+    "prediccion": {
+     "favorito": "Local",
+     "p1": 100.0,
+     "px": 0.0,
+     "p2": 0.0
+    },
     "acierto": null
    }
   },
@@ -2061,10 +2203,10 @@
  ],
  "resumen": {
   "pre_partido": {
-   "con_resultado": 38,
+   "con_resultado": 39,
    "aciertos": 6,
-   "fallos": 32,
-   "pct_acierto": 15.8,
+   "fallos": 33,
+   "pct_acierto": 15.4,
    "sin_datos": 0
   },
   "en_vivo": {
@@ -2072,7 +2214,7 @@
    "aciertos": 0,
    "fallos": 0,
    "pct_acierto": null,
-   "sin_datos": 39
+   "sin_datos": 40
   }
  }
 }
