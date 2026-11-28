@@ -730,7 +730,9 @@ function xiOficialFuerza(key, lado, nombreEquipo){
     var lin = d && d.lineup;
     var jug = (lin && lin.jugadores) ? lin.jugadores[(lado === "Local") ? "local" : "visita"] : null;
     if (!jug || jug.length !== 11) return null;
-    var ofi = xiOficial(jug, nombreEquipo);
+    var _xiOf = (typeof window !== "undefined" && typeof window.__xiOficial === "function") ? window.__xiOficial : null;
+    if (!_xiOf) return null;
+    var ofi = _xiOf(jug, nombreEquipo);
     var det = side.f_of_detalle;
     ofi.z = {v: side.f_of, a: det.A_goles, ga: det.goles_asist, ma: det.mejor.goles_asist, b: det.B_minutos, m: det.minutos, mb: det.mejor.minutos, c: det.C_puntos, p: det.puntos, mc: det.mejor.puntos};
     return ofi;
@@ -1880,7 +1882,7 @@ function buildRADIOMap(rawData, tenData, partidos){
     return h;
   }
 
-  /* Semana 10 (E2): XI oficial de data/mapas.json; posiciones ESPN (CD-L, LB, AM-R...) se normalizan a G/D/M/F; la formación se calcula D-M-F. */ function posCancha(p){ p = (p || "").toUpperCase(); if (p === "G" || p === "GK") return "G"; if (p === "F" || p.indexOf("CF") === 0 || p === "LF" || p === "RF" || p === "ST") return "F"; if (p.indexOf("CD") === 0 || p === "LB" || p === "RB" || p === "SW" || p === "DF") return "D"; if (p === "DM" || p.indexOf("CM") === 0 || p === "AM" || p === "LM" || p === "RM" || p.indexOf("AM-") === 0 || p === "MF") return "M"; return "?"; } function xiOficial(lista, equipo){ var j = []; (lista || []).forEach(function(p){ if (!p || p.jugador == null || p.jugador === "") return; j.push([p.jugador, posCancha(p.pos), (p.dorsal == null ? "" : String(p.dorsal))]); }); var nD = 0, nM = 0, nF = 0; j.forEach(function(p){ if (p[1] === "D") nD++; else if (p[1] === "M") nM++; else if (p[1] === "F") nF++; }); var fm = (nD + nM + nF === 10) ? (nD + "-" + nM + "-" + nF) : "—"; return {e: equipo || "", fm: fm, of: true, j: j}; } function pitchBlock(key){
+  /* Semana 10 (E2): XI oficial de data/mapas.json; posiciones ESPN (CD-L, LB, AM-R...) se normalizan a G/D/M/F; la formación se calcula D-M-F. */ function posCancha(p){ p = (p || "").toUpperCase(); if (p === "G" || p === "GK") return "G"; if (p === "F" || p.indexOf("CF") === 0 || p === "LF" || p === "RF" || p === "ST") return "F"; if (p.indexOf("CD") === 0 || p === "LB" || p === "RB" || p === "SW" || p === "DF") return "D"; if (p === "DM" || p.indexOf("CM") === 0 || p === "AM" || p === "LM" || p === "RM" || p.indexOf("AM-") === 0 || p === "MF") return "M"; return "?"; } function xiOficial(lista, equipo){ var j = []; (lista || []).forEach(function(p){ if (!p || p.jugador == null || p.jugador === "") return; j.push([p.jugador, posCancha(p.pos), (p.dorsal == null ? "" : String(p.dorsal))]); }); var nD = 0, nM = 0, nF = 0; j.forEach(function(p){ if (p[1] === "D") nD++; else if (p[1] === "M") nM++; else if (p[1] === "F") nF++; }); var fm = (nD + nM + nF === 10) ? (nD + "-" + nM + "-" + nF) : "—"; return {e: equipo || "", fm: fm, of: true, j: j}; } window.__xiOficial = xiOficial; function pitchBlock(key){
     var h = "<h4>Alineación en cancha</h4>";
     var d = DETAIL[key] || null; var lin = d && d.lineup; if (lin && lin.alineacion_publicada && lin.jugadores && lin.jugadores.local && lin.jugadores.visita && lin.jugadores.local.length === 11 && lin.jugadores.visita.length === 11){ h = "<h4>Alineación oficial en cancha</h4>"; h += '<p class="detail-note">Alineación oficial publicada por ESPN — los 11 titulares de cada equipo.</p>'; h += '<div class="pitch-grid">' + pitchXI(xiOficial(lin.jugadores.local, d.home), "Local") + pitchXI(xiOficial(lin.jugadores.visita, d.away), "Visita") + '</div>'; return h; } h += '<p class="detail-note">Alineación oficial: por confirmar — ESPN aún no publica los 11 titulares.</p>'; var m = XI_PROBABLE[key];
     if (!m){
