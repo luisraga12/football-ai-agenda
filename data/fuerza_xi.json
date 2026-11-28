@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generado_en": "2026-11-28T10:02:24Z",
+ "generado_en": "2026-11-28T14:18:56Z",
  "semana": "2",
  "k": 1.0,
  "tope_puntos": 12,
@@ -785,28 +785,54 @@
    "fecha": "2026-11-28",
    "home": "FC Cologne",
    "away": "SV Elversberg",
-   "alineacion_publicada": false,
+   "alineacion_publicada": true,
    "local": {
     "f_prob": 100.0,
-    "f_of": null,
-    "f_of_efectiva": null,
-    "r": null,
-    "casados": 0,
+    "f_of": 100.0,
+    "f_of_efectiva": 100.0,
+    "r": 1.0,
+    "casados": 11,
     "sin_casar": [],
     "tope_aplicado": false,
-    "motivo": "sin alineación oficial publicada",
-    "f_of_detalle": null
+    "motivo": null,
+    "f_of_detalle": {
+     "valor": 100.0,
+     "A_goles": 100,
+     "B_minutos": 100,
+     "C_puntos": 100,
+     "goles_asist": 3.0,
+     "minutos": 4338,
+     "puntos": 31,
+     "mejor": {
+      "goles_asist": 3.0,
+      "minutos": 4338,
+      "puntos": 31
+     }
+    }
    },
    "visita": {
     "f_prob": 100.0,
-    "f_of": null,
-    "f_of_efectiva": null,
-    "r": null,
-    "casados": 0,
+    "f_of": 100.0,
+    "f_of_efectiva": 100.0,
+    "r": 1.0,
+    "casados": 11,
     "sin_casar": [],
     "tope_aplicado": false,
-    "motivo": "sin alineación oficial publicada",
-    "f_of_detalle": null
+    "motivo": null,
+    "f_of_detalle": {
+     "valor": 100.0,
+     "A_goles": 100,
+     "B_minutos": 100,
+     "C_puntos": 100,
+     "goles_asist": 10.0,
+     "minutos": 4277,
+     "puntos": 60,
+     "mejor": {
+      "goles_asist": 10.0,
+      "minutos": 4277,
+      "puntos": 60
+     }
+    }
    }
   },
   "ferencvaros-vs-nk-celje": {
@@ -869,28 +895,56 @@
    "fecha": "2026-11-28",
    "home": "Frosinone",
    "away": "Parma",
-   "alineacion_publicada": false,
+   "alineacion_publicada": true,
    "local": {
     "f_prob": 98.7,
-    "f_of": null,
-    "f_of_efectiva": null,
-    "r": null,
-    "casados": 0,
-    "sin_casar": [],
+    "f_of": 91.3,
+    "f_of_efectiva": 91.3,
+    "r": 0.925,
+    "casados": 10,
+    "sin_casar": [
+     "Tomas Bobcek"
+    ],
     "tope_aplicado": false,
-    "motivo": "sin alineación oficial publicada",
-    "f_of_detalle": null
+    "motivo": null,
+    "f_of_detalle": {
+     "valor": 91.3,
+     "A_goles": 93.8,
+     "B_minutos": 93.5,
+     "C_puntos": 85.9,
+     "goles_asist": 15.0,
+     "minutos": 3622,
+     "puntos": 61,
+     "mejor": {
+      "goles_asist": 16.0,
+      "minutos": 3872,
+      "puntos": 71
+     }
+    }
    },
    "visita": {
     "f_prob": 84.4,
-    "f_of": null,
-    "f_of_efectiva": null,
-    "r": null,
-    "casados": 0,
+    "f_of": 68.7,
+    "f_of_efectiva": 72.4,
+    "r": 0.858,
+    "casados": 11,
     "sin_casar": [],
-    "tope_aplicado": false,
-    "motivo": "sin alineación oficial publicada",
-    "f_of_detalle": null
+    "tope_aplicado": true,
+    "motivo": null,
+    "f_of_detalle": {
+     "valor": 68.7,
+     "A_goles": 55.6,
+     "B_minutos": 75.7,
+     "C_puntos": 79.1,
+     "goles_asist": 5.0,
+     "minutos": 2863,
+     "puntos": 34,
+     "mejor": {
+      "goles_asist": 9.0,
+      "minutos": 3782,
+      "puntos": 43
+     }
+    }
    }
   },
   "fulham-vs-afc-bournemouth": {
@@ -1013,28 +1067,58 @@
    "fecha": "2026-11-28",
    "home": "Hamburg SV",
    "away": "Bayern Munich",
-   "alineacion_publicada": false,
+   "alineacion_publicada": true,
    "local": {
     "f_prob": 93.3,
-    "f_of": null,
-    "f_of_efectiva": null,
-    "r": null,
-    "casados": 0,
-    "sin_casar": [],
-    "tope_aplicado": false,
-    "motivo": "sin alineación oficial publicada",
-    "f_of_detalle": null
+    "f_of": 65.8,
+    "f_of_efectiva": 81.3,
+    "r": 0.871,
+    "casados": 10,
+    "sin_casar": [
+     "Mario Vuskovic"
+    ],
+    "tope_aplicado": true,
+    "motivo": null,
+    "f_of_detalle": {
+     "valor": 65.8,
+     "A_goles": 44.4,
+     "B_minutos": 83.8,
+     "C_puntos": 76.2,
+     "goles_asist": 4.0,
+     "minutos": 3129,
+     "puntos": 48,
+     "mejor": {
+      "goles_asist": 9.0,
+      "minutos": 3732,
+      "puntos": 63
+     }
+    }
    },
    "visita": {
     "f_prob": 94.8,
-    "f_of": null,
-    "f_of_efectiva": null,
-    "r": null,
-    "casados": 0,
-    "sin_casar": [],
-    "tope_aplicado": false,
-    "motivo": "sin alineación oficial publicada",
-    "f_of_detalle": null
+    "f_of": 47.2,
+    "f_of_efectiva": 82.8,
+    "r": 0.873,
+    "casados": 10,
+    "sin_casar": [
+     "Bara Sapoko Ndiaye"
+    ],
+    "tope_aplicado": true,
+    "motivo": null,
+    "f_of_detalle": {
+     "valor": 47.2,
+     "A_goles": 20.8,
+     "B_minutos": 59.2,
+     "C_puntos": 70.4,
+     "goles_asist": 5.0,
+     "minutos": 2395,
+     "puntos": 81,
+     "mejor": {
+      "goles_asist": 24.0,
+      "minutos": 4043,
+      "puntos": 115
+     }
+    }
    }
   },
   "internazionale-vs-genoa": {
@@ -1212,28 +1296,54 @@
    "fecha": "2026-11-28",
    "home": "Leeds United",
    "away": "Coventry City",
-   "alineacion_publicada": false,
+   "alineacion_publicada": true,
    "local": {
     "f_prob": 78.5,
-    "f_of": null,
-    "f_of_efectiva": null,
-    "r": null,
-    "casados": 0,
+    "f_of": 95.0,
+    "f_of_efectiva": 90.5,
+    "r": 1.153,
+    "casados": 11,
     "sin_casar": [],
-    "tope_aplicado": false,
-    "motivo": "sin alineación oficial publicada",
-    "f_of_detalle": null
+    "tope_aplicado": true,
+    "motivo": null,
+    "f_of_detalle": {
+     "valor": 95.0,
+     "A_goles": 87.5,
+     "B_minutos": 100,
+     "C_puntos": 100,
+     "goles_asist": 7.0,
+     "minutos": 4223,
+     "puntos": 87,
+     "mejor": {
+      "goles_asist": 8.0,
+      "minutos": 4223,
+      "puntos": 87
+     }
+    }
    },
    "visita": {
     "f_prob": 92.9,
-    "f_of": null,
-    "f_of_efectiva": null,
-    "r": null,
-    "casados": 0,
+    "f_of": 76.8,
+    "f_of_efectiva": 80.9,
+    "r": 0.871,
+    "casados": 11,
     "sin_casar": [],
-    "tope_aplicado": false,
-    "motivo": "sin alineación oficial publicada",
-    "f_of_detalle": null
+    "tope_aplicado": true,
+    "motivo": null,
+    "f_of_detalle": {
+     "valor": 76.8,
+     "A_goles": 60.0,
+     "B_minutos": 85.9,
+     "C_puntos": 90.0,
+     "goles_asist": 6.0,
+     "minutos": 3457,
+     "puntos": 54,
+     "mejor": {
+      "goles_asist": 10.0,
+      "minutos": 4024,
+      "puntos": 60
+     }
+    }
    }
   },
   "leon-vs-cruz-azul": {
@@ -1465,28 +1575,54 @@
    "fecha": "2026-11-28",
    "home": "Mainz",
    "away": "1. FC Union Berlin",
-   "alineacion_publicada": false,
+   "alineacion_publicada": true,
    "local": {
     "f_prob": 97.3,
-    "f_of": null,
-    "f_of_efectiva": null,
-    "r": null,
-    "casados": 0,
+    "f_of": 57.7,
+    "f_of_efectiva": 85.3,
+    "r": 0.877,
+    "casados": 11,
     "sin_casar": [],
-    "tope_aplicado": false,
-    "motivo": "sin alineación oficial publicada",
-    "f_of_detalle": null
+    "tope_aplicado": true,
+    "motivo": null,
+    "f_of_detalle": {
+     "valor": 57.7,
+     "A_goles": 40.0,
+     "B_minutos": 75.4,
+     "C_puntos": 63.6,
+     "goles_asist": 4.0,
+     "minutos": 3075,
+     "puntos": 21,
+     "mejor": {
+      "goles_asist": 10.0,
+      "minutos": 4076,
+      "puntos": 33
+     }
+    }
    },
    "visita": {
     "f_prob": 97.9,
-    "f_of": null,
-    "f_of_efectiva": null,
-    "r": null,
-    "casados": 0,
+    "f_of": 75.3,
+    "f_of_efectiva": 85.9,
+    "r": 0.877,
+    "casados": 11,
     "sin_casar": [],
-    "tope_aplicado": false,
-    "motivo": "sin alineación oficial publicada",
-    "f_of_detalle": null
+    "tope_aplicado": true,
+    "motivo": null,
+    "f_of_detalle": {
+     "valor": 75.3,
+     "A_goles": 75.0,
+     "B_minutos": 78.6,
+     "C_puntos": 72.4,
+     "goles_asist": 3.0,
+     "minutos": 3025,
+     "puntos": 21,
+     "mejor": {
+      "goles_asist": 4.0,
+      "minutos": 3847,
+      "puntos": 29
+     }
+    }
    }
   },
   "malaga-vs-athletic-club": {
@@ -1494,28 +1630,54 @@
    "fecha": "2026-11-28",
    "home": "Málaga",
    "away": "Athletic Club",
-   "alineacion_publicada": false,
+   "alineacion_publicada": true,
    "local": {
     "f_prob": 85.6,
-    "f_of": null,
-    "f_of_efectiva": null,
-    "r": null,
-    "casados": 0,
+    "f_of": 61.7,
+    "f_of_efectiva": 73.6,
+    "r": 0.86,
+    "casados": 11,
     "sin_casar": [],
-    "tope_aplicado": false,
-    "motivo": "sin alineación oficial publicada",
-    "f_of_detalle": null
+    "tope_aplicado": true,
+    "motivo": null,
+    "f_of_detalle": {
+     "valor": 61.7,
+     "A_goles": 50.0,
+     "B_minutos": 66.3,
+     "C_puntos": 72.7,
+     "goles_asist": 4.0,
+     "minutos": 2415,
+     "puntos": 8,
+     "mejor": {
+      "goles_asist": 8.0,
+      "minutos": 3640,
+      "puntos": 11
+     }
+    }
    },
    "visita": {
     "f_prob": 95.3,
-    "f_of": null,
-    "f_of_efectiva": null,
-    "r": null,
-    "casados": 0,
+    "f_of": 92.7,
+    "f_of_efectiva": 92.7,
+    "r": 0.973,
+    "casados": 11,
     "sin_casar": [],
     "tope_aplicado": false,
-    "motivo": "sin alineación oficial publicada",
-    "f_of_detalle": null
+    "motivo": null,
+    "f_of_detalle": {
+     "valor": 92.7,
+     "A_goles": 100,
+     "B_minutos": 89.2,
+     "C_puntos": 86.5,
+     "goles_asist": 12.0,
+     "minutos": 3562,
+     "puntos": 64,
+     "mejor": {
+      "goles_asist": 12.0,
+      "minutos": 3992,
+      "puntos": 74
+     }
+    }
    }
   },
   "manchester-city-vs-napoli": {
@@ -1578,28 +1740,54 @@
    "fecha": "2026-11-28",
    "home": "Manchester United",
    "away": "Brentford",
-   "alineacion_publicada": false,
+   "alineacion_publicada": true,
    "local": {
     "f_prob": 86.7,
-    "f_of": null,
-    "f_of_efectiva": null,
-    "r": null,
-    "casados": 0,
+    "f_of": 93.1,
+    "f_of_efectiva": 93.1,
+    "r": 1.074,
+    "casados": 11,
     "sin_casar": [],
     "tope_aplicado": false,
-    "motivo": "sin alineación oficial publicada",
-    "f_of_detalle": null
+    "motivo": null,
+    "f_of_detalle": {
+     "valor": 93.1,
+     "A_goles": 100,
+     "B_minutos": 86.9,
+     "C_puntos": 90.0,
+     "goles_asist": 7.0,
+     "minutos": 3284,
+     "puntos": 18,
+     "mejor": {
+      "goles_asist": 7.0,
+      "minutos": 3779,
+      "puntos": 20
+     }
+    }
    },
    "visita": {
     "f_prob": 88.3,
-    "f_of": null,
-    "f_of_efectiva": null,
-    "r": null,
-    "casados": 0,
+    "f_of": 80.3,
+    "f_of_efectiva": 80.3,
+    "r": 0.909,
+    "casados": 11,
     "sin_casar": [],
     "tope_aplicado": false,
-    "motivo": "sin alineación oficial publicada",
-    "f_of_detalle": null
+    "motivo": null,
+    "f_of_detalle": {
+     "valor": 80.3,
+     "A_goles": 61.5,
+     "B_minutos": 89.5,
+     "C_puntos": 96.1,
+     "goles_asist": 8.0,
+     "minutos": 3558,
+     "puntos": 73,
+     "mejor": {
+      "goles_asist": 13.0,
+      "minutos": 3976,
+      "puntos": 76
+     }
+    }
    }
   },
   "marseille-vs-levski-sofia": {
@@ -2113,28 +2301,58 @@
    "fecha": "2026-11-28",
    "home": "Real Betis",
    "away": "Rayo Vallecano",
-   "alineacion_publicada": false,
+   "alineacion_publicada": true,
    "local": {
     "f_prob": 92.0,
-    "f_of": null,
-    "f_of_efectiva": null,
-    "r": null,
-    "casados": 0,
-    "sin_casar": [],
+    "f_of": 85.9,
+    "f_of_efectiva": 85.9,
+    "r": 0.934,
+    "casados": 10,
+    "sin_casar": [
+     "Junior Firpo"
+    ],
     "tope_aplicado": false,
-    "motivo": "sin alineación oficial publicada",
-    "f_of_detalle": null
+    "motivo": null,
+    "f_of_detalle": {
+     "valor": 85.9,
+     "A_goles": 80.0,
+     "B_minutos": 89.8,
+     "C_puntos": 89.9,
+     "goles_asist": 8.0,
+     "minutos": 3172,
+     "puntos": 71,
+     "mejor": {
+      "goles_asist": 10.0,
+      "minutos": 3532,
+      "puntos": 79
+     }
+    }
    },
    "visita": {
     "f_prob": 97.9,
-    "f_of": null,
-    "f_of_efectiva": null,
-    "r": null,
-    "casados": 0,
-    "sin_casar": [],
+    "f_of": 90.4,
+    "f_of_efectiva": 90.4,
+    "r": 0.923,
+    "casados": 10,
+    "sin_casar": [
+     "Gnangoro Bouare Samake"
+    ],
     "tope_aplicado": false,
-    "motivo": "sin alineación oficial publicada",
-    "f_of_detalle": null
+    "motivo": null,
+    "f_of_detalle": {
+     "valor": 90.4,
+     "A_goles": 100,
+     "B_minutos": 86.2,
+     "C_puntos": 81.8,
+     "goles_asist": 7.0,
+     "minutos": 3437,
+     "puntos": 36,
+     "mejor": {
+      "goles_asist": 7.0,
+      "minutos": 3987,
+      "puntos": 44
+     }
+    }
    }
   },
   "real-madrid-vs-alaves": {
@@ -2370,28 +2588,54 @@
    "fecha": "2026-11-28",
    "home": "SC Paderborn 07",
    "away": "Schalke 04",
-   "alineacion_publicada": false,
+   "alineacion_publicada": true,
    "local": {
     "f_prob": 99.9,
-    "f_of": null,
-    "f_of_efectiva": null,
-    "r": null,
-    "casados": 0,
+    "f_of": 99.1,
+    "f_of_efectiva": 99.1,
+    "r": 0.992,
+    "casados": 11,
     "sin_casar": [],
     "tope_aplicado": false,
-    "motivo": "sin alineación oficial publicada",
-    "f_of_detalle": null
+    "motivo": null,
+    "f_of_detalle": {
+     "valor": 99.1,
+     "A_goles": 100,
+     "B_minutos": 96.8,
+     "C_puntos": 100,
+     "goles_asist": 5.0,
+     "minutos": 4133,
+     "puntos": 62,
+     "mejor": {
+      "goles_asist": 5.0,
+      "minutos": 4268,
+      "puntos": 62
+     }
+    }
    },
    "visita": {
     "f_prob": 100.0,
-    "f_of": null,
-    "f_of_efectiva": null,
-    "r": null,
-    "casados": 0,
+    "f_of": 94.1,
+    "f_of_efectiva": 94.1,
+    "r": 0.941,
+    "casados": 11,
     "sin_casar": [],
     "tope_aplicado": false,
-    "motivo": "sin alineación oficial publicada",
-    "f_of_detalle": null
+    "motivo": null,
+    "f_of_detalle": {
+     "valor": 94.1,
+     "A_goles": 100,
+     "B_minutos": 90.0,
+     "C_puntos": 90.5,
+     "goles_asist": 1.0,
+     "minutos": 3584,
+     "puntos": 19,
+     "mejor": {
+      "goles_asist": 1.0,
+      "minutos": 3984,
+      "puntos": 21
+     }
+    }
    }
   },
   "shakhtar-donetsk-vs-fenerbahce": {
