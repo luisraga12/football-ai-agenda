@@ -178,6 +178,11 @@ def main():
     # detalle). Sin alineacion oficial, el lado queda en null con
     # motivo; el detalle muestra la Fuerza probable como hoy.
     run([sys.executable, 'scripts/calcular_fuerza_oficial.py'])
+    # Paso 12: parlay del dia (28 nov 2026). Despues del EV: toma los
+    # 3 mejores picks verdes (EV >= +5%) del dia y publica
+    # data/parlay-del-dia.json. Si el archivo ya existe con la fecha
+    # de hoy, no se sobrescribe (el parlay se fija por la manana).
+    run([sys.executable, 'scripts/generar_parlay.py'])
 
     # ---- validaciones finales ----
     rawdir = os.path.join(ROOT, outdir, 'raw')

@@ -1,0 +1,40 @@
+{
+ "fecha": "2026-11-28",
+ "generado_en": "2026-11-28T14:19:38.180766+00:00",
+ "piernas": [
+  {
+   "slug": "leeds-united-vs-coventry-city",
+   "partido": "Leeds United vs Coventry City",
+   "liga": "Premier League",
+   "hora": "09:00",
+   "pick": "Visita",
+   "momio": 6.5,
+   "prob": 42.67227889416857,
+   "ev": 1.773698128120957
+  },
+  {
+   "slug": "hamburg-sv-vs-bayern-munich",
+   "partido": "Hamburg SV vs Bayern Munich",
+   "liga": "Bundesliga",
+   "hora": "08:30",
+   "pick": "Local",
+   "momio": 8.0,
+   "prob": 29.941242906076138,
+   "ev": 1.395299432486091
+  },
+  {
+   "slug": "elche-vs-atletico-madrid",
+   "partido": "Elche vs Atlético Madrid",
+   "liga": "LaLiga",
+   "hora": "11:30",
+   "pick": "Empate",
+   "momio": 4.6,
+   "prob": 46.39254432551121,
+   "ev": 1.1340570389735154
+  }
+ ],
+ "momio_combinado": 239.2,
+ "prob_combinada": 5.93,
+ "ev_combinado": 13.1783,
+ "nota": "3 pierna(s) con EV >= +5%"
+}
