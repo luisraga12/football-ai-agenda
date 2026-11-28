@@ -26,6 +26,8 @@ header p.sub{color:var(--ink-2);max-width:64ch;margin-top:10px}
 code{background:var(--surface-2);padding:1px 6px;border-radius:6px}
 ul{margin:8px 0;padding-left:20px}
 li{margin:4px 0}
+button{font-family:"Manrope",sans-serif;font-weight:800;cursor:pointer;min-height:44px;border-radius:10px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);padding:10px 16px}
+button.primary{background:var(--accent);border-color:var(--accent);color:#141C06}
 .note{border-left:3px solid var(--amber);background:rgba(250,204,21,.06);padding:10px 12px;border-radius:0 10px 10px 0;margin-top:12px}
 .okbox{border-left:3px solid var(--accent);background:rgba(163,230,53,.06);padding:10px 12px;border-radius:0 10px 10px 0;margin-top:12px}
 /* --- El Historial, con el CSS exacto de index.html (P3-e) --- */
@@ -142,6 +144,8 @@ li{margin:4px 0}
 <div class="phone-label">Teléfono · 360 px</div>
 <div id="frag-phone"></div>
 </div>
+<p style="text-align:center;margin-top:12px"><button id="phone-scroll">Ver las columnas de la derecha →</button> <button id="phone-reset">← Volver al inicio</button></p>
+<p class="small muted" id="phone-medida" style="text-align:center">Medida de scroll: …</p>
 <div class="okbox"><b>Qué se verificó en este preview (escritorio):</b> la tabla no ensancha la página; las columnas Fecha, Liga, Partido y Resultado se leen sin desplazar; 1X2, Total y BTTS se alcanzan con scroll horizontal dentro del marco; ningún texto se corta ni se parte en las celdas; el resumen (0/4…) y la fecha se leen completos sin scroll.</div>
 <div class="note"><b>Qué queda para el teléfono de Luis (mañana):</b> la verificación final en un teléfono real — abrir la página en el móvil, comprobar el scroll horizontal de la tabla del Historial con el dedo, que nada se corte y que la página no se mueva de lado. Este preview a 360 px no sustituye esa prueba.</div>
 </section>
@@ -159,6 +163,10 @@ li{margin:4px 0}
 <script>
 var src=document.querySelector("#frag-desktop section.historial");
 if(src){document.getElementById("frag-phone").appendChild(src.cloneNode(true));}
+function medirScroll(){var el=document.querySelector("#frag-phone .historial-scroll");var p=document.getElementById("phone-medida");if(el&&p){p.textContent="Medida en el navegador: la tabla mide "+el.scrollWidth+" px dentro de un contenedor de "+el.clientWidth+" px; desplazamiento horizontal disponible: "+(el.scrollWidth-el.clientWidth)+" px. En el teléfono se desplaza con el dedo; aquí también con el botón de arriba.";}}
+document.getElementById("phone-scroll").addEventListener("click",function(){var el=document.querySelector("#frag-phone .historial-scroll");if(el){el.scrollLeft+=340;}});
+document.getElementById("phone-reset").addEventListener("click",function(){var el=document.querySelector("#frag-phone .historial-scroll");if(el){el.scrollLeft=0;}});
+medirScroll();
 </script>
 </body>
 </html>
