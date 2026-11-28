@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generado_en": "2026-11-28T03:00:02Z",
-  "generado_en_mx": "2026-11-27T21:00:03-06:00",
+  "generado_en": "2026-11-28T07:15:27Z",
+  "generado_en_mx": "2026-11-28T01:15:27-06:00",
   "semana": 2,
   "fuente": "ESPN scoreboard (site.api.espn.com, respaldo site.web.api.espn.com)",
   "partidos": [
@@ -28,13 +28,12 @@
       "home": "Leeds United",
       "away": "Coventry City",
       "estado": "pre",
-      "detalle": "",
-      "minuto": "",
-      "marcador_local": null,
-      "marcador_visita": null,
-      "actualizado_en": "2026-11-27T20:51:30Z",
-      "origen": "config",
-      "evento_id": null
+      "detalle": "Sat, November 28th at 10:00 AM EST",
+      "minuto": "0'",
+      "marcador_local": 0,
+      "marcador_visita": 0,
+      "actualizado_en": "2026-11-28T07:15:27Z",
+      "evento_id": "401879227"
     },
     {
       "liga": "eng.1",
@@ -59,13 +58,12 @@
       "home": "Ipswich Town",
       "away": "Aston Villa",
       "estado": "pre",
-      "detalle": "",
-      "minuto": "",
-      "marcador_local": null,
-      "marcador_visita": null,
-      "actualizado_en": "2026-11-27T20:51:30Z",
-      "origen": "config",
-      "evento_id": null
+      "detalle": "Sat, November 28th at 12:30 PM EST",
+      "minuto": "0'",
+      "marcador_local": 0,
+      "marcador_visita": 0,
+      "actualizado_en": "2026-11-28T07:15:27Z",
+      "evento_id": "401878752"
     },
     {
       "liga": "eng.1",
@@ -184,13 +182,12 @@
       "home": "Real Betis",
       "away": "Rayo Vallecano",
       "estado": "pre",
-      "detalle": "",
-      "minuto": "",
-      "marcador_local": null,
-      "marcador_visita": null,
-      "actualizado_en": "2026-11-27T20:51:30Z",
-      "origen": "config",
-      "evento_id": null
+      "detalle": "Sat, November 28th at 8:00 AM EST",
+      "minuto": "0'",
+      "marcador_local": 0,
+      "marcador_visita": 0,
+      "actualizado_en": "2026-11-28T07:15:27Z",
+      "evento_id": "401882796"
     },
     {
       "liga": "esp.1",
@@ -230,13 +227,12 @@
       "home": "Málaga",
       "away": "Athletic Club",
       "estado": "pre",
-      "detalle": "",
-      "minuto": "",
-      "marcador_local": null,
-      "marcador_visita": null,
-      "actualizado_en": "2026-11-27T20:51:30Z",
-      "origen": "config",
-      "evento_id": null
+      "detalle": "Sat, November 28th at 10:15 AM EST",
+      "minuto": "0'",
+      "marcador_local": 0,
+      "marcador_visita": 0,
+      "actualizado_en": "2026-11-28T07:15:27Z",
+      "evento_id": "401882790"
     },
     {
       "liga": "esp.1",
@@ -324,13 +320,12 @@
       "home": "FC Cologne",
       "away": "SV Elversberg",
       "estado": "pre",
-      "detalle": "",
-      "minuto": "",
-      "marcador_local": null,
-      "marcador_visita": null,
-      "actualizado_en": "2026-11-27T20:51:30Z",
-      "origen": "config",
-      "evento_id": null
+      "detalle": "Sat, November 28th at 9:30 AM EST",
+      "minuto": "0'",
+      "marcador_local": 0,
+      "marcador_visita": 0,
+      "actualizado_en": "2026-11-28T07:15:27Z",
+      "evento_id": "401884721"
     },
     {
       "liga": "ger.1",
@@ -370,13 +365,12 @@
       "home": "Mainz",
       "away": "1. FC Union Berlin",
       "estado": "pre",
-      "detalle": "",
-      "minuto": "",
-      "marcador_local": null,
-      "marcador_visita": null,
-      "actualizado_en": "2026-11-27T20:51:30Z",
-      "origen": "config",
-      "evento_id": null
+      "detalle": "Sat, November 28th at 9:30 AM EST",
+      "minuto": "0'",
+      "marcador_local": 0,
+      "marcador_visita": 0,
+      "actualizado_en": "2026-11-28T07:15:27Z",
+      "evento_id": "401884723"
     },
     {
       "liga": "ger.1",
@@ -386,13 +380,12 @@
       "home": "SC Paderborn 07",
       "away": "Schalke 04",
       "estado": "pre",
-      "detalle": "",
-      "minuto": "",
-      "marcador_local": null,
-      "marcador_visita": null,
-      "actualizado_en": "2026-11-27T20:51:30Z",
-      "origen": "config",
-      "evento_id": null
+      "detalle": "Sat, November 28th at 9:30 AM EST",
+      "minuto": "0'",
+      "marcador_local": 0,
+      "marcador_visita": 0,
+      "actualizado_en": "2026-11-28T07:15:27Z",
+      "evento_id": "401884719"
     },
     {
       "liga": "ger.1",
@@ -479,13 +472,12 @@
       "home": "Torino",
       "away": "Lazio",
       "estado": "pre",
-      "detalle": "",
-      "minuto": "",
-      "marcador_local": null,
-      "marcador_visita": null,
-      "actualizado_en": "2026-11-27T20:51:30Z",
-      "origen": "config",
-      "evento_id": null
+      "detalle": "Sat, November 28th at 12:00 PM EST",
+      "minuto": "0'",
+      "marcador_local": 0,
+      "marcador_visita": 0,
+      "actualizado_en": "2026-11-28T07:15:27Z",
+      "evento_id": "401874826"
     },
     {
       "liga": "ita.1",
@@ -495,13 +487,12 @@
       "home": "Frosinone",
       "away": "Parma",
       "estado": "pre",
-      "detalle": "",
-      "minuto": "",
-      "marcador_local": null,
-      "marcador_visita": null,
-      "actualizado_en": "2026-11-27T20:51:30Z",
-      "origen": "config",
-      "evento_id": null
+      "detalle": "Sat, November 28th at 9:00 AM EST",
+      "minuto": "0'",
+      "marcador_local": 0,
+      "marcador_visita": 0,
+      "actualizado_en": "2026-11-28T07:15:27Z",
+      "evento_id": "401875081"
     },
     {
       "liga": "ita.1",
