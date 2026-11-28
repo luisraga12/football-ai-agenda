@@ -387,13 +387,13 @@
     "proveedor": "BSD-consensus",
     "bsd_event_id": 213652,
     "btts": {
-     "yes": 1.792,
-     "no": 1.943
+     "yes": 1.785,
+     "no": 1.952
     },
     "asian_handicap": {
      "line": 1.5,
-     "home": 1.618,
-     "away": 2.243,
+     "home": 1.624,
+     "away": 2.201,
      "push": "none",
      "bookmakers": 12
     },
@@ -446,13 +446,13 @@
     "proveedor": "BSD-consensus",
     "bsd_event_id": 213766,
     "btts": {
-     "yes": 1.308,
-     "no": 3.277
+     "yes": 1.389,
+     "no": 2.853
     },
     "asian_handicap": {
      "line": -0.5,
-     "home": 1.752,
-     "away": 2.012,
+     "home": 1.742,
+     "away": 2.024,
      "push": "none",
      "bookmakers": 11
     },
@@ -497,22 +497,22 @@
    },
    "estado_partido": "in",
    "marcador": {
-    "local": 0,
+    "local": 1,
     "visita": 0
    },
    "bsd": {
     "proveedor": "BSD-consensus",
     "bsd_event_id": 210181,
     "btts": {
-     "yes": 1.828,
-     "no": 1.9
+     "yes": 1.83,
+     "no": 1.907
     },
     "asian_handicap": {
      "line": -1.5,
-     "home": 1.826,
-     "away": 1.946,
+     "home": 1.679,
+     "away": 2.127,
      "push": "none",
-     "bookmakers": 12
+     "bookmakers": 13
     },
     "corners": {
      "line": 9.5,
@@ -562,13 +562,13 @@
     "proveedor": "BSD-consensus",
     "bsd_event_id": 213657,
     "btts": {
-     "yes": 1.887,
-     "no": 1.846
+     "yes": 1.913,
+     "no": 1.835
     },
     "asian_handicap": {
      "line": -2.5,
-     "home": 2.083,
-     "away": 1.708,
+     "home": 2.028,
+     "away": 1.748,
      "push": "none",
      "bookmakers": 13
     },
@@ -617,13 +617,13 @@
     "proveedor": "BSD-consensus",
     "bsd_event_id": 209648,
     "btts": {
-     "yes": 1.617,
-     "no": 2.207
+     "yes": 1.61,
+     "no": 2.222
     },
     "asian_handicap": {
      "line": 0.5,
-     "home": 2.018,
-     "away": 1.733,
+     "home": 2.055,
+     "away": 1.717,
      "push": "none",
      "bookmakers": 10
     },
@@ -672,15 +672,15 @@
     "proveedor": "BSD-consensus",
     "bsd_event_id": 210183,
     "btts": {
-     "yes": 1.58,
-     "no": 2.277
+     "yes": 1.579,
+     "no": 2.28
     },
     "asian_handicap": {
      "line": 0.5,
-     "home": 2.183,
-     "away": 1.633,
+     "home": 2.185,
+     "away": 1.635,
      "push": "none",
-     "bookmakers": 9
+     "bookmakers": 10
     },
     "corners": {
      "line": 9.5,
@@ -727,8 +727,8 @@
     "proveedor": "BSD-consensus",
     "bsd_event_id": 213651,
     "btts": {
-     "yes": 1.574,
-     "no": 2.304
+     "yes": 1.569,
+     "no": 2.312
     },
     "asian_handicap": {
      "line": 1.5,
@@ -782,8 +782,8 @@
     "proveedor": "BSD-consensus",
     "bsd_event_id": 209645,
     "btts": {
-     "yes": 1.626,
-     "no": 2.188
+     "yes": 1.621,
+     "no": 2.195
     },
     "asian_handicap": {
      "line": -0.5,
@@ -939,8 +939,8 @@
     "proveedor": "BSD-consensus",
     "bsd_event_id": 655531,
     "btts": {
-     "yes": 1.421,
-     "no": 2.679
+     "yes": 1.416,
+     "no": 2.709
     },
     "asian_handicap": {
      "line": 0.5,
@@ -979,7 +979,7 @@
     "total": {
      "linea": 2.5,
      "over": 1.7407407407407407,
-     "under": 2.05
+     "under": 2.0
     },
     "spread": {
      "home_linea": -0.5,
@@ -994,13 +994,13 @@
     "proveedor": "BSD-consensus",
     "bsd_event_id": 655529,
     "btts": {
-     "yes": 1.604,
-     "no": 2.192
+     "yes": 1.614,
+     "no": 2.186
     },
     "asian_handicap": {
      "line": -0.5,
-     "home": 2.061,
-     "away": 1.697,
+     "home": 1.99,
+     "away": 1.747,
      "push": "none",
      "bookmakers": 11
     },
@@ -1196,15 +1196,15 @@
     "proveedor": "BSD-consensus",
     "bsd_event_id": 209650,
     "btts": {
-     "yes": 1.49,
-     "no": 2.498
+     "yes": 1.508,
+     "no": 2.456
     },
     "asian_handicap": {
      "line": 0.5,
-     "home": 1.769,
-     "away": 1.991,
+     "home": 1.767,
+     "away": 1.993,
      "push": "none",
-     "bookmakers": 9
+     "bookmakers": 10
     },
     "corners": {
      "line": 9.5,
@@ -1643,15 +1643,15 @@
     "proveedor": "BSD-consensus",
     "bsd_event_id": 209646,
     "btts": {
-     "yes": 1.603,
-     "no": 2.232
+     "yes": 1.599,
+     "no": 2.24
     },
     "asian_handicap": {
      "line": -1.5,
-     "home": 2.429,
-     "away": 1.537,
+     "home": 2.431,
+     "away": 1.538,
      "push": "none",
-     "bookmakers": 11
+     "bookmakers": 12
     },
     "corners": {
      "line": 9.5,
@@ -1698,15 +1698,15 @@
     "proveedor": "BSD-consensus",
     "bsd_event_id": 209647,
     "btts": {
-     "yes": 1.65,
-     "no": 2.15
+     "yes": 1.645,
+     "no": 2.154
     },
     "asian_handicap": {
      "line": -0.5,
-     "home": 1.825,
-     "away": 1.925,
+     "home": 1.848,
+     "away": 1.913,
      "push": "none",
-     "bookmakers": 10
+     "bookmakers": 11
     },
     "corners": {
      "line": 9.5,
@@ -1753,15 +1753,15 @@
     "proveedor": "BSD-consensus",
     "bsd_event_id": 209649,
     "btts": {
-     "yes": 1.606,
-     "no": 2.227
+     "yes": 1.602,
+     "no": 2.237
     },
     "asian_handicap": {
      "line": 0.5,
-     "home": 1.528,
-     "away": 2.398,
+     "home": 1.533,
+     "away": 2.404,
      "push": "none",
-     "bookmakers": 8
+     "bookmakers": 9
     },
     "corners": {
      "line": 9.5,
@@ -1808,15 +1808,15 @@
     "proveedor": "BSD-consensus",
     "bsd_event_id": 209654,
     "btts": {
-     "yes": 1.787,
-     "no": 1.955
+     "yes": 1.779,
+     "no": 1.964
     },
     "asian_handicap": {
      "line": 0.5,
-     "home": 1.799,
-     "away": 1.954,
+     "home": 1.804,
+     "away": 1.958,
      "push": "none",
-     "bookmakers": 9
+     "bookmakers": 10
     },
     "corners": {
      "line": 9.5,
@@ -1863,15 +1863,15 @@
     "proveedor": "BSD-consensus",
     "bsd_event_id": 215659,
     "btts": {
-     "yes": 1.932,
-     "no": 1.81
+     "yes": 1.937,
+     "no": 1.812
     },
     "asian_handicap": {
      "line": -0.5,
-     "home": 2.08,
+     "home": 2.086,
      "away": 1.699,
      "push": "none",
-     "bookmakers": 10
+     "bookmakers": 11
     },
     "corners": {
      "line": 9.5,
@@ -1918,19 +1918,23 @@
     "proveedor": "BSD-consensus",
     "bsd_event_id": 213650,
     "btts": {
-     "yes": 1.586,
-     "no": 2.248
+     "yes": 1.593,
+     "no": 2.245
     },
-    "asian_handicap": null,
+    "asian_handicap": {
+     "line": 0.5,
+     "home": 1.527,
+     "away": 2.417,
+     "push": "none",
+     "bookmakers": 9
+    },
     "corners": {
      "line": 9.5,
      "over": 2.213,
      "under": 1.607,
      "bookmakers": 3
     },
-    "sin_momio": [
-     "asian_handicap"
-    ]
+    "sin_momio": []
    }
   },
   {
@@ -1947,7 +1951,7 @@
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 2.15,
+     "home": 2.1,
      "draw": 3.65,
      "away": 3.3
     },
@@ -1998,8 +2002,8 @@
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 2.65,
-     "draw": 3.7,
+     "home": 2.7,
+     "draw": 3.75,
      "away": 2.3
     },
     "total": {
@@ -2009,9 +2013,9 @@
     },
     "spread": {
      "home_linea": 0.5,
-     "home": 1.5714285714285714,
+     "home": 1.5882352941176472,
      "away_linea": -0.5,
-     "away": 2.25
+     "away": 2.2
     }
    },
    "estado_partido": "pre",
@@ -2020,8 +2024,8 @@
     "proveedor": "BSD-consensus",
     "bsd_event_id": 213762,
     "btts": {
-     "yes": 1.421,
-     "no": 2.719
+     "yes": 1.416,
+     "no": 2.729
     },
     "asian_handicap": {
      "line": 0.5,
@@ -2075,8 +2079,8 @@
     "proveedor": "BSD-consensus",
     "bsd_event_id": 213765,
     "btts": {
-     "yes": 1.351,
-     "no": 3.007
+     "yes": 1.347,
+     "no": 3.049
     },
     "asian_handicap": {
      "line": -0.5,
@@ -2130,15 +2134,15 @@
     "proveedor": "BSD-consensus",
     "bsd_event_id": 210185,
     "btts": {
-     "yes": 1.576,
-     "no": 2.284
+     "yes": 1.577,
+     "no": 2.279
     },
     "asian_handicap": {
      "line": 0.5,
-     "home": 1.644,
-     "away": 2.172,
+     "home": 1.645,
+     "away": 2.18,
      "push": "none",
-     "bookmakers": 9
+     "bookmakers": 10
     },
     "corners": {
      "line": 9.5,
@@ -2185,8 +2189,8 @@
     "proveedor": "BSD-consensus",
     "bsd_event_id": 210177,
     "btts": {
-     "yes": 1.828,
-     "no": 1.904
+     "yes": 1.817,
+     "no": 1.914
     },
     "asian_handicap": {
      "line": -2.5,

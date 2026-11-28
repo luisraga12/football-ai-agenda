@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado_en": "2026-11-28T20:12:15Z",
+  "generado_en": "2026-11-28T20:26:51Z",
   "semana": "2-entresemana",
   "fuente": "config + ev.json + verified_events.json + teams_last5.json + schedule_*.json + DETAIL embebido en partido.html (preservado) + summary ESPN por evento (estadio + alineacion oficial + standings + h2h; tabla regular MX para Liguilla)",
   "partidos_vivo": {
@@ -14873,6 +14873,16 @@
       "lastFive": {
         "home": [
           {
+            "fecha": "21 nov 2026",
+            "rival": "Chelsea",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "4",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
             "fecha": "7 nov 2026",
             "rival": "Tottenham Hotspur",
             "local": true,
@@ -14911,19 +14921,19 @@
             "resultado": "E",
             "penaltis": false,
             "competicion": "English Premier League"
-          },
-          {
-            "fecha": "10 oct 2026",
-            "rival": "Arsenal",
-            "local": false,
-            "goles_local": "2",
-            "goles_visitante": "1",
-            "resultado": "D",
-            "penaltis": false,
-            "competicion": "English Premier League"
           }
         ],
         "away": [
+          {
+            "fecha": "21 nov 2026",
+            "rival": "Crystal Palace",
+            "local": true,
+            "goles_local": "3",
+            "goles_visitante": "2",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
           {
             "fecha": "6 nov 2026",
             "rival": "Everton",
@@ -14961,16 +14971,6 @@
             "goles_local": "3",
             "goles_visitante": "1",
             "resultado": "D",
-            "penaltis": false,
-            "competicion": "English Premier League"
-          },
-          {
-            "fecha": "12 oct 2026",
-            "rival": "Newcastle United",
-            "local": true,
-            "goles_local": "4",
-            "goles_visitante": "1",
-            "resultado": "V",
             "penaltis": false,
             "competicion": "English Premier League"
           }
@@ -15179,6 +15179,16 @@
       "lastFive": {
         "home": [
           {
+            "fecha": "21 nov 2026",
+            "rival": "Tottenham Hotspur",
+            "local": false,
+            "goles_local": "2",
+            "goles_visitante": "0",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
             "fecha": "8 nov 2026",
             "rival": "AFC Bournemouth",
             "local": true,
@@ -15215,16 +15225,6 @@
             "goles_local": "3",
             "goles_visitante": "2",
             "resultado": "D",
-            "penaltis": false,
-            "competicion": "English Premier League"
-          },
-          {
-            "fecha": "10 oct 2026",
-            "rival": "Fulham",
-            "local": true,
-            "goles_local": "2",
-            "goles_visitante": "1",
-            "resultado": "V",
             "penaltis": false,
             "competicion": "English Premier League"
           }
@@ -15475,6 +15475,16 @@
       "lastFive": {
         "home": [
           {
+            "fecha": "21 nov 2026",
+            "rival": "Sevilla",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "1",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
+          {
             "fecha": "8 nov 2026",
             "rival": "Elche",
             "local": false,
@@ -15513,19 +15523,19 @@
             "resultado": "D",
             "penaltis": false,
             "competicion": "Spanish LALIGA"
-          },
-          {
-            "fecha": "11 oct 2026",
-            "rival": "Osasuna",
-            "local": true,
-            "goles_local": "5",
-            "goles_visitante": "2",
-            "resultado": "V",
-            "penaltis": false,
-            "competicion": "Spanish LALIGA"
           }
         ],
         "away": [
+          {
+            "fecha": "21 nov 2026",
+            "rival": "Valencia",
+            "local": true,
+            "goles_local": "0",
+            "goles_visitante": "1",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
           {
             "fecha": "8 nov 2026",
             "rival": "Real Sociedad",
@@ -15559,16 +15569,6 @@
           {
             "fecha": "19 oct 2026",
             "rival": "Getafe",
-            "local": false,
-            "goles_local": "1",
-            "goles_visitante": "1",
-            "resultado": "E",
-            "penaltis": false,
-            "competicion": "Spanish LALIGA"
-          },
-          {
-            "fecha": "19 sep 2026",
-            "rival": "Osasuna",
             "local": false,
             "goles_local": "1",
             "goles_visitante": "1",
@@ -15781,6 +15781,16 @@
       "lastFive": {
         "home": [
           {
+            "fecha": "22 nov 2026",
+            "rival": "Osasuna",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "0",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
+          {
             "fecha": "7 nov 2026",
             "rival": "Racing Santander",
             "local": true,
@@ -15819,19 +15829,19 @@
             "resultado": "D",
             "penaltis": false,
             "competicion": "Spanish LALIGA"
-          },
-          {
-            "fecha": "9 oct 2026",
-            "rival": "Espanyol",
-            "local": true,
-            "goles_local": "1",
-            "goles_visitante": "1",
-            "resultado": "E",
-            "penaltis": false,
-            "competicion": "Spanish LALIGA"
           }
         ],
         "away": [
+          {
+            "fecha": "20 nov 2026",
+            "rival": "Espanyol",
+            "local": true,
+            "goles_local": "0",
+            "goles_visitante": "1",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
           {
             "fecha": "7 nov 2026",
             "rival": "Osasuna",
@@ -15869,16 +15879,6 @@
             "goles_local": "3",
             "goles_visitante": "1",
             "resultado": "D",
-            "penaltis": false,
-            "competicion": "Spanish LALIGA"
-          },
-          {
-            "fecha": "17 oct 2026",
-            "rival": "Valencia",
-            "local": false,
-            "goles_local": "0",
-            "goles_visitante": "0",
-            "resultado": "E",
             "penaltis": false,
             "competicion": "Spanish LALIGA"
           }
@@ -16087,6 +16087,16 @@
       "lastFive": {
         "home": [
           {
+            "fecha": "20 nov 2026",
+            "rival": "Bayern Munich",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "1",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
             "fecha": "8 nov 2026",
             "rival": "Bayer Leverkusen",
             "local": true,
@@ -16125,19 +16135,19 @@
             "resultado": "D",
             "penaltis": false,
             "competicion": "German Bundesliga"
-          },
-          {
-            "fecha": "11 oct 2026",
-            "rival": "Borussia Mönchengladbach",
-            "local": true,
-            "goles_local": "2",
-            "goles_visitante": "1",
-            "resultado": "V",
-            "penaltis": false,
-            "competicion": "German Bundesliga"
           }
         ],
         "away": [
+          {
+            "fecha": "21 nov 2026",
+            "rival": "SC Freiburg",
+            "local": true,
+            "goles_local": "0",
+            "goles_visitante": "1",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
           {
             "fecha": "7 nov 2026",
             "rival": "Borussia Dortmund",
@@ -16175,16 +16185,6 @@
             "goles_local": "4",
             "goles_visitante": "3",
             "resultado": "V",
-            "penaltis": false,
-            "competicion": "German Bundesliga"
-          },
-          {
-            "fecha": "10 oct 2026",
-            "rival": "1. FC Union Berlin",
-            "local": false,
-            "goles_local": "1",
-            "goles_visitante": "0",
-            "resultado": "D",
             "penaltis": false,
             "competicion": "German Bundesliga"
           }
@@ -16372,6 +16372,16 @@
       "lastFive": {
         "home": [
           {
+            "fecha": "22 nov 2026",
+            "rival": "FC Augsburg",
+            "local": false,
+            "goles_local": "3",
+            "goles_visitante": "1",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
             "fecha": "7 nov 2026",
             "rival": "Bayern Munich",
             "local": true,
@@ -16410,19 +16420,19 @@
             "resultado": "V",
             "penaltis": false,
             "competicion": "German Bundesliga"
-          },
-          {
-            "fecha": "10 oct 2026",
-            "rival": "Bayer Leverkusen",
-            "local": true,
-            "goles_local": "3",
-            "goles_visitante": "4",
-            "resultado": "D",
-            "penaltis": false,
-            "competicion": "German Bundesliga"
           }
         ],
         "away": [
+          {
+            "fecha": "21 nov 2026",
+            "rival": "RB Leipzig",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "5",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
           {
             "fecha": "8 nov 2026",
             "rival": "SC Freiburg",
@@ -16460,16 +16470,6 @@
             "goles_local": "0",
             "goles_visitante": "0",
             "resultado": "E",
-            "penaltis": false,
-            "competicion": "German Bundesliga"
-          },
-          {
-            "fecha": "10 oct 2026",
-            "rival": "SV Elversberg",
-            "local": true,
-            "goles_local": "1",
-            "goles_visitante": "0",
-            "resultado": "V",
             "penaltis": false,
             "competicion": "German Bundesliga"
           }
@@ -16678,6 +16678,16 @@
       "lastFive": {
         "home": [
           {
+            "fecha": "21 nov 2026",
+            "rival": "Bayer Leverkusen",
+            "local": false,
+            "goles_local": "4",
+            "goles_visitante": "0",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
             "fecha": "7 nov 2026",
             "rival": "Eintracht Frankfurt",
             "local": true,
@@ -16716,19 +16726,19 @@
             "resultado": "E",
             "penaltis": false,
             "competicion": "German Bundesliga"
-          },
-          {
-            "fecha": "10 oct 2026",
-            "rival": "VfB Stuttgart",
-            "local": true,
-            "goles_local": "0",
-            "goles_visitante": "2",
-            "resultado": "D",
-            "penaltis": false,
-            "competicion": "German Bundesliga"
           }
         ],
         "away": [
+          {
+            "fecha": "21 nov 2026",
+            "rival": "VfB Stuttgart",
+            "local": true,
+            "goles_local": "0",
+            "goles_visitante": "0",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
           {
             "fecha": "8 nov 2026",
             "rival": "TSG Hoffenheim",
@@ -16764,16 +16774,6 @@
             "rival": "Mainz",
             "local": true,
             "goles_local": "0",
-            "goles_visitante": "1",
-            "resultado": "D",
-            "penaltis": false,
-            "competicion": "German Bundesliga"
-          },
-          {
-            "fecha": "11 oct 2026",
-            "rival": "SC Freiburg",
-            "local": false,
-            "goles_local": "2",
             "goles_visitante": "1",
             "resultado": "D",
             "penaltis": false,
@@ -16984,6 +16984,16 @@
       "lastFive": {
         "home": [
           {
+            "fecha": "22 nov 2026",
+            "rival": "AC Milan",
+            "local": false,
+            "goles_local": "5",
+            "goles_visitante": "1",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
+          {
             "fecha": "7 nov 2026",
             "rival": "Cagliari",
             "local": false,
@@ -17022,19 +17032,19 @@
             "resultado": "E",
             "penaltis": false,
             "competicion": "Italian Serie A"
-          },
-          {
-            "fecha": "16 oct 2026",
-            "rival": "Sassuolo",
-            "local": true,
-            "goles_local": "4",
-            "goles_visitante": "2",
-            "resultado": "V",
-            "penaltis": false,
-            "competicion": "Italian Serie A"
           }
         ],
         "away": [
+          {
+            "fecha": "21 nov 2026",
+            "rival": "AS Roma",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "5",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
           {
             "fecha": "7 nov 2026",
             "rival": "Bologna",
@@ -17071,16 +17081,6 @@
             "local": false,
             "goles_local": "2",
             "goles_visitante": "1",
-            "resultado": "D",
-            "penaltis": false,
-            "competicion": "Italian Serie A"
-          },
-          {
-            "fecha": "19 oct 2026",
-            "rival": "Torino",
-            "local": true,
-            "goles_local": "0",
-            "goles_visitante": "3",
             "resultado": "D",
             "penaltis": false,
             "competicion": "Italian Serie A"
@@ -17290,6 +17290,16 @@
       "lastFive": {
         "home": [
           {
+            "fecha": "21 nov 2026",
+            "rival": "Napoli",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "0",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
+          {
             "fecha": "7 nov 2026",
             "rival": "Lecce",
             "local": true,
@@ -17328,19 +17338,19 @@
             "resultado": "V",
             "penaltis": false,
             "competicion": "Italian Serie A"
-          },
-          {
-            "fecha": "19 oct 2026",
-            "rival": "Parma",
-            "local": false,
-            "goles_local": "0",
-            "goles_visitante": "3",
-            "resultado": "V",
-            "penaltis": false,
-            "competicion": "Italian Serie A"
           }
         ],
         "away": [
+          {
+            "fecha": "21 nov 2026",
+            "rival": "Lecce",
+            "local": true,
+            "goles_local": "3",
+            "goles_visitante": "0",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
           {
             "fecha": "8 nov 2026",
             "rival": "Napoli",
@@ -17377,16 +17387,6 @@
             "local": true,
             "goles_local": "2",
             "goles_visitante": "1",
-            "resultado": "V",
-            "penaltis": false,
-            "competicion": "Italian Serie A"
-          },
-          {
-            "fecha": "18 oct 2026",
-            "rival": "Juventus",
-            "local": false,
-            "goles_local": "0",
-            "goles_visitante": "3",
             "resultado": "V",
             "penaltis": false,
             "competicion": "Italian Serie A"
@@ -17596,6 +17596,16 @@
       "lastFive": {
         "home": [
           {
+            "fecha": "22 nov 2026",
+            "rival": "Hull City",
+            "local": false,
+            "goles_local": "2",
+            "goles_visitante": "0",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
             "fecha": "8 nov 2026",
             "rival": "Brentford",
             "local": true,
@@ -17634,19 +17644,19 @@
             "resultado": "V",
             "penaltis": false,
             "competicion": "English Premier League"
-          },
-          {
-            "fecha": "10 oct 2026",
-            "rival": "Sunderland",
-            "local": false,
-            "goles_local": "0",
-            "goles_visitante": "2",
-            "resultado": "V",
-            "penaltis": false,
-            "competicion": "English Premier League"
           }
         ],
         "away": [
+          {
+            "fecha": "21 nov 2026",
+            "rival": "Arsenal",
+            "local": true,
+            "goles_local": "2",
+            "goles_visitante": "2",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
           {
             "fecha": "7 nov 2026",
             "rival": "Fulham",
@@ -17682,16 +17692,6 @@
             "rival": "Aston Villa",
             "local": true,
             "goles_local": "0",
-            "goles_visitante": "1",
-            "resultado": "D",
-            "penaltis": false,
-            "competicion": "English Premier League"
-          },
-          {
-            "fecha": "12 oct 2026",
-            "rival": "Coventry City",
-            "local": false,
-            "goles_local": "4",
             "goles_visitante": "1",
             "resultado": "D",
             "penaltis": false,
@@ -17832,6 +17832,16 @@
         ],
         "away": [
           {
+            "fecha": "22 nov 2026",
+            "rival": "Brighton & Hove Albion",
+            "local": true,
+            "goles_local": "2",
+            "goles_visitante": "0",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
             "fecha": "7 nov 2026",
             "rival": "Arsenal",
             "local": false,
@@ -17868,16 +17878,6 @@
             "goles_local": "1",
             "goles_visitante": "0",
             "resultado": "D",
-            "penaltis": false,
-            "competicion": "English Premier League"
-          },
-          {
-            "fecha": "11 oct 2026",
-            "rival": "Everton",
-            "local": true,
-            "goles_local": "2",
-            "goles_visitante": "2",
-            "resultado": "E",
             "penaltis": false,
             "competicion": "English Premier League"
           }
@@ -17974,6 +17974,16 @@
       "lastFive": {
         "home": [
           {
+            "fecha": "21 nov 2026",
+            "rival": "Manchester City",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "1",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
             "fecha": "7 nov 2026",
             "rival": "Newcastle United",
             "local": true,
@@ -18010,16 +18020,6 @@
             "goles_local": "1",
             "goles_visitante": "0",
             "resultado": "V",
-            "penaltis": false,
-            "competicion": "English Premier League"
-          },
-          {
-            "fecha": "10 oct 2026",
-            "rival": "Ipswich Town",
-            "local": false,
-            "goles_local": "2",
-            "goles_visitante": "1",
-            "resultado": "D",
             "penaltis": false,
             "competicion": "English Premier League"
           }
@@ -18200,6 +18200,16 @@
         ],
         "away": [
           {
+            "fecha": "21 nov 2026",
+            "rival": "Ipswich Town",
+            "local": true,
+            "goles_local": "2",
+            "goles_visitante": "0",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "English Premier League"
+          },
+          {
             "fecha": "7 nov 2026",
             "rival": "Leeds United",
             "local": false,
@@ -18236,16 +18246,6 @@
             "goles_local": "3",
             "goles_visitante": "1",
             "resultado": "V",
-            "penaltis": false,
-            "competicion": "English Premier League"
-          },
-          {
-            "fecha": "10 oct 2026",
-            "rival": "Manchester United",
-            "local": false,
-            "goles_local": "1",
-            "goles_visitante": "1",
-            "resultado": "E",
             "penaltis": false,
             "competicion": "English Premier League"
           }
@@ -18342,6 +18342,16 @@
       "lastFive": {
         "home": [
           {
+            "fecha": "21 nov 2026",
+            "rival": "Rayo Vallecano",
+            "local": false,
+            "goles_local": "0",
+            "goles_visitante": "1",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
+          {
             "fecha": "7 nov 2026",
             "rival": "Real Madrid",
             "local": true,
@@ -18380,19 +18390,19 @@
             "resultado": "E",
             "penaltis": false,
             "competicion": "Spanish LALIGA"
-          },
-          {
-            "fecha": "11 oct 2026",
-            "rival": "Racing Santander",
-            "local": false,
-            "goles_local": "2",
-            "goles_visitante": "2",
-            "resultado": "E",
-            "penaltis": false,
-            "competicion": "Spanish LALIGA"
           }
         ],
         "away": [
+          {
+            "fecha": "22 nov 2026",
+            "rival": "Málaga",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "0",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
           {
             "fecha": "7 nov 2026",
             "rival": "Athletic Club",
@@ -18430,16 +18440,6 @@
             "goles_local": "2",
             "goles_visitante": "0",
             "resultado": "V",
-            "penaltis": false,
-            "competicion": "Spanish LALIGA"
-          },
-          {
-            "fecha": "11 oct 2026",
-            "rival": "Real Betis",
-            "local": false,
-            "goles_local": "5",
-            "goles_visitante": "2",
-            "resultado": "D",
             "penaltis": false,
             "competicion": "Spanish LALIGA"
           }
@@ -18752,6 +18752,16 @@
         ],
         "away": [
           {
+            "fecha": "21 nov 2026",
+            "rival": "Real Betis",
+            "local": true,
+            "goles_local": "1",
+            "goles_visitante": "1",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "Spanish LALIGA"
+          },
+          {
             "fecha": "6 nov 2026",
             "rival": "Alavés",
             "local": true,
@@ -18788,16 +18798,6 @@
             "goles_local": "4",
             "goles_visitante": "1",
             "resultado": "D",
-            "penaltis": false,
-            "competicion": "Spanish LALIGA"
-          },
-          {
-            "fecha": "12 oct 2026",
-            "rival": "Levante",
-            "local": false,
-            "goles_local": "3",
-            "goles_visitante": "3",
-            "resultado": "E",
             "penaltis": false,
             "competicion": "Spanish LALIGA"
           }
@@ -18894,6 +18894,16 @@
       "lastFive": {
         "home": [
           {
+            "fecha": "21 nov 2026",
+            "rival": "SV Elversberg",
+            "local": false,
+            "goles_local": "0",
+            "goles_visitante": "1",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
             "fecha": "8 nov 2026",
             "rival": "1. FC Union Berlin",
             "local": true,
@@ -18932,19 +18942,19 @@
             "resultado": "D",
             "penaltis": false,
             "competicion": "German Bundesliga"
-          },
-          {
-            "fecha": "11 oct 2026",
-            "rival": "Schalke 04",
-            "local": true,
-            "goles_local": "2",
-            "goles_visitante": "1",
-            "resultado": "V",
-            "penaltis": false,
-            "competicion": "German Bundesliga"
           }
         ],
         "away": [
+          {
+            "fecha": "21 nov 2026",
+            "rival": "1. FC Union Berlin",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "5",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
           {
             "fecha": "7 nov 2026",
             "rival": "FC Augsburg",
@@ -18982,16 +18992,6 @@
             "goles_local": "6",
             "goles_visitante": "1",
             "resultado": "D",
-            "penaltis": false,
-            "competicion": "German Bundesliga"
-          },
-          {
-            "fecha": "10 oct 2026",
-            "rival": "Eintracht Frankfurt",
-            "local": true,
-            "goles_local": "6",
-            "goles_visitante": "0",
-            "resultado": "V",
             "penaltis": false,
             "competicion": "German Bundesliga"
           }
@@ -19130,6 +19130,16 @@
         ],
         "away": [
           {
+            "fecha": "22 nov 2026",
+            "rival": "Mainz",
+            "local": true,
+            "goles_local": "3",
+            "goles_visitante": "1",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "German Bundesliga"
+          },
+          {
             "fecha": "7 nov 2026",
             "rival": "RB Leipzig",
             "local": false,
@@ -19166,16 +19176,6 @@
             "goles_local": "4",
             "goles_visitante": "3",
             "resultado": "D",
-            "penaltis": false,
-            "competicion": "German Bundesliga"
-          },
-          {
-            "fecha": "10 oct 2026",
-            "rival": "Bayern Munich",
-            "local": true,
-            "goles_local": "2",
-            "goles_visitante": "2",
-            "resultado": "E",
             "penaltis": false,
             "competicion": "German Bundesliga"
           }
@@ -19272,6 +19272,16 @@
       "lastFive": {
         "home": [
           {
+            "fecha": "22 nov 2026",
+            "rival": "Bologna",
+            "local": false,
+            "goles_local": "1",
+            "goles_visitante": "1",
+            "resultado": "E",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
+          {
             "fecha": "6 nov 2026",
             "rival": "Venezia",
             "local": false,
@@ -19310,19 +19320,19 @@
             "resultado": "D",
             "penaltis": false,
             "competicion": "Italian Serie A"
-          },
-          {
-            "fecha": "18 oct 2026",
-            "rival": "Lecce",
-            "local": true,
-            "goles_local": "0",
-            "goles_visitante": "3",
-            "resultado": "D",
-            "penaltis": false,
-            "competicion": "Italian Serie A"
           }
         ],
         "away": [
+          {
+            "fecha": "23 nov 2026",
+            "rival": "Monza",
+            "local": false,
+            "goles_local": "3",
+            "goles_visitante": "0",
+            "resultado": "D",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
           {
             "fecha": "8 nov 2026",
             "rival": "Juventus",
@@ -19359,16 +19369,6 @@
             "local": false,
             "goles_local": "2",
             "goles_visitante": "1",
-            "resultado": "D",
-            "penaltis": false,
-            "competicion": "Italian Serie A"
-          },
-          {
-            "fecha": "18 oct 2026",
-            "rival": "Como",
-            "local": true,
-            "goles_local": "1",
-            "goles_visitante": "3",
             "resultado": "D",
             "penaltis": false,
             "competicion": "Italian Serie A"
@@ -19508,6 +19508,16 @@
         ],
         "away": [
           {
+            "fecha": "23 nov 2026",
+            "rival": "Fiorentina",
+            "local": true,
+            "goles_local": "3",
+            "goles_visitante": "0",
+            "resultado": "V",
+            "penaltis": false,
+            "competicion": "Italian Serie A"
+          },
+          {
             "fecha": "8 nov 2026",
             "rival": "Atalanta",
             "local": true,
@@ -19544,16 +19554,6 @@
             "goles_local": "3",
             "goles_visitante": "2",
             "resultado": "D",
-            "penaltis": false,
-            "competicion": "Italian Serie A"
-          },
-          {
-            "fecha": "19 oct 2026",
-            "rival": "Cagliari",
-            "local": true,
-            "goles_local": "4",
-            "goles_visitante": "0",
-            "resultado": "V",
             "penaltis": false,
             "competicion": "Italian Serie A"
           }
