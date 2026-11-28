@@ -479,8 +479,8 @@
     {
      "clave": "posesion",
      "etiqueta": "Posesión",
-     "local": 53.6,
-     "visita": 46.4,
+     "local": 53.7,
+     "visita": 46.3,
      "unidad": "%"
     },
     {
@@ -535,8 +535,8 @@
     {
      "clave": "pases_precisos",
      "etiqueta": "Pases precisos",
-     "local": 375,
-     "visita": 305,
+     "local": 376,
+     "visita": 303,
      "unidad": ""
     },
     {

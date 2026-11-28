@@ -379,8 +379,8 @@
    },
    "estado_partido": "in",
    "marcador": {
-    "local": 0,
-    "visita": 2
+    "local": 1,
+    "visita": 3
    },
    "bsd": {
     "proveedor": "BSD-consensus",
@@ -437,8 +437,8 @@
    },
    "estado_partido": "in",
    "marcador": {
-    "local": 0,
-    "visita": 0
+    "local": 1,
+    "visita": 1
    },
    "bsd": {
     "proveedor": "BSD-consensus",
@@ -477,18 +477,18 @@
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 1.2777777777777777,
+     "home": 1.2702702702702702,
      "draw": 5.5,
-     "away": 8.5
+     "away": 9.0
     },
     "total": {
      "linea": 3.5,
      "over": 2.2,
-     "under": 1.6451612903225805
+     "under": 1.6666666666666665
     },
     "spread": {
      "home_linea": -1.5,
-     "home": 1.7692307692307692,
+     "home": 1.7407407407407407,
      "away_linea": 1.5,
      "away": 1.9523809523809523
     }
@@ -543,9 +543,9 @@
     },
     "spread": {
      "home_linea": -2.5,
-     "home": 2.05,
+     "home": 2.0,
      "away_linea": 2.5,
-     "away": 1.6896551724137931
+     "away": 1.7142857142857144
     }
    },
    "estado_partido": "pre",
@@ -916,7 +916,7 @@
     "total": {
      "linea": 3.5,
      "over": 2.15,
-     "under": 1.6451612903225805
+     "under": 1.6666666666666665
     },
     "spread": {
      "home_linea": 0.5,
@@ -1180,8 +1180,8 @@
    },
    "estado_partido": "in",
    "marcador": {
-    "local": 0,
-    "visita": 1
+    "local": 1,
+    "visita": 2
    },
    "bsd": {
     "proveedor": "BSD-consensus",
@@ -1789,7 +1789,7 @@
      "home_linea": 0.5,
      "home": 1.8333333333333335,
      "away_linea": -0.5,
-     "away": 1.8695652173913042
+     "away": 1.8333333333333335
     }
    },
    "estado_partido": "pre",

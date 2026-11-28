@@ -32,6 +32,18 @@
       "no": 0.0673797674197214
      }
     },
+    "asian_handicap": {
+     "linea": -0.5,
+     "momios": {
+      "local": 1.638,
+      "visitante": 2.18
+     },
+     "p_cubre_local": 72.15575285851762,
+     "ev": {
+      "local": 0.18191123182251845,
+      "visitante": -0.3929954123156839
+     }
+    },
     "1X2": {
      "momios": {
       "home": 1.6896551724137931,
@@ -121,6 +133,18 @@
      "ev": {
       "si": -0.492307167119007,
       "no": 0.3978807687405157
+     }
+    },
+    "asian_handicap": {
+     "linea": 0.5,
+     "momios": {
+      "local": 1.537,
+      "visitante": 2.381
+     },
+     "p_cubre_local": 42.67064893364505,
+     "ev": {
+      "local": -0.34415212588987565,
+      "visitante": 0.36501184888991123
      }
     },
     "1X2": {
@@ -214,6 +238,18 @@
       "no": 0.12273436807007898
      }
     },
+    "asian_handicap": {
+     "linea": -0.5,
+     "momios": {
+      "local": 2.365,
+      "visitante": 1.558
+     },
+     "p_cubre_local": 12.66618262840874,
+     "ev": {
+      "local": -0.7004447808381333,
+      "visitante": 0.360660874649392
+     }
+    },
     "1X2": {
      "momios": {
       "home": 2.45,
@@ -303,6 +339,18 @@
      "ev": {
       "si": -0.2412996834390474,
       "no": 0.28590258868045204
+     }
+    },
+    "asian_handicap": {
+     "linea": -0.5,
+     "momios": {
+      "local": 1.911,
+      "visitante": 1.843
+     },
+     "p_cubre_local": 53.668447053145975,
+     "ev": {
+      "local": 0.025604023185619607,
+      "visitante": -0.14610947918948025
      }
     },
     "1X2": {
@@ -396,6 +444,18 @@
       "no": -0.4300437470689604
      }
     },
+    "asian_handicap": {
+     "linea": 1.5,
+     "momios": {
+      "local": 1.775,
+      "visitante": 1.984
+     },
+     "p_cubre_local": 69.99874243248502,
+     "ev": {
+      "local": 0.24247767817660892,
+      "visitante": -0.4047750498605027
+     }
+    },
     "1X2": {
      "momios": {
       "home": 8.0,
@@ -449,6 +509,18 @@
      "ev": {
       "si": 0.024887679811125052,
       "no": -0.2206221282289066
+     }
+    },
+    "asian_handicap": {
+     "linea": -0.5,
+     "momios": {
+      "local": 2.166,
+      "visitante": 1.642
+     },
+     "p_cubre_local": 33.17567449731586,
+     "ev": {
+      "local": -0.2814148903881385,
+      "visitante": 0.09725542475407334
      }
     },
     "1X2": {
@@ -521,8 +593,8 @@
    "estado": "con_momio",
    "estado_partido": "in",
    "marcador": {
-    "local": 0,
-    "visita": 2
+    "local": 1,
+    "visita": 3
    },
    "mejor_pick": "Empate",
    "mejor_ev": 1.1804495832990267,
@@ -540,6 +612,18 @@
      "ev": {
       "si": -0.7524266757740801,
       "no": 0.6745653074938824
+     }
+    },
+    "asian_handicap": {
+     "linea": 1.5,
+     "momios": {
+      "local": 1.618,
+      "visitante": 2.243
+     },
+     "p_cubre_local": 90.21954925024698,
+     "ev": {
+      "local": 0.4597523068689964,
+      "visitante": -0.7806244896830399
      }
     },
     "1X2": {
@@ -612,8 +696,8 @@
    "estado": "con_momio",
    "estado_partido": "in",
    "marcador": {
-    "local": 0,
-    "visita": 0
+    "local": 1,
+    "visita": 1
    },
    "mejor_pick": "Local",
    "mejor_ev": 0.3971857741167635,
@@ -631,6 +715,18 @@
      "ev": {
       "si": -0.34322394081300733,
       "no": 0.6315449954466554
+     }
+    },
+    "asian_handicap": {
+     "linea": -0.5,
+     "momios": {
+      "local": 1.752,
+      "visitante": 2.012
+     },
+     "p_cubre_local": 78.97136984138228,
+     "ev": {
+      "local": 0.3835783996210176,
+      "visitante": -0.5769039612086115
      }
     },
     "1X2": {
@@ -704,8 +800,8 @@
    "estado_partido": "pre",
    "marcador": null,
    "mejor_pick": "Visita",
-   "mejor_ev": 0.9183515783907896,
-   "mejor_decimal": 8.5,
+   "mejor_ev": 1.0311957888843657,
+   "mejor_decimal": 9.0,
    "mejor_prob": 22.568842098715173,
    "semaforo": "verde",
    "mercados": {
@@ -721,16 +817,28 @@
       "no": 0.225617795787036
      }
     },
+    "asian_handicap": {
+     "linea": -1.5,
+     "momios": {
+      "local": 1.826,
+      "visitante": 1.946
+     },
+     "p_cubre_local": 20.474161434642237,
+     "ev": {
+      "local": -0.6261418122034328,
+      "visitante": 0.5475728184818618
+     }
+    },
     "1X2": {
      "momios": {
-      "home": 1.2777777777777777,
+      "home": 1.2702702702702702,
       "draw": 5.5,
-      "away": 8.5
+      "away": 9.0
      },
      "ev": {
-      "1": -0.4026952069307784,
+      "1": -0.406204635797225,
       "X": 0.6877060970118392,
-      "2": 0.9183515783907896
+      "2": 1.0311957888843657
      }
     },
     "total": {
@@ -738,25 +846,25 @@
      "momios": {
       "linea": 3.5,
       "over": 2.2,
-      "under": 1.6451612903225805
+      "under": 1.6666666666666665
      },
      "p_over": 12.466321794331874,
      "ev": {
       "mas": -0.7257409205246987,
-      "menos": 0.4400701898351851
+      "menos": 0.4588946367611353
      }
     },
     "spread": {
      "home_linea": -1.5,
      "momios": {
       "home_linea": -1.5,
-      "home": 1.7692307692307692,
+      "home": 1.7407407407407407,
       "away_linea": 1.5,
       "away": 1.9523809523809523
      },
      "p_cubre_local": 20.474161434642237,
      "ev": {
-      "local": -0.6377648361563297,
+      "local": -0.6435979305821536,
       "visitante": 0.5526473243712704
      }
     }
@@ -764,18 +872,18 @@
    "momios": {
     "proveedor": "DraftKings",
     "moneyline": {
-     "home": 1.2777777777777777,
+     "home": 1.2702702702702702,
      "draw": 5.5,
-     "away": 8.5
+     "away": 9.0
     },
     "total": {
      "linea": 3.5,
      "over": 2.2,
-     "under": 1.6451612903225805
+     "under": 1.6666666666666665
     },
     "spread": {
      "home_linea": -1.5,
-     "home": 1.7692307692307692,
+     "home": 1.7407407407407407,
      "away_linea": 1.5,
      "away": 1.9523809523809523
     }
@@ -791,9 +899,9 @@
    "estado": "con_momio",
    "estado_partido": "pre",
    "marcador": null,
-   "mejor_pick": "Spread local -2.5",
-   "mejor_ev": 0.8275356834007856,
-   "mejor_decimal": 2.05,
+   "mejor_pick": "AH local -2.5",
+   "mejor_ev": 0.8569545504994327,
+   "mejor_decimal": 2.083,
    "mejor_prob": 89.1480821171115,
    "semaforo": "verde",
    "mercados": {
@@ -807,6 +915,18 @@
      "ev": {
       "si": -0.6020785833702218,
       "no": 0.45672446470663997
+     }
+    },
+    "asian_handicap": {
+     "linea": -2.5,
+     "momios": {
+      "local": 2.083,
+      "visitante": 1.708
+     },
+     "p_cubre_local": 89.1480821171115,
+     "ev": {
+      "local": 0.8569545504994327,
+      "visitante": -0.8146492425602644
      }
     },
     "1X2": {
@@ -838,14 +958,14 @@
      "home_linea": -2.5,
      "momios": {
       "home_linea": -2.5,
-      "home": 2.05,
+      "home": 2.0,
       "away_linea": 2.5,
-      "away": 1.6896551724137931
+      "away": 1.7142857142857144
      },
      "p_cubre_local": 89.1480821171115,
      "ev": {
-      "local": 0.8275356834007856,
-      "visitante": -0.8166400081856771
+      "local": 0.7829616423422301,
+      "visitante": -0.8139671220076257
      }
     }
    },
@@ -863,9 +983,9 @@
     },
     "spread": {
      "home_linea": -2.5,
-     "home": 2.05,
+     "home": 2.0,
      "away_linea": 2.5,
-     "away": 1.6896551724137931
+     "away": 1.7142857142857144
     }
    }
   },
@@ -895,6 +1015,18 @@
      "ev": {
       "si": -0.06717322826930061,
       "no": -0.06619028151493733
+     }
+    },
+    "asian_handicap": {
+     "linea": 0.5,
+     "momios": {
+      "local": 2.018,
+      "visitante": 1.733
+     },
+     "p_cubre_local": 61.84790658973755,
+     "ev": {
+      "local": 0.2480907549809035,
+      "visitante": -0.33882422120015165
      }
     },
     "1X2": {
@@ -967,10 +1099,10 @@
    "estado": "con_momio",
    "estado_partido": "pre",
    "marcador": null,
-   "mejor_pick": "Más 2.5",
-   "mejor_ev": 0.3439801812923555,
-   "mejor_decimal": 1.5714285714285714,
-   "mejor_prob": 85.52601153678626,
+   "mejor_pick": "AH visitante -0.5",
+   "mejor_ev": 0.3505694947432816,
+   "mejor_decimal": 1.633,
+   "mejor_prob": 82.70480678158492,
    "semaforo": "verde",
    "mercados": {
     "btts": {
@@ -983,6 +1115,18 @@
      "ev": {
       "si": 0.04139396275353868,
       "no": -0.22379370455051084
+     }
+    },
+    "asian_handicap": {
+     "linea": 0.5,
+     "momios": {
+      "local": 2.183,
+      "visitante": 1.633
+     },
+     "p_cubre_local": 17.295193218415076,
+     "ev": {
+      "local": -0.6224459320419989,
+      "visitante": 0.3505694947432816
      }
     },
     "1X2": {
@@ -1073,6 +1217,18 @@
       "no": -0.21316908035813154
      }
     },
+    "asian_handicap": {
+     "linea": 1.5,
+     "momios": {
+      "local": 2.288,
+      "visitante": 1.596
+     },
+     "p_cubre_local": 44.47725435750601,
+     "ev": {
+      "local": 0.017639579699737507,
+      "visitante": -0.11385697954579588
+     }
+    },
     "1X2": {
      "momios": {
       "home": 10.0,
@@ -1159,6 +1315,18 @@
      "ev": {
       "si": -0.6972998820092589,
       "no": 0.7806765939952391
+     }
+    },
+    "asian_handicap": {
+     "linea": -0.5,
+     "momios": {
+      "local": 1.968,
+      "visitante": 1.792
+     },
+     "p_cubre_local": 83.06141840673993,
+     "ev": {
+      "local": 0.6346487142446418,
+      "visitante": -0.6964606178487796
      }
     },
     "1X2": {
@@ -1425,6 +1593,18 @@
       "no": -0.28398253041662547
      }
     },
+    "asian_handicap": {
+     "linea": 0.5,
+     "momios": {
+      "local": 1.641,
+      "visitante": 2.155
+     },
+     "p_cubre_local": 35.47953341993511,
+     "ev": {
+      "local": -0.4177808565788649,
+      "visitante": 0.3904160548003983
+     }
+    },
     "1X2": {
      "momios": {
       "home": 2.9,
@@ -1442,12 +1622,12 @@
      "momios": {
       "linea": 3.5,
       "over": 2.15,
-      "under": 1.6451612903225805
+      "under": 1.6666666666666665
      },
      "p_over": 62.63074533989784,
      "ev": {
       "mas": 0.3465610248078035,
-      "menos": -0.3852154878499323
+      "menos": -0.37717908899829744
      }
     },
     "spread": {
@@ -1475,7 +1655,7 @@
     "total": {
      "linea": 3.5,
      "over": 2.15,
-     "under": 1.6451612903225805
+     "under": 1.6666666666666665
     },
     "spread": {
      "home_linea": 0.5,
@@ -1511,6 +1691,18 @@
      "ev": {
       "si": 0.19859399348700335,
       "no": -0.4459788240171516
+     }
+    },
+    "asian_handicap": {
+     "linea": -0.5,
+     "momios": {
+      "local": 2.061,
+      "visitante": 1.697
+     },
+     "p_cubre_local": 55.64473895379366,
+     "ev": {
+      "local": 0.1468380698376872,
+      "visitante": -0.24729122004587845
      }
     },
     "1X2": {
@@ -1738,6 +1930,18 @@
       "no": -0.0400736237268029
      }
     },
+    "asian_handicap": {
+     "linea": -1.5,
+     "momios": {
+      "local": 2.28,
+      "visitante": 1.588
+     },
+     "p_cubre_local": 11.406156806972714,
+     "ev": {
+      "local": -0.7399396248010222,
+      "visitante": 0.40687022990527333
+     }
+    },
     "1X2": {
      "momios": {
       "home": 1.4651162790697674,
@@ -1808,8 +2012,8 @@
    "estado": "con_momio",
    "estado_partido": "in",
    "marcador": {
-    "local": 0,
-    "visita": 1
+    "local": 1,
+    "visita": 2
    },
    "mejor_pick": "Más 2.5",
    "mejor_ev": 0.42558786394486603,
@@ -1827,6 +2031,18 @@
      "ev": {
       "si": 0.27144762890366114,
       "no": -0.6335947496653325
+     }
+    },
+    "asian_handicap": {
+     "linea": 0.5,
+     "momios": {
+      "local": 1.769,
+      "visitante": 1.991
+     },
+     "p_cubre_local": 56.66833260341293,
+     "ev": {
+      "local": 0.002462803754374576,
+      "visitante": -0.13726650213395142
      }
     },
     "1X2": {
@@ -1920,6 +2136,18 @@
       "no": -0.21455791853732054
      }
     },
+    "asian_handicap": {
+     "linea": -0.5,
+     "momios": {
+      "local": 1.574,
+      "visitante": 2.305
+     },
+     "p_cubre_local": 67.50364314158675,
+     "ev": {
+      "local": 0.06250734304857541,
+      "visitante": -0.2509589744135745
+     }
+    },
     "1X2": {
      "momios": {
       "home": 1.625,
@@ -2009,6 +2237,18 @@
      "ev": {
       "si": 0.1292879224221326,
       "no": -0.28972747665861587
+     }
+    },
+    "asian_handicap": {
+     "linea": 0.5,
+     "momios": {
+      "local": 2.117,
+      "visitante": 1.674
+     },
+     "p_cubre_local": 31.804411748160017,
+     "ev": {
+      "local": -0.32670060329145245,
+      "visitante": 0.1415941473358011
      }
     },
     "1X2": {
@@ -2190,6 +2430,18 @@
       "no": 0.3468702309237759
      }
     },
+    "asian_handicap": {
+     "linea": -1.5,
+     "momios": {
+      "local": 2.155,
+      "visitante": 1.67
+     },
+     "p_cubre_local": 14.318876850169953,
+     "ev": {
+      "local": -0.6914282038788375,
+      "visitante": 0.43087475660216157
+     }
+    },
     "1X2": {
      "momios": {
       "home": 1.4545454545454546,
@@ -2279,6 +2531,18 @@
      "ev": {
       "si": -0.7806198119857206,
       "no": 1.1622198796228682
+     }
+    },
+    "asian_handicap": {
+     "linea": -0.5,
+     "momios": {
+      "local": 2.539,
+      "visitante": 1.489
+     },
+     "p_cubre_local": 57.041520404544244,
+     "ev": {
+      "local": 0.4482842030713785,
+      "visitante": -0.36034823882366374
      }
     },
     "1X2": {
@@ -2372,6 +2636,18 @@
       "no": 0.0616579877728094
      }
     },
+    "asian_handicap": {
+     "linea": -1.5,
+     "momios": {
+      "local": 1.96,
+      "visitante": 1.808
+     },
+     "p_cubre_local": 48.359612491915456,
+     "ev": {
+      "local": -0.05215159515845713,
+      "visitante": -0.06634179385383154
+     }
+    },
     "1X2": {
      "momios": {
       "home": 1.4,
@@ -2445,10 +2721,10 @@
     "local": 0,
     "visita": 2
    },
-   "mejor_pick": "Visita",
-   "mejor_ev": 0.4858691169581959,
-   "mejor_decimal": 2.0,
-   "mejor_prob": 74.2934558479098,
+   "mejor_pick": "AH visitante -0.5",
+   "mejor_ev": 0.4873549860783106,
+   "mejor_decimal": 2.002,
+   "mejor_prob": 74.29345584806747,
    "semaforo": "verde",
    "mercados": {
     "btts": {
@@ -2461,6 +2737,18 @@
      "ev": {
       "si": -0.03614934728073249,
       "no": -0.10639790750523814
+     }
+    },
+    "asian_handicap": {
+     "linea": 0.5,
+     "momios": {
+      "local": 1.747,
+      "visitante": 2.002
+     },
+     "p_cubre_local": 25.70654415193253,
+     "ev": {
+      "local": -0.5509066736657386,
+      "visitante": 0.4873549860783106
      }
     },
     "1X2": {
@@ -2533,9 +2821,9 @@
    "estado": "con_momio",
    "estado_partido": "pre",
    "marcador": null,
-   "mejor_pick": "Spread local -1.5",
-   "mejor_ev": 0.6865861967148674,
-   "mejor_decimal": 2.4,
+   "mejor_pick": "AH local -1.5",
+   "mejor_ev": 0.7069657799251721,
+   "mejor_decimal": 2.429,
    "mejor_prob": 70.27442486311948,
    "semaforo": "verde",
    "mercados": {
@@ -2549,6 +2837,18 @@
      "ev": {
       "si": -0.6857794722182879,
       "no": 0.7944827086657635
+     }
+    },
+    "asian_handicap": {
+     "linea": -1.5,
+     "momios": {
+      "local": 2.429,
+      "visitante": 1.537
+     },
+     "p_cubre_local": 70.27442486311948,
+     "ev": {
+      "local": 0.7069657799251721,
+      "visitante": -0.5431179101461464
      }
     },
     "1X2": {
@@ -2639,6 +2939,18 @@
       "no": -0.07023024927161325
      }
     },
+    "asian_handicap": {
+     "linea": -0.5,
+     "momios": {
+      "local": 1.825,
+      "visitante": 1.925
+     },
+     "p_cubre_local": 21.505539980425777,
+     "ev": {
+      "local": -0.6075238953572295,
+      "visitante": 0.5110183553768037
+     }
+    },
     "1X2": {
      "momios": {
       "home": 1.9090909090909092,
@@ -2727,6 +3039,18 @@
       "no": 0.16260762591576916
      }
     },
+    "asian_handicap": {
+     "linea": 0.5,
+     "momios": {
+      "local": 1.528,
+      "visitante": 2.398
+     },
+     "p_cubre_local": 64.00101094013746,
+     "ev": {
+      "local": -0.022064552834699658,
+      "visitante": -0.13674424234449623
+     }
+    },
     "1X2": {
      "momios": {
       "home": 2.8,
@@ -2797,9 +3121,9 @@
    "estado": "con_momio",
    "estado_partido": "pre",
    "marcador": null,
-   "mejor_pick": "Visita",
-   "mejor_ev": 0.4333909112156549,
-   "mejor_decimal": 1.9523809523809523,
+   "mejor_pick": "AH visitante -0.5",
+   "mejor_ev": 0.4345795768493459,
+   "mejor_decimal": 1.954,
    "mejor_prob": 73.4175832573872,
    "semaforo": "verde",
    "mercados": {
@@ -2813,6 +3137,18 @@
      "ev": {
       "si": -0.697817113288391,
       "no": 0.62440820172289
+     }
+    },
+    "asian_handicap": {
+     "linea": 0.5,
+     "momios": {
+      "local": 1.799,
+      "visitante": 1.954
+     },
+     "p_cubre_local": 26.582416742612807,
+     "ev": {
+      "local": -0.5217823228003956,
+      "visitante": 0.4345795768493459
      }
     },
     "1X2": {
@@ -2846,12 +3182,12 @@
       "home_linea": 0.5,
       "home": 1.8333333333333335,
       "away_linea": -0.5,
-      "away": 1.8695652173913042
+      "away": 1.8333333333333335
      },
      "p_cubre_local": 26.582416742612807,
      "ev": {
       "local": -0.5126556930520985,
-      "visitante": 0.37258960002941266
+      "visitante": 0.34598902638543216
      }
     }
    },
@@ -2871,7 +3207,7 @@
      "home_linea": 0.5,
      "home": 1.8333333333333335,
      "away_linea": -0.5,
-     "away": 1.8695652173913042
+     "away": 1.8333333333333335
     }
    }
   },
@@ -2901,6 +3237,18 @@
      "ev": {
       "si": 0.09090995449994033,
       "no": -0.21202226586174544
+     }
+    },
+    "asian_handicap": {
+     "linea": -0.5,
+     "momios": {
+      "local": 2.08,
+      "visitante": 1.699
+     },
+     "p_cubre_local": 44.818269253361755,
+     "ev": {
+      "local": -0.06777999953007552,
+      "visitante": -0.06246239461461611
      }
     },
     "1X2": {
@@ -3167,6 +3515,18 @@
       "no": -0.4601979063487809
      }
     },
+    "asian_handicap": {
+     "linea": 0.5,
+     "momios": {
+      "local": 1.578,
+      "visitante": 2.3
+     },
+     "p_cubre_local": 46.32650051665135,
+     "ev": {
+      "local": -0.26896782184724166,
+      "visitante": 0.2344904881170189
+     }
+    },
     "1X2": {
      "momios": {
       "home": 2.65,
@@ -3237,9 +3597,9 @@
    "estado": "con_momio",
    "estado_partido": "pre",
    "marcador": null,
-   "mejor_pick": "Local",
-   "mejor_ev": 0.36130898151804836,
-   "mejor_decimal": 1.6666666666666665,
+   "mejor_pick": "AH local -0.5",
+   "mejor_ev": 0.3746498095369253,
+   "mejor_decimal": 1.683,
    "mejor_prob": 81.67853889108291,
    "semaforo": "verde",
    "mercados": {
@@ -3253,6 +3613,18 @@
      "ev": {
       "si": -0.022407051855048876,
       "no": -0.16888600671492848
+     }
+    },
+    "asian_handicap": {
+     "linea": -0.5,
+     "momios": {
+      "local": 1.683,
+      "visitante": 2.103
+     },
+     "p_cubre_local": 81.67853889108291,
+     "ev": {
+      "local": 0.3746498095369253,
+      "visitante": -0.6146996728794736
      }
     },
     "1X2": {
@@ -3343,6 +3715,18 @@
       "no": 0.12002712567551077
      }
     },
+    "asian_handicap": {
+     "linea": 0.5,
+     "momios": {
+      "local": 1.644,
+      "visitante": 2.172
+     },
+     "p_cubre_local": 19.73008219745065,
+     "ev": {
+      "local": -0.6756374486739114,
+      "visitante": 0.7434626146713719
+     }
+    },
     "1X2": {
      "momios": {
       "home": 3.0,
@@ -3429,6 +3813,18 @@
      "ev": {
       "si": 0.3264364016211163,
       "no": -0.47758364807801157
+     }
+    },
+    "asian_handicap": {
+     "linea": -2.5,
+     "momios": {
+      "local": 2.272,
+      "visitante": 1.608
+     },
+     "p_cubre_local": 51.17957175621508,
+     "ev": {
+      "local": 0.16279987030120657,
+      "visitante": -0.2149675138399385
      }
     },
     "1X2": {

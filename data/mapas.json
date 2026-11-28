@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado_en": "2026-11-28T17:50:04Z",
+  "generado_en": "2026-11-28T18:25:52Z",
   "semana": "2-entresemana",
   "fuente": "config + ev.json + verified_events.json + teams_last5.json + schedule_*.json + DETAIL embebido en partido.html (preservado) + summary ESPN por evento (estadio + alineacion oficial + standings + h2h; tabla regular MX para Liguilla)",
   "partidos_vivo": {

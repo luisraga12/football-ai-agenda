@@ -28,6 +28,11 @@ Reglas (orden del jefe, 22 nov 2026):
   Con momio BSD (llave 'bsd' en momios.json con btts {yes, no} decimales,
   consenso BSD), los momios y el EV si se llenan: ev.si = p_btts x momio_si - 1
   y ev.no = p_no_btts x momio_no - 1; sin esa llave, quedan en None.
+  Hándicap asiático BSD (E1, 28 nov 2026; ejemplo del jefe: Hamburg/empate):
+  con la llave 'bsd' en momios.json con asian_handicap {line, home, away}
+  (consenso BSD), se publica mercados['asian_handicap'] con la probabilidad
+  de cubrir (p_spread_cover, la línea es del local; las líneas son .5, sin
+  push) y el EV por lado; el AH sí entra al mejor pick.
 
 Uso:
     python3 scripts/calcular_ev.py --config scripts/config/semana-2.json
@@ -134,6 +139,37 @@ def main():
                 fila['mercados']['btts']['ev'] = {
                     'si': ev(r['btts'], float(momio_si)),
                     'no': ev(100 - r['btts'], float(momio_no))}
+        # Hándicap asiático con momio BSD (E1, 28 nov 2026; ejemplo del
+        # jefe: Hamburg/empate, local +1.5 cubre ganar, empatar y perder
+        # por 1): si momios.json trae la llave 'bsd' con asian_handicap
+        # {line, home, away} (consenso BSD, scripts/recolectar_momios.py),
+        # se publica en mercados con la probabilidad de cubrir
+        # (p_spread_cover: la línea es del local; las líneas son .5, sin
+        # push) y el EV por lado. Sin llave bsd, sin asian_handicap, sin
+        # los dos momios, o con línea no .5, no se publica nada: nada
+        # inventado. El AH sí entra al mejor pick (ver bloque con_momio).
+        ah_bsd = bsd.get('asian_handicap') if isinstance(bsd, dict) else None
+        if isinstance(ah_bsd, dict):
+            linea_ah = ah_bsd.get('line')
+            momio_ah_local = ah_bsd.get('home')
+            momio_ah_visitante = ah_bsd.get('away')
+            es_media = (isinstance(linea_ah, (int, float))
+                        and abs(linea_ah * 2 - round(linea_ah * 2)) < 1e-9
+                        and round(linea_ah * 2) % 2 != 0)
+            if (es_media and momio_ah_local is not None
+                    and momio_ah_visitante is not None):
+                p_cubre_ah = p_spread_cover(r['xgh'], r['xga'], linea_ah)
+                fila['mercados']['asian_handicap'] = {
+                    'linea': linea_ah,
+                    'momios': {'local': float(momio_ah_local),
+                               'visitante': float(momio_ah_visitante)},
+                    'p_cubre_local': p_cubre_ah,
+                    'ev': {'local': ev(p_cubre_ah, float(momio_ah_local)),
+                           'visitante': ev(100 - p_cubre_ah,
+                                           float(momio_ah_visitante))}}
+            else:
+                print(f"AVISO {home} vs {away}: AH BSD sin línea .5 o sin "
+                      "momios; no se publica.")
         if m['estado'] != 'con_momio':
             # 1X2 y total del MODELO solo para los partidos sin momio
             # (orden del jefe, 25 nov 2026; mismo precedente que
@@ -200,6 +236,19 @@ def main():
                             ev_spr_local),
                            (f"Spread visitante {spr['away_linea']:+.1f}",
                             ev_spr_away)]
+        # Hándicap asiático BSD: el pick "Hamburg/empate" (local +1.5)
+        # cubre ganar, empatar y perder por 1. Entra a candidatos con
+        # los mismos nombres que _candidatos/_evaluar_pick esperan
+        # (generar_resultados.py).
+        ah = fila['mercados'].get('asian_handicap')
+        if isinstance(ah, dict) and isinstance(ah.get('ev'), dict):
+            la = ah.get('linea')
+            pc_ah = ah.get('p_cubre_local')
+            if la is not None and pc_ah is not None:
+                candidatos += [(f"AH local {la:+.1f}",
+                                ah['ev']['local']),
+                               (f"AH visitante {-la:+.1f}",
+                                ah['ev']['visitante'])]
         if not candidatos:
             # No hay ningun mercado con EV (no deberia pasar: el momio
             # solo es "con_momio" si trae al menos un mercado). Se deja
@@ -242,6 +291,16 @@ def main():
             fila['mejor_decimal'] = spr['away'] if spr else None
             fila['mejor_prob'] = (100 - fila['mercados']['spread']
                                   ['p_cubre_local'] if spr else None)
+        elif mejor_nombre.startswith('AH local '):
+            fila['mejor_decimal'] = (fila['mercados']['asian_handicap']
+                                     ['momios']['local'])
+            fila['mejor_prob'] = (fila['mercados']['asian_handicap']
+                                  ['p_cubre_local'])
+        elif mejor_nombre.startswith('AH visitante '):
+            fila['mejor_decimal'] = (fila['mercados']['asian_handicap']
+                                     ['momios']['visitante'])
+            fila['mejor_prob'] = (100 - fila['mercados']['asian_handicap']
+                                  ['p_cubre_local'])
         else:
             fila['mejor_decimal'] = None
             fila['mejor_prob'] = None
