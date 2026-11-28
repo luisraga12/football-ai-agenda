@@ -36,9 +36,20 @@ Reglas (orden del jefe, 24 nov 2026; propuesta-vivo-cache.md):
   6. Los fallos se registran en data/vivo-log.json (ultimas 50 entradas)
      para auditarlos; vivo.json lleva solo un campo "advertencia" corto.
 
+  7. En juego: cada partido con estado "in" pide su summary de ESPN
+     (mismo respaldo de host que el scoreboard) y publica rojas,
+     stats (posesion/tiros/TDA/corners) y cambios en vivo.json. Si el
+     summary falla, se conservan las ultimas conocidas y el fallo
+     queda en vivo-log.json; la corrida no falla. Un partido
+     terminado conserva sus ultimas stats (las finales).
+  8. Log de snapshots: cada cambio de un partido en juego con stats
+     anade una linea JSONL a data/live-log/YYYY-MM-DD.jsonl (fecha de
+     Mexico), para calibrar el modelo en vivo; nunca se reescribe.
+
 Uso:
     python3 scripts/generar_vivo.py [--config scripts/config/semana-actual.json]
                                      [--salida data/vivo.json] [--todas]
+                                     [--live-log-dir data/live-log]
     --todas: consulta todas las fechas de la semana (no solo hoy y ayer).
              Sin --todas se consultan las fechas de hoy y de ayer (hora
              de Mexico), que es lo que corre el workflow cada 5 minutos.
@@ -51,6 +62,7 @@ Uso:
 import argparse
 import json
 import os
+import re
 import sys
 import tempfile
 from datetime import datetime, timedelta, timezone
@@ -70,7 +82,9 @@ HOSTS = [
 
 CAMPOS = ("liga", "fecha", "home_id", "away_id", "home", "away",
           "estado", "detalle", "minuto", "marcador_local",
-          "marcador_visita", "actualizado_en")
+          "marcador_visita", "actualizado_en", "evento_id")
+
+TIPOS_ROJA = ("Red Card", "Second Yellow Card")
 
 
 def fetch_json(url):
@@ -91,6 +105,23 @@ def scoreboard(liga, fecha):
     for host in HOSTS:
         try:
             return fetch_json(f"{host}/{url_path}"), host
+        except Exception as e:  # noqa: BLE001 - se reintenta con el otro host
+            ultimo_error = e
+    raise ultimo_error
+
+
+def summary(liga, event_id):
+    """Summary de ESPN para un evento, con respaldo de host.
+
+    Devuelve el JSON. Lanza la ultima excepcion si los dos hosts
+    fallan. Usa el mismo mecanismo resiliente que scoreboard()
+    (http_resiliente.py): un error transitorio no tumba la corrida.
+    """
+    url_path = f"{liga}/summary?event={event_id}"
+    ultimo_error = None
+    for host in HOSTS:
+        try:
+            return fetch_json(f"{host}/{url_path}")
         except Exception as e:  # noqa: BLE001 - se reintenta con el otro host
             ultimo_error = e
     raise ultimo_error
@@ -131,19 +162,141 @@ def extraer_partido(evento, liga, fecha, ahora_iso):
         "marcador_local": ids.get("home_score"),
         "marcador_visita": ids.get("away_score"),
         "actualizado_en": ahora_iso,
+        "evento_id": evento.get("id"),
     }
+
+
+def _num_stat(stats, nombre):
+    """Valor numerico de una estadistica del boxscore (o None).
+
+    ESPN trae "value" en null y el numero en "displayValue" como
+    texto; se acepta value si es numero y si no se parsea
+    displayValue. Nunca se inventa un 0.
+    """
+    for s in stats or []:
+        if s.get("name") != nombre:
+            continue
+        v = s.get("value")
+        if isinstance(v, (int, float)) and not isinstance(v, bool):
+            return v
+        dv = s.get("displayValue")
+        if dv is None:
+            return None
+        try:
+            return int(str(dv))
+        except (TypeError, ValueError):
+            pass
+        try:
+            return float(str(dv))
+        except (TypeError, ValueError):
+            return None
+    return None
+
+
+def extraer_rojas_stats(summary, home_id, away_id):
+    """(rojas, stats, cambios, minuto) de un summary ESPN.
+
+    - rojas: keyEvents "Red Card"/"Second Yellow Card": equipo por
+      team.id ("H"/"A"), minuto de clock.displayValue, jugador del
+      primer participant.
+    - stats: boxscore.teams[].statistics por team.id (no por orden):
+      possessionPct, totalShots, shotsOnTarget, wonCorners. Valores
+      numericos (value, respaldo displayValue); None si falta un
+      dato, nunca 0 inventado.
+    - cambios: keyEvents "Substitution" -> {local: [minutos],
+      visita: [minutos]} (solo minuto y equipo; no se registra quien
+      entra/sale porque el orden de participants no esta documentado).
+    - minuto: displayClock del summary ("" si no lo trae, p. ej. un
+      partido terminado: el llamador usa el minuto del scoreboard
+      como respaldo).
+    """
+    rojas = []
+    cambios = {"local": [], "visita": []}
+    for k in summary.get("keyEvents") or []:
+        tipo = (k.get("type") or {}).get("text", "")
+        team_id = str((k.get("team") or {}).get("id", ""))
+        if team_id == str(home_id):
+            lado = "local"
+        elif team_id == str(away_id):
+            lado = "visita"
+        else:
+            lado = None
+        reloj = (k.get("clock") or {}).get("displayValue", "") or ""
+        m = re.search(r"(\d+)", reloj)
+        minuto_ev = (m.group(1) + "'") if m else ""
+        if tipo in TIPOS_ROJA:
+            parts = k.get("participants") or []
+            jugador = ""
+            if parts:
+                jugador = ((parts[0].get("athlete") or {})
+                           .get("displayName") or "")
+            rojas.append({"equipo": "H" if lado == "local" else "A",
+                          "minuto": minuto_ev, "jugador": jugador})
+        elif tipo == "Substitution" and lado is not None and m:
+            try:
+                cambios[lado].append(int(m.group(1)))
+            except ValueError:
+                pass
+    status = ((summary.get("header") or {}).get("competitions") or [{}])[0]
+    minuto_sum = ((status.get("status") or {}).get("displayClock")) or ""
+    stats = None
+    vals = {}
+    for t in ((summary.get("boxscore") or {}).get("teams") or []):
+        tid = str((t.get("team") or {}).get("id", ""))
+        if tid == str(home_id):
+            suf = "h"
+        elif tid == str(away_id):
+            suf = "a"
+        else:
+            continue
+        st = t.get("statistics") or []
+        vals[suf] = {
+            "pos": _num_stat(st, "possessionPct"),
+            "tiros": _num_stat(st, "totalShots"),
+            "tda": _num_stat(st, "shotsOnTarget"),
+            "corn": _num_stat(st, "wonCorners"),
+        }
+    if vals:
+        stats = {"min": minuto_sum,
+                 "pos_h": vals.get("h", {}).get("pos"),
+                 "pos_a": vals.get("a", {}).get("pos"),
+                 "tiros_h": vals.get("h", {}).get("tiros"),
+                 "tiros_a": vals.get("a", {}).get("tiros"),
+                 "tda_h": vals.get("h", {}).get("tda"),
+                 "tda_a": vals.get("a", {}).get("tda"),
+                 "corn_h": vals.get("h", {}).get("corn"),
+                 "corn_a": vals.get("a", {}).get("corn")}
+    return rojas, stats, cambios, minuto_sum
 
 
 def contenido_igual(a, b):
     """True si dos entradas de vivo.json dicen lo mismo (estado,
-    minuto y marcador). actualizado_en y origen no cuentan: si el
-    contenido no cambio, la entrada se conserva tal cual para no
-    reescribir el archivo cada 5 minutos."""
+    minuto, marcador, rojas, stats y cambios). actualizado_en y origen
+    no cuentan: si el contenido no cambio, la entrada se conserva tal
+    cual para no reescribir el archivo cada 5 minutos."""
     for campo in ("estado", "detalle", "minuto", "marcador_local",
-                  "marcador_visita"):
+                  "marcador_visita", "rojas", "stats", "cambios"):
         if a.get(campo) != b.get(campo):
             return False
     return True
+
+
+def registrar_snapshots(snapshots, log_dir, fecha_mx):
+    """Anade snapshots de partidos en juego a
+    data/live-log/YYYY-MM-DD.jsonl (fecha de Mexico, append-only).
+
+    Solo se llama con snapshots de partidos en juego con stats cuyo
+    contenido cambio en esta corrida; si no hay snapshots no se crea
+    nada. Cada linea lleva "cuando" (ISO UTC) para que dos snapshots
+    iguales sean distinguibles.
+    """
+    if not snapshots:
+        return
+    os.makedirs(log_dir, exist_ok=True)
+    path = os.path.join(log_dir, f"{fecha_mx}.jsonl")
+    with open(path, "a", encoding="utf-8") as f:
+        for s in snapshots:
+            f.write(json.dumps(s, ensure_ascii=False) + "\n")
 
 
 def registrar_fallos(fallos, log_path):
@@ -187,6 +340,9 @@ def main():
     ap.add_argument("--log", default="data/vivo-log.json")
     ap.add_argument("--todas", action="store_true",
                     help="consultar todas las fechas, no solo hoy")
+    ap.add_argument("--live-log-dir", default="data/live-log",
+                    help="directorio del log de snapshots en vivo "
+                         "(JSONL por fecha, Mexico; default data/live-log)")
     args = ap.parse_args()
 
     ahora_utc = datetime.now(UTC)
@@ -218,6 +374,7 @@ def main():
             with open(args.salida, encoding="utf-8") as f:
                 viejo = json.load(f)
             for p in viejo.get("partidos") or []:
+                p.setdefault("evento_id", None)
                 previos[clave(p)] = p
         except (OSError, ValueError):
             print("AVISO: vivo.json anterior ilegible; se regenera desde cero.")
@@ -225,6 +382,7 @@ def main():
 
     nuevos = dict(previos)
     fallos = []
+    snapshots = []
     consultados = 0
     encontrados = 0
     for liga, fecha in pares:
@@ -253,6 +411,65 @@ def main():
                                         f"{p['home']} vs {p['away']}"})
                 continue
             anterior = nuevos.get(clave(ext))
+            # Vivo (27 nov 2026): rojas/stats/cambios del summary, solo
+            # en juego. Si el summary falla se conservan las ultimas
+            # conocidas y el fallo queda en vivo-log.json; la corrida
+            # no falla. Un partido terminado conserva sus ultimas
+            # stats (las finales).
+            if ext["estado"] == "in" and ext.get("evento_id"):
+                sumario = None
+                try:
+                    sumario = summary(liga, ext["evento_id"])
+                except Exception as e:  # noqa: BLE001 - fail-soft
+                    fallos.append({"cuando": ahora_iso, "liga": liga,
+                                   "fecha": fecha,
+                                   "error": f"summary no disponible: "
+                                            f"{ext['home']} vs {ext['away']}: "
+                                            f"{type(e).__name__}: {e}"})
+                    print(f"AVISO summary {liga} {ext['evento_id']}: {e}")
+                if sumario:
+                    rojas, stats, cambios, minuto_sum = extraer_rojas_stats(
+                        sumario, ext["home_id"], ext["away_id"])
+                    ext["rojas"] = rojas
+                    ext["stats"] = stats
+                    ext["cambios"] = cambios
+                    min_ef = minuto_sum or ext.get("minuto") or ""
+                    if stats is not None:
+                        stats["min"] = min_ef
+                    if min_ef:
+                        ext["minuto"] = min_ef
+                elif anterior is not None:
+                    for campo in ("rojas", "stats", "cambios"):
+                        if campo in anterior:
+                            ext[campo] = anterior[campo]
+            elif anterior is not None:
+                # No en juego (o sin evento): conserva sus ultimas
+                # rojas/stats (las finales de un terminado).
+                for campo in ("rojas", "stats", "cambios"):
+                    if campo in anterior:
+                        ext[campo] = anterior[campo]
+            # Snapshot para el log en vivo: solo si esta en juego,
+            # tiene al menos un dato de stats y su informacion cambio
+            # en esta corrida.
+            st = ext.get("stats")
+            tiene_stats = (isinstance(st, dict)
+                           and any(v is not None
+                                   for k, v in st.items() if k != "min"))
+            if ext["estado"] == "in" and tiene_stats:
+                if anterior is None or not contenido_igual(anterior, ext):
+                    snapshots.append({
+                        "cuando": ahora_iso, "evento": ext.get("evento_id"),
+                        "liga": liga, "home": ext["home"],
+                        "away": ext["away"],
+                        "minuto": ext.get("minuto", ""),
+                        "marcador": [ext.get("marcador_local"),
+                                     ext.get("marcador_visita")],
+                        "tiros": [st.get("tiros_h"), st.get("tiros_a")],
+                        "tda": [st.get("tda_h"), st.get("tda_a")],
+                        "pos": [st.get("pos_h"), st.get("pos_a")],
+                        "corners": [st.get("corn_h"), st.get("corn_a")],
+                        "rojas": ext.get("rojas", []),
+                    })
             if anterior is not None and contenido_igual(anterior, ext):
                 # Sin cambio real: se conserva la entrada tal cual (con
                 # su actualizado_en), para no reescribir cada 5 minutos.
@@ -282,6 +499,7 @@ def main():
                 "estado": "pre", "detalle": "", "minuto": "",
                 "marcador_local": None, "marcador_visita": None,
                 "actualizado_en": ahora_iso, "origen": "config",
+                "evento_id": None,
             }
             sembrados += 1
 
@@ -295,6 +513,9 @@ def main():
     # fallos quedan en vivo-log.json.
 
     lista = [nuevos[k] for k in sorted(nuevos)]
+    # Log de snapshots en vivo (append-only, solo si hubo cambios en
+    # partidos en juego con stats).
+    registrar_snapshots(snapshots, args.live_log_dir, hoy_mx)
     previos_lista = (viejo.get("partidos")
                      if isinstance(viejo, dict) else None)
     if previos_lista == lista:
