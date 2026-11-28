@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generado_en": "2026-11-28T18:25:54Z",
+ "generado_en": "2026-11-28T19:40:17Z",
  "semana": "2",
  "k": 1.0,
  "tope_puntos": 12,
@@ -1152,28 +1152,54 @@
    "fecha": "2026-11-28",
    "home": "Internazionale",
    "away": "Genoa",
-   "alineacion_publicada": false,
+   "alineacion_publicada": true,
    "local": {
     "f_prob": 95.5,
-    "f_of": null,
-    "f_of_efectiva": null,
-    "r": null,
-    "casados": 0,
+    "f_of": 64.7,
+    "f_of_efectiva": 83.5,
+    "r": 0.874,
+    "casados": 11,
     "sin_casar": [],
-    "tope_aplicado": false,
-    "motivo": "sin alineación oficial publicada",
-    "f_of_detalle": null
+    "tope_aplicado": true,
+    "motivo": null,
+    "f_of_detalle": {
+     "valor": 64.7,
+     "A_goles": 46.2,
+     "B_minutos": 74.3,
+     "C_puntos": 79.8,
+     "goles_asist": 6.0,
+     "minutos": 2768,
+     "puntos": 83,
+     "mejor": {
+      "goles_asist": 13.0,
+      "minutos": 3727,
+      "puntos": 104
+     }
+    }
    },
    "visita": {
     "f_prob": 85.0,
-    "f_of": null,
-    "f_of_efectiva": null,
-    "r": null,
-    "casados": 0,
+    "f_of": 78.5,
+    "f_of_efectiva": 78.5,
+    "r": 0.924,
+    "casados": 11,
     "sin_casar": [],
     "tope_aplicado": false,
-    "motivo": "sin alineación oficial publicada",
-    "f_of_detalle": null
+    "motivo": null,
+    "f_of_detalle": {
+     "valor": 78.5,
+     "A_goles": 64.3,
+     "B_minutos": 87.9,
+     "C_puntos": 88.1,
+     "goles_asist": 9.0,
+     "minutos": 3524,
+     "puntos": 111,
+     "mejor": {
+      "goles_asist": 14.0,
+      "minutos": 4009,
+      "puntos": 126
+     }
+    }
    }
   },
   "internazionale-vs-vfb-stuttgart": {
@@ -2412,28 +2438,54 @@
    "fecha": "2026-11-28",
    "home": "Real Madrid",
    "away": "Alavés",
-   "alineacion_publicada": false,
+   "alineacion_publicada": true,
    "local": {
     "f_prob": 100.0,
-    "f_of": null,
-    "f_of_efectiva": null,
-    "r": null,
-    "casados": 0,
+    "f_of": 83.5,
+    "f_of_efectiva": 88.0,
+    "r": 0.88,
+    "casados": 11,
     "sin_casar": [],
-    "tope_aplicado": false,
-    "motivo": "sin alineación oficial publicada",
-    "f_of_detalle": null
+    "tope_aplicado": true,
+    "motivo": null,
+    "f_of_detalle": {
+     "valor": 83.5,
+     "A_goles": 80.0,
+     "B_minutos": 84.9,
+     "C_puntos": 86.8,
+     "goles_asist": 16.0,
+     "minutos": 3678,
+     "puntos": 138,
+     "mejor": {
+      "goles_asist": 20.0,
+      "minutos": 4333,
+      "puntos": 159
+     }
+    }
    },
    "visita": {
     "f_prob": 93.3,
-    "f_of": null,
-    "f_of_efectiva": null,
-    "r": null,
-    "casados": 0,
+    "f_of": 87.7,
+    "f_of_efectiva": 87.7,
+    "r": 0.94,
+    "casados": 11,
     "sin_casar": [],
     "tope_aplicado": false,
-    "motivo": "sin alineación oficial publicada",
-    "f_of_detalle": null
+    "motivo": null,
+    "f_of_detalle": {
+     "valor": 87.7,
+     "A_goles": 75.0,
+     "B_minutos": 92.5,
+     "C_puntos": 100,
+     "goles_asist": 6.0,
+     "minutos": 3560,
+     "puntos": 52,
+     "mejor": {
+      "goles_asist": 8.0,
+      "minutos": 3849,
+      "puntos": 52
+     }
+    }
    }
   },
   "real-madrid-vs-psv-eindhoven": {

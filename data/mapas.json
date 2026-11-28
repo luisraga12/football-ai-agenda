@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generado_en": "2026-11-28T18:25:52Z",
+  "generado_en": "2026-11-28T19:40:15Z",
   "semana": "2-entresemana",
   "fuente": "config + ev.json + verified_events.json + teams_last5.json + schedule_*.json + DETAIL embebido en partido.html (preservado) + summary ESPN por evento (estadio + alineacion oficial + standings + h2h; tabla regular MX para Liguilla)",
   "partidos_vivo": {
@@ -12488,12 +12488,124 @@
         }
       },
       "lineup": {
-        "alineacion_publicada": false,
+        "alineacion_publicada": true,
         "jugadores": {
-          "local": [],
-          "visita": []
+          "local": [
+            {
+              "jugador": "Ivan Provedel",
+              "pos": "SUB",
+              "dorsal": "49"
+            },
+            {
+              "jugador": "Nicolò Barella",
+              "pos": "SUB",
+              "dorsal": "23"
+            },
+            {
+              "jugador": "Andy Diouf",
+              "pos": "SUB",
+              "dorsal": "17"
+            },
+            {
+              "jugador": "Manuel Akanji",
+              "pos": "SUB",
+              "dorsal": "25"
+            },
+            {
+              "jugador": "Lautaro Martínez",
+              "pos": "SUB",
+              "dorsal": "10"
+            },
+            {
+              "jugador": "Federico Dimarco",
+              "pos": "SUB",
+              "dorsal": "32"
+            },
+            {
+              "jugador": "Petar Sucic",
+              "pos": "SUB",
+              "dorsal": "8"
+            },
+            {
+              "jugador": "Yann Bisseck",
+              "pos": "SUB",
+              "dorsal": "31"
+            },
+            {
+              "jugador": "Marcus Thuram",
+              "pos": "SUB",
+              "dorsal": "9"
+            },
+            {
+              "jugador": "Curtis Jones",
+              "pos": "SUB",
+              "dorsal": "21"
+            },
+            {
+              "jugador": "Carlos Augusto",
+              "pos": "SUB",
+              "dorsal": "30"
+            }
+          ],
+          "visita": [
+            {
+              "jugador": "Justin Bijlow",
+              "pos": "G",
+              "dorsal": "1"
+            },
+            {
+              "jugador": "Alessandro Marcandalli",
+              "pos": "D",
+              "dorsal": "27"
+            },
+            {
+              "jugador": "Sebastian Otoa",
+              "pos": "D",
+              "dorsal": "34"
+            },
+            {
+              "jugador": "Johan Vásquez",
+              "pos": "D",
+              "dorsal": "22"
+            },
+            {
+              "jugador": "Mikael Ellertsson",
+              "pos": "M",
+              "dorsal": "77"
+            },
+            {
+              "jugador": "Mario Mitaj",
+              "pos": "M",
+              "dorsal": "2"
+            },
+            {
+              "jugador": "Junior Messias",
+              "pos": "M",
+              "dorsal": "10"
+            },
+            {
+              "jugador": "Samuel Wiafe",
+              "pos": "M",
+              "dorsal": "71"
+            },
+            {
+              "jugador": "Kingsley Ehizibue",
+              "pos": "M",
+              "dorsal": "3"
+            },
+            {
+              "jugador": "Hamed Traoré",
+              "pos": "M",
+              "dorsal": "25"
+            },
+            {
+              "jugador": "Milutin Osmajic",
+              "pos": "F",
+              "dorsal": "18"
+            }
+          ]
         },
-        "jugadores_en_roster": 0
+        "jugadores_en_roster": 48
       },
       "sources": {
         "standings_header": "Italian Serie A Standings"
@@ -12682,12 +12794,124 @@
         }
       },
       "lineup": {
-        "alineacion_publicada": false,
+        "alineacion_publicada": true,
         "jugadores": {
-          "local": [],
-          "visita": []
+          "local": [
+            {
+              "jugador": "Thibaut Courtois",
+              "pos": "G",
+              "dorsal": "1"
+            },
+            {
+              "jugador": "Dean Huijsen",
+              "pos": "D",
+              "dorsal": "4"
+            },
+            {
+              "jugador": "Marc Cucurella",
+              "pos": "D",
+              "dorsal": "17"
+            },
+            {
+              "jugador": "Federico Valverde",
+              "pos": "D",
+              "dorsal": "8"
+            },
+            {
+              "jugador": "Ibrahima Konaté",
+              "pos": "D",
+              "dorsal": "16"
+            },
+            {
+              "jugador": "Vinícius Júnior",
+              "pos": "M",
+              "dorsal": "7"
+            },
+            {
+              "jugador": "Arda Güler",
+              "pos": "M",
+              "dorsal": "15"
+            },
+            {
+              "jugador": "Aurélien Tchouaméni",
+              "pos": "M",
+              "dorsal": "14"
+            },
+            {
+              "jugador": "Brahim Díaz",
+              "pos": "M",
+              "dorsal": "21"
+            },
+            {
+              "jugador": "Jude Bellingham",
+              "pos": "M",
+              "dorsal": "5"
+            },
+            {
+              "jugador": "Kylian Mbappé",
+              "pos": "F",
+              "dorsal": "10"
+            }
+          ],
+          "visita": [
+            {
+              "jugador": "Antonio Sivera",
+              "pos": "G",
+              "dorsal": "1"
+            },
+            {
+              "jugador": "Abde Rebbach",
+              "pos": "D",
+              "dorsal": "21"
+            },
+            {
+              "jugador": "Nahuel Tenaglia",
+              "pos": "D",
+              "dorsal": "14"
+            },
+            {
+              "jugador": "Ángel Pérez",
+              "pos": "D",
+              "dorsal": "7"
+            },
+            {
+              "jugador": "Jonny",
+              "pos": "D",
+              "dorsal": "17"
+            },
+            {
+              "jugador": "Ville Koski",
+              "pos": "D",
+              "dorsal": "16"
+            },
+            {
+              "jugador": "Denis Suárez",
+              "pos": "M",
+              "dorsal": "4"
+            },
+            {
+              "jugador": "Antonio Blanco",
+              "pos": "M",
+              "dorsal": "8"
+            },
+            {
+              "jugador": "Pablo Ibáñez",
+              "pos": "M",
+              "dorsal": "19"
+            },
+            {
+              "jugador": "Mariano Díaz",
+              "pos": "F",
+              "dorsal": "9"
+            },
+            {
+              "jugador": "Toni Martínez",
+              "pos": "F",
+              "dorsal": "11"
+            }
+          ]
         },
-        "jugadores_en_roster": 0
+        "jugadores_en_roster": 45
       },
       "sources": {
         "standings_header": "Spanish LALIGA Standings"
@@ -14805,7 +15029,7 @@
           "récord": "5-5-2"
         },
         "away": {
-          "pos": "15",
+          "pos": "16",
           "pts": "12",
           "pj": "12",
           "g": "4",
@@ -15091,24 +15315,24 @@
       },
       "standings": {
         "home": {
-          "pos": "17",
-          "pts": "11",
-          "pj": "11",
+          "pos": "15",
+          "pts": "12",
+          "pj": "12",
           "g": "3",
-          "e": "2",
+          "e": "3",
           "p": "6",
           "dg": "-7",
-          "récord": "3-2-6"
+          "récord": "3-3-6"
         },
         "away": {
-          "pos": "12",
-          "pts": "14",
-          "pj": "11",
+          "pos": "11",
+          "pts": "15",
+          "pj": "12",
           "g": "3",
-          "e": "5",
+          "e": "6",
           "p": "3",
           "dg": "-3",
-          "récord": "3-5-3"
+          "récord": "3-6-3"
         }
       },
       "lineup": {
@@ -15988,7 +16212,7 @@
       },
       "standings": {
         "home": {
-          "pos": "8",
+          "pos": "9",
           "pts": "13",
           "pj": "11",
           "g": "3",
@@ -16600,7 +16824,7 @@
       },
       "standings": {
         "home": {
-          "pos": "9",
+          "pos": "10",
           "pts": "13",
           "pj": "11",
           "g": "3",
@@ -17214,22 +17438,22 @@
         "home": {
           "pos": "13",
           "pts": "14",
-          "pj": "12",
+          "pj": "13",
           "g": "4",
           "e": "2",
-          "p": "6",
-          "dg": "-3",
-          "récord": "4-2-6"
+          "p": "7",
+          "dg": "-4",
+          "récord": "4-2-7"
         },
         "away": {
           "pos": "1",
-          "pts": "32",
-          "pj": "12",
-          "g": "10",
+          "pts": "35",
+          "pj": "13",
+          "g": "11",
           "e": "2",
           "p": "0",
-          "dg": "+19",
-          "récord": "10-2-0"
+          "dg": "+20",
+          "récord": "11-2-0"
         }
       },
       "lineup": {
@@ -17712,7 +17936,7 @@
           "récord": "2-1-8"
         },
         "away": {
-          "pos": "11",
+          "pos": "12",
           "pts": "14",
           "pj": "11",
           "g": "3",
@@ -17886,7 +18110,7 @@
       },
       "standings": {
         "home": {
-          "pos": "16",
+          "pos": "17",
           "pts": "11",
           "pj": "11",
           "g": "2",
@@ -19424,7 +19648,7 @@
     "detalle_generado": 47,
     "detalle_preservado_embebido": 28,
     "detalle_con_estadio": 75,
-    "detalle_con_alineacion_oficial": 52,
+    "detalle_con_alineacion_oficial": 54,
     "detalle_con_standings": 71,
     "detalle_con_h2h": 55,
     "avisos": [

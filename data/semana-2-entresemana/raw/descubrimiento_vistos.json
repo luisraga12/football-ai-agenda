@@ -47,7 +47,7 @@
   "fecha": "2026-11-28",
   "liga": "eng.1",
   "liga_nombre": "Premier League",
-  "estado": "in"
+  "estado": "post"
  },
  "368|364|2026-11-29": {
   "home": "Everton",
@@ -157,7 +157,7 @@
   "fecha": "2026-11-28",
   "liga": "esp.1",
   "liga_nombre": "LaLiga",
-  "estado": "in"
+  "estado": "post"
  },
  "86|96|2026-11-28": {
   "home": "Real Madrid",
@@ -267,7 +267,7 @@
   "fecha": "2026-11-28",
   "liga": "ger.1",
   "liga_nombre": "Bundesliga",
-  "estado": "in"
+  "estado": "post"
  },
  "126|11420|2026-11-29": {
   "home": "SC Freiburg",
@@ -337,7 +337,7 @@
   "fecha": "2026-11-28",
   "liga": "ita.1",
   "liga_nombre": "Serie A",
-  "estado": "in"
+  "estado": "post"
  },
  "110|3263|2026-11-28": {
   "home": "Internazionale",
