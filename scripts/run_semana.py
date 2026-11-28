@@ -171,6 +171,13 @@ def main():
     # ya existen (h2h, standings y ultimos 5 con copas).
     run([sys.executable, 'scripts/generar_mapas.py',
          '--config', args.config])
+    # Paso 11: Fuerza del XI oficial (27 nov 2026). Despues de
+    # generar_mapas.py: lee el XI oficial publicado por ESPN en
+    # mapas.json y publica data/fuerza_xi.json (F_of, F_of_efectiva
+    # topada a F_prob +/- 12 y r para el recalculo del EV en el
+    # detalle). Sin alineacion oficial, el lado queda en null con
+    # motivo; el detalle muestra la Fuerza probable como hoy.
+    run([sys.executable, 'scripts/calcular_fuerza_oficial.py'])
 
     # ---- validaciones finales ----
     rawdir = os.path.join(ROOT, outdir, 'raw')

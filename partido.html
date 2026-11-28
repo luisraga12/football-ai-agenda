@@ -643,6 +643,13 @@ var RADIO = {}; /* Integración Semana 7: llega por fetch a
   data/<config>/raw/teams_last5.json (y tendencias.json para la racha). */
 window.__setRADIO = function(m){ RADIO = m; };
 window.__setXI = function(m){ XI_PROBABLE = m; };
+/* Fuerza del XI oficial (27 nov 2026): data/fuerza_xi.json, keyed por
+   slug. Si el fetch falla o el archivo no existe, queda vacio y el
+   detalle muestra la Fuerza probable como hoy (fail-soft). */
+var FUERZA_XI = {};
+window.__setFUERZA = function(m){
+  FUERZA_XI = (m && m.partidos) ? m.partidos : {};
+};
 function lastFiveList(teamName, games){
     if (!games || !games.length){
       return '<div class="detail-team"><b>' + esc(teamName) + '</b><p>pendiente</p></div>';
@@ -690,6 +697,46 @@ function xiList(xi){
     h += "</div>";
     return h;
   }
+/* Lista del XI OFICIAL (27 nov 2026): la alineación oficial no trae
+   titularidades ni minutos de ventana; se muestra el dorsal de cada
+   jugador (data/mapas.json). */
+function xiListOficial(xi){
+    var grupos = [["G","Portero"],["D","Defensas"],["M","Mediocampistas"],["F","Delanteros"],["?","Posición por confirmar"]];
+    var h = "<div class=\"xi-list\">";
+    grupos.forEach(function(g){
+      var jug = xi.j.filter(function(p){ return p[1] === g[0]; });
+      if (!jug.length) return;
+      h += "<p class=\"xi-pos\">" + g[1] + "</p><ul class=\"xi-jug\">";
+      jug.forEach(function(p){
+        h += "<li><span class=\"xi-nombre\">" + esc(p[0]) + "</span><span class=\"xi-dato\">" + (p[2] ? "Dorsal " + esc(p[2]) : "—") + "</span></li>";
+      });
+      h += "</ul>";
+    });
+    h += "</div>";
+    return h;
+  }
+/* XI oficial con su Fuerza (27 nov 2026): si data/fuerza_xi.json trae
+   el partido con alineacion_publicada: true y F_of con su detalle,
+   construye el objeto xi {e, fm, of: true, j, z} con la Fuerza OFICIAL
+   cruda (f_of, 1 decimal, NO la topada) y los 11 nombres oficiales
+   de DETAIL.lineup (data/mapas.json). Si no, devuelve null y el
+   detalle muestra la probable como hoy. */
+function xiOficialFuerza(key, lado, nombreEquipo){
+    var fx = (typeof FUERZA_XI !== "undefined") ? FUERZA_XI[key] : null;
+    if (!fx || fx.alineacion_publicada !== true) return null;
+    var side = (lado === "Local") ? fx.local : fx.visita;
+    if (!side || typeof side.f_of !== "number" || !side.f_of_detalle) return null;
+    var d = (typeof DETAIL !== "undefined") ? DETAIL[key] : null;
+    var lin = d && d.lineup;
+    var jug = (lin && lin.jugadores) ? lin.jugadores[(lado === "Local") ? "local" : "visita"] : null;
+    if (!jug || jug.length !== 11) return null;
+    var _xiOf = (typeof window !== "undefined" && typeof window.__xiOficial === "function") ? window.__xiOficial : null;
+    if (!_xiOf) return null;
+    var ofi = _xiOf(jug, nombreEquipo);
+    var det = side.f_of_detalle;
+    ofi.z = {v: side.f_of, a: det.A_goles, ga: det.goles_asist, ma: det.mejor.goles_asist, b: det.B_minutos, m: det.minutos, mb: det.mejor.minutos, c: det.C_puntos, p: det.puntos, mc: det.mejor.puntos};
+    return ofi;
+  }
 function xiTeamCard(xi, rol){
     var z = xi.z;
     var h = "<div class=\"fxi-card\"><b>" + esc(xi.e) + " <span class=\"xi-rol\">· " + esc(rol) + "</span></b>" +
@@ -702,24 +749,35 @@ function xiTeamCard(xi, rol){
       "<li><span>Puntos</span><b>" + esc(xiPct(z.mc ? z.p/z.mc*100 : z.c)) + "% (" + esc(z.p) + "/" + esc(z.mc) + " del mejor XI)</b></li>" +
       "</ul>" +
       "<p class=\"xi-sub\">" + (xi.of ? "Alineación oficial — publicada por ESPN" : "Alineación probable — probable, no oficial") + "</p>" +
-      xiList(xi) +
+      (xi.of ? xiListOficial(xi) : xiList(xi)) +
       "</div>";
     return h;
   }
 function fuerzaXIBlock(key, home, away){
     var h = "";
     var m = XI_PROBABLE[key];
-    h += "<h4>" + ((m && (m.hx.of || m.vx.of)) ? "Alineación oficial" : "Alineación probable") + " y Fuerza del XI <span class=\"fxi-badge\">Fórmula aprobada por el jefe</span></h4>";
-    if (!m){
+    /* Fuerza del XI oficial (27 nov 2026): si data/fuerza_xi.json
+       trae el partido con alineación oficial publicada, la tarjeta
+       muestra la Fuerza OFICIAL y los 11 nombres oficiales; si no,
+       comportamiento exactamente como hoy (probable). */
+    var hx = (m && m.hx) ? m.hx : null;
+    var vx = (m && m.vx) ? m.vx : null;
+    var hxOf = xiOficialFuerza(key, "Local", home);
+    var vxOf = xiOficialFuerza(key, "Visita", away);
+    if (hxOf) hx = hxOf;
+    if (vxOf) vx = vxOf;
+    var esOficial = !!((hx && hx.of) || (vx && vx.of));
+    h += "<h4>" + (esOficial ? "Alineación oficial" : "Alineación probable") + " y Fuerza del XI <span class=\"fxi-badge\">Fórmula aprobada por el jefe</span></h4>";
+    if (!hx || !vx){
       h += "<div class=\"detail-pending\">pendiente — aún no hay XI probable publicado para este partido.</div>";
       return h;
     }
-    h += "<p class=\"fxi-formula\">" + ((m.hx.of || m.vx.of) ? "Alineación oficial publicada por ESPN (~1 h antes del partido). " : "Alineación probable: formación más usada y XI más frecuente por posición en los últimos 5 partidos de liga (fin de semana) o 4 de la competición europea (entre semana). Probable, no oficial: la alineación oficial se publica ~1 h antes del partido. ") + "Fuerza = 0.40·Goles + 0.30·Minutos + 0.30·Puntos; cada componente en % contra el mejor XI de la misma ventana (1 portero + 4 defensas + 4 medios + 2 delanteros con más minutos).</p>";
+    h += "<p class=\"fxi-formula\">" + (esOficial ? "Alineación oficial publicada por ESPN (~1 h antes del partido). " : "Alineación probable: formación más usada y XI más frecuente por posición en los últimos 5 partidos de liga (fin de semana) o 4 de la competición europea (entre semana). Probable, no oficial: la alineación oficial se publica ~1 h antes del partido. ") + "Fuerza = 0.40·Goles + 0.30·Minutos + 0.30·Puntos; cada componente en % contra el mejor XI de la misma ventana (1 portero + 4 defensas + 4 medios + 2 delanteros con más minutos).</p>";
     h += "<div class=\"fxi-grid\">";
-    h += xiTeamCard(m.hx, "Local");
-    h += xiTeamCard(m.vx, "Visita");
+    h += xiTeamCard(hx, "Local");
+    h += xiTeamCard(vx, "Visita");
     h += "</div>";
-    h += "<p class=\"detail-note\">Datos: Empleado 1, data/semana-2/alineacion-probable.json y data/semana-2-entresemana/alineacion-probable.json (24 nov 2026). Titularidades y minutos por jugador en la ventana de cada equipo; los minutos son estimados a partir de las sustituciones (ESPN no publica minutos por jugador).</p>";
+    h += "<p class=\"detail-note\">Datos: Empleado 1, data/semana-2/alineacion-probable.json y data/semana-2-entresemana/alineacion-probable.json (24 nov 2026). Titularidades y minutos por jugador en la ventana de cada equipo; los minutos son estimados a partir de las sustituciones (ESPN no publica minutos por jugador)." + (esOficial ? " Fuerza oficial: data/fuerza_xi.json, calculada con la alineación oficial publicada por ESPN." : "") + "</p>";
     return h;
   }
 function radioRow(label, hVal, aVal, hW, aW){
@@ -1195,6 +1253,7 @@ var URLS = {
     raw: { mw: "data/semana-2-entresemana/raw/teams_last5.json", fs: "data/semana-2/raw/teams_last5.json" },
     tendencias: { mw: "data/semana-2-entresemana/tendencias.json", fs: "data/semana-2/tendencias.json" },
     est: { mw: "data/semana-2-entresemana/estadisticas.json", fs: "data/semana-2/estadisticas.json" }, mapas: "data/mapas.json",
+    fuerza: "data/fuerza_xi.json", /* Fuerza del XI oficial (27 nov 2026): F_of/F_prob/r por partido. */
   momios: { mw: "data/semana-2-entresemana/raw/momios.json", fs: "data/semana-2/raw/momios.json" }
   };
 var CREST_MAP = {"galatasaray-vs-aston-villa": {"h": "GAL", "a": "AVL"}, "arsenal-vs-borussia-dortmund": {"h": "ARS", "a": "BVB"}, "manchester-city-vs-napoli": {"h": "MCI", "a": "NAP"}, "real-madrid-vs-psv-eindhoven": {"h": "RMA", "a": "PSV"}, "club-brugge-vs-liverpool": {"h": "BRU", "a": "LIV"}, "internazionale-vs-vfb-stuttgart": {"h": "INT", "a": "VFB"}, "lille-vs-bayern-munich": {"h": "LIL", "a": "BAY"}, "paris-saint-germain-vs-as-roma": {"h": "PSG", "a": "ROM"}, "sporting-cp-vs-manchester-united": {"h": "SCP", "a": "MUN"}, "celta-vigo-vs-afc-bournemouth": {"h": "CEL", "a": "BOU"}, "dinamo-zagreb-vs-bayer-leverkusen": {"h": "DIN", "a": "LEV"}, "olympiacos-vs-ac-milan": {"h": "OLY", "a": "MIL"}, "werder-bremen-vs-borussia-monchengladbach": {"h": "WER", "a": "BMG"}, "venezia-vs-bologna": {"h": "VEN", "a": "BOL"}, "nottingham-forest-vs-chelsea": {"h": "NFO", "a": "CHE"}, "levante-vs-racing-santander": {"h": "LEV", "a": "RAC"}, "hamburg-sv-vs-bayern-munich": {"h": "HAM", "a": "BAY"}, "manchester-united-vs-brentford": {"h": "MUN", "a": "BRE"}, "elche-vs-atletico-madrid": {"h": "ELC", "a": "ATM"}, "vfb-stuttgart-vs-eintracht-frankfurt": {"h": "STU", "a": "EIN"}, "internazionale-vs-genoa": {"h": "INT", "a": "GEN"}, "real-madrid-vs-alaves": {"h": "RMA", "a": "ALA"}, "everton-vs-liverpool": {"h": "EVE", "a": "LIV"}, "sassuolo-vs-napoli": {"h": "SAS", "a": "NAP"}, "deportivo-vs-barcelona": {"h": "DEP", "a": "BAR"}, "arsenal-vs-manchester-city": {"h": "ARS", "a": "MCI"}, "borussia-dortmund-vs-bayer-leverkusen": {"h": "DOR", "a": "B04"}, "como-vs-juventus": {"h": "COM", "a": "JUV"}, "toluca-vs-atlas": {"h": "TOL", "a": "ATL"}, "monterrey-vs-america": {"h": "MON", "a": "AME"}, "pachuca-vs-guadalajara": {"h": "PAC", "a": "GUA"}, "leon-vs-cruz-azul": {"h": "LEO", "a": "CRU"}, "sabah-fk-vs-barcelona": {"h": "SAB", "a": "BAR"}, "slavia-prague-vs-villarreal": {"h": "SLA", "a": "VIL"}, "atletico-madrid-vs-viking-fk": {"h": "ATM", "a": "VIK"}, "shakhtar-donetsk-vs-fenerbahce": {"h": "SHA", "a": "FEN"}, "besiktas-vs-hapoel-be-er": {"h": "BES", "a": "HAP"}, "marseille-vs-levski-sofia": {"h": "MAR", "a": "SOF"}, "rb-salzburg-vs-ararat-armenia": {"h": "SAL", "a": "ARA"}, "union-st-gilloise-vs-lech-poznan": {"h": "USG", "a": "LEC"}, "viktoria-plzen-vs-benfica": {"h": "PLZ", "a": "BEN"}, "crystal-palace-vs-real-sociedad": {"h": "CRY", "a": "RSO"}, "ferencvaros-vs-nk-celje": {"h": "FER", "a": "NCE"}, "juventus-vs-omonia-nicosia": {"h": "JUV", "a": "OMO"}, "lyon-vs-lillestrom": {"h": "LYO", "a": "LST"}, "nec-nijmegen-vs-stade-rennais": {"h": "NEC", "a": "REN"}, "ofi-crete-vs-anderlecht": {"h": "OFI", "a": "AND"}, "sparta-prague-vs-az-alkmaar": {"h": "SPA", "a": "AZ"}, "sunderland-vs-jagiellonia-bialystok": {"h": "SUN", "a": "JAG"}, "torreense-vs-celtic": {"h": "TOR", "a": "GLA"}, "tsg-hoffenheim-vs-sk-sturm-graz": {"h": "HOF", "a": "STG"}, "atlas-vs-toluca": {"h": "ATL", "a": "TOL"}, "america-vs-monterrey": {"h": "AME", "a": "MON"}, "guadalajara-vs-pachuca": {"h": "GUA", "a": "PAC"}, "cruz-azul-vs-leon": {"h": "CRU", "a": "LEO"}};
@@ -1322,6 +1381,30 @@ function derivarDNB(p){
     var s = p.p1 + p.p2;
     if (!(s > 0)) return null;
     return {dnbH: p.p1 / s * 100, dnbA: p.p2 / s * 100, x1: p.p1 + p.px, x12: p.p1 + p.p2, x2: p.px + p.p2};
+  }
+/* ---------- Ajuste 1X2 por XI oficial (piloto, E1 27 nov 2026) ----------
+   Cuando data/fuerza_xi.json trae el partido con alineación oficial
+   publicada y r (f_of_efectiva/f_prob, YA topada a ±12 puntos, k=1.0),
+   la probabilidad 1X2 de cada lado se multiplica por su r^1.0 y se
+   renormaliza a 100%; el empate no se toca. NUNCA se usa la f_of
+   cruda para el ajuste (sesgo de medición ~17 pts, T1) y NUNCA la
+   posesión. Solo afecta a lo que muestra el detalle (probabilidades
+   1X2 y EV 1X2); ev.json, el modelo y el semáforo no se tocan. Sin
+   alineación oficial, devuelve las probabilidades tal cual. */
+function ajustar1X2XI(p12, key){
+    if (!p12 || typeof p12.p1 !== "number" || typeof p12.px !== "number" || typeof p12.p2 !== "number") return null;
+    var sinAjuste = {p1: p12.p1, px: p12.px, p2: p12.p2, ajustado: false};
+    var fx = (typeof FUERZA_XI !== "undefined") ? FUERZA_XI[key] : null;
+    if (!fx || fx.alineacion_publicada !== true) return sinAjuste;
+    var rH = (fx.local && typeof fx.local.r === "number" && isFinite(fx.local.r) && fx.local.r > 0) ? fx.local.r : null;
+    var rA = (fx.visita && typeof fx.visita.r === "number" && isFinite(fx.visita.r) && fx.visita.r > 0) ? fx.visita.r : null;
+    if (rH === null && rA === null) return sinAjuste;
+    var p1 = p12.p1 * (rH === null ? 1 : rH);
+    var px = p12.px;
+    var p2 = p12.p2 * (rA === null ? 1 : rA);
+    var s = p1 + px + p2;
+    if (!(s > 0) || !isFinite(s)) return sinAjuste;
+    return {p1: p1 / s * 100, px: px / s * 100, p2: p2 / s * 100, ajustado: true};
   }
 function nombreEquipo(n){ var mapa = {"Hapoel Be'er": "Hapoel Be'er Sheva"}; return mapa[n] || n; } /* Novena ronda P1-9: nombre completo en pantalla (el dato trae "Hapoel Be'er"). */ function semaforoDe(m){
     if (m == null || typeof m.mejor_ev !== "number" || m.mejor_pick == null) return null; if (m.estado_partido === "post" || (m.estado_partido === "in" && typeof m._minuto === "string" && /^90/.test(m._minuto.trim()))) return null; // Novena ronda P0-1: terminado o en descuento (90'+) no tiene semáforo ni pick pre-partido.
@@ -1676,14 +1759,19 @@ function buildRADIOMap(rawData, tenData, partidos){
 
   /* ---------- Momios y valor esperado (misma parrilla que la tarjeta) ---------- */
   function oddsBlock(m){
-    var h = "<h4>Momios y valor esperado</h4>"; if (m && m.estado_partido === "post" && m.marcador && typeof m.marcador.local === "number" && typeof m.marcador.visita === "number"){ var hF = "<h4>Momios y valor esperado</h4>"; hF += '<p><b>Final: ' + esc(nombreEquipo(m.home)) + ' ' + m.marcador.local + ' – ' + m.marcador.visita + ' ' + esc(nombreEquipo(m.away)) + '</b></p>'; hF += '<p class="detail-note">Partido terminado sin momios: no hay EV ni pick; las probabilidades son las del modelo antes del partido.</p>'; var pF = derivar1X2(m); var tF = m.mercados && m.mercados.total ? m.mercados.total : null; if (pF || (tF && typeof tF.p_over === "number")){ hF += '<div class="odds"><div class="derived-h"><span>Probabilidad del modelo (sin momio)</span></div><div class="derived-grid">'; if (pF){ hF += celdaMomio("Local", null, null, pF.p1, true); hF += celdaMomio("Empate", null, null, pF.px, true); hF += celdaMomio("Visita", null, null, pF.p2, true); } if (tF && typeof tF.p_over === "number"){ hF += celdaMomio("Más " + fmtLinea(tF.linea), null, null, tF.p_over, true); hF += celdaMomio("Menos " + fmtLinea(tF.linea), null, null, 100 - tF.p_over, true); } hF += '</div></div>'; } return hF; }
+    var h = "<h4>Momios y valor esperado</h4>"; if (m && m.estado_partido === "post" && m.marcador && typeof m.marcador.local === "number" && typeof m.marcador.visita === "number"){ var hF = "<h4>Momios y valor esperado</h4>"; hF += '<p><b>Final: ' + esc(nombreEquipo(m.home)) + ' ' + m.marcador.local + ' – ' + m.marcador.visita + ' ' + esc(nombreEquipo(m.away)) + '</b></p>'; var pF = derivar1X2(m); var ajF = ajustar1X2XI(pF, slug); if (ajF && ajF.ajustado) pF = ajF; hF += '<p class="detail-note">Partido terminado sin momios: no hay EV ni pick; las probabilidades son las del modelo antes del partido.' + ((ajF && ajF.ajustado) ? ' Ajustadas por XI oficial.' : '') + '</p>'; var tF = m.mercados && m.mercados.total ? m.mercados.total : null; if (pF || (tF && typeof tF.p_over === "number")){ hF += '<div class="odds"><div class="derived-h"><span>Probabilidad del modelo (sin momio)</span></div><div class="derived-grid">'; if (pF){ hF += celdaMomio("Local", null, null, pF.p1, true); hF += celdaMomio("Empate", null, null, pF.px, true); hF += celdaMomio("Visita", null, null, pF.p2, true); } if (tF && typeof tF.p_over === "number"){ hF += celdaMomio("Más " + fmtLinea(tF.linea), null, null, tF.p_over, true); hF += celdaMomio("Menos " + fmtLinea(tF.linea), null, null, 100 - tF.p_over, true); } hF += '</div></div>'; } return hF; }
     var sem = semaforoDe(m);
     var p12 = derivar1X2(m);
+    /* Ajuste 1X2 por XI oficial (piloto topado, 27 nov 2026): p12
+       pasa a ser la probabilidad ajustada; el semáforo (sem) sigue
+       siendo el publicado en ev.json y no se toca. */
+    var aj = ajustar1X2XI(p12, slug);
+    if (aj && aj.ajustado) p12 = aj;
     if (sem){
       h += '<p><span class="chip ' + sem.cls + '">Semáforo EV · <strong>' + sem.color + ' · ' + esc(m.mejor_pick) + ' ' + fmtEvPct(sem.ev) + '</strong></span></p>';
     }
     if (p12){
-      h += '<p class="detail-note">Probabilidad del modelo (1X2, Poisson): Local ' + fmt1(p12.p1) + '% · Empate ' + fmt1(p12.px) + '% · Visita ' + fmt1(p12.p2) + '%.</p>';
+      h += '<p class="detail-note">Probabilidad del modelo (1X2, Poisson): Local ' + fmt1(p12.p1) + '% · Empate ' + fmt1(p12.px) + '% · Visita ' + fmt1(p12.p2) + '%' + ((aj && aj.ajustado) ? ' · Ajustado por XI oficial' : '') + '.</p>';
       var dnb = derivarDNB(p12);
       if (dnb){
         h += '<div class="derived" aria-label="Mercados derivados del 1X2: apuesta sin empate y doble oportunidad">';
@@ -1703,9 +1791,12 @@ function buildRADIOMap(rawData, tenData, partidos){
     }
     var mk12 = m.mercados && m.mercados["1X2"] ? m.mercados["1X2"] : null;
     var tot = m.mercados && m.mercados.total ? m.mercados.total : null;
-    h += '<div class="odds"><div class="derived-h"><span>Momios ' + esc(m.proveedor || (mom.proveedor || "")) + '</span><span>EV = prob. × momio − 1</span></div><div class="derived-grid">';
+    h += '<div class="odds"><div class="derived-h"><span>Momios ' + esc(m.proveedor || (mom.proveedor || "")) + '</span><span>EV = prob. × momio − 1' + ((aj && aj.ajustado) ? ' · 1X2 ajustado por XI oficial' : '') + '</span></div><div class="derived-grid">';
     var mo12 = mk12 && mk12.momios ? mk12.momios : (mom.moneyline || null);
     var ev12 = mk12 && mk12.ev ? mk12.ev : null;
+    if (aj && aj.ajustado && mo12){ /* EV recalculado con la prob. 1X2 ajustada por XI oficial (piloto topado); el momio es el publicado. */
+      ev12 = {"1": (typeof mo12.home === "number") ? (p12.p1 / 100) * mo12.home - 1 : null, "X": (typeof mo12.draw === "number") ? (p12.px / 100) * mo12.draw - 1 : null, "2": (typeof mo12.away === "number") ? (p12.p2 / 100) * mo12.away - 1 : null};
+    }
     h += celdaMomio("Local", mo12 ? mo12.home : null, ev12 ? ev12["1"] : null, p12 ? p12.p1 : null);
     h += celdaMomio("Empate", mo12 ? mo12.draw : null, ev12 ? ev12["X"] : null, p12 ? p12.px : null);
     h += celdaMomio("Visita", mo12 ? mo12.away : null, ev12 ? ev12["2"] : null, p12 ? p12.p2 : null);
@@ -1791,7 +1882,7 @@ function buildRADIOMap(rawData, tenData, partidos){
     return h;
   }
 
-  /* Semana 10 (E2): XI oficial de data/mapas.json; posiciones ESPN (CD-L, LB, AM-R...) se normalizan a G/D/M/F; la formación se calcula D-M-F. */ function posCancha(p){ p = (p || "").toUpperCase(); if (p === "G" || p === "GK") return "G"; if (p === "F" || p.indexOf("CF") === 0 || p === "LF" || p === "RF" || p === "ST") return "F"; if (p.indexOf("CD") === 0 || p === "LB" || p === "RB" || p === "SW" || p === "DF") return "D"; if (p === "DM" || p.indexOf("CM") === 0 || p === "AM" || p === "LM" || p === "RM" || p.indexOf("AM-") === 0 || p === "MF") return "M"; return "?"; } function xiOficial(lista, equipo){ var j = []; (lista || []).forEach(function(p){ if (!p || p.jugador == null || p.jugador === "") return; j.push([p.jugador, posCancha(p.pos), (p.dorsal == null ? "" : String(p.dorsal))]); }); var nD = 0, nM = 0, nF = 0; j.forEach(function(p){ if (p[1] === "D") nD++; else if (p[1] === "M") nM++; else if (p[1] === "F") nF++; }); var fm = (nD + nM + nF === 10) ? (nD + "-" + nM + "-" + nF) : "—"; return {e: equipo || "", fm: fm, of: true, j: j}; } function pitchBlock(key){
+  /* Semana 10 (E2): XI oficial de data/mapas.json; posiciones ESPN (CD-L, LB, AM-R...) se normalizan a G/D/M/F; la formación se calcula D-M-F. */ function posCancha(p){ p = (p || "").toUpperCase(); if (p === "G" || p === "GK") return "G"; if (p === "F" || p.indexOf("CF") === 0 || p === "LF" || p === "RF" || p === "ST") return "F"; if (p.indexOf("CD") === 0 || p === "LB" || p === "RB" || p === "SW" || p === "DF") return "D"; if (p === "DM" || p.indexOf("CM") === 0 || p === "AM" || p === "LM" || p === "RM" || p.indexOf("AM-") === 0 || p === "MF") return "M"; return "?"; } function xiOficial(lista, equipo){ var j = []; (lista || []).forEach(function(p){ if (!p || p.jugador == null || p.jugador === "") return; j.push([p.jugador, posCancha(p.pos), (p.dorsal == null ? "" : String(p.dorsal))]); }); var nD = 0, nM = 0, nF = 0; j.forEach(function(p){ if (p[1] === "D") nD++; else if (p[1] === "M") nM++; else if (p[1] === "F") nF++; }); var fm = (nD + nM + nF === 10) ? (nD + "-" + nM + "-" + nF) : "—"; return {e: equipo || "", fm: fm, of: true, j: j}; } window.__xiOficial = xiOficial; function pitchBlock(key){
     var h = "<h4>Alineación en cancha</h4>";
     var d = DETAIL[key] || null; var lin = d && d.lineup; if (lin && lin.alineacion_publicada && lin.jugadores && lin.jugadores.local && lin.jugadores.visita && lin.jugadores.local.length === 11 && lin.jugadores.visita.length === 11){ h = "<h4>Alineación oficial en cancha</h4>"; h += '<p class="detail-note">Alineación oficial publicada por ESPN — los 11 titulares de cada equipo.</p>'; h += '<div class="pitch-grid">' + pitchXI(xiOficial(lin.jugadores.local, d.home), "Local") + pitchXI(xiOficial(lin.jugadores.visita, d.away), "Visita") + '</div>'; return h; } h += '<p class="detail-note">Alineación oficial: por confirmar — ESPN aún no publica los 11 titulares.</p>'; var m = XI_PROBABLE[key];
     if (!m){
@@ -1929,6 +2020,11 @@ function buildRADIOMap(rawData, tenData, partidos){
   function fifaDetailHead(m){
   var semD = (typeof semaforoDe === "function") ? semaforoDe(m) : null;
   var p12d = (typeof derivar1X2 === "function") ? derivar1X2(m) : null;
+  /* Ajuste 1X2 por XI oficial (piloto topado, 27 nov 2026): las
+     barras FIFA usan la probabilidad ajustada cuando hay alineación
+     oficial; el EV% del héroe sigue siendo el publicado (semáforo). */
+  var ajD = (typeof ajustar1X2XI === "function") ? ajustar1X2XI(p12d, slug) : null;
+  if (ajD && ajD.ajustado) p12d = ajD;
   var evD = (semD && typeof semD.ev === "number") ? semD.ev : null;
   var termD = (m.estado_partido === "post");
   var numD = termD ? "—" : (evD === null ? "—" : ((evD >= 0 ? "+" : "") + Math.round(evD)));
@@ -1982,7 +2078,8 @@ function renderDetalle(m, estDocs){
       fetchJSON(URLS.xi.mw), fetchJSON(URLS.xi.fs),
       fetchJSON(URLS.raw.mw), fetchJSON(URLS.raw.fs),
       fetchJSON(URLS.tendencias.mw), fetchJSON(URLS.tendencias.fs),
-      fetchJSON(URLS.est.mw), fetchJSON(URLS.est.fs), fetchJSON(URLS.mapas), cargarBSD(), fetchJSON("data/vivo.json") /* Novena ronda P0-1: vivo.json para marcar terminados y en descuento al renderizar la ficha. */
+      fetchJSON(URLS.est.mw), fetchJSON(URLS.est.fs), fetchJSON(URLS.mapas), cargarBSD(), fetchJSON("data/vivo.json"), /* Novena ronda P0-1: vivo.json para marcar terminados y en descuento al renderizar la ficha. */
+      fetchJSON(URLS.fuerza) /* Fuerza del XI oficial (27 nov 2026): res[13]. */
     ]).then(function(res){
       var partidos = [];
       [[res[0], "mw"], [res[1], "fs"]].forEach(function(pair){
@@ -2005,7 +2102,7 @@ function renderDetalle(m, estDocs){
         return;
       }
       /* Novena ronda P0-1/P1-2: superponer vivo.json (ESPN, cada hora) sobre estado_partido de ev.json (corrida diaria). Solo se promueve a "post" o "in"; un "post" de ev.json nunca se degrada. Así la ficha terminada no muestra semáforo, picks ni BSD. */ var vivoD = res[12]; if (vivoD && Array.isArray(vivoD.partidos)){ vivoD.partidos.forEach(function(v){ if (!v || !v.home || !v.away) return; if (norm(v.home) + "|" + norm(v.away) !== norm(m.home) + "|" + norm(m.away)) return; if (v.estado === "post"){ m.estado_partido = "post"; if (typeof v.marcador_local === "number" && typeof v.marcador_visita === "number") m.marcador = {local: v.marcador_local, visita: v.marcador_visita}; } else if (v.estado === "in" && m.estado_partido !== "post"){ m.estado_partido = "in"; if (typeof v.minuto === "string") m._minuto = v.minuto; if (typeof v.marcador_local === "number" && typeof v.marcador_visita === "number") m.marcador = {local: v.marcador_local, visita: v.marcador_visita}; } }); } /* Tarea C, 25 nov 2026: data/mapas.json (55 partidos) se fusiona sobre los mapas embebidos (28). DETAIL embebido se conserva: generar_mapas.py lo lee de este archivo. */ if (res[10]){ var mp = res[10]; if (mp.partidos_vivo){ Object.keys(mp.partidos_vivo).forEach(function(k){ PARTIDOS_VIVO[k] = mp.partidos_vivo[k]; }); } if (mp.detalle){ Object.keys(mp.detalle).forEach(function(k){ if (!DETAIL[k]) DETAIL[k] = mp.detalle[k]; }); } } var xiMap = buildXIMap([res[2], res[3]]);
-      /* Semana 10 (E2): estadio y alineación oficial (data/mapas.json, E1) se añaden a DETAIL sin tocar sus campos existentes (h2h, standings y lastFive se conservan); la fusión de arriba solo agrega las entradas nuevas. */ if (res[10] && res[10].detalle){ Object.keys(res[10].detalle).forEach(function(k){ var dd = res[10].detalle[k]; if (!dd) return; if (!DETAIL[k]) DETAIL[k] = {}; if (dd.estadio) DETAIL[k].estadio = dd.estadio; if (dd.lineup) DETAIL[k].lineup = dd.lineup; }); } if (window.__setXI) window.__setXI(xiMap);
+      /* Semana 10 (E2): estadio y alineación oficial (data/mapas.json, E1) se añaden a DETAIL sin tocar sus campos existentes (h2h, standings y lastFive se conservan); la fusión de arriba solo agrega las entradas nuevas. */ if (res[10] && res[10].detalle){ Object.keys(res[10].detalle).forEach(function(k){ var dd = res[10].detalle[k]; if (!dd) return; if (!DETAIL[k]) DETAIL[k] = {}; if (dd.estadio) DETAIL[k].estadio = dd.estadio; if (dd.lineup) DETAIL[k].lineup = dd.lineup; }); } if (window.__setXI) window.__setXI(xiMap); if (window.__setFUERZA) window.__setFUERZA(res[13]);
       var radioMap = buildRADIOMap(
         {mw: res[4], fs: res[5]},
         {mw: res[6], fs: res[7]},
