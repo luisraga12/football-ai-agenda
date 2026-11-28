@@ -32,8 +32,8 @@
   function cajaPosUEL(nombre, st){
     var dg = (st.dg == null ? '–' : String(st.dg));
     return '<div class="pos-box"><b>' + escUEL(nombre) + '</b>' +
-      '<div class="pos-num num">' + escUEL(st.pos) + 'º</div>' +
-      '<p>' + escUEL(st.pts) + ' pts · ' + escUEL(st.pj) + ' PJ · ' + escUEL(st['récord']) + ' · DG ' + escUEL(dg) + '</p></div>';
+      '<div class="pos-num num">' + escUEL(st.pos) + '.º</div>' +
+      '<p>Europa League · ' + escUEL(st.pts) + ' pts · ' + escUEL(st.pj) + ' PJ · ' + escUEL(st['récord']) + ' · DG ' + escUEL(dg) + '</p></div>';
   }
   function notaUEL(texto){
     var pos = document.querySelector('.detail-pos');
