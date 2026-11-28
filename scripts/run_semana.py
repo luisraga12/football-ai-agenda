@@ -178,20 +178,22 @@ def main():
     # detalle). Sin alineacion oficial, el lado queda en null con
     # motivo; el detalle muestra la Fuerza probable como hoy.
     run([sys.executable, 'scripts/calcular_fuerza_oficial.py'])
-    # Paso 12: parlay del dia (28 nov 2026). Despues del EV: toma los
-    # 3 mejores picks verdes (EV >= +5%) del dia y publica
-    # data/parlay-del-dia.json. Si el archivo ya existe con la fecha
-    # de hoy, no se sobrescribe (el parlay se fija por la manana).
-    run([sys.executable, 'scripts/generar_parlay.py'])
-    # Paso 13: resultados + Marcador (28 nov 2026). Despues del EV y
-    # del parlay: lee los dos ev.json + vivo.json + el log en vivo y
-    # publica data/resultados.json (recomendacion pre-partido por
-    # partido, acertó/falló contra el marcador final real, y resumen
+    # Paso 12: resultados + Marcador (28 nov 2026). Despues del EV:
+    # lee los dos ev.json + vivo.json + el log en vivo y publica
+    # data/resultados.json (recomendacion pre-partido por partido,
+    # acertó/falló contra el marcador final real, y resumen
     # pre-partido vs en vivo). Sin EV positivo no hay recomendacion;
     # sin resultado final el acierto es Pendiente; sin snapshots en
     # data/live-log la columna en vivo es "sin datos", nunca inventada.
-
     run([sys.executable, 'scripts/generar_resultados.py'])
+    # Paso 13: parlay del dia (28 nov 2026; reordenado 28 nov: el
+    # parlay ahora lee las recomendaciones de data/resultados.json,
+    # no el maximo EV). Toma las 3 mejores piernas verdes del dia
+    # (el mejor verde de cada partido, por EV); si faltan, completa
+    # con amarillas; nunca una roja. Publica data/parlay-del-dia.json.
+    # Si el archivo ya existe con la fecha de hoy, no se sobrescribe
+    # (el parlay se fija por la manana).
+    run([sys.executable, 'scripts/generar_parlay.py'])
 
     # ---- validaciones finales ----
     rawdir = os.path.join(ROOT, outdir, 'raw')

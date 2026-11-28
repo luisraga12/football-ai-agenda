@@ -207,8 +207,9 @@ def _candidatos(p):
     del modelo. Nombres idénticos a calcular_ev.py (y a _evaluar_pick):
     1X2 Local/Empate/Visita; Total Más/Menos X.5; Spread local/visitante
     ±X.5; BTTS Sí/No (solo cuando BSD trae sus momios; si no, momios y
-    EV son None y el pick no entra). Sin momio no hay EV: el pick no
-    entra (nada inventado)."""
+    EV son None y el pick no entra); AH local/visitante ±X.5 (solo cuando
+    BSD trae su hándicap asiático; líneas .5, sin push). Sin momio no hay
+    EV: el pick no entra (nada inventado)."""
     mercados = p.get("mercados") or {}
     picks = []
 
@@ -261,6 +262,16 @@ def _candidatos(p):
                 btts["ev"].get("si"), btts.get("p_btts"))
         agregar("BTTS", "BTTS No", btts["momios"].get("no"),
                 btts["ev"].get("no"), btts.get("p_no_btts"))
+    ah = mercados.get("asian_handicap") or {}
+    if isinstance(ah.get("momios"), dict) and isinstance(ah.get("ev"), dict):
+        la = ah.get("linea")
+        pc_ah = ah.get("p_cubre_local")
+        if la is not None and pc_ah is not None:
+            agregar("AH", f"AH local {la:+.1f}",
+                    ah["momios"].get("local"), ah["ev"].get("local"), pc_ah)
+            agregar("AH", f"AH visitante {(-la):+.1f}",
+                    ah["momios"].get("visitante"),
+                    ah["ev"].get("visitante"), 100 - pc_ah)
     return picks
 
 
@@ -276,6 +287,11 @@ def _evaluar_pick(pick, gl, ga):
         total = gl + ga
         return total > linea if m.group(1) == "Más" else total < linea
     m = re.match(r"^Spread\s+(local|visita|visitante)\s+([+-]?\d+[.,]\d+)$", pick or "")
+    if m:
+        linea = float(m.group(2).replace(",", "."))
+        margen = (gl - ga) if m.group(1) == "local" else (ga - gl)
+        return margen + linea > 0
+    m = re.match(r"^AH\s+(local|visita|visitante)\s+([+-]?\d+[.,]\d+)$", pick or "")
     if m:
         linea = float(m.group(2).replace(",", "."))
         margen = (gl - ga) if m.group(1) == "local" else (ga - gl)
@@ -397,6 +413,16 @@ def main():
                             "prob": round(alt["prob"], 1),
                             "ev": alt["ev"],
                         }
+                # MEJOR VERDE (E1, 28 nov 2026; ejemplo del jefe:
+                # Hamburg/empate): de los picks verdes (prob ≥ 60% y
+                # EV ≥ +5%), el de mayor EV. Es la pierna que usa el
+                # parlay del día: el combinado quiere el mayor EV
+                # entre picks equilibrados, no el EV máximo sin más
+                # (que era un rojo como el Local @8.00 del Hamburg).
+                verdes = [c for c in picks
+                          if _color_por_prob_ev(c["prob"], c["ev"]) == "verde"]
+                mejor_verde = (max(verdes, key=lambda c: c["ev"])
+                               if verdes else None)
                 recomendacion = {
                     "pick": elegido["pick"],
                     "mercado": elegido["mercado"],
@@ -416,6 +442,14 @@ def main():
                         "color": _color_por_prob_ev(mejor_valor["prob"],
                                                      mejor_valor["ev"]),
                     } if mejor_valor is not None else None),
+                    "mejor_verde": ({
+                        "pick": mejor_verde["pick"],
+                        "mercado": mejor_verde["mercado"],
+                        "momio": mejor_verde["momio"],
+                        "prob": round(mejor_verde["prob"], 1),
+                        "ev": mejor_verde["ev"],
+                        "color": "verde",
+                    } if mejor_verde is not None else None),
                 }
             else:
                 recomendacion = None

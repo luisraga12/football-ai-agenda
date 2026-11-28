@@ -1,18 +1,29 @@
 """Genera data/parlay-del-dia.json: el parlay del dia (E1, 28 nov 2026).
 
-Lee los ev.json publicados (fin de semana + entre semana) y toma los
-3 mejores picks verdes (EV >= +5%) del dia, sin repetir partido.
-Cada pierna: partido, pick, momio, prob y EV del modelo.
+Lee data/resultados.json (paso 12) y toma las 3 mejores piernas del dia
+entre las recomendaciones equilibradas, sin repetir partido. Cada pierna:
+partido, pick, momio, prob y EV del modelo.
 
-Reglas (orden del jefe, JEFE.md f51ccc0):
+Reglas (orden del jefe, JEFE.md f51ccc0; regla balanceada 28 nov 2026,
+ejemplo del jefe: Hamburg/empate):
   - Solo partidos de HOY (America/Mexico_City) en estado 'pre'.
+  - Cada pierna es el MEJOR VERDE del partido (el pick verde de mayor EV:
+    prob >= 60% y EV >= +5%), publicado en resultados.json. Si faltan
+    verdes para 3 piernas, se completa con recomendaciones amarillas
+    (30% <= prob < 60% y EV >= +5%). Nunca una roja.
+  - Antes el parlay tomaba el maximo EV sin mas y por eso puso al Hamburg
+    Local @8.00 (29.9%, rojo): la buena era Hamburg +1.5 @1.775 (70%,
+    verde), que cubre ganar, empatar y perder por 1.
   - Si hay menos de 3 con valor, se publican las que haya (1-2);
     si no hay ninguna, piernas vacias con "sin valor hoy".
-  - Nunca inventar picks: sin mejor_ev publicado, no hay pierna.
+  - Nunca inventar picks: sin mejor verde ni recomendacion amarilla,
+    no hay pierna. Si resultados.json no existe o no se puede leer, NO
+    se escribe nada (falla fuerte: el parlay necesita las
+    recomendaciones; run_semana.py corre resultados antes que el parlay).
   - El parlay del dia se FIJA por la manana: si el archivo ya existe
     con la fecha de hoy, no se sobrescribe (las corridas horarias del
     fin de semana no lo mutan mientras los partidos se van jugando;
-    el acerto/fallo del final del dia se evalua sobre estas piernas).
+    el acierto/fallo del final del dia se evalua sobre estas piernas).
 
 Uso: python3 scripts/generar_parlay.py [--fecha YYYY-MM-DD]
 Salida: data/parlay-del-dia.json
@@ -29,6 +40,7 @@ EVS = [
     os.path.join(ROOT, "data", "semana-2", "ev.json"),
     os.path.join(ROOT, "data", "semana-2-entresemana", "ev.json"),
 ]
+RESULTADOS = os.path.join(ROOT, "data", "resultados.json")
 SALIDA = os.path.join(ROOT, "data", "parlay-del-dia.json")
 UMBRAL_EV = 0.05
 MAX_PIERNAS = 3
@@ -65,37 +77,62 @@ def main():
         except (ValueError, OSError):
             pass
 
-    cands = []
-    vistos = set()
+    try:
+        with open(RESULTADOS, encoding="utf-8") as f:
+            res = json.load(f)
+    except (ValueError, OSError) as e:
+        print(f"ERROR: no se pudo leer {RESULTADOS}: {e}. El parlay "
+              "necesita las recomendaciones; no se escribe nada.")
+        raise SystemExit(1)
+
+    # La hora no viene en resultados.json: se toma de los ev.json.
+    horas = {}
     for ruta in EVS:
         try:
             doc = json.load(open(ruta))
         except (ValueError, OSError):
             continue
         for p in doc.get("partidos") or []:
-            if p.get("fecha") != hoy:
-                continue
-            if p.get("estado_partido") != "pre":
-                continue
-            ev = p.get("mejor_ev")
-            if not isinstance(ev, (int, float)) or ev < UMBRAL_EV:
-                continue
-            slug = p.get("slug") or slug_de(p)
-            if slug in vistos:
-                continue
-            vistos.add(slug)
-            cands.append({
-                "slug": slug,
-                "partido": f"{p.get('home')} vs {p.get('away')}",
-                "liga": p.get("liga"),
-                "hora": p.get("hora"),
-                "pick": p.get("mejor_pick"),
-                "momio": p.get("mejor_decimal"),
-                "prob": p.get("mejor_prob"),
-                "ev": ev,
-            })
-    cands.sort(key=lambda c: -c["ev"])
-    piernas = cands[:MAX_PIERNAS]
+            horas[(p.get("home"), p.get("away"))] = p.get("hora")
+
+    def pierna_de(p, pick):
+        return {
+            "slug": slug_de(p),
+            "partido": f"{p.get('home')} vs {p.get('away')}",
+            "liga": p.get("liga"),
+            "hora": horas.get((p.get("home"), p.get("away"))),
+            "pick": pick.get("pick"),
+            "mercado": pick.get("mercado"),
+            "momio": pick.get("momio"),
+            "prob": pick.get("prob"),
+            "ev": pick.get("ev"),
+        }
+
+    verdes = []
+    amarillas = []
+    vistos = set()
+    for p in res.get("partidos") or []:
+        if p.get("fecha") != hoy:
+            continue
+        if p.get("estado") != "pre":
+            continue
+        slug = slug_de(p)
+        if slug in vistos:
+            continue
+        vistos.add(slug)
+        rec = p.get("recomendacion") or {}
+        mv = rec.get("mejor_verde")
+        if isinstance(mv, dict) and mv.get("momio") is not None \
+                and isinstance(mv.get("ev"), (int, float)) \
+                and mv["ev"] >= UMBRAL_EV:
+            verdes.append(pierna_de(p, mv))
+        elif rec.get("color") == "amarillo" and rec.get("cumple_regla") \
+                and isinstance(rec.get("ev"), (int, float)) \
+                and rec["ev"] >= UMBRAL_EV:
+            amarillas.append(pierna_de(p, rec))
+    verdes.sort(key=lambda c: -c["ev"])
+    amarillas.sort(key=lambda c: -c["ev"])
+    piernas = (verdes + amarillas)[:MAX_PIERNAS]
 
     momio_comb = 1.0
     prob_comb = 1.0
@@ -110,7 +147,8 @@ def main():
         "prob_combinada": round(prob_comb * 100, 2) if piernas else None,
         "ev_combinado": round(prob_comb * momio_comb - 1, 4) if piernas else None,
         "nota": ("sin valor hoy" if not piernas else
-                 f"{len(piernas)} pierna(s) con EV >= +5%"),
+                 f"{len(piernas)} pierna(s) verdes/amarillas "
+                 "(regla balanceada)"),
     }
     with open(SALIDA, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=1)
