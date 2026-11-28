@@ -167,7 +167,7 @@
   "fecha": "2026-11-28",
   "liga": "esp.1",
   "liga_nombre": "LaLiga",
-  "estado": "pre"
+  "estado": "in"
  },
  "94|97|2026-11-29": {
   "home": "Valencia",
@@ -347,7 +347,7 @@
   "fecha": "2026-11-28",
   "liga": "ita.1",
   "liga_nombre": "Serie A",
-  "estado": "pre"
+  "estado": "in"
  },
  "118|109|2026-11-29": {
   "home": "Udinese",

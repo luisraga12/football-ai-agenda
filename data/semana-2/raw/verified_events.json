@@ -104,7 +104,7 @@
   "liga": "ita.1",
   "league": "ita.1",
   "date_cst": "2026-11-28 13:45",
-  "status": "STATUS_SCHEDULED",
+  "status": "STATUS_FIRST_HALF",
   "espn_id": "401874977"
  },
  {
@@ -116,7 +116,7 @@
   "liga": "esp.1",
   "league": "esp.1",
   "date_cst": "2026-11-28 14:00",
-  "status": "STATUS_SCHEDULED",
+  "status": "STATUS_FIRST_HALF",
   "espn_id": "401882789"
  },
  {
