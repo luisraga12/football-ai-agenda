@@ -244,6 +244,23 @@ def extraer_estadio_lineup(summary, home, away, home_id, away_id):
                 "pos": pos.get("abbreviation") or pos.get("name"),
                 "dorsal": x.get("jersey"),
             })
+    # Validación (28 nov 2026): ESPN a veces marca starter=true en un XI
+    # corrupto — p. ej. Inter-Genoa 28 nov: los 11 "titulares" del Inter
+    # venían con pos SUB (incluidos Provedel y Curtis Jones, que ni son
+    # del Inter) y sin portero. Las posiciones válidas son las detalladas
+    # de ESPN (G, CD, CD-L, LB, CM, AM, CF-L, ...), así que solo se
+    # rechaza SUB/vacío. Un XI oficial válido tiene 11 jugadores con
+    # posición real y exactamente un portero; si un lado no cumple, el
+    # partido queda como no publicado y la página muestra la alineación
+    # probable, nunca basura.
+    validos = {}
+    for lado in ("local", "visita"):
+        poses = [j.get("pos") for j in xis[lado]]
+        validos[lado] = (len(xis[lado]) == 11
+                         and all(p and p != "SUB" for p in poses)
+                         and poses.count("G") == 1)
+    if not (validos["local"] and validos["visita"]):
+        xis = {"local": [], "visita": []}
     return estadio, {
         "alineacion_publicada": (len(xis["local"]) == 11
                                  and len(xis["visita"]) == 11),
