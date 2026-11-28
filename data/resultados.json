@@ -1,6 +1,6 @@
 {
  "fecha_calculo": "2026-11-28",
- "generado_en_mx": "2026-11-28T11:50:08-06:00",
+ "generado_en_mx": "2026-11-28T12:25:55-06:00",
  "nota": "Recomendación: el pick con más probabilidad entre los de EV ≥ +5% en todos los mercados; color por riesgo/ganancia: verde (prob ≥ 60% y EV ≥ +5%), amarillo (30% ≤ prob < 60% y EV ≥ +5%, un 50/50) o rojo (prob < 30% o EV < +5%: mucho riesgo y mucha ganancia, o poco riesgo aparente y poca ganancia). Alternativa amarilla: mayor EV entre EV ≥ +5% y 30% ≤ prob < 60%, distinto de la recomendación y con EV ≥ +50%. La columna en vivo usa el último snapshot del log (data/live-log); sin snapshots es 'sin datos', nunca inventada. La predicción en vivo invierte el xG de las probabilidades publicadas (no las ajustadas por XI).",
  "partidos": [
   {
@@ -25,6 +25,14 @@
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
+     "pick": "Local",
+     "mercado": "1X2",
+     "momio": 1.6896551724137931,
+     "prob": 72.2,
+     "ev": 0.21918341036805633,
+     "color": "verde"
+    },
+    "mejor_verde": {
      "pick": "Local",
      "mercado": "1X2",
      "momio": 1.6896551724137931,
@@ -71,6 +79,14 @@
      "prob": 71.4,
      "ev": 0.3978807687405157,
      "color": "verde"
+    },
+    "mejor_verde": {
+     "pick": "BTTS No",
+     "mercado": "BTTS",
+     "momio": 1.957,
+     "prob": 71.4,
+     "ev": 0.3978807687405157,
+     "color": "verde"
     }
    },
    "acierto": true,
@@ -105,6 +121,14 @@
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
+     "pick": "Visita",
+     "mercado": "1X2",
+     "momio": 2.85,
+     "prob": 68.1,
+     "ev": 0.942086641065184,
+     "color": "verde"
+    },
+    "mejor_verde": {
      "pick": "Visita",
      "mercado": "1X2",
      "momio": 2.85,
@@ -151,6 +175,14 @@
      "prob": 45.5,
      "ev": 0.28590258868045204,
      "color": "amarillo"
+    },
+    "mejor_verde": {
+     "pick": "Menos 3.5",
+     "mercado": "Total",
+     "momio": 1.625,
+     "prob": 68.4,
+     "ev": 0.11140009870031453,
+     "color": "verde"
     }
    },
    "acierto": false,
@@ -191,6 +223,14 @@
      "prob": 29.9,
      "ev": 1.395299432486091,
      "color": "rojo"
+    },
+    "mejor_verde": {
+     "pick": "AH local +1.5",
+     "mercado": "AH",
+     "momio": 1.775,
+     "prob": 70.0,
+     "ev": 0.24247767817660892,
+     "color": "verde"
     }
    },
    "acierto": false,
@@ -254,6 +294,14 @@
      "prob": 45.1,
      "ev": 0.2842944890731145,
      "color": "amarillo"
+    },
+    "mejor_verde": {
+     "pick": "AH visitante +0.5",
+     "mercado": "AH",
+     "momio": 1.642,
+     "prob": 66.8,
+     "ev": 0.09725542475407334,
+     "color": "verde"
     }
    },
    "acierto": null,
@@ -317,6 +365,14 @@
      "prob": 46.4,
      "ev": 1.1804495832990267,
      "color": "amarillo"
+    },
+    "mejor_verde": {
+     "pick": "Menos 2.5",
+     "mercado": "Total",
+     "momio": 2.25,
+     "prob": 92.4,
+     "ev": 1.0785655333691264,
+     "color": "verde"
     }
    },
    "acierto": null,
@@ -363,6 +419,14 @@
      "prob": 49.8,
      "ev": 0.6315449954466554,
      "color": "amarillo"
+    },
+    "mejor_verde": {
+     "pick": "Local",
+     "mercado": "1X2",
+     "momio": 1.7692307692307692,
+     "prob": 79.0,
+     "ev": 0.3971857741167635,
+     "color": "verde"
     }
    },
    "acierto": null,
@@ -389,9 +453,9 @@
    "recomendacion": {
     "pick": "Menos 3.5",
     "mercado": "Total",
-    "momio": 1.6451612903225805,
+    "momio": 1.6666666666666665,
     "prob": 87.5,
-    "ev": 0.4400701898351851,
+    "ev": 0.4588946367611353,
     "color": "verde",
     "semaforo": "verde",
     "cumple_regla": true,
@@ -405,10 +469,18 @@
     "mejor_valor": {
      "pick": "Visita",
      "mercado": "1X2",
-     "momio": 8.5,
+     "momio": 9.0,
      "prob": 22.6,
-     "ev": 0.9183515783907896,
+     "ev": 1.0311957888843657,
      "color": "rojo"
+    },
+    "mejor_verde": {
+     "pick": "Spread visitante +1.5",
+     "mercado": "Spread",
+     "momio": 1.9523809523809523,
+     "prob": 79.5,
+     "ev": 0.5526473243712704,
+     "color": "verde"
     }
    },
    "acierto": null,
@@ -443,11 +515,19 @@
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "Spread local -2.5",
-     "mercado": "Spread",
-     "momio": 2.05,
+     "pick": "AH local -2.5",
+     "mercado": "AH",
+     "momio": 2.083,
      "prob": 89.1,
-     "ev": 0.8275356834007856,
+     "ev": 0.8569545504994327,
+     "color": "verde"
+    },
+    "mejor_verde": {
+     "pick": "AH local -2.5",
+     "mercado": "AH",
+     "momio": 2.083,
+     "prob": 89.1,
+     "ev": 0.8569545504994327,
      "color": "verde"
     }
    },
@@ -495,6 +575,14 @@
      "prob": 36.8,
      "ev": 0.6941717435447787,
      "color": "amarillo"
+    },
+    "mejor_verde": {
+     "pick": "Spread local +0.5",
+     "mercado": "Spread",
+     "momio": 2.05,
+     "prob": 61.8,
+     "ev": 0.2678820850896195,
+     "color": "verde"
     }
    },
    "acierto": null,
@@ -529,11 +617,19 @@
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "Más 2.5",
-     "mercado": "Total",
-     "momio": 1.5714285714285714,
-     "prob": 85.5,
-     "ev": 0.3439801812923555,
+     "pick": "AH visitante -0.5",
+     "mercado": "AH",
+     "momio": 1.633,
+     "prob": 82.7,
+     "ev": 0.3505694947432816,
+     "color": "verde"
+    },
+    "mejor_verde": {
+     "pick": "AH visitante -0.5",
+     "mercado": "AH",
+     "momio": 1.633,
+     "prob": 82.7,
+     "ev": 0.3505694947432816,
      "color": "verde"
     }
    },
@@ -575,7 +671,8 @@
      "prob": 11.6,
      "ev": 0.15587710863612037,
      "color": "rojo"
-    }
+    },
+    "mejor_verde": null
    },
    "acierto": null,
    "acierto_texto": "Pendiente",
@@ -609,6 +706,14 @@
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
+     "pick": "BTTS No",
+     "mercado": "BTTS",
+     "momio": 2.188,
+     "prob": 81.4,
+     "ev": 0.7806765939952391,
+     "color": "verde"
+    },
+    "mejor_verde": {
      "pick": "BTTS No",
      "mercado": "BTTS",
      "momio": 2.188,
@@ -655,6 +760,14 @@
      "prob": 70.0,
      "ev": 0.43438618836946885,
      "color": "verde"
+    },
+    "mejor_verde": {
+     "pick": "Local",
+     "mercado": "1X2",
+     "momio": 2.05,
+     "prob": 70.0,
+     "ev": 0.43438618836946885,
+     "color": "verde"
     }
    },
    "acierto": null,
@@ -689,6 +802,14 @@
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
+     "pick": "BTTS No",
+     "mercado": "BTTS",
+     "momio": 2.136,
+     "prob": 66.2,
+     "ev": 0.4132204513490789,
+     "color": "verde"
+    },
+    "mejor_verde": {
      "pick": "BTTS No",
      "mercado": "BTTS",
      "momio": 2.136,
@@ -735,6 +856,14 @@
      "prob": 64.5,
      "ev": 0.4517104980436435,
      "color": "verde"
+    },
+    "mejor_verde": {
+     "pick": "Visita",
+     "mercado": "1X2",
+     "momio": 2.25,
+     "prob": 64.5,
+     "ev": 0.4517104980436435,
+     "color": "verde"
     }
    },
    "acierto": null,
@@ -769,6 +898,14 @@
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
+     "pick": "Más 2.5",
+     "mercado": "Total",
+     "momio": 1.7692307692307692,
+     "prob": 78.7,
+     "ev": 0.39277199173249344,
+     "color": "verde"
+    },
+    "mejor_verde": {
      "pick": "Más 2.5",
      "mercado": "Total",
      "momio": 1.7692307692307692,
@@ -821,6 +958,14 @@
      "prob": 31.1,
      "ev": 0.5250855973284925,
      "color": "amarillo"
+    },
+    "mejor_verde": {
+     "pick": "Menos 2.5",
+     "mercado": "Total",
+     "momio": 2.15,
+     "prob": 61.2,
+     "ev": 0.31602470174310526,
+     "color": "verde"
     }
    },
    "acierto": null,
@@ -861,7 +1006,8 @@
      "prob": 41.3,
      "ev": -0.050893936814863094,
      "color": "rojo"
-    }
+    },
+    "mejor_verde": null
    },
    "acierto": null,
    "acierto_texto": "Pendiente",
@@ -907,6 +1053,14 @@
      "prob": 42.7,
      "ev": 1.773698128120957,
      "color": "amarillo"
+    },
+    "mejor_verde": {
+     "pick": "Spread visitante +1.5",
+     "mercado": "Spread",
+     "momio": 1.606060606060606,
+     "prob": 88.6,
+     "ev": 0.4228708149183169,
+     "color": "verde"
     }
    },
    "acierto": null,
@@ -964,6 +1118,14 @@
      "prob": 88.8,
      "ev": 0.42558786394486603,
      "color": "verde"
+    },
+    "mejor_verde": {
+     "pick": "Más 2.5",
+     "mercado": "Total",
+     "momio": 1.606060606060606,
+     "prob": 88.8,
+     "ev": 0.42558786394486603,
+     "color": "verde"
     }
    },
    "acierto": null,
@@ -1004,6 +1166,14 @@
      "prob": 72.8,
      "ev": 0.15570738394543193,
      "color": "verde"
+    },
+    "mejor_verde": {
+     "pick": "Más 2.5",
+     "mercado": "Total",
+     "momio": 1.5882352941176472,
+     "prob": 72.8,
+     "ev": 0.15570738394543193,
+     "color": "verde"
     }
    },
    "acierto": false,
@@ -1038,6 +1208,14 @@
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
+     "pick": "Más 2.5",
+     "mercado": "Total",
+     "momio": 1.8,
+     "prob": 73.0,
+     "ev": 0.3139776654576898,
+     "color": "verde"
+    },
+    "mejor_verde": {
      "pick": "Más 2.5",
      "mercado": "Total",
      "momio": 1.8,
@@ -1101,7 +1279,8 @@
      "prob": 59.3,
      "ev": 0.3639161520744325,
      "color": "amarillo"
-    }
+    },
+    "mejor_verde": null
    },
    "acierto": false,
    "acierto_texto": "Falló",
@@ -1158,6 +1337,14 @@
      "prob": 29.6,
      "ev": 0.7007310268866278,
      "color": "rojo"
+    },
+    "mejor_verde": {
+     "pick": "Menos 3.5",
+     "mercado": "Total",
+     "momio": 1.625,
+     "prob": 88.9,
+     "ev": 0.4444686923223955,
+     "color": "verde"
     }
    },
    "acierto": true,
@@ -1209,6 +1396,14 @@
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
+     "pick": "BTTS No",
+     "mercado": "BTTS",
+     "momio": 2.54,
+     "prob": 85.1,
+     "ev": 1.1622198796228682,
+     "color": "verde"
+    },
+    "mejor_verde": {
      "pick": "BTTS No",
      "mercado": "BTTS",
      "momio": 2.54,
@@ -1272,7 +1467,8 @@
      "prob": 43.5,
      "ev": 0.0616579877728094,
      "color": "amarillo"
-    }
+    },
+    "mejor_verde": null
    },
    "acierto": true,
    "acierto_texto": "Acertó",
@@ -1323,11 +1519,19 @@
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "Visita",
-     "mercado": "1X2",
-     "momio": 2.0,
+     "pick": "AH visitante -0.5",
+     "mercado": "AH",
+     "momio": 2.002,
      "prob": 74.3,
-     "ev": 0.4858691169581959,
+     "ev": 0.4873549860783106,
+     "color": "verde"
+    },
+    "mejor_verde": {
+     "pick": "AH visitante -0.5",
+     "mercado": "AH",
+     "momio": 2.002,
+     "prob": 74.3,
+     "ev": 0.4873549860783106,
      "color": "verde"
     }
    },
@@ -1360,6 +1564,14 @@
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
+     "pick": "BTTS No",
+     "mercado": "BTTS",
+     "momio": 2.232,
+     "prob": 80.4,
+     "ev": 0.7944827086657635,
+     "color": "verde"
+    },
+    "mejor_verde": {
      "pick": "BTTS No",
      "mercado": "BTTS",
      "momio": 2.232,
@@ -1409,6 +1621,14 @@
      "prob": 56.3,
      "ev": 1.168454582358545,
      "color": "amarillo"
+    },
+    "mejor_verde": {
+     "pick": "AH visitante +0.5",
+     "mercado": "AH",
+     "momio": 1.925,
+     "prob": 78.5,
+     "ev": 0.5110183553768037,
+     "color": "verde"
     }
    },
    "acierto": null,
@@ -1446,7 +1666,8 @@
      "prob": 58.3,
      "ev": 0.16511220135681626,
      "color": "amarillo"
-    }
+    },
+    "mejor_verde": null
    },
    "acierto": null,
    "acierto_texto": "Pendiente",
@@ -1477,6 +1698,14 @@
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
+     "pick": "BTTS No",
+     "mercado": "BTTS",
+     "momio": 1.955,
+     "prob": 83.1,
+     "ev": 0.62440820172289,
+     "color": "verde"
+    },
+    "mejor_verde": {
      "pick": "BTTS No",
      "mercado": "BTTS",
      "momio": 1.955,
@@ -1520,7 +1749,8 @@
      "prob": 53.5,
      "ev": 0.2033978385024493,
      "color": "amarillo"
-    }
+    },
+    "mejor_verde": null
    },
    "acierto": null,
    "acierto_texto": "Pendiente",
@@ -1557,6 +1787,14 @@
      "ev": 0.9442576176564412
     },
     "mejor_valor": {
+     "pick": "BTTS No",
+     "mercado": "BTTS",
+     "momio": 2.248,
+     "prob": 92.1,
+     "ev": 1.0695101240177007,
+     "color": "verde"
+    },
+    "mejor_verde": {
      "pick": "BTTS No",
      "mercado": "BTTS",
      "momio": 2.248,
@@ -1600,6 +1838,14 @@
      "prob": 87.3,
      "ev": 0.8764221529970113,
      "color": "verde"
+    },
+    "mejor_verde": {
+     "pick": "Local",
+     "mercado": "1X2",
+     "momio": 2.15,
+     "prob": 87.3,
+     "ev": 0.8764221529970113,
+     "color": "verde"
     }
    },
    "acierto": null,
@@ -1637,6 +1883,14 @@
      "prob": 68.3,
      "ev": 0.5022784548055503,
      "color": "verde"
+    },
+    "mejor_verde": {
+     "pick": "Más 3.5",
+     "mercado": "Total",
+     "momio": 2.2,
+     "prob": 68.3,
+     "ev": 0.5022784548055503,
+     "color": "verde"
     }
    },
    "acierto": null,
@@ -1668,11 +1922,19 @@
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "Local",
-     "mercado": "1X2",
-     "momio": 1.6666666666666665,
+     "pick": "AH local -0.5",
+     "mercado": "AH",
+     "momio": 1.683,
      "prob": 81.7,
-     "ev": 0.36130898151804836,
+     "ev": 0.3746498095369253,
+     "color": "verde"
+    },
+    "mejor_verde": {
+     "pick": "AH local -0.5",
+     "mercado": "AH",
+     "momio": 1.683,
+     "prob": 81.7,
+     "ev": 0.3746498095369253,
      "color": "verde"
     }
    },
@@ -1711,6 +1973,14 @@
      "prob": 80.3,
      "ev": 0.7659381916437731,
      "color": "verde"
+    },
+    "mejor_verde": {
+     "pick": "Visita",
+     "mercado": "1X2",
+     "momio": 2.2,
+     "prob": 80.3,
+     "ev": 0.7659381916437731,
+     "color": "verde"
     }
    },
    "acierto": null,
@@ -1742,6 +2012,14 @@
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
+     "pick": "Más 3.5",
+     "mercado": "Total",
+     "momio": 1.8333333333333335,
+     "prob": 78.0,
+     "ev": 0.42986165096832374,
+     "color": "verde"
+    },
+    "mejor_verde": {
      "pick": "Más 3.5",
      "mercado": "Total",
      "momio": 1.8333333333333335,
@@ -1788,6 +2066,14 @@
      "prob": 66.0,
      "ev": 0.48473446202557313,
      "color": "verde"
+    },
+    "mejor_verde": {
+     "pick": "Visita",
+     "mercado": "1X2",
+     "momio": 2.25,
+     "prob": 66.0,
+     "ev": 0.48473446202557313,
+     "color": "verde"
     }
    },
    "acierto": false,
@@ -1822,6 +2108,14 @@
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
+     "pick": "Menos 2.5",
+     "mercado": "Total",
+     "momio": 2.35,
+     "prob": 70.2,
+     "ev": 0.6494437892817462,
+     "color": "verde"
+    },
+    "mejor_verde": {
      "pick": "Menos 2.5",
      "mercado": "Total",
      "momio": 2.35,
@@ -1868,6 +2162,14 @@
      "prob": 80.2,
      "ev": 0.4444396537200779,
      "color": "verde"
+    },
+    "mejor_verde": {
+     "pick": "Más 3.5",
+     "mercado": "Total",
+     "momio": 1.8,
+     "prob": 80.2,
+     "ev": 0.4444396537200779,
+     "color": "verde"
     }
    },
    "acierto": false,
@@ -1908,6 +2210,14 @@
      "prob": 22.8,
      "ev": 1.049606735953093,
      "color": "rojo"
+    },
+    "mejor_verde": {
+     "pick": "Menos 4.5",
+     "mercado": "Total",
+     "momio": 1.8,
+     "prob": 91.6,
+     "ev": 0.6482979870021983,
+     "color": "verde"
     }
    },
    "acierto": false,
@@ -1954,6 +2264,14 @@
      "prob": 56.6,
      "ev": 1.5480166398706658,
      "color": "amarillo"
+    },
+    "mejor_verde": {
+     "pick": "Spread local +0.5",
+     "mercado": "Spread",
+     "momio": 2.25,
+     "prob": 71.8,
+     "ev": 0.6154458514044716,
+     "color": "verde"
     }
    },
    "acierto": false,
@@ -2000,6 +2318,14 @@
      "prob": 38.1,
      "ev": 1.2851721411943697,
      "color": "amarillo"
+    },
+    "mejor_verde": {
+     "pick": "Menos 3.5",
+     "mercado": "Total",
+     "momio": 2.25,
+     "prob": 81.5,
+     "ev": 0.8334997471322885,
+     "color": "verde"
     }
    },
    "acierto": false,
@@ -2034,11 +2360,19 @@
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "Visita",
-     "mercado": "1X2",
-     "momio": 1.606060606060606,
+     "pick": "AH visitante -0.5",
+     "mercado": "AH",
+     "momio": 1.627,
      "prob": 87.0,
-     "ev": 0.39672389728809954,
+     "ev": 0.4149340146339713,
+     "color": "verde"
+    },
+    "mejor_verde": {
+     "pick": "AH visitante -0.5",
+     "mercado": "AH",
+     "momio": 1.627,
+     "prob": 87.0,
+     "ev": 0.4149340146339713,
      "color": "verde"
     }
    },
@@ -2074,11 +2408,19 @@
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "Spread local -1.5",
-     "mercado": "Spread",
-     "momio": 2.05,
+     "pick": "AH local -1.5",
+     "mercado": "AH",
+     "momio": 2.201,
      "prob": 82.8,
-     "ev": 0.6979803236338857,
+     "ev": 0.823051069423504,
+     "color": "verde"
+    },
+    "mejor_verde": {
+     "pick": "AH local -1.5",
+     "mercado": "AH",
+     "momio": 2.201,
+     "prob": 82.8,
+     "ev": 0.823051069423504,
      "color": "verde"
     }
    },
@@ -2114,6 +2456,14 @@
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
+     "pick": "Local",
+     "mercado": "1X2",
+     "momio": 2.55,
+     "prob": 65.8,
+     "ev": 0.6776558269562842,
+     "color": "verde"
+    },
+    "mejor_verde": {
      "pick": "Local",
      "mercado": "1X2",
      "momio": 2.55,
@@ -2160,6 +2510,14 @@
      "prob": 88.8,
      "ev": 0.7763403570761362,
      "color": "verde"
+    },
+    "mejor_verde": {
+     "pick": "Visita",
+     "mercado": "1X2",
+     "momio": 2.0,
+     "prob": 88.8,
+     "ev": 0.7763403570761362,
+     "color": "verde"
     }
    },
    "acierto": true,
@@ -2194,6 +2552,14 @@
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
+     "pick": "BTTS No",
+     "mercado": "BTTS",
+     "momio": 2.394,
+     "prob": 86.2,
+     "ev": 1.0639080853070655,
+     "color": "verde"
+    },
+    "mejor_verde": {
      "pick": "BTTS No",
      "mercado": "BTTS",
      "momio": 2.394,
@@ -2240,6 +2606,14 @@
      "prob": 89.1,
      "ev": 0.7649943400538199,
      "color": "verde"
+    },
+    "mejor_verde": {
+     "pick": "BTTS No",
+     "mercado": "BTTS",
+     "momio": 1.98,
+     "prob": 89.1,
+     "ev": 0.7649943400538199,
+     "color": "verde"
     }
    },
    "acierto": false,
@@ -2274,6 +2648,14 @@
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
+     "pick": "Más 2.5",
+     "mercado": "Total",
+     "momio": 1.5555555555555556,
+     "prob": 93.5,
+     "ev": 0.4551857737748892,
+     "color": "verde"
+    },
+    "mejor_verde": {
      "pick": "Más 2.5",
      "mercado": "Total",
      "momio": 1.5555555555555556,
@@ -2320,7 +2702,8 @@
      "prob": 34.5,
      "ev": 0.0879778377563234,
      "color": "amarillo"
-    }
+    },
+    "mejor_verde": null
    },
    "acierto": false,
    "acierto_texto": "Falló",
@@ -2354,6 +2737,14 @@
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
+     "pick": "BTTS No",
+     "mercado": "BTTS",
+     "momio": 2.077,
+     "prob": 63.0,
+     "ev": 0.3076626602016268,
+     "color": "verde"
+    },
+    "mejor_verde": {
      "pick": "BTTS No",
      "mercado": "BTTS",
      "momio": 2.077,
@@ -2400,7 +2791,8 @@
      "prob": 48.3,
      "ev": 0.10671191845436323,
      "color": "amarillo"
-    }
+    },
+    "mejor_verde": null
    },
    "acierto": false,
    "acierto_texto": "Falló",
@@ -2440,7 +2832,8 @@
      "prob": 7.0,
      "ev": -0.021988382020637465,
      "color": "rojo"
-    }
+    },
+    "mejor_verde": null
    },
    "acierto": false,
    "acierto_texto": "Falló",
@@ -2480,6 +2873,14 @@
      "prob": 46.3,
      "ev": 0.45732301834093847,
      "color": "amarillo"
+    },
+    "mejor_verde": {
+     "pick": "Más 3.5",
+     "mercado": "Total",
+     "momio": 2.3,
+     "prob": 62.5,
+     "ev": 0.4375361336723993,
+     "color": "verde"
     }
    },
    "acierto": false,
@@ -2526,6 +2927,14 @@
      "prob": 34.8,
      "ev": 5.965566068383509,
      "color": "amarillo"
+    },
+    "mejor_verde": {
+     "pick": "AH visitante +2.5",
+     "mercado": "AH",
+     "momio": 1.913,
+     "prob": 93.8,
+     "ev": 0.7942696044583815,
+     "color": "verde"
     }
    },
    "acierto": true,
@@ -2572,6 +2981,14 @@
      "prob": 56.3,
      "ev": 0.6623194575614215,
      "color": "amarillo"
+    },
+    "mejor_verde": {
+     "pick": "BTTS No",
+     "mercado": "BTTS",
+     "momio": 2.237,
+     "prob": 62.8,
+     "ev": 0.4040776947367448,
+     "color": "verde"
     }
    },
    "acierto": false,
@@ -2606,6 +3023,14 @@
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
+     "pick": "Spread local -1.5",
+     "mercado": "Spread",
+     "momio": 2.0,
+     "prob": 80.6,
+     "ev": 0.6121710706609911,
+     "color": "verde"
+    },
+    "mejor_verde": {
      "pick": "Spread local -1.5",
      "mercado": "Spread",
      "momio": 2.0,
@@ -2658,6 +3083,14 @@
      "prob": 56.5,
      "ev": 3.5185456768610157,
      "color": "amarillo"
+    },
+    "mejor_verde": {
+     "pick": "Menos 2.5",
+     "mercado": "Total",
+     "momio": 2.05,
+     "prob": 85.9,
+     "ev": 0.7617973662850801,
+     "color": "verde"
     }
    },
    "acierto": true,
@@ -2704,6 +3137,14 @@
      "prob": 31.6,
      "ev": 3.113066291349744,
      "color": "amarillo"
+    },
+    "mejor_verde": {
+     "pick": "AH visitante +2.5",
+     "mercado": "AH",
+     "momio": 1.651,
+     "prob": 90.0,
+     "ev": 0.48511694971975783,
+     "color": "verde"
     }
    },
    "acierto": true,
@@ -2738,11 +3179,19 @@
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "Spread local -1.5",
-     "mercado": "Spread",
-     "momio": 1.8333333333333335,
+     "pick": "AH local -1.5",
+     "mercado": "AH",
+     "momio": 1.958,
      "prob": 93.8,
-     "ev": 0.7190723741500411,
+     "ev": 0.8359692955922438,
+     "color": "verde"
+    },
+    "mejor_verde": {
+     "pick": "AH local -1.5",
+     "mercado": "AH",
+     "momio": 1.958,
+     "prob": 93.8,
+     "ev": 0.8359692955922438,
      "color": "verde"
     }
    },
@@ -2778,11 +3227,19 @@
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "BTTS No",
-     "mercado": "BTTS",
-     "momio": 2.159,
-     "prob": 70.0,
-     "ev": 0.5121780442500621,
+     "pick": "AH visitante -1.5",
+     "mercado": "AH",
+     "momio": 2.291,
+     "prob": 84.9,
+     "ev": 0.945572445204582,
+     "color": "verde"
+    },
+    "mejor_verde": {
+     "pick": "AH visitante -1.5",
+     "mercado": "AH",
+     "momio": 2.291,
+     "prob": 84.9,
+     "ev": 0.945572445204582,
      "color": "verde"
     }
    },
@@ -2830,6 +3287,14 @@
      "prob": 57.6,
      "ev": 1.0145264442969086,
      "color": "amarillo"
+    },
+    "mejor_verde": {
+     "pick": "Spread visitante +0.5",
+     "mercado": "Spread",
+     "momio": 1.8333333333333335,
+     "prob": 76.9,
+     "ev": 0.4106789982140038,
+     "color": "verde"
     }
    },
    "acierto": false,
@@ -2864,11 +3329,19 @@
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
-     "pick": "Spread local -1.5",
-     "mercado": "Spread",
-     "momio": 1.9523809523809523,
+     "pick": "AH local -1.5",
+     "mercado": "AH",
+     "momio": 1.989,
      "prob": 80.5,
-     "ev": 0.5720066584813726,
+     "ev": 0.6014913687343526,
+     "color": "verde"
+    },
+    "mejor_verde": {
+     "pick": "AH local -1.5",
+     "mercado": "AH",
+     "momio": 1.989,
+     "prob": 80.5,
+     "ev": 0.6014913687343526,
      "color": "verde"
     }
    },
@@ -2910,6 +3383,14 @@
      "prob": 9.3,
      "ev": 0.2958866323237206,
      "color": "rojo"
+    },
+    "mejor_verde": {
+     "pick": "BTTS Sí",
+     "mercado": "BTTS",
+     "momio": 2.032,
+     "prob": 62.0,
+     "ev": 0.2604496071440572,
+     "color": "verde"
     }
    },
    "acierto": true,
@@ -2944,6 +3425,14 @@
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
+     "pick": "Menos 3.5",
+     "mercado": "Total",
+     "momio": 1.6451612903225805,
+     "prob": 63.8,
+     "ev": 0.050121837582088435,
+     "color": "verde"
+    },
+    "mejor_verde": {
      "pick": "Menos 3.5",
      "mercado": "Total",
      "momio": 1.6451612903225805,
@@ -2990,6 +3479,14 @@
      "prob": 50.8,
      "ev": 0.37332326513578074,
      "color": "amarillo"
+    },
+    "mejor_verde": {
+     "pick": "Menos 3.5",
+     "mercado": "Total",
+     "momio": 1.6666666666666665,
+     "prob": 74.9,
+     "ev": 0.24751968704387428,
+     "color": "verde"
     }
    },
    "acierto": false,
@@ -3024,6 +3521,14 @@
     "cumple_regla": true,
     "alternativa_amarilla": null,
     "mejor_valor": {
+     "pick": "Menos 2.5",
+     "mercado": "Total",
+     "momio": 2.0,
+     "prob": 76.9,
+     "ev": 0.5384519249474633,
+     "color": "verde"
+    },
+    "mejor_verde": {
      "pick": "Menos 2.5",
      "mercado": "Total",
      "momio": 2.0,
@@ -3070,6 +3575,14 @@
      "prob": 57.6,
      "ev": 0.4970776982369207,
      "color": "amarillo"
+    },
+    "mejor_verde": {
+     "pick": "Spread visitante +0.5",
+     "mercado": "Spread",
+     "momio": 1.4878048780487805,
+     "prob": 80.3,
+     "ev": 0.19444550552658324,
+     "color": "verde"
     }
    },
    "acierto": true,
@@ -3116,6 +3629,14 @@
      "prob": 22.6,
      "ev": 1.4839012944645331,
      "color": "rojo"
+    },
+    "mejor_verde": {
+     "pick": "Menos 2.5",
+     "mercado": "Total",
+     "momio": 2.25,
+     "prob": 72.2,
+     "ev": 0.6248258543346337,
+     "color": "verde"
     }
    },
    "acierto": true,
@@ -3162,6 +3683,14 @@
      "prob": 54.2,
      "ev": 1.4369794304272796,
      "color": "amarillo"
+    },
+    "mejor_verde": {
+     "pick": "Más 3.5",
+     "mercado": "Total",
+     "momio": 2.15,
+     "prob": 79.5,
+     "ev": 0.7097736167931339,
+     "color": "verde"
     }
    },
    "acierto": true,
@@ -3202,6 +3731,14 @@
      "prob": 20.2,
      "ev": 0.8185168730653165,
      "color": "rojo"
+    },
+    "mejor_verde": {
+     "pick": "Menos 3.5",
+     "mercado": "Total",
+     "momio": 2.0,
+     "prob": 81.1,
+     "ev": 0.6217725915567629,
+     "color": "verde"
     }
    },
    "acierto": false,
